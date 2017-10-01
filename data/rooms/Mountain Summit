@@ -1,0 +1,65 @@
+{
+    "id": 14, 
+    "title": "Mountain Summit", 
+    "visited": false, 
+    "long_description": "Long Description: Mountain Summit", 
+    "short_description": "Short Description: Mountain Summit", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Mountain Summit", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Mountain Summit"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Mountain Summit", 
+    "feature_1_item_required": "Item required feature 1: Mountain Summit", 
+    "feature_1_item_combine_description": "naMountain Summit", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Mountain Summit"
+    ], 
+    "feature_2_description": "feature 2 description: Mountain Summit", 
+    "feature_2_verbs": [
+        "feature 2 verbsMountain Summit"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Mountain Summit", 
+    "feature_2_item_required": "feature 2 item required Mountain Summit", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Mountain Ascent", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Mountain Ascent"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Fire Tower", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Fire Tower"
+            ]
+        }
+    ], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}

@@ -1,0 +1,22 @@
+{
+    "id": 9, 
+    "title": "Can of Sweetened Condensed Milk", 
+    "aliases": [], 
+    "description": "", 
+    "item_combination": "", 
+    "room_combination": "", 
+    "feature_combination": "", 
+    "action_verbs": [], 
+    "action_description": "", 
+    "active": false, 
+    "activatable": false, 
+    "attributes_affected_requirement_met": [
+        {}
+    ], 
+    "attributes_affected_requirement_not_met": [
+        {}
+    ], 
+    "requirement_met": true, 
+    "requirement_met_description": "", 
+    "requirement_not_met_description": ""
+}

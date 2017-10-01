@@ -1,0 +1,65 @@
+{
+    "id": 8, 
+    "title": "Cave", 
+    "visited": false, 
+    "long_description": "Long Description: Cave", 
+    "short_description": "Short Description: Cave", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Cave", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Cave"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Cave", 
+    "feature_1_item_required": "Item required feature 1: Cave", 
+    "feature_1_item_combine_description": "naCave", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Cave"
+    ], 
+    "feature_2_description": "feature 2 description: Cave", 
+    "feature_2_verbs": [
+        "feature 2 verbsCave"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Cave", 
+    "feature_2_item_required": "feature 2 item required Cave", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Woods", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Woods"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Game Trail", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Game Trail"
+            ]
+        }
+    ], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}
