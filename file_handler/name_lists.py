@@ -1,3 +1,11 @@
+"""
+Filename - name_lists.py
+Team - Pavo
+Group Members - Emily Caveness, Alexander Laquitara, Johannes Pikel
+Class - CS467-400 Capstone
+Term - Fall 2017
+Description - 
+"""
 
 class room_info():
     room_titles = ["Shore", "Crash Site", "Game Trail", "Field", "Dense Brush", "Camp", "Woods",
@@ -37,7 +45,8 @@ class room_info():
             return self.aliases[title]
         except Exception, e:
             return None
-
+    def get_dir_dict(self):
+        return "../data/rooms_dict"
 
 class item_info():
     item_titles = ["Lantern", "Heavy Winter Parka", "Dusty Old Map", "Tattered Notebook",
@@ -49,3 +58,44 @@ class item_info():
         return self.item_titles
     def get_dir(self):
         return self.item_dir
+    def get_dir_dict(self):
+        return "../data/items_dict"
+
+class save_info():
+    temp_save_dir_rooms = "../data/temp_save_game/rooms/"
+    temp_save_dir_items = "../data/temp_save_game/items/"
+    save_dir = "../data/save_game/"
+
+    def get_temp_save_dir_rooms(self):
+        return self.temp_save_dir_rooms
+    def get_temp_save_dir_items(self):
+        return self.temp_save_dir_items
+    def get_save_dir(self):
+        return self.save_dir
+
+
+class verb_info():
+    verbs = ["look", "look at", "go", "take", "help", "inventory", 
+            "use", "search", "pull", "eat", "read"]
+
+    verb_definitions = { 
+            "look": "Will repeat the long description of the room",
+            "look at": "<feature or object> Allows you to look at something in the game",
+            "go":"Move to another room",
+            "take":"Pick up an item",
+            "help":"Display this menu",
+            "inventory":"Opens your character's inventory",
+            "use":"Use an item in your inventory",
+            "search":"search a feature to find items",
+            "pull":"Pull on a feature in a room",
+            "eat":"Your character attempts to eat an item",
+            "read":"Your character attempts to read an item"
+            }
+
+
+    def get_verbs(self):
+        return self.verbs
+    def get_verb_definitions(self):
+        return self.verb_definitions
+    def get_dir_dict(self):
+        return "../data/verbs_dict"

@@ -1,0 +1,14 @@
+{
+    "eat": "eat", 
+    "go": "go", 
+    "help": "help", 
+    "ingest": "eat", 
+    "inventory": "inventory", 
+    "look": "look", 
+    "look at": "look at", 
+    "pull": "pull", 
+    "read": "read", 
+    "search": "search", 
+    "take": "take", 
+    "use": "use"
+}

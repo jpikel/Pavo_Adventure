@@ -1,0 +1,74 @@
+{
+    "id": 3, 
+    "title": "Game Trail", 
+    "visited": true, 
+    "long_description": "Long Description: Game Trail", 
+    "short_description": "Short Description: Game Trail", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Game Trail", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Game Trail"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Game Trail", 
+    "feature_1_item_required": "Item required feature 1: Game Trail", 
+    "feature_1_item_combine_description": "naGame Trail", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Game Trail"
+    ], 
+    "feature_2_description": "feature 2 description: Game Trail", 
+    "feature_2_verbs": [
+        "feature 2 verbsGame Trail"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Game Trail", 
+    "feature_2_item_required": "feature 2 item required Game Trail", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Crash Site", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "W", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Crash Site", 
+                "Crash", 
+                "crash", 
+                "site", 
+                "Site", 
+                "accident"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Cave", 
+            "pre_item_description": "Unfortunately you do not have a lantern to light the way, so you stare into the dark mouth of the cave and go back.", 
+            "item_required_title": "Lantern", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": true, 
+            "aliases": [
+                "Cave"
+            ]
+        }
+    ], 
+    "items_in_room": [
+        "Rescue Whistle", 
+        "Tattered Notebook"
+    ], 
+    "feature_searched": true, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}

@@ -11,9 +11,10 @@
     "action_verbs": [
         "use"
     ], 
-    "action_description": "action description Lantern", 
-    "active": false, 
-    "activatable": false, 
+    "activate_description": "action description Lantern", 
+    "deactivate_description": "de-action description Lantern", 
+    "active": true, 
+    "activatable": true, 
     "attributes_affected_requirement_met": [
         {}
     ], 

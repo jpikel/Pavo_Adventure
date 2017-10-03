@@ -1,0 +1,79 @@
+{
+    "id": 7, 
+    "title": "Woods", 
+    "visited": false, 
+    "long_description": "Long Description: Woods", 
+    "short_description": "Short Description: Woods", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Woods", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Woods"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Woods", 
+    "feature_1_item_required": "Item required feature 1: Woods", 
+    "feature_1_item_combine_description": "naWoods", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Woods"
+    ], 
+    "feature_2_description": "feature 2 description: Woods", 
+    "feature_2_verbs": [
+        "feature 2 verbsWoods"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Woods", 
+    "feature_2_item_required": "feature 2 item required Woods", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Camp", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Camp", 
+                "campsite"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "River", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "River"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Cave", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Cave"
+            ]
+        }
+    ], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}

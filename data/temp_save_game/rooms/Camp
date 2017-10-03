@@ -1,0 +1,83 @@
+{
+    "id": 6, 
+    "title": "Camp", 
+    "visited": false, 
+    "long_description": "Long Description: Camp", 
+    "short_description": "Short Description: Camp", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Camp", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Camp"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Camp", 
+    "feature_1_item_required": "Item required feature 1: Camp", 
+    "feature_1_item_combine_description": "naCamp", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Camp"
+    ], 
+    "feature_2_description": "feature 2 description: Camp", 
+    "feature_2_verbs": [
+        "feature 2 verbsCamp"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Camp", 
+    "feature_2_item_required": "feature 2 item required Camp", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Dense Brush", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Dense Brush"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Woods", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Woods"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Crash Site", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Crash Site", 
+                "Crash", 
+                "crash", 
+                "site", 
+                "Site", 
+                "accident"
+            ]
+        }
+    ], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}

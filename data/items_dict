@@ -9,8 +9,7 @@
     "Lantern": "Lantern", 
     "Rescue Whistle": "Rescue Whistle", 
     "Tattered Notebook": "Tattered Notebook", 
-    "candle": "Lantern", 
-    "lantern": "Lantern", 
-    "light": "Lantern", 
+    "map": "Dusty Old Map", 
+    "oar": "Boat Paddle", 
     "paddle": "Boat Paddle"
 }

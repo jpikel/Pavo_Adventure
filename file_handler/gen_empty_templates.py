@@ -12,7 +12,7 @@ import json
 from collections import OrderedDict
 from name_lists import room_info
 from name_lists import item_info
-
+from name_lists import verb_info
 
 def create_room(room_name, index, connections):
     """
@@ -50,7 +50,7 @@ def create_room(room_name, index, connections):
                                              "item_required":False,
                                              "item_required_title":"",
                                              "pre_item_description":"",
-                                             "accesible":True,
+                                             "accessible":True,
                                              "distance_from_room":1,
                                              }]})
     for x in range (1, connections):
@@ -61,9 +61,10 @@ def create_room(room_name, index, connections):
                                             "item_required":False,
                                              "item_required_title":"",
                                              "pre_item_description":"",
-                                             "accesible":True,
+                                             "accessible":True,
                                              "distance_from_room":1,
                                              })
+    room_template.update({"items_in_room":[]})
     room_template.update({"feature_searched":False})
     room_template.update({"room_hazards":False})
     room_template.update({"room_hazard_description":""})
@@ -86,22 +87,32 @@ def create_item(item_name, index):
     item.update({"id":index+1})
     item.update({"title":item_name})
     item.update({"aliases":[item_name]})
-    item.update({"description":""})
-    item.update({"item_combination":""})
-    item.update({"room_combination":""})
-    item.update({"feature_combination":""})
-    item.update({"action_verbs":[]})
-    item.update({"action_description":""})
+    item.update({"description":"description for " + item_name})
+    item.update({"item_combination":"other item combination for " + item_name})
+    item.update({"room_combination":item_name+" can be used in room"})
+    item.update({"feature_combination":item_name+" can be used with feature"})
+    item.update({"action_verbs":["use"]})
+    item.update({"activate_description":"action description " + item_name})
+    item.update({"deactivate_description":"de-action description " + item_name})
     item.update({"active":False})
     item.update({"activatable":False})
     item.update({"attributes_affected_requirement_met":[{}]})
     item.update({"attributes_affected_requirement_not_met":[{}]})
     item.update({"requirement_met":True})
-    item.update({"requirement_met_description":""})
-    item.update({"requirement_not_met_description":""})
+    item.update({"requirement_met_description":"req met " + item_name})
+    item.update({"requirement_not_met_description":"req not met "+ item_name})
     return item
 
+def create_verbs():
+    verbs = verb_info().get_verbs()
+    verb_dict = OrderedDict()
+    for verb in verbs:
+        verb_dict.update({verb:verb})
 
+    verb_dict = OrderedDict(sorted(verb_dict.items()))
+    with open("../data/verbs_dict", 'w') as outfile:
+        json.dump(verb_dict, outfile, indent=4)
+        outfile.close()
 
 
 def main():
@@ -112,23 +123,25 @@ def main():
     Postconditions - 
     Description - 
     """
-    rooms = room_info()
-    room_titles = rooms.get_titles()
-    room_connections = rooms.get_connection_amount()
-    room_dir = rooms.get_dir()
-    for room in room_titles:        
-        room_template = create_room(room, room_titles.index(room), room_connections[room_titles.index(room)])
-        with open(room_dir + room, 'w') as outfile:
-            json.dump(room_template, outfile, indent=4)
-            outfile.close()
+#    rooms = room_info()
+#    room_titles = rooms.get_titles()
+#    room_connections = rooms.get_connection_amount()
+#    room_dir = rooms.get_dir()
+#    for room in room_titles:        
+#        room_template = create_room(room, room_titles.index(room), room_connections[room_titles.index(room)])
+#        with open(room_dir + room, 'w') as outfile:
+#            json.dump(room_template, outfile, indent=4)
+#            outfile.close()
+#
 
+#    items = item_info()
+#    item_titles = items.get_titles()
+#    item_dir = items.get_dir()
+#    for item in item_titles:
+#        item_template = create_item(item, item_titles.index(item))
+#        with open(item_dir + item, 'w') as outfile:
+#            json.dump(item_template, outfile, indent=4)
+#            outfile.close()
 
-    items = item_info()
-    item_titles = items.get_titles()
-    item_dir = items.get_dir()
-    for item in item_titles:
-        item_template = create_item(item, item_titles.index(item))
-        with open(item_dir + item, 'w') as outfile:
-            json.dump(item_template, outfile, indent=4)
-            outfile.close()
+#    create_verbs()
 main()

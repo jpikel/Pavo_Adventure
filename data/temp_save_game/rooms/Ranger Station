@@ -1,0 +1,52 @@
+{
+    "id": 16, 
+    "title": "Ranger Station", 
+    "visited": false, 
+    "long_description": "Long Description: Ranger Station", 
+    "short_description": "Short Description: Ranger Station", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Ranger Station", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Ranger Station"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Ranger Station", 
+    "feature_1_item_required": "Item required feature 1: Ranger Station", 
+    "feature_1_item_combine_description": "naRanger Station", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Ranger Station"
+    ], 
+    "feature_2_description": "feature 2 description: Ranger Station", 
+    "feature_2_verbs": [
+        "feature 2 verbsRanger Station"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Ranger Station", 
+    "feature_2_item_required": "feature 2 item required Ranger Station", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Rapids", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Rapids"
+            ]
+        }
+    ], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}

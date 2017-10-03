@@ -1,0 +1,65 @@
+{
+    "id": 15, 
+    "title": "Rapids", 
+    "visited": false, 
+    "long_description": "Long Description: Rapids", 
+    "short_description": "Short Description: Rapids", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Rapids", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Rapids"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Rapids", 
+    "feature_1_item_required": "Item required feature 1: Rapids", 
+    "feature_1_item_combine_description": "naRapids", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Rapids"
+    ], 
+    "feature_2_description": "feature 2 description: Rapids", 
+    "feature_2_verbs": [
+        "feature 2 verbsRapids"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Rapids", 
+    "feature_2_item_required": "feature 2 item required Rapids", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Ranger Station", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Ranger Station"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "River", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "River"
+            ]
+        }
+    ], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}

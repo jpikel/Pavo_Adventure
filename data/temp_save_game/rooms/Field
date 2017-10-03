@@ -1,0 +1,65 @@
+{
+    "id": 4, 
+    "title": "Field", 
+    "visited": false, 
+    "long_description": "Long Description: Field", 
+    "short_description": "Short Description: Field", 
+    "feature_1_aliases": [
+        "feature_1_aliases"
+    ], 
+    "feature_1_description": "Feature 1 description: Field", 
+    "feature_1_verbs": [
+        "Feature 1 Verb: Field"
+    ], 
+    "feature_1_action_description": "Feature 1 action description: Field", 
+    "feature_1_item_required": "Item required feature 1: Field", 
+    "feature_1_item_combine_description": "naField", 
+    "feature_1_attributes_affected": {
+        "condition": 5
+    }, 
+    "feature_2_aliases": [
+        "feature 2 aliases: Field"
+    ], 
+    "feature_2_description": "feature 2 description: Field", 
+    "feature_2_verbs": [
+        "feature 2 verbsField"
+    ], 
+    "feature_2_action_description": "feature 2 action description: Field", 
+    "feature_2_item_required": "feature 2 item required Field", 
+    "feature_2_item_combine_description": "na", 
+    "connected_rooms": [
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Mountain Base", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Mountain Base"
+            ]
+        }, 
+        {
+            "distance_from_room": 1, 
+            "accesible": true, 
+            "title": "Dense Brush", 
+            "pre_item_description": "", 
+            "item_required_title": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "item_required": false, 
+            "aliases": [
+                "Dense Brush"
+            ]
+        }
+    ], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
+}
