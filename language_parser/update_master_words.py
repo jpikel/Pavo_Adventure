@@ -5,6 +5,8 @@ MASTER_WORDS_FILENAME = "master_words.py"
 ITEMS_FILENAME = "items_dict"
 ROOMS_FILENAME = "rooms_dict"
 VERBS_FILENAME = "verbs_dict"
+MASTER_FIELD = "master_word"
+WORD_TYPE_FIELD = "type"
 
 def update_master_words():
     """
@@ -20,28 +22,48 @@ def update_master_words():
     items_full_path = os.path.join(data_dir, ITEMS_FILENAME)
     rooms_full_path = os.path.join(data_dir, ROOMS_FILENAME)
     verbs_full_path = os.path.join(data_dir, VERBS_FILENAME)
-    # Copy the contents of the source files into their own dicts.
+    # Copy the contents of the source files into their own strings,
+    # and convert those strings into dicts with all lower-case text.
     with open(MASTER_WORDS_FILENAME, "a") as master_file:
         with open(items_full_path, "r") as items_file:
             items_dict_str = items_file.read()
-            master_file.write("items = " + items_dict_str.lower() + "\n")
+            items_dict = json.loads(items_dict_str.lower())
         with open(rooms_full_path, "r") as rooms_file:
             rooms_dict_str = rooms_file.read()
-            master_file.write("rooms = " + rooms_dict_str.lower() + "\n")
+            rooms_dict = rooms_dict = json.loads(rooms_dict_str.lower())
         with open(verbs_full_path, "r") as verbs_file:
             verbs_dict_str = verbs_file.read()
-            master_file.write("actions = " + verbs_dict_str.lower() + "\n")
-        # Make a master dict with the words from all the dicts.
-        # At this stage, the dicts are actually strings, so they must be
-        # converted to dicts before calling update().
+            verbs_dict = json.loads(verbs_dict_str.lower())
+        # Create expanded versions of each dict so that the word type
+        # and the master word (i.e., the word the game engine knows) are
+        # identified in the dict.
+        expanded_items_dict = {}
+        for word, master_word in items_dict.items():
+            word_info = {
+                MASTER_FIELD: master_word,
+                WORD_TYPE_FIELD: "item"
+            }
+            expanded_items_dict[word] = word_info
+        expanded_rooms_dict = {}
+        for word, master_word in rooms_dict.items():
+            word_info = {
+                MASTER_FIELD: master_word,
+                WORD_TYPE_FIELD: "room"
+            }
+            expanded_rooms_dict[word] = word_info
+        expanded_verbs_dict = {}
+        for word, master_word in verbs_dict.items():
+            word_info = {
+                MASTER_FIELD: master_word,
+                WORD_TYPE_FIELD: "action"
+            }
+            expanded_verbs_dict[word] = word_info
+        # Combine all of the expanded dicts into one master dict.
         all_words = {}
-        items_dict = json.loads(items_dict_str.lower())
-        all_words.update(items_dict)
-        rooms_dict = json.loads(rooms_dict_str.lower())
-        all_words.update(rooms_dict)
-        verbs_dict = json.loads(verbs_dict_str.lower())
-        all_words.update(verbs_dict)
-        all_words_str = json.dumps(all_words)
+        all_words.update(expanded_items_dict)
+        all_words.update(expanded_rooms_dict)
+        all_words.update(expanded_verbs_dict)
+        all_words_str = json.dumps(all_words, indent=3)
         master_file.write("all_words = " + all_words_str)
 
 if __name__ == "__main__":
@@ -53,3 +75,6 @@ if __name__ == "__main__":
 # http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
 # https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression
 # https://stackoverflow.com/questions/988228/convert-a-string-representation-of-a-dictionary-to-a-dictionary
+# https://docs.python.org/2/library/json.html
+# https://stackoverflow.com/questions/20145902/how-to-extract-dictionary-single-key-value-pair-in-variables
+# https://stackoverflow.com/questions/33715427/whenever-i-try-parsing-json-file-i-get-keyerror-in-python
