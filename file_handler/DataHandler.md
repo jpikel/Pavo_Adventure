@@ -42,7 +42,7 @@ Filename: file_lib.py
             
             returns an object
                 {
-                    "bool": boolean, specifies if the move was succesful,
+                    "move": boolean, specifies if the move was succesful,
                     "description": string, the new or old room description or failed move,
                     "distance_from_room": integer, distance traveled,
                     "title": string, new room's title
@@ -55,7 +55,10 @@ Filename: file_lib.py
 
         get_room_items()
             checks if the current room's feature has been searched and if so
-            returns a string with the list of items and a bit of pre text
+            returns an object
+                {
+                    "description":string
+                }
 
         use(title = string, action = string, in_inventory = boolean)
             assumes that item being passed in has been validated against player 
@@ -64,7 +67,10 @@ Filename: file_lib.py
             item with action verb
             otherwise checks it against a room feature and the features action verb
 
-            returns the description as a string
+            returns object <- more variables added in the future
+                {
+                    "description": string
+                }
 
         lookat(title = string, in_inventory = boolean)
             assumes the item has been checked against the players inventory
@@ -72,6 +78,8 @@ Filename: file_lib.py
             for the item
             Or if the title matches a room feature
             also checks if the room has been searched and if the item is in the room
-            returns that item's description
 
-            returns description as a string
+            returns object, will add additional variables in the future
+                {
+                    "description": string
+                }

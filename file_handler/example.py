@@ -1,5 +1,7 @@
 from file_lib import game_ops
 
+#An example usage of some of the functions from the game_ops class in the
+#file_lib.py
 
 game = game_ops()
 #game.new_game()
