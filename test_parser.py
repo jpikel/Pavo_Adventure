@@ -13,3 +13,11 @@ test_input = "boar"
 
 print "The test input is: " + test_input
 parse._check_for_exact_match(test_input)
+
+test_input = "paddle"
+print "The test input is: " + test_input
+print parse.parse_command(test_input)
+
+test_input = "edge of lake"
+print "The test input is: " + test_input
+print parse.parse_command(test_input)
