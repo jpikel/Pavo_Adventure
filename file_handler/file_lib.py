@@ -79,7 +79,7 @@ class room_ops():
         return self.current_room['visited']
 
     def check_connections(self, title_or_direction, items):
-        response = response_struct()
+        response = {"description":None, "title":None, "move":False, "distance_from_room":0}
         for room in self.current_room['connected_rooms']:
             if title_or_direction == room['title'] or title_or_direction == room['compass_direction']:
                 if room['item_required'] == True:
@@ -94,10 +94,10 @@ class room_ops():
                                 response['title'] = str(room['title'])
                                 return response
                             else:
-                                self.response['description'] = str(room['pre_item_description'])
+                                response['description'] = str(room['pre_item_description'])
                                 return response
                     else:
-                        response.response['description'] = str(room['pre_item_description'])
+                        response['description'] = str(room['pre_item_description'])
                         return response
                 else:
                     response['move'] = True
@@ -127,14 +127,14 @@ class room_ops():
             return False
 
     def get_items(self):
-        text = {"description":"Looking around you see "}
+        text = "Looking around you see "
         if self.current_room['feature_searched'] == True:
             items = self.current_room['items_in_room']
             for item in items:
-                text["description"] += "a " + item + ", "
-            text["description"] = str(text["description"][:-2])
+                text += "a " + item + ", "
+            text = text[:-2]
         else:
-            text["description"] = "You don't notice anything you could pick up"
+            text = "You don't notice anything you could pick up"
         return text
 
     def lookat(self, title):
@@ -239,9 +239,9 @@ class game_ops():
 
     def get_room_desc(self):
         if self.room.get_visited() == False:
-            return self.room.get_room_long_desc()
+            return self.room.get_room_long_desc() + self.room.get_items()
         else:
-            return self.room.get_room_short_desc()
+            return self.room.get_room_short_desc() + self.room.get_items()
 
     def look(self):
         return {"description":self.room.get_room_long_desc()}
@@ -252,11 +252,12 @@ class game_ops():
             self.room.store_room()
             self.room.load_room(result['title'])
         if result['description'] is None:
-            result['description'] = str(self.get_room_desc())
+            result['description'] = str(self.get_room_desc()) 
         return result
 
-    def get_room_items(self):
-        return self.room.get_items()
+#   incorporated into get_room_desc()
+#    def get_room_items(self):
+#        return self.room.get_items()
 
     def use(self, title, action, in_inventory):
         if self.items.is_an_item(title) and in_inventory == True:
