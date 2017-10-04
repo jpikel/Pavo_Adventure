@@ -19,8 +19,14 @@ from name_lists import item_info
 
 ignore = ["TempSaveGame.md", "Rooms.md", "Items.md"]
 
-def eprint(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
+class response_struct():
+    def __init__(self):
+        self.response = {
+                    "title":None,
+                    "description":None,
+                    "move":False,
+                    "distance_from_room":0
+                }
 
 class file_ops():
     def new_game(self):
@@ -61,19 +67,19 @@ class room_ops():
         self.item_not_found = "The cold must be making you delirious, you can't seem to find a " 
 
     def get_room_title(self):
-        return self.current_room['title']
+        return str(self.current_room['title'])
 
     def get_room_long_desc(self):
-        return self.current_room['long_description']
+        return str(self.current_room['long_description'])
 
     def get_room_short_desc(self):
-        return self.current_room['short_description']
+        return str(self.current_room['short_description'])
 
     def get_visited(self):
         return self.current_room['visited']
 
     def check_connections(self, title_or_direction, items):
-        response = {"bool":False, "description":None, "distance_from_room":0, "title":None }
+        response = response_struct()
         for room in self.current_room['connected_rooms']:
             if title_or_direction == room['title'] or title_or_direction == room['compass_direction']:
                 if room['item_required'] == True:
@@ -83,20 +89,20 @@ class room_ops():
                             item = json.load(item_file, object_pairs_hook=OrderedDict)
                             item_file.close()
                             if item['active'] == True:
-                                response['bool'] = True
+                                response['move'] = True
                                 response['distance_from_room'] = room['distance_from_room']
-                                response['title'] = room['title']
+                                response['title'] = str(room['title'])
                                 return response
                             else:
-                                response['description'] = room['pre_item_description']
+                                self.response['description'] = str(room['pre_item_description'])
                                 return response
                     else:
-                        response['description'] = room['pre_item_description']
+                        response.response['description'] = str(room['pre_item_description'])
                         return response
                 else:
-                    response['bool'] = True
+                    response['move'] = True
                     response['distance_from_room'] = room['distance_from_room']
-                    response['title'] = room['title']
+                    response['title'] = str(room['title'])
                     return response
 
         return response
@@ -121,38 +127,44 @@ class room_ops():
             return False
 
     def get_items(self):
-        text = "Looking around you see "
+        text = {"description":"Looking around you see "}
         if self.current_room['feature_searched'] == True:
             items = self.current_room['items_in_room']
             for item in items:
-                text += "a " + item + ", "
-            text = text[:-2]
+                text["description"] += "a " + item + ", "
+            text["description"] = str(text["description"][:-2])
         else:
-            text = "You don't notice anything you could pick up"
+            text["description"] = "You don't notice anything you could pick up"
         return text
 
     def lookat(self, title):
+        response = {
+                    "description":None
+                }
         if title in self.current_room['items_in_room']:
             if self.current_room['feature_searched'] == True:
-                return item_ops().lookat(title)
+                return str( item_ops().lookat(title))
         elif title in self.current_room['feature_1_aliases']:
-            return self.current_room['feature_1_description']
+            response["description"] = str( self.current_room['feature_1_description'])
         elif title in self.current_room['feature_2_aliases']:
-            return self.current_room['feature_2_description']
+            response["description"] = str( self.current_room['feature_2_description'])
         else:
-            return self.item_not_found + title
+            response["description"] = str( self.item_not_found + title)
+        return response
 
     def use(self, title, action):
+        response = {
+                    "description" : None
+                }
         if title in self.current_room['feature_1_aliases']:
             if action in self.current_room['feature_1_verbs']:
-                return self.current_room['feature_1_action_description']
+                response["description"] = str( self.current_room['feature_1_action_description'])
         elif title in self.current_room['feature_2_aliases']:
             if action in self.current_room['feature_2_verbs']:
-                return self.current_room['feature_2_action_description']
+                response["description"] = str( self.current_room['feature_2_action_description'])
         else:
-            return self.item_not_found + title
-
-
+            response["description"] = str( self.item_not_found + title)
+        return response
 
 class item_ops():
     def __init__(self):
@@ -161,7 +173,9 @@ class item_ops():
         self.item_not_found = "The cold must be making you delirious, you can't seem to find a " 
 
     def use(self, item_title, action):
-        response = ""
+        response = {
+                    "description":None
+                }
         if item_title in self.items:
             with open(self.temp_dir+item_title, 'r+') as item_file:
                 item = json.load(item_file, object_pairs_hook=OrderedDict)
@@ -169,27 +183,31 @@ class item_ops():
                     if item['activatable'] == True:
                         if item['active'] == True:
                             item['active'] = False
-                            response = item['deactivate_description']
+                            response["description"] = str( item['deactivate_description'])
                         else:
                             item['active'] = True
-                            response = item['activate_description']
+                            response["description"] = str( item['activate_description'])
                         item_file.close()
                         with open(self.temp_dir + item_title, 'w') as item_file:
                             json.dump(item, item_file, indent=4)
                     else:
-                        response = item['activate_description']
+                        response["description"] = str( item['activate_description'])
         else:
-            response = self.item_not_found + item_title
+            response["description"] = str( self.item_not_found + item_title)
         return response
 
     def lookat(self, item_title):
+        response = {
+                    "description": None
+                }
         if item_title in self.items:
             with open(self.temp_dir+item_title, 'r') as item_file:
                 item = json.load(item_file, object_pairs_hook=OrderedDict)
                 item_file.close()
-                return item['description']
+                response["description"] = str( item['description'])
         else:
-            return self.item_not_found + item_title
+            response["description"] = str( self.item_not_found + item_title)
+        return response
 
     def is_an_item(self, item_title):
         if item_title in self.items:
@@ -225,13 +243,16 @@ class game_ops():
         else:
             return self.room.get_room_short_desc()
 
+    def look(self):
+        return {"description":self.room.get_room_long_desc()}
+
     def check_move(self, title_or_compass, items_inventory):
         result = self.room.check_connections(title_or_compass, items_inventory)
-        if result["bool"] == True:
+        if result["move"] == True:
             self.room.store_room()
             self.room.load_room(result['title'])
         if result['description'] is None:
-            result['description'] = self.get_room_desc()
+            result['description'] = str(self.get_room_desc())
         return result
 
     def get_room_items(self):

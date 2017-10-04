@@ -8,29 +8,29 @@ Description -
 """
 
 class room_info():
-    room_titles = ["Shore", "Crash Site", "Game Trail", "Field", "Dense Brush", "Camp", "Woods",
-        "Cave", "Mountain Base", "Fire Tower", "River", "Waterfall", "Mountain Ascent", 
-        "Mountain Summit", "Rapids", "Ranger Station"]
+    room_titles = ["shore", "crash site", "game trail", "field", "dense brush", "camp", "woods",
+        "cave", "mountain base", "fire tower", "river", "waterfall", "mountain ascent", 
+        "mountain summit", "rapids", "ranger station"]
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
     room_dir = "../data/rooms/"
 
-    #This list only used if we need to recreate empty rooms
-    room_connection_list = {"Shore":["Crash Site"],
-            "Crash Site":["Shore", "Camp", "Game Trail"],
-            "Game Trail":["Crash Site", "Cave"],
-            "Field":["Mountain Base", "Dense Brush"],
-            "Dense Brush":["Field", "Camp"],
-            "Camp":["Dense Brush", "Woods", "Crash Site"],
-            "Woods":["Camp", "River", "Cave"],
-            "Cave":["Woods", "Game Trail"],
-            "Mountain Base":["Mountain Ascent", "Field"],
-            "Fire Tower":["Mountain Summit"],
-            "River":["Rapids", "Waterfall", "Woods"],
-            "Waterfall":["River"],
-            "Mountain Ascent":["Mountain Summit", "Mountain Base"],
-            "Mountain Summit":["Mountain Ascent", "Fire Tower"],
-            "Rapids":["Ranger Station", "River"],
-            "Ranger Station":["Rapids"]}
+    #this list only used if we need to recreate empty rooms
+    room_connection_list = {"shore":["crash site"],
+            "crash site":["shore", "camp", "game trail"],
+            "game trail":["crash site", "cave"],
+            "field":["mountain base", "dense brush"],
+            "dense brush":["field", "camp"],
+            "camp":["dense brush", "woods", "crash site"],
+            "woods":["camp", "river", "cave"],
+            "cave":["woods", "game trail"],
+            "mountain base":["mountain ascent", "field"],
+            "fire tower":["mountain summit"],
+            "river":["rapids", "waterfall", "woods"],
+            "waterfall":["river"],
+            "mountain ascent":["mountain summit", "mountain base"],
+            "mountain summit":["mountain ascent", "fire tower"],
+            "rapids":["ranger station", "river"],
+            "ranger station":["rapids"]}
 
     def get_titles(self):
        return self.room_titles
@@ -49,9 +49,9 @@ class room_info():
         return "../data/rooms_dict"
 
 class item_info():
-    item_titles = ["Lantern", "Heavy Winter Parka", "Dusty Old Map", "Tattered Notebook",
-                "Flare Gun", "Boat Paddle", "Rescue Whistle", "Frozen Dead Hare",
-                "Can of Sweetened Condensed Milk", "Can Opener"]
+    item_titles = ["lantern", "heavy winter parka", "dusty old map", "tattered notebook",
+                "flare gun", "boat paddle", "rescue whistle", "frozen dead hare",
+                "can of sweetened condensed milk", "can opener"]
     item_dir = "../data/items/"
 
     def get_titles(self):
