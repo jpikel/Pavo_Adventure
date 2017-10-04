@@ -3,8 +3,10 @@
 noise_words = [
     "a",
     "an",
+    "some",
     "that",
     "the",
+    "these",
     "this",
     "those",
 ]
