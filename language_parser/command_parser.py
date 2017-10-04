@@ -21,7 +21,9 @@ def _check_for_exact_match(input_string):
     """
     TODO: Write docs
     """
-    return 0
+    if input_string in words.all_words:
+        #TODO: FINISH THIS METHOD
+        print("OMG found an exact match!")
 
 def _remove_noise(input_string):
     """
@@ -49,6 +51,8 @@ def parse_command(command):
     """
     TODO: Write docs
     """
+    preprocessed_string = _preprocess(command)
+
 
 
 
