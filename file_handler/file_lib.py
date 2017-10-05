@@ -31,6 +31,7 @@ class response_struct():
 class file_ops():
     def new_game(self):
         #Reference - https://stackoverflow.com/questions/1868714/how-do-i-copy-an-entire-directory-of-files-into-an-existing-directory-using-pyth
+        print("Preparing to make new game")
         src_dir = room_info().get_dir()
         dst_dir = save_info().get_temp_save_dir_rooms()
         self.copy_files(src_dir, dst_dir)
@@ -41,7 +42,9 @@ class file_ops():
 
     def copy_files(self, src_dir, dst_dir):
         try:
+            print("Cleaning" + dst_dir)
             self.clean_dir(dst_dir)
+            print("Copying from " +src_dir+ " to temp " + dst_dir)
             for item in os.listdir(src_dir):
                 if item not in ignore:
                     src = os.path.join(src_dir, item)
@@ -49,6 +52,7 @@ class file_ops():
                     shutil.copy2(src,dst)
         except Exception, e:
             print("Something went horribly wrong creating the temp save file")
+            print(e)
 
     def clean_dir(self, dst_dir):
         try:
@@ -58,6 +62,7 @@ class file_ops():
                     os.remove(to_del)
         except Exception, e:
             print("Something went wrong cleaning the directory")
+            print(e)
 
 
 class room_ops():

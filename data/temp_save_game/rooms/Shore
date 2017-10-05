@@ -1,7 +1,7 @@
 {
     "id": 1, 
     "title": "Shore", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Long Description: Shore", 
     "short_description": "Short Description: Shore", 
     "feature_1_aliases": [

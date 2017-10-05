@@ -1,7 +1,7 @@
 {
     "id": 2, 
     "title": "Crash Site", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Long Description: Crash Site", 
     "short_description": "Short Description: Crash Site", 
     "feature_1_aliases": [
@@ -74,7 +74,6 @@
             ]
         }
     ], 
-    "items_in_room": [], 
     "feature_searched": false, 
     "room_hazards": false, 
     "room_hazard_description": "", 

@@ -1,7 +1,7 @@
 {
     "id": 8, 
     "title": "Cave", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Long Description: Cave", 
     "short_description": "Short Description: Cave", 
     "feature_1_aliases": [
