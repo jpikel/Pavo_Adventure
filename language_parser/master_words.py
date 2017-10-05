@@ -1,3 +1,57 @@
+items = {
+   "map": "dusty old map", 
+   "frozen dead hare": "frozen dead hare", 
+   "dusty old map": "dusty old map", 
+   "rescue whistle": "rescue whistle", 
+   "tattered notebook": "tattered notebook", 
+   "can of sweetened condensed milk": "can of sweetened condensed milk", 
+   "paddle": "boat paddle", 
+   "can opener": "can opener", 
+   "oar": "boat paddle", 
+   "heavy winter parka": "heavy winter parka", 
+   "flare gun": "flare gun", 
+   "boat paddle": "boat paddle", 
+   "lantern": "lantern"
+}
+rooms = {
+   "rapids": "rapids", 
+   "campsite": "camp", 
+   "site": "crash site", 
+   "woods": "woods", 
+   "shoreline": "shore", 
+   "cave": "cave", 
+   "crash site": "crash site", 
+   "field": "field", 
+   "mountain summit": "mountain summit", 
+   "ranger station": "ranger station", 
+   "crash": "crash site", 
+   "dense brush": "dense brush", 
+   "coast": "shore", 
+   "waterfall": "waterfall", 
+   "accident": "crash site", 
+   "mountain ascent": "mountain ascent", 
+   "camp": "camp", 
+   "game trail": "game trail", 
+   "fire tower": "fire tower", 
+   "shore": "shore", 
+   "mountain base": "mountain base", 
+   "river": "river", 
+   "edge of lake": "shore"
+}
+actions = {
+   "pull": "pull", 
+   "search": "search", 
+   "look": "look", 
+   "read": "read", 
+   "look at": "look at", 
+   "use": "use", 
+   "ingest": "eat", 
+   "inventory": "inventory", 
+   "go": "go", 
+   "take": "take", 
+   "eat": "eat", 
+   "help": "help"
+}
 all_words = {
    "help": {
       "type": "action", 
