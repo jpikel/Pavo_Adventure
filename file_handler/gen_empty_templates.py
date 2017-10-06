@@ -52,6 +52,10 @@ def create_room(room_name, index, connections):
                                 "read":{
                                     "description":"read for feature 1 " + room_name,
                                     "affect_condition":0
+                                    },
+                                "search":{
+                                    "description":"read for feature 1 " + room_name,
+                                    "affect_condition":0
                                     }
                                     }})
     room_template.update({"feature_1_item_required":"Item required feature 1: " + room_name})
@@ -205,4 +209,4 @@ def main():
             outfile.close()
 
     create_verbs()
-#main()
+main()

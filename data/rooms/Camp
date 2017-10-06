@@ -9,10 +9,6 @@
         "feature_1_aliases"
     ], 
     "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 camp"
-        }, 
         "pull": {
             "affect_condition": 0, 
             "description": "pull description for feature 1 camp"
@@ -21,6 +17,14 @@
             "affect_condition": 0, 
             "deactivate_description": "use deactivate for feature 1 camp", 
             "description": "use description for feature 1 camp"
+        }, 
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 camp"
+        }, 
+        "search": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 camp"
         }, 
         "lookat": {
             "affect_condition": 0, 

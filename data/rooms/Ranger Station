@@ -9,10 +9,6 @@
         "feature_1_aliases"
     ], 
     "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 ranger station"
-        }, 
         "pull": {
             "affect_condition": 0, 
             "description": "pull description for feature 1 ranger station"
@@ -21,6 +17,14 @@
             "affect_condition": 0, 
             "deactivate_description": "use deactivate for feature 1 ranger station", 
             "description": "use description for feature 1 ranger station"
+        }, 
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 ranger station"
+        }, 
+        "search": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 ranger station"
         }, 
         "lookat": {
             "affect_condition": 0, 

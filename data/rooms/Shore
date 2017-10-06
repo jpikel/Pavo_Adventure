@@ -9,10 +9,6 @@
         "feature_1_aliases"
     ], 
     "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 shore"
-        }, 
         "pull": {
             "affect_condition": 0, 
             "description": "pull description for feature 1 shore"
@@ -21,6 +17,14 @@
             "affect_condition": 0, 
             "deactivate_description": "use deactivate for feature 1 shore", 
             "description": "use description for feature 1 shore"
+        }, 
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 shore"
+        }, 
+        "search": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 shore"
         }, 
         "lookat": {
             "affect_condition": 0, 
