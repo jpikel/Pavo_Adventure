@@ -16,14 +16,11 @@ def update_master_words():
     master_words.py includes an 'all_words' dict that contains all of the
     key-value pairs from those individual dicts
     """
-    # Start by removing the existing copy of master_words.py
     os.remove(MASTER_WORDS_FILENAME)
     data_dir = os.path.abspath('../data')
     items_full_path = os.path.join(data_dir, ITEMS_FILENAME)
     rooms_full_path = os.path.join(data_dir, ROOMS_FILENAME)
     verbs_full_path = os.path.join(data_dir, VERBS_FILENAME)
-    # Copy the contents of the source files into their own strings,
-    # and convert those strings into dicts with all lower-case text.
     with open(MASTER_WORDS_FILENAME, "a") as master_file:
         with open(items_full_path, "r") as items_file:
             items_dict_str = items_file.read()
@@ -34,9 +31,17 @@ def update_master_words():
         with open(verbs_full_path, "r") as verbs_file:
             verbs_dict_str = verbs_file.read()
             verbs_dict = json.loads(verbs_dict_str.lower())
-        # Create expanded versions of each dict so that the word type
-        # and the master word (i.e., the word the game engine knows) are
-        # identified in the dict.
+        # Save dicts for each word type to the master words file.
+        items_dict_str = json.dumps(items_dict, indent=3)
+        master_file.write("items = " + items_dict_str + "\n")
+        rooms_dict_str = json.dumps(rooms_dict, indent=3)
+        master_file.write("rooms = " + rooms_dict_str + "\n")
+        verbs_dict_str = json.dumps(verbs_dict, indent=3)
+        master_file.write("actions = " + verbs_dict_str + "\n")
+        # Create a dict with all of the words
+        # This dict will include the word type and the
+        # master word (i.e., the word the game engine
+        # knows/uses in command processing) for each word.
         expanded_items_dict = {}
         for word, master_word in items_dict.items():
             word_info = {
