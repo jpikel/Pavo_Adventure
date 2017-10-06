@@ -53,33 +53,18 @@ Filename: file_lib.py
             character's inventory then I can check in the save game file if
             the item has been activated
 
-        get_room_items()
-            checks if the current room's feature has been searched and if so
-            returns an object
-                {
-                    "description":string
-                }
+        look()
+           returns
+           {
+            "description": long description of current room
+           }
 
-        use(title = string, action = string, in_inventory = boolean)
-            assumes that item being passed in has been validated against player 
-            inventory
-            if it is an item and is in the player's inventory attempts to use the
-            item with action verb
-            otherwise checks it against a room feature and the features action verb
+        verb(title = string, verb = string, in_inventory=boolean)
+            title can be an item or feature
+            verb can be any verb including lookat
 
-            returns object <- more variables added in the future
-                {
-                    "description": string
-                }
-
-        lookat(title = string, in_inventory = boolean)
-            assumes the item has been checked against the players inventory
-            if it is an item and in the player's inventory then returns the description
-            for the item
-            Or if the title matches a room feature
-            also checks if the room has been searched and if the item is in the room
-
-            returns object, will add additional variables in the future
-                {
-                    "description": string
-                }
+            will return an object that currently holds
+            {
+                "description":string, of some commentary about the combination of the
+                                title and verb
+            }
