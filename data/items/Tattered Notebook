@@ -1,17 +1,32 @@
 {
     "id": 4, 
-    "title": "Tattered Notebook", 
+    "title": "tattered notebook", 
     "aliases": [
-        "Tattered Notebook"
+        "tattered notebook"
     ], 
-    "description": "description for Tattered Notebook", 
-    "item_combination": "other item combination for Tattered Notebook", 
-    "room_combination": "Tattered Notebook can be used in room", 
-    "feature_combination": "Tattered Notebook can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Tattered Notebook", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for tattered notebook"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for tattered notebook"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for tattered notebook", 
+            "description": "use description for tattered notebook"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for tattered notebook"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for tattered notebook"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Tattered Notebook", 
-    "requirement_not_met_description": "req not met Tattered Notebook"
+    "requirement_met_description": "req met tattered notebook", 
+    "requirement_not_met_description": "req not met tattered notebook", 
+    "item_combination": "other item combination for tattered notebook", 
+    "room_combination": "tattered notebook can be used in room", 
+    "feature_combination": "tattered notebook can be used with feature"
 }

@@ -35,7 +35,7 @@ Filename: file_lib.py
             checks if the room has been previously visited and
             returns the appropriate description
 
-        check_move(String = Official Room Title, List = item names in inventory)
+        attempt_move(String = Official Room Title, List = item names in inventory)
             validates if the string passed in is a connected room to the
             current room. stores the current room, loads the connecting room.
             validate's against a list of items in the inventory

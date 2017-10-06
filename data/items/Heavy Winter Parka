@@ -1,17 +1,32 @@
 {
     "id": 2, 
-    "title": "Heavy Winter Parka", 
+    "title": "heavy winter parka", 
     "aliases": [
-        "Heavy Winter Parka"
+        "heavy winter parka"
     ], 
-    "description": "description for Heavy Winter Parka", 
-    "item_combination": "other item combination for Heavy Winter Parka", 
-    "room_combination": "Heavy Winter Parka can be used in room", 
-    "feature_combination": "Heavy Winter Parka can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Heavy Winter Parka", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for heavy winter parka"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for heavy winter parka"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for heavy winter parka", 
+            "description": "use description for heavy winter parka"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for heavy winter parka"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for heavy winter parka"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Heavy Winter Parka", 
-    "requirement_not_met_description": "req not met Heavy Winter Parka"
+    "requirement_met_description": "req met heavy winter parka", 
+    "requirement_not_met_description": "req not met heavy winter parka", 
+    "item_combination": "other item combination for heavy winter parka", 
+    "room_combination": "heavy winter parka can be used in room", 
+    "feature_combination": "heavy winter parka can be used with feature"
 }

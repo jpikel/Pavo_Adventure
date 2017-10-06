@@ -1,17 +1,32 @@
 {
     "id": 1, 
-    "title": "Lantern", 
+    "title": "lantern", 
     "aliases": [
-        "Lantern"
+        "lantern"
     ], 
-    "description": "description for Lantern", 
-    "item_combination": "other item combination for Lantern", 
-    "room_combination": "Lantern can be used in room", 
-    "feature_combination": "Lantern can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Lantern", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for lantern"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for lantern"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for lantern", 
+            "description": "use description for lantern"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for lantern"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for lantern"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Lantern", 
-    "requirement_not_met_description": "req not met Lantern"
+    "requirement_met_description": "req met lantern", 
+    "requirement_not_met_description": "req not met lantern", 
+    "item_combination": "other item combination for lantern", 
+    "room_combination": "lantern can be used in room", 
+    "feature_combination": "lantern can be used with feature"
 }

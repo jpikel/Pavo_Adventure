@@ -1,17 +1,32 @@
 {
     "id": 5, 
-    "title": "Flare Gun", 
+    "title": "flare gun", 
     "aliases": [
-        "Flare Gun"
+        "flare gun"
     ], 
-    "description": "description for Flare Gun", 
-    "item_combination": "other item combination for Flare Gun", 
-    "room_combination": "Flare Gun can be used in room", 
-    "feature_combination": "Flare Gun can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Flare Gun", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for flare gun"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for flare gun"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for flare gun", 
+            "description": "use description for flare gun"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for flare gun"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for flare gun"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Flare Gun", 
-    "requirement_not_met_description": "req not met Flare Gun"
+    "requirement_met_description": "req met flare gun", 
+    "requirement_not_met_description": "req not met flare gun", 
+    "item_combination": "other item combination for flare gun", 
+    "room_combination": "flare gun can be used in room", 
+    "feature_combination": "flare gun can be used with feature"
 }

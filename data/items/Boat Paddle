@@ -1,19 +1,32 @@
 {
     "id": 6, 
-    "title": "Boat Paddle", 
+    "title": "boat paddle", 
     "aliases": [
-        "Boat Paddle", 
-        "paddle", 
-        "oar"
+        "boat paddle"
     ], 
-    "description": "description for Boat Paddle", 
-    "item_combination": "other item combination for Boat Paddle", 
-    "room_combination": "Boat Paddle can be used in room", 
-    "feature_combination": "Boat Paddle can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Boat Paddle", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for boat paddle"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for boat paddle"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for boat paddle", 
+            "description": "use description for boat paddle"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for boat paddle"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for boat paddle"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -23,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Boat Paddle", 
-    "requirement_not_met_description": "req not met Boat Paddle"
+    "requirement_met_description": "req met boat paddle", 
+    "requirement_not_met_description": "req not met boat paddle", 
+    "item_combination": "other item combination for boat paddle", 
+    "room_combination": "boat paddle can be used in room", 
+    "feature_combination": "boat paddle can be used with feature"
 }

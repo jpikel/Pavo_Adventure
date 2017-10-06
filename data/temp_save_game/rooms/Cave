@@ -1,60 +1,94 @@
 {
     "id": 8, 
-    "title": "Cave", 
-    "visited": false, 
-    "long_description": "Long Description: Cave", 
-    "short_description": "Short Description: Cave", 
+    "title": "cave", 
+    "visited": true, 
+    "long_description": "Long Description: cave", 
+    "short_description": "Short Description: cave", 
+    "feature_1_title": "feature_1_title", 
     "feature_1_aliases": [
         "feature_1_aliases"
     ], 
-    "feature_1_description": "Feature 1 description: Cave", 
-    "feature_1_verbs": [
-        "Feature 1 Verb: Cave"
-    ], 
-    "feature_1_action_description": "Feature 1 action description: Cave", 
-    "feature_1_item_required": "Item required feature 1: Cave", 
-    "feature_1_item_combine_description": "naCave", 
-    "feature_1_attributes_affected": {
-        "condition": 5
+    "feature_1_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 cave"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 1 cave"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 1 cave", 
+            "description": "use description for feature 1 cave"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 1 cave"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 1 cave"
+        }
     }, 
+    "feature_1_item_required": "Item required feature 1: cave", 
+    "feature_2_title": "feature_2_title", 
     "feature_2_aliases": [
-        "feature 2 aliases: Cave"
+        "feature 2 aliases: cave"
     ], 
-    "feature_2_description": "feature 2 description: Cave", 
-    "feature_2_verbs": [
-        "feature 2 verbsCave"
-    ], 
-    "feature_2_action_description": "feature 2 action description: Cave", 
-    "feature_2_item_required": "feature 2 item required Cave", 
-    "feature_2_item_combine_description": "na", 
+    "feature_2_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 2 cave"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 2 cave"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 2 cave", 
+            "description": "use description for feature 2 cave"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 2 cave"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 2 cave"
+        }
+    }, 
+    "feature_2_item_required": "feature 2 item required cave", 
     "connected_rooms": [
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Woods", 
+            "title": "woods", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Woods"
+                "woods"
             ]
         }, 
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Game Trail", 
+            "title": "game trail", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Game Trail"
+                "game trail"
             ]
         }
     ], 
+    "items_in_room": [], 
     "feature_searched": false, 
     "room_hazards": false, 
     "room_hazard_description": "", 

@@ -1,17 +1,32 @@
 {
     "id": 10, 
-    "title": "Can Opener", 
+    "title": "can opener", 
     "aliases": [
-        "Can Opener"
+        "can opener"
     ], 
-    "description": "description for Can Opener", 
-    "item_combination": "other item combination for Can Opener", 
-    "room_combination": "Can Opener can be used in room", 
-    "feature_combination": "Can Opener can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Can Opener", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for can opener"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for can opener"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for can opener", 
+            "description": "use description for can opener"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for can opener"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for can opener"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Can Opener", 
-    "requirement_not_met_description": "req not met Can Opener"
+    "requirement_met_description": "req met can opener", 
+    "requirement_not_met_description": "req not met can opener", 
+    "item_combination": "other item combination for can opener", 
+    "room_combination": "can opener can be used in room", 
+    "feature_combination": "can opener can be used with feature"
 }

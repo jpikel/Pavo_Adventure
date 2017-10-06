@@ -1,18 +1,32 @@
 {
     "id": 3, 
-    "title": "Dusty Old Map", 
+    "title": "dusty old map", 
     "aliases": [
-        "Dusty Old Map", 
-        "map"
+        "dusty old map"
     ], 
-    "description": "description for Dusty Old Map", 
-    "item_combination": "other item combination for Dusty Old Map", 
-    "room_combination": "Dusty Old Map can be used in room", 
-    "feature_combination": "Dusty Old Map can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Dusty Old Map", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for dusty old map"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for dusty old map"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for dusty old map", 
+            "description": "use description for dusty old map"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for dusty old map"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for dusty old map"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -22,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Dusty Old Map", 
-    "requirement_not_met_description": "req not met Dusty Old Map"
+    "requirement_met_description": "req met dusty old map", 
+    "requirement_not_met_description": "req not met dusty old map", 
+    "item_combination": "other item combination for dusty old map", 
+    "room_combination": "dusty old map can be used in room", 
+    "feature_combination": "dusty old map can be used with feature"
 }

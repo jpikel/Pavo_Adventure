@@ -1,60 +1,94 @@
 {
     "id": 4, 
-    "title": "Field", 
+    "title": "field", 
     "visited": false, 
-    "long_description": "Long Description: Field", 
-    "short_description": "Short Description: Field", 
+    "long_description": "Long Description: field", 
+    "short_description": "Short Description: field", 
+    "feature_1_title": "feature_1_title", 
     "feature_1_aliases": [
         "feature_1_aliases"
     ], 
-    "feature_1_description": "Feature 1 description: Field", 
-    "feature_1_verbs": [
-        "Feature 1 Verb: Field"
-    ], 
-    "feature_1_action_description": "Feature 1 action description: Field", 
-    "feature_1_item_required": "Item required feature 1: Field", 
-    "feature_1_item_combine_description": "naField", 
-    "feature_1_attributes_affected": {
-        "condition": 5
+    "feature_1_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 field"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 1 field"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 1 field", 
+            "description": "use description for feature 1 field"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 1 field"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 1 field"
+        }
     }, 
+    "feature_1_item_required": "Item required feature 1: field", 
+    "feature_2_title": "feature_2_title", 
     "feature_2_aliases": [
-        "feature 2 aliases: Field"
+        "feature 2 aliases: field"
     ], 
-    "feature_2_description": "feature 2 description: Field", 
-    "feature_2_verbs": [
-        "feature 2 verbsField"
-    ], 
-    "feature_2_action_description": "feature 2 action description: Field", 
-    "feature_2_item_required": "feature 2 item required Field", 
-    "feature_2_item_combine_description": "na", 
+    "feature_2_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 2 field"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 2 field"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 2 field", 
+            "description": "use description for feature 2 field"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 2 field"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 2 field"
+        }
+    }, 
+    "feature_2_item_required": "feature 2 item required field", 
     "connected_rooms": [
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Mountain Base", 
+            "title": "mountain base", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Mountain Base"
+                "mountain base"
             ]
         }, 
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Dense Brush", 
+            "title": "dense brush", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Dense Brush"
+                "dense brush"
             ]
         }
     ], 
+    "items_in_room": [], 
     "feature_searched": false, 
     "room_hazards": false, 
     "room_hazard_description": "", 

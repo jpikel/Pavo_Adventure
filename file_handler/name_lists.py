@@ -13,6 +13,7 @@ class room_info():
         "mountain summit", "rapids", "ranger station"]
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
     room_dir = "../data/rooms/"
+    feature_dir_dict = "../data/feature_dict"
 
     #this list only used if we need to recreate empty rooms
     room_connection_list = {"shore":["crash site"],
@@ -47,6 +48,8 @@ class room_info():
             return None
     def get_dir_dict(self):
         return "../data/rooms_dict"
+    def get_feature_dict_dir(self):
+        return self.feature_dir_dict
 
 class item_info():
     item_titles = ["lantern", "heavy winter parka", "dusty old map", "tattered notebook",

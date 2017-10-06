@@ -133,6 +133,86 @@ class update():
         else:
             print("Invalid item title")
 
+    def gen_feature_dict(self):
+        """
+        Function - 
+        Parameters - 
+        Preconditions - 
+        Postconditions - 
+        Description - 
+        """
+        feature_dir = room_info().get_feature_dict_dir()
+        room_dir = room_info().get_dir()
+        rooms = room_info().get_titles()
+        features_dict = OrderedDict()
+        room = OrderedDict()
+
+        for title in rooms:
+            with open(room_dir + title, 'r') as room_file:
+                room = json.load(room_file, object_pairs_hook=OrderedDict)
+                room_file.close()
+            feature_1 = room['feature_1_title']
+            feature_2 = room['feature_2_title']
+            features_dict.update({feature_1:feature_1})
+            features_dict.update({feature_2:feature_2})
+            aliases_1 = room['feature_1_aliases']
+            aliases_2 = room['feature_2_aliases']
+
+            for alias in aliases_1:
+                if alias not in features_dict:
+                    features_dict.update({alias:feature_1})
+            for alias in aliases_2:
+                if alias not in features_dict:
+                    features_dict.update({alias:feature_2})
+
+        with open(feature_dir, 'w') as features_file:
+            json.dump(features_dict, features_file, indent=4)
+            features_file.close()
+        print("Done making features alias dict")
+
+    def add_feature_alias(self):
+        """
+        Function - 
+        Parameters - 
+        Preconditions - 
+        Postconditions - 
+        Description - 
+        """
+        room_title = raw_input("Enter offical room title: ")
+        feature_title = raw_input("Enter feature title: ")
+        alias = self.get_alias()
+        room_dir = room_info().get_dir()
+        room_titles = room_info().get_titles()
+        result = "Added " + alias + " to " + feature_title + " in room " + room_title
+
+        if room_title in room_titles:
+            with open(room_dir + room_title, 'r') as room_file:
+                room = json.load(room_file, object_pairs_hook=OrderedDict)
+                if feature_title == room['feature_1_title']:
+                    if alias not in room['feature_1_aliases']:
+                        room['feature_1_aliases'].append(alias)
+                        result = alias + " added to room " + room_title + "'s " + feature_title
+                    else:
+                        result = alias + " already exists"
+                elif feature_title == room['feature_2_title']:
+                    if alias not in room['feature_2_aliases']:
+                        room['feature_2_aliases'].append(alias)
+                        result = alias + " added to room " + room_title + "'s " + feature_title
+                    else:
+                        result = alias + " already exists"
+                else:
+                    result = "Feature does not exist"
+                room_file.close()
+                with open(room_dir + room_title, 'w') as room_file:
+                    json.dump(room, room_file, indent = 4)
+                    room_file.close()
+        else:
+            result = "Room does not exist"
+
+        print(result)
+
+        
+
     def get_title(self):
         return raw_input("Enter the official title: ")
 
@@ -176,6 +256,8 @@ class update():
                 "3. Generate item dictionary\n"
                 "4. Generate room dictionary\n"
                 "5. Add verb alias\n"
+                "6. Add feature alias\n"
+                "7. Generate feature dictionary\n"
                 "9. Quit\n")
 
         if number == "1":
@@ -190,6 +272,10 @@ class update():
             self.gen_exit_dict()
         elif number == "5":
             self.add_verb_alias()
+        elif number == "6":
+            self.add_feature_alias()
+        elif number == "7":
+            self.gen_feature_dict()
         elif number == "9":
             exit()
         self.main()

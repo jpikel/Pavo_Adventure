@@ -1,79 +1,107 @@
 {
     "id": 2, 
-    "title": "Crash Site", 
-    "visited": false, 
-    "long_description": "Long Description: Crash Site", 
-    "short_description": "Short Description: Crash Site", 
+    "title": "crash site", 
+    "visited": true, 
+    "long_description": "Long Description: crash site", 
+    "short_description": "Short Description: crash site", 
+    "feature_1_title": "feature_1_title", 
     "feature_1_aliases": [
         "feature_1_aliases"
     ], 
-    "feature_1_description": "Feature 1 description: Crash Site", 
-    "feature_1_verbs": [
-        "Feature 1 Verb: Crash Site"
-    ], 
-    "feature_1_action_description": "Feature 1 action description: Crash Site", 
-    "feature_1_item_required": "Item required feature 1: Crash Site", 
-    "feature_1_item_combine_description": "naCrash Site", 
-    "feature_1_attributes_affected": {
-        "condition": 5
+    "feature_1_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 crash site"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 1 crash site"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 1 crash site", 
+            "description": "use description for feature 1 crash site"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 1 crash site"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 1 crash site"
+        }
     }, 
+    "feature_1_item_required": "Item required feature 1: crash site", 
+    "feature_2_title": "feature_2_title", 
     "feature_2_aliases": [
-        "feature 2 aliases: Crash Site"
+        "feature 2 aliases: crash site"
     ], 
-    "feature_2_description": "feature 2 description: Crash Site", 
-    "feature_2_verbs": [
-        "feature 2 verbsCrash Site"
-    ], 
-    "feature_2_action_description": "feature 2 action description: Crash Site", 
-    "feature_2_item_required": "feature 2 item required Crash Site", 
-    "feature_2_item_combine_description": "na", 
+    "feature_2_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 2 crash site"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 2 crash site"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 2 crash site", 
+            "description": "use description for feature 2 crash site"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 2 crash site"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 2 crash site"
+        }
+    }, 
+    "feature_2_item_required": "feature 2 item required crash site", 
     "connected_rooms": [
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Shore", 
+            "title": "shore", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Shore", 
-                "Shoreline", 
-                "shore", 
-                "shoreline", 
-                "coast", 
-                "edge of lake"
+                "shore"
             ]
         }, 
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Camp", 
+            "title": "camp", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Camp", 
-                "campsite"
+                "camp"
             ]
         }, 
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Game Trail", 
+            "title": "game trail", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Game Trail"
+                "game trail"
             ]
         }
     ], 
+    "items_in_room": [], 
     "feature_searched": false, 
     "room_hazards": false, 
     "room_hazard_description": "", 

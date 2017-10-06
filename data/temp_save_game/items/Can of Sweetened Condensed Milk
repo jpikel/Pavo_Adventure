@@ -1,17 +1,32 @@
 {
     "id": 9, 
-    "title": "Can of Sweetened Condensed Milk", 
+    "title": "can of sweetened condensed milk", 
     "aliases": [
-        "Can of Sweetened Condensed Milk"
+        "can of sweetened condensed milk"
     ], 
-    "description": "description for Can of Sweetened Condensed Milk", 
-    "item_combination": "other item combination for Can of Sweetened Condensed Milk", 
-    "room_combination": "Can of Sweetened Condensed Milk can be used in room", 
-    "feature_combination": "Can of Sweetened Condensed Milk can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Can of Sweetened Condensed Milk", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for can of sweetened condensed milk"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for can of sweetened condensed milk"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for can of sweetened condensed milk", 
+            "description": "use description for can of sweetened condensed milk"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for can of sweetened condensed milk"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for can of sweetened condensed milk"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Can of Sweetened Condensed Milk", 
-    "requirement_not_met_description": "req not met Can of Sweetened Condensed Milk"
+    "requirement_met_description": "req met can of sweetened condensed milk", 
+    "requirement_not_met_description": "req not met can of sweetened condensed milk", 
+    "item_combination": "other item combination for can of sweetened condensed milk", 
+    "room_combination": "can of sweetened condensed milk can be used in room", 
+    "feature_combination": "can of sweetened condensed milk can be used with feature"
 }

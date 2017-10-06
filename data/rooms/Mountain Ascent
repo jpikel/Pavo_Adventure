@@ -1,60 +1,94 @@
 {
     "id": 13, 
-    "title": "Mountain Ascent", 
+    "title": "mountain ascent", 
     "visited": false, 
-    "long_description": "Long Description: Mountain Ascent", 
-    "short_description": "Short Description: Mountain Ascent", 
+    "long_description": "Long Description: mountain ascent", 
+    "short_description": "Short Description: mountain ascent", 
+    "feature_1_title": "feature_1_title", 
     "feature_1_aliases": [
         "feature_1_aliases"
     ], 
-    "feature_1_description": "Feature 1 description: Mountain Ascent", 
-    "feature_1_verbs": [
-        "Feature 1 Verb: Mountain Ascent"
-    ], 
-    "feature_1_action_description": "Feature 1 action description: Mountain Ascent", 
-    "feature_1_item_required": "Item required feature 1: Mountain Ascent", 
-    "feature_1_item_combine_description": "naMountain Ascent", 
-    "feature_1_attributes_affected": {
-        "condition": 5
+    "feature_1_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 1 mountain ascent"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 1 mountain ascent"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 1 mountain ascent", 
+            "description": "use description for feature 1 mountain ascent"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 1 mountain ascent"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 1 mountain ascent"
+        }
     }, 
+    "feature_1_item_required": "Item required feature 1: mountain ascent", 
+    "feature_2_title": "feature_2_title", 
     "feature_2_aliases": [
-        "feature 2 aliases: Mountain Ascent"
+        "feature 2 aliases: mountain ascent"
     ], 
-    "feature_2_description": "feature 2 description: Mountain Ascent", 
-    "feature_2_verbs": [
-        "feature 2 verbsMountain Ascent"
-    ], 
-    "feature_2_action_description": "feature 2 action description: Mountain Ascent", 
-    "feature_2_item_required": "feature 2 item required Mountain Ascent", 
-    "feature_2_item_combine_description": "na", 
+    "feature_2_verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for feature 2 mountain ascent"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for feature 2 mountain ascent"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for feature 2 mountain ascent", 
+            "description": "use description for feature 2 mountain ascent"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for feature 2 mountain ascent"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for feature 2 mountain ascent"
+        }
+    }, 
+    "feature_2_item_required": "feature 2 item required mountain ascent", 
     "connected_rooms": [
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Mountain Summit", 
+            "title": "mountain summit", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Mountain Summit"
+                "mountain summit"
             ]
         }, 
         {
+            "accessible": true, 
             "distance_from_room": 1, 
-            "accesible": true, 
-            "title": "Mountain Base", 
+            "title": "mountain base", 
             "pre_item_description": "", 
             "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "Mountain Base"
+                "mountain base"
             ]
         }
     ], 
+    "items_in_room": [], 
     "feature_searched": false, 
     "room_hazards": false, 
     "room_hazard_description": "", 

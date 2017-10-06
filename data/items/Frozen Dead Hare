@@ -1,17 +1,32 @@
 {
     "id": 8, 
-    "title": "Frozen Dead Hare", 
+    "title": "frozen dead hare", 
     "aliases": [
-        "Frozen Dead Hare"
+        "frozen dead hare"
     ], 
-    "description": "description for Frozen Dead Hare", 
-    "item_combination": "other item combination for Frozen Dead Hare", 
-    "room_combination": "Frozen Dead Hare can be used in room", 
-    "feature_combination": "Frozen Dead Hare can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Frozen Dead Hare", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for frozen dead hare"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for frozen dead hare"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for frozen dead hare", 
+            "description": "use description for frozen dead hare"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for frozen dead hare"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for frozen dead hare"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Frozen Dead Hare", 
-    "requirement_not_met_description": "req not met Frozen Dead Hare"
+    "requirement_met_description": "req met frozen dead hare", 
+    "requirement_not_met_description": "req not met frozen dead hare", 
+    "item_combination": "other item combination for frozen dead hare", 
+    "room_combination": "frozen dead hare can be used in room", 
+    "feature_combination": "frozen dead hare can be used with feature"
 }

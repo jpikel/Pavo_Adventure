@@ -1,17 +1,32 @@
 {
     "id": 7, 
-    "title": "Rescue Whistle", 
+    "title": "rescue whistle", 
     "aliases": [
-        "Rescue Whistle"
+        "rescue whistle"
     ], 
-    "description": "description for Rescue Whistle", 
-    "item_combination": "other item combination for Rescue Whistle", 
-    "room_combination": "Rescue Whistle can be used in room", 
-    "feature_combination": "Rescue Whistle can be used with feature", 
-    "action_verbs": [
-        "use"
-    ], 
-    "action_description": "action description Rescue Whistle", 
+    "verbs": {
+        "read": {
+            "affect_condition": 0, 
+            "description": "read for rescue whistle"
+        }, 
+        "pull": {
+            "affect_condition": 0, 
+            "description": "pull description for rescue whistle"
+        }, 
+        "use": {
+            "affect_condition": 0, 
+            "deactivate_description": "use deactivate for rescue whistle", 
+            "description": "use description for rescue whistle"
+        }, 
+        "lookat": {
+            "affect_condition": 0, 
+            "description": "lookat description for rescue whistle"
+        }, 
+        "eat": {
+            "affect_condition": 0, 
+            "description": "eat description for rescue whistle"
+        }
+    }, 
     "active": false, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
@@ -21,6 +36,9 @@
         {}
     ], 
     "requirement_met": true, 
-    "requirement_met_description": "req met Rescue Whistle", 
-    "requirement_not_met_description": "req not met Rescue Whistle"
+    "requirement_met_description": "req met rescue whistle", 
+    "requirement_not_met_description": "req not met rescue whistle", 
+    "item_combination": "other item combination for rescue whistle", 
+    "room_combination": "rescue whistle can be used in room", 
+    "feature_combination": "rescue whistle can be used with feature"
 }
