@@ -49,7 +49,6 @@ class update():
         with open(room_info().get_dir_dict(), 'w') as outfile:
             json.dump(exits, outfile, indent = 4)
             outfile.close()
-
         print("Done making exits alias dictionary")
 
     def add_exit_alias(self, title, alias):

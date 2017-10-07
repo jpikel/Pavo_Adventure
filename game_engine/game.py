@@ -26,7 +26,6 @@ class Game:
         self.tod = tod  #time of day
 
 def startGame():
-
     print"****************************************************************************"
     print""
     print" ########  ########  ######   #######  ##          ###    ######## ######## "
@@ -62,7 +61,6 @@ def startGame():
     quit = ["quit", "close", "exit" , "quit game", "close game", "exit game"]
     cmds = [newgame, loadgame, quit]
 
-
     while not choiceLow in cmds[0] and not choiceLow in cmds[1] and not choiceLow in cmds[2]:
         print "Please Choose from the menu"
         print"  New Game"
@@ -79,7 +77,6 @@ def startGame():
 
     else:
         exitGame()
-
 
 def newGame():
     print "new Game"
