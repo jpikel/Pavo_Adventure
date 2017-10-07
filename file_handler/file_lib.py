@@ -20,6 +20,15 @@ from name_lists import item_info
 ignore = ["TempSaveGame.md", "Rooms.md", "Items.md"]
 
 class response_struct():
+    """
+    This structure is used for most all the responses sent back to the 
+    calling function from inside file_ops class
+        structure is
+        "title":string
+        "description": string
+        "move": boolean, whether the move occured
+        "distance_from_room": distance travel
+    """
     def __init__(self):
         self.response = {
                     "title":None,
@@ -32,7 +41,16 @@ class response_struct():
         return self.response
 
 class save_ops():
+    """
+    This class handles the starting of a new game and saving the current 
+    game out to file
+    """
     def new_game(self):
+        """
+        First cleans both the rooms and items folders in the temporary save
+        directory.  Then copies the original template files from
+        the data folder to the temp save folder for rooms and items
+        """
         #Reference - https://stackoverflow.com/questions/1868714/how-do-i-copy-an-entire-directory-of-files-into-an-existing-directory-using-pyth
         print("Preparing to make new game")
         src_dir = room_info().get_dir()
@@ -44,6 +62,10 @@ class save_ops():
 
 
     def copy_files(self, src_dir, dst_dir):
+        """
+        attemps to copy all the files from the source to the destination
+        except those in the ignore list
+        """
         try:
             print("Cleaning" + dst_dir)
             self.clean_dir(dst_dir)
@@ -58,6 +80,10 @@ class save_ops():
             print(e)
 
     def clean_dir(self, dst_dir):
+        """
+        removes all the files in the directory passed in except those in the
+        ignore list
+        """
         try:
             for item in os.listdir(dst_dir):
                 if item not in ignore:
@@ -69,6 +95,10 @@ class save_ops():
 
 
 class file_operations():
+    """
+    this class interacts with the files, such as room files and item files
+    stores the current room as an OrderedDict
+    """
     def __init__(self):
         self.current_room = OrderedDict()
         self.temp_dir_rooms = save_info().get_temp_save_dir_rooms()
@@ -78,21 +108,42 @@ class file_operations():
         self.verb_not_found = "At this very moment you really are not sure how to " 
 
     def get_room_title(self):
+        """
+        returns the current room's title
+        """
         return str(self.current_room['title'])
 
     def get_room_long_desc(self):
+        """
+        returns a string of the long description
+        """
         return str(self.current_room['long_description'])
 
     def get_room_short_desc(self):
+        """
+        returns a string of the short description
+        """
         return str(self.current_room['short_description'])
 
     def get_visited(self):
+        """
+        returns the boolean in visited
+        """
         return self.current_room['visited']
 
     def get_room_item_list(self):
+        """
+        returns a list that are the items in the room
+        """
         return self.current_room['items_in_room']
 
     def store_room(self):
+        """
+        writes out the current room to its file as a string in the form as json
+        to the appropriate room file in the temp save folder
+        overwrites the file
+
+        """
         try:
             room_title = self.current_room['title']
             self.current_room['visited'] = True
@@ -104,6 +155,10 @@ class file_operations():
             raise e
 
     def load_room(self, room_title):
+        """
+        opens the room passed in from the temporary save folder.
+        reads in the contents into the current_room object part of this class
+        """
         try:
             with open(self.temp_dir_rooms+room_title, 'r') as room_file:
                 self.current_room = json.load(room_file, object_pairs_hook=OrderedDict)
@@ -112,6 +167,20 @@ class file_operations():
             return False
 
     def check_connections(self, title_or_direction, items):
+        """
+        when given an official room title or compass direction, iterates
+        through the current room's connected_rooms object to see if the compass
+        or room title exist
+        checks if an item is required to pass into this room
+            if an item is required checks to see if that item is active as in worn or on
+        writes the appropriate response into
+            description
+            move = boolean whether or not the move was successful
+            title = the new room's title
+            distance_from_room = distance traveled to the new room
+
+        FUTURE implementation: check if the room is accessible or blocked
+        """
         response = response_struct().get_response_struct()
         for room in self.current_room['connected_rooms']:
             if (title_or_direction == str(room['title']) 
@@ -127,20 +196,28 @@ class file_operations():
                                 response['move'] = True
                                 response['distance_from_room'] = room['distance_from_room']
                                 response['title'] = str(room['title'])
+                                break
                             else:
                                 response['description'] = str(room['pre_item_description'])
+                                break
                     else:
                         response['description'] = str(room['pre_item_description'])
+                        break
                 else:
                     response['move'] = True
                     response['distance_from_room'] = room['distance_from_room']
                     response['title'] = str(room['title'])
-                break
+                    break
         return response
 
     def get_items(self):
+        """
+        if the room has been searched appropriately and there are items in the room
+        then returns the items in the room as a string for descriptive purposes
+        """
         text = "Looking around you see "
-        if self.current_room['feature_searched'] == True:
+        if (self.current_room['feature_searched'] == True and 
+                self.current_room['items_in_room'].length > 0):
             items = self.current_room['items_in_room']
             for item in items:
                 text += "a " + item + ", "
@@ -150,12 +227,25 @@ class file_operations():
         return text
 
     def is_an_item(self, item_title):
+        """
+        for the given title passed in returns a bool if the item exists in the list
+        of possible items in the game
+        """
         if item_title in self.items:
             return True
         else:
             return False
 
     def item_in_inventory(self, item_title, action):
+        """
+        called by the verb handler.  Looks up the item file and opens it
+        returns the description listed for the particular verb at this moment.
+        FUTURE: include additional parts of the structure to return to the game engine
+
+            {
+            "description": string
+            }
+        """
         response = response_struct().get_response_struct()
         if item_title in self.items:
             with open(self.temp_dir_items+item_title, 'r+') as item_file:
@@ -182,6 +272,17 @@ class file_operations():
         return response
 
     def feature_in_room(self, title, action):
+        """
+            helper called from verb_handler()
+            looks up to see if the title passed in is a feature in the current room
+            if so and the verb is in the list of possible verbs for that feature then
+            returns the description listed in that feature
+
+            returns 
+                {
+                "description": string
+                }
+        """
         response = response_struct().get_response_struct()
         if (title == self.current_room['feature_1_title'] or
                 title in self.current_room['feature_1_aliases'] and
@@ -196,9 +297,21 @@ class file_operations():
         return response
 
     def verb_handler(self, title, action, in_inventory):
+        """
+            if the title has been checked against inventory of player it must be an item
+            so return that item description
+            otherwise it may be an item sitting in the room.  In that case only allow
+            lookat that item
+            otherwise the title may be a feature, return that features description
+            otherwise see if it is an item and it does not exist in room or inventory
+            return a wity response
+            else return another witty response
+        """
         if in_inventory == True:
             return self.item_in_inventory(title, action)
-        elif title in self.current_room['items_in_room'] and self.current_room['feature_searched'] == True:
+        elif (title in self.current_room['items_in_room'] and 
+                self.current_room['feature_searched'] == True and
+                action == "lookat"):
             return self.lookat_item_in_room(title)
         elif (title in self.current_room['feature_1_aliases'] 
             or title in self.current_room['feature_2_aliases']
@@ -220,39 +333,75 @@ class game_ops():
         self.operations = file_operations()
 
     def new_game(self):
+        """
+            deletes the old temp save folder and creates a new one
+            loads the Shore into the current_room
+        """
         try:
             save_ops().new_game()
-            self.operations.load_room("Shore")
+            self.operations.load_room("shore")
             return True
         except Exception, e:
             return False
 
     def load_game(self):
+        """
+            Future implementation currently just loads the game trail into the
+            current room.  Will need to load the character state to the game engine
+            as well
+        """
         try:
-            return self.operations.load_room("Game Trail")
+            return self.operations.load_room("game trail")
         except Exception, e:
             return False
 
     def get_room_title(self):
+        """
+            returns the current_room's title
+        """
         return self.operations.get_room_title()
 
     def get_room_desc(self):
+        """
+            returns either the long or short description 
+            if the room has been previously visited
+        """
         if self.operations.get_visited() == False:
             return self.operations.get_room_long_desc() + self.operations.get_items()
         else:
             return self.operations.get_room_short_desc() + self.operations.get_items()
 
     def look(self):
+        """
+            returns the long description, to be used with the verb look
+        """
         return {"description":self.operations.get_room_long_desc()}
 
-    def attempt_move(self, title_or_compass, items_inventory):
+    def attempt_move(self, title_or_compass, items_inventory=None):
+        """
+            tries to move to the passed in room title or compass direction
+            also expects a list of items currently held in the inventory
+            defaults to None
+        """
         result = self.operations.check_connections(title_or_compass, items_inventory)
         if result["move"] == True:
             self.operations.store_room()
             self.operations.load_room(result['title'])
-        if result['description'] is None:
-            result['description'] = str(self.get_room_desc()) 
+        if result['move'] == False and result['description'] is None:
+            result['description'] = "You were not able to move in that direction.  "
+            result['description'] += str(self.get_room_desc()) 
+        else:
+            result['description'] = str(self.get_room_desc())
         return result
 
     def verb(self, title, verb, in_inventory=False):
+        """
+            verb handler, given a title of an item or feature, a verb
+            and a bool for wether it is in the character's inventory
+            returns a json object currently with only a description field
+            {
+                "decsription":string
+            }
+
+        """
             return self.operations.verb_handler(title, verb, in_inventory)

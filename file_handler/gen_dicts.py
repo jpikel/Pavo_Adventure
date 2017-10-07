@@ -17,11 +17,10 @@ from name_lists import verb_info
 class update():
     def gen_exit_dict(self):
         """
-        Function - 
-        Parameters - 
-        Preconditions - 
-        Postconditions - 
-        Description - 
+            generates the alias files for room names.  used in the 
+            connected_room field of the room file in the possible exits
+            and their aliases
+            writes the dict to file in /data
         """
         room_dir = room_info().get_dir()
         room_titles = room_info().get_titles()
@@ -53,11 +52,11 @@ class update():
 
     def add_exit_alias(self, title, alias):
         """
-        Function - 
-        Parameters - 
-        Preconditions - 
-        Postconditions - 
-        Description - 
+            given a room title and alias
+            adds the alias if it does not exist to all room files that hold
+            the room passed in as a possible exit
+            and generates the exit dict file upon exit
+
         """
         room_connections = room_info().get_connection_list()
         room_dir = room_info().get_dir()
@@ -83,11 +82,12 @@ class update():
 
     def gen_item_dict(self):
         """
-        Function - 
-        Parameters - 
-        Preconditions - 
-        Postconditions - 
-        Description - 
+            iterates through all the item files, collects their aliases
+            and puts them into a dict 
+                {
+                alias:title
+                }
+            writes that dict out to file in /data folder
         """
         item_dir = item_info().get_dir()
         item_titles = item_info().get_titles()
@@ -108,11 +108,9 @@ class update():
 
     def add_item_alias(self, title, alias):
         """
-        Function - 
-        Parameters - 
-        Preconditions - 
-        Postconditions - 
-        Description - 
+            given an item's title and alias.  opens the item file to see if the
+            alias already exists.  If not adds the alias and then
+            regenerates the item's alias dict
         """
         item_titles = item_info().get_titles()
         item_dir = item_info().get_dir()
@@ -134,11 +132,13 @@ class update():
 
     def gen_feature_dict(self):
         """
-        Function - 
-        Parameters - 
-        Preconditions - 
-        Postconditions - 
-        Description - 
+            iterates through all the room files.  Collects all the aliases
+            for feature 1 and feature 2.  puts them into a dict 
+            {
+            alias: feature 1 official title
+            alias: feature 2 official title
+            }
+            writes that out to the feature_dict file in /data
         """
         feature_dir = room_info().get_feature_dict_dir()
         room_dir = room_info().get_dir()
@@ -171,13 +171,13 @@ class update():
 
     def add_feature_alias(self):
         """
-        Function - 
-        Parameters - 
-        Preconditions - 
-        Postconditions - 
-        Description - 
+            asks the user for the room and the feature, then the alias to add
+            opens the room file, gets the appropriate feature. adds the alias to
+            the feature if it does not exist
+            closes the files
+            DOES NOT regenerate the features_dict
         """
-        room_title = raw_input("Enter offical room title: ")
+        room_title = raw_input("Enter offical room title where feature is located: ")
         feature_title = raw_input("Enter feature title: ")
         alias = self.get_alias()
         room_dir = room_info().get_dir()
@@ -222,6 +222,13 @@ class update():
         return self.get_title(), self.get_alias()
 
     def add_verb_alias(self):
+        """
+            asks the user to enter an official verb and alias
+            if the alias does not exist in the dict adds it
+            {
+            alias:verb
+            }
+        """
         verbs = verb_info().get_verbs()
         verb = raw_input("Enter the official verb: ")
         alias = raw_input("Enter the alias: ")
@@ -243,11 +250,7 @@ class update():
 
     def main(self):
         """
-        Function - 
-        Parameters - 
-        Preconditions - 
-        Postconditions - 
-        Description - 
+            prints a menu that the user can select from for the appropriate action
         """
         number = raw_input("\nWhat would you like to do?\n"
                 "1. Add room alias\n"

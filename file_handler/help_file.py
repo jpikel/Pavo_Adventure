@@ -10,6 +10,9 @@ Description -
 from name_lists import verb_info
 
 class help():
+    """
+        a simple print to screen of the help file
+    """
     verb_dict = verb_info().get_verb_definitions()
     def display_help(self):
         print("\n\n*******Help*******\n\n")

@@ -16,11 +16,7 @@ from name_lists import verb_info
 
 def create_room(room_name, index, connections):
     """
-    Function - 
-    Parameters - 
-    Preconditions - 
-    Postconditions - 
-    Description - 
+        returns OrderedDict that is the room structure in json
     """
     connection_titles = room_info().get_connection_list()
     room_template = OrderedDict()
@@ -123,11 +119,7 @@ def create_room(room_name, index, connections):
 
 def create_item(item_name, index):
     """
-    Function - 
-    Parameters - 
-    Preconditions - 
-    Postconditions - 
-    Description - 
+        returns an OrderedDict that is the structure of an item file in json
     """
     item = OrderedDict()
     item.update({"id":index+1})
@@ -182,11 +174,11 @@ def create_verbs():
 
 def main():
     """
-    Function - 
-    Parameters - 
-    Preconditions - 
-    Postconditions - 
-    Description - 
+        recreates all the room template files as blanks
+        reacreates all the item template files as blanks
+        make sure you really want to do this.  Will overwrite all the previous
+        information!
+        also creates a base template file for all the verbs if uncommented
     """
     rooms = room_info()
     room_titles = rooms.get_titles()
@@ -208,5 +200,5 @@ def main():
             json.dump(item_template, outfile, indent=4)
             outfile.close()
 
-    create_verbs()
-main()
+#    create_verbs()
+#main()

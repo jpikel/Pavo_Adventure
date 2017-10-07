@@ -8,6 +8,11 @@ Description -
 """
 
 class room_info():
+    """
+        this class contains official titles and connections about rooms
+        also contains the room directories.
+        only has getters for the different static variables
+    """
     room_titles = ["shore", "crash site", "game trail", "field", "dense brush", "camp", "woods",
         "cave", "mountain base", "fire tower", "river", "waterfall", "mountain ascent", 
         "mountain summit", "rapids", "ranger station"]
@@ -52,6 +57,11 @@ class room_info():
         return self.feature_dir_dict
 
 class item_info():
+    """
+        this class contains the official information about items, their titles,
+        and the directory for the templates
+        only has getters for these features
+    """
     item_titles = ["lantern", "heavy winter parka", "dusty old map", "tattered notebook",
                 "flare gun", "boat paddle", "rescue whistle", "frozen dead hare",
                 "can of sweetened condensed milk", "can opener"]
@@ -65,6 +75,10 @@ class item_info():
         return "../data/items_dict"
 
 class save_info():
+    """
+        official save info and getters to access the save information
+        primarily save directories
+    """
     temp_save_dir_rooms = "../data/temp_save_game/rooms/"
     temp_save_dir_items = "../data/temp_save_game/items/"
     save_dir = "../data/save_game/"
@@ -78,6 +92,9 @@ class save_info():
 
 
 class verb_info():
+    """
+        official verb info and getters to access the verb features
+    """
     verbs = ["look", "look at", "go", "take", "help", "inventory", 
             "use", "search", "pull", "eat", "read"]
 
