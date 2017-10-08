@@ -202,3 +202,6 @@ def main():
 
 #    create_verbs()
 #main()
+
+print("Nothing happened this file will wipe out all the template files at present")
+print("Only run if you really mean too.  Requires uncommenting the function in this script")
