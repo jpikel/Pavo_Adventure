@@ -1,15 +1,12 @@
 {
-    "Boat Paddle": "Boat Paddle", 
-    "Can Opener": "Can Opener", 
-    "Can of Sweetened Condensed Milk": "Can of Sweetened Condensed Milk", 
-    "Dusty Old Map": "Dusty Old Map", 
-    "Flare Gun": "Flare Gun", 
-    "Frozen Dead Hare": "Frozen Dead Hare", 
-    "Heavy Winter Parka": "Heavy Winter Parka", 
-    "Lantern": "Lantern", 
-    "Rescue Whistle": "Rescue Whistle", 
-    "Tattered Notebook": "Tattered Notebook", 
-    "map": "Dusty Old Map", 
-    "oar": "Boat Paddle", 
-    "paddle": "Boat Paddle"
+    "boat paddle": "boat paddle", 
+    "can of sweetened condensed milk": "can of sweetened condensed milk", 
+    "can opener": "can opener", 
+    "dusty old map": "dusty old map", 
+    "flare gun": "flare gun", 
+    "frozen dead hare": "frozen dead hare", 
+    "heavy winter parka": "heavy winter parka", 
+    "lantern": "lantern", 
+    "rescue whistle": "rescue whistle", 
+    "tattered notebook": "tattered notebook"
 }
