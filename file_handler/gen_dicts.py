@@ -33,15 +33,26 @@ class update():
         except Exception, e:
             pass
 
+        room_file_exits = []
+
+        #sync room files to rooms_dict
         for room in room_titles:
             with open(room_dir + room, 'r') as infile:
                 room = json.load(infile, object_pairs_hook=OrderedDict)
                 connected_rooms = room["connected_rooms"]
                 for connection in connected_rooms:
                     for alias in connection["aliases"]:
+                        room_file_exits.append(alias)
                         if alias not in exits:
                             exits.update({str(alias):str(connection["title"])})
                 infile.close()
+
+        #sync the rooms_dict to all possible room aliases so we don't get out of sync
+        for exit in exits:
+            if exit not in room_file_exits:
+                print(exit + " not found in list of room exits, removing.")
+                del exits[exit]
+                
 
         exits = OrderedDict(sorted(exits.items()))
 

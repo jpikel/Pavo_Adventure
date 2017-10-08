@@ -101,7 +101,8 @@
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "cave"
+                "cave", 
+                "cavern"
             ]
         }
     ], 
