@@ -4,62 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: woods", 
     "short_description": "Short Description: woods", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 woods"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 woods"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 woods", 
+                    "description": "use description for feature 1 woods"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 woods"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 woods"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 woods"
+                }, 
+                "take": {
+                    "description": "take for feature 1 woods"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 woods"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 woods"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 woods", 
-            "description": "use description for feature 1 woods"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 woods"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 woods"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 woods"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 woods", 
+                    "description": "use description for feature 2 woods"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 woods"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 woods"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 woods"
+                }, 
+                "take": {
+                    "description": "take for feature 2 woods"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 woods"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: woods", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: woods"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 woods"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 woods"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 woods", 
-            "description": "use description for feature 2 woods"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 woods"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 woods"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required woods", 
     "connected_rooms": [
         {
             "accessible": true, 

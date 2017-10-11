@@ -4,66 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: field", 
     "short_description": "Short Description: field", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 field"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 field"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 field", 
+                    "description": "use description for feature 1 field"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 field"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 field"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 field"
+                }, 
+                "take": {
+                    "description": "take for feature 1 field"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 field"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 field", 
-            "description": "use description for feature 1 field"
-        }, 
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 field"
-        }, 
-        "search": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 field"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 field"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 field"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 field"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 field", 
+                    "description": "use description for feature 2 field"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 field"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 field"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 field"
+                }, 
+                "take": {
+                    "description": "take for feature 2 field"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 field"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: field", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: field"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 field"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 field"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 field", 
-            "description": "use description for feature 2 field"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 field"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 field"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required field", 
     "connected_rooms": [
         {
             "accessible": true, 

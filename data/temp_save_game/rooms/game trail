@@ -4,62 +4,80 @@
     "visited": true, 
     "long_description": "Long Description: game trail", 
     "short_description": "Short Description: game trail", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 game trail"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 game trail"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 game trail", 
+                    "description": "use description for feature 1 game trail"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 game trail"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 game trail"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 game trail"
+                }, 
+                "take": {
+                    "description": "take for feature 1 game trail"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 game trail"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 game trail"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 game trail", 
-            "description": "use description for feature 1 game trail"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 game trail"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 game trail"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 game trail"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 game trail", 
+                    "description": "use description for feature 2 game trail"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 game trail"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 game trail"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 game trail"
+                }, 
+                "take": {
+                    "description": "take for feature 2 game trail"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 game trail"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: game trail", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: game trail"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 game trail"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 game trail"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 game trail", 
-            "description": "use description for feature 2 game trail"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 game trail"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 game trail"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required game trail", 
     "connected_rooms": [
         {
             "accessible": true, 
@@ -67,7 +85,7 @@
             "title": "crash site", 
             "pre_item_description": "", 
             "item_required_title": "", 
-            "compass_direction": "w", 
+            "compass_direction": "", 
             "id": 0, 
             "item_required": false, 
             "aliases": [

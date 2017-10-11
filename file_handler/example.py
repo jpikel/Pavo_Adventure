@@ -28,7 +28,7 @@ if game.load_game():
     print("\nUse a pickaxe that does not exist, first time with 'use' and then 'toss'")
     print(game.verb("pickaxe", "use", False))
     print(game.verb("pickaxe", "toss", False))
-    print("\nLookat the lantern in the inventory")
+    print("\nlookat the lantern in the inventory")
     print(game.verb("lantern", "lookat", True))
     print("\nLookat feature 1")
     print(game.verb("feature_1_title", "lookat", False))

@@ -4,62 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: dense brush", 
     "short_description": "Short Description: dense brush", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 dense brush"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 dense brush"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 dense brush", 
+                    "description": "use description for feature 1 dense brush"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 dense brush"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 dense brush"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 dense brush"
+                }, 
+                "take": {
+                    "description": "take for feature 1 dense brush"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 dense brush"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 dense brush"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 dense brush", 
-            "description": "use description for feature 1 dense brush"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 dense brush"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 dense brush"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 dense brush"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 dense brush", 
+                    "description": "use description for feature 2 dense brush"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 dense brush"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 dense brush"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 dense brush"
+                }, 
+                "take": {
+                    "description": "take for feature 2 dense brush"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 dense brush"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: dense brush", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: dense brush"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 dense brush"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 dense brush"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 dense brush", 
-            "description": "use description for feature 2 dense brush"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 dense brush"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 dense brush"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required dense brush", 
     "connected_rooms": [
         {
             "accessible": true, 

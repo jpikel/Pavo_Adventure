@@ -4,66 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: ranger station", 
     "short_description": "Short Description: ranger station", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 ranger station"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 ranger station"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 ranger station", 
+                    "description": "use description for feature 1 ranger station"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 ranger station"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 ranger station"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 ranger station"
+                }, 
+                "take": {
+                    "description": "take for feature 1 ranger station"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 ranger station"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 ranger station", 
-            "description": "use description for feature 1 ranger station"
-        }, 
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 ranger station"
-        }, 
-        "search": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 ranger station"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 ranger station"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 ranger station"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 ranger station"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 ranger station", 
+                    "description": "use description for feature 2 ranger station"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 ranger station"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 ranger station"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 ranger station"
+                }, 
+                "take": {
+                    "description": "take for feature 2 ranger station"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 ranger station"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: ranger station", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: ranger station"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 ranger station"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 ranger station"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 ranger station", 
-            "description": "use description for feature 2 ranger station"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 ranger station"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 ranger station"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required ranger station", 
     "connected_rooms": [
         {
             "accessible": true, 

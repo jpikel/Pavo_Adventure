@@ -162,6 +162,7 @@ class file_operations():
         try:
             with open(self.temp_dir_rooms+room_title, 'r') as room_file:
                 self.current_room = json.load(room_file, object_pairs_hook=OrderedDict)
+                print(self.current_room)
                 return True
         except Exception, e:
             return False
@@ -284,14 +285,11 @@ class file_operations():
                 }
         """
         response = response_struct().get_response_struct()
-        if (title == self.current_room['feature_1_title'] or
-                title in self.current_room['feature_1_aliases'] and
-                action in self.current_room['feature_1_verbs']):
-            response['description'] = str(self.current_room['feature_1_verbs'][action]['description'])
-        elif (title == self.current_room['feature_2_title'] or
-                title in self.current_room['feature_2_aliases'] and
-                action in self.current_room['feature_2_verbs']):
-            response['description'] = str(self.current_room['feature_2_verbs'][action]['description'])
+        for element in self.current_room['features']:
+            if title == self.current_room['features'][element]['title']:
+                feature = element
+        if action in self.current_room['features'][feature]['verbs']:
+            response['description'] = str(self.current_room['features'][feature]['verbs'][action]['description'])
         else:
             response['description'] = self.verb_not_found + " " + action + " the " + title
         return response
@@ -313,10 +311,10 @@ class file_operations():
                 self.current_room['feature_searched'] == True and
                 action == "lookat"):
             return self.lookat_item_in_room(title)
-        elif (title in self.current_room['feature_1_aliases'] 
-            or title in self.current_room['feature_2_aliases']
-            or title == self.current_room['feature_1_title']
-            or title == self.current_room['feature_2_title']):
+        elif (title == self.current_room['features']['1']['title'] 
+            or title == self.current_room['features']['2']['title']
+            or title in self.current_room['features']['1']['aliases']
+            or title in self.current_room['features']['1']['aliases']):
             return self.feature_in_room(title, action)
         elif title not in self.items:
             response = response_struct().get_response_struct()
@@ -404,4 +402,4 @@ class game_ops():
             }
 
         """
-            return self.operations.verb_handler(title, verb, in_inventory)
+        return self.operations.verb_handler(title, verb, in_inventory)

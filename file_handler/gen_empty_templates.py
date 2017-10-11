@@ -25,66 +25,77 @@ def create_room(room_name, index, connections):
     room_template.update({"visited":False})
     room_template.update({"long_description":"Long Description: " + room_name})
     room_template.update({"short_description":"Short Description: " + room_name})
-    room_template.update({"feature_1_title":"feature_1_title"})
-    room_template.update({"feature_1_aliases":["feature_1_aliases"]})
-    room_template.update({"feature_1_verbs":{
-                                "lookat":{
-                                    "description":"lookat description for feature 1 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "use":{
-                                    "description":"use description for feature 1 " + room_name,
-                                    "deactivate_description":"use deactivate for feature 1 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "eat":{
-                                    "description":"eat description for feature 1 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "pull":{
-                                    "description":"pull description for feature 1 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "read":{
-                                    "description":"read for feature 1 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "search":{
-                                    "description":"read for feature 1 " + room_name,
-                                    "affect_condition":0
-                                    }
-                                    }})
-    room_template.update({"feature_1_item_required":"Item required feature 1: " + room_name})
-#    room_template.update({"feature_1_item_combine_description":"na" + room_name})
-#    room_template.update({"feature_1_attributes_affected":{"condition":5}})
-    room_template.update({"feature_2_title":"feature_2_title"})
-    room_template.update({"feature_2_aliases":["feature 2 aliases: " + room_name]})
-    room_template.update({"feature_2_verbs":{
-                                "lookat":{
-                                    "description":"lookat description for feature 2 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "use":{
-                                    "description":"use description for feature 2 " + room_name,
-                                    "deactivate_description":"use deactivate for feature 2 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "eat":{
-                                    "description":"eat description for feature 2 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "pull":{
-                                    "description":"pull description for feature 2 " + room_name,
-                                    "affect_condition":0
-                                    },
-                                "read":{
-                                    "description":"read for feature 2 " + room_name,
-                                    "affect_condition":0
-                                    }
-                                    }})
-    room_template.update({"feature_2_item_required":"feature 2 item required "+room_name})
-#    room_template.update({"feature_2_item_combine_description":"na"})
-#    room_template.update({"feature_1_attributes_affected":{"condition":5}})
+    room_template.update({"features":{
+                                        "1":{
+                                            "title":"feature_1_title",
+                                            "aliases":["feature_1_aliases"],
+                                            "verbs":{
+                                                    "lookat":{
+                                                        "description":"lookat description for feature 1 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "use":{
+                                                        "description":"use description for feature 1 " + room_name,
+                                                        "deactivate_description":"use deactivate for feature 1 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "eat":{
+                                                        "description":"eat description for feature 1 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "pull":{
+                                                        "description":"pull description for feature 1 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "read":{
+                                                        "description":"read for feature 1 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "search":{
+                                                        "description":"read for feature 1 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "take":{
+                                                        "description":"take for feature 1 " + room_name
+                                                        }
+                                                    }
+                                             },
+                                        "2":{
+                                            "title":"feature_2_title",
+                                            "aliases":["feature_2_aliases"],
+                                            "verbs":{
+                                                    "lookat":{
+                                                        "description":"lookat description for feature 2 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "use":{
+                                                        "description":"use description for feature 2 " + room_name,
+                                                        "deactivate_description":"use deactivate for feature 2 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "eat":{
+                                                        "description":"eat description for feature 2 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "pull":{
+                                                        "description":"pull description for feature 2 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "read":{
+                                                        "description":"read for feature 2 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "search":{
+                                                        "description":"read for feature 2 " + room_name,
+                                                        "affect_condition":0
+                                                        },
+                                                    "take":{
+                                                        "description":"take for feature 2 " + room_name
+                                                        }
+                                                    }
+                                             }
+                                        }
+                                    })
     room_template.update({"connected_rooms":[{"id":0, 
                                              "title":connection_titles[room_name][0], 
                                              "aliases":[connection_titles[room_name][0]],
@@ -172,14 +183,7 @@ def create_verbs():
         outfile.close()
 
 
-def main():
-    """
-        recreates all the room template files as blanks
-        reacreates all the item template files as blanks
-        make sure you really want to do this.  Will overwrite all the previous
-        information!
-        also creates a base template file for all the verbs if uncommented
-    """
+def make_rooms():
     rooms = room_info()
     room_titles = rooms.get_titles()
     room_connections = rooms.get_connection_amount()
@@ -190,7 +194,7 @@ def main():
             json.dump(room_template, outfile, indent=4)
             outfile.close()
 
-
+def make_items():
     items = item_info()
     item_titles = items.get_titles()
     item_dir = items.get_dir()
@@ -200,8 +204,18 @@ def main():
             json.dump(item_template, outfile, indent=4)
             outfile.close()
 
+def main():
+    """
+        recreates all the room template files as blanks
+        reacreates all the item template files as blanks
+        make sure you really want to do this.  Will overwrite all the previous
+        information!
+        also creates a base template file for all the verbs if uncommented
+    """
+    make_rooms()
+#    make_items()
 #    create_verbs()
-#main()
+main()
 
-print("Nothing happened this file will wipe out all the template files at present")
-print("Only run if you really mean too.  Requires uncommenting the function in this script")
+#print("Nothing happened this file will wipe out all the template files at present")
+#print("Only run if you really mean too.  Requires uncommenting the function in this script")

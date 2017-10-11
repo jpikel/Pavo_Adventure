@@ -4,62 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: mountain ascent", 
     "short_description": "Short Description: mountain ascent", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 mountain ascent"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 mountain ascent"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 mountain ascent", 
+                    "description": "use description for feature 1 mountain ascent"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 mountain ascent"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 mountain ascent"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 mountain ascent"
+                }, 
+                "take": {
+                    "description": "take for feature 1 mountain ascent"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 mountain ascent"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 mountain ascent"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 mountain ascent", 
-            "description": "use description for feature 1 mountain ascent"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 mountain ascent"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 mountain ascent"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 mountain ascent"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 mountain ascent", 
+                    "description": "use description for feature 2 mountain ascent"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 mountain ascent"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 mountain ascent"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 mountain ascent"
+                }, 
+                "take": {
+                    "description": "take for feature 2 mountain ascent"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 mountain ascent"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: mountain ascent", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: mountain ascent"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 mountain ascent"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 mountain ascent"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 mountain ascent", 
-            "description": "use description for feature 2 mountain ascent"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 mountain ascent"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 mountain ascent"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required mountain ascent", 
     "connected_rooms": [
         {
             "accessible": true, 

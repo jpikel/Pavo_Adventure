@@ -4,66 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: crash site", 
     "short_description": "Short Description: crash site", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 crash site"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 crash site"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 crash site", 
+                    "description": "use description for feature 1 crash site"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 crash site"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 crash site"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 crash site"
+                }, 
+                "take": {
+                    "description": "take for feature 1 crash site"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 crash site"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 crash site", 
-            "description": "use description for feature 1 crash site"
-        }, 
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 crash site"
-        }, 
-        "search": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 crash site"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 crash site"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 crash site"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 crash site"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 crash site", 
+                    "description": "use description for feature 2 crash site"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 crash site"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 crash site"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 crash site"
+                }, 
+                "take": {
+                    "description": "take for feature 2 crash site"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 crash site"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: crash site", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: crash site"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 crash site"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 crash site"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 crash site", 
-            "description": "use description for feature 2 crash site"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 crash site"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 crash site"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required crash site", 
     "connected_rooms": [
         {
             "accessible": true, 

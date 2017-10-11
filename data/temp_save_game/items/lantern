@@ -27,8 +27,8 @@
             "description": "eat description for lantern"
         }
     }, 
-    "active": true, 
-    "activatable": true, 
+    "active": false, 
+    "activatable": false, 
     "attributes_affected_requirement_met": [
         {}
     ], 

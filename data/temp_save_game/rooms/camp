@@ -4,62 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: camp", 
     "short_description": "Short Description: camp", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 camp"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 camp"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 camp", 
+                    "description": "use description for feature 1 camp"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 camp"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 camp"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 camp"
+                }, 
+                "take": {
+                    "description": "take for feature 1 camp"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 camp"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 camp"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 camp", 
-            "description": "use description for feature 1 camp"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 camp"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 camp"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 camp"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 camp", 
+                    "description": "use description for feature 2 camp"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 camp"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 camp"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 camp"
+                }, 
+                "take": {
+                    "description": "take for feature 2 camp"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 camp"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: camp", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: camp"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 camp"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 camp"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 camp", 
-            "description": "use description for feature 2 camp"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 camp"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 camp"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required camp", 
     "connected_rooms": [
         {
             "accessible": true, 

@@ -4,62 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: fire tower", 
     "short_description": "Short Description: fire tower", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 fire tower"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 fire tower"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 fire tower", 
+                    "description": "use description for feature 1 fire tower"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 fire tower"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 fire tower"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 fire tower"
+                }, 
+                "take": {
+                    "description": "take for feature 1 fire tower"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 fire tower"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 fire tower"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 fire tower", 
-            "description": "use description for feature 1 fire tower"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 fire tower"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 fire tower"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 fire tower"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 fire tower", 
+                    "description": "use description for feature 2 fire tower"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 fire tower"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 fire tower"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 fire tower"
+                }, 
+                "take": {
+                    "description": "take for feature 2 fire tower"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 fire tower"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: fire tower", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: fire tower"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 fire tower"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 fire tower"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 fire tower", 
-            "description": "use description for feature 2 fire tower"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 fire tower"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 fire tower"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required fire tower", 
     "connected_rooms": [
         {
             "accessible": true, 

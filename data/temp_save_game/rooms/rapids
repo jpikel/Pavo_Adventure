@@ -4,62 +4,80 @@
     "visited": false, 
     "long_description": "Long Description: rapids", 
     "short_description": "Short Description: rapids", 
-    "feature_1_title": "feature_1_title", 
-    "feature_1_aliases": [
-        "feature_1_aliases"
-    ], 
-    "feature_1_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 1 rapids"
+    "features": {
+        "1": {
+            "aliases": [
+                "feature_1_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 1 rapids"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 1 rapids", 
+                    "description": "use description for feature 1 rapids"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 rapids"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 1 rapids"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 1 rapids"
+                }, 
+                "take": {
+                    "description": "take for feature 1 rapids"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 1 rapids"
+                }
+            }, 
+            "title": "feature_1_title"
         }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 1 rapids"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 1 rapids", 
-            "description": "use description for feature 1 rapids"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 1 rapids"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 1 rapids"
+        "2": {
+            "aliases": [
+                "feature_2_aliases"
+            ], 
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0, 
+                    "description": "pull description for feature 2 rapids"
+                }, 
+                "use": {
+                    "affect_condition": 0, 
+                    "deactivate_description": "use deactivate for feature 2 rapids", 
+                    "description": "use description for feature 2 rapids"
+                }, 
+                "read": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 rapids"
+                }, 
+                "search": {
+                    "affect_condition": 0, 
+                    "description": "read for feature 2 rapids"
+                }, 
+                "lookat": {
+                    "affect_condition": 0, 
+                    "description": "lookat description for feature 2 rapids"
+                }, 
+                "take": {
+                    "description": "take for feature 2 rapids"
+                }, 
+                "eat": {
+                    "affect_condition": 0, 
+                    "description": "eat description for feature 2 rapids"
+                }
+            }, 
+            "title": "feature_2_title"
         }
     }, 
-    "feature_1_item_required": "Item required feature 1: rapids", 
-    "feature_2_title": "feature_2_title", 
-    "feature_2_aliases": [
-        "feature 2 aliases: rapids"
-    ], 
-    "feature_2_verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for feature 2 rapids"
-        }, 
-        "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for feature 2 rapids"
-        }, 
-        "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for feature 2 rapids", 
-            "description": "use description for feature 2 rapids"
-        }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for feature 2 rapids"
-        }, 
-        "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for feature 2 rapids"
-        }
-    }, 
-    "feature_2_item_required": "feature 2 item required rapids", 
     "connected_rooms": [
         {
             "accessible": true, 
