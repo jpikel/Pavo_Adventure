@@ -2,6 +2,8 @@
 A program for testing methods in the command_parser module
 """
 
+import json
+
 import language_parser.command_parser as parse
 
 test_input = "This is A TEST string!!!!"
@@ -21,3 +23,23 @@ print parse.parse_command(test_input)
 test_input = "the paddle a dog these geese thesis statement these"
 print "The test input is: " + test_input
 print "The output without noise words is: " + parse._remove_noise(test_input)
+
+test_input = "eat oar"
+print "The test input is: " + test_input
+print "Calling parse command on it..."
+print parse.parse_command(test_input)
+
+test_input = "eat board"
+print "The test input is: " + test_input
+print "Calling parse command on it..."
+print parse.parse_command(test_input)
+
+test_input = "sniff oar"
+print "The test input is: " + test_input
+print "Calling parse command on it..."
+print parse.parse_command(test_input)
+
+test_input = "bligh blah"
+print "The test input is: " + test_input
+print "Calling parse command on it..."
+print parse.parse_command(test_input)
