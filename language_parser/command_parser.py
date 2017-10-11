@@ -8,9 +8,7 @@ import master_words as words
 class REGEX_PATTERNS:
     KNOWN_ACTION_AND_ITEM = "recognized_action_and_recognized_item"
     KNOWN_ACTION_AND_ROOM = "recognized_action_and_recognized_room"
-    KNOWN_ACTION_UNKNOWN_OBJECT = "recognized_action_and_unrecognized_object"
-    UNKNOWN_ACTION_KNOWN_ITEM = "unrecognized_action_and_recognized_item"
-    UNKNOWN_ACTION_KNOWN_ROOM = "unrecognized_action_and_recognized_room"
+    KNOWN_ACTION_AND_FEATURE = "recognized_action_and_recognized_feature"
     NO_MATCH = "no_match"
 
 class WORD_TYPES:
@@ -143,6 +141,9 @@ def _remove_noise(input_string):
     string = re.sub(noise_at_end_of_string, '', string, count=1)
     noise_in_middle_of_string = ' (' + re_noise_words + ') '
     string = re.sub(noise_in_middle_of_string, ' ', string)
+    # If removing the noise leaves more than one space between words, remove
+    # that extra space.
+    string = re.sub(' +', ' ', string)
     return string
 
 def _normalize(input_string):
@@ -170,28 +171,6 @@ def _generate_full_match_regex_patterns():
         '(' + action_or + ') (' + room_or + ')'
     return patterns
 
-def _generate_partial_match_regex_patterns():
-    """
-    TODO: Write docs
-
-    Returns: A dict of regex patterns and their labels.
-    """
-    patterns = {}
-    # Generate '|'-separated lists of each word type
-    action_or = '|'.join(action for action in words.actions)
-    item_or = '|'.join(item for item in words.items)
-    room_or = '|'.join(room for room in words.rooms)
-    combined_object_or = \
-        item_or + '|' + room_or
-    patterns[REGEX_PATTERNS.KNOWN_ACTION_UNKNOWN_OBJECT] = \
-        '(' + action_or + ') (?!' + combined_object_or + ')'
-    #TODO - FIX THESE; THEY DON'T WORK
-    patterns[REGEX_PATTERNS.UNKNOWN_ACTION_KNOWN_ITEM] = \
-        '(?!' + action_or + ') ( ' + item_or + ')'
-    patterns[REGEX_PATTERNS.UNKNOWN_ACTION_KNOWN_ROOM] = \
-        '(?!' + action_or + ') ( ' + room_or + ')'
-    return patterns
-
 def _match_user_input_pattern(input_string, regex_patterns):
     """
     Determines whether any of the regex patterns specified match the input
@@ -205,23 +184,65 @@ def _match_user_input_pattern(input_string, regex_patterns):
     for pattern_key, pattern in regex_patterns.iteritems():
         match = re.match(pattern, input_string)
         if match:
-            print "TEMP DEBUG: Got a match! match pattern is " + pattern_key
-            print list(match.groups())
             return (pattern_key, list(match.groups()))
     return (REGEX_PATTERNS.NO_MATCH, [])
 
 def _generate_output_from_pattern_key(pattern_key, matched_words):
     """
+    TODO: Write docs
     """
     output_dict = {}
     if pattern_key == REGEX_PATTERNS.NO_MATCH:
-        command_type = "other"
+        command_type = COMMAND_TYPES.OTHER
         other_info = {"processed": False}
-        output_dict["type"] = command_type
-        output_dict["other"] = other_info
+    else:
+        other_info = {"processed": True}
+        if pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_ITEM:
+            # Given the pattern key, we know that the first
+            # word matched is an action and the second word matched is an
+            # item.
+            command_type = COMMAND_TYPES.ITEM_ACTION
+            action = matched_words[0]
+            item = matched_words[1]
+            item_info = {"name": item, "action": action}
+            output_dict["item"] = item_info
+        elif pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_ROOM:
+            # Given the pattern key, we know that the first
+            # word matched is an action and the second word matched is a room.
+            command_type = COMMAND_TYPES.ROOM_ACTION
+            action = matched_words[0]
+            room = matched_words[1]
+            room_info = {"name": room, "action": action}
+            output_dict["room"] = room_info
+    # Every pattern will have a "type" and "other" key.
+    output_dict["type"] = command_type
+    output_dict["other"] = other_info
     return output_dict
 
-
+def _generate_output_for_partial_or_no_match(input_string):
+    """
+    TODO: Write docs
+    """
+    # Break input string into individual words.
+    input_words = input_string.split()
+    # Check if each word is on the master words list.
+    recognized_words = {}
+    for word in input_words:
+        # If a word is on the master words list, add its corresponding
+        # master word and type to the recognized words dict.
+        if word in words.all_words:
+            master_word = words.all_words[word]["master_word"]
+            word_type = words.all_words[word]["type"]
+            recognized_words[master_word] = word_type
+    # Construct an output dict.
+    output_dict = {}
+    command_type = COMMAND_TYPES.OTHER
+    other_info = {"processed": False}
+    output_dict["type"] = command_type
+    output_dict["other"] = other_info
+    if recognized_words:
+        output_dict["recognized_words"] = recognized_words
+    return output_dict
 
 # Public function
 # ----------------------------------------------------------------------------
@@ -238,12 +259,15 @@ def parse_command(command):
     # Try matching recognized words with the full user input.
     full_patterns = _generate_full_match_regex_patterns()
     match_info = _match_user_input_pattern(command, full_patterns)
-    # If a match against the full user input was not found, try matching
-    # recognized words with part of the user input.
-    if (match_info[0]) == REGEX_PATTERNS.NO_MATCH:
-        partial_patterns = _generate_partial_match_regex_patterns()
-        match_info = _match_user_input_pattern(command, partial_patterns)
-    return _generate_output_from_pattern_key(match_info[0], match_info[1])
+    # If a match against the full user input was found, generate the
+    # output dict based on that match.
+    output_dict = {}
+    if (match_info[0]) is not REGEX_PATTERNS.NO_MATCH:
+        output_dict = _generate_output_from_pattern_key(match_info[0], match_info[1])
+    # Otherwise, analyze the user input for a partial match.
+    else:
+        output_dict = _generate_output_for_partial_or_no_match(command)
+    return output_dict
 
 
 
@@ -265,3 +289,5 @@ def parse_command(command):
 # https://www.tutorialspoint.com/python/string_join.htm
 # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
 # https://stackoverflow.com/questions/11789877/regexp-match-sequence-that-not-contains-list-of-words-net
+# https://stackoverflow.com/questions/1546226/a-simple-way-to-remove-multiple-spaces-in-a-string-in-python
+# https://stackoverflow.com/questions/743806/how-to-split-a-string-into-a-list
