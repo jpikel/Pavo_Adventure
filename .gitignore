@@ -1,3 +1,6 @@
 #ignore .pyc files python compiled
 
 *.pyc
+
+#ignore swap files from vim
+*.swp

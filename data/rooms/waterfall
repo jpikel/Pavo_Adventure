@@ -32,6 +32,7 @@
                     "description": "lookat description for feature 1 waterfall"
                 }, 
                 "take": {
+                    "affect_condition": 0, 
                     "description": "take for feature 1 waterfall"
                 }, 
                 "eat": {
@@ -68,6 +69,7 @@
                     "description": "lookat description for feature 2 waterfall"
                 }, 
                 "take": {
+                    "affect_condition": 0, 
                     "description": "take for feature 2 waterfall"
                 }, 
                 "eat": {

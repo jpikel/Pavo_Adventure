@@ -18,6 +18,7 @@ class room_info():
         "mountain summit", "rapids", "ranger station"]
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
     room_dir = "../data/rooms/"
+    room_dir_dict = "../data/rooms_dict"
     feature_dir_dict = "../data/feature_dict"
 
     #this list only used if we need to recreate empty rooms
@@ -52,7 +53,7 @@ class room_info():
         except Exception, e:
             return None
     def get_dir_dict(self):
-        return "../data/rooms_dict"
+        return self.room_dir_dict
     def get_feature_dict_dir(self):
         return self.feature_dir_dict
 
@@ -119,3 +120,34 @@ class verb_info():
         return self.verb_definitions
     def get_dir_dict(self):
         return "../data/verbs_dict"
+
+class dict_keys():
+    """
+    official dict keys are stored here as lists with getters
+    """
+    room_keys = ["id", "title", "visited", "long_description", "short_description",
+            "features", "connected_rooms", "items_in_room", "feature_searched",
+            "room_hazards", "room_hazard_description", "room_hazard_item",
+            "room_hazard_occurs_description", "room_hazard_attributes_affected",
+            "room_hazard_safe_description"]
+    feature_keys = ["aliases","verbs","title"]
+    verbs = ["pull", "use", "read", "search", "lookat", "take", "eat"]
+    verb_keys = ["description", "affect_condition"]
+    use_additional_keys = ["deactivate_description"]
+    connected_room_keys = ["accessible", "distance_from_room", "title",
+            "pre_item_description", "item_required_title", "compass_direction",
+            "id", "item_required", "aliases"]
+
+
+    def get_room_keys(self):
+        return self.room_keys
+    def get_feature_keys(self):
+        return self.feature_keys
+    def get_verbs(self):
+        return self.verbs
+    def get_verb_keys(self):
+        return self.verb_keys
+    def get_additional_use_keys(self):
+        return self.use_additional_keys
+    def get_connected_room_keys(self):
+        return self.connected_room_keys

@@ -32,6 +32,7 @@
                     "description": "lookat description for feature 1 fire tower"
                 }, 
                 "take": {
+                    "affect_condition": 0, 
                     "description": "take for feature 1 fire tower"
                 }, 
                 "eat": {
@@ -68,6 +69,7 @@
                     "description": "lookat description for feature 2 fire tower"
                 }, 
                 "take": {
+                    "affect_condition": 0, 
                     "description": "take for feature 2 fire tower"
                 }, 
                 "eat": {

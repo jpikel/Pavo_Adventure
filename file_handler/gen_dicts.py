@@ -271,7 +271,8 @@ class update():
                 "5. Add verb alias\n"
                 "6. Add feature alias\n"
                 "7. Generate feature dictionary\n"
-                "9. Quit\n")
+                "9. Back\n"
+                "\n:")
 
         if number == "1":
             title_alias = self.get_vars()
@@ -290,7 +291,11 @@ class update():
         elif number == "7":
             self.gen_feature_dict()
         elif number == "9":
-            exit()
+            return
         self.main()
-            
-update().main()
+
+def main():
+    update().main()
+
+if __name__ == "__main__":
+    main()

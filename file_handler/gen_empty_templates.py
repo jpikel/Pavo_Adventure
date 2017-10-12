@@ -56,7 +56,8 @@ def create_room(room_name, index, connections):
                                                         "affect_condition":0
                                                         },
                                                     "take":{
-                                                        "description":"take for feature 1 " + room_name
+                                                        "description":"take for feature 1 " + room_name,
+                                                        "affect_condition":0
                                                         }
                                                     }
                                              },
@@ -90,7 +91,8 @@ def create_room(room_name, index, connections):
                                                         "affect_condition":0
                                                         },
                                                     "take":{
-                                                        "description":"take for feature 2 " + room_name
+                                                        "description":"take for feature 2 " + room_name,
+                                                        "affect_condition":0
                                                         }
                                                     }
                                              }
