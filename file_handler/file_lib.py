@@ -162,7 +162,6 @@ class file_operations():
         try:
             with open(self.temp_dir_rooms+room_title, 'r') as room_file:
                 self.current_room = json.load(room_file, object_pairs_hook=OrderedDict)
-                print(self.current_room)
                 return True
         except Exception, e:
             return False
