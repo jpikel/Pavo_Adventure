@@ -1,6 +1,5 @@
 from item import Item
 
-
 class Player(object):
     inventory = []
     hasAilment = 0
@@ -9,8 +8,9 @@ class Player(object):
     lastSated = 0 #date time
     roomsVisited = 0 #keeps track of how many rooms visited
 
-    def __init__(self, name, inventory, condition, sated):
+    def __init__(self, name, location, inventory, condition, sated):
         self.name = name
+        self.location = location
         self.inventory = inventory #list of items player is holding
         self.condition = condition#HP make it an integer!
         self.sated = sated  # hunger/thirst
@@ -20,7 +20,10 @@ class Player(object):
 
     def getInventory(self):
         for items in self.inventory:
-            print(items.name)
+            print(items.title)
+
+    def getLocation(self):
+        return self.location.title
 
     def getCondition(self):
             if self.condition == "well":
@@ -69,7 +72,7 @@ class Player(object):
         print "You ate %d hours ago", (self.lastSated)
         return self.lastSated
 
-
+''''
 # manual testing of player
 item1 = Item("sleeping bag", "Alex")
 item2 = Item("knife", "Alex")
@@ -94,5 +97,5 @@ item4 = Item("pillow", "alex")
 person.removeFromInventory(item4)
 person.getInventory()
 
-
+'''
 
