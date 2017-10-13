@@ -4,9 +4,10 @@ class Player(object):
     inventory = []
     hasAilment = 0
     isSated = 1
-    isRescued = 0
+    isRescued = False
     lastSated = 0 #date time
     roomsVisited = 0 #keeps track of how many rooms visited
+    isDead = False
 
     def __init__(self, name, location, inventory, condition, sated):
         self.name = name
@@ -25,19 +26,23 @@ class Player(object):
     def getLocation(self):
         return self.location.title
 
+    def checkCondition(self):
+        if self.roomsVisited % 3 == 0:
+            self.condition +=1
+        if self.condition > 50:
+            self.isDead = True
+
     def getCondition(self):
-            if self.condition == "well":
-                self.hasAilment = 0
-                return 0
-            if self.condition == "sick":
-                self.hasAilment = 1
-                return 1
-            if self.condition == "injured":
-                self.hasAilment = 1
-                return 2
-            if self.condtion == "dead":
-                self.hasAilment = 1
-                return 3
+        if self.condition <= 10:
+            print "You feel well"
+        elif self.condition > 10 and self.condition <=20:
+            print "You are a little worn down"
+        elif self.condition > 20 and self.condiion <=30:
+            print "Things are looking bad"
+        elif self.condition > 30 and self.condiion <=40:
+            print "Things are looking bad"
+        elif self.condition > 40:
+            print "You are on death's door"
 
     def getSated(self):
         if self.sated != "hungry" and self.sated != "thirsty":
@@ -72,30 +77,4 @@ class Player(object):
         print "You ate %d hours ago", (self.lastSated)
         return self.lastSated
 
-''''
-# manual testing of player
-item1 = Item("sleeping bag", "Alex")
-item2 = Item("knife", "Alex")
-item1.getName
-inv = [item1, item2];
-person = Player("alex", inv, "well", "thirsty")
-x = (person.getCondition())
-print x
-person.getInventory()
-y =person.getName()
-print y
-z = person.getSated()
-print z
-
-item3 = Item("gun", "alex")
-person.addToInventory(item3)
-person.getInventory()
-person.removeFromInventory(item3)
-person.getInventory()
-
-item4 = Item("pillow", "alex")
-person.removeFromInventory(item4)
-person.getInventory()
-
-'''
 

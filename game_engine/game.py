@@ -12,12 +12,13 @@ import language_parser.command_parser as parse
 
 class Game:
 
+    turnCount = 0
     items = [Item(1, "boat Paddle", "row", "use")]
     shore = Room("shore", items[0], "its a beach", "a beach", True, 1)
     crash = Room("crash site", None, "its a crash!", "a crash", False, 2)
     trail = Room("game trail", None, "its a trail", "a trail", False, 2)
     cave = Room("cave", None, "its a cave", "a cave", False, 2)
-    person = Player(None, shore, items, "well", "thirsty")
+    person = Player(None, shore, items, 0, "thirsty")
     ri = room_info()
     room_titles = ["shore", "crash site", "game trail", "field", "dense brush", "camp", "woods",
                    "cave", "mountain base", "fire tower", "river", "waterfall", "mountain ascent",
@@ -88,7 +89,6 @@ def startGame():
     quit = ["quit", "q", "close", "exit" , "quit game", "close game", "exit game"]
     cmds = [newgame, loadgame, quit]
 
-
     while not choiceLow in cmds[0] and not choiceLow in cmds[1] and not choiceLow in cmds[2]:
         print "Please Choose from the menu"
         print"  New Game"
@@ -117,7 +117,7 @@ def newGame():
     crash = Room("crash site", None, "its a crash!", "a crash", False, 2)
     trail = Room("game trail", None, "its a trail", "a trail", False, 2)
     cave = Room("cave", None, "its a cave", "a cave", False, 2)
-    person = Player(None, shore, items, "well", "thirsty")
+    person = Player(None, shore, items, 0, "thirsty")
     getPlayerName(person)
     game =Game(Player, shore, crash, trail, cave, "night")
     game.cur_room = shore
@@ -143,13 +143,10 @@ def loadGame():
 
     if gO.load_game():
        #here we need to load in all the saved data to engine
-       g = Game(None, None, None, None, None, "night")
+       g = Game(None, None, None, None, None, None)
        gameCycle(g,gO)
 
     return
-
-def exitGame():
-    print "Thanks for playing"
 
 def playGame():
     print "play Game"
@@ -161,10 +158,11 @@ def testNew():
 
 def gameCycle(g=Game, gO=game_ops):
 
-    while (g.person.isRescued == False and g.person.condition != "dead"):
+    while (g.person.isRescued == False and g.person.isDead == False):
+        g.person.getCondition()
         print gO.get_room_desc()
-        #getInput(action, noun)
-
+        ++g.turnCount
+        getTimeOfDay(g)
         print "What would you like to do?"
         userInput = raw_input("->")
         parse.parse_command(userInput)
@@ -179,7 +177,10 @@ def gameCycle(g=Game, gO=game_ops):
             move(noun, g,gO)
 
 
+        g.person.checkCondition()
 
+        print "player condition", g.person.condition
+        print "player condition", g.person.roomsVisited
         #g.person.isRescued = True
 
 def move(tar, g = Game, gO=game_ops):
@@ -241,11 +242,32 @@ def moveP( cur= Room, tar=Room, g=Game):
         if con:
             g.person.location = tar
             g.cur_room = tar
+            g.person.addRoomsVisited()
         else:
             print "You cannot reach that location from here"
             g.person.location = cur
             g.cur_room = cur
 
+def getTimeOfDay(g=Game):
+    if g.turnCount % 4 == 0:
+        g.tod = "morning"
+        print"it is morning"
+    elif g.turnCount % 4 == 1:
+        g.tod = "afternoon"
+        print"it is afternoon"
+    elif g.turnCount % 4 == 2:
+        g.tod = "evening"
+        print"it is evening"
+    elif g.turnCount % 4 == 3:
+        g.tod = "night"
+        print"it is night"
+'''
+def checkCondition(p=Player):
+    if p.roomsVisited % 3 == 0:
+        ++p.condition
+    if p.condition > 50:
+        p.isDead = True
+        '''
 #testParse()
 startGame()
 #loadGame()
