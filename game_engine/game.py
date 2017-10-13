@@ -9,6 +9,7 @@ from file_handler.file_lib import game_ops
 import language_parser.command_parser as parse
 
 
+
 class Game:
 
     items = [Item(1, "boat Paddle", "row", "use")]
@@ -138,40 +139,15 @@ def newGame():
 
 def loadGame():
     print "load game"
-    game = game_ops()
-    if game.load_game():
-        items = ["boat paddle"]
-        print("\nRoom title and description")
-        print(game.get_room_title())
-        print(game.get_room_desc())
-        print("\nTry to move to Cave")
-        print(game.attempt_move("cave", items))
-        print("\nTry to move to game trail")
-        print(game.attempt_move("game trail", items))
-        print("\nTry to move West")
-        print(game.attempt_move("w", items))
-        print("\nLookat a rescue whistle")
-        print(game.verb("Rescue Whistle", "lookat", False))
-        print("\nTry to Move to Ranger Station")
-        print(game.attempt_move("ranger station", items))
-        print("\nTry to Move to Game Trail")
-        print(game.attempt_move("game trail", items))
-        print("\nUse the lantern twice, that is in player inventory!")
-        print(game.verb("lantern", "use", True))
-        print(game.verb("lantern", "use", True))
-        print("\nUse a pickaxe that does not exist, first time with 'use' and then 'toss'")
-        print(game.verb("pickaxe", "use", False))
-        print(game.verb("pickaxe", "toss", False))
-        print("\nLookat the lantern in the inventory")
-        print(game.verb("lantern", "lookat", True))
-        print("\nLookat feature 1")
-        print(game.verb("feature_1_title", "lookat", False))
-        print("\nLookat feature 2")
-        print(game.verb("feature_2_title", "lookat", False))
-        print("\nLookat rescue whistle")
-        print(game.verb("rescue whistle", "lookat", False))
-        print("\nLookat Dusty old map")
-    print(game.verb("dusty old map", "lookat", False))
+    gO = game_ops()
+
+    if gO.load_game():
+       #here we need to load in all the saved data to engine
+       g = Game(None, None, None, None, None, "night")
+       gameCycle(g,gO)
+
+    return
+
 def exitGame():
     print "Thanks for playing"
 
@@ -208,33 +184,11 @@ def gameCycle(g=Game, gO=game_ops):
 
 def move(tar, g = Game, gO=game_ops):
     startRoom = g.cur_room
-    '''
-    tar.lower()
-    startRoom = g.cur_room
-    if tar.startswith("sh"):
-        temp=g.shore
-        stemp = "shore"
-        g.cur_room = temp
-    elif tar.startswith("cra"):
-        temp=g.crash
-        stemp = "crash site"
-        g.cur_room = temp
-    elif tar.startswith("gam" or "trai"):
-        temp=g.trail
-        stemp = "game trail"
-        g.cur_room = temp
-    elif tar.startswith("ca"):
-        temp=g.cave
-        stemp = "cave"
-        g.cur_room = temp
-    '''
     stemp=""
     temp = g.cur_room
     stemp = parseMoveString(tar, stemp)
     temp = parseMoveRoom(tar, temp, g)
-    if (g.cur_room.title == startRoom):
-        g.cur_room = startRoom
-    g.ri.movePlayer(startRoom, temp, g.person)
+    moveP(startRoom, temp, g)
     gO.attempt_move(stemp,g.person.inventory)
     g.cur_room.visited = True
     print "Player Location", g.person.location.title
@@ -254,6 +208,43 @@ def testParse():
     # parse.parse_command(test_input[0,0])
     print ""
 
+def parseMoveString(tar, stemp):
+    tar.lower()
+    if tar.startswith("sh"):
+        stemp = "shore"
+    elif tar.startswith("cra"):
+        stemp = "crash site"
+    elif tar.startswith("gam" or "trai"):
+        stemp = "game trail"
+    elif tar.startswith("ca"):
+        stemp = "cave"
+    return stemp
+
+def parseMoveRoom(tar, temp, g=Game):
+    tar.lower()
+    if tar.startswith("sh"):
+        temp = g.shore
+        g.cur_room = temp
+    elif tar.startswith("cra"):
+        temp = g.crash
+        g.cur_room = temp
+    elif tar.startswith("gam" or "trai"):
+        temp = g.trail
+        g.cur_room = temp
+    elif tar.startswith("ca"):
+        temp = g.cave
+        g.cur_room = temp
+    return temp
+
+def moveP( cur= Room, tar=Room, g=Game):
+        con = g.ri.isConnected(cur.title, tar.title)
+        if con:
+            g.person.location = tar
+            g.cur_room = tar
+        else:
+            print "You cannot reach that location from here"
+            g.person.location = cur
+            g.cur_room = cur
 
 #testParse()
 startGame()
