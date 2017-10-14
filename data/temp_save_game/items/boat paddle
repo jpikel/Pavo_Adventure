@@ -5,25 +5,37 @@
         "boat paddle"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for boat paddle"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "pull description for boat paddle"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for boat paddle", 
-            "description": "use description for boat paddle"
+            "description": "use description for boat paddle", 
+            "modifiers": 0
         }, 
-        "lookat": {
-            "affect_condition": 0, 
+        "drop": {
+            "modifiers": 0, 
+            "description": "drop for boat paddle"
+        }, 
+        "take": {
+            "modifiers": 0, 
+            "description": "take for boat paddle"
+        }, 
+        "read": {
+            "modifiers": 0, 
+            "description": "read for boat paddle"
+        }, 
+        "search": {
+            "modifiers": 0, 
+            "description": "search for boat paddle"
+        }, 
+        "look at": {
+            "modifiers": 0, 
             "description": "lookat description for boat paddle"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "eat description for boat paddle"
         }
     }, 
@@ -40,5 +52,6 @@
     "requirement_not_met_description": "req not met boat paddle", 
     "item_combination": "other item combination for boat paddle", 
     "room_combination": "boat paddle can be used in room", 
-    "feature_combination": "boat paddle can be used with feature"
+    "feature_combination": "boat paddle can be used with feature", 
+    "visited": true
 }

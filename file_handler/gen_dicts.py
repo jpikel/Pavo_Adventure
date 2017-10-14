@@ -13,6 +13,7 @@ from collections import OrderedDict
 from name_lists import room_info
 from name_lists import item_info
 from name_lists import verb_info
+import os
 
 class update():
     def gen_exit_dict(self):
@@ -37,7 +38,8 @@ class update():
 
         #sync room files to rooms_dict
         for room in room_titles:
-            with open(room_dir + room, 'r') as infile:
+            new_dir = os.path.join(room_dir, room)
+            with open(new_dir, 'r') as infile:
                 room = json.load(infile, object_pairs_hook=OrderedDict)
                 connected_rooms = room["connected_rooms"]
                 for connection in connected_rooms:
@@ -76,7 +78,8 @@ class update():
             for key, value in room_connections.items():
                 for room in value:
                     if room == title:
-                        with open(room_dir+key, 'r+') as room_file:
+                        new_dir = os.path.join(room_dir, key)
+                        with open(new_dir, 'r+') as room_file:
                             room_data = json.load(room_file, object_pairs_hook=OrderedDict)
                             room_data_conn = room_data['connected_rooms']
                             for room in room_data_conn:
@@ -106,7 +109,8 @@ class update():
         items_dict = OrderedDict()
 
         for item_name in item_titles:
-            with open(item_dir+item_name, 'r') as item_file:
+            new_dir = os.path.join(item_dir, item_name)
+            with open(new_dir, 'r') as item_file:
                 item = json.load(item_file, object_pairs_hook=OrderedDict)
                 for alias in item['aliases']:
                     items_dict.update({alias:item_name})
@@ -127,7 +131,8 @@ class update():
         item_dir = item_info().get_dir()
 
         if title in item_titles:
-            with open(item_dir + title, 'r+') as item_file:
+            new_dir = os.path.join(item_dir, title)
+            with open(new_dir, 'r+') as item_file:
                 item = json.load(item_file, object_pairs_hook=OrderedDict)
                 if alias not in item['aliases']:
                     item['aliases'].append(alias)
@@ -158,15 +163,16 @@ class update():
         room = OrderedDict()
 
         for title in rooms:
-            with open(room_dir + title, 'r') as room_file:
+            new_dir = os.path.join(room_dir, title)
+            with open(new_dir, 'r') as room_file:
                 room = json.load(room_file, object_pairs_hook=OrderedDict)
                 room_file.close()
-            feature_1 = room['feature_1_title']
-            feature_2 = room['feature_2_title']
+            feature_1 = room["features"]["1"]['title']
+            feature_2 = room["features"]["2"]['title']
             features_dict.update({feature_1:feature_1})
             features_dict.update({feature_2:feature_2})
-            aliases_1 = room['feature_1_aliases']
-            aliases_2 = room['feature_2_aliases']
+            aliases_1 = room["features"]["1"]['aliases']
+            aliases_2 = room["features"]["2"]['aliases']
 
             for alias in aliases_1:
                 if alias not in features_dict:
@@ -196,7 +202,8 @@ class update():
         result = "Added " + alias + " to " + feature_title + " in room " + room_title
 
         if room_title in room_titles:
-            with open(room_dir + room_title, 'r') as room_file:
+            new_dir = os.path.join(room_dir, room_title)
+            with open(new_dir, 'r') as room_file:
                 room = json.load(room_file, object_pairs_hook=OrderedDict)
                 if feature_title == room['feature_1_title']:
                     if alias not in room['feature_1_aliases']:
@@ -213,7 +220,7 @@ class update():
                 else:
                     result = "Feature does not exist"
                 room_file.close()
-                with open(room_dir + room_title, 'w') as room_file:
+                with open(new_dir, 'w') as room_file:
                     json.dump(room, room_file, indent = 4)
                     room_file.close()
         else:

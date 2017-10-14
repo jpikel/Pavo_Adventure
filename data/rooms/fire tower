@@ -11,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 fire tower"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 fire tower", 
-                    "description": "use description for feature 1 fire tower"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 fire tower"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 fire tower"
+                    "description": "use description for feature 1 fire tower", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 fire tower"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 fire tower"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 fire tower"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 fire tower"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1fire tower"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 fire tower"
                 }
             }, 
@@ -48,32 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 fire tower"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 fire tower", 
-                    "description": "use description for feature 2 fire tower"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 fire tower"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 fire tower"
+                    "description": "use description for feature 2 fire tower", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 fire tower"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 fire tower"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 fire tower"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 fire tower"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2fire tower"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 fire tower"
                 }
             }, 

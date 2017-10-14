@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 mountain base"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 mountain base", 
-                    "description": "use description for feature 1 mountain base"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 mountain base"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 mountain base"
+                    "description": "use description for feature 1 mountain base", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 mountain base"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 mountain base"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 mountain base"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 mountain base"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1mountain base"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 mountain base"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 mountain base"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 mountain base", 
-                    "description": "use description for feature 2 mountain base"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 mountain base"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 mountain base"
+                    "description": "use description for feature 2 mountain base", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 mountain base"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 mountain base"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 mountain base"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 mountain base"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2mountain base"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 mountain base"
                 }
             }, 

@@ -11,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 rapids"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 rapids", 
-                    "description": "use description for feature 1 rapids"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 rapids"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 rapids"
+                    "description": "use description for feature 1 rapids", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 rapids"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 rapids"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 rapids"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 rapids"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1rapids"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 rapids"
                 }
             }, 
@@ -48,32 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 rapids"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 rapids", 
-                    "description": "use description for feature 2 rapids"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 rapids"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 rapids"
+                    "description": "use description for feature 2 rapids", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 rapids"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 rapids"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 rapids"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 rapids"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2rapids"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 rapids"
                 }
             }, 

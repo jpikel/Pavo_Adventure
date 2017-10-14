@@ -1,7 +1,7 @@
 {
     "id": 8, 
     "title": "cave", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Long Description: cave", 
     "short_description": "Short Description: cave", 
     "features": {
@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 cave"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 cave", 
-                    "description": "use description for feature 1 cave"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 cave"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 cave"
+                    "description": "use description for feature 1 cave", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 cave"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 cave"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 cave"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 cave"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1cave"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 cave"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 cave"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 cave", 
-                    "description": "use description for feature 2 cave"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 cave"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 cave"
+                    "description": "use description for feature 2 cave", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 cave"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 cave"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 cave"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 cave"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2cave"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 cave"
                 }
             }, 

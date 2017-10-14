@@ -1,6 +1,9 @@
 {
-    "room_hazard_description": "", 
-    "room_hazards": false, 
+    "id": 3, 
+    "title": "game trail", 
+    "visited": false, 
+    "long_description": "Long Description: game trail", 
+    "short_description": "Short Description: game trail", 
     "features": {
         "1": {
             "aliases": [
@@ -8,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 game trail"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 game trail", 
-                    "description": "use description for feature 1 game trail"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 game trail"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 game trail"
+                    "description": "use description for feature 1 game trail", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 game trail"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 game trail"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 game trail"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 game trail"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1game trail"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 game trail"
                 }
             }, 
@@ -45,75 +52,76 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 game trail"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 game trail", 
-                    "description": "use description for feature 2 game trail"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 game trail"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 game trail"
+                    "description": "use description for feature 2 game trail", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 game trail"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 game trail"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 game trail"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 game trail"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2game trail"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 game trail"
                 }
             }, 
             "title": "feature_2_title"
         }
     }, 
-    "title": "game trail", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_item": "", 
-    "items_in_room": [], 
     "connected_rooms": [
         {
             "accessible": true, 
-            "title": "crash site", 
             "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
+            "title": "crash site", 
             "pre_item_description": "", 
+            "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
+            "item_required": false, 
             "aliases": [
                 "crash site"
             ]
         }, 
         {
             "accessible": true, 
-            "title": "cave", 
             "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
+            "title": "cave", 
             "pre_item_description": "", 
+            "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
+            "item_required": false, 
             "aliases": [
                 "cave"
             ]
         }
     ], 
-    "short_description": "Short Description: game trail", 
-    "visited": true, 
-    "room_hazard_safe_description": "", 
-    "long_description": "Long Description: game trail", 
-    "id": 3, 
-    "feature_searched": false
+    "items_in_room": [], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
 }

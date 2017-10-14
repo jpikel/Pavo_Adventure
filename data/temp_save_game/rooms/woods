@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 woods"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 woods", 
-                    "description": "use description for feature 1 woods"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 woods"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 woods"
+                    "description": "use description for feature 1 woods", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 woods"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 woods"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 woods"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 woods"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1woods"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 woods"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 woods"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 woods", 
-                    "description": "use description for feature 2 woods"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 woods"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 woods"
+                    "description": "use description for feature 2 woods", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 woods"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 woods"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 woods"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 woods"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2woods"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 woods"
                 }
             }, 

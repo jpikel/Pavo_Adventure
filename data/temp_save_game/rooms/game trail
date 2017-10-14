@@ -1,7 +1,7 @@
 {
     "id": 3, 
     "title": "game trail", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Long Description: game trail", 
     "short_description": "Short Description: game trail", 
     "features": {
@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 game trail"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 game trail", 
-                    "description": "use description for feature 1 game trail"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 game trail"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 game trail"
+                    "description": "use description for feature 1 game trail", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 game trail"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 game trail"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 game trail"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 game trail"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1game trail"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 game trail"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 game trail"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 game trail", 
-                    "description": "use description for feature 2 game trail"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 game trail"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 game trail"
+                    "description": "use description for feature 2 game trail", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 game trail"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 game trail"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 game trail"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 game trail"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2game trail"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 game trail"
                 }
             }, 

@@ -1,7 +1,7 @@
 {
     "id": 1, 
     "title": "shore", 
-    "visited": false, 
+    "visited": true, 
     "long_description": "Long Description: shore", 
     "short_description": "Short Description: shore", 
     "features": {
@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 shore"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 shore", 
-                    "description": "use description for feature 1 shore"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 shore"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 shore"
+                    "description": "use description for feature 1 shore", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 shore"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 shore"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 shore"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 shore"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1shore"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 shore"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 shore"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 shore", 
-                    "description": "use description for feature 2 shore"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 shore"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 shore"
+                    "description": "use description for feature 2 shore", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 shore"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 shore"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 shore"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 shore"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2shore"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 shore"
                 }
             }, 
@@ -93,8 +103,10 @@
             ]
         }
     ], 
-    "items_in_room": [], 
-    "feature_searched": false, 
+    "items_in_room": [
+        "lantern"
+    ], 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 

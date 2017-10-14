@@ -11,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 mountain summit"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 mountain summit", 
-                    "description": "use description for feature 1 mountain summit"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 mountain summit"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 mountain summit"
+                    "description": "use description for feature 1 mountain summit", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 mountain summit"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 mountain summit"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 mountain summit"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 mountain summit"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1mountain summit"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 mountain summit"
                 }
             }, 
@@ -48,32 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 mountain summit"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 mountain summit", 
-                    "description": "use description for feature 2 mountain summit"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 mountain summit"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 mountain summit"
+                    "description": "use description for feature 2 mountain summit", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 mountain summit"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 mountain summit"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 mountain summit"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 mountain summit"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2mountain summit"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 mountain summit"
                 }
             }, 

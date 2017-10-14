@@ -5,25 +5,37 @@
         "rescue whistle"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for rescue whistle"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "pull description for rescue whistle"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for rescue whistle", 
-            "description": "use description for rescue whistle"
+            "description": "use description for rescue whistle", 
+            "modifiers": 0
         }, 
-        "lookat": {
-            "affect_condition": 0, 
+        "drop": {
+            "modifiers": 0, 
+            "description": "drop for rescue whistle"
+        }, 
+        "take": {
+            "modifiers": 0, 
+            "description": "take for rescue whistle"
+        }, 
+        "read": {
+            "modifiers": 0, 
+            "description": "read for rescue whistle"
+        }, 
+        "search": {
+            "modifiers": 0, 
+            "description": "search for rescue whistle"
+        }, 
+        "look at": {
+            "modifiers": 0, 
             "description": "lookat description for rescue whistle"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "eat description for rescue whistle"
         }
     }, 

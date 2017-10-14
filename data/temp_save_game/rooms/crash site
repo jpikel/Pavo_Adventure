@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 crash site"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 crash site", 
-                    "description": "use description for feature 1 crash site"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 crash site"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 crash site"
+                    "description": "use description for feature 1 crash site", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 crash site"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 crash site"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 crash site"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 crash site"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1crash site"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 crash site"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 crash site"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 crash site", 
-                    "description": "use description for feature 2 crash site"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 crash site"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 crash site"
+                    "description": "use description for feature 2 crash site", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 crash site"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 crash site"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 crash site"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 crash site"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2crash site"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 crash site"
                 }
             }, 

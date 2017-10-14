@@ -11,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 dense brush"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 dense brush", 
-                    "description": "use description for feature 1 dense brush"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 dense brush"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 dense brush"
+                    "description": "use description for feature 1 dense brush", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 dense brush"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 dense brush"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 dense brush"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 dense brush"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1dense brush"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 dense brush"
                 }
             }, 
@@ -48,32 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 dense brush"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 dense brush", 
-                    "description": "use description for feature 2 dense brush"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 dense brush"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 dense brush"
+                    "description": "use description for feature 2 dense brush", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 dense brush"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 dense brush"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 dense brush"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 dense brush"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2dense brush"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 dense brush"
                 }
             }, 

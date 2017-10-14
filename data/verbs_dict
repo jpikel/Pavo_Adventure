@@ -9,5 +9,6 @@
     "read": "read", 
     "search": "search", 
     "take": "take", 
-    "use": "use"
+    "use": "use",
+    "drop": "drop"
 }

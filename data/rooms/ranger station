@@ -11,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 ranger station"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 ranger station", 
-                    "description": "use description for feature 1 ranger station"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 ranger station"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 ranger station"
+                    "description": "use description for feature 1 ranger station", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 ranger station"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 ranger station"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 ranger station"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 ranger station"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1ranger station"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 ranger station"
                 }
             }, 
@@ -48,32 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 ranger station"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 ranger station", 
-                    "description": "use description for feature 2 ranger station"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 ranger station"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 ranger station"
+                    "description": "use description for feature 2 ranger station", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 ranger station"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 ranger station"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 ranger station"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 ranger station"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2ranger station"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 ranger station"
                 }
             }, 

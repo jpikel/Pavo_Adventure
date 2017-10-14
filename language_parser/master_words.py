@@ -24,14 +24,14 @@ rooms = {
    "shore": "shore", 
    "waterfall": "waterfall", 
    "rapids": "rapids", 
-   "cavern": "cave", 
+   "mountain summit": "mountain summit", 
    "mountain base": "mountain base", 
-   "river": "river", 
-   "mountain summit": "mountain summit"
+   "river": "river"
 }
 actions = {
    "pull": "pull", 
    "search": "search", 
+   "drop": "drop", 
    "look": "look", 
    "read": "read", 
    "look at": "look at", 
@@ -87,9 +87,9 @@ all_words = {
       "type": "room", 
       "master_word": "waterfall"
    }, 
-   "cavern": {
-      "type": "room", 
-      "master_word": "cave"
+   "eat": {
+      "type": "action", 
+      "master_word": "eat"
    }, 
    "heavy winter parka": {
       "type": "item", 
@@ -107,10 +107,6 @@ all_words = {
       "type": "item", 
       "master_word": "flare gun"
    }, 
-   "eat": {
-      "type": "action", 
-      "master_word": "eat"
-   }, 
    "boat paddle": {
       "type": "item", 
       "master_word": "boat paddle"
@@ -126,6 +122,10 @@ all_words = {
    "frozen dead hare": {
       "type": "item", 
       "master_word": "frozen dead hare"
+   }, 
+   "drop": {
+      "type": "action", 
+      "master_word": "drop"
    }, 
    "look": {
       "type": "action", 

@@ -5,25 +5,37 @@
         "lantern"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for lantern"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "pull description for lantern"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for lantern", 
-            "description": "use description for lantern"
+            "description": "use description for lantern", 
+            "modifiers": 0
         }, 
-        "lookat": {
-            "affect_condition": 0, 
+        "drop": {
+            "modifiers": 0, 
+            "description": "drop for lantern"
+        }, 
+        "take": {
+            "modifiers": 0, 
+            "description": "take for lantern"
+        }, 
+        "read": {
+            "modifiers": 0, 
+            "description": "read for lantern"
+        }, 
+        "search": {
+            "modifiers": 0, 
+            "description": "search for lantern"
+        }, 
+        "look at": {
+            "modifiers": 0, 
             "description": "lookat description for lantern"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "eat description for lantern"
         }
     }, 

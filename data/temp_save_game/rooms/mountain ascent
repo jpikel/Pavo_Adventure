@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 mountain ascent"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 mountain ascent", 
-                    "description": "use description for feature 1 mountain ascent"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 mountain ascent"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 mountain ascent"
+                    "description": "use description for feature 1 mountain ascent", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 mountain ascent"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 mountain ascent"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 mountain ascent"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 mountain ascent"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1mountain ascent"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 mountain ascent"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 mountain ascent"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 mountain ascent", 
-                    "description": "use description for feature 2 mountain ascent"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 mountain ascent"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 mountain ascent"
+                    "description": "use description for feature 2 mountain ascent", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 mountain ascent"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 mountain ascent"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 mountain ascent"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 mountain ascent"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2mountain ascent"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 mountain ascent"
                 }
             }, 

@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 camp"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 camp", 
-                    "description": "use description for feature 1 camp"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 camp"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 camp"
+                    "description": "use description for feature 1 camp", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 camp"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 camp"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 camp"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 camp"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1camp"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 camp"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 camp"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 camp", 
-                    "description": "use description for feature 2 camp"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 camp"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 camp"
+                    "description": "use description for feature 2 camp", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 camp"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 camp"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 camp"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 camp"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2camp"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 camp"
                 }
             }, 

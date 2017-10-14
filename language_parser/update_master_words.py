@@ -5,6 +5,7 @@ MASTER_WORDS_FILENAME = "master_words.py"
 ITEMS_FILENAME = "items_dict"
 ROOMS_FILENAME = "rooms_dict"
 VERBS_FILENAME = "verbs_dict"
+FEATURES_FILENAME = "features_dict"
 MASTER_FIELD = "master_word"
 WORD_TYPE_FIELD = "type"
 

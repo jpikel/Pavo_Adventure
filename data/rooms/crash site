@@ -1,6 +1,9 @@
 {
-    "room_hazard_description": "", 
-    "room_hazards": false, 
+    "id": 2, 
+    "title": "crash site", 
+    "visited": false, 
+    "long_description": "Long Description: crash site", 
+    "short_description": "Short Description: crash site", 
     "features": {
         "1": {
             "aliases": [
@@ -8,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 crash site"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 crash site", 
-                    "description": "use description for feature 1 crash site"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 crash site"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 crash site"
+                    "description": "use description for feature 1 crash site", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 crash site"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 crash site"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 crash site"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 crash site"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1crash site"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 crash site"
                 }
             }, 
@@ -45,88 +52,89 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 crash site"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 crash site", 
-                    "description": "use description for feature 2 crash site"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 crash site"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 crash site"
+                    "description": "use description for feature 2 crash site", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 crash site"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 crash site"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 crash site"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 crash site"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2crash site"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 crash site"
                 }
             }, 
             "title": "feature_2_title"
         }
     }, 
-    "title": "crash site", 
-    "items_in_room": [], 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_item": "", 
-    "long_description": "Long Description: crash site", 
     "connected_rooms": [
         {
             "accessible": true, 
-            "title": "shore", 
             "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
+            "title": "shore", 
             "pre_item_description": "", 
+            "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
+            "item_required": false, 
             "aliases": [
                 "shore"
             ]
         }, 
         {
             "accessible": true, 
-            "title": "camp", 
             "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
+            "title": "camp", 
             "pre_item_description": "", 
+            "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
+            "item_required": false, 
             "aliases": [
                 "camp"
             ]
         }, 
         {
             "accessible": true, 
-            "title": "game trail", 
             "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
+            "title": "game trail", 
             "pre_item_description": "", 
+            "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
+            "item_required": false, 
             "aliases": [
                 "game trail"
             ]
         }
     ], 
-    "short_description": "Short Description: crash site", 
-    "visited": true, 
-    "room_hazard_safe_description": "", 
-    "id": 2, 
-    "feature_searched": false
+    "items_in_room": [], 
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
 }

@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 waterfall"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 waterfall", 
-                    "description": "use description for feature 1 waterfall"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 waterfall"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 waterfall"
+                    "description": "use description for feature 1 waterfall", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 waterfall"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 1 waterfall"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 waterfall"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 waterfall"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1waterfall"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 waterfall"
                 }
             }, 
@@ -47,31 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 waterfall"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 waterfall", 
-                    "description": "use description for feature 2 waterfall"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 waterfall"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 waterfall"
+                    "description": "use description for feature 2 waterfall", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 waterfall"
                 }, 
                 "take": {
+                    "modifiers": 0, 
                     "description": "take for feature 2 waterfall"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 waterfall"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 waterfall"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2waterfall"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 waterfall"
                 }
             }, 

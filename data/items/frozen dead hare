@@ -5,25 +5,37 @@
         "frozen dead hare"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for frozen dead hare"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "pull description for frozen dead hare"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for frozen dead hare", 
-            "description": "use description for frozen dead hare"
+            "description": "use description for frozen dead hare", 
+            "modifiers": 0
         }, 
-        "lookat": {
-            "affect_condition": 0, 
+        "drop": {
+            "modifiers": 0, 
+            "description": "drop for frozen dead hare"
+        }, 
+        "take": {
+            "modifiers": 0, 
+            "description": "take for frozen dead hare"
+        }, 
+        "read": {
+            "modifiers": 0, 
+            "description": "read for frozen dead hare"
+        }, 
+        "search": {
+            "modifiers": 0, 
+            "description": "search for frozen dead hare"
+        }, 
+        "look at": {
+            "modifiers": 0, 
             "description": "lookat description for frozen dead hare"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "eat description for frozen dead hare"
         }
     }, 

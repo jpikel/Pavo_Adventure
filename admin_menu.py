@@ -8,8 +8,8 @@ Description - A simple menu to help navigate to different parts of handling
 dicts, alias entry, validation etc.
 """
 
-import gen_dicts
-import modify_dicts
+import file_handler.gen_dicts as gen_dicts
+import file_handler.modify_dicts as modify_dicts
 
 
 

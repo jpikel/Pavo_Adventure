@@ -1,106 +1,114 @@
 {
-    "room_hazard_description": "", 
-    "room_hazard_safe_description": "", 
-    "room_hazards": false, 
+    "id": 12, 
+    "title": "waterfall", 
+    "visited": false, 
+    "long_description": "Long Description: waterfall", 
+    "short_description": "Short Description: waterfall", 
     "features": {
         "1": {
-            "title": "feature_1_title", 
+            "aliases": [
+                "feature_1_aliases"
+            ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 waterfall"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 waterfall", 
-                    "description": "use description for feature 1 waterfall"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 waterfall"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 waterfall"
+                    "description": "use description for feature 1 waterfall", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 waterfall"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 waterfall"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 waterfall"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 waterfall"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1waterfall"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 waterfall"
                 }
             }, 
-            "aliases": [
-                "feature_1_aliases"
-            ]
+            "title": "feature_1_title"
         }, 
         "2": {
-            "title": "feature_2_title", 
+            "aliases": [
+                "feature_2_aliases"
+            ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 waterfall"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 waterfall", 
-                    "description": "use description for feature 2 waterfall"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 waterfall"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 waterfall"
+                    "description": "use description for feature 2 waterfall", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 waterfall"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 waterfall"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 waterfall"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 waterfall"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2waterfall"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 waterfall"
                 }
             }, 
-            "aliases": [
-                "feature_2_aliases"
-            ]
+            "title": "feature_2_title"
         }
     }, 
-    "title": "waterfall", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_item": "", 
-    "id": 12, 
     "connected_rooms": [
         {
             "accessible": true, 
-            "title": "river", 
             "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
+            "title": "river", 
             "pre_item_description": "", 
+            "item_required_title": "", 
             "compass_direction": "", 
             "id": 0, 
+            "item_required": false, 
             "aliases": [
                 "river"
             ]
         }
     ], 
-    "short_description": "Short Description: waterfall", 
-    "visited": true, 
     "items_in_room": [], 
-    "long_description": "Long Description: waterfall", 
-    "feature_searched": false
+    "feature_searched": false, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": ""
 }

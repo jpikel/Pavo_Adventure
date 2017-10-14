@@ -5,25 +5,37 @@
         "tattered notebook"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for tattered notebook"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "pull description for tattered notebook"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for tattered notebook", 
-            "description": "use description for tattered notebook"
+            "description": "use description for tattered notebook", 
+            "modifiers": 0
         }, 
-        "lookat": {
-            "affect_condition": 0, 
+        "drop": {
+            "modifiers": 0, 
+            "description": "drop for tattered notebook"
+        }, 
+        "take": {
+            "modifiers": 0, 
+            "description": "take for tattered notebook"
+        }, 
+        "read": {
+            "modifiers": 0, 
+            "description": "read for tattered notebook"
+        }, 
+        "search": {
+            "modifiers": 0, 
+            "description": "search for tattered notebook"
+        }, 
+        "look at": {
+            "modifiers": 0, 
             "description": "lookat description for tattered notebook"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": 0, 
             "description": "eat description for tattered notebook"
         }
     }, 

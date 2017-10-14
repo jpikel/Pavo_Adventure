@@ -11,32 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 1 field"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 field", 
-                    "description": "use description for feature 1 field"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 field"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 field"
+                    "description": "use description for feature 1 field", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 1 field"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 1 field"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 field"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 1 field"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 1field"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 1 field"
                 }
             }, 
@@ -48,32 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "pull description for feature 2 field"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 field", 
-                    "description": "use description for feature 2 field"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 field"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 field"
+                    "description": "use description for feature 2 field", 
+                    "modifiers": 0
                 }, 
                 "lookat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "lookat description for feature 2 field"
                 }, 
                 "take": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "take for feature 2 field"
                 }, 
+                "read": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 field"
+                }, 
+                "search": {
+                    "modifiers": 0, 
+                    "description": "read for feature 2 field"
+                }, 
+                "drop": {
+                    "modifiers": 0, 
+                    "description": "drop for feature 2field"
+                }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": 0, 
                     "description": "eat description for feature 2 field"
                 }
             }, 
