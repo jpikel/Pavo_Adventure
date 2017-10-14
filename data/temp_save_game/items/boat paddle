@@ -52,6 +52,5 @@
     "requirement_not_met_description": "req not met boat paddle", 
     "item_combination": "other item combination for boat paddle", 
     "room_combination": "boat paddle can be used in room", 
-    "feature_combination": "boat paddle can be used with feature", 
-    "visited": true
+    "feature_combination": "boat paddle can be used with feature"
 }

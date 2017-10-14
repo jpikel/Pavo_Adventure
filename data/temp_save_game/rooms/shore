@@ -1,7 +1,7 @@
 {
     "id": 1, 
     "title": "shore", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Long Description: shore", 
     "short_description": "Short Description: shore", 
     "features": {
@@ -103,9 +103,7 @@
             ]
         }
     ], 
-    "items_in_room": [
-        "lantern"
-    ], 
+    "items_in_room": ["boat paddle", "lantern"], 
     "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 

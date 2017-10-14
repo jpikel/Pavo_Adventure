@@ -86,16 +86,27 @@ def print_help(stdscr):
         print_text(15,y,"::", stdscr,  curses.color_pair(2))
         print_text(19,y,verb_dict[key], stdscr)
 
-def main(stdscr):
-    """
-        a simple print to screen of the help file
-    """
+def main_helper(stdscr):
     init_colors()
     print_border(stdscr)
     print_help(stdscr)
     print_text(0,45,"\n", stdscr)
     x = stdscr.getch()
+    stdscr.clear()
+    stdscr.refresh()
     curses.endwin()
-    
+
+
+def main(stdscr=None):
+    """
+        a simple print to screen of the help file
+    """
+    locale.setlocale(locale.LC_ALL, '')
+    code = locale.getpreferredencoding()
+    if stdscr == None:
+        curses.wrapper(main_helper)
+    else:
+        main(stdscr)
+       
 if __name__ == "__main__":
     curses.wrapper(main)
