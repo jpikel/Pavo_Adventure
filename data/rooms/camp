@@ -1,132 +1,132 @@
 {
-    "room_hazard_description": "", 
-    "room_hazards": false, 
+    "id": 6,
+    "title": "camp",
+    "visited": false,
+    "long_description": "Long Description: camp",
+    "short_description": "Short Description: camp",
     "features": {
         "1": {
             "aliases": [
                 "feature_1_aliases"
-            ], 
+            ],
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "pull description for feature 1 camp"
-                }, 
+                },
                 "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 1 camp", 
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 1 camp",
                     "description": "use description for feature 1 camp"
-                }, 
+                },
                 "read": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 1 camp"
-                }, 
+                },
                 "search": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 1 camp"
-                }, 
+                },
                 "lookat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "lookat description for feature 1 camp"
-                }, 
+                },
                 "take": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "take for feature 1 camp"
-                }, 
+                },
                 "eat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "eat description for feature 1 camp"
                 }
-            }, 
+            },
             "title": "feature_1_title"
-        }, 
+        },
         "2": {
             "aliases": [
                 "feature_2_aliases"
-            ], 
+            ],
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "pull description for feature 2 camp"
-                }, 
+                },
                 "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 2 camp", 
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 2 camp",
                     "description": "use description for feature 2 camp"
-                }, 
+                },
                 "read": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 2 camp"
-                }, 
+                },
                 "search": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 2 camp"
-                }, 
+                },
                 "lookat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "lookat description for feature 2 camp"
-                }, 
+                },
                 "take": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "take for feature 2 camp"
-                }, 
+                },
                 "eat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "eat description for feature 2 camp"
                 }
-            }, 
+            },
             "title": "feature_2_title"
         }
-    }, 
-    "title": "camp", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_item": "", 
-    "items_in_room": [], 
+    },
     "connected_rooms": [
         {
-            "accessible": true, 
-            "title": "dense brush", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "dense brush",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "dense brush"
             ]
-        }, 
+        },
         {
-            "accessible": true, 
-            "title": "woods", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "woods",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "woods"
             ]
-        }, 
+        },
         {
-            "accessible": true, 
-            "title": "crash site", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "crash site",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "crash site"
             ]
         }
-    ], 
-    "short_description": "Short Description: camp", 
-    "visited": true, 
-    "room_hazard_safe_description": "", 
-    "long_description": "Long Description: camp", 
-    "id": 6, 
-    "feature_searched": false
+    ],
+    "items_in_room": [],
+    "feature_searched": false,
+    "room_hazards": false,
+    "room_hazard_description": "",
+    "room_hazard_item": "",
+    "room_hazard_occurs_description": "",
+    "room_hazard_attributes_affected": "",
+    "room_hazard_safe_description": ""
 }

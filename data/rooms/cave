@@ -1,119 +1,119 @@
 {
-    "room_hazard_description": "", 
-    "room_hazards": false, 
+    "id": 8,
+    "title": "cave",
+    "visited": false,
+    "long_description": "Long Description: cave",
+    "short_description": "Short Description: cave",
     "features": {
         "1": {
             "aliases": [
                 "feature_1_aliases"
-            ], 
+            ],
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "pull description for feature 1 cave"
-                }, 
+                },
                 "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 1 cave", 
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 1 cave",
                     "description": "use description for feature 1 cave"
-                }, 
+                },
                 "read": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 1 cave"
-                }, 
+                },
                 "search": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 1 cave"
-                }, 
+                },
                 "lookat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "lookat description for feature 1 cave"
-                }, 
+                },
                 "take": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "take for feature 1 cave"
-                }, 
+                },
                 "eat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "eat description for feature 1 cave"
                 }
-            }, 
+            },
             "title": "feature_1_title"
-        }, 
+        },
         "2": {
             "aliases": [
                 "feature_2_aliases"
-            ], 
+            ],
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "pull description for feature 2 cave"
-                }, 
+                },
                 "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 2 cave", 
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 2 cave",
                     "description": "use description for feature 2 cave"
-                }, 
+                },
                 "read": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 2 cave"
-                }, 
+                },
                 "search": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 2 cave"
-                }, 
+                },
                 "lookat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "lookat description for feature 2 cave"
-                }, 
+                },
                 "take": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "take for feature 2 cave"
-                }, 
+                },
                 "eat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "eat description for feature 2 cave"
                 }
-            }, 
+            },
             "title": "feature_2_title"
         }
-    }, 
-    "title": "cave", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_item": "", 
-    "items_in_room": [], 
+    },
     "connected_rooms": [
         {
-            "accessible": true, 
-            "title": "woods", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "woods",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "woods"
             ]
-        }, 
+        },
         {
-            "accessible": true, 
-            "title": "game trail", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "game trail",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "game trail"
             ]
         }
-    ], 
-    "short_description": "Short Description: cave", 
-    "visited": true, 
-    "room_hazard_safe_description": "", 
-    "long_description": "Long Description: cave", 
-    "id": 8, 
-    "feature_searched": false
+    ],
+    "items_in_room": [],
+    "feature_searched": false,
+    "room_hazards": false,
+    "room_hazard_description": "",
+    "room_hazard_item": "",
+    "room_hazard_occurs_description": "",
+    "room_hazard_attributes_affected": "",
+    "room_hazard_safe_description": ""
 }

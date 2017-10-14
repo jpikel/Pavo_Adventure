@@ -1,132 +1,132 @@
 {
-    "room_hazard_description": "", 
-    "room_hazard_safe_description": "", 
-    "room_hazards": false, 
+    "id": 11,
+    "title": "river",
+    "visited": false,
+    "long_description": "Long Description: river",
+    "short_description": "Short Description: river",
     "features": {
         "1": {
-            "title": "feature_1_title", 
-            "verbs": {
-                "pull": {
-                    "affect_condition": 0, 
-                    "description": "pull description for feature 1 river"
-                }, 
-                "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 1 river", 
-                    "description": "use description for feature 1 river"
-                }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 river"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 river"
-                }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 1 river"
-                }, 
-                "take": {
-                    "affect_condition": 0, 
-                    "description": "take for feature 1 river"
-                }, 
-                "eat": {
-                    "affect_condition": 0, 
-                    "description": "eat description for feature 1 river"
-                }
-            }, 
             "aliases": [
                 "feature_1_aliases"
-            ]
-        }, 
-        "2": {
-            "title": "feature_2_title", 
+            ],
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
-                    "description": "pull description for feature 2 river"
-                }, 
+                    "affect_condition": 0,
+                    "description": "pull description for feature 1 river"
+                },
                 "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 2 river", 
-                    "description": "use description for feature 2 river"
-                }, 
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 1 river",
+                    "description": "use description for feature 1 river"
+                },
                 "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 river"
-                }, 
+                    "affect_condition": 0,
+                    "description": "read for feature 1 river"
+                },
                 "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 river"
-                }, 
+                    "affect_condition": 0,
+                    "description": "read for feature 1 river"
+                },
                 "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 2 river"
-                }, 
+                    "affect_condition": 0,
+                    "description": "lookat description for feature 1 river"
+                },
                 "take": {
-                    "affect_condition": 0, 
-                    "description": "take for feature 2 river"
-                }, 
+                    "affect_condition": 0,
+                    "description": "take for feature 1 river"
+                },
                 "eat": {
-                    "affect_condition": 0, 
-                    "description": "eat description for feature 2 river"
+                    "affect_condition": 0,
+                    "description": "eat description for feature 1 river"
                 }
-            }, 
+            },
+            "title": "feature_1_title"
+        },
+        "2": {
             "aliases": [
                 "feature_2_aliases"
-            ]
+            ],
+            "verbs": {
+                "pull": {
+                    "affect_condition": 0,
+                    "description": "pull description for feature 2 river"
+                },
+                "use": {
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 2 river",
+                    "description": "use description for feature 2 river"
+                },
+                "read": {
+                    "affect_condition": 0,
+                    "description": "read for feature 2 river"
+                },
+                "search": {
+                    "affect_condition": 0,
+                    "description": "read for feature 2 river"
+                },
+                "lookat": {
+                    "affect_condition": 0,
+                    "description": "lookat description for feature 2 river"
+                },
+                "take": {
+                    "affect_condition": 0,
+                    "description": "take for feature 2 river"
+                },
+                "eat": {
+                    "affect_condition": 0,
+                    "description": "eat description for feature 2 river"
+                }
+            },
+            "title": "feature_2_title"
         }
-    }, 
-    "title": "river", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_item": "", 
-    "id": 11, 
+    },
     "connected_rooms": [
         {
-            "accessible": true, 
-            "title": "rapids", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "rapids",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "rapids"
             ]
-        }, 
+        },
         {
-            "accessible": true, 
-            "title": "waterfall", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "waterfall",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "waterfall"
             ]
-        }, 
+        },
         {
-            "accessible": true, 
-            "title": "woods", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "woods",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "woods"
             ]
         }
-    ], 
-    "short_description": "Short Description: river", 
-    "visited": true, 
-    "items_in_room": [], 
-    "long_description": "Long Description: river", 
-    "feature_searched": false
+    ],
+    "items_in_room": [],
+    "feature_searched": false,
+    "room_hazards": false,
+    "room_hazard_description": "",
+    "room_hazard_item": "",
+    "room_hazard_occurs_description": "",
+    "room_hazard_attributes_affected": "",
+    "room_hazard_safe_description": ""
 }

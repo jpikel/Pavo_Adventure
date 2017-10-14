@@ -1,132 +1,132 @@
 {
-    "room_hazard_description": "", 
-    "room_hazards": false, 
+    "id": 7,
+    "title": "woods",
+    "visited": false,
+    "long_description": "Long Description: woods",
+    "short_description": "Short Description: woods",
     "features": {
         "1": {
             "aliases": [
                 "feature_1_aliases"
-            ], 
+            ],
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "pull description for feature 1 woods"
-                }, 
+                },
                 "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 1 woods", 
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 1 woods",
                     "description": "use description for feature 1 woods"
-                }, 
+                },
                 "read": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 1 woods"
-                }, 
+                },
                 "search": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 1 woods"
-                }, 
+                },
                 "lookat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "lookat description for feature 1 woods"
-                }, 
+                },
                 "take": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "take for feature 1 woods"
-                }, 
+                },
                 "eat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "eat description for feature 1 woods"
                 }
-            }, 
+            },
             "title": "feature_1_title"
-        }, 
+        },
         "2": {
             "aliases": [
                 "feature_2_aliases"
-            ], 
+            ],
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "pull description for feature 2 woods"
-                }, 
+                },
                 "use": {
-                    "affect_condition": 0, 
-                    "deactivate_description": "use deactivate for feature 2 woods", 
+                    "affect_condition": 0,
+                    "deactivate_description": "use deactivate for feature 2 woods",
                     "description": "use description for feature 2 woods"
-                }, 
+                },
                 "read": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 2 woods"
-                }, 
+                },
                 "search": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "read for feature 2 woods"
-                }, 
+                },
                 "lookat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "lookat description for feature 2 woods"
-                }, 
+                },
                 "take": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "take for feature 2 woods"
-                }, 
+                },
                 "eat": {
-                    "affect_condition": 0, 
+                    "affect_condition": 0,
                     "description": "eat description for feature 2 woods"
                 }
-            }, 
+            },
             "title": "feature_2_title"
         }
-    }, 
-    "title": "woods", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_item": "", 
-    "items_in_room": [], 
+    },
     "connected_rooms": [
         {
-            "accessible": true, 
-            "title": "camp", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "camp",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "camp"
             ]
-        }, 
+        },
         {
-            "accessible": true, 
-            "title": "river", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "river",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "river"
             ]
-        }, 
+        },
         {
-            "accessible": true, 
-            "title": "cave", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
+            "accessible": true,
+            "distance_from_room": 1,
+            "title": "cave",
+            "pre_item_description": "",
+            "item_required_title": "",
+            "compass_direction": "",
+            "id": 0,
+            "item_required": false,
             "aliases": [
                 "cave"
             ]
         }
-    ], 
-    "short_description": "Short Description: woods", 
-    "visited": true, 
-    "room_hazard_safe_description": "", 
-    "long_description": "Long Description: woods", 
-    "id": 7, 
-    "feature_searched": false
+    ],
+    "items_in_room": [],
+    "feature_searched": false,
+    "room_hazards": false,
+    "room_hazard_description": "",
+    "room_hazard_item": "",
+    "room_hazard_occurs_description": "",
+    "room_hazard_attributes_affected": "",
+    "room_hazard_safe_description": ""
 }
