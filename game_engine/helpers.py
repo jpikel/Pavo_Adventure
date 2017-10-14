@@ -3,19 +3,14 @@ sys.path.insert(0, "C:\\Users\\Alex\\Desktop\\capstone\\language_parser")
 from file_handler.file_lib import game_ops
 import language_parser.command_parser as parse
 from player import Player
+
+
 def getPlayerName(p=Player):
     print ("Hello dreary traveler.  What is your name? ")
     choice= raw_input("-> ")
     p.name = choice
     print "goodluck ", choice, "\n"
     return p
-
-
-def getInput(phrase):
-    #EMILY PARSES PHRASE
-    action = raw_input("What would you like to do?")
-    noun = raw_input("To what object")
-    return action, noun
 
 
 def parseMoveString(tar, stemp):
@@ -78,4 +73,6 @@ def playerRescued():
 def playerDead():
     print"YOU DIED"
 
+def exitGame():
+    print "Thanks for playing"
 

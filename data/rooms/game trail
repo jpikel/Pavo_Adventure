@@ -1,9 +1,6 @@
 {
-    "id": 3, 
-    "title": "game trail", 
-    "visited": false, 
-    "long_description": "Long Description: game trail", 
-    "short_description": "Short Description: game trail", 
+    "room_hazard_description": "", 
+    "room_hazards": false, 
     "features": {
         "1": {
             "aliases": [
@@ -80,40 +77,43 @@
             "title": "feature_2_title"
         }
     }, 
+    "title": "game trail", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_item": "", 
+    "items_in_room": [], 
     "connected_rooms": [
         {
             "accessible": true, 
-            "distance_from_room": 1, 
             "title": "crash site", 
-            "pre_item_description": "", 
+            "distance_from_room": 1, 
+            "item_required": false, 
             "item_required_title": "", 
+            "pre_item_description": "", 
             "compass_direction": "", 
             "id": 0, 
-            "item_required": false, 
             "aliases": [
                 "crash site"
             ]
         }, 
         {
             "accessible": true, 
-            "distance_from_room": 1, 
             "title": "cave", 
-            "pre_item_description": "", 
+            "distance_from_room": 1, 
+            "item_required": false, 
             "item_required_title": "", 
+            "pre_item_description": "", 
             "compass_direction": "", 
             "id": 0, 
-            "item_required": false, 
             "aliases": [
                 "cave"
             ]
         }
     ], 
-    "items_in_room": [], 
-    "feature_searched": false, 
-    "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "short_description": "Short Description: game trail", 
+    "visited": true, 
+    "room_hazard_safe_description": "", 
+    "long_description": "Long Description: game trail", 
+    "id": 3, 
+    "feature_searched": false
 }

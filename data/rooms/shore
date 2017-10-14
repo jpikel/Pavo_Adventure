@@ -1,14 +1,9 @@
 {
-    "id": 1, 
-    "title": "shore", 
-    "visited": false, 
-    "long_description": "Long Description: shore", 
-    "short_description": "Short Description: shore", 
+    "room_hazard_description": "", 
+    "room_hazard_safe_description": "", 
     "features": {
         "1": {
-            "aliases": [
-                "feature_1_aliases"
-            ], 
+            "title": "feature_1_title", 
             "verbs": {
                 "pull": {
                     "affect_condition": 0, 
@@ -40,12 +35,12 @@
                     "description": "eat description for feature 1 shore"
                 }
             }, 
-            "title": "feature_1_title"
+            "aliases": [
+                "feature_1_aliases"
+            ]
         }, 
         "2": {
-            "aliases": [
-                "feature_2_aliases"
-            ], 
+            "title": "feature_2_title", 
             "verbs": {
                 "pull": {
                     "affect_condition": 0, 
@@ -77,30 +72,35 @@
                     "description": "eat description for feature 2 shore"
                 }
             }, 
-            "title": "feature_2_title"
+            "aliases": [
+                "feature_2_aliases"
+            ]
         }
     }, 
+    "title": "shore", 
+    "room_hazard_occurs_description": "", 
+    "id": 1, 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_item": "", 
+    "long_description": "Long Description: shore", 
     "connected_rooms": [
         {
             "accessible": true, 
-            "distance_from_room": 1, 
             "title": "crash site", 
-            "pre_item_description": "", 
+            "distance_from_room": 1, 
+            "item_required": false, 
             "item_required_title": "", 
+            "pre_item_description": "", 
             "compass_direction": "", 
             "id": 0, 
-            "item_required": false, 
             "aliases": [
                 "crash site"
             ]
         }
     ], 
-    "items_in_room": [], 
-    "feature_searched": false, 
+    "short_description": "Short Description: shore", 
+    "visited": true, 
     "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "items_in_room": [], 
+    "feature_searched": false
 }

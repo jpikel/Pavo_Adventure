@@ -3,12 +3,14 @@ import language_parser.command_parser as parse
 
 
 class Game:
+
     def __init__(self, player, room):
         self.player = player
         self.current_room = room
         # Inventory will be a list of dicts, each element of which is an item.
         self.inventory = []
         self.current_time = 0
+        self.number_of_turns = 0
 
     #-------------------------------------------------------------------------
     # Methods for managing game start, end, and basic flow
@@ -79,17 +81,19 @@ class Game:
 
         if choiceLow in cmds[0]:
             self.newGame()
-
         elif choiceLow in cmds[1]:
             self.loadGame()
-
         else:
             self.exitGame()
 
     def gameCycle(self):
         while not (self.player.rescued and self.player.dead):
             #print gO.get_room_desc()
-            #getInput(action, noun)
+            print "TODO: Add room description"
+            self.number_of_turns += 1
+            self.getTimeOfDay()
+            self.updatePlayerCondition()
+            self.player.getCondition()
             print "What would you like to do?"
             userInput = raw_input("->")
             processed_command = parse.parse_command(userInput)
@@ -227,6 +231,29 @@ class Game:
             print item["title"]
 
     #-------------------------------------------------------------------------
+    # Methods that are used in otherwise managing game flow.
+    #-------------------------------------------------------------------------
+    def getTimeOfDay(self):
+        if self.number_of_turns % 4 == 0:
+            print"It is morning."
+        elif self.number_of_turns % 4 == 1:
+            print"It is afternoon."
+        elif self.number_of_turns % 4 == 2:
+            print"It is evening."
+        elif self.number_of_turns % 4 == 3:
+            print"It is night."
+
+    def updatePlayerCondition(self):
+        # Degrade the player's condition every three moves.
+        if self.number_of_turns % 3 == 0:
+            self.player.illness += 1
+        if (self.player.illness > 50 or
+            self.player.hunger > 50 or
+            self.player.cold > 50):
+            self.player.dead = True
+
+
+    #-------------------------------------------------------------------------
     # Temporary code used for testing
     #-------------------------------------------------------------------------
 
@@ -241,11 +268,6 @@ def testParse():
     print parse.parse_command(test_input)['room']['action']
     # parse.parse_command(test_input[0,0])
     print ""
-
-def testNew(self):
-    g = game_ops()
-    g.new_game()
-    print g.get_room_title()
 
 
 #testParse()

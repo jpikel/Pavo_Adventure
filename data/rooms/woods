@@ -1,9 +1,6 @@
 {
-    "id": 7, 
-    "title": "woods", 
-    "visited": false, 
-    "long_description": "Long Description: woods", 
-    "short_description": "Short Description: woods", 
+    "room_hazard_description": "", 
+    "room_hazards": false, 
     "features": {
         "1": {
             "aliases": [
@@ -80,53 +77,56 @@
             "title": "feature_2_title"
         }
     }, 
+    "title": "woods", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_item": "", 
+    "items_in_room": [], 
     "connected_rooms": [
         {
             "accessible": true, 
-            "distance_from_room": 1, 
             "title": "camp", 
-            "pre_item_description": "", 
+            "distance_from_room": 1, 
+            "item_required": false, 
             "item_required_title": "", 
+            "pre_item_description": "", 
             "compass_direction": "", 
             "id": 0, 
-            "item_required": false, 
             "aliases": [
                 "camp"
             ]
         }, 
         {
             "accessible": true, 
-            "distance_from_room": 1, 
             "title": "river", 
-            "pre_item_description": "", 
+            "distance_from_room": 1, 
+            "item_required": false, 
             "item_required_title": "", 
+            "pre_item_description": "", 
             "compass_direction": "", 
             "id": 0, 
-            "item_required": false, 
             "aliases": [
                 "river"
             ]
         }, 
         {
             "accessible": true, 
-            "distance_from_room": 1, 
             "title": "cave", 
-            "pre_item_description": "", 
+            "distance_from_room": 1, 
+            "item_required": false, 
             "item_required_title": "", 
+            "pre_item_description": "", 
             "compass_direction": "", 
             "id": 0, 
-            "item_required": false, 
             "aliases": [
                 "cave"
             ]
         }
     ], 
-    "items_in_room": [], 
-    "feature_searched": false, 
-    "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "short_description": "Short Description: woods", 
+    "visited": true, 
+    "room_hazard_safe_description": "", 
+    "long_description": "Long Description: woods", 
+    "id": 7, 
+    "feature_searched": false
 }
