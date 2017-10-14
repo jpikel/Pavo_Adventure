@@ -4,7 +4,7 @@ Team - Pavo
 Group Members - Emily Caveness, Alexander Laquitara, Johannes Pikel
 Class - CS467-400 Capstone
 Term - Fall 2017
-Description - 
+Description -
 """
 
 class room_info():
@@ -14,7 +14,7 @@ class room_info():
         only has getters for the different static variables
     """
     room_titles = ["shore", "crash site", "game trail", "field", "dense brush", "camp", "woods",
-        "cave", "mountain base", "fire tower", "river", "waterfall", "mountain ascent", 
+        "cave", "mountain base", "fire tower", "river", "waterfall", "mountain ascent",
         "mountain summit", "rapids", "ranger station"]
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
     room_dir = "../data/rooms/"
@@ -96,10 +96,10 @@ class verb_info():
     """
         official verb info and getters to access the verb features
     """
-    verbs = ["look", "look at", "go", "take", "help", "inventory", 
+    verbs = ["look", "look at", "go", "take", "help", "inventory",
             "use", "search", "pull", "eat", "read"]
 
-    verb_definitions = { 
+    verb_definitions = {
             "look": "Will repeat the long description of the room",
             "look at": "<feature or object> Allows you to look at something in the game",
             "go":"Move to another room",

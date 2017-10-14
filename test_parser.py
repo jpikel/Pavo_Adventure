@@ -106,7 +106,7 @@ def process_action_only(action):
 def process_room_action(room, action):
     print "TODO: Write this function"
     print "This is a stub function for handling room_action commands!"
-    print "Here's the item: " + item
+    print "Here's the item: " + room
     print "Here's the action: " + action
 
 def process_exit(direction, name):
@@ -142,7 +142,8 @@ def process_room_only(room):
     print "Here's the room: " + room
 
 # HOW TO USE IN GAME ENGINE
-test_user_command = "Eat the oar."
+#test_user_command = "Eat the oar."
+test_user_command = "go crash site."
 #test_user_command = "HELP!"
 #test_user_command = "inventory"
 #test_user_command = "eat frozen dead hare"

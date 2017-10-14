@@ -1,29 +1,23 @@
 from item import Item
 
 class Player(object):
-    inventory = []
-    hasAilment = 0
-    isSated = 1
-    isRescued = 0
-    lastSated = 0 #date time
-    roomsVisited = 0 #keeps track of how many rooms visited
-
-    def __init__(self, name, location, inventory, condition, sated):
+    def __init__(self, name):
         self.name = name
-        self.location = location
-        self.inventory = inventory #list of items player is holding
-        self.condition = condition#HP make it an integer!
-        self.sated = sated  # hunger/thirst
+        self.hunger = 5
+        self.cold = 5
+        self.health = 5
+        self.rescued = False
+        self.dead = False
 
     def getName(self):
         return self.name
 
-    def getInventory(self):
-        for items in self.inventory:
-            print(items.title)
+    # def getInventory(self):
+    #     for items in self.inventory:
+    #         print(items.title)
 
-    def getLocation(self):
-        return self.location.title
+    # def getLocation(self):
+    #     return self.location.title
 
     def getCondition(self):
             if self.condition == "well":
@@ -51,18 +45,18 @@ class Player(object):
             return 2
 
     #add item to player inventory
-    def addToInventory(self, i=Item):
-        if len(self.inventory) < 10: #arbitrary number for limiting inventory size
-            self.inventory.append(i)
-        else:
-            print "You cannot carry anymore"
+    # def addToInventory(self, i=Item):
+    #     if len(self.inventory) < 10: #arbitrary number for limiting inventory size
+    #         self.inventory.append(i)
+    #     else:
+    #         print "You cannot carry anymore"
 
-    def removeFromInventory(self, i=Item):
-        #str(item)
-        if i in self.inventory:
-            self.inventory.remove(i)
-        else:
-            print "Cannot find item"
+    # def removeFromInventory(self, i=Item):
+    #     #str(item)
+    #     if i in self.inventory:
+    #         self.inventory.remove(i)
+    #     else:
+    #         print "Cannot find item"
 
     def addRoomsVisited(self):
         self.roomsVisited += 1

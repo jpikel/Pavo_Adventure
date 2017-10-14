@@ -72,28 +72,6 @@ class room_info():
         except Exception, e:
             return None
 
-    def isConnected(self, current, target):
-        if current == target:
-            print "You are already in that location"
-            return True
-        elif target not in self.room_connection_list[current]:
-            return False
-        else:
-            return True
-
-
-    def movePlayer(self, cur= Room, tar=Room, p=Player):
-        con = self.isConnected(cur.title, tar.title)
-        if con:
-            p.location = tar
-        else:
-            print "You cannot reach that location from here"
-            p.location = cur
-
-
-
-
-
 
 '''
 room = Room("cave", 2, "gun", 2)
