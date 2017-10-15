@@ -19,9 +19,9 @@
                     "description": "use description for feature 1 cave", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 1 cave"
+                    "description": "look at description for feature 1 cave"
                 }, 
                 "take": {
                     "modifiers": {}, 
@@ -60,9 +60,9 @@
                     "description": "use description for feature 2 cave", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 2 cave"
+                    "description": "look at description for feature 2 cave"
                 }, 
                 "take": {
                     "modifiers": {}, 

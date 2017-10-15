@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 rapids"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 rapids", 
                     "description": "use description for feature 1 rapids", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 1 rapids"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 rapids"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 rapids"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 rapids"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 rapids"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1rapids"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 rapids"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 rapids"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 rapids", 
                     "description": "use description for feature 2 rapids", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 2 rapids"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 rapids"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 rapids"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 rapids"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 rapids"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2rapids"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 rapids"
                 }
             }, 

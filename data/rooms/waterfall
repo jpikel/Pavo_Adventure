@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 waterfall"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 waterfall", 
                     "description": "use description for feature 1 waterfall", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 1 waterfall"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 waterfall"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 waterfall"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 waterfall"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 waterfall"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1waterfall"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 waterfall"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 waterfall"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 waterfall", 
                     "description": "use description for feature 2 waterfall", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 2 waterfall"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 waterfall"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 waterfall"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 waterfall"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 waterfall"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2waterfall"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 waterfall"
                 }
             }, 

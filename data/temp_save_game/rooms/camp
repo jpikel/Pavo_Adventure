@@ -19,9 +19,9 @@
                     "description": "use description for feature 1 camp", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 1 camp"
+                    "description": "look at description for feature 1 camp"
                 }, 
                 "take": {
                     "modifiers": {}, 
@@ -60,9 +60,9 @@
                     "description": "use description for feature 2 camp", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 2 camp"
+                    "description": "look at description for feature 2 camp"
                 }, 
                 "take": {
                     "modifiers": {}, 

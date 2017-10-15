@@ -1,10 +1,11 @@
 """
-Filename - 
+Filename - gen_dicts
 Team - Pavo
 Group Members - Emily Caveness, Alexander Laquitara, Johannes Pikel
 Class - CS467-400 Capstone
 Term - Fall 2017
-Description - 
+Description - Allows the adding of aliases and creating the dict files
+of all aliases, for room/exits, verbs, and features
 """
 
 
@@ -105,9 +106,7 @@ class update():
         """
         item_dir = item_info().get_dir()
         item_titles = item_info().get_titles()
-
         items_dict = OrderedDict()
-
         for item_name in item_titles:
             new_dir = os.path.join(item_dir, item_name)
             with open(new_dir, 'r') as item_file:

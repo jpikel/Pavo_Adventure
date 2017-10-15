@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 river"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 river", 
                     "description": "use description for feature 1 river", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 1 river"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 river"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 river"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 river"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 river"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1river"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 river"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 river"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 river", 
                     "description": "use description for feature 2 river", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 2 river"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 river"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 river"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 river"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 river"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2river"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 river"
                 }
             }, 

@@ -143,6 +143,13 @@ class dict_keys():
     connected_room_keys = ["accessible", "distance_from_room", "title",
             "pre_item_description", "item_required_title", "compass_direction",
             "id", "item_required", "aliases"]
+    item_keys = ["id", "title", "aliases", "verbs", "active", "activatable",
+            "attributes_affected_requirement_met",
+            "attributes_affected_requirement_not_met",
+            "requirement_met", "requirement_met_description",
+            "requirement_not_met_description",
+            "item_combination", "room_combination",
+            "feature_combination"]
 
 
     def get_room_keys(self):
@@ -157,3 +164,5 @@ class dict_keys():
         return self.use_additional_keys
     def get_connected_room_keys(self):
         return self.connected_room_keys
+    def get_item_keys(self):
+        return self.item_keys

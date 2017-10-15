@@ -5,6 +5,7 @@ items = {
    "tattered notebook": "tattered notebook", 
    "can of sweetened condensed milk": "can of sweetened condensed milk", 
    "can opener": "can opener", 
+   "paddle": "boat paddle", 
    "heavy winter parka": "heavy winter parka", 
    "flare gun": "flare gun", 
    "boat paddle": "boat paddle", 
@@ -24,17 +25,19 @@ rooms = {
    "shore": "shore", 
    "waterfall": "waterfall", 
    "rapids": "rapids", 
-   "mountain summit": "mountain summit", 
+   "cavern": "cave", 
    "mountain base": "mountain base", 
-   "river": "river"
+   "river": "river", 
+   "mountain summit": "mountain summit"
 }
 actions = {
+   "move": "go", 
    "pull": "pull", 
    "search": "search", 
-   "drop": "drop", 
+   "look at": "look at", 
    "look": "look", 
    "read": "read", 
-   "look at": "look at", 
+   "drop": "drop", 
    "use": "use", 
    "inventory": "inventory", 
    "go": "go", 
@@ -63,9 +66,9 @@ all_words = {
       "type": "room", 
       "master_word": "rapids"
    }, 
-   "read": {
+   "look at": {
       "type": "action", 
-      "master_word": "read"
+      "master_word": "look at"
    }, 
    "dusty old map": {
       "type": "item", 
@@ -87,9 +90,9 @@ all_words = {
       "type": "room", 
       "master_word": "waterfall"
    }, 
-   "eat": {
-      "type": "action", 
-      "master_word": "eat"
+   "cavern": {
+      "type": "room", 
+      "master_word": "cave"
    }, 
    "heavy winter parka": {
       "type": "item", 
@@ -107,6 +110,10 @@ all_words = {
       "type": "item", 
       "master_word": "flare gun"
    }, 
+   "eat": {
+      "type": "action", 
+      "master_word": "eat"
+   }, 
    "boat paddle": {
       "type": "item", 
       "master_word": "boat paddle"
@@ -114,6 +121,10 @@ all_words = {
    "pull": {
       "type": "action", 
       "master_word": "pull"
+   }, 
+   "move": {
+      "type": "action", 
+      "master_word": "go"
    }, 
    "game trail": {
       "type": "room", 
@@ -139,6 +150,10 @@ all_words = {
       "type": "room", 
       "master_word": "field"
    }, 
+   "read": {
+      "type": "action", 
+      "master_word": "read"
+   }, 
    "inventory": {
       "type": "action", 
       "master_word": "inventory"
@@ -151,9 +166,9 @@ all_words = {
       "type": "room", 
       "master_word": "crash site"
    }, 
-   "look at": {
-      "type": "action", 
-      "master_word": "look at"
+   "paddle": {
+      "type": "item", 
+      "master_word": "boat paddle"
    }, 
    "fire tower": {
       "type": "room", 

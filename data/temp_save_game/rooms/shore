@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 shore"
                 }, 
-                "use": {
+                "use_invalid": {
                     "deactivate_description": "use deactivate for feature 1 shore", 
                     "description": "use description for feature 1 shore", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 1 shore"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 shore"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 shore"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 shore"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 shore"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1shore"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 shore"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 shore"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 shore", 
                     "description": "use description for feature 2 shore", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 2 shore"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 shore"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 shore"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 shore"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 shore"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2shore"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 shore"
                 }
             }, 
@@ -104,6 +104,7 @@
         }
     ], 
     "items_in_room": [
+        "boat paddle", 
         "lantern"
     ], 
     "feature_searched": true, 

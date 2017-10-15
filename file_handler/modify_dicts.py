@@ -17,6 +17,7 @@ from name_lists import room_info
 from name_lists import item_info
 from name_lists import dict_keys
 from name_lists import save_info
+import file_handler.data_entry as mod_files
 import json
 import os
 
@@ -47,13 +48,15 @@ def _list_keys(option):
     response = dict()
 
     for filename in os.listdir(src_dir):
-        if filename not in files_to_ignore:
+        if filename not in files_to_ignore and not filename.endswith("swp"):
             new_dir = os.path.join(src_dir, filename)
             with open(new_dir, 'r') as open_file:
                 try:
                     file_json = json.load(open_file, object_pairs_hook=OrderedDict)
-                    if option == "rooms":
+                    if option == "rooms" or option == "temprooms":
                         response.update({filename:_match_keys_room(file_json)})
+                    elif option == "items" or option == "tempitems":
+                        response.update({filename:_match_keys_items(file_json)})
                 except Exception, e:
                     print("File: " + filename + " json could not be parsed")
                     print("Error: " + str(e) + "\n")
@@ -71,6 +74,39 @@ def _print_invalid(response):
         if response[title]:
             print("In file: " + title.ljust(12) + " invalid or missing key/value pairs found: ")
             print(json.dumps(response[title], indent=4))
+
+def _match_keys_items(file_json):
+    """
+    checks the passed in json object against the official structure expected of 
+    and item
+    """
+    item_keys = dict_keys().get_item_keys()
+    res = dict()
+
+    result = _compare_dict(file_json, item_keys)
+    res = _merge_two_dicts(res, result)
+    result = _check_verbs(file_json)
+    res = _merge_two_dicts(res, result)
+    return res
+
+def _check_verbs(file_json):
+    """
+    checks the verb structure
+    """
+    verbs = dict_keys().get_verbs()
+    verb_keys = dict_keys().get_verb_keys()
+    use_keys = dict_keys().get_additional_use_keys()
+    response = dict()
+    response = _compare_dict(file_json['verbs'], verbs)
+    for verb in file_json["verbs"]:
+        result = dict()
+        if verb == "use":              
+            result.update({verb:_compare_dict(file_json["verbs"][verb], use_keys+verb_keys)})
+        else:
+            result.update({verb:_compare_dict(file_json["verbs"][verb], verb_keys)})
+        if result[verb]:
+            response = _merge_two_dicts(response, result)
+    return response
 
 def _match_keys_room(file_json):
     """
@@ -151,7 +187,6 @@ def _check_features(value, file_json):
 
     return response
 
-
 def _merge_two_dicts(a, b):
     """
     Cite: https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression
@@ -175,26 +210,31 @@ def _compare_dict(the_dict, valid_keys):
     return response
 
 def main(arg=None):
-    accepted_input = {
+    key_validation = {
             "1":"rooms",
             "2":"items",
             "3":"temprooms",
             "4":"tempitems"
             }
+    data_entry = {
+            "5":"rooms"
+            }
 
     print(  "\nWhat would you like to do?\n"
             "1. Validate all keys in template rooms\n"
-            "2. Validate all keys in temaplte itemi\n"
+            "2. Validate all keys in template items\n"
             "3. Validate all keys in temp rooms\n"
             "4. Validate all keys in temp items\n"
+            "5. Add data into fields of template rooms\n"
             "9. Back\n")
     if arg == None:
         selection = raw_input(":")
     else:
         selection = str(arg)
-    if selection in accepted_input:
-        if selection != "9":
-            _list_keys(accepted_input[selection])
+    if selection in key_validation:
+        _list_keys(key_validation[selection])
+    elif selection in data_entry:
+        mod_files.mod_rooms()
     elif selection == "9":
         return
 

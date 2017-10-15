@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 woods"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 woods", 
                     "description": "use description for feature 1 woods", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 1 woods"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 woods"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 woods"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 woods"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 woods"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1woods"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 woods"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 woods"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 woods", 
                     "description": "use description for feature 2 woods", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
-                "lookat": {
-                    "modifiers": 0, 
-                    "description": "lookat description for feature 2 woods"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 woods"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 woods"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 woods"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 woods"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2woods"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 woods"
                 }
             }, 
@@ -125,7 +125,8 @@
             "id": 0, 
             "item_required": false, 
             "aliases": [
-                "cave"
+                "cave", 
+                "cavern"
             ]
         }
     ], 

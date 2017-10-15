@@ -19,9 +19,9 @@
                     "description": "use description for feature 1 mountain summit", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 1 mountain summit"
+                    "description": "look at description for feature 1 mountain summit"
                 }, 
                 "take": {
                     "modifiers": {}, 
@@ -60,9 +60,9 @@
                     "description": "use description for feature 2 mountain summit", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 2 mountain summit"
+                    "description": "look at description for feature 2 mountain summit"
                 }, 
                 "take": {
                     "modifiers": {}, 

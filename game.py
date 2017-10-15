@@ -120,6 +120,7 @@ class Game:
             # If the game understands the user's command, process that command
             # according to the command type.
             output_type = processed_command["type"]
+            print json.dumps(processed_command, indent=4)
 
             top_level = ["item", "room", "feature", "general"]
             for word in top_level:
