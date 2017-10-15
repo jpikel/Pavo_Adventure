@@ -22,6 +22,7 @@ class response_struct():
     def __init__(self):
         self.response = {
                     "title":None,
+                    "action":None,
                     "description":None,
                     "success":False,
                     "distance_from_room":0

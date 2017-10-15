@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 mountain summit"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 mountain summit", 
                     "description": "use description for feature 1 mountain summit", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 1 mountain summit"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 mountain summit"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 mountain summit"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 mountain summit"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1mountain summit"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 mountain summit"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 mountain summit"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 mountain summit", 
                     "description": "use description for feature 2 mountain summit", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 2 mountain summit"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 mountain summit"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 mountain summit"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 mountain summit"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2mountain summit"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 mountain summit"
                 }
             }, 

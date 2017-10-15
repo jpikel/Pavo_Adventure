@@ -6,36 +6,36 @@
     ], 
     "verbs": {
         "pull": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "pull description for tattered notebook"
         }, 
         "use": {
             "deactivate_description": "use deactivate for tattered notebook", 
             "description": "use description for tattered notebook", 
-            "modifiers": 0
+            "modifiers": {}
         }, 
         "drop": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "drop for tattered notebook"
         }, 
         "take": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "take for tattered notebook"
         }, 
         "read": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "read for tattered notebook"
         }, 
         "search": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "search for tattered notebook"
         }, 
         "look at": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "lookat description for tattered notebook"
         }, 
         "eat": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "eat description for tattered notebook"
         }
     }, 

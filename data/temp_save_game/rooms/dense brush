@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 dense brush"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 dense brush", 
                     "description": "use description for feature 1 dense brush", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 1 dense brush"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 dense brush"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 dense brush"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 dense brush"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1dense brush"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 dense brush"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 dense brush"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 dense brush", 
                     "description": "use description for feature 2 dense brush", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 2 dense brush"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 dense brush"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 dense brush"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 dense brush"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2dense brush"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 dense brush"
                 }
             }, 

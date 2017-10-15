@@ -6,13 +6,15 @@ Class: CS467-400
 Assignment: CMD1:Adventure
 Description:
 """
-
+import json
 import file_handler.file_lib as files
 import file_handler.help_file as help_file
+from file_handler.name_lists import verb_info as verbs
 import language_parser.command_parser as parse
 import game_engine.player as player
 from game_engine.engine_helpers import response_struct
 
+ALL_VERBS = verbs().get_verbs()
 
 class Game:
 
@@ -156,14 +158,15 @@ class Game:
     #-------------------------------------------------------------------------
     def process_item_action(self, title, action):
         if title in self.get_items_in_inventory():
-            result = self.act_on_item_in_inventory(title, action)
+            res = self.item_action_inventory(title, action)
         else:
-            result = self.act_on_item_in_room(title, action)
-        self.post_process(result)
+            res = self.item_action_room(title, action)
+        self.post_process(res)
 
     def process_action_only(self, action):
+        res = response_struct().get_response_struct()
         if action == "look":
-            result = {"description":self.get_room_long_desc()}
+            res['description'] = self.get_room_long_desc()
         elif action == "inventory":
             self.print_inventory()
             return
@@ -172,17 +175,12 @@ class Game:
             return
         else:
             #also sent to the funny script writer
-            result = {"description":"place holder for funny + verb"}
-        self.post_process(result)
+            res['description'] = "place holder for funny + verb"
+        self.post_process(res)
         
     def process_room_action(self, room, action):
-        if action  == "go":
-            result = self.attempt_move(room)
-        else:
-            #eventually sent to the funny script writer
-            text = "Unfortunately you cannot " + action + " the " + room +". "
-            result = {"description":text}
-        self.post_process(result)
+        res = self.room_action(room, action)
+        self.post_process(res)
 
     def process_exit(self, exit, name):
         print "TODO: Write this function"
@@ -197,8 +195,8 @@ class Game:
         print "This is a stub function for handling item_only commands!"
 
     def process_feature_action(self, feature, action):
-        result = self.feature_in_room(feature, action)
-        self.post_process(result)
+        res = self.feature_action(feature, action)
+        self.post_process(res)
 
     def process_feature_only(self, feature):
         print "TODO: Write this function"
@@ -212,41 +210,46 @@ class Game:
     # The post process function, handles printing descriptive text
     # and assigning the various update functions as necessary
     #-------------------------------------------------------------------------
-    def post_process(self, result):
+    def post_process(self, res):
         """
         divides handling printing, updating character, inventory
         updating room's dynamically
         """
         self.number_of_turns += 1
-        #description should always come with process functions so we 
-        #automatically print out something to the user
-        print(result['description'])
         #at some point in the future hopefully this will be where
         #we can send parts to the room to be updated if appropriate
         #and the player state if for instance the player has 
         #eaten something and gets a boost to hunger
+        self.update_room(res)
+        self.update_player(res)
         self.getTimeOfDay()
         self.updatePlayerCondition()
         self.player.getCondition()
+        #description should always come with process functions so we 
+        #automatically print out something to the user
+        print(res['description'])
 
     #-------------------------------------------------------------------------
     # This section dedicated to functions relating to moving from one
     # room to another
     #-------------------------------------------------------------------------
-    def attempt_move(self, title_or_compass):
+    def room_action(self, title_or_compass, action):
         """
             tries to move to the passed in room title or compass direction
             also expects a list of items currently held in the inventory
             defaults to None
         """
-        result = self.check_connections(title_or_compass)
-        if result["success"] == True:
-            files.store_room(self.current_room)
-            self.current_room = files.load_room(result['title'])
-            result['description'] = str(self.get_room_desc())
-        elif result['success'] == False and result['description'] is None:
-            result['description'] = "You were not able to move in that direction.  "
-        return result
+        res = self.check_connections(title_or_compass)
+        if action == "go":
+            if res["success"] == True:
+                files.store_room(self.current_room)
+                self.current_room = files.load_room(res['title'])
+                res['description'] = str(self.get_room_desc())
+            elif res['success'] == False and res['description'] is None:
+                res['description'] = "You were not able to move in that direction.  "
+        else:
+            res['description'] = "You can't " + action + " the " + title_or_compass+". "
+        return res
 
     def check_connections(self, title_or_direction):
         """
@@ -263,8 +266,8 @@ class Game:
 
         FUTURE implementation: check if the room is accessible or blocked
         """
-        response = response_struct().get_response_struct()
-        response['success'] = False
+        res = response_struct().get_response_struct()
+        res['success'] = False
         items = self.get_items_in_inventory()
         for room in self.current_room['connected_rooms']:
             if (title_or_direction == str(room['title'])
@@ -274,20 +277,20 @@ class Game:
                     room['item_required_title'] in items):
                         item = self.get_item_from_inventory()
                         if item['active'] == True:
-                            response['success'] = True
-                            response['distance_from_room'] = room['distance_from_room']
-                            response['title'] = str(room['title'])
+                            res['success'] = True
+                            res['distance_from_room'] = room['distance_from_room']
+                            res['title'] = str(room['title'])
                         else:
-                            response['description'] = str(room['pre_item_description'])
+                            res['description'] = str(room['pre_item_description'])
                 elif room['item_required'] == False:
-                    response['success'] = True
-                    response['distance_from_room'] = room['distance_from_room']
-                    response['description'] = str(room['pre_item_description'])
-                    response['title'] = room['title']
+                    res['success'] = True
+                    res['distance_from_room'] = room['distance_from_room']
+                    res['description'] = str(room['pre_item_description'])
+                    res['title'] = room['title']
                 else:
-                    response['description'] = str(room['pre_item_description'])
+                    res['description'] = str(room['pre_item_description'])
 
-        return response
+        return res
     #------------------------------------------------------------------------
     # This ends the movement related functions
     #------------------------------------------------------------------------
@@ -308,13 +311,13 @@ class Game:
 
     def get_room_long_desc(self):
         """
-        returns a string of the long description
+        returns a string of the long description and items in room
         """
         return str(self.current_room['long_description'] + self.get_items_in_room())
 
     def get_room_short_desc(self):
         """
-        returns a string of the short description
+        returns a string of the short description and items in room
         """
         return str(self.current_room['short_description'] + self.get_items_in_room())
 
@@ -346,6 +349,13 @@ class Game:
         """
         self.current_room['items_in_room'].remove(title)
 
+    def add_item_to_room(self, title):
+        """
+        adds an item to the room, does not allowed for duplicates
+        """
+        if title not in self.current_room['items_in_room']:
+            self.current_room['items_in_room'].append(title)
+
 
     #------------------------------------------------------------------------
     # This ends the room  section
@@ -355,21 +365,23 @@ class Game:
     # This ends the feature related section
     #------------------------------------------------------------------------
 
-    def feature_in_room(self, title, verb):
+    def feature_action(self, title, verb):
         """
             looks up to see if the title passed in is a feature in the current room
             if so and the verb is in the list of possible verbs for that feature then
         """
-        response = response_struct().get_response_struct()
-        for element in self.current_room['features']:
-            if title == self.current_room['features'][element]['title']:
-                feat = element
-        if verb in self.current_room['features'][feat]['verbs']:
-            text = str(self.current_room['features'][feat]['verbs'][verb]['description'])
-            response['description'] = text
+        res = response_struct().get_response_struct()
+        features = self.current_room['features']
+        for element in features:
+            if title == features[element]['title']:
+                feature = element
+        if feat is not None and verb in feature['verbs']:
+            text = str(feature['verbs'][verb]['description'])
+            res['description'] = text
+            res['modifiers'] = feature['verbs'][verb]['modifiers']
         else:
-            response['description'] = self.verb_not_found + " " + verb + " the " + title
-        return response
+            res['description'] = self.verb_not_found + " " + verb + " the " + title
+        return res
     #------------------------------------------------------------------------
     # This ends the feature section
     #------------------------------------------------------------------------
@@ -390,7 +402,9 @@ class Game:
 
     def search_inventory(self, title):
         items = [item for item in self.inventory if item['title'] == title]
-        return items[0]
+        if items:
+            return items[0]
+        return None
 
     def search_inventory_excluding(self, title):
         #ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
@@ -402,13 +416,21 @@ class Game:
                 return item
         return None
 
-    def remove_from_inventory(self, title):
+    def add_item_to_inventory(self, title):
+        """
+        adds an item to inventory, does not allow duplicates
+        """
+        if not self.search_inventory(title):
+            item = files.load_item(title)
+            self.inventory.append(item)
+
+    def remove_item_from_inventory(self, title):
         """
         iterates through inventory to remove the item passed in
         """
         self.inventory = self.search_inventory_excluding(title)
 
-    def act_on_item_in_inventory(self, item_title, action):
+    def item_action_inventory(self, item_title, action):
         """
         called by the verb handler.  Looks up the item file and opens it
         returns the description listed for the particular verb at this moment.
@@ -418,60 +440,45 @@ class Game:
             "description": string
             }
         """
-        response = response_struct().get_response_struct()
+        res = response_struct().get_response_struct()
         item = self.search_inventory(item_title)
+        res['title'] = item_title
+        res["description"] = str(item['verbs'][action]['description'])
+        res['modifiers'] = item['verbs'][action]['modifiers']
+        res["success"] = True
         if action == "use" and item['activatable'] == True:
             if item['active'] == True:
                 item['active'] = False
-                text = str(item['verbs']['use']['deactivate_description'])
-                response["success"] = True
-                response["description"] = text
+                res['description'] = str(item['verbs']['use']['deactivate_description'])
             else:
                 item['active'] = True
-                response["description"] = str(item['verbs']['use']['description'])
-                response["success"] = True
-        elif action == "drop":
-            if self.current_room['feature_searched']:
-                response['description'] = str(item['verbs']['drop']['description'])
-                response['success'] = True
-                self.remove_from_inventory(item_title)
-                files.store_item(item)
-                self.current_room['items_in_room'].append(item_title)
-            else:
-                response['description'] = "You don't find anywhere secure to drop it"
-        else:
-            response['description'] = str(item['verbs'][action]['description'])
-            response["success"] = True
-        return response
+        elif action == "drop" and self.current_room['feature_searched'] == False:
+            res['description'] = "There is no where secure to drop the item"
+            res['modifiers'] = {}
+        return res
 
-    def act_on_item_in_room(self, title, verb):
+    def item_action_room(self, title, verb):
         """
         acts on an item in the room only the look at verb is allowed at this moment
         adds the item to the inventory as well if it is 
         """
-        response = response_struct().get_response_struct()
-        if self.current_room['feature_searched']:
-            if verb == "look at" and title in self.current_room['items_in_room']:
+        res = response_struct().get_response_struct()
+        res['title'] = title
+        allowed_verbs = ["look at", "take"]
+        if self.current_room['feature_searched'] and verb in allowed_verbs:
+            if title in self.current_room['items_in_room']:
                 item = files.load_item(title)
-                text = item['verbs'][verb]['description']
-                response['description'] = text
-                response["success"] = True
-            elif verb == "take":
-                item = files.load_item(title)
-                text = str(item['verbs']['take']['description'])
-                response['description'] = text
-                self.inventory.append(item)
-                self.remove_item_from_room(title)
-            elif title in self.current_room['items_in_room']:
-                text = "Try having the " + title + " on your person, "
-                text += "before you " + verb + " it."
-                response['description'] = text
+                res['description'] = item['verbs'][verb]['description']
+                res['modifiers'] = item['verbs'][verb]['modifiers']
+                res["success"] = True
             else:
                 text = "You can't find the " + title + " to " + verb +". "
-                response['description'] = text
+                res['description'] = text
+        elif self.current_room['feature_searched'] and verb not in allowed_verbs:
+            res['description'] = "Trying picking up " + title + " to " + verb + " it."
         else:
-            response['description'] = "You don't see any items around. "
-        return response
+            res['description'] = "You don't see any items around. "
+        return res
 
     #------------------------------------------------------------------------
     # This ends the items and inventory section
@@ -479,12 +486,52 @@ class Game:
 
     def print_help(self):
         help_file.main()
-
-
-
     #-------------------------------------------------------------------------
     # Methods that are used in otherwise managing game flow.
+    # and updating the room, player and items
     #-------------------------------------------------------------------------
+    def update_room(self, res):
+        """
+        this function is used to update the current room's parameters
+        """
+        print(json.dumps(res, indent=4))
+        if "modifiers" in res and "room" in res['modifiers']:
+            mods = res['modifiers']['room']
+            if self.current_room['title'] == mods['title'] or "any" == mods['title']:
+                if "items_in_room" in mods and mods['items_in_room'] == "add":
+                    self.add_item_to_room(res['title'])
+                elif "items_in_room" in mods and mods['items_in_room'] == "drop":
+                    self.remove_item_from_room(res['title'])
+
+        #hopefully file_lib will have a method where we can pass the 
+        #modifiers dict to and it will do the remaining processing returning 
+        #the updated room so we can just do 
+        #self.current_room = files.update_fields(self.current_room, modifiers)
+
+    def update_player(self, res):
+        """
+        This function is used to update player state variables, including
+        player inventory
+        """
+        if "modifiers" in res and "player" in res['modifiers']:
+            modifiers = res['modifiers']['player']
+            if "inventory" in modifiers and modifiers['inventory'] == "add":
+                self.add_item_to_inventory(res['title'])
+            elif "inventory" in modifiers and modifiers['inventory'] == "drop":
+                self.remove_item_from_inventory(res['title'])
+
+        #maybe incorporate the player condition updates here so we can
+        #include things like hunger, illness etc in the modifiers
+
+    def update_item(self, res):
+        """
+        This may not be necessary and may be deleted
+        Similar in behaviour to update room and update_player
+        acts upon modifiers from actions from features or other items
+        """
+        return None
+        #this very well may be deleted
+
     def getTimeOfDay(self):
         if self.number_of_turns % 4 == 0:
             print"It is morning."

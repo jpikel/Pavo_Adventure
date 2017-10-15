@@ -6,36 +6,36 @@
     ], 
     "verbs": {
         "pull": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "pull description for flare gun"
         }, 
         "use": {
             "deactivate_description": "use deactivate for flare gun", 
             "description": "use description for flare gun", 
-            "modifiers": 0
+            "modifiers": {}
         }, 
         "drop": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "drop for flare gun"
         }, 
         "take": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "take for flare gun"
         }, 
         "read": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "read for flare gun"
         }, 
         "search": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "search for flare gun"
         }, 
         "look at": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "lookat description for flare gun"
         }, 
         "eat": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "eat description for flare gun"
         }
     }, 

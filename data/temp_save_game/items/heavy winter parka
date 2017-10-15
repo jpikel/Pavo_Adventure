@@ -6,36 +6,36 @@
     ], 
     "verbs": {
         "pull": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "pull description for heavy winter parka"
         }, 
         "use": {
             "deactivate_description": "use deactivate for heavy winter parka", 
             "description": "use description for heavy winter parka", 
-            "modifiers": 0
+            "modifiers": {}
         }, 
         "drop": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "drop for heavy winter parka"
         }, 
         "take": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "take for heavy winter parka"
         }, 
         "read": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "read for heavy winter parka"
         }, 
         "search": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "search for heavy winter parka"
         }, 
         "look at": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "lookat description for heavy winter parka"
         }, 
         "eat": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "eat description for heavy winter parka"
         }
     }, 

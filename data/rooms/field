@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 field"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 field", 
                     "description": "use description for feature 1 field", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 1 field"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 field"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 field"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 field"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1field"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 field"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 field"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 field", 
                     "description": "use description for feature 2 field", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 2 field"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 field"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 field"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 field"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2field"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 field"
                 }
             }, 

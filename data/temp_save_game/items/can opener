@@ -1,41 +1,41 @@
 {
-    "id": 10, 
+    "id": 1{}, 
     "title": "can opener", 
     "aliases": [
         "can opener"
     ], 
     "verbs": {
         "pull": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "pull description for can opener"
         }, 
         "use": {
             "deactivate_description": "use deactivate for can opener", 
             "description": "use description for can opener", 
-            "modifiers": 0
+            "modifiers": {}
         }, 
         "drop": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "drop for can opener"
         }, 
         "take": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "take for can opener"
         }, 
         "read": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "read for can opener"
         }, 
         "search": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "search for can opener"
         }, 
         "look at": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "lookat description for can opener"
         }, 
         "eat": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "eat description for can opener"
         }
     }, 

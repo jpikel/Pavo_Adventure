@@ -11,36 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 cave"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 cave", 
                     "description": "use description for feature 1 cave", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 1 cave"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 1 cave"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 cave"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 cave"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 1cave"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 cave"
                 }
             }, 
@@ -52,36 +52,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 cave"
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 cave", 
                     "description": "use description for feature 2 cave", 
-                    "modifiers": 0
+                    "modifiers": {}
                 }, 
                 "lookat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "lookat description for feature 2 cave"
                 }, 
                 "take": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "take for feature 2 cave"
                 }, 
                 "read": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 cave"
                 }, 
                 "search": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 cave"
                 }, 
                 "drop": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "drop for feature 2cave"
                 }, 
                 "eat": {
-                    "modifiers": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 cave"
                 }
             }, 

@@ -6,36 +6,36 @@
     ], 
     "verbs": {
         "pull": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "pull description for lantern"
         }, 
         "use": {
             "deactivate_description": "use deactivate for lantern", 
             "description": "use description for lantern", 
-            "modifiers": 0
+            "modifiers": {}
         }, 
         "drop": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "drop for lantern"
         }, 
         "take": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "take for lantern"
         }, 
         "read": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "read for lantern"
         }, 
         "search": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "search for lantern"
         }, 
         "look at": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "lookat description for lantern"
         }, 
         "eat": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "eat description for lantern"
         }
     }, 

@@ -6,36 +6,52 @@
     ], 
     "verbs": {
         "pull": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "pull description for boat paddle"
         }, 
         "use": {
             "deactivate_description": "use deactivate for boat paddle", 
             "description": "use description for boat paddle", 
-            "modifiers": 0
+            "modifiers": {}
         }, 
         "drop": {
-            "modifiers": 0, 
-            "description": "drop for boat paddle"
+            "description": "drop for boat paddle",
+            "modifiers": {
+                "room":{
+                    "title":"any",
+                    "items_in_room":"add"
+                },
+                "player":{
+                    "inventory":"drop"
+                }
+            } 
         }, 
         "take": {
-            "modifiers": 0, 
-            "description": "take for boat paddle"
+            "description": "take for boat paddle",
+            "modifiers": {
+                        "room" : {
+                            "title": "any",
+                            "items_in_room":"drop"
+                        },
+                        "player": {
+                            "inventory": "add"
+                        }
+                    }
         }, 
         "read": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "read for boat paddle"
         }, 
         "search": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "search for boat paddle"
         }, 
         "look at": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "lookat description for boat paddle"
         }, 
         "eat": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "eat description for boat paddle"
         }
     }, 

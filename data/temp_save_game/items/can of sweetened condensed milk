@@ -6,36 +6,36 @@
     ], 
     "verbs": {
         "pull": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "pull description for can of sweetened condensed milk"
         }, 
         "use": {
             "deactivate_description": "use deactivate for can of sweetened condensed milk", 
             "description": "use description for can of sweetened condensed milk", 
-            "modifiers": 0
+            "modifiers": {}
         }, 
         "drop": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "drop for can of sweetened condensed milk"
         }, 
         "take": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "take for can of sweetened condensed milk"
         }, 
         "read": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "read for can of sweetened condensed milk"
         }, 
         "search": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "search for can of sweetened condensed milk"
         }, 
         "look at": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "lookat description for can of sweetened condensed milk"
         }, 
         "eat": {
-            "modifiers": 0, 
+            "modifiers": {}, 
             "description": "eat description for can of sweetened condensed milk"
         }
     }, 
