@@ -19,9 +19,9 @@
                     "description": "use description for feature 1 field", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 1 field"
+                    "description": "look at description for feature 1 field"
                 }, 
                 "take": {
                     "modifiers": {}, 
@@ -60,9 +60,9 @@
                     "description": "use description for feature 2 field", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 2 field"
+                    "description": "look at description for feature 2 field"
                 }, 
                 "take": {
                     "modifiers": {}, 

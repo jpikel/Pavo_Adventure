@@ -19,9 +19,9 @@
                     "description": "use description for feature 1 fire tower", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 1 fire tower"
+                    "description": "look at description for feature 1 fire tower"
                 }, 
                 "take": {
                     "modifiers": {}, 
@@ -60,9 +60,9 @@
                     "description": "use description for feature 2 fire tower", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 2 fire tower"
+                    "description": "look at description for feature 2 fire tower"
                 }, 
                 "take": {
                     "modifiers": {}, 

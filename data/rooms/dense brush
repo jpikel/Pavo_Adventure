@@ -19,9 +19,9 @@
                     "description": "use description for feature 1 dense brush", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 1 dense brush"
+                    "description": "look at description for feature 1 dense brush"
                 }, 
                 "take": {
                     "modifiers": {}, 
@@ -60,9 +60,9 @@
                     "description": "use description for feature 2 dense brush", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 2 dense brush"
+                    "description": "look at description for feature 2 dense brush"
                 }, 
                 "take": {
                     "modifiers": {}, 

@@ -136,8 +136,9 @@ class dict_keys():
             "room_hazard_occurs_description", "room_hazard_attributes_affected",
             "room_hazard_safe_description"]
     feature_keys = ["aliases","verbs","title"]
-    verbs = ["pull", "use", "read", "search", "lookat", "take", "eat"]
-    verb_keys = ["description", "affect_condition"]
+    verbs = ["look at", "take",
+            "use", "search", "pull", "eat", "read", "drop"]
+    verb_keys = ["description", "modifiers"]
     use_additional_keys = ["deactivate_description"]
     connected_room_keys = ["accessible", "distance_from_room", "title",
             "pre_item_description", "item_required_title", "compass_direction",

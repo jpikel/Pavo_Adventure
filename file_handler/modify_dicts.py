@@ -16,6 +16,7 @@ from collections import OrderedDict
 from name_lists import room_info
 from name_lists import item_info
 from name_lists import dict_keys
+from name_lists import save_info
 import json
 import os
 
@@ -31,9 +32,15 @@ def _list_keys(option):
     if option == "rooms":
         src_dir = room_info().get_dir()
         print("Scanning room files")
+    elif option == "temprooms":
+        src_dir = save_info().get_temp_save_dir_rooms()
+        print "Scanning temp room files"
     elif option == "items":
         src_dir = item_info().get_dir()
         print("Scanning item files")
+    elif option == "tempitems":
+        src_dir = save_info().get_temp_save_dir_items()
+        print "Scanning temp item files"
     else:
         print("Invalid entry")
         exit()
@@ -41,14 +48,14 @@ def _list_keys(option):
 
     for filename in os.listdir(src_dir):
         if filename not in files_to_ignore:
-            with open(src_dir+filename, 'r') as open_file:
+            new_dir = os.path.join(src_dir, filename)
+            with open(new_dir, 'r') as open_file:
                 try:
                     file_json = json.load(open_file, object_pairs_hook=OrderedDict)
                     if option == "rooms":
                         response.update({filename:_match_keys_room(file_json)})
-
                 except Exception, e:
-                    print("File: " + filename + " may have incorrect json structure and could not be loaded")
+                    print("File: " + filename + " json could not be parsed")
                     print("Error: " + str(e) + "\n")
                 open_file.close()
 
@@ -167,25 +174,32 @@ def _compare_dict(the_dict, valid_keys):
             response.update({key:key})
     return response
 
-def main():
+def main(arg=None):
     accepted_input = {
             "1":"rooms",
-            "2":"items"
+            "2":"items",
+            "3":"temprooms",
+            "4":"tempitems"
             }
 
     print(  "\nWhat would you like to do?\n"
-            "1. Validate all keys in rooms\n"
-            "2. Validate all keys in item\n"
+            "1. Validate all keys in template rooms\n"
+            "2. Validate all keys in temaplte itemi\n"
+            "3. Validate all keys in temp rooms\n"
+            "4. Validate all keys in temp items\n"
             "9. Back\n")
-
-    selection = raw_input(":")
+    if arg == None:
+        selection = raw_input(":")
+    else:
+        selection = str(arg)
     if selection in accepted_input:
-        if selection == "1" or selection == "2":
+        if selection != "9":
             _list_keys(accepted_input[selection])
     elif selection == "9":
         return
 
-    main()
+    if arg == None:
+        main()
 
 if __name__ == "__main__":
     main()

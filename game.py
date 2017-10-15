@@ -157,7 +157,7 @@ class Game:
     # Top-level methods for handling user commands.
     #-------------------------------------------------------------------------
     def process_item_action(self, title, action):
-        if title in self.get_items_in_inventory():
+        if title in self.get_items_inventory_titles():
             res = self.item_action_inventory(title, action)
         else:
             res = self.item_action_room(title, action)
@@ -171,7 +171,7 @@ class Game:
             self.print_inventory()
             return
         elif action == "help":
-            self.print_help()
+            help_file.main()
             return
         else:
             #also sent to the funny script writer
@@ -220,6 +220,9 @@ class Game:
         #we can send parts to the room to be updated if appropriate
         #and the player state if for instance the player has 
         #eaten something and gets a boost to hunger
+
+        #uncomment for troubleshooting
+        #print(json.dumps(res, indent=4))
         self.update_room(res)
         self.update_player(res)
         self.getTimeOfDay()
@@ -268,7 +271,7 @@ class Game:
         """
         res = response_struct().get_response_struct()
         res['success'] = False
-        items = self.get_items_in_inventory()
+        items = self.get_items_inventory_titles()
         for room in self.current_room['connected_rooms']:
             if (title_or_direction == str(room['title'])
                 or title_or_direction == room['compass_direction']
@@ -342,7 +345,12 @@ class Game:
         returns the boolean in visited
         """
         return self.current_room['visited']
-
+    #------------------------------------------------------------------------
+    # This ends room getters section
+    #------------------------------------------------------------------------
+    #------------------------------------------------------------------------
+    # This begins room modifiers section
+    #------------------------------------------------------------------------
     def remove_item_from_room(self, title):
         """
         removes an items from the inventory of a room
@@ -390,11 +398,16 @@ class Game:
     # This section relates to items, and inventory
     #------------------------------------------------------------------------
     def print_inventory(self):
-        print "You have the following items in your inventory:"
+        """
+        print the player's current inventory
+        """
+        text = "Rummaging through your belongings you find "
         for item in self.inventory:
-            print item["title"]
+            text += "a " + item['title'] + ", "
+        text = text[:-2]
+        print text
 
-    def get_items_in_inventory(self):
+    def get_items_inventory_titles(self):
         item_list = []
         for item in self.inventory:
             item_list.append(item['title'])
@@ -484,8 +497,6 @@ class Game:
     # This ends the items and inventory section
     #------------------------------------------------------------------------
 
-    def print_help(self):
-        help_file.main()
     #-------------------------------------------------------------------------
     # Methods that are used in otherwise managing game flow.
     # and updating the room, player and items
@@ -494,7 +505,6 @@ class Game:
         """
         this function is used to update the current room's parameters
         """
-        print(json.dumps(res, indent=4))
         if "modifiers" in res and "room" in res['modifiers']:
             mods = res['modifiers']['room']
             if self.current_room['title'] == mods['title'] or "any" == mods['title']:
@@ -534,13 +544,14 @@ class Game:
 
     def getTimeOfDay(self):
         if self.number_of_turns % 4 == 0:
-            print"It is morning."
+            text = " It is morning. "
         elif self.number_of_turns % 4 == 1:
-            print"It is afternoon."
+            text = " It is afternoon. "
         elif self.number_of_turns % 4 == 2:
-            print"It is evening."
+            text = " It is evening. "
         elif self.number_of_turns % 4 == 3:
-            print"It is night."
+            text = " It is night. "
+        return text
 
     def updatePlayerCondition(self):
         # Degrade the player's condition every three moves.

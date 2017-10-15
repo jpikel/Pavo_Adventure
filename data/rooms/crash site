@@ -19,9 +19,9 @@
                     "description": "use description for feature 1 crash site", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 1 crash site"
+                    "description": "look at description for feature 1 crash site"
                 }, 
                 "take": {
                     "modifiers": {}, 
@@ -60,9 +60,9 @@
                     "description": "use description for feature 2 crash site", 
                     "modifiers": {}
                 }, 
-                "lookat": {
+                "look at": {
                     "modifiers": {}, 
-                    "description": "lookat description for feature 2 crash site"
+                    "description": "look at description for feature 2 crash site"
                 }, 
                 "take": {
                     "modifiers": {}, 
