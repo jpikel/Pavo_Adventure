@@ -103,7 +103,10 @@
             ]
         }
     ], 
-    "items_in_room": ["boat paddle", "lantern"], 
+    "items_in_room": [
+        "boat paddle", 
+        "lantern"
+    ], 
     "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 

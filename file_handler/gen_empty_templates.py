@@ -116,7 +116,7 @@ def create_room(room_name, index, connections):
                                              "accessible":True,
                                              "distance_from_room":1,
                                              }]})
-    for x in range (1, connections):
+    for x in range (0, connections):
         room_template["connected_rooms"].append({"id":0,                                              
                                               "title":connection_titles[room_name][x], 
                                              "aliases":[connection_titles[room_name][x]],
@@ -208,6 +208,7 @@ def create_verbs():
 def make_rooms():
     rooms = room_info()
     room_titles = rooms.get_titles()
+    room_titles = ["cave"]
     room_connections = rooms.get_connection_amount()
     for room in room_titles:        
         room_dir = "../data/rooms"
@@ -237,7 +238,7 @@ def main():
         also creates a base template file for all the verbs if uncommented
     """
     make_rooms()
-    make_items()
+#    make_items()
 #    create_verbs()
 main()
 

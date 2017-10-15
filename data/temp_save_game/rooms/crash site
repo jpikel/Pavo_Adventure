@@ -1,7 +1,7 @@
 {
     "id": 2, 
     "title": "crash site", 
-    "visited": false, 
+    "visited": true, 
     "long_description": "Long Description: crash site", 
     "short_description": "Short Description: crash site", 
     "features": {
