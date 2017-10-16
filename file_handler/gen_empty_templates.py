@@ -170,7 +170,15 @@ def create_item(item_name, index):
                                     },
                                 "take":{
                                     "description":"take for " + item_name,
-                                    "modifiers":{}
+                                    "modifiers":{
+                                        "player":{
+                                            "inventory":"add"
+                                            },
+                                        "room":{
+                                            "title":"any",
+                                            "items_in_room":"add"
+                                            }
+                                        }
                                     },
                                 "search":{
                                     "description":"search for " + item_name,
@@ -178,7 +186,15 @@ def create_item(item_name, index):
                                     },
                                 "drop":{
                                     "description":"drop for " + item_name,
-                                    "modifiers":{}
+                                    "modifiers":{
+                                        "player":{
+                                            "inventory":"drop"
+                                            },
+                                        "room":{
+                                            "title":"any",
+                                            "items_in_room":"drop"
+                                            }
+                                        }
                                     }
                                 }})
     item.update({"active":False})
@@ -237,10 +253,10 @@ def main():
         information!
         also creates a base template file for all the verbs if uncommented
     """
-    make_rooms()
+#    make_rooms()
 #    make_items()
 #    create_verbs()
 main()
 
-#print("Nothing happened this file will wipe out all the template files at present")
-#print("Only run if you really mean too.  Requires uncommenting the function in this script")
+print("Nothing happened this file will wipe out all the template files at present")
+print("Only run if you really mean too.  Requires uncommenting the function in this script")

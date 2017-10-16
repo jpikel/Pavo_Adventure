@@ -1,5 +1,5 @@
 {
-    "id": 1, 
+    "id": 10, 
     "title": "can opener", 
     "aliases": [
         "can opener"
@@ -15,11 +15,27 @@
             "modifiers": {}
         }, 
         "drop": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
             "description": "drop for can opener"
         }, 
         "take": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
             "description": "take for can opener"
         }, 
         "read": {
@@ -32,7 +48,7 @@
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "lookat description for can opener"
+            "description": "look at description for can opener"
         }, 
         "eat": {
             "modifiers": {}, 

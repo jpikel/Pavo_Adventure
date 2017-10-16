@@ -21,13 +21,13 @@ def main():
     print("\nWhat would you like to do?\n"
           "1. Add aliases, generate dict files\n"
           "2. Validate files, modify key/values pairs\n"
-          "9. Quit\n")
+          "q. Quit\n")
     selection = raw_input(":")
     if selection == "1":
         gen_dicts.main()
     if selection == "2":
         modify_dicts.main()
-    if selection == "9":
+    if selection == "q":
         exit()
 
     main()

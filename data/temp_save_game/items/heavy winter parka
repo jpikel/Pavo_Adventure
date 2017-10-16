@@ -15,11 +15,27 @@
             "modifiers": {}
         }, 
         "drop": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
             "description": "drop for heavy winter parka"
         }, 
         "take": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
             "description": "take for heavy winter parka"
         }, 
         "read": {
@@ -32,7 +48,7 @@
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "lookat description for heavy winter parka"
+            "description": "look at description for heavy winter parka"
         }, 
         "eat": {
             "modifiers": {}, 

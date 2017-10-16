@@ -15,11 +15,27 @@
             "modifiers": {}
         }, 
         "drop": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
             "description": "drop for dusty old map"
         }, 
         "take": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
             "description": "take for dusty old map"
         }, 
         "read": {
@@ -32,7 +48,7 @@
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "lookat description for dusty old map"
+            "description": "look at description for dusty old map"
         }, 
         "eat": {
             "modifiers": {}, 

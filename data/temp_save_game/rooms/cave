@@ -1,7 +1,7 @@
 {
     "id": 1, 
     "title": "cave", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Entering the cave, the lantern plays little tricks with the craggy interior.  Small nooks turn into creatures that scamper away.  Hopefully it is all just a small part of your heighten imagination.  You walk into a large room, the lantern light is not strong enough to light up the ceiling, so you can't make out how high it is, but it sounds large.  You are a bit disoriented in the cave but you think that to the north is the game trail towards the large mouth of the cave.  Along the side of the room is a small crevice that you think you can fit through out to the woods to the west.  In the center of the room is a large wooden pole.  On the wall your lantern shines on a small shelf that has been carved out.", 
     "short_description": "Short Description: cave", 
     "features": {
@@ -12,11 +12,11 @@
             "verbs": {
                 "pull": {
                     "modifiers": {}, 
-                    "description": "pull description for feature 1 cave"
+                    "description": "You hold on to the shelf and stretch your calves.  That feels good."
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 cave", 
-                    "description": "use description for feature 1 cave", 
+                    "description": "This stone shelf does not have any usable accessories.", 
                     "modifiers": {}
                 }, 
                 "drop": {

@@ -15,16 +15,42 @@
             "modifiers": {}
         }, 
         "drop": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
             "description": "drop for rescue whistle"
         }, 
         "take": {
-            "modifiers": {}, 
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
             "description": "take for rescue whistle"
         }, 
         "read": {
             "modifiers": {}, 
-            "description": "read for rescue whistle"
+            "description": "read for rescue whistle",
+            "artifact": [
+                "     //\\\\  ",
+                "    //\\/\\\\       __    _ ___   _",
+                "   /\\/\\/\\/\\  | |/  |  | |___| | |",
+                "   //\\/\\/\\\\  | |_  /  | |___  | |",
+                "  /\\/\\/\\/\\/\\ | |_  \\  | |___| | |",
+                " /\\/\\/\\/\\/\\/\\| |  \\ \\ | |___  | |",
+                "/\\/\\/\\/\\/\\/\\/\\ |   \\ \\| |___| |_|"
+        ]
+
         }, 
         "search": {
             "modifiers": {}, 
@@ -32,7 +58,7 @@
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "lookat description for rescue whistle"
+            "description": "look at description for rescue whistle"
         }, 
         "eat": {
             "modifiers": {}, 

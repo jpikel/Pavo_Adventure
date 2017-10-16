@@ -225,8 +225,8 @@ def main(arg=None):
             "2. Validate all keys in template items\n"
             "3. Validate all keys in temp rooms\n"
             "4. Validate all keys in temp items\n"
-            "5. Add data into fields of template rooms\n"
-            "9. Back\n")
+            "5. Add data into fields of templates\n"
+            "q. Back\n")
     if arg == None:
         selection = raw_input(":")
     else:
@@ -235,7 +235,7 @@ def main(arg=None):
         _list_keys(key_validation[selection])
     elif selection in data_entry:
         mod_files.mod_rooms()
-    elif selection == "9":
+    elif selection == "q":
         return
 
     if arg == None:

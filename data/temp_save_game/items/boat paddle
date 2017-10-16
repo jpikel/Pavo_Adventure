@@ -2,8 +2,7 @@
     "id": 6, 
     "title": "boat paddle", 
     "aliases": [
-        "boat paddle", 
-        "paddle"
+        "boat paddle"
     ], 
     "verbs": {
         "pull": {
@@ -16,28 +15,28 @@
             "modifiers": {}
         }, 
         "drop": {
-            "description": "drop for boat paddle", 
             "modifiers": {
-                "room": {
-                    "title": "any", 
-                    "items_in_room": "add"
-                }, 
                 "player": {
                     "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
                 }
-            }
+            }, 
+            "description": "drop for boat paddle"
         }, 
         "take": {
-            "description": "take for boat paddle", 
             "modifiers": {
-                "room": {
-                    "title": "any", 
-                    "items_in_room": "drop"
-                }, 
                 "player": {
                     "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
                 }
-            }
+            }, 
+            "description": "take for boat paddle"
         }, 
         "read": {
             "modifiers": {}, 
@@ -49,7 +48,7 @@
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "lookat description for boat paddle"
+            "description": "look at description for boat paddle"
         }, 
         "eat": {
             "modifiers": {}, 

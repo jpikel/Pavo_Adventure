@@ -14,6 +14,10 @@ import language_parser.command_parser as parse
 import game_engine.player as player
 from game_engine.engine_helpers import response_struct
 
+#experiment text wrapping
+import textwrap
+CHARS_PER_LINE = 80
+
 ALL_VERBS = verbs().get_verbs()
 
 class Game:
@@ -102,8 +106,9 @@ class Game:
 
     def gameCycle(self):
         #inital room description after new game or loading game
-        print(self.get_room_desc()) 
-        self.getTimeOfDay()
+        lines = textwrap.wrap(self.get_room_desc(), CHARS_PER_LINE)
+        for line in lines: print line
+        print self.getTimeOfDay()
         self.updatePlayerCondition()
         self.player.getCondition()
         while not (self.player.rescued and self.player.dead):
@@ -121,7 +126,8 @@ class Game:
             # according to the command type.
             output_type = processed_command["type"]
             print json.dumps(processed_command, indent=4)
-
+            #this is temporary and may very well be removed
+            #just a possible option to help with assigning title and action
             top_level = ["item", "room", "feature", "general"]
             for word in top_level:
                 if word in processed_command:
@@ -226,12 +232,17 @@ class Game:
         #print(json.dumps(res, indent=4))
         self.update_room(res)
         self.update_player(res)
-        self.getTimeOfDay()
+        lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
+        for line in lines: print line
+        if 'artifact' in res:
+            lines = res['artifact']
+            for line in lines: print line
+        #print json.dumps(res, indent=4)
+        print self.getTimeOfDay()
         self.updatePlayerCondition()
         self.player.getCondition()
         #description should always come with process functions so we 
         #automatically print out something to the user
-        print(res['description'])
 
     #-------------------------------------------------------------------------
     # This section dedicated to functions relating to moving from one
@@ -248,7 +259,7 @@ class Game:
             if res["success"] == True:
                 files.store_room(self.current_room)
                 self.current_room = files.load_room(res['title'])
-                res['description'] = str(self.get_room_desc())
+                res['description'] = self.get_room_desc()
             elif res['success'] == False and res['description'] is None:
                 res['description'] = "You were not able to move in that direction.  "
         else:
@@ -274,7 +285,7 @@ class Game:
         res['success'] = False
         items = self.get_items_inventory_titles()
         for room in self.current_room['connected_rooms']:
-            if (title_or_direction == str(room['title'])
+            if (title_or_direction == room['title']
                 or title_or_direction == room['compass_direction']
                 or title_or_direction in room['aliases']):
                 if (room['item_required'] == True and
@@ -283,16 +294,16 @@ class Game:
                         if item['active'] == True:
                             res['success'] = True
                             res['distance_from_room'] = room['distance_from_room']
-                            res['title'] = str(room['title'])
+                            res['title'] = room['title']
                         else:
-                            res['description'] = str(room['pre_item_description'])
+                            res['description'] = room['pre_item_description']
                 elif room['item_required'] == False:
                     res['success'] = True
                     res['distance_from_room'] = room['distance_from_room']
-                    res['description'] = str(room['pre_item_description'])
+                    res['description'] = room['pre_item_description']
                     res['title'] = room['title']
                 else:
-                    res['description'] = str(room['pre_item_description'])
+                    res['description'] = room['pre_item_description']
 
         return res
     #------------------------------------------------------------------------
@@ -317,13 +328,13 @@ class Game:
         """
         returns a string of the long description and items in room
         """
-        return str(self.current_room['long_description'] + self.get_items_in_room())
+        return self.current_room['long_description'] + self.get_items_in_room()
 
     def get_room_short_desc(self):
         """
         returns a string of the short description and items in room
         """
-        return str(self.current_room['short_description'] + self.get_items_in_room())
+        return self.current_room['short_description'] + self.get_items_in_room()
 
     def get_items_in_room(self):
         """
@@ -355,8 +366,10 @@ class Game:
     def remove_item_from_room(self, title):
         """
         removes an items from the inventory of a room
+        do not attempt to remove something not already there
         """
-        self.current_room['items_in_room'].remove(title)
+        if title in self.current_room['items_in_room']:
+            self.current_room['items_in_room'].remove(title)
 
     def add_item_to_room(self, title):
         """
@@ -385,7 +398,7 @@ class Game:
             if title == features[element]['title']:
                 feature = element
         if feat is not None and verb in feature['verbs']:
-            text = str(feature['verbs'][verb]['description'])
+            text = feature['verbs'][verb]['description']
             res['description'] = text
             res['modifiers'] = feature['verbs'][verb]['modifiers']
         else:
@@ -457,13 +470,15 @@ class Game:
         res = response_struct().get_response_struct()
         item = self.search_inventory(item_title)
         res['title'] = item_title
-        res["description"] = str(item['verbs'][action]['description'])
+        res["description"] = item['verbs'][action]['description']
         res['modifiers'] = item['verbs'][action]['modifiers']
         res["success"] = True
+        if 'artifact' in item['verbs'][action]:
+            res['artifact'] = item['verbs'][action]['artifact']
         if action == "use" and item['activatable'] == True:
             if item['active'] == True:
                 item['active'] = False
-                res['description'] = str(item['verbs']['use']['deactivate_description'])
+                res['description'] = item['verbs']['use']['deactivate_description']
             else:
                 item['active'] = True
         elif action == "drop" and self.current_room['feature_searched'] == False:
@@ -482,6 +497,7 @@ class Game:
         if self.current_room['feature_searched'] and verb in allowed_verbs:
             if title in self.current_room['items_in_room']:
                 item = files.load_item(title)
+                #print item
                 res['description'] = item['verbs'][verb]['description']
                 res['modifiers'] = item['verbs'][verb]['modifiers']
                 res["success"] = True
