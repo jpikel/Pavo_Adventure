@@ -142,7 +142,43 @@ def combine_temp_item_path(title):
     item_path = os.path.join(item_path,title)
     return item_path
 
+def _merge(updates, original):
+    """
+        takes the updates and puts them into the original dict
+        be very careful using this can quickly overwrite an entire 
+        structure. Has no safe guards at the moment.
+    """
+    for key, value in updates.items():
+        if isinstance(value, dict):
+            node = original.setdefault(key,  {})
+            merge(value, node)
+        else:
+            original[key] = value
+    return original
+
+def _get_order(source):
+    """
+        given a dict returns a list of the keys in the top level of the
+        dict
+    """
+    order = source.items()
+    order_list = []
+    for key in order:
+        order_list.append(key[0])
+    return order_list
 
 
+def update(updates, original):
+    """
+    driver function gets the top level sorted order of an OrderedDict
+    Then merges the updates into the original dict
+    then re-sorts the new dict by the keys from the original order
+    then returns the newly merged and sorted dict
+    """
+    source_order = _get_order(original)
+    merged = _merge(updates, original)
+    sorted_d = OrderedDict(sorted(merged.items(), key=lambda i:source_order.index(i[0])))
+    return sorted_d
 
+#reference https://stackoverflow.com/questions/20656135/python-deep-merge-dictionary-data
 #Reference - https://stackoverflow.com/questions/1868714/how-do-i-copy-an-entire-directory-of-files-into-an-existing-directory-using-pyth

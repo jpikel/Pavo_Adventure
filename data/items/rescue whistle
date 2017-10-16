@@ -12,7 +12,13 @@
         "use": {
             "deactivate_description": "use deactivate for rescue whistle", 
             "description": "use description for rescue whistle", 
-            "modifiers": {}
+            "modifiers": {
+                "updates": {
+                    "title": "shore",
+                    "short_description":"this update came from the whistle"
+                }
+                
+            }
         }, 
         "drop": {
             "modifiers": {

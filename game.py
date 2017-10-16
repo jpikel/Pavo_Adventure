@@ -231,6 +231,7 @@ class Game:
         #uncomment for troubleshooting
         #print(json.dumps(res, indent=4))
         self.update_room(res)
+        #eventually add an update_item maybe
         self.update_player(res)
         lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
         for line in lines: print line
@@ -522,6 +523,8 @@ class Game:
         """
         this function is used to update the current room's parameters
         """
+        #this is the add and rop to rooms
+        #if dropping is allowed is handled above in the item_action_room
         if "modifiers" in res and "room" in res['modifiers']:
             mods = res['modifiers']['room']
             if self.current_room['title'] == mods['title'] or "any" == mods['title']:
@@ -529,6 +532,19 @@ class Game:
                     self.add_item_to_room(res['title'])
                 elif "items_in_room" in mods and mods['items_in_room'] == "drop":
                     self.remove_item_from_room(res['title'])
+
+        #This is the test of the the dynamic room updates
+        #Since all titles are unique that is our identifier!! very important
+        #it can only currently update the room the player is in, so no
+        #outside rooms, but we could easily change that
+        #we just need to make sure that our rules about what can change
+        #what are consistent.  that comes from the way the 'updates' dict
+        #is written in the 'modifiers' dict for a particular verb of a feature
+        #or an item
+        if 'modifiers' in res and 'updates' in res['modifiers']:
+            updates = res['modifiers']['updates']
+            if self.current_room['title'] == updates['title']:
+                self.current_room = files.update(updates, self.current_room)
 
         #hopefully file_lib will have a method where we can pass the 
         #modifiers dict to and it will do the remaining processing returning 
