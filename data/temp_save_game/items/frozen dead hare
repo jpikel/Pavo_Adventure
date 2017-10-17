@@ -7,11 +7,11 @@
     "verbs": {
         "pull": {
             "modifiers": {}, 
-            "description": "pull description for frozen dead hare"
+            "description": "You give it's ears a tug, poke the hare's belly, pretending it's a stuff animal.  Perhaps you too have been out in the cold too long."
         }, 
         "use": {
             "deactivate_description": "use deactivate for frozen dead hare", 
-            "description": "use description for frozen dead hare", 
+            "description": "Pardon me, but what exactly would you plan to use the hare for?", 
             "modifiers": {}
         }, 
         "drop": {
@@ -24,7 +24,7 @@
                     "title": "any"
                 }
             }, 
-            "description": "drop for frozen dead hare"
+            "description": "You gingerly set the hare down on the ground."
         }, 
         "take": {
             "modifiers": {
@@ -36,23 +36,23 @@
                     "title": "any"
                 }
             }, 
-            "description": "take for frozen dead hare"
+            "description": "You pick up the small dead body of the hare and tuck him away into your pack."
         }, 
         "read": {
             "modifiers": {}, 
-            "description": "read for frozen dead hare"
+            "description": "You think back to child stories of the tortoise and the hare.  If only slow and steady meant not freezing death.  Perhaps it is best to find a medium ground between slow and fast."
         }, 
         "search": {
             "modifiers": {}, 
-            "description": "search for frozen dead hare"
+            "description": "You've never been interested in the veterinary sciences and you certainly are not going to start now."
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "look at description for frozen dead hare"
+            "description": "This hare must have been attacked by a fox or wolf, but then left here. Perhaps the fox was chased off.  There are a few appendages that have bit gashes in them and the hare's coat is blood stained.  The hare so frozen stiff."
         }, 
         "eat": {
             "modifiers": {}, 
-            "description": "eat description for frozen dead hare"
+            "description": "As hungry as you may you cannot bring yourself to eat raw flesh."
         }
     }, 
     "active": false, 

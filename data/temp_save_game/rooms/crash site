@@ -33,15 +33,15 @@
                 }, 
                 "search": {
                     "modifiers": {}, 
-                    "description": "read for feature 1 crash site"
+                    "description": "Getting closer to the dog sled, a glint catches your eye.  How could you have missed it before.  Hanging by a dry rotten string along one of the sides of the dog sled is a small tarnished rescue whistle.  It still appears in reasonable condition, just needs a bit of cleaning."
                 }, 
                 "drop": {
                     "modifiers": {}, 
-                    "description": "drop for feature 1crash site"
+                    "description": "The dog sled does not drop."
                 }, 
                 "eat": {
                     "modifiers": {}, 
-                    "description": "eat description for feature 1 crash site"
+                    "description": "Whatever supplies may once have adorned the inside of the sled are long gone, eaten and forgotten."
                 }
             }, 
             "title": "dog sled"
@@ -53,39 +53,39 @@
             "verbs": {
                 "pull": {
                     "modifiers": {}, 
-                    "description": "pull description for feature 2 crash site"
+                    "description": "No use disturbing a perfectly good fire pit, even if you have no use for it.  Perhaps someone else will."
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 crash site", 
-                    "description": "use description for feature 2 crash site", 
+                    "description": "Without dry timber or any fire starting material you will have no chance to get any going here.", 
                     "modifiers": {}
                 }, 
                 "look at": {
                     "modifiers": {}, 
-                    "description": "look at description for feature 2 crash site"
+                    "description": "The campfire and warmth have long since left this firepit.  But what you wouldn't give to be standing in front of it.  You can almost feel the heat from the fire warming your exposed skin.  It's only a reminder of just how cold it is here.  The rocks have small snow hats and sit half buried in snow.  Just some snow covered ash is left in the campfire."
                 }, 
                 "take": {
                     "modifiers": {}, 
-                    "description": "take for feature 2 crash site"
+                    "description": "The rocks would weigh you down way too much, to be useful in the future."
                 }, 
                 "read": {
                     "modifiers": {}, 
-                    "description": "read for feature 2 crash site"
+                    "description": "Using the ash you smear your initials onto one of the rocks and read it back to yourself.  Maybe if nothing else someone will find this and know you were once here."
                 }, 
                 "search": {
                     "modifiers": {}, 
-                    "description": "read for feature 2 crash site"
+                    "description": "Poking through the snow covered ash, you don't find anything except more snow covered ash."
                 }, 
                 "drop": {
                     "modifiers": {}, 
-                    "description": "drop for feature 2crash site"
+                    "description": "You pick up and drop one of the stones.  It makes a satisfying thud as it hits the ground."
                 }, 
                 "eat": {
                     "modifiers": {}, 
-                    "description": "eat description for feature 2 crash site"
+                    "description": "Although once used for roasting weenies and marshmallow, now it only reminds you of how hungry you are."
                 }
             }, 
-            "title": "feature_2_title"
+            "title": "campfire pit"
         }
     }, 
     "connected_rooms": [
@@ -132,7 +132,7 @@
     "items_in_room": [
         "rescue whistle"
     ], 
-    "feature_searched": false, 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 

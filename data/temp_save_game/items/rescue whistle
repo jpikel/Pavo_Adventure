@@ -7,17 +7,16 @@
     "verbs": {
         "pull": {
             "modifiers": {}, 
-            "description": "pull description for rescue whistle"
+            "description": "You give the cord that the whistle is attached to a little tug.  Seems to be in pretty good shape even though it has a few rotten bits."
         }, 
         "use": {
             "deactivate_description": "use deactivate for rescue whistle", 
-            "description": "use description for rescue whistle", 
+            "description": "You blow hard into the whistle and the silence all around you is broken with an ear piercing loudness!  You stop after a few moments.", 
             "modifiers": {
                 "updates": {
-                    "title": "shore",
-                    "short_description":"this update came from the whistle"
+                    "title": "shore", 
+                    "short_description": "this update came from the whistle"
                 }
-                
             }
         }, 
         "drop": {
@@ -30,7 +29,7 @@
                     "title": "any"
                 }
             }, 
-            "description": "drop for rescue whistle"
+            "description": "You take the cord from around your neck and set down the whistle."
         }, 
         "take": {
             "modifiers": {
@@ -40,35 +39,57 @@
                 "room": {
                     "items_in_room": "drop", 
                     "title": "any"
+                },
+                "room_updates": {
+                    "title": "crash site",
+                    "features": {
+                        "1": {
+                            "verbs": {
+                                "search":{
+                                    "description": "You find nothing else of interest around the dog sled. "
+                                }
+                            }
+                        }
+                    }
+                },
+                "item_updates": {
+                    "title": "rescue whistle",
+                    "verbs": {
+                        "take": {
+                            "modifiers": {
+                                "room_updates": "none",
+                                "item_updates": "none"
+                            }
+                        }
+                    }
                 }
             }, 
-            "description": "take for rescue whistle"
+            "description": "You take the whistle and hang it around your neck.  The string is a bit rotten but seems like it will hold itself together for a while at least."
         }, 
         "read": {
             "modifiers": {}, 
-            "description": "read for rescue whistle",
+            "description": "The side of the rescue whistle has a small logo.", 
             "artifact": [
-                "     //\\\\  ",
-                "    //\\/\\\\       __    _ ___   _",
-                "   /\\/\\/\\/\\  | |/  |  | |___| | |",
-                "   //\\/\\/\\\\  | |_  /  | |___  | |",
-                "  /\\/\\/\\/\\/\\ | |_  \\  | |___| | |",
-                " /\\/\\/\\/\\/\\/\\| |  \\ \\ | |___  | |",
+                "     //\\\\  ", 
+                "    //\\/\\\\       __    _ ___   _", 
+                "   /\\/\\/\\/\\  | |/  |  | |___| | |", 
+                "   //\\/\\/\\\\  | |_  /  | |___  | |", 
+                "  /\\/\\/\\/\\/\\ | |_  \\  | |___| | |", 
+                " /\\/\\/\\/\\/\\/\\| |  \\ \\ | |___  | |", 
                 "/\\/\\/\\/\\/\\/\\/\\ |   \\ \\| |___| |_|"
-        ]
-
+            ]
         }, 
         "search": {
             "modifiers": {}, 
-            "description": "search for rescue whistle"
+            "description": "You peak inside the opening of the whistle, the small ball rolls around inside of it."
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "look at description for rescue whistle"
+            "description": "A small rescue whistle with a cord tied through it for hanging it around something."
         }, 
         "eat": {
             "modifiers": {}, 
-            "description": "eat description for rescue whistle"
+            "description": "As amusing as it may be to eat the whistle, you think it may not be a good idea."
         }
     }, 
     "active": false, 

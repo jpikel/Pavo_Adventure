@@ -104,9 +104,6 @@
         }
     ], 
     "items_in_room": [
-        "boat paddle", 
-        "lantern", 
-        "rescue whistle"
     ], 
     "feature_searched": true, 
     "room_hazards": false, 

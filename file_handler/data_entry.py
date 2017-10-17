@@ -18,7 +18,7 @@ import re
 import sys
 
 NOT_ALLOWED = ["title", "id"]
-ROOM_TOP_LEVEL = ["long_description", "short_description", "items_in_room"]
+ROOM_TOP_LEVEL = ["long_description", "short_description", "items_in_room", "feature_searched"]
 ITEM_TOP_LEVEL = []
 FILES_TO_IGNORE = ["Rooms.md", "Items.md"]
 ROOM_SRC_DIR = room_info().get_dir()
@@ -59,7 +59,7 @@ def mod_rooms():
                         json_obj = edit_room(json_obj)
                     else:
                         json_obj = edit_item(json_obj)
-                    store_obj(json_obj, src_dir)
+                    store_obj(json_obj, new_dir)
                 except Exception, e:
                     print e
 
@@ -151,11 +151,11 @@ def edit_loop(key, this_pair):
             return 'q'
 
 
-def store_obj(obj_json, src_dir):
+def store_obj(obj_json, new_dir):
     """
     store the json into the src_dir
     """
-    new_dir = os.path.join(src_dir, obj_json['title'])
+    #new_dir = os.path.join(src_dir, obj_json['title'])
     with open(new_dir, "w") as open_file:
         str_ = json.dumps(obj_json, indent=4)
         str_ = the_replacer(str_)

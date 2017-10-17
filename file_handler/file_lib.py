@@ -125,7 +125,6 @@ def store_item(current_item):
     """
     try:
         item_title = current_item['title']
-        current_item['visited'] = True
         item_path = combine_temp_item_path(item_title)
         with open(item_path, 'w') as item_file:
             item_file.seek(0)
@@ -151,7 +150,7 @@ def _merge(updates, original):
     for key, value in updates.items():
         if isinstance(value, dict):
             node = original.setdefault(key,  {})
-            merge(value, node)
+            _merge(value, node)
         else:
             original[key] = value
     return original

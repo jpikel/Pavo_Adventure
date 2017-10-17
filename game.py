@@ -6,6 +6,7 @@ Class: CS467-400
 Assignment: CMD1:Adventure
 Description:
 """
+import sys
 import json
 import file_handler.file_lib as files
 import file_handler.help_file as help_file
@@ -125,7 +126,10 @@ class Game:
             # If the game understands the user's command, process that command
             # according to the command type.
             output_type = processed_command["type"]
-            print json.dumps(processed_command, indent=4)
+
+            #line below for testing
+            #print json.dumps(processed_command, indent=4)
+
             #this is temporary and may very well be removed
             #just a possible option to help with assigning title and action
             top_level = ["item", "room", "feature", "general"]
@@ -230,9 +234,10 @@ class Game:
 
         #uncomment for troubleshooting
         #print(json.dumps(res, indent=4))
+        self.update_player(res)
         self.update_room(res)
         #eventually add an update_item maybe
-        self.update_player(res)
+        self.update_item(res)
         lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
         for line in lines: print line
         if 'artifact' in res:
@@ -273,12 +278,12 @@ class Game:
         through the current room's connected_rooms object to see if the compass
         or room title exist
         checks if an item is required to pass into this room
-            if an item is required checks to see if that item is active as in worn or on
+        if an item is required checks to see if that item is active as in worn or on
         writes the appropriate response into
-            description
-            move = boolean whether or not the move was successful
-            title = the new room's title
-            distance_from_room = distance traveled to the new room
+        description
+        move = boolean whether or not the move was successful
+        title = the new room's title
+        distance_from_room = distance traveled to the new room
 
         FUTURE implementation: check if the room is accessible or blocked
         """
@@ -291,7 +296,7 @@ class Game:
                 or title_or_direction in room['aliases']):
                 if (room['item_required'] == True and
                     room['item_required_title'] in items):
-                        item = self.get_item_from_inventory()
+                        item = self.search_inventory()
                         if item['active'] == True:
                             res['success'] = True
                             res['distance_from_room'] = room['distance_from_room']
@@ -378,8 +383,6 @@ class Game:
         """
         if title not in self.current_room['items_in_room']:
             self.current_room['items_in_room'].append(title)
-
-
     #------------------------------------------------------------------------
     # This ends the room  section
     #------------------------------------------------------------------------
@@ -434,15 +437,15 @@ class Game:
             return items[0]
         return None
 
+#ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
     def search_inventory_excluding(self, title):
-        #ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
         return [item for item in self.inventory if item['title'] != title]
-
-    def get_item_from_inventory(self, title):
-        for item in self.inventory:
-            if item['title'] == title:
-                return item
-        return None
+#MARKED FOR DELETION
+#    def get_item_from_inventory(self, title):
+#        for item in self.inventory:
+#            if item['title'] == title:
+#                return item
+#        return None
 
     def add_item_to_inventory(self, title):
         """
@@ -454,7 +457,7 @@ class Game:
 
     def remove_item_from_inventory(self, title):
         """
-        iterates through inventory to remove the item passed in
+        iterates through inventory to remove the item title passed in
         """
         self.inventory = self.search_inventory_excluding(title)
 
@@ -463,7 +466,6 @@ class Game:
         called by the verb handler.  Looks up the item file and opens it
         returns the description listed for the particular verb at this moment.
         FUTURE: include additional parts of the structure to return to the game engine
-
             {
             "description": string
             }
@@ -541,15 +543,15 @@ class Game:
         #what are consistent.  that comes from the way the 'updates' dict
         #is written in the 'modifiers' dict for a particular verb of a feature
         #or an item
-        if 'modifiers' in res and 'updates' in res['modifiers']:
-            updates = res['modifiers']['updates']
+        if ('modifiers' in res and 'room_updates' in res['modifiers'] and
+                res['modifiers']['room_updates'] != 'none'):
+            updates = res['modifiers']['room_updates']
             if self.current_room['title'] == updates['title']:
                 self.current_room = files.update(updates, self.current_room)
 
         #hopefully file_lib will have a method where we can pass the 
         #modifiers dict to and it will do the remaining processing returning 
         #the updated room so we can just do 
-        #self.current_room = files.update_fields(self.current_room, modifiers)
 
     def update_player(self, res):
         """
@@ -561,19 +563,28 @@ class Game:
             if "inventory" in modifiers and modifiers['inventory'] == "add":
                 self.add_item_to_inventory(res['title'])
             elif "inventory" in modifiers and modifiers['inventory'] == "drop":
+                #when the player drops the item it gets written to file
+                item = self.search_inventory(res['title'])
+                if item:
+                    files.store_item(item)
                 self.remove_item_from_inventory(res['title'])
+            if 'illness' in modifiers:
+                self.player.illness = int(modifiers['illness'])
+
 
         #maybe incorporate the player condition updates here so we can
         #include things like hunger, illness etc in the modifiers
 
     def update_item(self, res):
         """
-        This may not be necessary and may be deleted
-        Similar in behaviour to update room and update_player
-        acts upon modifiers from actions from features or other items
+        this function is used to an item's dict.  Must be in the inventory!
         """
-        return None
-        #this very well may be deleted
+        if ('modifiers' in res and 'item_updates' in res['modifiers'] and
+                res['modifiers']['item_updates'] != 'none'):
+            updates = res['modifiers']['item_updates']
+            item = self.search_inventory(updates['title'])
+            if item is not None:
+                item = files.update(updates, item)
 
     def getTimeOfDay(self):
         if self.number_of_turns % 4 == 0:

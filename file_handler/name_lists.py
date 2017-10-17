@@ -67,7 +67,7 @@ class item_info():
         and the directory for the templates
         only has getters for these features
     """
-    item_titles = ["lantern", "heavy winter parka", "dusty old map", "tattered notebook",
+    item_titles = ["lantern", "heavy winter parka", "old map", "tattered notebook",
                 "flare gun", "boat paddle", "rescue whistle", "frozen dead hare",
                 "can of sweetened condensed milk", "can opener"]
     item_dir = os.path.join(data_dir, "items")
@@ -150,6 +150,7 @@ class dict_keys():
             "requirement_not_met_description",
             "item_combination", "room_combination",
             "feature_combination"]
+    optional_keys = ["artifact"]
 
 
     def get_room_keys(self):
@@ -160,6 +161,8 @@ class dict_keys():
         return self.verbs
     def get_verb_keys(self):
         return self.verb_keys
+    def get_opt_keys(self):
+        return self.optional_keys
     def get_additional_use_keys(self):
         return self.use_additional_keys
     def get_connected_room_keys(self):

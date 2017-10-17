@@ -1,6 +1,6 @@
 items = {
    "frozen dead hare": "frozen dead hare", 
-   "dusty old map": "dusty old map", 
+   "old map": "old map", 
    "rescue whistle": "rescue whistle", 
    "tattered notebook": "tattered notebook", 
    "can of sweetened condensed milk": "can of sweetened condensed milk", 

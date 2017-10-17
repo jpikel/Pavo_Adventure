@@ -22,6 +22,7 @@ import json
 import os
 
 files_to_ignore = ["Rooms.md", "Items.md"]
+OPTIONAL_KEYS = dict_keys().get_opt_keys()
 
 def _list_keys(option):
     """
@@ -202,10 +203,10 @@ def _compare_dict(the_dict, valid_keys):
     response = dict()
 
     for key in the_dict:
-        if key not in valid_keys:
+        if key not in valid_keys and key not in OPTIONAL_KEYS:
             response.update({key:the_dict[key]})
     for key in valid_keys:
-        if key not in the_dict:
+        if key not in the_dict and key not in OPTIONAL_KEYS:
             response.update({key:key})
     return response
 
