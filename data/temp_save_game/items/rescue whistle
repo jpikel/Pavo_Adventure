@@ -39,29 +39,6 @@
                 "room": {
                     "items_in_room": "drop", 
                     "title": "any"
-                },
-                "room_updates": {
-                    "title": "crash site",
-                    "features": {
-                        "1": {
-                            "verbs": {
-                                "search":{
-                                    "description": "You find nothing else of interest around the dog sled. "
-                                }
-                            }
-                        }
-                    }
-                },
-                "item_updates": {
-                    "title": "rescue whistle",
-                    "verbs": {
-                        "take": {
-                            "modifiers": {
-                                "room_updates": "none",
-                                "item_updates": "none"
-                            }
-                        }
-                    }
                 }
             }, 
             "description": "You take the whistle and hang it around your neck.  The string is a bit rotten but seems like it will hold itself together for a while at least."

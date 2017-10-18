@@ -120,7 +120,7 @@
     "items_in_room": [
         "frozen dead hare"
     ], 
-    "feature_searched": false, 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 

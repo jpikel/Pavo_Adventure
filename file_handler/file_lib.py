@@ -148,9 +148,16 @@ def _merge(updates, original):
         structure. Has no safe guards at the moment.
     """
     for key, value in updates.items():
-        if isinstance(value, dict):
+        #if the value of the key is a dict and
+        #if the dict beyond is empty and it is in the destination
+        #delete the key in the destination
+        if isinstance(value, dict) and not bool(updates[key]) and key in original:
+            original.pop(key, None)
+        #if it a dict with stuff in it then enter the dict and recurse
+        elif isinstance(value, dict):
             node = original.setdefault(key,  {})
             _merge(value, node)
+        #otherwise assign the dict    
         else:
             original[key] = value
     return original

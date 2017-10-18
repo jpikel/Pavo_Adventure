@@ -543,8 +543,7 @@ class Game:
         #what are consistent.  that comes from the way the 'updates' dict
         #is written in the 'modifiers' dict for a particular verb of a feature
         #or an item
-        if ('modifiers' in res and 'room_updates' in res['modifiers'] and
-                res['modifiers']['room_updates'] != 'none'):
+        if 'modifiers' in res and 'room_updates' in res['modifiers']:
             updates = res['modifiers']['room_updates']
             if self.current_room['title'] == updates['title']:
                 self.current_room = files.update(updates, self.current_room)
@@ -579,8 +578,7 @@ class Game:
         """
         this function is used to an item's dict.  Must be in the inventory!
         """
-        if ('modifiers' in res and 'item_updates' in res['modifiers'] and
-                res['modifiers']['item_updates'] != 'none'):
+        if 'modifiers' in res and 'item_updates' in res['modifiers']:
             updates = res['modifiers']['item_updates']
             item = self.search_inventory(updates['title'])
             if item is not None:

@@ -5,7 +5,9 @@ from collections import OrderedDict
 
 def merge(source, destination):
     for key, value in source.items():
-        if isinstance(value, dict):
+        if isinstance(value, dict) and not bool(source[key]) and key in destination:
+            destination.pop(key, None)
+        elif isinstance(value, dict):
             node = destination.setdefault(key,  {})
             merge(value, node)
         else:
@@ -21,7 +23,7 @@ def get_order(source):
 
 a = OrderedDict()
 a.update({'title':'title of a'})
-a.update({'long_description':'long in a'})
+a.update({'long_description':'long in a for deleteion!'})
 a.update({'features' : 
             { '1' : { 
                 'verbs' :{
@@ -40,12 +42,13 @@ source_order = get_order(a)
 b = OrderedDict()
 b.update({ 
     'updates':{
-        'long_description':'new long',
+        'long_description':"stuff in b",
         'features' : 
             { '1' : { 
                 'verbs' :{
-                    'use': {
-                        'description':'use in b'
+                    'use': {},
+                    'take': {
+                        'description':''
                         }
                     }
                 }
@@ -53,8 +56,8 @@ b.update({
         }
     })
 
-#print json.dumps(a, indent=4)
-#print json.dumps(b, indent=4)
+print json.dumps(a, indent=4)
+print json.dumps(b, indent=4)
 c = OrderedDict()
 c = merge(b['updates'], a)
 z = OrderedDict(sorted(c.items(), key=lambda i:source_order.index(i[0])))
