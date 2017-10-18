@@ -92,47 +92,6 @@
             "title": "leanto"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "dense brush", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "dense brush"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "woods", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "woods"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "crash site", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "crash site"
-            ]
-        }
-    ], 
     "items_in_room": [
         "can of sweetened condensed milk", 
         "lantern"
@@ -143,5 +102,46 @@
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "woods": {
+            "accessible": true, 
+            "title": "woods", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "woods"
+            ]
+        }, 
+        "crash site": {
+            "accessible": true, 
+            "title": "crash site", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "crash site"
+            ]
+        }, 
+        "dense brush": {
+            "accessible": true, 
+            "title": "dense brush", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "dense brush"
+            ]
+        }
+    }
 }

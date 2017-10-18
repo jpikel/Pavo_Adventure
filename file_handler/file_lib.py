@@ -141,7 +141,7 @@ def combine_temp_item_path(title):
     item_path = os.path.join(item_path,title)
     return item_path
 
-def _merge(updates, original):
+def merge(updates, original):
     """
         takes the updates and puts them into the original dict
         be very careful using this can quickly overwrite an entire 
@@ -156,13 +156,13 @@ def _merge(updates, original):
         #if it a dict with stuff in it then enter the dict and recurse
         elif isinstance(value, dict):
             node = original.setdefault(key,  {})
-            _merge(value, node)
+            merge(value, node)
         #otherwise assign the dict    
         else:
             original[key] = value
     return original
 
-def _get_order(source):
+def get_order(source):
     """
         given a dict returns a list of the keys in the top level of the
         dict
@@ -181,10 +181,36 @@ def update(updates, original):
     then re-sorts the new dict by the keys from the original order
     then returns the newly merged and sorted dict
     """
-    source_order = _get_order(original)
-    merged = _merge(updates, original)
+    source_order = get_order(original)
+    merged = merge(updates, original)
     sorted_d = OrderedDict(sorted(merged.items(), key=lambda i:source_order.index(i[0])))
     return sorted_d
+
+def gather_dicts(source, key):
+    """
+    for the key passed in if the value is a dict returns that dict or list of dicts
+    """
+    if key in source and isinstance(source[key], list) or isinstance(source[key], dict):
+        return source[key]
+    else:
+        return None
+
+def add_key_before_dicts(source, key, top_key):
+    """
+    when passed in a source dict structure, the key is the new key of the dict
+    top_key is the existing key in the file
+    creates a new structured dict that is returned
+    top_key: { key[value]: obj }
+    """
+    new_dict = OrderedDict()
+    for obj in source:
+        new_dict.update({obj[key]:obj})
+
+    updated_dict = OrderedDict()
+    updated_dict.update({top_key:new_dict})
+    return updated_dict
+
+
 
 #reference https://stackoverflow.com/questions/20656135/python-deep-merge-dictionary-data
 #Reference - https://stackoverflow.com/questions/1868714/how-do-i-copy-an-entire-directory-of-files-into-an-existing-directory-using-pyth

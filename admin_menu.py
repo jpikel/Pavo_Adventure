@@ -11,9 +11,6 @@ dicts, alias entry, validation etc.
 import file_handler.gen_dicts as gen_dicts
 import file_handler.modify_dicts as modify_dicts
 
-
-
-
 def main():
     """
     the main menu of options

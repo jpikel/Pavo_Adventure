@@ -88,34 +88,6 @@
             "title": "wood pole"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": false, 
-            "distance_from_room": 1, 
-            "title": "woods", 
-            "pre_item_description": "You walk into the crevice a few feet, the cave gets much narrower here and you are confronted by a smooth rock face.  You can go no further so turn back into the cave.", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "woods"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "game trail", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "game trail"
-            ]
-        }
-    ], 
     "items_in_room": [
         "old map"
     ], 
@@ -125,5 +97,33 @@
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "woods": {
+            "accessible": false, 
+            "title": "woods", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "You walk into the crevice a few feet, the cave gets much narrower here and you are confronted by a smooth rock face.  You can go no further so turn back into the cave.", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "woods"
+            ]
+        }, 
+        "game trail": {
+            "accessible": true, 
+            "title": "game trail", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "game trail"
+            ]
+        }
+    }
 }

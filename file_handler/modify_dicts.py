@@ -18,11 +18,18 @@ from name_lists import item_info
 from name_lists import dict_keys
 from name_lists import save_info
 import file_handler.data_entry as mod_files
+import file_handler.file_lib as files
 import json
 import os
 
-files_to_ignore = ["Rooms.md", "Items.md"]
+FILES_TO_IGNORE = ["Rooms.md", "Items.md"]
 OPTIONAL_KEYS = dict_keys().get_opt_keys()
+ROOMS_DIR = room_info().get_dir()
+TEMP_ROOMS_DIR = save_info().get_temp_save_dir_rooms()
+ITEMS_DIR = item_info().get_dir()
+ITEMS_TEMP_DIR = save_info().get_temp_save_dir_items()
+ROOM_TITLES = room_info().get_titles()
+ITEM_TITLES = item_info().get_titles()
 
 def _list_keys(option):
     """
@@ -32,16 +39,16 @@ def _list_keys(option):
     and then list all the keys in the room structure
     """
     if option == "rooms":
-        src_dir = room_info().get_dir()
+        src_dir = ROOMS_DIR
         print("Scanning room files")
     elif option == "temprooms":
-        src_dir = save_info().get_temp_save_dir_rooms()
+        src_dir = TEMP_ROOMS_DIR 
         print "Scanning temp room files"
     elif option == "items":
-        src_dir = item_info().get_dir()
+        src_dir = ITEMS_DIR 
         print("Scanning item files")
     elif option == "tempitems":
-        src_dir = save_info().get_temp_save_dir_items()
+        src_dir = ITEMS_TEMP_DIR
         print "Scanning temp item files"
     else:
         print("Invalid entry")
@@ -49,7 +56,7 @@ def _list_keys(option):
     response = dict()
 
     for filename in os.listdir(src_dir):
-        if filename not in files_to_ignore and not filename.endswith("swp"):
+        if filename not in FILES_TO_IGNORE and not filename.endswith("swp"):
             new_dir = os.path.join(src_dir, filename)
             with open(new_dir, 'r') as open_file:
                 try:
@@ -210,7 +217,61 @@ def _compare_dict(the_dict, valid_keys):
             response.update({key:key})
     return response
 
+
+def _update_tree():
+    """
+    this function will allow the user to update the current structure of a room
+    file.  Mainly designed to update the dict of dicts.  Used to refactor the
+    current_rooms structure
+    """
+
+    while True:
+        filename = raw_input("Enter template room or item to edit, q to quit: ")
+        filename = str(filename)
+        if filename in ROOM_TITLES:
+            src_dir = ROOMS_DIR
+        elif filename in ITEM_TITLES:
+            src_dir = ITEMS_DIR
+        if filename == "q":
+            break
+        if (filename not in FILES_TO_IGNORE and 
+                filename in ROOM_TITLES or filename in ITEM_TITLES):
+            new_dir = os.path.join(src_dir, filename)
+            print new_dir
+            with open(new_dir, 'r') as open_file:
+                try:
+                    obj = json.load(open_file, object_pairs_hook=OrderedDict)
+                    open_file.close()
+                except Exception, e:
+                    print e
+            source_order = files.get_order(obj)
+            top_key = raw_input('Enter the dict key that you want to edit: ')
+            new_key = raw_input('Enter the key whose value will be used as the objects key: ')
+            if top_key in obj:
+                old_dict = files.gather_dicts(obj, top_key)
+                if old_dict is not None:
+                    updates = {top_key:{}}
+                    dict_sans_key = files.merge(updates, obj)
+                    new_dict = files.add_key_before_dicts(old_dict, new_key, top_key)
+                    updated_dict = files.merge(new_dict, dict_sans_key)
+                    print json.dumps(updated_dict, indent=4)
+                    ans = raw_input('Do you want to store this structure y/n: ')
+                    if ans == 'y':
+                        with open(new_dir, 'w') as open_file:
+                            try:
+                                json.dump(updated_dict, open_file, indent=4)
+                                open_file.close()
+                            except Exception, e:
+                                print e
+            else:
+                print 'The top key is not in the structure'
+
 def main(arg=None):
+    """
+    if an argument is not passed in prints a menu that the user may select from
+    to perform the actions listed in the menu
+    the argument is the option to perform in the menu
+    """
     key_validation = {
             "1":"rooms",
             "2":"items",
@@ -220,6 +281,9 @@ def main(arg=None):
     data_entry = {
             "5":"rooms"
             }
+    update_tree = {
+            "6":"update"
+            }
 
     print(  "\nWhat would you like to do?\n"
             "1. Validate all keys in template rooms\n"
@@ -227,6 +291,7 @@ def main(arg=None):
             "3. Validate all keys in temp rooms\n"
             "4. Validate all keys in temp items\n"
             "5. Add data into fields of templates\n"
+            "6. Add a keyword in front of a dict structure\n"
             "q. Back\n")
     if arg == None:
         selection = raw_input(":")
@@ -236,6 +301,8 @@ def main(arg=None):
         _list_keys(key_validation[selection])
     elif selection in data_entry:
         mod_files.mod_rooms()
+    elif selection in update_tree:
+        _update_tree()
     elif selection == "q":
         return
 

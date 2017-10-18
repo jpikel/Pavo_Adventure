@@ -29,22 +29,22 @@
                 }, 
                 "read": {
                     "modifiers": {}, 
-                    "description": "You see a small carving on the top of the tree stump",
-                    "artifact":[
-                    "         ___     ___",
-                    "       /      \\   /      \\",
-                    "     /  ___ \\/  __    \\",
-                    "   /       |      /     \\    \\",
-                    " /         |      \\__       \\",
-                    "|    |     |            \\      |",
-                    "|    \\__/        \\__/      |",
-                    "    \\                            /",
-                    "       \\                       /",
-                    "           \\                 /",
-                    "             \\             /",
-                    "               \\         /",
-                    "                  \\   /"
-                ]
+                    "description": "You see a small carving on the top of the tree stump", 
+                    "artifact": [
+                        "         ___     ___", 
+                        "       /      \\   /      \\", 
+                        "     /  ___ \\/  __    \\", 
+                        "   /       |      /     \\    \\", 
+                        " /         |      \\__       \\", 
+                        "|    |     |            \\      |", 
+                        "|    \\__/        \\__/      |", 
+                        "    \\                            /", 
+                        "       \\                       /", 
+                        "           \\                 /", 
+                        "             \\             /", 
+                        "               \\         /", 
+                        "                  \\   /"
+                    ]
                 }, 
                 "search": {
                     "modifiers": {}, 
@@ -85,15 +85,15 @@
                 }, 
                 "read": {
                     "modifiers": {}, 
-                    "description": "There is a small inscription on the tree that you can make out",
-                    "artifact":[
-                    "  \\  |    |  /",
-                    " _\\ | /\\ | /_",
-                    "_   |    |  _",
-                    "\\ -  .   .  - /",
-                    "    \\      /",
-                    "      \\_/"
-                        ]
+                    "description": "There is a small inscription on the tree that you can make out", 
+                    "artifact": [
+                        "  \\  |    |  /", 
+                        " _\\ | /\\ | /_", 
+                        "_   |    |  _", 
+                        "\\ -  .   .  - /", 
+                        "    \\      /", 
+                        "      \\_/"
+                    ]
                 }, 
                 "search": {
                     "modifiers": {}, 
@@ -111,48 +111,6 @@
             "title": "bent tree"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "camp", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "camp"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "river", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "river"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "cave", 
-            "pre_item_description": "You walk a few feet into the entrance only to be confronted by a solid stone surface.  It appears to look like natural rock.  Maybe there is another way in or around?  You head back into the woods.", 
-            "item_required_title": "lantern", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": true, 
-            "aliases": [
-                "cave", 
-                "cavern"
-            ]
-        }
-    ], 
     "items_in_room": [], 
     "feature_searched": true, 
     "room_hazards": false, 
@@ -160,5 +118,47 @@
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "camp": {
+            "accessible": true, 
+            "title": "camp", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "camp"
+            ]
+        }, 
+        "river": {
+            "accessible": true, 
+            "title": "river", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "river"
+            ]
+        }, 
+        "cave": {
+            "accessible": true, 
+            "title": "cave", 
+            "distance_from_room": 1, 
+            "item_required": true, 
+            "item_required_title": "lantern", 
+            "pre_item_description": "You walk a few feet into the entrance only to be confronted by a solid stone surface.  It appears to look like natural rock.  Maybe there is another way in or around?  You head back into the woods.", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "cave", 
+                "cavern"
+            ]
+        }
+    }
 }

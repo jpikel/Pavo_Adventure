@@ -88,35 +88,6 @@
             "title": "bent pine"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "crash site", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "crash site"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "cave", 
-            "pre_item_description": "You stare into the dark cave entrance in front of you.  You can feel warmer, moist air roll across your face.  It starts to make your brows sweat.  If only you had something to light the way.  You turn back for now and go back from where you came.", 
-            "item_required_title": "lantern", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": true, 
-            "aliases": [
-                "cave", 
-                "cavern"
-            ]
-        }
-    ], 
     "items_in_room": [
         "frozen dead hare"
     ], 
@@ -126,5 +97,34 @@
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "cave": {
+            "accessible": true, 
+            "title": "cave", 
+            "distance_from_room": 1, 
+            "item_required": true, 
+            "item_required_title": "lantern", 
+            "pre_item_description": "You stare into the dark cave entrance in front of you.  You can feel warmer, moist air roll across your face.  It starts to make your brows sweat.  If only you had something to light the way.  You turn back for now and go back from where you came.", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "cave", 
+                "cavern"
+            ]
+        }, 
+        "crash site": {
+            "accessible": true, 
+            "title": "crash site", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "crash site"
+            ]
+        }
+    }
 }

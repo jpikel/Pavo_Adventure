@@ -290,12 +290,16 @@ class Game:
         res = response_struct().get_response_struct()
         res['success'] = False
         items = self.get_items_inventory_titles()
-        for room in self.current_room['connected_rooms']:
+        for room_key in self.current_room['connected_rooms']:
+            #this line added as a result of the connected_rooms refactoring
+            #all other functionality remains the same
+            room = self.current_room['connected_rooms'][room_key]
             if (title_or_direction == room['title']
                 or title_or_direction == room['compass_direction']
                 or title_or_direction in room['aliases']):
                 if (room['item_required'] == True and
-                    room['item_required_title'] in items):
+                    room['item_required_title'] in items and
+                    room['accessible'] == True):
                         item = self.search_inventory()
                         if item['active'] == True:
                             res['success'] = True
