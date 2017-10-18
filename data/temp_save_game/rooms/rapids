@@ -1,7 +1,7 @@
 {
     "id": 15, 
     "title": "rapids", 
-    "visited": false, 
+    "visited": true, 
     "long_description": "Long Description: rapids", 
     "short_description": "Short Description: rapids", 
     "features": {

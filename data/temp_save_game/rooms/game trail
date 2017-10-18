@@ -1,7 +1,7 @@
 {
     "id": 3, 
     "title": "game trail", 
-    "visited": false, 
+    "visited": true, 
     "long_description": "Snow is packed down in multiple directions from the wandering animals in the area.  They must have heard you coming because you cannot see anything living around.  There are a few spots in the ground where you think deer may have searched for grass. The pines get a bit denser and the woods get a bit darker here.  Animals must feel safe here, but it may also bring predators.  Just ahead, you notice some blood stains in the snow.  Towards the south you the trails starts to climb up, the trees thin just a bit and you can see a large rock face with the entrance to dark cave staring back at you ominously.  One of the pines here is curiously bent almost as if creating a marker.  Through the woods to the west is the crash site.", 
     "short_description": "Evidence of animal activity is around you, with packed snow and a few spots of grass poking through from deer digging.  You see a small blood spot in the snow and a carving on one of the pines.  To the south is up a slight incline is an ominous entrance to a cave and to the west through the woods is the crash site.", 
     "features": {
