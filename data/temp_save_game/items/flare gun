@@ -5,25 +5,53 @@
         "flare gun"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for flare gun"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": {}, 
             "description": "pull description for flare gun"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for flare gun", 
-            "description": "use description for flare gun"
+            "description": "use description for flare gun", 
+            "modifiers": {}
         }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for flare gun"
+        "drop": {
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
+            "description": "drop for flare gun"
+        }, 
+        "take": {
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
+            "description": "take for flare gun"
+        }, 
+        "read": {
+            "modifiers": {}, 
+            "description": "read for flare gun"
+        }, 
+        "search": {
+            "modifiers": {}, 
+            "description": "search for flare gun"
+        }, 
+        "look at": {
+            "modifiers": {}, 
+            "description": "look at description for flare gun"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": {}, 
             "description": "eat description for flare gun"
         }
     }, 

@@ -5,25 +5,53 @@
         "tattered notebook"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for tattered notebook"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": {}, 
             "description": "pull description for tattered notebook"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for tattered notebook", 
-            "description": "use description for tattered notebook"
+            "description": "use description for tattered notebook", 
+            "modifiers": {}
         }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for tattered notebook"
+        "drop": {
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
+            "description": "drop for tattered notebook"
+        }, 
+        "take": {
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
+            "description": "take for tattered notebook"
+        }, 
+        "read": {
+            "modifiers": {}, 
+            "description": "read for tattered notebook"
+        }, 
+        "search": {
+            "modifiers": {}, 
+            "description": "search for tattered notebook"
+        }, 
+        "look at": {
+            "modifiers": {}, 
+            "description": "look at description for tattered notebook"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": {}, 
             "description": "eat description for tattered notebook"
         }
     }, 

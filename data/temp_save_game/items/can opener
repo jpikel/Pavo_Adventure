@@ -5,25 +5,53 @@
         "can opener"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for can opener"
-        }, 
         "pull": {
-            "affect_condition": 0, 
+            "modifiers": {}, 
             "description": "pull description for can opener"
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for can opener", 
-            "description": "use description for can opener"
+            "description": "use description for can opener", 
+            "modifiers": {}
         }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for can opener"
+        "drop": {
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
+            "description": "drop for can opener"
+        }, 
+        "take": {
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
+            "description": "take for can opener"
+        }, 
+        "read": {
+            "modifiers": {}, 
+            "description": "read for can opener"
+        }, 
+        "search": {
+            "modifiers": {}, 
+            "description": "search for can opener"
+        }, 
+        "look at": {
+            "modifiers": {}, 
+            "description": "look at description for can opener"
         }, 
         "eat": {
-            "affect_condition": 0, 
+            "modifiers": {}, 
             "description": "eat description for can opener"
         }
     }, 

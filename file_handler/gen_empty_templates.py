@@ -30,34 +30,38 @@ def create_room(room_name, index, connections):
                                             "title":"feature_1_title",
                                             "aliases":["feature_1_aliases"],
                                             "verbs":{
-                                                    "lookat":{
-                                                        "description":"lookat description for feature 1 " + room_name,
-                                                        "affect_condition":0
+                                                    "look at":{
+                                                        "description":"look at description for feature 1 " + room_name,
+                                                        "modifiers":{}
                                                         },
                                                     "use":{
                                                         "description":"use description for feature 1 " + room_name,
                                                         "deactivate_description":"use deactivate for feature 1 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "eat":{
                                                         "description":"eat description for feature 1 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "pull":{
                                                         "description":"pull description for feature 1 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "read":{
                                                         "description":"read for feature 1 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "search":{
                                                         "description":"read for feature 1 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "take":{
                                                         "description":"take for feature 1 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
+                                                        },
+                                                    "drop":{
+                                                        "description":"drop for feature 1" + room_name,
+                                                        "modifiers":{}
                                                         }
                                                     }
                                              },
@@ -65,34 +69,38 @@ def create_room(room_name, index, connections):
                                             "title":"feature_2_title",
                                             "aliases":["feature_2_aliases"],
                                             "verbs":{
-                                                    "lookat":{
-                                                        "description":"lookat description for feature 2 " + room_name,
-                                                        "affect_condition":0
+                                                    "look at":{
+                                                        "description":"look at description for feature 2 " + room_name,
+                                                        "modifiers":{}
                                                         },
                                                     "use":{
                                                         "description":"use description for feature 2 " + room_name,
                                                         "deactivate_description":"use deactivate for feature 2 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "eat":{
                                                         "description":"eat description for feature 2 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "pull":{
                                                         "description":"pull description for feature 2 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "read":{
                                                         "description":"read for feature 2 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "search":{
                                                         "description":"read for feature 2 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
                                                         },
                                                     "take":{
                                                         "description":"take for feature 2 " + room_name,
-                                                        "affect_condition":0
+                                                        "modifiers":{}
+                                                        },
+                                                    "drop":{
+                                                        "description":"drop for feature 2" + room_name,
+                                                        "modifiers":{}
                                                         }
                                                     }
                                              }
@@ -108,7 +116,7 @@ def create_room(room_name, index, connections):
                                              "accessible":True,
                                              "distance_from_room":1,
                                              }]})
-    for x in range (1, connections):
+    for x in range (0, connections):
         room_template["connected_rooms"].append({"id":0,                                              
                                               "title":connection_titles[room_name][x], 
                                              "aliases":[connection_titles[room_name][x]],
@@ -139,26 +147,54 @@ def create_item(item_name, index):
     item.update({"title":item_name})
     item.update({"aliases":[item_name]})
     item.update({"verbs":{
-                                "lookat":{
-                                    "description":"lookat description for " + item_name,
-                                    "affect_condition":0
+                                "look at":{
+                                    "description":"look at description for " + item_name,
+                                    "modifiers":{}
                                     },
                                 "use":{
                                     "description":"use description for " + item_name,
                                     "deactivate_description":"use deactivate for " + item_name,
-                                    "affect_condition":0
+                                    "modifiers":{}
                                     },
                                 "eat":{
                                     "description":"eat description for " + item_name,
-                                    "affect_condition":0
+                                    "modifiers":{}
                                     },
                                 "pull":{
                                     "description":"pull description for " + item_name,
-                                    "affect_condition":0
+                                    "modifiers":{}
                                     },
                                 "read":{
                                     "description":"read for " + item_name,
-                                    "affect_condition":0
+                                    "modifiers":{}
+                                    },
+                                "take":{
+                                    "description":"take for " + item_name,
+                                    "modifiers":{
+                                        "player":{
+                                            "inventory":"add"
+                                            },
+                                        "room":{
+                                            "title":"any",
+                                            "items_in_room":"add"
+                                            }
+                                        }
+                                    },
+                                "search":{
+                                    "description":"search for " + item_name,
+                                    "modifiers":{}
+                                    },
+                                "drop":{
+                                    "description":"drop for " + item_name,
+                                    "modifiers":{
+                                        "player":{
+                                            "inventory":"drop"
+                                            },
+                                        "room":{
+                                            "title":"any",
+                                            "items_in_room":"drop"
+                                            }
+                                        }
                                     }
                                 }})
     item.update({"active":False})
@@ -188,21 +224,24 @@ def create_verbs():
 def make_rooms():
     rooms = room_info()
     room_titles = rooms.get_titles()
+    room_titles = ["cave"]
     room_connections = rooms.get_connection_amount()
-    room_dir = rooms.get_dir()
     for room in room_titles:        
+        room_dir = "../data/rooms"
         room_template = create_room(room, room_titles.index(room), room_connections[room_titles.index(room)])
-        with open(room_dir + room, 'w') as outfile:
+        room_dir = os.path.join(room_dir, room)
+        with open(room_dir, 'w') as outfile:
             json.dump(room_template, outfile, indent=4)
             outfile.close()
 
 def make_items():
     items = item_info()
     item_titles = items.get_titles()
-    item_dir = items.get_dir()
     for item in item_titles:
+        item_dir = "../data/items"
         item_template = create_item(item, item_titles.index(item))
-        with open(item_dir + item, 'w') as outfile:
+        item_dir = os.path.join(item_dir, item)
+        with open(item_dir, 'w') as outfile:
             json.dump(item_template, outfile, indent=4)
             outfile.close()
 
@@ -214,10 +253,10 @@ def main():
         information!
         also creates a base template file for all the verbs if uncommented
     """
-    make_rooms()
+#    make_rooms()
 #    make_items()
 #    create_verbs()
 main()
 
-#print("Nothing happened this file will wipe out all the template files at present")
-#print("Only run if you really mean too.  Requires uncommenting the function in this script")
+print("Nothing happened this file will wipe out all the template files at present")
+print("Only run if you really mean too.  Requires uncommenting the function in this script")

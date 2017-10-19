@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 dense brush"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 dense brush", 
-                    "description": "use description for feature 1 dense brush"
+                    "description": "use description for feature 1 dense brush", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 dense brush"
+                }, 
+                "take": {
+                    "modifiers": {}, 
+                    "description": "take for feature 1 dense brush"
                 }, 
                 "read": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 dense brush"
                 }, 
                 "search": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 dense brush"
                 }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 1 dense brush"
-                }, 
-                "take": {
-                    "description": "take for feature 1 dense brush"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "drop for feature 1dense brush"
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 dense brush"
                 }
             }, 
@@ -47,71 +52,76 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 dense brush"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 dense brush", 
-                    "description": "use description for feature 2 dense brush"
+                    "description": "use description for feature 2 dense brush", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 dense brush"
+                }, 
+                "take": {
+                    "modifiers": {}, 
+                    "description": "take for feature 2 dense brush"
                 }, 
                 "read": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 dense brush"
                 }, 
                 "search": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 dense brush"
                 }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 2 dense brush"
-                }, 
-                "take": {
-                    "description": "take for feature 2 dense brush"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "drop for feature 2dense brush"
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 dense brush"
                 }
             }, 
             "title": "feature_2_title"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "field", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "field"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "camp", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "camp"
-            ]
-        }
-    ], 
     "items_in_room": [], 
-    "feature_searched": false, 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "field": {
+            "accessible": true, 
+            "title": "field", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "field"
+            ]
+        }, 
+        "camp": {
+            "accessible": true, 
+            "title": "camp", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "camp"
+            ]
+        }
+    }
 }

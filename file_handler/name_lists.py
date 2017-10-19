@@ -7,6 +7,10 @@ Term - Fall 2017
 Description -
 """
 
+import os
+from collections import OrderedDict
+data_dir = os.path.abspath('data')
+
 class room_info():
     """
         this class contains official titles and connections about rooms
@@ -17,9 +21,9 @@ class room_info():
         "cave", "mountain base", "fire tower", "river", "waterfall", "mountain ascent",
         "mountain summit", "rapids", "ranger station"]
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
-    room_dir = "../data/rooms/"
-    room_dir_dict = "../data/rooms_dict"
-    feature_dir_dict = "../data/feature_dict"
+    room_dir = os.path.join(data_dir, "rooms")
+    room_dir_dict = os.path.join(data_dir, "rooms_dict")
+    feature_dir_dict = os.path.join(data_dir, "feature_dict")
 
     #this list only used if we need to recreate empty rooms
     room_connection_list = {"shore":["crash site"],
@@ -63,26 +67,26 @@ class item_info():
         and the directory for the templates
         only has getters for these features
     """
-    item_titles = ["lantern", "heavy winter parka", "dusty old map", "tattered notebook",
+    item_titles = ["lantern", "heavy winter parka", "old map", "tattered notebook",
                 "flare gun", "boat paddle", "rescue whistle", "frozen dead hare",
                 "can of sweetened condensed milk", "can opener"]
-    item_dir = "../data/items/"
+    item_dir = os.path.join(data_dir, "items")
 
     def get_titles(self):
         return self.item_titles
     def get_dir(self):
         return self.item_dir
     def get_dir_dict(self):
-        return "../data/items_dict"
+        return os.path.join(data_dir, "items_dict")
 
 class save_info():
     """
         official save info and getters to access the save information
         primarily save directories
     """
-    temp_save_dir_rooms = "../data/temp_save_game/rooms/"
-    temp_save_dir_items = "../data/temp_save_game/items/"
-    save_dir = "../data/save_game/"
+    temp_save_dir_rooms = os.path.join(data_dir, "temp_save_game/rooms/")
+    temp_save_dir_items = os.path.join(data_dir, "temp_save_game/items/")
+    save_dir = os.path.join(data_dir, "save_game")
 
     def get_temp_save_dir_rooms(self):
         return self.temp_save_dir_rooms
@@ -97,13 +101,14 @@ class verb_info():
         official verb info and getters to access the verb features
     """
     verbs = ["look", "look at", "go", "take", "help", "inventory",
-            "use", "search", "pull", "eat", "read"]
+            "use", "search", "pull", "eat", "read", "drop"]
 
-    verb_definitions = {
+    verb_definitions = OrderedDict({
             "look": "Will repeat the long description of the room",
             "look at": "<feature or object> Allows you to look at something in the game",
             "go":"Move to another room",
             "take":"Pick up an item",
+            "drop":"Drop an item",
             "help":"Display this menu",
             "inventory":"Opens your character's inventory",
             "use":"Use an item in your inventory",
@@ -111,7 +116,7 @@ class verb_info():
             "pull":"Pull on a feature in a room",
             "eat":"Your character attempts to eat an item",
             "read":"Your character attempts to read an item"
-            }
+            })
 
 
     def get_verbs(self):
@@ -119,7 +124,7 @@ class verb_info():
     def get_verb_definitions(self):
         return self.verb_definitions
     def get_dir_dict(self):
-        return "../data/verbs_dict"
+        return os.path.join(data_dir, "verbs_dict")
 
 class dict_keys():
     """
@@ -131,12 +136,21 @@ class dict_keys():
             "room_hazard_occurs_description", "room_hazard_attributes_affected",
             "room_hazard_safe_description"]
     feature_keys = ["aliases","verbs","title"]
-    verbs = ["pull", "use", "read", "search", "lookat", "take", "eat"]
-    verb_keys = ["description", "affect_condition"]
+    verbs = ["look at", "take",
+            "use", "search", "pull", "eat", "read", "drop"]
+    verb_keys = ["description", "modifiers"]
     use_additional_keys = ["deactivate_description"]
     connected_room_keys = ["accessible", "distance_from_room", "title",
             "pre_item_description", "item_required_title", "compass_direction",
             "id", "item_required", "aliases"]
+    item_keys = ["id", "title", "aliases", "verbs", "active", "activatable",
+            "attributes_affected_requirement_met",
+            "attributes_affected_requirement_not_met",
+            "requirement_met", "requirement_met_description",
+            "requirement_not_met_description",
+            "item_combination", "room_combination",
+            "feature_combination"]
+    optional_keys = ["artifact"]
 
 
     def get_room_keys(self):
@@ -147,7 +161,11 @@ class dict_keys():
         return self.verbs
     def get_verb_keys(self):
         return self.verb_keys
+    def get_opt_keys(self):
+        return self.optional_keys
     def get_additional_use_keys(self):
         return self.use_additional_keys
     def get_connected_room_keys(self):
         return self.connected_room_keys
+    def get_item_keys(self):
+        return self.item_keys

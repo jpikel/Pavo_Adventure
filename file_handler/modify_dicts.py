@@ -16,10 +16,20 @@ from collections import OrderedDict
 from name_lists import room_info
 from name_lists import item_info
 from name_lists import dict_keys
+from name_lists import save_info
+import file_handler.data_entry as mod_files
+import file_handler.file_lib as files
 import json
 import os
 
-files_to_ignore = ["Rooms.md", "Items.md"]
+FILES_TO_IGNORE = ["Rooms.md", "Items.md"]
+OPTIONAL_KEYS = dict_keys().get_opt_keys()
+ROOMS_DIR = room_info().get_dir()
+TEMP_ROOMS_DIR = save_info().get_temp_save_dir_rooms()
+ITEMS_DIR = item_info().get_dir()
+ITEMS_TEMP_DIR = save_info().get_temp_save_dir_items()
+ROOM_TITLES = room_info().get_titles()
+ITEM_TITLES = item_info().get_titles()
 
 def _list_keys(option):
     """
@@ -29,26 +39,34 @@ def _list_keys(option):
     and then list all the keys in the room structure
     """
     if option == "rooms":
-        src_dir = room_info().get_dir()
+        src_dir = ROOMS_DIR
         print("Scanning room files")
+    elif option == "temprooms":
+        src_dir = TEMP_ROOMS_DIR 
+        print "Scanning temp room files"
     elif option == "items":
-        src_dir = item_info().get_dir()
+        src_dir = ITEMS_DIR 
         print("Scanning item files")
+    elif option == "tempitems":
+        src_dir = ITEMS_TEMP_DIR
+        print "Scanning temp item files"
     else:
         print("Invalid entry")
         exit()
     response = dict()
 
     for filename in os.listdir(src_dir):
-        if filename not in files_to_ignore:
-            with open(src_dir+filename, 'r') as open_file:
+        if filename not in FILES_TO_IGNORE and not filename.endswith("swp"):
+            new_dir = os.path.join(src_dir, filename)
+            with open(new_dir, 'r') as open_file:
                 try:
                     file_json = json.load(open_file, object_pairs_hook=OrderedDict)
-                    if option == "rooms":
+                    if option == "rooms" or option == "temprooms":
                         response.update({filename:_match_keys_room(file_json)})
-
+                    elif option == "items" or option == "tempitems":
+                        response.update({filename:_match_keys_items(file_json)})
                 except Exception, e:
-                    print("File: " + filename + " may have incorrect json structure and could not be loaded")
+                    print("File: " + filename + " json could not be parsed")
                     print("Error: " + str(e) + "\n")
                 open_file.close()
 
@@ -64,6 +82,39 @@ def _print_invalid(response):
         if response[title]:
             print("In file: " + title.ljust(12) + " invalid or missing key/value pairs found: ")
             print(json.dumps(response[title], indent=4))
+
+def _match_keys_items(file_json):
+    """
+    checks the passed in json object against the official structure expected of 
+    and item
+    """
+    item_keys = dict_keys().get_item_keys()
+    res = dict()
+
+    result = _compare_dict(file_json, item_keys)
+    res = _merge_two_dicts(res, result)
+    result = _check_verbs(file_json)
+    res = _merge_two_dicts(res, result)
+    return res
+
+def _check_verbs(file_json):
+    """
+    checks the verb structure
+    """
+    verbs = dict_keys().get_verbs()
+    verb_keys = dict_keys().get_verb_keys()
+    use_keys = dict_keys().get_additional_use_keys()
+    response = dict()
+    response = _compare_dict(file_json['verbs'], verbs)
+    for verb in file_json["verbs"]:
+        result = dict()
+        if verb == "use":              
+            result.update({verb:_compare_dict(file_json["verbs"][verb], use_keys+verb_keys)})
+        else:
+            result.update({verb:_compare_dict(file_json["verbs"][verb], verb_keys)})
+        if result[verb]:
+            response = _merge_two_dicts(response, result)
+    return response
 
 def _match_keys_room(file_json):
     """
@@ -144,7 +195,6 @@ def _check_features(value, file_json):
 
     return response
 
-
 def _merge_two_dicts(a, b):
     """
     Cite: https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression
@@ -160,32 +210,104 @@ def _compare_dict(the_dict, valid_keys):
     response = dict()
 
     for key in the_dict:
-        if key not in valid_keys:
+        if key not in valid_keys and key not in OPTIONAL_KEYS:
             response.update({key:the_dict[key]})
     for key in valid_keys:
-        if key not in the_dict:
+        if key not in the_dict and key not in OPTIONAL_KEYS:
             response.update({key:key})
     return response
 
-def main():
-    accepted_input = {
+
+def _update_tree():
+    """
+    this function will allow the user to update the current structure of a room
+    file.  Mainly designed to update the dict of dicts.  Used to refactor the
+    current_rooms structure
+    """
+
+    while True:
+        filename = raw_input("Enter template room or item to edit, q to quit: ")
+        filename = str(filename)
+        if filename in ROOM_TITLES:
+            src_dir = ROOMS_DIR
+        elif filename in ITEM_TITLES:
+            src_dir = ITEMS_DIR
+        if filename == "q":
+            break
+        if (filename not in FILES_TO_IGNORE and 
+                filename in ROOM_TITLES or filename in ITEM_TITLES):
+            new_dir = os.path.join(src_dir, filename)
+            print new_dir
+            with open(new_dir, 'r') as open_file:
+                try:
+                    obj = json.load(open_file, object_pairs_hook=OrderedDict)
+                    open_file.close()
+                except Exception, e:
+                    print e
+            source_order = files.get_order(obj)
+            top_key = raw_input('Enter the dict key that you want to edit: ')
+            new_key = raw_input('Enter the key whose value will be used as the objects key: ')
+            if top_key in obj:
+                old_dict = files.gather_dicts(obj, top_key)
+                if old_dict is not None:
+                    updates = {top_key:{}}
+                    dict_sans_key = files.merge(updates, obj)
+                    new_dict = files.add_key_before_dicts(old_dict, new_key, top_key)
+                    updated_dict = files.merge(new_dict, dict_sans_key)
+                    print json.dumps(updated_dict, indent=4)
+                    ans = raw_input('Do you want to store this structure y/n: ')
+                    if ans == 'y':
+                        with open(new_dir, 'w') as open_file:
+                            try:
+                                json.dump(updated_dict, open_file, indent=4)
+                                open_file.close()
+                            except Exception, e:
+                                print e
+            else:
+                print 'The top key is not in the structure'
+
+def main(arg=None):
+    """
+    if an argument is not passed in prints a menu that the user may select from
+    to perform the actions listed in the menu
+    the argument is the option to perform in the menu
+    """
+    key_validation = {
             "1":"rooms",
-            "2":"items"
+            "2":"items",
+            "3":"temprooms",
+            "4":"tempitems"
+            }
+    data_entry = {
+            "5":"rooms"
+            }
+    update_tree = {
+            "6":"update"
             }
 
     print(  "\nWhat would you like to do?\n"
-            "1. Validate all keys in rooms\n"
-            "2. Validate all keys in item\n"
-            "9. Back\n")
-
-    selection = raw_input(":")
-    if selection in accepted_input:
-        if selection == "1" or selection == "2":
-            _list_keys(accepted_input[selection])
-    elif selection == "9":
+            "1. Validate all keys in template rooms\n"
+            "2. Validate all keys in template items\n"
+            "3. Validate all keys in temp rooms\n"
+            "4. Validate all keys in temp items\n"
+            "5. Add data into fields of templates\n"
+            "6. Add a keyword in front of a dict structure\n"
+            "q. Back\n")
+    if arg == None:
+        selection = raw_input(":")
+    else:
+        selection = str(arg)
+    if selection in key_validation:
+        _list_keys(key_validation[selection])
+    elif selection in data_entry:
+        mod_files.mod_rooms()
+    elif selection in update_tree:
+        _update_tree()
+    elif selection == "q":
         return
 
-    main()
+    if arg == None:
+        main()
 
 if __name__ == "__main__":
     main()

@@ -5,26 +5,54 @@
         "can of sweetened condensed milk"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for can of sweetened condensed milk"
-        }, 
         "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for can of sweetened condensed milk"
+            "modifiers": {}, 
+            "description": "You pick at the wrapper a bit.  But don't want to ruin the beautiful reminder of civilization that this little bit of brand marketing that is so finely wrapped around the can comes from.  Where you need to return to."
         }, 
         "use": {
-            "affect_condition": 0, 
             "deactivate_description": "use deactivate for can of sweetened condensed milk", 
-            "description": "use description for can of sweetened condensed milk"
+            "description": "You smash open the can, sadly about half of the contents fall onto the ground, but you manage to gulp down the rest.  It is very tasty and goes down with all the goodness you knew it would have.  If only you would have had a can opener then you could have saved all of it for your churning stomach.", 
+            "modifiers": {}
         }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for can of sweetened condensed milk"
+        "drop": {
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
+            "description": "You put down the can of sweet milk."
+        }, 
+        "take": {
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
+            "description": "You pick up the can, the read blue and label crinkles a bit under your grip.  The milk seems to not be completely frozen, the contents feel thick as mud inside the can as you pack it away into your pack."
+        }, 
+        "read": {
+            "modifiers": {}, 
+            "description": "You study 14 oz of ingredients, Concentrated whole milk and sugar.  Music to your ears. With 10 servings per container and 130 calories per serving, this little can of sweet goodness will definitely keep you going for a while."
+        }, 
+        "search": {
+            "modifiers": {}, 
+            "description": "Not much to search really.  Can with some highly sugared condensed milk inside.  Healthy no, satisfying, you bet!"
+        }, 
+        "look at": {
+            "modifiers": {}, 
+            "description": "A wonderful eagle brand can of sweetened condensed milk.  Almost 1000 calories in the can, makes you salivate, faint from the sugar and your stomach jump for joy in happiness."
         }, 
         "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for can of sweetened condensed milk"
+            "modifiers": {}, 
+            "description": "If you had a can opener or another way of getting the can open you could eat it."
         }
     }, 
     "active": false, 

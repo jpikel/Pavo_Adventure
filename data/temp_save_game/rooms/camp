@@ -1,9 +1,9 @@
 {
     "id": 6, 
     "title": "camp", 
-    "visited": false, 
-    "long_description": "Long Description: camp", 
-    "short_description": "Short Description: camp", 
+    "visited": true, 
+    "long_description": "At the edge of the forest someone made a nice hunting blind here, with a leanto behind it.  The hunting blind stands stoutly against the elements.  The leanto has some snow it is holding up still from a recent fall.  The air somehow feels crisper here, maybe because the trees are not as dense or perhaps the air is waiting in anticipation of having to absorb the sharp rap from the hunter's rifle.  In the distance to your west you hear some wolves howling.  To the north you can see a crash site.  To your east the trees grow much denser in the woods and out to the west the trees give way to some dense brushland ladened with snow pack.  Not much recent human activity can be found here, reminding you just how alone you are and that you will soon need to find rescue or die an icy death or worse in this desolate place.  A breeze blows in from the open brushland and tickles the hair on the back of your neck.  It is definitely much colder out in the open than in the woods.", 
+    "short_description": "Standing in a camp, there still remains a sturdy hunting blind and a leanto.  Wolves howl in the distance, you think it is coming from the direction where the trees open to some dense brush.  To your east the trees grower thicker into woods and to your north you can see a crash site.  In the opposite direction from the woods is a dense brush.", 
     "features": {
         "1": {
             "aliases": [
@@ -11,35 +11,40 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
-                    "description": "pull description for feature 1 camp"
+                    "modifiers": {}, 
+                    "description": "You tug on the floorboards but they are securely nailed down.  It will take a lot more than two hands to loosen them."
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 camp", 
-                    "description": "use description for feature 1 camp"
+                    "description": "", 
+                    "modifiers": {}
                 }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 camp"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 camp"
-                }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 1 camp"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "A stout and sturdy wooden structure.  You recall your guide telling you that they are also called machan in other parts of the world.  Typically used by hunters to take cover and hide from their prey.  This one is not very tall, maybe one and a half meters off the ground.  But the half timber walls and the roof are still intact.  It looks dry inside.  Which could be good news for storing items, but at the same time might also have inhabitants that are not all too pleased with your presence."
                 }, 
                 "take": {
-                    "description": "take for feature 1 camp"
+                    "modifiers": {}, 
+                    "description": "The hunting blind if intended for you to take shelter not to take the hunting blind."
+                }, 
+                "read": {
+                    "modifiers": {}, 
+                    "description": "On the inside wall is a small faded sticker \"N   tres   sing\"."
+                }, 
+                "search": {
+                    "modifiers": {}, 
+                    "description": "This hunting blind is in surprising condition. You spend a few minutes admiring it and looking underneath but do not find anything of value.  You climb up the small wooden ladder strapped to the back of the blind and to your relief there is nothing living inside.  Not much is left but it seems the hunter left behind a lantern that still looks in reasonable condition and much to your bellies happiness a can of sweetened condensed milk."
+                }, 
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "You are sure you could surprise a few animals if hid here long enough.  Or perhaps not."
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
-                    "description": "eat description for feature 1 camp"
+                    "modifiers": {}, 
+                    "description": "No you can't eat the hunting blind, but maybe someone left some food inside."
                 }
             }, 
-            "title": "feature_1_title"
+            "title": "hunting blind"
         }, 
         "2": {
             "aliases": [
@@ -47,84 +52,96 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
-                    "description": "pull description for feature 2 camp"
+                    "modifiers": {}, 
+                    "description": "Better not pull on the leanto it already looks like it is about to collapse by itself.  You don't think it needs much help."
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 camp", 
-                    "description": "use description for feature 2 camp"
+                    "description": "Disregarding your better senses you nestle into the leanto.  Your eyes grow heavy and you doze off, protected from the cold.  You wake with a start, there is noise and crashing all around.  Before you can react you feel pain all through your body and your vision slowly fades and goes dark.  Sadly the leanto collapsed on you and as you take your last gasping breath you think of loved ones at home.", 
+                    "modifiers": {
+                        "player": {
+                            "illness": "999"
+                        }
+                    }
                 }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 camp"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 camp"
-                }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 2 camp"
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "The leanto seems like it is ready to fall down any day now.  It still holds its snowload up proudly but its main posts look like they are severely rotten and the termites have had many months of fine dining on its flesh.  There really is nothing but dead leaves inside and some wind swept snow. It is not even worth spending the time to search it.  You would be too worried that it would cave in on you overnight to spend any time under its precariously perched roof.  But it must have once provided some welcome shelter to the hunter that used the blind here."
                 }, 
                 "take": {
-                    "description": "take for feature 2 camp"
+                    "modifiers": {}, 
+                    "description": "Although you enjoy games of Jenga when at home.  Taking any one of the pieces of timber from this leanto, seems like it will end in disaster.  You leave it alone."
+                }, 
+                "read": {
+                    "modifiers": {}, 
+                    "description": "You take a stick lying next to the leanto and scratch a few lines into the ground.  Getting bored you drop the stick where you found it and carry on trying to find your way to safety."
+                }, 
+                "search": {
+                    "modifiers": {}, 
+                    "description": "You carefully rummage around the leanto, but find nothing of interest.  The structure seems to be annoyed by your very presence."
+                }, 
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "You have a sneaking suspicion that the leanto may get the drop on you."
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
-                    "description": "eat description for feature 2 camp"
+                    "modifiers": {}, 
+                    "description": "You don't find any morsels of food around the leanto to fill your belly."
                 }
             }, 
-            "title": "feature_2_title"
+            "title": "leanto"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "dense brush", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "dense brush"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "woods", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "woods"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "crash site", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "crash site"
-            ]
-        }
+    "items_in_room": [
+        "can of sweetened condensed milk", 
+        "lantern"
     ], 
-    "items_in_room": [], 
-    "feature_searched": false, 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "woods": {
+            "accessible": true, 
+            "title": "woods", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "woods"
+            ]
+        }, 
+        "crash site": {
+            "accessible": true, 
+            "title": "crash site", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "crash site"
+            ]
+        }, 
+        "dense brush": {
+            "accessible": true, 
+            "title": "dense brush", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "dense brush"
+            ]
+        }
+    }
 }

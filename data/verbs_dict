@@ -1,10 +1,12 @@
 {
+    "drop": "drop", 
     "eat": "eat", 
     "go": "go", 
     "help": "help", 
     "inventory": "inventory", 
     "look": "look", 
     "look at": "look at", 
+    "move": "go", 
     "pull": "pull", 
     "read": "read", 
     "search": "search", 

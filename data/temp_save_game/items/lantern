@@ -5,30 +5,58 @@
         "lantern"
     ], 
     "verbs": {
-        "read": {
-            "affect_condition": 0, 
-            "description": "read for lantern"
-        }, 
         "pull": {
-            "affect_condition": 0, 
-            "description": "pull description for lantern"
+            "modifiers": {}, 
+            "description": "You swing the handle back and forth and it squeaks in protest.  But it moves freely enough."
         }, 
         "use": {
-            "affect_condition": 0, 
-            "deactivate_description": "use deactivate for lantern", 
-            "description": "use description for lantern"
+            "deactivate_description": "You switch the fuel setting to the off position and the light slowly goes out.", 
+            "description": "You turn the fuel setting to ignite and then quickly press down several times on the starter button to create the tiniest of sparks from the piezo igniter.  As the fuel lights you turn down the setting to low.  The mantles start to glow and warm radiant amber.  A light makes you feel that much safer doesn't it.", 
+            "modifiers": {}
         }, 
-        "lookat": {
-            "affect_condition": 0, 
-            "description": "lookat description for lantern"
+        "drop": {
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
+            "description": "You put down the lantern. Making sure it does not tip over."
+        }, 
+        "take": {
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
+            "description": "You pick up the lantern.  The fuel inside slops around and the handle makes a squeaking sound protesting the fact that it is being moved after lying still in the same place for some time.  You are able to secure it inside one of the large pockets of your pack."
+        }, 
+        "read": {
+            "modifiers": {}, 
+            "description": "You read the small stamped directions on the side.  Turn fuel to ignite. Press igniter button several times rapidly until lit.  Turn down fuel to desired level."
+        }, 
+        "search": {
+            "modifiers": {}, 
+            "description": "You unscrew the fuel cap and look inside.  It appears there is still a good amount of fuel left."
+        }, 
+        "look at": {
+            "modifiers": {}, 
+            "description": "The metal body is a bit rusty, but there are not any holes in the oil tank and the glass is still in surprisingly good shape.  Both mantles are still inside and the piezo starter looks to be in decent shape you think this thing might still work."
         }, 
         "eat": {
-            "affect_condition": 0, 
-            "description": "eat description for lantern"
+            "modifiers": {}, 
+            "description": "Nothing on this lantern is edible in the least bit."
         }
     }, 
     "active": false, 
-    "activatable": false, 
+    "activatable": true, 
     "attributes_affected_requirement_met": [
         {}
     ], 

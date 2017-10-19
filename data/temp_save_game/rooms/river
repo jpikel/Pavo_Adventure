@@ -1,7 +1,7 @@
 {
     "id": 11, 
     "title": "river", 
-    "visited": false, 
+    "visited": true, 
     "long_description": "Long Description: river", 
     "short_description": "Short Description: river", 
     "features": {
@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 river"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 river", 
-                    "description": "use description for feature 1 river"
+                    "description": "use description for feature 1 river", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 river"
+                }, 
+                "take": {
+                    "modifiers": {}, 
+                    "description": "take for feature 1 river"
                 }, 
                 "read": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 river"
                 }, 
                 "search": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 river"
                 }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 1 river"
-                }, 
-                "take": {
-                    "description": "take for feature 1 river"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "drop for feature 1river"
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 river"
                 }
             }, 
@@ -47,84 +52,89 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 river"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 river", 
-                    "description": "use description for feature 2 river"
+                    "description": "use description for feature 2 river", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 river"
+                }, 
+                "take": {
+                    "modifiers": {}, 
+                    "description": "take for feature 2 river"
                 }, 
                 "read": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 river"
                 }, 
                 "search": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 river"
                 }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 2 river"
-                }, 
-                "take": {
-                    "description": "take for feature 2 river"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "drop for feature 2river"
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 river"
                 }
             }, 
             "title": "feature_2_title"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "rapids", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "rapids"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "waterfall", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "waterfall"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "woods", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "woods"
-            ]
-        }
-    ], 
     "items_in_room": [], 
-    "feature_searched": false, 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "woods": {
+            "accessible": true, 
+            "title": "woods", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "woods"
+            ]
+        }, 
+        "waterfall": {
+            "accessible": true, 
+            "title": "waterfall", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "waterfall"
+            ]
+        }, 
+        "rapids": {
+            "accessible": true, 
+            "title": "rapids", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "rapids"
+            ]
+        }
+    }
 }

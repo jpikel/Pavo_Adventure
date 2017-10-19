@@ -1,106 +1,114 @@
- {
-    "id": 1,
-    "title": "shore",
-    "visited": false,
-    "long_description": "Long Description: shore",
-    "short_description": "Short Description: shore",
+{
+    "id": 1, 
+    "title": "shore", 
+    "visited": false, 
+    "long_description": "The icy beach rocks and pebbles crunch under your steps, it takes all your effort not to slip and fall.  The water along the bank is frozen, the ice has been scalloped by the wind.  There must have been some warm windy days some time ago, but not today. Along the bank there is some dark driftwood, that appears as though it has been there a very long time. As you exhale your breath crystallizes in front of you and the vapor swirls around you, pushed by the breeze coming off the water.  Facing west, off in the distance, in the middle of the water you see a snow capped island.  Behind you are some lightly scattered pines, in a clearing you think you can see some of crash site.", 
+    "short_description": "You stand along the frozen lake bank.  Facing west, out in the middle of the water is a snow capped island.  Along the water is some driftwood that seems to have not moved in ages.  Behind you begins a lightly wooded forest and you can see a crash site in a clearing.", 
     "features": {
         "1": {
             "aliases": [
                 "feature_1_aliases"
-            ],
+            ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0,
-                    "description": "pull description for feature 1 shore"
-                },
+                    "modifiers": {}, 
+                    "description": "The driftwood is much too heavy to drag anywhere.  You leave it alone."
+                }, 
                 "use": {
-                    "affect_condition": 0,
-                    "deactivate_description": "use deactivate for feature 1 shore",
-                    "description": "use description for feature 1 shore"
-                },
-                "read": {
-                    "affect_condition": 0,
-                    "description": "read for feature 1 shore"
-                },
-                "search": {
-                    "affect_condition": 0,
-                    "description": "read for feature 1 shore"
-                },
-                "lookat": {
-                    "affect_condition": 0,
-                    "description": "lookat description for feature 1 shore"
-                },
+                    "deactivate_description": "use deactivate for feature 1 shore", 
+                    "description": "You're not really sure what you are supposed to do with the driftwood, besides look at it.", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "Standing a few meters away from the driftwood, it doesn't look that interesting.  It is dark, quiet and rustic.  Perhaps if you weren't stranded it could be of great use for some patio furniture, but at the moment it is about as lifeless as the rest of this shore."
+                }, 
                 "take": {
-                    "affect_condition": 0,
-                    "description": "take for feature 1 shore"
-                },
+                    "modifiers": {}, 
+                    "description": "If you had herculean strength, then perhaps you could think about taking this driftwood with you.  Sadly you don't and can't."
+                }, 
+                "read": {
+                    "modifiers": {}, 
+                    "description": "There need to letters and words on something to read it. You think about carving some, but decide it is a waste of time."
+                }, 
+                "search": {
+                    "modifiers": {}, 
+                    "description": "As you approach the driftwood, a pair of black crows that you hadn't noticed before suddenly take flight, cawing at being disturbed from their perch.  You look around the base of the driftwood and inside the rotten core.  Looks like a good spot to hide some items, since there doesn't seem to be any danger of a spring tide causing by the ice melting."
+                }, 
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "You are not able to put the drop on the driftwood.  It already knows you are there."
+                }, 
                 "eat": {
-                    "affect_condition": 0,
-                    "description": "eat description for feature 1 shore"
+                    "modifiers": {}, 
+                    "description": "You may be lacking fiber in your diet, but eating the driftwood does not seem like such a good idea."
                 }
-            },
-            "title": "feature_1_title"
-        },
+            }, 
+            "title": "driftwood"
+        }, 
         "2": {
             "aliases": [
                 "feature_2_aliases"
-            ],
+            ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0,
-                    "description": "pull description for feature 2 shore"
-                },
+                    "modifiers": {}, 
+                    "description": "If you had an immensely long rope and a train of oxen, perhaps you could pull yourself to the island.  But it may be better to find shelter elsewhere"
+                }, 
                 "use": {
-                    "affect_condition": 0,
-                    "deactivate_description": "use deactivate for feature 2 shore",
-                    "description": "use description for feature 2 shore"
-                },
-                "read": {
-                    "affect_condition": 0,
-                    "description": "read for feature 2 shore"
-                },
-                "search": {
-                    "affect_condition": 0,
-                    "description": "read for feature 2 shore"
-                },
-                "lookat": {
-                    "affect_condition": 0,
-                    "description": "lookat description for feature 2 shore"
-                },
+                    "deactivate_description": "use deactivate for feature 2 shore", 
+                    "description": "You definitely would like to be in that shack right about now.", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "The island sits in quiet solitude in the middle of the lake.  It is large enough that while studying the island you see what looks like a small dock with a boat!  There is also a small shack out on the island.  No smoke rises from the chimney so it is likely that no one is there.  It must be some kind of fishing hut or perhaps a summer swimming spot.  Sadly, the water is much too cold to swim in, you would surely not make it that far."
+                }, 
                 "take": {
-                    "affect_condition": 0,
-                    "description": "take for feature 2 shore"
-                },
+                    "modifiers": {}, 
+                    "description": " From this distance holding your hand under the island you could easily scoop it up and put it in your pocket. But this is not Alice in Wonderland, now is it."
+                }, 
+                "read": {
+                    "modifiers": {}, 
+                    "description": "You imagine yourself snuggled in the small shack against a roaring wood stove, with a cup of hot chocolate and a good book.  The wind suddenly picks up and bites at your nose, reminding you where you really are."
+                }, 
+                "search": {
+                    "modifiers": {}, 
+                    "description": "You are sure there must be some fabulous morsels of food in that shack on that island."
+                }, 
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "You imagine dropping in for a hot cup of cocoa in the island shack."
+                }, 
                 "eat": {
-                    "affect_condition": 0,
-                    "description": "eat description for feature 2 shore"
+                    "modifiers": {}, 
+                    "description": "Stomach grumbling already.  Unfortunately you are too far away to eat anything, should anything exist in the shack on the island in the middle of the lake."
                 }
-            },
-            "title": "feature_2_title"
+            }, 
+            "title": "snow capped island"
         }
-    },
-    "connected_rooms": [
-        {
-            "accessible": true,
-            "distance_from_room": 1,
-            "title": "crash site",
-            "pre_item_description": "",
-            "item_required_title": "",
-            "compass_direction": "",
-            "id": 0,
-            "item_required": false,
+    }, 
+    "items_in_room": [], 
+    "feature_searched": true, 
+    "room_hazards": false, 
+    "room_hazard_description": "", 
+    "room_hazard_item": "", 
+    "room_hazard_occurs_description": "", 
+    "room_hazard_attributes_affected": "", 
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "crash site": {
+            "accessible": true, 
+            "title": "crash site", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
             "aliases": [
                 "crash site"
             ]
         }
-    ],
-    "items_in_room": [],
-    "feature_searched": false,
-    "room_hazards": false,
-    "room_hazard_description": "",
-    "room_hazard_item": "",
-    "room_hazard_occurs_description": "",
-    "room_hazard_attributes_affected": "",
-    "room_hazard_safe_description": ""
+    }
 }

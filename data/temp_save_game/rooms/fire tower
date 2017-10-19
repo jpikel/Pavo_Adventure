@@ -11,31 +11,36 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 1 fire tower"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 fire tower", 
-                    "description": "use description for feature 1 fire tower"
+                    "description": "use description for feature 1 fire tower", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 1 fire tower"
+                }, 
+                "take": {
+                    "modifiers": {}, 
+                    "description": "take for feature 1 fire tower"
                 }, 
                 "read": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 fire tower"
                 }, 
                 "search": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 1 fire tower"
                 }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 1 fire tower"
-                }, 
-                "take": {
-                    "description": "take for feature 1 fire tower"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "drop for feature 1fire tower"
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 1 fire tower"
                 }
             }, 
@@ -47,58 +52,63 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "pull description for feature 2 fire tower"
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 fire tower", 
-                    "description": "use description for feature 2 fire tower"
+                    "description": "use description for feature 2 fire tower", 
+                    "modifiers": {}
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "look at description for feature 2 fire tower"
+                }, 
+                "take": {
+                    "modifiers": {}, 
+                    "description": "take for feature 2 fire tower"
                 }, 
                 "read": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 fire tower"
                 }, 
                 "search": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "read for feature 2 fire tower"
                 }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 2 fire tower"
-                }, 
-                "take": {
-                    "description": "take for feature 2 fire tower"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "drop for feature 2fire tower"
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
+                    "modifiers": {}, 
                     "description": "eat description for feature 2 fire tower"
                 }
             }, 
             "title": "feature_2_title"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "mountain summit", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "mountain summit"
-            ]
-        }
-    ], 
     "items_in_room": [], 
-    "feature_searched": false, 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "mountain summit": {
+            "accessible": true, 
+            "title": "mountain summit", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "mountain summit"
+            ]
+        }
+    }
 }

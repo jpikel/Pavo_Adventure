@@ -1,9 +1,9 @@
 {
-    "id": 8, 
+    "id": 1, 
     "title": "cave", 
-    "visited": true, 
-    "long_description": "Long Description: cave", 
-    "short_description": "Short Description: cave", 
+    "visited": false, 
+    "long_description": "Entering the cave, the lantern plays little tricks with the craggy interior.  Small nooks turn into creatures that scamper away.  Hopefully it is all just a small part of your heighten imagination.  You walk into a large room, the lantern light is not strong enough to light up the ceiling, so you can't make out how high it is, but it sounds large.  You are a bit disoriented in the cave but you think that to the north is the game trail towards the large mouth of the cave.  Along the side of the room is a small crevice that you think you can fit through out to the woods to the west.  In the center of the room is a large wooden pole.  On the wall your lantern shines on a small shelf that has been carved out.", 
+    "short_description": "Standing in the dark cave, to your north through the mouth is the cave, along the west side is a small crevice that you think you can fit through.  A large wooden pole is in the center of the room and a small shelf has been carved into the wall opposite the crevice.", 
     "features": {
         "1": {
             "aliases": [
@@ -11,35 +11,40 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
-                    "description": "pull description for feature 1 cave"
+                    "modifiers": {}, 
+                    "description": "You hold on to the shelf and stretch your calves.  That feels good."
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 1 cave", 
-                    "description": "use description for feature 1 cave"
+                    "description": "This stone shelf does not have any usable accessories.", 
+                    "modifiers": {}
                 }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 cave"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 1 cave"
-                }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 1 cave"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "Stone of this kind does not really drop."
                 }, 
                 "take": {
-                    "description": "take for feature 1 cave"
+                    "modifiers": {}, 
+                    "description": "You think with a hammer, chisel and few months work you could relocate this nice shelf to your house.  If you ever get there again."
+                }, 
+                "read": {
+                    "modifiers": {}, 
+                    "description": "You study the small veins of different trace minerals running through the rocks.  They are like the veins of the earth running through its body."
+                }, 
+                "search": {
+                    "modifiers": {}, 
+                    "description": "Getting closer to the shelf, you lantern shines on upon an old rolled up bit of faded paper.  It has yellowed over the years and some of the map is not recognizable but maybe if you read it more intently you could learn more."
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "From where you are standing is a small shelf carved into the rock face of the cave.  It is not very deep but it certainly would be a nice place to holds a few of your precious things.  It must have taken someone a long time to carve it out of the rock.  The inside is very smooth and a lot of care must have been taken in making it."
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
-                    "description": "eat description for feature 1 cave"
+                    "modifiers": {}, 
+                    "description": "You haven't resorted to licking rocks yet.  Let's not start now."
                 }
             }, 
-            "title": "feature_1_title"
+            "title": "small shelf"
         }, 
         "2": {
             "aliases": [
@@ -47,71 +52,78 @@
             ], 
             "verbs": {
                 "pull": {
-                    "affect_condition": 0, 
-                    "description": "pull description for feature 2 cave"
+                    "modifiers": {}, 
+                    "description": "As you pull on the pole, you hear grinding and creaking.  It sounds like you are waking some old beast that is waking up and very grumpy.  The noise is gets louder and the room feels like it is going to fall down around you.  With a definitive thud, everything stops.  The noise, the shaking, all gone and it is quiet inside your cave.  You now see a sliver of light coming out from behind the crevice in the wall that you think will lead you out into the woods."
                 }, 
                 "use": {
-                    "affect_condition": 0, 
                     "deactivate_description": "use deactivate for feature 2 cave", 
-                    "description": "use description for feature 2 cave"
+                    "description": "Although you took a few self defense classes, this pole is much too big to be used for that.", 
+                    "modifiers": {}
                 }, 
-                "read": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 cave"
-                }, 
-                "search": {
-                    "affect_condition": 0, 
-                    "description": "read for feature 2 cave"
-                }, 
-                "lookat": {
-                    "affect_condition": 0, 
-                    "description": "lookat description for feature 2 cave"
+                "drop": {
+                    "modifiers": {}, 
+                    "description": "The pole does not seem to drop any further into the hole."
                 }, 
                 "take": {
-                    "description": "take for feature 2 cave"
+                    "modifiers": {}, 
+                    "description": "The pole is much too big and heavy to be carried around.  But maybe you could move it another way."
+                }, 
+                "read": {
+                    "modifiers": {}, 
+                    "description": "The pole is rather boring."
+                }, 
+                "search": {
+                    "modifiers": {}, 
+                    "description": "Searching the pole does not give you any more insight into what it might do."
+                }, 
+                "look at": {
+                    "modifiers": {}, 
+                    "description": "The wood pole seems to part of a mechanism. It is inserted into a hole in the ground.  Maybe pushing or pulling on it will do something.  Besides that it is not very interesting, just a pine pole stuck in a hole."
                 }, 
                 "eat": {
-                    "affect_condition": 0, 
-                    "description": "eat description for feature 2 cave"
+                    "modifiers": {}, 
+                    "description": "You decide not to eat the wood."
                 }
             }, 
-            "title": "feature_2_title"
+            "title": "wood pole"
         }
     }, 
-    "connected_rooms": [
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "woods", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "woods"
-            ]
-        }, 
-        {
-            "accessible": true, 
-            "distance_from_room": 1, 
-            "title": "game trail", 
-            "pre_item_description": "", 
-            "item_required_title": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "item_required": false, 
-            "aliases": [
-                "game trail"
-            ]
-        }
+    "items_in_room": [
+        "old map"
     ], 
-    "items_in_room": [], 
-    "feature_searched": false, 
+    "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
     "room_hazard_item": "", 
     "room_hazard_occurs_description": "", 
     "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": ""
+    "room_hazard_safe_description": "", 
+    "connected_rooms": {
+        "woods": {
+            "accessible": false, 
+            "title": "woods", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "You walk into the crevice a few feet, the cave gets much narrower here and you are confronted by a smooth rock face.  You can go no further so turn back into the cave.", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "woods"
+            ]
+        }, 
+        "game trail": {
+            "accessible": true, 
+            "title": "game trail", 
+            "distance_from_room": 1, 
+            "item_required": false, 
+            "item_required_title": "", 
+            "pre_item_description": "", 
+            "compass_direction": "", 
+            "id": 0, 
+            "aliases": [
+                "game trail"
+            ]
+        }
+    }
 }
