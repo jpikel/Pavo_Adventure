@@ -12,12 +12,7 @@
         "use": {
             "deactivate_description": "use deactivate for rescue whistle", 
             "description": "You blow hard into the whistle and the silence all around you is broken with an ear piercing loudness!  You stop after a few moments.", 
-            "modifiers": {
-                "updates": {
-                    "title": "shore", 
-                    "short_description": "this update came from the whistle"
-                }
-            }
+            "modifiers": {}
         }, 
         "drop": {
             "modifiers": {
@@ -46,7 +41,7 @@
                         "1": {
                             "verbs": {
                                 "search":{
-                                    "description": "You find nothing else of interest around the dog sled. "
+                                    "description": "You find nothing else of interest around the dog sled. But, it would still make a good spot to store some valuables."
                                 }
                             }
                         }

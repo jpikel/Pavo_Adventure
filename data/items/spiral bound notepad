@@ -1,0 +1,78 @@
+{
+    "id": 4, 
+    "title": "spiral bound notepad", 
+    "aliases": [
+        "tattered notebook"
+    ], 
+    "verbs": {
+        "pull": {
+            "modifiers": {}, 
+            "description": "You leaf through find an empty page and tear a little corner off the page, dropping it to the ground."
+        }, 
+        "use": {
+            "deactivate_description": "use deactivate for tattered notebook", 
+            "description": "Reading a notepad usually results in results.", 
+            "modifiers": {}
+        }, 
+        "drop": {
+            "modifiers": {
+                "player": {
+                    "inventory": "drop"
+                }, 
+                "room": {
+                    "items_in_room": "add", 
+                    "title": "any"
+                }
+            }, 
+            "description": "You set down the notepad."
+        }, 
+        "take": {
+            "modifiers": {
+                "player": {
+                    "inventory": "add"
+                }, 
+                "room": {
+                    "items_in_room": "drop", 
+                    "title": "any"
+                }
+            }, 
+            "description": "You pick up the notepad and slip it into your pack."
+        }, 
+        "read": {
+            "modifiers": {}, 
+            "description": "Not much is written in the notepad.  Looks like it may have one belonged to a river guide.  It states \"In case of emergency dial ...\".  You are not sure what that code is for, maybe you'll find something that you can use it on.  But it certainly is not a phone number that could be dialed.  Maybe it is something else.",
+            "artifact":[
+                " ____     _      _               ____           ____   ______ ",
+            "|__    |   |  |    |  |             |   ___|         |__   |  |____    |",
+            "     |   |   |  |_         __      |   |___   __    _|   |          /   /",
+            "   /   /_   |__      |  |__|     |          | |__|   _    |        /   /",
+            " /____|          |_|             |_____|        |___ |     __"]
+        }, 
+        "search": {
+            "modifiers": {}, 
+            "description": "Reading may prove a better method to discover the contents of this notebook."
+        }, 
+        "look at": {
+            "modifiers": {}, 
+            "description": "The notepad still has its front and back covers.  The pages seem to be in decent shape.  The outside cover states \"College Ruled\""
+        }, 
+        "eat": {
+            "modifiers": {}, 
+            "description": "Eating paper maybe therapeutic, but you decide against trying."
+        }
+    }, 
+    "active": false, 
+    "activatable": false, 
+    "attributes_affected_requirement_met": [
+        {}
+    ], 
+    "attributes_affected_requirement_not_met": [
+        {}
+    ], 
+    "requirement_met": true, 
+    "requirement_met_description": "req met tattered notebook", 
+    "requirement_not_met_description": "req not met tattered notebook", 
+    "item_combination": "other item combination for tattered notebook", 
+    "room_combination": "tattered notebook can be used in room", 
+    "feature_combination": "tattered notebook can be used with feature"
+}

@@ -41,7 +41,7 @@
                         "1": {
                             "verbs": {
                                 "search":{
-                                    "description": "You find nothing else of interest around the dog sled. "
+                                    "description": "You find nothing else of interest around the dog sled. But, it would still make a good spot to store some valuables."
                                 }
                             }
                         }

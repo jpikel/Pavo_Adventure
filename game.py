@@ -39,7 +39,7 @@ class Game:
         self.current_room = files.load_room("shore")
 
         #for testing purposes load a specific room and start from there
-        self.current_room = files.load_room('river')
+        #self.current_room = files.load_room('river')
         self.gameCycle()
 
     def loadGame(self):
@@ -243,6 +243,7 @@ class Game:
         #update the player with any particular modifiers from the action
         self.update_player(res)
         self.update_room(res)
+        print self.current_room['items_in_room']
         self.update_item(res)
         lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
         for line in lines: print line
@@ -356,7 +357,7 @@ class Game:
         if the room has been searched appropriately and there are items in the room
         then returns the items in the room as a string for descriptive purposes
         """
-        text = "Looking around you see "
+        text = " Looking around you see "
         if (self.current_room['feature_searched'] == True and
                 self.current_room['items_in_room']):
             items = self.current_room['items_in_room']
@@ -510,6 +511,13 @@ class Game:
                 updates = res['modifiers']['room_updates'][key]
                 if self.current_room['title'] == key:
                     self.current_room = files.update(updates, self.current_room)
+                #for now we can only affect adjacent rooms so check if the key is 
+                #in the set of connected_rooms for the current_room
+                elif key in self.current_room['connected_rooms']:
+                    other_room = files.load_room(key)
+                    other_room = files.update(updates, other_room)
+                    files.store_room(other_room)
+
 
         #hopefully file_lib will have a method where we can pass the 
         #modifiers dict to and it will do the remaining processing returning 
@@ -542,14 +550,22 @@ class Game:
 
     def update_item(self, res):
         """
-        this function is used to an item's dict.  Must be in the inventory!
+        this function is used to an item's dict.
         """
         if 'modifiers' in res and 'item_updates' in res['modifiers']:
             for key in res['modifiers']['item_updates']:
                 updates = res['modifiers']['item_updates'][key]
+                #first check if the item is in the player inventory and update that
                 item = self.player.search_inventory(key)
                 if item is not None:
                     item = files.update(updates, item)
+                #if the item is not in the player inventory maybe it is in the room
+                #and we can act upon it.  This maybe needs to go away
+                elif key in self.current_room['items_in_room']:
+                    print 'item is in room'
+                    item = files.load_item(key)
+                    item = files.update(updates, item)
+                    files.store_item(item)
 
     def getTimeOfDay(self):
         if self.number_of_turns % 4 == 0:

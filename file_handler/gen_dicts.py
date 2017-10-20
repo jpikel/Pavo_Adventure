@@ -277,7 +277,7 @@ class update():
                 "5. Add verb alias\n"
                 "6. Add feature alias\n"
                 "7. Generate feature dictionary\n"
-                "9. Back\n"
+                "q. Back\n"
                 "\n:")
 
         if number == "1":
@@ -296,7 +296,7 @@ class update():
             self.add_feature_alias()
         elif number == "7":
             self.gen_feature_dict()
-        elif number == "9":
+        elif number == "q":
             return
         self.main()
 

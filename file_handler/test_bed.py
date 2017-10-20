@@ -33,6 +33,7 @@ def get_order(source):
 
 a = OrderedDict()
 a.update({'title':'title of a'})
+a.update({'thisbool':False})
 a.update({'long_description':'long in a for deleteion!'})
 a.update({'features' : 
             { '1' : { 
@@ -68,6 +69,7 @@ source_order = get_order(a)
 b = OrderedDict()
 b.update({ 
     'updates':{
+        'thisbool':True,
         'connected_rooms':{},
         'long_description':"stuff in b",
         'features' : 
@@ -83,15 +85,15 @@ b.update({
         }
     })
 
-#print json.dumps(a, indent=4)
-#print json.dumps(b, indent=4)
+print json.dumps(a, indent=4)
+print json.dumps(b, indent=4)
 #get the old connected_rooms
 old_dict = gather_dicts(a, 'connected_rooms')
 print json.dumps(old_dict, indent=4)
 c = OrderedDict()
 #delete the connected rooms
 c = merge(b['updates'], a)
-new_dict = add_key_before_dicts(old_dict, 'title', 'connected_rooms')
-d = merge(new_dict, c)
+#new_dict = add_key_before_dicts(old_dict, 'title', 'connected_rooms')
+#d = merge(new_dict, c)
 #z = OrderedDict(sorted(c.items(), key=lambda i:source_order.index(i[0])))
-print json.dumps(d, indent=4)
+print json.dumps(c, indent=4)

@@ -67,7 +67,7 @@ class item_info():
         and the directory for the templates
         only has getters for these features
     """
-    item_titles = ["lantern", "heavy winter parka", "old map", "tattered notebook",
+    item_titles = ["lantern", "heavy winter parka", "old map", "spiral bound notepad",
                 "flare gun", "boat paddle", "rescue whistle", "frozen dead hare",
                 "can of sweetened condensed milk", "can opener"]
     item_dir = os.path.join(data_dir, "items")

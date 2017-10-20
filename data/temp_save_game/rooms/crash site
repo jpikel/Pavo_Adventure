@@ -1,7 +1,7 @@
 {
     "id": 2, 
     "title": "crash site", 
-    "visited": false, 
+    "visited": true, 
     "long_description": "As you walk through the beginnings to a larger wooded area you arrive at a small clearing.  The pines tower above you, holding up the snow as best as they can.  As you enter the clearing the breeze stops, it is very quiet here.  Every step you take through the snow crunches and sounds like it is loud enough to wake every living creature.  In the distance you hear some wolves howling.  You can see the shore off to the west.  In the clearing are the remnants of an old dog sledding accident.  Whomever had the accident may have spent a few nights here before being rescued as there is also a stone circle for a campfire.  Opposite the direction of the shore you notice a bit of snow that has been packed down, maybe by animals,   you don't see any human footprints.  Thinking about it you suspect it may be a game trail.  To your south a trail goes off through the woods, to what may be a camp you think you can make out a small leanto.", 
     "short_description": "Entering the clearing amongst the tall pines you see an old dog sled left for years after an accident.  In the middle of the clearing is a campfire pit.  To your west is the icy shore, to the east a game trail meanders through the woods and to the south is a camp.", 
     "features": {

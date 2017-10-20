@@ -110,7 +110,68 @@
             "id": 0, 
             "aliases": [
                 "field"
-            ]
+            ],
+            "modifiers":{
+                "item_updates":{
+                    "rescue whistle":{
+                        "verbs": {
+                            "use": {
+                                "description":"As the wolves get closer you blow on the whistle as hard as you can.  The screaming whistle is enough to make the wolves run away! They scamper off, tails tucked, whimpering from the extreme noise of the whistle",
+                                "modifiers": {
+                                    "item_updates":{
+                                        "rescue whistle":{
+                                            "verbs":{
+                                                "use":{
+                                                    "description":"You blow hard into the whistle and the silence all around you is broken with an ear piercing loudness!  You stop after a few moments.",
+                                                "modifiers":{
+                                                    "item_updates":{},
+                                                    "room_updates":{}}}}}},
+                                    "room_updates":{
+                                        "dense brush":{
+                                            "connected_rooms":{
+                                                "field":{
+                                                    "modifiers":{}
+                                                    }}},
+                                        "field":{
+                                            "long_description":"You are standing in a open field.  The snow is like a soft blanket laid across the earth here.   The wind picks up and you feel colder than before.  After being in the snugness of the forest this field is a bit to open for your taste.  There is a large log lying on the ground.  Thankfully you managed to scare off those wolves and they are no longer a danger.  To the east is the dense brush and  to the south you see the base of a mountain rising up.",
+                                            "features":{
+                                                "2":{
+                                                    "verbs":{
+                                                        "pull":{
+                                                            "description":"The wolves are gone now and no longer a worry or something you can pull on."
+                                                        },
+                                                        "use":{
+                                                            "description":"Good thing you used that whistle on the wolves.  You are safe now"
+                                                        },
+                                                        "look at":{
+                                                            "description":"The wolves are long gone.  Glad that is a distant memory."
+                                                        },
+                                                        "take":{
+                                                            "description":"The wolves are so far away you cannot take them."
+                                                        },
+                                                        "read":{
+                                                            "description":"You read the situation well, used the whistle and survived that situation."
+                                                        },
+                                                        "search":{
+                                                            "description":"You pat yourself down and luckily you are still in one piece."
+                                                        },
+                                                        "drop":{
+                                                            "description":"Even though the wolves surpised you, you managed to out think them."
+                                                        },
+                                                        "eat":{
+                                                            "description":"It feels good to not have been eaten."
+                                                        }}}},
+                                            "connected_rooms":{
+                                                "mountain base": {
+                                                    "accessible": true,
+                                                    "pre_item_description":"",
+                                                    "modifiers":{}
+                                                },
+                                                "dense brush":{
+                                                    "accessible": true,
+                                                    "pre_item_description":"",
+                                                    "modifiers":{}
+                                                }}}}}}}}}}
         }, 
         "camp": {
             "accessible": true, 

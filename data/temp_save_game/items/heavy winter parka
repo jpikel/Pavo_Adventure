@@ -7,11 +7,11 @@
     "verbs": {
         "pull": {
             "modifiers": {}, 
-            "description": "pull description for heavy winter parka"
+            "description": "Pulling on the jacket might ruin it. You decide it's better to not to do this."
         }, 
         "use": {
-            "deactivate_description": "use deactivate for heavy winter parka", 
-            "description": "use description for heavy winter parka", 
+            "deactivate_description": "You take off the jacket and put it into your pack.", 
+            "description": "You put on the jacket and instantly feel warmer, safer.  All around snug.", 
             "modifiers": {}
         }, 
         "drop": {
@@ -20,11 +20,16 @@
                     "inventory": "drop"
                 }, 
                 "room": {
-                    "items_in_room": "drop", 
+                    "items_in_room": "add", 
                     "title": "any"
+                }, 
+                "item_updates": {
+                    "heavy winter parka": {
+                        "active": false
+                    }
                 }
             }, 
-            "description": "drop for heavy winter parka"
+            "description": "You put down the parka."
         }, 
         "take": {
             "modifiers": {
@@ -32,31 +37,31 @@
                     "inventory": "add"
                 }, 
                 "room": {
-                    "items_in_room": "add", 
+                    "items_in_room": "drop", 
                     "title": "any"
                 }
             }, 
-            "description": "take for heavy winter parka"
+            "description": "You pick up the jacket and stuff it inside your pack."
         }, 
         "read": {
             "modifiers": {}, 
-            "description": "read for heavy winter parka"
+            "description": "The inside tag reads \"Wash with like colors in warm water. Tumble dry low.  No bleach.\""
         }, 
         "search": {
             "modifiers": {}, 
-            "description": "search for heavy winter parka"
+            "description": "You feel inside all of the pockets, but finding nothing mildly interesting, except some Gnurr.  Also known as pocket lint."
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "look at description for heavy winter parka"
+            "description": "A down filled winter parka, that would keep you warm and cozy even on the coldest of nights.  A great find for sure.  You wonder why someone left it here."
         }, 
         "eat": {
             "modifiers": {}, 
-            "description": "eat description for heavy winter parka"
+            "description": "There's a saying about eating one's hat, but a jacket?"
         }
     }, 
     "active": false, 
-    "activatable": false, 
+    "activatable": true, 
     "attributes_affected_requirement_met": [
         {}
     ], 
