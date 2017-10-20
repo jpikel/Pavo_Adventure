@@ -22,7 +22,6 @@ CHARS_PER_LINE = 80
 ALL_VERBS = verbs().get_verbs()
 
 class Game:
-
     def __init__(self, player):
         self.player = player
         self.current_room = None
@@ -110,9 +109,11 @@ class Game:
         lines = textwrap.wrap(self.get_room_desc(), CHARS_PER_LINE)
         for line in lines: print line
         print self.getTimeOfDay()
-        self.updatePlayerCondition()
-        self.player.getCondition()
-        while not (self.player.rescued and self.player.dead):
+        self.player.updatePlayerCondition(self.number_of_turns)
+        print self.player.getCondition()
+        #updated this while loop the previous one did not seem to evaluate the 
+        #dead correctly
+        while not self.player.rescued and not self.player.dead:
             print "What would you like to do?"
             userInput = raw_input("->")
             processed_command = parse.parse_command(userInput)
@@ -234,19 +235,21 @@ class Game:
 
         #uncomment for troubleshooting
         #print(json.dumps(res, indent=4))
+
+        #update the player with any particular modifiers from the action
         self.update_player(res)
         self.update_room(res)
-        #eventually add an update_item maybe
         self.update_item(res)
         lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
         for line in lines: print line
         if 'artifact' in res:
             lines = res['artifact']
             for line in lines: print line
-        #print json.dumps(res, indent=4)
-        print self.getTimeOfDay()
-        self.updatePlayerCondition()
-        self.player.getCondition()
+        self.player.updatePlayerCondition(self.number_of_turns)
+        if not self.player.dead:
+            print self.getTimeOfDay()
+            print self.player.getCondition()
+
         #description should always come with process functions so we 
         #automatically print out something to the user
 
@@ -297,6 +300,8 @@ class Game:
                 or title_or_direction == room['compass_direction']
                 or title_or_direction in room['aliases']):
                 res['title'] = room['title']
+                if 'modifiers' in room:
+                    res['modifiers'] = room['modifiers']
                 if (room['item_required'] == True and
                     room['item_required_title'] in items and
                     room['accessible'] == True):
@@ -306,13 +311,12 @@ class Game:
                             res['distance_from_room'] = room['distance_from_room']
                         else:
                             res['description'] = room['pre_item_description']
-                elif room['item_required'] == False:
+                elif room['item_required'] == False and room['accessible'] == True:
                     res['success'] = True
                     res['distance_from_room'] = room['distance_from_room']
                     res['description'] = room['pre_item_description']
                 else:
                     res['description'] = room['pre_item_description']
-
         return res
     #------------------------------------------------------------------------
     # This ends the movement related functions
@@ -388,7 +392,6 @@ class Game:
     #------------------------------------------------------------------------
     # This ends the room  section
     #------------------------------------------------------------------------
-
     #------------------------------------------------------------------------
     # This ends the feature related section
     #------------------------------------------------------------------------
@@ -413,7 +416,6 @@ class Game:
     #------------------------------------------------------------------------
     # This ends the feature section
     #------------------------------------------------------------------------
-
     #------------------------------------------------------------------------
     # This section relates to items, and inventory
     #------------------------------------------------------------------------
@@ -559,19 +561,18 @@ class Game:
         This function is used to update player state variables, including
         player inventory
         """
-        if "modifiers" in res and "player" in res['modifiers']:
+        if 'modifiers' in res and 'player' in res['modifiers']:
             modifiers = res['modifiers']['player']
-            if "inventory" in modifiers and modifiers['inventory'] == "add":
+            if 'inventory' in modifiers and modifiers['inventory'] == 'add':
                 self.add_item_to_inventory(res['title'])
-            elif "inventory" in modifiers and modifiers['inventory'] == "drop":
+            elif 'inventory' in modifiers and modifiers['inventory'] == 'drop':
                 #when the player drops the item it gets written to file
                 item = self.search_inventory(res['title'])
                 if item:
                     files.store_item(item)
                 self.remove_item_from_inventory(res['title'])
             if 'illness' in modifiers:
-                self.player.illness = int(modifiers['illness'])
-
+                self.player.illness += int(modifiers['illness'])
 
         #maybe incorporate the player condition updates here so we can
         #include things like hunger, illness etc in the modifiers
@@ -597,14 +598,15 @@ class Game:
             text = " It is night. "
         return text
 
-    def updatePlayerCondition(self):
-        # Degrade the player's condition every three moves.
-        if self.number_of_turns % 3 == 0:
-            self.player.illness += 1
-        if (self.player.illness > 50 or
-            self.player.hunger > 50 or
-            self.player.cold > 50):
-            self.player.dead = True
+    #suggest update player conditions relocated to the helper file player.py
+#    def updatePlayerCondition(self):
+#        # Degrade the player's condition every three moves.
+#        if self.number_of_turns % 3 == 0:
+#            self.player.illness += 1
+#        if (self.player.illness > 50 or
+#            self.player.hunger > 50 or
+#            self.player.cold > 50):
+#            self.player.dead = True
 
 
     #-------------------------------------------------------------------------

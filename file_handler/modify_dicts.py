@@ -147,7 +147,8 @@ def _check_connected_rooms(file_json):
     response = dict()
     keys = dict_keys().get_connected_room_keys()
     if "connected_rooms" in file_json:
-        for obj in file_json["connected_rooms"]:
+        for room in file_json["connected_rooms"]:
+            obj = file_json['connected_rooms'][room]
             result = dict()
             result = _compare_dict(obj, keys)
             if result:

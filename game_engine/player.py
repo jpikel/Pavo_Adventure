@@ -13,16 +13,28 @@ class Player(object):
         return self.name
 
     def getCondition(self):
+        text = ""
         if self.illness <= 10:
-            print "You feel well."
+            text =  "You feel well."
         elif self.illness > 10 and self.illness <=20:
-            print "You are a little worn down."
+            text =  "You are a little worn down."
         elif self.illness > 20 and self.illness<=30:
-            print "Things are looking bad."
+            text =  "Things are looking bad."
         elif self.illness > 30 and self.illness <=40:
-            print "Things are looking bad."
+            text =  "Things are looking bad."
         elif self.illness > 40:
-            print "You are on death's door."
+            text =  "You are on death's door."
+        return text
+
+    def updatePlayerCondition(self, turns):
+        #Degrade the player's condition every three moves.
+        if turns % 3 == 0:
+            self.illness += 1
+        if (self.illness > 50 or
+            self.hunger > 50 or
+            self.cold > 50):
+            self.dead = True
+
 
     # def getSated(self):
     #     if self.sated != "hungry" and self.sated != "thirsty":

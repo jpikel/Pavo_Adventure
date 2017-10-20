@@ -2,8 +2,8 @@
     "id": 9, 
     "title": "mountain base", 
     "visited": false, 
-    "long_description": "Long Description: mountain base", 
-    "short_description": "Short Description: mountain base", 
+    "long_description": "You stand in a field of granite boulders, some larger than a small home. To the south, a huge granite peak rises thousands of feet above you. It looks cold and foreboding, but you think you can see a path up it, perhaps with some scrambling. To the north is a field from which you can hear a faint noise that sounds like it might be howling. It might just be the wind, but it might be something more ominous. Adding to your feeling of unease, you see several clumps of blood-soaked fur strewn about. You also see an old, worn sign. Although it looks as if it has not been maintained for decades, it lifts your spirits slightly to have an indication that you are not the first human being to have been in this spot.", 
+    "short_description": "You are at a mountain base. To the south is the mountain, rising ominously above. A field is to the north. You see a worn sign stuck into the ground, and several clumps of fur strewn about.", 
     "features": {
         "1": {
             "aliases": [
@@ -12,39 +12,39 @@
             "verbs": {
                 "pull": {
                     "modifiers": {}, 
-                    "description": "pull description for feature 1 mountain base"
+                    "description": "You pull for a few moments on the sign but it does not budge."
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 mountain base", 
-                    "description": "use description for feature 1 mountain base", 
+                    "description": "You don't know how to use the sign except to read it.", 
                     "modifiers": {}
                 }, 
                 "look at": {
                     "modifiers": {}, 
-                    "description": "look at description for feature 1 mountain base"
+                    "description": "The sign appears to be very old and quite weathered. Indeed, at first glance you don't even notice that it has any text on it. However, it looks like there are some letters that you can make out."
                 }, 
                 "take": {
                     "modifiers": {}, 
-                    "description": "take for feature 1 mountain base"
+                    "description": "Although the sign is very worn, it is solidly planted in the frozen earth and can't be moved. It seems better to just read it."
                 }, 
                 "read": {
                     "modifiers": {}, 
-                    "description": "read for feature 1 mountain base"
+                    "description": "The sign reads:"
                 }, 
                 "search": {
                     "modifiers": {}, 
-                    "description": "read for feature 1 mountain base"
+                    "description": "The base of the sign would make a good place to store a few item.  At least you know you will find them again."
                 }, 
                 "drop": {
                     "modifiers": {}, 
-                    "description": "drop for feature 1mountain base"
+                    "description": "The sign is firmly planted in its currently dropped in the earth position."
                 }, 
                 "eat": {
                     "modifiers": {}, 
-                    "description": "eat description for feature 1 mountain base"
+                    "description": "That's a bad idea. The last thing you need right now is a broken tooth."
                 }
             }, 
-            "title": "feature_1_title"
+            "title": "sign"
         }, 
         "2": {
             "aliases": [
@@ -53,39 +53,39 @@
             "verbs": {
                 "pull": {
                     "modifiers": {}, 
-                    "description": "pull description for feature 2 mountain base"
+                    "description": "Although it may be get the adrenaline pumping to pull on someone's hair it is not so exciting when it is laying on the ground."
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 mountain base", 
-                    "description": "use description for feature 2 mountain base", 
+                    "description": "You think about what to do with the fur, but can't come up with anything. If you had matches, perhaps it could be kindling and start a warm fire. But, you don't.", 
                     "modifiers": {}
                 }, 
                 "look at": {
                     "modifiers": {}, 
-                    "description": "look at description for feature 2 mountain base"
+                    "description": "You see several clumps of fur, strewn about and matted with an alarming amount of now-dried blood. The amount of fur and blood indicates that whatever once had this fur as its coat met a horrifying end. Your palms begin to sweat as you consider the likelihood that whatever happened here could happen again."
                 }, 
                 "take": {
                     "modifiers": {}, 
-                    "description": "take for feature 2 mountain base"
+                    "description": "You attempt to pick up the bloody clumps of fur, but they disintegrate in your hands, and you don't have anything good to store them in."
                 }, 
                 "read": {
                     "modifiers": {}, 
-                    "description": "read for feature 2 mountain base"
+                    "description": "You gather no new evidence from the crime scene."
                 }, 
                 "search": {
                     "modifiers": {}, 
-                    "description": "read for feature 2 mountain base"
+                    "description": "Try as you might you can't convince yourself to root around in the mess of fur and blood."
                 }, 
                 "drop": {
                     "modifiers": {}, 
-                    "description": "drop for feature 2mountain base"
+                    "description": "You'd rather not pick up the bloody fur just to drop it again."
                 }, 
                 "eat": {
                     "modifiers": {}, 
-                    "description": "eat description for feature 2 mountain base"
+                    "description": "You would certainly get sick if you tried to do that, and there is minimal nutritional value to be gained."
                 }
             }, 
-            "title": "feature_2_title"
+            "title": "clumps of bloody fur"
         }
     }, 
     "items_in_room": [], 

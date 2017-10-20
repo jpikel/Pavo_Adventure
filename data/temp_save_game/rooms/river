@@ -1,7 +1,7 @@
 {
     "id": 11, 
     "title": "river", 
-    "visited": true, 
+    "visited": false, 
     "long_description": "Long Description: river", 
     "short_description": "Short Description: river", 
     "features": {

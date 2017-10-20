@@ -1,10 +1,12 @@
 """
-Filename - 
+Filename - gen_empty_templates.py
 Team - Pavo
 Group Members - Emily Caveness, Alexander Laquitara, Johannes Pikel
 Class - CS467-400 Capstone
 Term - Fall 2017
-Description - 
+Description - creates empty template files for rooms and items only use if you
+absolutely need to recreate the files.
+Requires uncommenting of the functions at the end of this file
 """
 
 import os
@@ -106,7 +108,7 @@ def create_room(room_name, index, connections):
                                              }
                                         }
                                     })
-    room_template.update({"connected_rooms":[{"id":0, 
+    room_template.update({"connected_rooms":[{connection_titles[room_name][0]:{"id":0, 
                                              "title":connection_titles[room_name][0], 
                                              "aliases":[connection_titles[room_name][0]],
                                              "compass_direction":"",
@@ -115,9 +117,9 @@ def create_room(room_name, index, connections):
                                              "pre_item_description":"",
                                              "accessible":True,
                                              "distance_from_room":1,
-                                             }]})
+                                             }}]})
     for x in range (0, connections):
-        room_template["connected_rooms"].append({"id":0,                                              
+        room_template["connected_rooms"].append({connection_titles[room_name][x]:{"id":0,                                              
                                               "title":connection_titles[room_name][x], 
                                              "aliases":[connection_titles[room_name][x]],
                                              "compass_direction":"",
@@ -126,7 +128,7 @@ def create_room(room_name, index, connections):
                                              "pre_item_description":"",
                                              "accessible":True,
                                              "distance_from_room":1,
-                                             })
+                                             }})
     room_template.update({"items_in_room":[]})
     room_template.update({"feature_searched":False})
     room_template.update({"room_hazards":False})
