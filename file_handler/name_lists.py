@@ -84,11 +84,11 @@ class save_info():
         official save info and getters to access the save information
         primarily save directories
     """
-    temp_save_dir_rooms = os.path.join(data_dir, "temp_save_game/rooms/")
-    temp_save_dir_items = os.path.join(data_dir, "temp_save_game/items/")
+    temp_save_dir_rooms = os.path.join(data_dir, "temp_save_game/rooms")
+    temp_save_dir_items = os.path.join(data_dir, "temp_save_game/items")
     save_dir = os.path.join(data_dir, "save_game")
-    save_dir_rooms = os.path.join(data_dir, "save_game/rooms/")
-    save_dir_items = os.path.join(data_dir, "save_game/items/")
+    save_dir_rooms = os.path.join(data_dir, "save_game/rooms")
+    save_dir_items = os.path.join(data_dir, "save_game/items")
 
 
     def get_temp_save_dir_rooms(self):

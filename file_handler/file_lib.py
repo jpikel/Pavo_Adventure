@@ -29,9 +29,14 @@ def new_game():
     print("Preparing to make new game")
     src_dir = room_info().get_dir()
     dst_dir = save_info().get_temp_save_dir_rooms()
+    if not os.path.isdir(dst_dir):
+        os.makedirs(dst_dir)
     copy_files(src_dir, dst_dir)
+
     src_dir = item_info().get_dir()
     dst_dir = save_info().get_temp_save_dir_items()
+    if not os.path.isdir(dst_dir):
+        os.makedirs(dst_dir)
     copy_files(src_dir, dst_dir)
 
 
@@ -67,6 +72,20 @@ def save_game(player, current_room):
         save_dir = save_info().get_save_dir()
         room_dir = save_info().get_save_dir_rooms()
         item_dir = save_info().get_save_dir_items()
+        #clean up the room dir if it exists otherwisre make it
+        if os.path.isdir(room_dir):
+            clean_dir(room_dir)
+        else:
+            os.mkdir(room_dir)
+        #clean up the items dir if it exists otherwise make it
+        if os.path.isdir(save_dir):
+            clean_dir(item_dir)
+        else:
+            os.mkdir(item_dir)
+        #if the 'player' file exists in save_game delete it!
+        #if os.path.exists(os.path.join(save_dir, 'player')):
+            #
+
 
         return True, None
     except Exception, e:
