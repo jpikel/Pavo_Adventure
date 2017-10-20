@@ -238,12 +238,12 @@ class Game:
         #eaten something and gets a boost to hunger
 
         #uncomment for troubleshooting
-        print(json.dumps(res, indent=4))
+        #print(json.dumps(res, indent=4))
 
         #update the player with any particular modifiers from the action
         self.update_player(res)
         self.update_room(res)
-        print self.current_room['items_in_room']
+        #print self.current_room['items_in_room']
         self.update_item(res)
         lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
         for line in lines: print line
