@@ -267,6 +267,23 @@ def _update_tree():
             else:
                 print 'The top key is not in the structure'
 
+def refactor_features():
+    """
+    This function is used one time to refactor the integers in the features dict to 
+    be the title of that particular feature
+    """
+    for title in ROOM_TITLES:
+        room = files.load_room(title)
+        room['features']['1']['aliases'] = [room['features']['1']['title']]
+        room['features'][room['features']['1']['title']] = room['features']['1']
+        del room['features']['1']
+        room['features']['2']['aliases'] = [room['features']['2']['title']]
+        room['features'][room['features']['2']['title']] = room['features']['2']
+        del room['features']['2']
+
+        print json.dumps(room, indent=4)
+
+
 def main(arg=None):
     """
     if an argument is not passed in prints a menu that the user may select from

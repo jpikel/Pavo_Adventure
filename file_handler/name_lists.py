@@ -87,6 +87,9 @@ class save_info():
     temp_save_dir_rooms = os.path.join(data_dir, "temp_save_game/rooms/")
     temp_save_dir_items = os.path.join(data_dir, "temp_save_game/items/")
     save_dir = os.path.join(data_dir, "save_game")
+    save_dir_rooms = os.path.join(data_dir, "save_game/rooms/")
+    save_dir_items = os.path.join(data_dir, "save_game/items/")
+
 
     def get_temp_save_dir_rooms(self):
         return self.temp_save_dir_rooms
@@ -94,6 +97,10 @@ class save_info():
         return self.temp_save_dir_items
     def get_save_dir(self):
         return self.save_dir
+    def get_save_dir_rooms(self):
+        return self.save_dir_rooms
+    def get_save_dir_items(self):
+        return self.save_dir_items
 
 
 class verb_info():

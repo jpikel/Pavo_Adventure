@@ -85,7 +85,11 @@
                     "description": "You check the hull and don't notice any holes or large cracks.  You suspect that it would float well enough for you to traverse the rapids.  A paddle would be advisable."
                 }, 
                 "drop": {
-                    "modifiers": {}, 
+                    "modifiers": {
+                        "player":{
+                            "illness":"5"
+                        }
+                    }, 
                     "description": "You pick up one end and drop it back down.  It hits your foot firmly.  Ouch that smarts!"
                 }, 
                 "eat": {

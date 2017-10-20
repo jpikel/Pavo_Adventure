@@ -25,6 +25,7 @@ def new_game():
     directory.  Then copies the original template files from
     the data folder to the temp save folder for rooms and items
     """
+    #comment out when in production
     print("Preparing to make new game")
     src_dir = room_info().get_dir()
     dst_dir = save_info().get_temp_save_dir_rooms()
@@ -40,9 +41,11 @@ def copy_files(src_dir, dst_dir):
     except those in the IGNORE list
     """
     try:
+        #comment out in production
         print("Cleaning" + dst_dir)
         clean_dir(dst_dir)
-        print("Copying from " +src_dir+ "\nto temp " + dst_dir)
+        #comment out in production
+        print("Copying from " +src_dir+ "\nto " + dst_dir)
         for item in os.listdir(src_dir):
             if item not in IGNORE:
                 src = os.path.join(src_dir, item)
@@ -51,6 +54,23 @@ def copy_files(src_dir, dst_dir):
     except Exception, e:
         print("Something went horribly wrong creating the temp save file")
         print(e)
+
+def save_game(player, current_room):
+    """
+    saves the game to the Save Game dir
+    """
+    #convert the player class object to a dict for easy handling
+    try:
+        player_dict = player.__dict__
+        player_dict['current_room'] = current_room['title']
+        #remove the save game dirs
+        save_dir = save_info().get_save_dir()
+        room_dir = save_info().get_save_dir_rooms()
+        item_dir = save_info().get_save_dir_items()
+
+        return True, None
+    except Exception, e:
+        return False, e
 
 def clean_dir(dst_dir):
     """
