@@ -26,7 +26,6 @@ class Game:
         self.player = player
         self.current_room = None
         # Inventory will be a list of dicts, each element of which is an item.
-        self.inventory = []
         self.current_time = 0
         self.number_of_turns = 0
 
@@ -38,6 +37,9 @@ class Game:
         files.new_game()
         #New games start at the shore
         self.current_room = files.load_room("shore")
+
+        #for testing purposes load a specific room and start from there
+        self.current_room = files.load_room('river')
         self.gameCycle()
 
     def loadGame(self):
@@ -113,7 +115,7 @@ class Game:
         print self.player.getCondition()
         #updated this while loop the previous one did not seem to evaluate the 
         #dead correctly
-        while not self.player.rescued and not self.player.dead:
+        while True:
             print "What would you like to do?"
             userInput = raw_input("->")
             processed_command = parse.parse_command(userInput)
@@ -165,11 +167,14 @@ class Game:
             else:
                 "Error command type not supported yet."
 
+            if self.player.get_death_status() or self.player.get_rescue_status():
+                break
+
     #-------------------------------------------------------------------------
     # Top-level methods for handling user commands.
     #-------------------------------------------------------------------------
     def process_item_action(self, title, action):
-        if title in self.get_items_inventory_titles():
+        if title in self.player.get_items_inventory_titles():
             res = self.item_action_inventory(title, action)
         else:
             res = self.item_action_room(title, action)
@@ -180,8 +185,7 @@ class Game:
         if action == "look":
             res['description'] = self.get_room_long_desc()
         elif action == "inventory":
-            self.print_inventory()
-            return
+            res['description'] = self.player.print_inventory()
         elif action == "help":
             help_file.main()
             return
@@ -234,7 +238,7 @@ class Game:
         #eaten something and gets a boost to hunger
 
         #uncomment for troubleshooting
-        #print(json.dumps(res, indent=4))
+        print(json.dumps(res, indent=4))
 
         #update the player with any particular modifiers from the action
         self.update_player(res)
@@ -245,8 +249,7 @@ class Game:
         if 'artifact' in res:
             lines = res['artifact']
             for line in lines: print line
-        self.player.updatePlayerCondition(self.number_of_turns)
-        if not self.player.dead:
+        if not self.player.get_death_status():
             print self.getTimeOfDay()
             print self.player.getCondition()
 
@@ -291,7 +294,7 @@ class Game:
         """
         res = response_struct().get_response_struct()
         res['success'] = False
-        items = self.get_items_inventory_titles()
+        items = self.player.get_items_inventory_titles()
         for room_key in self.current_room['connected_rooms']:
             #this line added as a result of the connected_rooms refactoring
             #all other functionality remains the same
@@ -305,7 +308,7 @@ class Game:
                 if (room['item_required'] == True and
                     room['item_required_title'] in items and
                     room['accessible'] == True):
-                        item = self.search_inventory()
+                        item = self.player.search_inventory(room['item_required_title'])
                         if item['active'] == True:
                             res['success'] = True
                             res['distance_from_room'] = room['distance_from_room']
@@ -393,7 +396,7 @@ class Game:
     # This ends the room  section
     #------------------------------------------------------------------------
     #------------------------------------------------------------------------
-    # This ends the feature related section
+    # This begins the feature related section
     #------------------------------------------------------------------------
 
     def feature_action(self, title, verb):
@@ -417,53 +420,8 @@ class Game:
     # This ends the feature section
     #------------------------------------------------------------------------
     #------------------------------------------------------------------------
-    # This section relates to items, and inventory
+    # This section relates to item actions
     #------------------------------------------------------------------------
-    def print_inventory(self):
-        """
-        print the player's current inventory
-        """
-        text = "Rummaging through your belongings you find "
-        for item in self.inventory:
-            text += "a " + item['title'] + ", "
-        text = text[:-2]
-        print text
-
-    def get_items_inventory_titles(self):
-        item_list = []
-        for item in self.inventory:
-            item_list.append(item['title'])
-        return item_list
-
-    def search_inventory(self, title):
-        items = [item for item in self.inventory if item['title'] == title]
-        if items:
-            return items[0]
-        return None
-
-#ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
-    def search_inventory_excluding(self, title):
-        return [item for item in self.inventory if item['title'] != title]
-#MARKED FOR DELETION
-#    def get_item_from_inventory(self, title):
-#        for item in self.inventory:
-#            if item['title'] == title:
-#                return item
-#        return None
-
-    def add_item_to_inventory(self, title):
-        """
-        adds an item to inventory, does not allow duplicates
-        """
-        if not self.search_inventory(title):
-            item = files.load_item(title)
-            self.inventory.append(item)
-
-    def remove_item_from_inventory(self, title):
-        """
-        iterates through inventory to remove the item title passed in
-        """
-        self.inventory = self.search_inventory_excluding(title)
 
     def item_action_inventory(self, item_title, action):
         """
@@ -475,7 +433,7 @@ class Game:
             }
         """
         res = response_struct().get_response_struct()
-        item = self.search_inventory(item_title)
+        item = self.player.search_inventory(item_title)
         res['title'] = item_title
         res["description"] = item['verbs'][action]['description']
         res['modifiers'] = item['verbs'][action]['modifiers']
@@ -548,9 +506,10 @@ class Game:
         #is written in the 'modifiers' dict for a particular verb of a feature
         #or an item
         if 'modifiers' in res and 'room_updates' in res['modifiers']:
-            updates = res['modifiers']['room_updates']
-            if self.current_room['title'] == updates['title']:
-                self.current_room = files.update(updates, self.current_room)
+            for key in res['modifiers']['room_updates']:
+                updates = res['modifiers']['room_updates'][key]
+                if self.current_room['title'] == key:
+                    self.current_room = files.update(updates, self.current_room)
 
         #hopefully file_lib will have a method where we can pass the 
         #modifiers dict to and it will do the remaining processing returning 
@@ -561,19 +520,23 @@ class Game:
         This function is used to update player state variables, including
         player inventory
         """
+
         if 'modifiers' in res and 'player' in res['modifiers']:
             modifiers = res['modifiers']['player']
             if 'inventory' in modifiers and modifiers['inventory'] == 'add':
-                self.add_item_to_inventory(res['title'])
+                item = files.load_item(res['title'])
+                self.player.add_item_to_inventory(item)
             elif 'inventory' in modifiers and modifiers['inventory'] == 'drop':
                 #when the player drops the item it gets written to file
-                item = self.search_inventory(res['title'])
+                item = self.player.search_inventory(res['title'])
                 if item:
                     files.store_item(item)
-                self.remove_item_from_inventory(res['title'])
+                self.player.remove_item_from_inventory(res['title'])
             if 'illness' in modifiers:
-                self.player.illness += int(modifiers['illness'])
+                self.player.set_illness(int(modifiers['illness']))
 
+        #after modifiers have been applied update the player's condition
+        self.player.updatePlayerCondition(self.number_of_turns)
         #maybe incorporate the player condition updates here so we can
         #include things like hunger, illness etc in the modifiers
 
@@ -582,10 +545,11 @@ class Game:
         this function is used to an item's dict.  Must be in the inventory!
         """
         if 'modifiers' in res and 'item_updates' in res['modifiers']:
-            updates = res['modifiers']['item_updates']
-            item = self.search_inventory(updates['title'])
-            if item is not None:
-                item = files.update(updates, item)
+            for key in res['modifiers']['item_updates']:
+                updates = res['modifiers']['item_updates'][key]
+                item = self.player.search_inventory(key)
+                if item is not None:
+                    item = files.update(updates, item)
 
     def getTimeOfDay(self):
         if self.number_of_turns % 4 == 0:

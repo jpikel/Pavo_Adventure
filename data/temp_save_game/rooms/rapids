@@ -98,25 +98,33 @@
     "room_hazard_safe_description": "", 
     "connected_rooms": {
         "ranger station": {
-            "accessible": true, 
+            "accessible": false, 
             "title": "ranger station", 
             "distance_from_room": 1, 
             "item_required": false, 
             "item_required_title": "", 
-            "pre_item_description": "", 
+            "pre_item_description": "You smash into the rocks and tip over into the water.  Swimming as hard as you can, you cannot manage to keep your head above water.  You gasp for air getting nothing but water.  Your body convulses and you feel nothing. You have died trying to survive the Desolate Journey.", 
             "compass_direction": "", 
             "id": 0, 
             "aliases": [
                 "ranger station"
-            ]
+            ],
+            "modifiers": {
+                "room": {
+                    "items_in_room": "drop"
+                },
+                "player": {
+                    "illness":"100"
+            }
+            }
         }, 
         "river": {
-            "accessible": true, 
+            "accessible": false, 
             "title": "river", 
             "distance_from_room": 1, 
             "item_required": false, 
             "item_required_title": "", 
-            "pre_item_description": "", 
+            "pre_item_description": "You most definitely will not be able to paddle back up river.", 
             "compass_direction": "", 
             "id": 0, 
             "aliases": [

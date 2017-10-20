@@ -12,12 +12,7 @@
         "use": {
             "deactivate_description": "use deactivate for rescue whistle", 
             "description": "You blow hard into the whistle and the silence all around you is broken with an ear piercing loudness!  You stop after a few moments.", 
-            "modifiers": {
-                "updates": {
-                    "title": "shore", 
-                    "short_description": "this update came from the whistle"
-                }
-            }
+            "modifiers": {}
         }, 
         "drop": {
             "modifiers": {
@@ -41,7 +36,7 @@
                     "title": "any"
                 },
                 "room_updates": {
-                    "title": "crash site",
+                    "crash site": {
                     "features": {
                         "1": {
                             "verbs": {
@@ -51,17 +46,19 @@
                             }
                         }
                     }
+                    }
                 },
                 "item_updates": {
-                    "title": "rescue whistle",
-                    "verbs": {
-                        "take": {
-                            "modifiers": {
-                                "room_updates": {},
-                                "item_updates": {}
+                    "rescue whistle": {
+                        "verbs": {
+                            "take": {
+                                "modifiers": {
+                                    "room_updates": {},
+                                    "item_updates": {}
                             }
                         }
                     }
+                }
                 }
             }, 
             "description": "You take the whistle and hang it around your neck.  The string is a bit rotten but seems like it will hold itself together for a while at least."

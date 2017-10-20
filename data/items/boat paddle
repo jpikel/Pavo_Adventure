@@ -55,7 +55,7 @@
             "description": "Although it is a very nice paddle you don't think it would be very good to eat."
         }
     }, 
-    "active": false, 
+    "active": true, 
     "activatable": false, 
     "attributes_affected_requirement_met": [
         {}

@@ -60,7 +60,7 @@
                     "description": "Disregarding your better senses you nestle into the leanto.  Your eyes grow heavy and you doze off, protected from the cold.  You wake with a start, there is noise and crashing all around.  Before you can react you feel pain all through your body and your vision slowly fades and goes dark.  Sadly the leanto collapsed on you and as you take your last gasping breath you think of loved ones at home.", 
                     "modifiers": {
                         "player": {
-                            "illness": "999"
+                            "illness": "100"
                         }
                     }
                 }, 

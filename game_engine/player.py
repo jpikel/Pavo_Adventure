@@ -8,6 +8,8 @@ class Player(object):
         self.cold = 10
         self.rescued = False
         self.dead = False
+        #the player should hold the inventory
+        self.inventory = []
 
     def getName(self):
         return self.name
@@ -34,6 +36,66 @@ class Player(object):
             self.hunger > 50 or
             self.cold > 50):
             self.dead = True
+
+    def set_illness(self, illness):
+        """
+        add whatever value is passed in to update the player's illness
+        """
+        self.illness += illness
+
+    def get_death_status(self):
+        return self.dead
+    def get_rescue_status(self):
+        return self.rescued
+
+    #------------------------------------------------------------------------
+    # This section relates to items, and inventory
+    #------------------------------------------------------------------------
+    def print_inventory(self):
+        """
+        print the player's current inventory
+        """
+        text = "Rummaging through your belongings you find "
+        for item in self.inventory:
+            text += "a " + item['title'] + ", "
+        text = text[:-2]
+        return text
+
+    def get_items_inventory_titles(self):
+        item_list = []
+        for item in self.inventory:
+            item_list.append(item['title'])
+        return item_list
+
+    def search_inventory(self, title):
+        items = [item for item in self.inventory if item['title'] == title]
+        if items:
+            return items[0]
+        return None
+
+#ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
+    def search_inventory_excluding(self, title):
+        return [item for item in self.inventory if item['title'] != title]
+#MARKED FOR DELETION
+#    def get_item_from_inventory(self, title):
+#        for item in self.inventory:
+#            if item['title'] == title:
+#                return item
+#        return None
+
+    def add_item_to_inventory(self, item_to_add):
+        """
+        adds an item to inventory, does not allow duplicates
+        """
+        if not self.search_inventory(item_to_add['title']):
+            self.inventory.append(item_to_add)
+
+    def remove_item_from_inventory(self, title):
+        """
+        iterates through inventory to remove the item title passed in
+        """
+        self.inventory = self.search_inventory_excluding(title)
+
 
 
     # def getSated(self):
