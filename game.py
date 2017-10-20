@@ -278,14 +278,13 @@ class Game:
         through the current room's connected_rooms object to see if the compass
         or room title exist
         checks if an item is required to pass into this room
+        Also checks if the rooms is accessible meaning passable
         if an item is required checks to see if that item is active as in worn or on
         writes the appropriate response into
         description
         move = boolean whether or not the move was successful
         title = the new room's title
         distance_from_room = distance traveled to the new room
-
-        FUTURE implementation: check if the room is accessible or blocked
         """
         res = response_struct().get_response_struct()
         res['success'] = False
@@ -297,6 +296,7 @@ class Game:
             if (title_or_direction == room['title']
                 or title_or_direction == room['compass_direction']
                 or title_or_direction in room['aliases']):
+                res['title'] = room['title']
                 if (room['item_required'] == True and
                     room['item_required_title'] in items and
                     room['accessible'] == True):
@@ -304,14 +304,12 @@ class Game:
                         if item['active'] == True:
                             res['success'] = True
                             res['distance_from_room'] = room['distance_from_room']
-                            res['title'] = room['title']
                         else:
                             res['description'] = room['pre_item_description']
                 elif room['item_required'] == False:
                     res['success'] = True
                     res['distance_from_room'] = room['distance_from_room']
                     res['description'] = room['pre_item_description']
-                    res['title'] = room['title']
                 else:
                     res['description'] = room['pre_item_description']
 
