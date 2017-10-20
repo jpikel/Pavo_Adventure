@@ -9,3 +9,7 @@
 
 #ignore the temp save folder
 /data/temp_save_game/
+
+
+#ignore the save game folder
+/data/save_game/

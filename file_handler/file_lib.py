@@ -18,6 +18,15 @@ from name_lists import room_info
 from name_lists import item_info
 
 IGNORE = ["TempSaveGame.md", "Rooms.md", "Items.md"]
+ROOM_TITLES = room_info().get_titles()
+ITEM_TITLES = item_info().get_titles()
+ROOM_DIR = room_info().get_dir()
+TEMP_ROOM_DIR = save_info().get_temp_save_dir_rooms()
+ITEM_DIR = item_info().get_dir()
+TEMP_ITEM_DIR = save_info().get_temp_save_dir_items()
+SAVE_DIR = save_info().get_save_dir()
+SAVE_ROOM_DIR = save_info().get_save_dir_rooms()
+SAVE_ITEM_DIR = save_info().get_save_dir_items()
 
 def new_game():
     """
@@ -27,17 +36,31 @@ def new_game():
     """
     #comment out when in production
     print("Preparing to make new game")
-    src_dir = room_info().get_dir()
-    dst_dir = save_info().get_temp_save_dir_rooms()
+    #make the temp rooms files if it does not exist then clean it
+    src_dir = ROOM_DIR
+    dst_dir = TEMP_ROOM_DIR
     if not os.path.isdir(dst_dir):
         os.makedirs(dst_dir)
+    #comment out in production
+    print("Cleaning" + dst_dir)
+    clean_dir(dst_dir)
+    #copy the official rooms to the temp save
     copy_files(src_dir, dst_dir)
 
-    src_dir = item_info().get_dir()
-    dst_dir = save_info().get_temp_save_dir_items()
+    #if the items dir does not exist make it, then clean it and copy the items
+    src_dir = ITEM_DIR
+    dst_dir = TEMP_ITEM_DIR
     if not os.path.isdir(dst_dir):
         os.makedirs(dst_dir)
+    #comment out in production
+    print("Cleaning" + dst_dir)
+    clean_dir(dst_dir)
     copy_files(src_dir, dst_dir)
+
+    #confirm all the files go copied to the temp dirs for rooms and items
+    if val_room_files_in_temp() and val_item_files_in_temp():
+        return True
+    return False
 
 
 def copy_files(src_dir, dst_dir):
@@ -46,9 +69,6 @@ def copy_files(src_dir, dst_dir):
     except those in the IGNORE list
     """
     try:
-        #comment out in production
-        print("Cleaning" + dst_dir)
-        clean_dir(dst_dir)
         #comment out in production
         print("Copying from " +src_dir+ "\nto " + dst_dir)
         for item in os.listdir(src_dir):
@@ -63,47 +83,153 @@ def copy_files(src_dir, dst_dir):
 def save_game(player, current_room):
     """
     saves the game to the Save Game dir
+    expects to receive the player class object and the current room object
+    when called, returns True on success
     """
     #convert the player class object to a dict for easy handling
     try:
         player_dict = player.__dict__
         player_dict['current_room'] = current_room['title']
+        #store the current room out to the temp save dir so we can copy it all 
+        #at once
+        store_room(current_room)
         #remove the save game dirs
-        save_dir = save_info().get_save_dir()
-        room_dir = save_info().get_save_dir_rooms()
-        item_dir = save_info().get_save_dir_items()
         #clean up the room dir if it exists otherwisre make it
-        if os.path.isdir(room_dir):
-            clean_dir(room_dir)
+        if os.path.isdir(SAVE_ROOM_DIR):
+            clean_dir(SAVE_ROOM_DIR)
         else:
-            os.mkdir(room_dir)
+            os.makedirs(SAVE_ROOM_DIR)
         #clean up the items dir if it exists otherwise make it
-        if os.path.isdir(save_dir):
-            clean_dir(item_dir)
+        if os.path.isdir(SAVE_ITEM_DIR):
+            clean_dir(SAVE_ITEM_DIR)
         else:
-            os.mkdir(item_dir)
+            os.makedirs(SAVE_ITEM_DIR)
         #if the 'player' file exists in save_game delete it!
-        #if os.path.exists(os.path.join(save_dir, 'player')):
-            #
 
-
+        player_file = os.path.join(SAVE_DIR, 'player')
+        if os.path.exists(player_file):
+            os.remove(player_file)
+        #copy all the files from the temp dir to the save game dirs
+        copy_files(TEMP_ROOM_DIR, SAVE_ROOM_DIR)
+        copy_files(TEMP_ITEM_DIR, SAVE_ITEM_DIR)
+        #write out the player
+        with open(player_file, 'w') as open_file:
+            json.dump(player_dict, open_file, indent=4)
+            open_file.close()
         return True, None
     except Exception, e:
         return False, e
+
+def load_game():
+    """
+    moves the files in the Save game dir to the temp save dir
+    only if the save game dir exists
+    returns the player as a dict and the current room as a dict
+    """
+    #check if /data/save_game exits
+    #otherwise run a new game and return the shore, but no player
+    if not os.path.isdir(SAVE_DIR):
+        new_game()
+        return None, load_room('shore')
+    #if the temp room dir does not exist make it
+    if not os.path.isdir(TEMP_ROOM_DIR):
+        os.makedirs(TEMP_ROOM_DIR)
+    else:
+        clean_dir(TEMP_ROOM_DIR)
+    #if the temp item dir does not exist make it
+    if not os.path.isdir(TEMP_ITEM_DIR):
+        os.makedirs(TEMP_ITEM_DIR)
+    else:
+        clean_dir(TEMP_ITEM_DIR)
+    #if the room dir in save game does not exist 
+    #copy the templates instead
+    if not os.path.isdir(SAVE_ROOM_DIR):
+        copy_files(ROOM_DIR, TEMP_ROOM_DIR)
+    else:
+        copy_files(SAVE_ROOM_DIR, TEMP_ROOM_DIR)
+    #if the item dir in save game does not exist copy the templates instead
+    if not os.path.isdir(SAVE_ITEM_DIR):
+        copy_files(ITEM_DIR, TEMP_ITEM_DIR)
+    else:
+        copy_files(SAVE_ITEM_DIR, TEMP_ITEM_DIR)
+
+    #after copying the files make sure all the room files are in the temp dir
+    #as expected
+    if not val_room_files_in_temp() or not val_item_files_in_temp():
+        return val_room_files_in_temp(), val_item_files_in_temp()
+
+    player_file = os.path.join(SAVE_DIR, 'player')
+    player = None
+    if os.path.exists(player_file):
+        with open(player_file, 'r') as open_file:
+            player = json.load(open_file)
+            open_file.close()
+
+    if player:
+        current_room = load_room(player['current_room'])
+        del player['current_room']
+    else:
+        current_room = load_room('shore')
+
+    return player, current_room
+
+
+def val_room_files_in_temp():
+    """
+    confirms that all the room files exist in the temp dir
+    if the room does not exist copies it from the template dir
+    """
+    try:
+        list_of_things = []
+        for thing in os.listdir(TEMP_ROOM_DIR):
+            if thing not in IGNORE:
+                list_of_things.append(thing)
+
+        for element in ROOM_TITLES:
+            if element not in list_of_things:
+                src_dir = os.path.join(ROOM_DIR, element)
+                shutil.copy2(src_dir, TEMP_ROOM_DIR)
+        return True
+    except Exception, e:
+        return False
+
+def val_item_files_in_temp():
+    """
+    confirms that all the item files exist in the temp dir
+    if the item does not exist copies it from the template dir
+    """
+    try:
+        list_of_things = []
+        for thing in os.listdir(TEMP_ITEM_DIR):
+            if thing not in IGNORE:
+                list_of_things.append(thing)
+        for element in ITEM_TITLES:
+            if element not in list_of_things:
+                src_dir = os.path.join(ITEM_DIR, element)
+                shutil.copy2(src_dir, TEMP_ITEM_DIR)
+        return True
+    except Exception, e:
+        return False
+
 
 def clean_dir(dst_dir):
     """
     removes all the files in the directory passed in except those in the
     IGNORE list
     """
-    try:
-        for item in os.listdir(dst_dir):
-            if item not in IGNORE:
-                to_del = os.path.join(dst_dir, item)
-                os.remove(to_del)
-    except Exception, e:
-        print("Something went wrong cleaning the directory")
-        print(e)
+    if os.path.isdir(dst_dir):
+        try:
+            for item in os.listdir(dst_dir):
+                if item not in IGNORE:
+                    to_del = os.path.join(dst_dir, item)
+                    os.remove(to_del)
+            return True
+        except Exception, e:
+            print("Something went wrong cleaning the directory")
+            print(e)
+            return False
+    else:
+        return False
 
 def load_room(room_title):
     """
