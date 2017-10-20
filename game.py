@@ -325,7 +325,6 @@ class Game:
     #------------------------------------------------------------------------
     # This ends the movement related functions
     #------------------------------------------------------------------------
-
     #------------------------------------------------------------------------
     # This begins room getters section
     #------------------------------------------------------------------------
@@ -517,7 +516,6 @@ class Game:
                     other_room = files.load_room(key)
                     other_room = files.update(updates, other_room)
                     files.store_room(other_room)
-
 
         #hopefully file_lib will have a method where we can pass the 
         #modifiers dict to and it will do the remaining processing returning 
