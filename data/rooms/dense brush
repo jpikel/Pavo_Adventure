@@ -12,7 +12,6 @@
             "verbs": {
                 "pull": {
                     "modifiers": {}, 
-
                     "description": "You pull on the gate and it slowly moves.  As it traverses the ground it creates a nice wide arc in the snowy ground."
                 }, 
                 "use": {
