@@ -69,7 +69,7 @@ class item_info():
     """
     item_titles = ["lantern", "heavy winter parka", "old map", "spiral bound notepad",
                 "flare gun", "boat paddle", "rescue whistle", "frozen dead hare",
-                "can of sweetened condensed milk", "can opener"]
+                "can of sweetened condensed milk", "candy bar"]
     item_dir = os.path.join(data_dir, "items")
 
     def get_titles(self):
