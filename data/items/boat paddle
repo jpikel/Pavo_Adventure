@@ -7,11 +7,11 @@
     "verbs": {
         "pull": {
             "modifiers": {}, 
-            "description": "pull description for boat paddle"
+            "description": "You practice making the motion to turn the boat by holding and pulling the paddle towards your body."
         }, 
         "use": {
             "deactivate_description": "use deactivate for boat paddle", 
-            "description": "use description for boat paddle", 
+            "description": "You swing the paddle around, pretending to be negotiating some rapids.", 
             "modifiers": {}
         }, 
         "drop": {
@@ -24,7 +24,7 @@
                     "title": "any"
                 }
             }, 
-            "description": "drop for boat paddle"
+            "description": "You lay down the paddle."
         }, 
         "take": {
             "modifiers": {
@@ -36,23 +36,23 @@
                     "title": "any"
                 }
             }, 
-            "description": "take for boat paddle"
+            "description": "You pick up the paddle.  This may come in handy if you have to cross a river.  Not on it's own though but perhaps you'll find a raft of some kind.  It is a rather short paddle so you are able to strap it to the outside of your pack."
         }, 
         "read": {
             "modifiers": {}, 
-            "description": "read for boat paddle"
+            "description": "The label has a small owl sitting on a paddle.  You can't make out anything else."
         }, 
         "search": {
             "modifiers": {}, 
-            "description": "search for boat paddle"
+            "description": "You take a moment to admire the long slender turned handle of the paddle, the grip is comfortable in your hand.  The throat of the paddle expands into the blade.  The tip is a bit worn from use."
         }, 
         "look at": {
             "modifiers": {}, 
-            "description": "look at description for boat paddle"
+            "description": "The paddle has some deep dark brown stains in it.  It is in reasonable shape and could possibly be used to navigate still.  There appear to be teeth marks down on the wide part of the paddle.  You wonder how hungry someone or something must have been."
         }, 
         "eat": {
             "modifiers": {}, 
-            "description": "eat description for boat paddle"
+            "description": "Although it is a very nice paddle you don't think it would be very good to eat."
         }
     }, 
     "active": false, 

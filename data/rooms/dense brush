@@ -2,8 +2,8 @@
     "id": 5, 
     "title": "dense brush", 
     "visited": false, 
-    "long_description": "Long Description: dense brush", 
-    "short_description": "Short Description: dense brush", 
+    "long_description": "Not even the snow is able to cover all the brush growing here. It is patchy and some places you have to give a wide berth to not fall through the snow into the brush.  To the west you can see the brush give way to an open field and in the opposite direction is the camp.   When the weather is nicer there must be farmers that bring their animals up here and use the animal corral.  The gate is wide open to the corral and inside you see a deer carcass.", 
+    "short_description": "Standing in the snowy dense brush, to your east is an open field and in the opposite direction lies the camp.  There is an animal corral here likely used by farmers during better weather.  Inside the corral is a deer carcass.", 
     "features": {
         "1": {
             "aliases": [
@@ -12,39 +12,39 @@
             "verbs": {
                 "pull": {
                     "modifiers": {}, 
-                    "description": "pull description for feature 1 dense brush"
+                    "description": "You pull on the gate and it slowly moves.  As it traverses the ground it creates a nice wide arc in the snowy ground."
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 1 dense brush", 
-                    "description": "use description for feature 1 dense brush", 
+                    "description": "It may be the fact that you have been alone for a long time.  But you romp around inside the corral, stamping your feet and acting quite similar to a wild animal.", 
                     "modifiers": {}
                 }, 
                 "look at": {
                     "modifiers": {}, 
-                    "description": "look at description for feature 1 dense brush"
+                    "description": "The corral looks tired and worn out.  The rails appear just barely able to hold themselves together.  It certain has seen a lot of use and a lot of weather."
                 }, 
                 "take": {
                     "modifiers": {}, 
-                    "description": "take for feature 1 dense brush"
+                    "description": "You suppose you could take it down piece by piece, but that would certainly cause a lot of headache for the farmer come spring."
                 }, 
                 "read": {
                     "modifiers": {}, 
-                    "description": "read for feature 1 dense brush"
+                    "description": "You are not able to find anything to read here."
                 }, 
                 "search": {
                     "modifiers": {}, 
-                    "description": "read for feature 1 dense brush"
+                    "description": "Searching around the corral, you find a boat paddle lying on the ground.  You also think that you could easily use this corral for keeping some items safe.  Especially since it has a gate.  But truthfully, you doubt you even need to close it since you seem to be the only one here."
                 }, 
                 "drop": {
                     "modifiers": {}, 
-                    "description": "drop for feature 1dense brush"
+                    "description": "There is nothing to drop here."
                 }, 
                 "eat": {
                     "modifiers": {}, 
-                    "description": "eat description for feature 1 dense brush"
+                    "description": "A corral can not be eaten.  However, you do fantasize for a moment about the Golden Corral restaurant."
                 }
             }, 
-            "title": "feature_1_title"
+            "title": "animal corral"
         }, 
         "2": {
             "aliases": [
@@ -53,42 +53,44 @@
             "verbs": {
                 "pull": {
                     "modifiers": {}, 
-                    "description": "pull description for feature 2 dense brush"
+                    "description": "Childishly you pull on the deer's antlers and the head bobs around as you do so."
                 }, 
                 "use": {
                     "deactivate_description": "use deactivate for feature 2 dense brush", 
-                    "description": "use description for feature 2 dense brush", 
+                    "description": "You are not about to crawl inside this deer carcass to stay warm.  No matter how many survival experts seem to think it is a good idea.", 
                     "modifiers": {}
                 }, 
                 "look at": {
                     "modifiers": {}, 
-                    "description": "look at description for feature 2 dense brush"
+                    "description": "The deer was certainly chased into this pen and then taken down.  You doubt a bear could have done so much damage, perhaps a pack of wolves.  Most all of the deer has been eaten and what is left has gone completely rotten."
                 }, 
                 "take": {
                     "modifiers": {}, 
-                    "description": "take for feature 2 dense brush"
+                    "description": "The poor deer has already had so much taken from it. Isn't it better to just leave it in peace."
                 }, 
                 "read": {
                     "modifiers": {}, 
-                    "description": "read for feature 2 dense brush"
+                    "description": "There is simply nothing here to read."
                 }, 
                 "search": {
                     "modifiers": {}, 
-                    "description": "read for feature 2 dense brush"
+                    "description": "Although searching inside the chest cavity is common in movies, you think better of it and leave the deer alone."
                 }, 
                 "drop": {
                     "modifiers": {}, 
-                    "description": "drop for feature 2dense brush"
+                    "description": "The deer is not droppable."
                 }, 
                 "eat": {
                     "modifiers": {}, 
-                    "description": "eat description for feature 2 dense brush"
+                    "description": "Nope.  Not even going to chance eating rotten food."
                 }
             }, 
-            "title": "feature_2_title"
+            "title": "deer carcass"
         }
     }, 
-    "items_in_room": [], 
+    "items_in_room": [
+        "boat paddle"
+    ], 
     "feature_searched": true, 
     "room_hazards": false, 
     "room_hazard_description": "", 
