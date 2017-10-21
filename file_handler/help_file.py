@@ -8,11 +8,20 @@ Description -
 """
 
 import sys
-import curses
+USE_CURSES = False
+if sys.platform == 'linux' or sys.platform == 'linux2':
+    import curses
+    USE_CURSES = True
+
 import locale
 import random
 import time
+import os
 from name_lists import verb_info
+
+MIN_COLS = 90
+MIN_ROWS = 55
+VERB_DICT = verb_info().get_verb_definitions()
 
 def print_border(stdscr):
 
@@ -75,16 +84,15 @@ def print_help(stdscr):
     """
         prints the actual help menu
     """
-    verb_dict = verb_info().get_verb_definitions()
     x, y = print_text(4,4,"Verb       ", stdscr, curses.A_BOLD)
     x, y = print_text(x,y,"::", stdscr, curses.color_pair(2))
     x, y = print_text(x,y,"  Explanation of verb usage", stdscr)
-    for key in verb_dict:
+    for key in VERB_DICT:
         y += 2
         x = 4
         print_text(x,y,key, stdscr, curses.A_BOLD)
         print_text(15,y,"::", stdscr,  curses.color_pair(2))
-        print_text(19,y,verb_dict[key], stdscr)
+        print_text(19,y,VERB_DICT[key], stdscr)
 
 def main_helper(stdscr):
     init_colors()
@@ -96,17 +104,36 @@ def main_helper(stdscr):
     stdscr.refresh()
     curses.endwin()
 
+def print_basic():
+    print '*'*20,
+    print 'Help',
+    print '*'*20
+    print 'Verb'.ljust(12) + ' :: ' + ' verb definition'
+    for key in VERB_DICT:
+        print key.ljust(12) + ' ::  ' + VERB_DICT[key]
+
+def terminal_size():
+    rows, columns = os.popen('stty size', 'r').read().split()
+    if int(rows) < int(MIN_ROWS) or int(columns) < int(MIN_COLS):
+        return False
+    return True
 
 def main(stdscr=None):
     """
         a simple print to screen of the help file
     """
-    locale.setlocale(locale.LC_ALL, '')
-    code = locale.getpreferredencoding()
-    if stdscr == None:
-        curses.wrapper(main_helper)
+    if USE_CURSES and terminal_size():
+        locale.setlocale(locale.LC_ALL, '')
+        code = locale.getpreferredencoding()
+        if stdscr == None:
+            curses.wrapper(main_helper)
+        else:
+            main(stdscr)
     else:
-        main(stdscr)
+        print_basic()
        
 if __name__ == "__main__":
-    curses.wrapper(main)
+    if USE_CURSES:
+        curses.wrapper(main)
+    else:
+        print_basic
