@@ -133,7 +133,7 @@ def main(stdscr=None):
         print_basic()
        
 if __name__ == "__main__":
-    if USE_CURSES:
+    if USE_CURSES and terminal_size():
         curses.wrapper(main)
     else:
         print_basic
