@@ -108,7 +108,7 @@ def print_basic():
     print '*'*20,
     print 'Help',
     print '*'*20
-    print 'Verb'.ljust(12) + ' :: ' + ' verb definition'
+    print '\nVerb'.ljust(12) + ' :: ' + ' verb definition\n'
     for key in VERB_DICT:
         print key.ljust(12) + ' ::  ' + VERB_DICT[key]
 
