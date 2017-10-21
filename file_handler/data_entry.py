@@ -157,7 +157,7 @@ def store_obj(obj_json, new_dir):
     """
     #new_dir = os.path.join(src_dir, obj_json['title'])
     with open(new_dir, "w") as open_file:
-        str_ = json.dumps(obj_json, indent=4)
+        str_ = json.dumps(obj_json, indent=1)
         str_ = the_replacer(str_)
         open_file.write(str_)
         open_file.close()

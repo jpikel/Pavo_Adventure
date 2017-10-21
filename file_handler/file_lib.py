@@ -116,7 +116,7 @@ def save_game(player, current_room):
         with open(player_file, 'w') as open_file:
             json.dump(player_dict, open_file, indent=1)
             open_file.close()
-        return True, None
+        return True, True
     except Exception, e:
         return False, e
 

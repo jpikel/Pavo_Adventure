@@ -2,8 +2,8 @@
  "id": 10, 
  "title": "fire tower", 
  "visited": false, 
- "long_description": "Long Description: fire tower", 
- "short_description": "Short Description: fire tower", 
+ "long_description": "You climb up the ladder on the side of the tower and enter into the small cabin perched on top of the truss like structure.  From inside the tower there is an amazing overlook, it is no wonder that it was built here you can see all around the mountain in every direction.  How far you have come to get here.  It has been quite a journey.  The tower has not been used in quite a while it seems.  At least not since the last fire season, as there is not much inside, except a few cobwebs from industrious spiders trying to find something to eat.  There are a few counters that are bare,  under one of the counters sits a safe.  In the middle of the tower there is also a central pedestal that is empty but seems to be home to something.  You recall your guide telling you about Osborne Fire Finders that are used by rangers to determine the degrees and estimated distance from the tower that a fire is located.", 
+ "short_description": "Climbing up the ladder and entering the tower, inside you have an excellent overlook.  Under one of the empty counters is a safe.  The only way out is towards the south and the mountain's summit.", 
  "features": {
   "locked safe": {
    "aliases": [
@@ -12,36 +12,36 @@
    "verbs": {
     "pull": {
      "modifiers": {}, 
-     "description": "pull description for feature 1 fire tower"
+     "description": "As much as you pull on the safe it is not budging.  Maybe it is bolted to the floor."
     }, 
     "use": {
      "deactivate_description": "use deactivate for feature 1 fire tower", 
-     "description": "use description for feature 1 fire tower", 
+     "description": "You spin the dial to three different numbers.  Hear some clicking and attempt to turn the handle, but it does nothing.", 
      "modifiers": {}
     }, 
     "look at": {
      "modifiers": {}, 
-     "description": "look at description for feature 1 fire tower"
+     "description": "Standing stoically you look at the small but sturdy metal safe.  Hopefully you know the combination.  The outside is a has a texture granite colored finish that looks in top condition.  This safe must not be very old."
     }, 
     "take": {
      "modifiers": {}, 
-     "description": "take for feature 1 fire tower"
+     "description": "Safes generally are not things you carry around on your person.  Unless you are a bank robber and have a getaway truck."
     }, 
     "read": {
      "modifiers": {}, 
-     "description": "read for feature 1 fire tower"
+     "description": "You read the label on the front of the safe \"Please keep loaded.\""
     }, 
     "search": {
      "modifiers": {}, 
-     "description": "read for feature 1 fire tower"
+     "description": "You try to open the door.  But it is locked tight.  You doubt you would be able to force it either."
     }, 
     "drop": {
      "modifiers": {}, 
-     "description": "drop for feature 1fire tower"
+     "description": "The safe cannot be picked up. So it cannot be dropped."
     }, 
     "eat": {
      "modifiers": {}, 
-     "description": "eat description for feature 1 fire tower"
+     "description": "The hard shell and textured paint would not be very tasty."
     }
    }, 
    "title": "locked safe"
@@ -53,42 +53,44 @@
    "verbs": {
     "pull": {
      "modifiers": {}, 
-     "description": "pull description for feature 2 fire tower"
+     "description": "Not really sure how one would pull an overlook."
     }, 
     "use": {
      "deactivate_description": "use deactivate for feature 2 fire tower", 
-     "description": "use description for feature 2 fire tower", 
+     "description": "You could try searching the overlook for a better view.", 
      "modifiers": {}
     }, 
     "look at": {
      "modifiers": {}, 
-     "description": "look at description for feature 2 fire tower"
+     "description": "From all the windows around the tower you have a great vantage point over all the surrounding areas."
     }, 
     "take": {
      "modifiers": {}, 
-     "description": "take for feature 2 fire tower"
+     "description": "If only you had a camera to take some pictures of this amazing place."
     }, 
     "read": {
      "modifiers": {}, 
-     "description": "read for feature 2 fire tower"
+     "description": "Looking at the windows of the fire station you do not see anything to read."
     }, 
     "search": {
      "modifiers": {}, 
-     "description": "read for feature 2 fire tower"
+     "description": "From up here you can see the shore and the woods to the east.  You can just barely make out the top of the hunting blind through a few trees.  Thankfully you don't see any wolves in the open field any more.  The waterfall feeding into the river is amazing from up here.  The views are breathtaking and you would take more time to enjoy it if you weren't lost!"
     }, 
     "drop": {
      "modifiers": {}, 
-     "description": "drop for feature 2fire tower"
+     "description": "If you fell from this height it would surely be to your doom."
     }, 
     "eat": {
      "modifiers": {}, 
-     "description": "eat description for feature 2 fire tower"
+     "description": "Not much to eat here."
     }
    }, 
    "title": "overlook"
   }
  }, 
- "items_in_room": [], 
+ "items_in_room": [
+  "flare gun"
+ ], 
  "feature_searched": true, 
  "room_hazards": false, 
  "room_hazard_description": "", 
