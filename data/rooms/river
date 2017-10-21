@@ -1,177 +1,179 @@
 {
-    "id": 11, 
-    "title": "river", 
-    "visited": false, 
-    "long_description": "Standing on the bank of the river, the water lapping against the rocky shore and moving past you. It sounds like a roar of fast moving water is coming from the south, must be some Rapids.  To the north, behind you are the dense woods, that abruptly where the rocky banks of the river start.  As though it is a garden that has been lovingly tended to.  The river makes a bend here and towards the east you can see a plume of mist rises from the base of a waterfall. Along the bank sits a canoe.  Its flat bottom may not be the greatest at navigating fast moving water, but it is better than swimming.  Next to the canoe is a large camping cooler. Its color has all but faded, but it once must have been a brilliant blue.", 
-    "short_description": "Standing on the bank of the river, the woods are to your north, there is waterfall to your east.  To the south you can hear the rush of the rapids. Close to the water sits a canoe and next to it is a old camping cooler.", 
-    "features": {
-        "1": {
-            "aliases": [
-                "feature_1_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "If the cooler had any handles to pull on, they fell off or were broken off long again.  It does not seem like you would gain much if you pulled on the cooler anyway."
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 1 river", 
-                    "description": "Crawling inside is definitely not an option.  So instead you sit of the cooler for a while to rest your feet.", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "The cooler has certainly seen better days, but you don't notice any significant damage.  It has faded over the years and the blue sides have all but faded.  The lid still looks in good condition.  Might be something nice inside."
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "You pick up the cooler and decide that you are not going on a picnic any time soon, so you set it back down."
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "Although many camping accessories have logos plastered on them, this one is just too tired to wear any sort of branding anymore."
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "As you open the lid, it moans and creaks.  The smell of plastic if strong, but quickly dissipates in the breeze.  Inside the cooler you see a heavy winter parka, that is in surprisingly good condition and a spiral bound notepad."
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "You pick up one side and drop it back on to the rocks."
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "You really should be eating whatever is inside the cooler, not the cooler itself."
-                }
-            }, 
-            "title": "camping cooler"
-        }, 
-        "2": {
-            "aliases": [
-                "feature_2_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "You drag the canoe a bit, but decide that until you are actually ready to leave it may be better to leave it where it is."
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 2 river", 
-                    "description": "You sit in the canoe ready for action.", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "A sturdy vessel, from the looks of it.  Maybe a closer inspection will reveal more.  It is a slightly faded red color.  Aren't all canoes red?"
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "Unfortunately carrying a canoe this size is a two person job and last you checked you were here all along."
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "There is a small symbol on the side of the canoe.  You can make out something that reads 'N  thSt r'",
-                    "artifact":[
-                        "        /\\  |\\|",
-                    "        ||",
-                    "       /_\\",
-                    "< == _ == >",
-                    "       \\  /",
-                    "        ||",
-                    "        \\/"]
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "You check the hull and don't notice any holes or large cracks.  You suspect that it would float well enough for you to traverse the rapids.  A paddle would be advisable."
-                }, 
-                "drop": {
-                    "modifiers": {
-                        "player":{
-                            "illness":"5"
-                        }
-                    }, 
-                    "description": "You pick up one end and drop it back down.  It hits your foot firmly.  Ouch that smarts!"
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "Canoes are not meant for eating."
-                }
-            }, 
-            "title": "canoe"
-        }
+ "id": 11, 
+ "title": "river", 
+ "visited": false, 
+ "long_description": "Standing on the bank of the river, the water lapping against the rocky shore and moving past you. It sounds like a roar of fast moving water is coming from the south, must be some Rapids.  To the north, behind you are the dense woods, that abruptly where the rocky banks of the river start.  As though it is a garden that has been lovingly tended to.  The river makes a bend here and towards the east you can see a plume of mist rises from the base of a waterfall. Along the bank sits a canoe.  Its flat bottom may not be the greatest at navigating fast moving water, but it is better than swimming.  Next to the canoe is a large camping cooler. Its color has all but faded, but it once must have been a brilliant blue.", 
+ "short_description": "Standing on the bank of the river, the woods are to your north, there is waterfall to your east.  To the south you can hear the rush of the rapids. Close to the water sits a canoe and next to it is a old camping cooler.", 
+ "features": {
+  "camping cooler": {
+   "aliases": [
+    "camping cooler"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "If the cooler had any handles to pull on, they fell off or were broken off long again.  It does not seem like you would gain much if you pulled on the cooler anyway."
     }, 
-    "items_in_room": [
-        "spiral bound notepad", 
-        "heavy winter parka"
-    ], 
-    "feature_searched": true, 
-    "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": "", 
-    "connected_rooms": {
-        "woods": {
-            "accessible": true, 
-            "title": "woods", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "woods"
-            ]
-        }, 
-        "waterfall": {
-            "accessible": true, 
-            "title": "waterfall", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "waterfall"
-            ]
-        }, 
-        "rapids": {
-            "accessible": true, 
-            "title": "rapids", 
-            "distance_from_room": 1, 
-            "item_required": true, 
-            "item_required_title": "boat paddle", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "rapids"
-            ], 
-            "modifiers": {
-                "item_updates": {
-                    "boat paddle": {
-                        "verbs": {
-                            "use": {
-                                "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks."
-                            }
-                        }
-                    }
-                }, 
-                "room_updates": {
-                    "rapids": {
-                        "connected_rooms": {
-                            "ranger station": {
-                                "modifiers": {
-                                    "player": {}
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    "use": {
+     "deactivate_description": "use deactivate for feature 1 river", 
+     "description": "Crawling inside is definitely not an option.  So instead you sit of the cooler for a while to rest your feet.", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "The cooler has certainly seen better days, but you don't notice any significant damage.  It has faded over the years and the blue sides have all but faded.  The lid still looks in good condition.  Might be something nice inside."
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "You pick up the cooler and decide that you are not going on a picnic any time soon, so you set it back down."
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "Although many camping accessories have logos plastered on them, this one is just too tired to wear any sort of branding anymore."
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "As you open the lid, it moans and creaks.  The smell of plastic if strong, but quickly dissipates in the breeze.  Inside the cooler you see a heavy winter parka, that is in surprisingly good condition and a spiral bound notepad."
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "You pick up one side and drop it back on to the rocks."
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "You really should be eating whatever is inside the cooler, not the cooler itself."
     }
+   }, 
+   "title": "camping cooler"
+  }, 
+  "canoe": {
+   "aliases": [
+    "canoe"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "You drag the canoe a bit, but decide that until you are actually ready to leave it may be better to leave it where it is."
+    }, 
+    "use": {
+     "deactivate_description": "use deactivate for feature 2 river", 
+     "description": "You sit in the canoe ready for action.", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "A sturdy vessel, from the looks of it.  Maybe a closer inspection will reveal more.  It is a slightly faded red color.  Aren't all canoes red?"
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "Unfortunately carrying a canoe this size is a two person job and last you checked you were here all along."
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "There is a small symbol on the side of the canoe.  You can make out something that reads 'N  thSt r'", 
+     "artifact": [
+      "        /\\  |\\|", 
+      "        ||", 
+      "       /_\\", 
+      "< == _ == >", 
+      "       \\  /", 
+      "        ||", 
+      "        \\/"
+     ]
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "You check the hull and don't notice any holes or large cracks.  You suspect that it would float well enough for you to traverse the rapids.  A paddle would be advisable."
+    }, 
+    "drop": {
+     "modifiers": {
+      "player": {
+       "illness": "5"
+      }
+     }, 
+     "description": "You pick up one end and drop it back down.  It hits your foot firmly.  Ouch that smarts!"
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "Canoes are not meant for eating."
+    }
+   }, 
+   "title": "canoe"
+  }
+ }, 
+ "items_in_room": [
+  "spiral bound notepad", 
+  "heavy winter parka"
+ ], 
+ "feature_searched": true, 
+ "room_hazards": false, 
+ "room_hazard_description": "", 
+ "room_hazard_item": "", 
+ "room_hazard_occurs_description": "", 
+ "room_hazard_attributes_affected": "", 
+ "room_hazard_safe_description": "", 
+ "connected_rooms": {
+  "woods": {
+   "accessible": true, 
+   "title": "woods", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "woods", 
+    "forest"
+   ]
+  }, 
+  "waterfall": {
+   "accessible": true, 
+   "title": "waterfall", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "waterfall"
+   ]
+  }, 
+  "rapids": {
+   "accessible": true, 
+   "title": "rapids", 
+   "distance_from_room": 1, 
+   "item_required": true, 
+   "item_required_title": "boat paddle", 
+   "pre_item_description": "", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "rapids"
+   ], 
+   "modifiers": {
+    "item_updates": {
+     "boat paddle": {
+      "verbs": {
+       "use": {
+        "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks."
+       }
+      }
+     }
+    }, 
+    "room_updates": {
+     "rapids": {
+      "connected_rooms": {
+       "ranger station": {
+        "modifiers": {
+         "player": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
 }

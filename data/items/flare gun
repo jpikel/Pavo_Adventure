@@ -1,72 +1,72 @@
 {
-    "id": 5, 
-    "title": "flare gun", 
-    "aliases": [
-        "flare gun"
-    ], 
-    "verbs": {
-        "pull": {
-            "modifiers": {}, 
-            "description": "pull description for flare gun"
-        }, 
-        "use": {
-            "deactivate_description": "use deactivate for flare gun", 
-            "description": "use description for flare gun", 
-            "modifiers": {}
-        }, 
-        "drop": {
-            "modifiers": {
-                "player": {
-                    "inventory": "drop"
-                }, 
-                "room": {
-                    "items_in_room": "add", 
-                    "title": "any"
-                }
-            }, 
-            "description": "drop for flare gun"
-        }, 
-        "take": {
-            "modifiers": {
-                "player": {
-                    "inventory": "add"
-                }, 
-                "room": {
-                    "items_in_room": "drop", 
-                    "title": "any"
-                }
-            }, 
-            "description": "take for flare gun"
-        }, 
-        "read": {
-            "modifiers": {}, 
-            "description": "read for flare gun"
-        }, 
-        "search": {
-            "modifiers": {}, 
-            "description": "search for flare gun"
-        }, 
-        "look at": {
-            "modifiers": {}, 
-            "description": "look at description for flare gun"
-        }, 
-        "eat": {
-            "modifiers": {}, 
-            "description": "eat description for flare gun"
-        }
+ "id": 5, 
+ "title": "flare gun", 
+ "aliases": [
+  "flare gun"
+ ], 
+ "verbs": {
+  "pull": {
+   "modifiers": {}, 
+   "description": "pull description for flare gun"
+  }, 
+  "use": {
+   "deactivate_description": "use deactivate for flare gun", 
+   "description": "use description for flare gun", 
+   "modifiers": {}
+  }, 
+  "drop": {
+   "modifiers": {
+    "player": {
+     "inventory": "drop"
     }, 
-    "active": false, 
-    "activatable": false, 
-    "attributes_affected_requirement_met": [
-        {}
-    ], 
-    "attributes_affected_requirement_not_met": [
-        {}
-    ], 
-    "requirement_met": true, 
-    "requirement_met_description": "req met flare gun", 
-    "requirement_not_met_description": "req not met flare gun", 
-    "item_combination": "other item combination for flare gun", 
-    "room_combination": "flare gun can be used in room", 
-    "feature_combination": "flare gun can be used with feature"
+    "room": {
+     "items_in_room": "add", 
+     "title": "any"
+    }
+   }, 
+   "description": "drop for flare gun"
+  }, 
+  "take": {
+   "modifiers": {
+    "player": {
+     "inventory": "add"
+    }, 
+    "room": {
+     "items_in_room": "drop", 
+     "title": "any"
+    }
+   }, 
+   "description": "take for flare gun"
+  }, 
+  "read": {
+   "modifiers": {}, 
+   "description": "read for flare gun"
+  }, 
+  "search": {
+   "modifiers": {}, 
+   "description": "search for flare gun"
+  }, 
+  "look at": {
+   "modifiers": {}, 
+   "description": "look at description for flare gun"
+  }, 
+  "eat": {
+   "modifiers": {}, 
+   "description": "eat description for flare gun"
+  }
+ }, 
+ "active": false, 
+ "activatable": false, 
+ "attributes_affected_requirement_met": [
+  {}
+ ], 
+ "attributes_affected_requirement_not_met": [
+  {}
+ ], 
+ "requirement_met": true, 
+ "requirement_met_description": "req met flare gun", 
+ "requirement_not_met_description": "req not met flare gun", 
+ "item_combination": "other item combination for flare gun", 
+ "room_combination": "flare gun can be used in room", 
+ "feature_combination": "flare gun can be used with feature"
 }

@@ -1,116 +1,116 @@
 {
-    "id": 12, 
-    "title": "waterfall", 
-    "visited": false, 
-    "long_description": "As you approach the waterfall you feel the moisture in the air as the mist dances around you.  A few crows circle around in the sky, looking for shiny objects. The water cascading down the side of the cliff is picturesque and if you weren't lost this would be an awesome photo opportunity.  Some moss is clinging for dear life to the rocks along the side of the waterfall, doing its best to not be swept away.  The plunge pool is not very deep and it would a great place to swim when the weather is nice.  Over the years the fall has undercut a small gorge into the side of the rock that you think you could go explore.  You won't be climbing the cliffside any time soon, so the only way to leave is back to the river to the west.", 
-    "short_description": "Standing near the waterfall, the spray dances around you.  To your west is the river.  The waterfall has undercut a small gorge that you think you could explore.  The plunge pool is not too deep and might be good for swimming in warm weather.", 
-    "features": {
-        "1": {
-            "aliases": [
-                "feature_1_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "Pulling is really not an option."
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 1 waterfall", 
-                    "description": "You make your way into the gorge and gingerly hold your hands into the water and splash some on your face.  It is ice cold, but very refreshing.  It feels good to wash away some of the grime.  At least from your hands and face.", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "The gorge has been created over the years by the water breaking against the rock.  Standing on this side of the waterfall you can definitely make out a narrow path that you think you could follow to enter into the undercut.  It doesn't look too treacherous and you think you could manage to get there and back safely."
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "Sadly this is a feature of the Earth and you are not able to take it with you."
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "There's nothing to read here."
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "As you enter into the gorge the roar of the waterfall is almost deafening as it plays against the rock walls.  There is a small landing that is actually quite dry and you think would make a good spot to hide some valuables."
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "The gorge has been created by the dropping water."
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "Standing inside the gorge, you cup some water and take a drink.  It is very cold, but refreshing.  Drinking something lifts your spirits."
-                }
-            }, 
-            "title": "small gorge"
-        }, 
-        "2": {
-            "aliases": [
-                "feature_2_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "You not sure, but you don't think you could pull the water."
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 2 waterfall", 
-                    "description": "As fun as it is to swim in a plunge pool.  Now is definitely not the right time for that.", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "The plunge pool does look inviting and it would an awesome spot to come for a swim in the summer.  The ripples from the waterfall dance across the pool."
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "Unfortunately jumping into the water to retrieve the small object you noticed, would likely lead to severe hypothermia and not make for a nice day."
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "Water just is not that readable."
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "Studying the pool more intently you notice that there is a small object that is twinkling every so often.  Perhaps this is what has attracted the crows.  They are just as perplexed as you are as to how to go about getting that out of the ice cold water."
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "The water is about as low as it will get in this area."
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "You kneel down on one knee and cup some water into your mouth. The cold refresh water goes down smoothly.  You feel a bit better taking a drink."
-                }
-            }, 
-            "title": "plunge pool"
-        }
+ "id": 12, 
+ "title": "waterfall", 
+ "visited": false, 
+ "long_description": "As you approach the waterfall you feel the moisture in the air as the mist dances around you.  A few crows circle around in the sky, looking for shiny objects. The water cascading down the side of the cliff is picturesque and if you weren't lost this would be an awesome photo opportunity.  Some moss is clinging for dear life to the rocks along the side of the waterfall, doing its best to not be swept away.  The plunge pool is not very deep and it would a great place to swim when the weather is nice.  Over the years the fall has undercut a small gorge into the side of the rock that you think you could go explore.  You won't be climbing the cliffside any time soon, so the only way to leave is back to the river to the west.", 
+ "short_description": "Standing near the waterfall, the spray dances around you.  To your west is the river.  The waterfall has undercut a small gorge that you think you could explore.  The plunge pool is not too deep and might be good for swimming in warm weather.", 
+ "features": {
+  "small gorge": {
+   "aliases": [
+    "small gorge"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "Pulling is really not an option."
     }, 
-    "items_in_room": [
-        ""
-    ], 
-    "feature_searched": true, 
-    "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": "", 
-    "connected_rooms": {
-        "river": {
-            "accessible": true, 
-            "title": "river", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "river"
-            ]
-        }
+    "use": {
+     "deactivate_description": "use deactivate for feature 1 waterfall", 
+     "description": "You make your way into the gorge and gingerly hold your hands into the water and splash some on your face.  It is ice cold, but very refreshing.  It feels good to wash away some of the grime.  At least from your hands and face.", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "The gorge has been created over the years by the water breaking against the rock.  Standing on this side of the waterfall you can definitely make out a narrow path that you think you could follow to enter into the undercut.  It doesn't look too treacherous and you think you could manage to get there and back safely."
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "Sadly this is a feature of the Earth and you are not able to take it with you."
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "There's nothing to read here."
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "As you enter into the gorge the roar of the waterfall is almost deafening as it plays against the rock walls.  There is a small landing that is actually quite dry and you think would make a good spot to hide some valuables."
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "The gorge has been created by the dropping water."
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "Standing inside the gorge, you cup some water and take a drink.  It is very cold, but refreshing.  Drinking something lifts your spirits."
     }
+   }, 
+   "title": "small gorge"
+  }, 
+  "plunge pool": {
+   "aliases": [
+    "plunge pool"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "You not sure, but you don't think you could pull the water."
+    }, 
+    "use": {
+     "deactivate_description": "use deactivate for feature 2 waterfall", 
+     "description": "As fun as it is to swim in a plunge pool.  Now is definitely not the right time for that.", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "The plunge pool does look inviting and it would an awesome spot to come for a swim in the summer.  The ripples from the waterfall dance across the pool."
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "Unfortunately jumping into the water to retrieve the small object you noticed, would likely lead to severe hypothermia and not make for a nice day."
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "Water just is not that readable."
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "Studying the pool more intently you notice that there is a small object that is twinkling every so often.  Perhaps this is what has attracted the crows.  They are just as perplexed as you are as to how to go about getting that out of the ice cold water."
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "The water is about as low as it will get in this area."
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "You kneel down on one knee and cup some water into your mouth. The cold refresh water goes down smoothly.  You feel a bit better taking a drink."
+    }
+   }, 
+   "title": "plunge pool"
+  }
+ }, 
+ "items_in_room": [
+  ""
+ ], 
+ "feature_searched": true, 
+ "room_hazards": false, 
+ "room_hazard_description": "", 
+ "room_hazard_item": "", 
+ "room_hazard_occurs_description": "", 
+ "room_hazard_attributes_affected": "", 
+ "room_hazard_safe_description": "", 
+ "connected_rooms": {
+  "river": {
+   "accessible": true, 
+   "title": "river", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "river"
+   ]
+  }
+ }
 }

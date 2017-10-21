@@ -1,127 +1,127 @@
 {
-    "id": 14, 
-    "title": "mountain summit", 
-    "visited": false, 
-    "long_description": "Long Description: mountain summit", 
-    "short_description": "Short Description: mountain summit", 
-    "features": {
-        "1": {
-            "aliases": [
-                "feature_1_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "pull description for feature 1 mountain summit"
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 1 mountain summit", 
-                    "description": "use description for feature 1 mountain summit", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "look at description for feature 1 mountain summit"
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "take for feature 1 mountain summit"
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "read for feature 1 mountain summit"
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "read for feature 1 mountain summit"
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "drop for feature 1mountain summit"
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "eat description for feature 1 mountain summit"
-                }
-            }, 
-            "title": "feature_1_title"
-        }, 
-        "2": {
-            "aliases": [
-                "feature_2_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "pull description for feature 2 mountain summit"
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 2 mountain summit", 
-                    "description": "use description for feature 2 mountain summit", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "look at description for feature 2 mountain summit"
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "take for feature 2 mountain summit"
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "read for feature 2 mountain summit"
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "read for feature 2 mountain summit"
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "drop for feature 2mountain summit"
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "eat description for feature 2 mountain summit"
-                }
-            }, 
-            "title": "feature_2_title"
-        }
+ "id": 14, 
+ "title": "mountain summit", 
+ "visited": false, 
+ "long_description": "Long Description: mountain summit", 
+ "short_description": "Short Description: mountain summit", 
+ "features": {
+  "storage shed": {
+   "aliases": [
+    "storage shed"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "pull description for feature 1 mountain summit"
     }, 
-    "items_in_room": [], 
-    "feature_searched": true, 
-    "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": "", 
-    "connected_rooms": {
-        "fire tower": {
-            "accessible": true, 
-            "title": "fire tower", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "fire tower"
-            ]
-        }, 
-        "mountain ascent": {
-            "accessible": true, 
-            "title": "mountain ascent", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "mountain ascent"
-            ]
-        }
+    "use": {
+     "deactivate_description": "use deactivate for feature 1 mountain summit", 
+     "description": "use description for feature 1 mountain summit", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "look at description for feature 1 mountain summit"
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "take for feature 1 mountain summit"
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "read for feature 1 mountain summit"
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "read for feature 1 mountain summit"
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "drop for feature 1mountain summit"
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "eat description for feature 1 mountain summit"
     }
+   }, 
+   "title": "storage shed"
+  }, 
+  "overlook": {
+   "aliases": [
+    "overlook"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "pull description for feature 2 mountain summit"
+    }, 
+    "use": {
+     "deactivate_description": "use deactivate for feature 2 mountain summit", 
+     "description": "use description for feature 2 mountain summit", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "look at description for feature 2 mountain summit"
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "take for feature 2 mountain summit"
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "read for feature 2 mountain summit"
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "read for feature 2 mountain summit"
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "drop for feature 2mountain summit"
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "eat description for feature 2 mountain summit"
+    }
+   }, 
+   "title": "overlook"
+  }
+ }, 
+ "items_in_room": [], 
+ "feature_searched": true, 
+ "room_hazards": false, 
+ "room_hazard_description": "", 
+ "room_hazard_item": "", 
+ "room_hazard_occurs_description": "", 
+ "room_hazard_attributes_affected": "", 
+ "room_hazard_safe_description": "", 
+ "connected_rooms": {
+  "fire tower": {
+   "accessible": true, 
+   "title": "fire tower", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "fire tower"
+   ]
+  }, 
+  "mountain ascent": {
+   "accessible": true, 
+   "title": "mountain ascent", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You turn around to head back down but, you begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "mountain ascent"
+   ]
+  }
+ }
 }

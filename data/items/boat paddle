@@ -1,72 +1,72 @@
 {
-    "id": 6, 
-    "title": "boat paddle", 
-    "aliases": [
-        "boat paddle"
-    ], 
-    "verbs": {
-        "pull": {
-            "modifiers": {}, 
-            "description": "You practice making the motion to turn the boat by holding and pulling the paddle towards your body."
-        }, 
-        "use": {
-            "deactivate_description": "use deactivate for boat paddle", 
-            "description": "You swing the paddle around, pretending to be negotiating some rapids.", 
-            "modifiers": {}
-        }, 
-        "drop": {
-            "modifiers": {
-                "player": {
-                    "inventory": "drop"
-                }, 
-                "room": {
-                    "items_in_room": "add", 
-                    "title": "any"
-                }
-            }, 
-            "description": "You lay down the paddle."
-        }, 
-        "take": {
-            "modifiers": {
-                "player": {
-                    "inventory": "add"
-                }, 
-                "room": {
-                    "items_in_room": "drop", 
-                    "title": "any"
-                }
-            }, 
-            "description": "You pick up the paddle.  This may come in handy if you have to cross a river.  Not on it's own though but perhaps you'll find a raft of some kind.  It is a rather short paddle so you are able to strap it to the outside of your pack."
-        }, 
-        "read": {
-            "modifiers": {}, 
-            "description": "The label has a small owl sitting on a paddle.  You can't make out anything else."
-        }, 
-        "search": {
-            "modifiers": {}, 
-            "description": "You take a moment to admire the long slender turned handle of the paddle, the grip is comfortable in your hand.  The throat of the paddle expands into the blade.  The tip is a bit worn from use."
-        }, 
-        "look at": {
-            "modifiers": {}, 
-            "description": "The paddle has some deep dark brown stains in it.  It is in reasonable shape and could possibly be used to navigate still.  There appear to be teeth marks down on the wide part of the paddle.  You wonder how hungry someone or something must have been."
-        }, 
-        "eat": {
-            "modifiers": {}, 
-            "description": "Although it is a very nice paddle you don't think it would be very good to eat."
-        }
+ "id": 6, 
+ "title": "boat paddle", 
+ "aliases": [
+  "boat paddle"
+ ], 
+ "verbs": {
+  "pull": {
+   "modifiers": {}, 
+   "description": "You practice making the motion to turn the boat by holding and pulling the paddle towards your body."
+  }, 
+  "use": {
+   "deactivate_description": "use deactivate for boat paddle", 
+   "description": "You swing the paddle around, pretending to be negotiating some rapids.", 
+   "modifiers": {}
+  }, 
+  "drop": {
+   "modifiers": {
+    "player": {
+     "inventory": "drop"
     }, 
-    "active": true, 
-    "activatable": false, 
-    "attributes_affected_requirement_met": [
-        {}
-    ], 
-    "attributes_affected_requirement_not_met": [
-        {}
-    ], 
-    "requirement_met": true, 
-    "requirement_met_description": "req met boat paddle", 
-    "requirement_not_met_description": "req not met boat paddle", 
-    "item_combination": "other item combination for boat paddle", 
-    "room_combination": "boat paddle can be used in room", 
-    "feature_combination": "boat paddle can be used with feature"
+    "room": {
+     "items_in_room": "add", 
+     "title": "any"
+    }
+   }, 
+   "description": "You lay down the paddle."
+  }, 
+  "take": {
+   "modifiers": {
+    "player": {
+     "inventory": "add"
+    }, 
+    "room": {
+     "items_in_room": "drop", 
+     "title": "any"
+    }
+   }, 
+   "description": "You pick up the paddle.  This may come in handy if you have to cross a river.  Not on it's own though but perhaps you'll find a raft of some kind.  It is a rather short paddle so you are able to strap it to the outside of your pack."
+  }, 
+  "read": {
+   "modifiers": {}, 
+   "description": "The label has a small owl sitting on a paddle.  You can't make out anything else."
+  }, 
+  "search": {
+   "modifiers": {}, 
+   "description": "You take a moment to admire the long slender turned handle of the paddle, the grip is comfortable in your hand.  The throat of the paddle expands into the blade.  The tip is a bit worn from use."
+  }, 
+  "look at": {
+   "modifiers": {}, 
+   "description": "The paddle has some deep dark brown stains in it.  It is in reasonable shape and could possibly be used to navigate still.  There appear to be teeth marks down on the wide part of the paddle.  You wonder how hungry someone or something must have been."
+  }, 
+  "eat": {
+   "modifiers": {}, 
+   "description": "Although it is a very nice paddle you don't think it would be very good to eat."
+  }
+ }, 
+ "active": true, 
+ "activatable": false, 
+ "attributes_affected_requirement_met": [
+  {}
+ ], 
+ "attributes_affected_requirement_not_met": [
+  {}
+ ], 
+ "requirement_met": true, 
+ "requirement_met_description": "req met boat paddle", 
+ "requirement_not_met_description": "req not met boat paddle", 
+ "item_combination": "other item combination for boat paddle", 
+ "room_combination": "boat paddle can be used in room", 
+ "feature_combination": "boat paddle can be used with feature"
 }

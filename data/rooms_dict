@@ -6,6 +6,7 @@
     "dense brush": "dense brush", 
     "field": "field", 
     "fire tower": "fire tower", 
+    "forest": "woods", 
     "game trail": "game trail", 
     "mountain ascent": "mountain ascent", 
     "mountain base": "mountain base", 
@@ -14,6 +15,7 @@
     "rapids": "rapids", 
     "river": "river", 
     "shore": "shore", 
+    "trail": "game trail", 
     "waterfall": "waterfall", 
     "woods": "woods"
 }

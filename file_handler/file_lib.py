@@ -114,7 +114,7 @@ def save_game(player, current_room):
         copy_files(TEMP_ITEM_DIR, SAVE_ITEM_DIR)
         #write out the player
         with open(player_file, 'w') as open_file:
-            json.dump(player_dict, open_file, indent=4)
+            json.dump(player_dict, open_file, indent=1)
             open_file.close()
         return True, None
     except Exception, e:
@@ -258,7 +258,7 @@ def store_room(current_room):
         room_path = combine_temp_room_path(room_title)
         with open(room_path, 'w') as room_file:
             room_file.seek(0)
-            json.dump(current_room, room_file, indent=4)
+            json.dump(current_room, room_file, indent=1)
             room_file.close()
     except Exception, e:
         raise e
@@ -293,7 +293,7 @@ def store_item(current_item):
         item_path = combine_temp_item_path(item_title)
         with open(item_path, 'w') as item_file:
             item_file.seek(0)
-            json.dump(current_item, item_file, indent=4)
+            json.dump(current_item, item_file, indent=1)
             item_file.close()
     except Exception, e:
         raise e

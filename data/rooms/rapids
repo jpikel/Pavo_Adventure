@@ -1,135 +1,135 @@
 {
-    "id": 15, 
-    "title": "rapids", 
-    "visited": false, 
-    "long_description": "The river is roaring, you barely manage to keep control of your canoe here!  To the north is the gently flowing river that you left behind and you really doubt you'll ever be able to get back up the river.  The rapids take a turn to the east and where you see a spot you can make landfall.  Along the river bank ahead is a Ranger Station, if you make it that far.  You see a large heron perched on a log stuck in the water.  Just in ahead of is a large rock shelf that you feel you definitely need to paddle around.  You are fairly confident it you dropped something here it would be lost forever.", 
-    "short_description": "The river is roaring, to the north you see the flowing river but you doubt you'll be able to make your way back through the rapids.  To the east you see the Ranger Station. There's a heron sitting on a log and just ahead of you is a rock shelf that you think you best avoid.  You do your best to not drop anything because it would be gone forever.", 
-    "features": {
-        "1": {
-            "aliases": [
-                "feature_1_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "You need something to pull the canoe cross the river!  You are still heading directly to the rocks.  Maybe try using the boat paddle!"
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 1 rapids", 
-                    "description": "You're not sure if you can use it, but maybe you can pull away from it!", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "The rock shelf looks absolutely deadly.  If you don't navigate away from it in some matter you are sure you will be tossed from your canoe and wind up under water."
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "You are not able to it either.  But maybe you can avoid it!"
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "You read the nature of the rock shelf and it seems it will be bad for your health if you do not avoid them."
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "No use searching it.  You have more important things to do."
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "The rapids are about to drop you out of the canoe!"
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "Better not have any funny ideas."
-                }
-            }, 
-            "title": "rock shelf"
-        }, 
-        "2": {
-            "aliases": [
-                "feature_2_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "Please do not harm the wildlife."
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 2 rapids", 
-                    "description": "How would you like to use it?", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "The heron stares back at you.  Mildly interested in what you are doing.  Although it seems it knows that it has the upper hand should you get to close.  The bird stands proudly with his tall legs towering over the water.  Surely waiting for something inviting to eat."
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "Hmm, not really possible.  The heron would likely fly away before you got anywhere near it."
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "The Great Blue Heron is a paperback book written in 1999 that you once read.  Very interesting."
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "Although the heron is studying you.  You are not able to get close enough to for a better look."
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "You doubt you would be able to do that."
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "You animal you.  Such a beautiful creature and all you can think of is eating it?"
-                }
-            }, 
-            "title": "heron"
-        }
+ "id": 15, 
+ "title": "rapids", 
+ "visited": false, 
+ "long_description": "The river is roaring, you barely manage to keep control of your canoe here!  To the north is the gently flowing river that you left behind and you really doubt you'll ever be able to get back up the river.  The rapids take a turn to the east and where you see a spot you can make landfall.  Along the river bank ahead is a Ranger Station, if you make it that far.  You see a large heron perched on a log stuck in the water.  Just in ahead of is a large rock shelf that you feel you definitely need to paddle around.  You are fairly confident it you dropped something here it would be lost forever.", 
+ "short_description": "The river is roaring, to the north you see the flowing river but you doubt you'll be able to make your way back through the rapids.  To the east you see the Ranger Station. There's a heron sitting on a log and just ahead of you is a rock shelf that you think you best avoid.  You do your best to not drop anything because it would be gone forever.", 
+ "features": {
+  "rock shelf": {
+   "aliases": [
+    "rock shelf"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "You need something to pull the canoe cross the river!  You are still heading directly to the rocks.  Maybe try using the boat paddle!"
     }, 
-    "items_in_room": [], 
-    "feature_searched": true, 
-    "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": "", 
-    "connected_rooms": {
-        "ranger station": {
-            "accessible": false, 
-            "title": "ranger station", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "You smash into the rocks and tip over into the water.  Swimming as hard as you can, you cannot manage to keep your head above water.  You gasp for air getting nothing but water.  Your body convulses and you feel nothing. You have died trying to survive the Desolate Journey.", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "ranger station"
-            ], 
-            "modifiers": {
-                "room": {
-                    "items_in_room": "drop"
-                }, 
-                "player": {
-                    "illness": "100"
-                }
-            }
-        }, 
-        "river": {
-            "accessible": false, 
-            "title": "river", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "You most definitely will not be able to paddle back up river.", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "river"
-            ]
-        }
+    "use": {
+     "deactivate_description": "use deactivate for feature 1 rapids", 
+     "description": "You're not sure if you can use it, but maybe you can pull away from it!", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "The rock shelf looks absolutely deadly.  If you don't navigate away from it in some matter you are sure you will be tossed from your canoe and wind up under water."
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "You are not able to it either.  But maybe you can avoid it!"
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "You read the nature of the rock shelf and it seems it will be bad for your health if you do not avoid them."
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "No use searching it.  You have more important things to do."
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "The rapids are about to drop you out of the canoe!"
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "Better not have any funny ideas."
     }
+   }, 
+   "title": "rock shelf"
+  }, 
+  "heron": {
+   "aliases": [
+    "heron"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "Please do not harm the wildlife."
+    }, 
+    "use": {
+     "deactivate_description": "use deactivate for feature 2 rapids", 
+     "description": "How would you like to use it?", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "The heron stares back at you.  Mildly interested in what you are doing.  Although it seems it knows that it has the upper hand should you get to close.  The bird stands proudly with his tall legs towering over the water.  Surely waiting for something inviting to eat."
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "Hmm, not really possible.  The heron would likely fly away before you got anywhere near it."
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "The Great Blue Heron is a paperback book written in 1999 that you once read.  Very interesting."
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "Although the heron is studying you.  You are not able to get close enough to for a better look."
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "You doubt you would be able to do that."
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "You animal you.  Such a beautiful creature and all you can think of is eating it?"
+    }
+   }, 
+   "title": "heron"
+  }
+ }, 
+ "items_in_room": [], 
+ "feature_searched": true, 
+ "room_hazards": false, 
+ "room_hazard_description": "", 
+ "room_hazard_item": "", 
+ "room_hazard_occurs_description": "", 
+ "room_hazard_attributes_affected": "", 
+ "room_hazard_safe_description": "", 
+ "connected_rooms": {
+  "ranger station": {
+   "accessible": false, 
+   "title": "ranger station", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "You smash into the rocks and tip over into the water.  Swimming as hard as you can, you cannot manage to keep your head above water.  You gasp for air getting nothing but water.  Your body convulses and you feel nothing. You have died trying to survive the Desolate Journey.", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "ranger station"
+   ], 
+   "modifiers": {
+    "room": {
+     "items_in_room": "drop"
+    }, 
+    "player": {
+     "illness": "100"
+    }
+   }
+  }, 
+  "river": {
+   "accessible": false, 
+   "title": "river", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "You most definitely will not be able to paddle back up river.", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "river"
+   ]
+  }
+ }
 }

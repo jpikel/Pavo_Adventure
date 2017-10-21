@@ -1,13 +1,14 @@
 {
     "boat paddle": "boat paddle", 
     "can of sweetened condensed milk": "can of sweetened condensed milk", 
-    "can opener": "can opener", 
-    "dusty old map": "dusty old map", 
+    "candy bar": "candy bar", 
     "flare gun": "flare gun", 
     "frozen dead hare": "frozen dead hare", 
     "heavy winter parka": "heavy winter parka", 
+    "lamp": "lantern", 
     "lantern": "lantern", 
-    "paddle": "boat paddle", 
+    "light": "lantern", 
+    "old map": "old map", 
     "rescue whistle": "rescue whistle", 
-    "tattered notebook": "tattered notebook"
+    "tattered notebook": "spiral bound notepad"
 }

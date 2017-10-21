@@ -405,16 +405,15 @@ class Game:
             if so and the verb is in the list of possible verbs for that feature then
         """
         res = response_struct().get_response_struct()
-        features = self.current_room['features']
-        for element in features:
-            if title == features[element]['title']:
-                feature = element
-        if feat is not None and verb in feature['verbs']:
-            text = feature['verbs'][verb]['description']
-            res['description'] = text
-            res['modifiers'] = feature['verbs'][verb]['modifiers']
+        if title in self.current_room['features']:
+            feature = self.current_room['features'][title]
+            if verb in feature['verbs']:
+                res['description'] = feature['verbs'][verb]['description']
+                res['modifiers'] = feature['verbs'][verb]['modifiers']
+            else:
+                res['description'] = self.verb_not_found + " " + verb + " the " + title
         else:
-            res['description'] = self.verb_not_found + " " + verb + " the " + title
+            res['description'] = title + ' not found in this room.'
         return res
     #------------------------------------------------------------------------
     # This ends the feature section
@@ -443,9 +442,14 @@ class Game:
         if action == "use" and item['activatable'] == True:
             if item['active'] == True:
                 item['active'] = False
+                if 'de_mods' in item['verbs']['use']:
+                    res['modifiers'] = item['verbs']['use']['de_mods']
                 res['description'] = item['verbs']['use']['deactivate_description']
             else:
                 item['active'] = True
+                if 'act_mods' in item['verbs']['use']:
+                    res['modifiers'] = item['verbs']['use']['act_mods']
+
         elif action == "drop" and self.current_room['feature_searched'] == False:
             res['description'] = "There is no where secure to drop the item"
             res['modifiers'] = {}
@@ -510,9 +514,8 @@ class Game:
                 updates = res['modifiers']['room_updates'][key]
                 if self.current_room['title'] == key:
                     self.current_room = files.update(updates, self.current_room)
-                #for now we can only affect adjacent rooms so check if the key is 
-                #in the set of connected_rooms for the current_room
-                elif key in self.current_room['connected_rooms']:
+                #affect any room that is a room other than the current room
+                elif key in files.ROOM_TITLES:
                     other_room = files.load_room(key)
                     other_room = files.update(updates, other_room)
                     files.store_room(other_room)

@@ -157,7 +157,7 @@ class dict_keys():
             "requirement_not_met_description",
             "item_combination", "room_combination",
             "feature_combination"]
-    optional_keys = ["artifact", "modifiers"]
+    optional_keys = ["artifact", "modifiers", "act_mods", "de_mods"]
 
 
     def get_room_keys(self):

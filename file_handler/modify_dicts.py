@@ -128,10 +128,11 @@ def _match_keys_room(file_json):
     result = _compare_dict(file_json, room_keys)
     response = _merge_two_dicts(response, result)
     #check the features structure
-    result = _check_features("1", file_json)
-    response = _merge_two_dicts(response, result)
-    result = _check_features("2", file_json)
-    response = _merge_two_dicts(response, result)
+    for feature in file_json['features']:
+        result = _check_features(feature, file_json)
+        response = _merge_two_dicts(response, result)
+#    result = _check_features("2", file_json)
+ #   response = _merge_two_dicts(response, result)
     result = _check_connected_rooms(file_json)
     response = _merge_two_dicts(response, result)
 
@@ -273,16 +274,46 @@ def refactor_features():
     be the title of that particular feature
     """
     for title in ROOM_TITLES:
-        room = files.load_room(title)
+        room_dir = os.path.join(ROOMS_DIR, title)
+        with open(room_dir, 'r') as open_file:
+            room = json.load(open_file, object_pairs_hook=OrderedDict)
+            open_file.close()
         room['features']['1']['aliases'] = [room['features']['1']['title']]
         room['features'][room['features']['1']['title']] = room['features']['1']
         del room['features']['1']
         room['features']['2']['aliases'] = [room['features']['2']['title']]
         room['features'][room['features']['2']['title']] = room['features']['2']
         del room['features']['2']
+        with open(room_dir, 'w') as open_file:
+            json.dump(room, open_file, indent=4)
+            open_file.close()
 
-        print json.dumps(room, indent=4)
+def _sort_json():
+    """
+    opens each of the template files in the rooms and items dirs
+    reads them into a json object and immediately writes them out
+    just makes the formatting look nice
+    """
+    for title in ROOM_TITLES:
+        src_dir = os.path.join(ROOMS_DIR, title)
+        with open(src_dir, 'r') as open_file:
+            json_obj = json.load(open_file, object_pairs_hook=OrderedDict)
+            open_file.close()
+        with open(src_dir, 'w') as open_file:
+            json.dump(json_obj, open_file, indent=1)
+            open_file.close()
 
+    for title in ITEM_TITLES:
+        src_dir = os.path.join(ITEMS_DIR, title)
+        with open(src_dir, 'r') as open_file:
+            json_obj = json.load(open_file, object_pairs_hook=OrderedDict)
+            open_file.close()
+        with open(src_dir, 'w') as open_file:
+            json.dump(json_obj, open_file, indent=1)
+            open_file.close()
+
+
+    print 'Done'
 
 def main(arg=None):
     """
@@ -310,6 +341,7 @@ def main(arg=None):
             "4. Validate all keys in temp items\n"
             "5. Add data into fields of templates\n"
             "6. Add a keyword in front of a dict structure\n"
+            "7. Simply put the JSON in order after manual edits for rooms and items\n"
             "q. Back\n")
     if arg == None:
         selection = raw_input(":")
@@ -321,6 +353,8 @@ def main(arg=None):
         mod_files.mod_rooms()
     elif selection in update_tree:
         _update_tree()
+    elif selection == '7':
+        _sort_json()
     elif selection == "q":
         return
 

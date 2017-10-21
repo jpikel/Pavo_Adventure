@@ -1,129 +1,129 @@
 {
-    "id": 13, 
-    "title": "mountain ascent", 
-    "visited": false, 
-    "long_description": "The wind is swirling around you as you are now part-way up the mountain, standing on the side of a steep-angled field of rock. All around you it is gray. The rock and the sky are such a consistent color that they almost blend together. To the north is the mountain base. You are high enough now that the house-sized boulders at the base of the mountain now look like pebbles. The path you are on wraps up and to the east, towards what you think will be the summit. You can't quite see what's ahead, but you know that it is up. You see a worn sign and something that appears to be a pile of rocks but you think it may be a stone marker.", 
-    "short_description": "You are part-way up the mountain. To the north is the mountain base, and to the east is what you think is the summit. There is a worn sign a few meters away from where you are standing and a stone marker.", 
-    "features": {
-        "1": {
-            "aliases": [
-                "feature_1_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "You tug on the sign, but your strength fails you and the sign wins the contest."
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 1 mountain ascent", 
-                    "description": "There isn't much to do with the sign except to read it.", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "The sign is very worn. It looks like it has been here for decades. However, you can make out at least some of the writing on it."
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "The sign is worn, but enormous. It is much too large and heavy for you to take with you."
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "The sign reads: \"C  tion: Ext  me terr    a ead. Dr ss ap   priat ly for the co  iti ns. H pother ia kil s.\""
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "The good thing is this sign is different than the first.  You think you'd manage to find items left next to this sign again in the future.  To your fortune you find a candy bar wrapper on the ground next to the sign."
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "The sign remains firmly planted."
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "There isn't much to do with the sign except to read it."
-                }
-            }, 
-            "title": "sign"
-        }, 
-        "2": {
-            "aliases": [
-                "feature_2_aliases"
-            ], 
-            "verbs": {
-                "pull": {
-                    "modifiers": {}, 
-                    "description": "Pulling on the rocks seems like a rude gesture considering someone took the time to place them here intentionally for all the lost people wandering this trail."
-                }, 
-                "use": {
-                    "deactivate_description": "use deactivate for feature 2 mountain ascent", 
-                    "description": "Well you are on the trail and the stone marker is here in front of you.  So in a sense you are using the marker.  To follow the trial.", 
-                    "modifiers": {}
-                }, 
-                "look at": {
-                    "modifiers": {}, 
-                    "description": "From where you are standing you it looks just like any other pile of stones, but this one seems to have been placed intentionally.  It must a trail marker.  At least that is comforting, you are still on the trail."
-                }, 
-                "take": {
-                    "modifiers": {}, 
-                    "description": "The stones are rather large, definitely much too big to fit anywhere on your person.  You doubt you'd be able to hit anything with the stone anyway.  Never were one for throwing objects."
-                }, 
-                "read": {
-                    "modifiers": {}, 
-                    "description": "Nothing is written anywhere on these rocks to read."
-                }, 
-                "search": {
-                    "modifiers": {}, 
-                    "description": "You search around the pile of rocks, but find nothing much of interest.  Just cold air surrounding the cold rocks."
-                }, 
-                "drop": {
-                    "modifiers": {}, 
-                    "description": "You pick up a rock and drop it into the snow.  But you decide it would better to not destroy the marker and you replace the rock in the pile."
-                }, 
-                "eat": {
-                    "modifiers": {}, 
-                    "description": "Eating rocks may be ok for something like chickens. But certainly not humans."
-                }
-            }, 
-            "title": "stone marker"
-        }
+ "id": 13, 
+ "title": "mountain ascent", 
+ "visited": false, 
+ "long_description": "The wind is swirling around you as you are now part-way up the mountain, standing on the side of a steep-angled field of rock. All around you it is gray. The rock and the sky are such a consistent color that they almost blend together. To the north is the mountain base. You are high enough now that the house-sized boulders at the base of the mountain now look like pebbles. The path you are on wraps up and to the east, towards what you think will be the summit. You can't quite see what's ahead, but you know that it is up. You see a worn sign and something that appears to be a pile of rocks but you think it may be a stone marker.", 
+ "short_description": "You are part-way up the mountain. To the north is the mountain base, and to the east is what you think is the summit. There is a worn sign a few meters away from where you are standing and a stone marker.", 
+ "features": {
+  "sign": {
+   "aliases": [
+    "sign"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "You tug on the sign, but your strength fails you and the sign wins the contest."
     }, 
-    "items_in_room": [
-        "candy bar"
-    ], 
-    "feature_searched": true, 
-    "room_hazards": false, 
-    "room_hazard_description": "", 
-    "room_hazard_item": "", 
-    "room_hazard_occurs_description": "", 
-    "room_hazard_attributes_affected": "", 
-    "room_hazard_safe_description": "", 
-    "connected_rooms": {
-        "mountain base": {
-            "accessible": true, 
-            "title": "mountain base", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "mountain base"
-            ]
-        }, 
-        "mountain summit": {
-            "accessible": true, 
-            "title": "mountain summit", 
-            "distance_from_room": 1, 
-            "item_required": false, 
-            "item_required_title": "", 
-            "pre_item_description": "", 
-            "compass_direction": "", 
-            "id": 0, 
-            "aliases": [
-                "mountain summit"
-            ]
-        }
+    "use": {
+     "deactivate_description": "use deactivate for feature 1 mountain ascent", 
+     "description": "There isn't much to do with the sign except to read it.", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "The sign is very worn. It looks like it has been here for decades. However, you can make out at least some of the writing on it."
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "The sign is worn, but enormous. It is much too large and heavy for you to take with you."
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "The sign reads: \"C  tion: Ext  me terr    a ead. Dr ss ap   priat ly for the co  iti ns. H pother ia kil s.\""
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "The good thing is this sign is different than the first.  You think you'd manage to find items left next to this sign again in the future.  To your fortune you find a candy bar wrapper on the ground next to the sign."
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "The sign remains firmly planted."
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "There isn't much to do with the sign except to read it."
     }
+   }, 
+   "title": "sign"
+  }, 
+  "stone marker": {
+   "aliases": [
+    "stone marker"
+   ], 
+   "verbs": {
+    "pull": {
+     "modifiers": {}, 
+     "description": "Pulling on the rocks seems like a rude gesture considering someone took the time to place them here intentionally for all the lost people wandering this trail."
+    }, 
+    "use": {
+     "deactivate_description": "use deactivate for feature 2 mountain ascent", 
+     "description": "Well you are on the trail and the stone marker is here in front of you.  So in a sense you are using the marker.  To follow the trial.", 
+     "modifiers": {}
+    }, 
+    "look at": {
+     "modifiers": {}, 
+     "description": "From where you are standing you it looks just like any other pile of stones, but this one seems to have been placed intentionally.  It must a trail marker.  At least that is comforting, you are still on the trail."
+    }, 
+    "take": {
+     "modifiers": {}, 
+     "description": "The stones are rather large, definitely much too big to fit anywhere on your person.  You doubt you'd be able to hit anything with the stone anyway.  Never were one for throwing objects."
+    }, 
+    "read": {
+     "modifiers": {}, 
+     "description": "Nothing is written anywhere on these rocks to read."
+    }, 
+    "search": {
+     "modifiers": {}, 
+     "description": "You search around the pile of rocks, but find nothing much of interest.  Just cold air surrounding the cold rocks."
+    }, 
+    "drop": {
+     "modifiers": {}, 
+     "description": "You pick up a rock and drop it into the snow.  But you decide it would better to not destroy the marker and you replace the rock in the pile."
+    }, 
+    "eat": {
+     "modifiers": {}, 
+     "description": "Eating rocks may be ok for something like chickens. But certainly not humans."
+    }
+   }, 
+   "title": "stone marker"
+  }
+ }, 
+ "items_in_room": [
+  "candy bar"
+ ], 
+ "feature_searched": true, 
+ "room_hazards": false, 
+ "room_hazard_description": "", 
+ "room_hazard_item": "", 
+ "room_hazard_occurs_description": "", 
+ "room_hazard_attributes_affected": "", 
+ "room_hazard_safe_description": "", 
+ "connected_rooms": {
+  "mountain base": {
+   "accessible": true, 
+   "title": "mountain base", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "mountain base"
+   ]
+  }, 
+  "mountain summit": {
+   "accessible": true, 
+   "title": "mountain summit", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "", 
+   "id": 0, 
+   "aliases": [
+    "mountain summit"
+   ]
+  }
+ }
 }

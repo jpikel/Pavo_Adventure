@@ -16,6 +16,8 @@ from name_lists import item_info
 from name_lists import verb_info
 import os
 
+ROOM_TITLES = room_info().get_titles()
+
 class update():
     def gen_exit_dict(self):
         """
@@ -43,11 +45,12 @@ class update():
             with open(new_dir, 'r') as infile:
                 room = json.load(infile, object_pairs_hook=OrderedDict)
                 connected_rooms = room["connected_rooms"]
-                for connection in connected_rooms:
+                for conn in connected_rooms:
+                    connection = room['connected_rooms'][conn]
                     for alias in connection["aliases"]:
                         room_file_exits.append(alias)
                         if alias not in exits:
-                            exits.update({str(alias):str(connection["title"])})
+                            exits.update({alias:connection["title"]})
                 infile.close()
 
         #sync the rooms_dict to all possible room aliases so we don't get out of sync
@@ -60,7 +63,7 @@ class update():
         exits = OrderedDict(sorted(exits.items()))
 
         with open(room_info().get_dir_dict(), 'w') as outfile:
-            json.dump(exits, outfile, indent = 4)
+            json.dump(exits, outfile, indent = 1)
             outfile.close()
         print("Done making exits alias dictionary")
 
@@ -75,25 +78,29 @@ class update():
         room_connections = room_info().get_connection_list()
         room_dir = room_info().get_dir()
 
-        if title in room_connections:
-            for key, value in room_connections.items():
-                for room in value:
-                    if room == title:
-                        new_dir = os.path.join(room_dir, key)
-                        with open(new_dir, 'r+') as room_file:
-                            room_data = json.load(room_file, object_pairs_hook=OrderedDict)
-                            room_data_conn = room_data['connected_rooms']
-                            for room in room_data_conn:
-                                if title == room['title']:
-                                    if alias not in room['aliases']:
-                                        room['aliases'].append(alias)
-                                        print("Added alias:"+alias+" to room:"+title+" in file:"+key)
-                            room_file.seek(0)
-                            json.dump(room_data, room_file, indent=4)
-                            room_file.close()
-            update().gen_exit_dict()
-        else:
-            print("Invalid room title")
+        if title not in room_connections:
+            print 'Invalid room name'
+            return
+        for key, value in room_connections.items():
+            if title in value:
+                #if the room has a connection to our desired room
+                #open the room with the connection
+                new_dir = os.path.join(room_dir, key)
+                with open(new_dir, 'r') as room_file:
+                    room_data = json.load(room_file, object_pairs_hook=OrderedDict)
+                    room_file.close()
+                #the title we passed in is the key of the dict in connected_rooms
+                room = room_data['connected_rooms'][title]
+                if alias not in room['aliases']:
+                    room['aliases'].append(alias)
+                    print("Added alias:"+alias+" to room:"+title+" in file:"+key)
+                    #if we are adding data overwrite the previous room file
+                    with open(new_dir, 'w') as room_file:
+                        json.dump(room_data, room_file, indent=1)
+                        room_file.close()
+                else:
+                    print 'Alias already exists'
+        update().gen_exit_dict()
 
     def gen_item_dict(self):
         """
@@ -116,7 +123,7 @@ class update():
                 
         items_dict = OrderedDict(sorted(items_dict.items()))
         with open(item_info().get_dir_dict(), 'w') as outfile:
-            json.dump(items_dict, outfile, indent=4)
+            json.dump(items_dict, outfile, indent=1)
         
         print ("Done making item dictionary")
 
@@ -136,7 +143,7 @@ class update():
                 if alias not in item['aliases']:
                     item['aliases'].append(alias)
                     item_file.seek(0)
-                    json.dump(item, item_file, indent=4)
+                    json.dump(item, item_file, indent=1)
                     item_file.close()
                     print("Added alias:"+alias+" to item:"+title)
                 else:
@@ -161,27 +168,23 @@ class update():
         features_dict = OrderedDict()
         room = OrderedDict()
 
+        #open all the room files and gather up each features aliases
         for title in rooms:
             new_dir = os.path.join(room_dir, title)
             with open(new_dir, 'r') as room_file:
                 room = json.load(room_file, object_pairs_hook=OrderedDict)
                 room_file.close()
-            feature_1 = room["features"]["1"]['title']
-            feature_2 = room["features"]["2"]['title']
-            features_dict.update({feature_1:feature_1})
-            features_dict.update({feature_2:feature_2})
-            aliases_1 = room["features"]["1"]['aliases']
-            aliases_2 = room["features"]["2"]['aliases']
+            for feature in room['features']:
+                feature_1 = room["features"][feature]['title']
+                features_dict.update({feature_1:feature_1})
+                aliases_1 = room["features"][feature]['aliases']
 
-            for alias in aliases_1:
-                if alias not in features_dict:
-                    features_dict.update({alias:feature_1})
-            for alias in aliases_2:
-                if alias not in features_dict:
-                    features_dict.update({alias:feature_2})
+                for alias in aliases_1:
+                    if alias not in features_dict:
+                        features_dict.update({alias:feature_1})
 
         with open(feature_dir, 'w') as features_file:
-            json.dump(features_dict, features_file, indent=4)
+            json.dump(features_dict, features_file, indent=1)
             features_file.close()
         print("Done making features alias dict")
 
@@ -204,24 +207,19 @@ class update():
             new_dir = os.path.join(room_dir, room_title)
             with open(new_dir, 'r') as room_file:
                 room = json.load(room_file, object_pairs_hook=OrderedDict)
-                if feature_title == room['feature_1_title']:
-                    if alias not in room['feature_1_aliases']:
-                        room['feature_1_aliases'].append(alias)
+                room_file.close()
+                if feature_title in room['features']:
+                    if alias not in room['features'][feature_title]['aliases']:
+                        room['features'][feature_title]['aliases'].append(alias)
                         result = alias + " added to room " + room_title + "'s " + feature_title
-                    else:
-                        result = alias + " already exists"
-                elif feature_title == room['feature_2_title']:
-                    if alias not in room['feature_2_aliases']:
-                        room['feature_2_aliases'].append(alias)
-                        result = alias + " added to room " + room_title + "'s " + feature_title
+                        with open(new_dir, 'w') as room_file:
+                            json.dump(room, room_file, indent = 1)
+                            room_file.close()
+
                     else:
                         result = alias + " already exists"
                 else:
                     result = "Feature does not exist"
-                room_file.close()
-                with open(new_dir, 'w') as room_file:
-                    json.dump(room, room_file, indent = 4)
-                    room_file.close()
         else:
             result = "Room does not exist"
 
@@ -250,17 +248,18 @@ class update():
         verb = raw_input("Enter the official verb: ")
         alias = raw_input("Enter the alias: ")
         if verb in verbs:
-            with open(verb_info().get_dir_dict(), 'r+') as verb_file:
+            with open(verb_info().get_dir_dict(), 'r') as verb_file:
                 verb_dict = json.load(verb_file, object_pairs_hook=OrderedDict)
+                verb_file.close()
                 if alias not in verb_dict:
                     verb_dict.update({alias:verb})
                     verb_dict = OrderedDict(sorted(verb_dict.items()))
-                    verb_file.seek(0)
-                    json.dump(verb_dict, verb_file, indent=4)
-                    print("verb dict updated")
+                    with open(verb_info().get_dir_dict(), 'w') as verb_file:
+                        json.dump(verb_dict, verb_file, indent=1)
+                        verb_file.close()
+                        print("verb dict updated")
                 else:
                     print("Alias already stored")
-                verb_file.close()
         else:
             print("Not an official verb")
 
