@@ -20,6 +20,13 @@ import textwrap
 CHARS_PER_LINE = 80
 
 ALL_VERBS = verbs().get_verbs()
+#if set to 1 prints the value returned from the parser
+DEBUG_PARSE = 0
+#if set to 1 prints the value in the response json from the action_item etc
+DEBUG_RESPONSE = 1
+#loads into a specific room set in the newGame()
+LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 1
+SPECIFIC_ROOM = 'fire tower'
 
 class Game:
     def __init__(self, player):
@@ -39,7 +46,8 @@ class Game:
         self.current_room = files.load_room("shore")
 
         #for testing purposes load a specific room and start from there
-        #self.current_room = files.load_room('river')
+        if LOAD_SPECIFIC_ROOM_ON_NEW_GAME:
+            self.current_room = files.load_room(SPECIFIC_ROOM)
         self.gameCycle()
 
     def loadGame(self):
@@ -131,7 +139,8 @@ class Game:
             output_type = processed_command["type"]
 
             #line below for testing
-            #print json.dumps(processed_command, indent=4)
+            if DEBUG_PARSE:
+                print json.dumps(processed_command, indent=4)
 
             #this is temporary and may very well be removed
             #just a possible option to help with assigning title and action
@@ -238,7 +247,8 @@ class Game:
         #eaten something and gets a boost to hunger
 
         #uncomment for troubleshooting
-        #print(json.dumps(res, indent=4))
+        if DEBUG_RESPONSE:
+            print(json.dumps(res, indent=4))
 
         #update the player with any particular modifiers from the action
         self.update_player(res)
@@ -270,6 +280,8 @@ class Game:
         res = self.check_connections(title_or_compass)
         if action == "go":
             if res["success"] == True:
+                #before we leave the room we set the field visited to true
+                self.current_room['visited'] = True
                 files.store_room(self.current_room)
                 self.current_room = files.load_room(res['title'])
                 res['description'] = self.get_room_desc()

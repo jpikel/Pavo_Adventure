@@ -254,7 +254,9 @@ def store_room(current_room):
     """
     try:
         room_title = current_room['title']
-        current_room['visited'] = True
+        #cannot set room to visited here. because this function is called
+        #by other functions when editing a room
+        #current_room['visited'] = True
         room_path = combine_temp_room_path(room_title)
         with open(room_path, 'w') as room_file:
             room_file.seek(0)

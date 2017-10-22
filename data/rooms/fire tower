@@ -110,7 +110,21 @@
    "id": 0, 
    "aliases": [
     "mountain summit"
-   ]
+   ], 
+   "modifiers": {
+    "item_updates": {
+     "flare gun": {
+      "verbs": {
+       "use": {
+        "description": "You point the flare gun towards the sky, pull the trigger.  The flare pops out the front with a loud bang.  Climbs ten meters into the air, fizzles and falls back down to the ground.  Maybe you can find another shell somewhere or another way out of this place.", 
+        "modifiers": {
+         "player": {}
+        }
+       }
+      }
+     }
+    }
+   }
   }
  }
 }

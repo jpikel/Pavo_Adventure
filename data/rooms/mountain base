@@ -127,9 +127,9 @@
     "field"
    ]
   }, 
-  "mountain ascent": {
+  "mountain path": {
    "accessible": true, 
-   "title": "mountain ascent", 
+   "title": "mountain path", 
    "distance_from_room": 1, 
    "item_required": false, 
    "item_required_title": "", 
@@ -137,7 +137,7 @@
    "compass_direction": "", 
    "id": 0, 
    "aliases": [
-    "mountain ascent"
+    "mountain path"
    ]
   }
  }

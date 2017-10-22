@@ -22,6 +22,31 @@
     "room": {
      "items_in_room": "add", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "game trail": {
+      "features": {
+       "blood stained snow": {
+        "verbs": {
+         "search": {
+          "description": "The blood in the snow points to a violent encounter between two animals most likely.  Although a grisly sight, you could stash something here and definitely know where to find it again."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "frozen dead hare": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You gingerly set the hare down on the ground."

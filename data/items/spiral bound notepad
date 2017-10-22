@@ -2,7 +2,7 @@
  "id": 4, 
  "title": "spiral bound notepad", 
  "aliases": [
-  "tattered notebook"
+  "spiral bound notepad"
  ], 
  "verbs": {
   "pull": {
@@ -34,12 +34,72 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "river": {
+      "features": {
+       "camping cooler": {
+        "verbs": {
+         "search": {
+          "description": "The lid of cooler opens with a grumpy groan.  The smell of plastic wafts into your face.  Although not very appetizing it is a secure spot to store some of your things."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "spiral bound notepad": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You pick up the notepad and slip it into your pack."
   }, 
   "read": {
-   "modifiers": {}, 
+   "modifiers": {
+    "room_updates": {
+     "fire tower": {
+      "features": {
+       "locked safe": {
+        "verbs": {
+         "use": {
+          "description": "You spin the dial slowly to the right to the number 24, then back to the left one complete turn and stop on 6.  Finally you turn to the right to number 37.  There is a definitive click.  You turn the handle and the door of the safe opens.", 
+          "modifiers": {
+           "room_updates": {
+            "fire tower": {
+             "features": {
+              "locked safe": {
+               "verbs": {
+                "search": {
+                 "modifiers": {
+                  "room_updates": {
+                   "fire tower": {
+                    "feature_searched": true
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }, 
    "description": "Not much is written in the notepad.  Looks like it may have one belonged to a river guide.  It states \"In case of emergency dial ...\".  You are not sure what that code is for, maybe you'll find something that you can use it on.  But it certainly is not a phone number that could be dialed.  Maybe it is something else.", 
    "artifact": [
     " ____     _      _               ____           ____   ______ ", 

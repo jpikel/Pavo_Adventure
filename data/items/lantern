@@ -36,6 +36,31 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "camp": {
+      "features": {
+       "hunting blind": {
+        "verbs": {
+         "search": {
+          "description": "The hunting blind is in surprisingly good condition.  You spend a few moments admiring it and look underneath, but do not find anything of value. You climb inside up the ladder.  Thankfully, nothing has taken up residence inside.  This would be an ideal spot to secure some belongings."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "lantern": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You pick up the lantern.  The fuel inside slops around and the handle makes a squeaking sound protesting the fact that it is being moved after lying still in the same place for some time.  You are able to secure it inside one of the large pockets of your pack."

@@ -12,7 +12,48 @@
   "use": {
    "deactivate_description": "use deactivate for flare gun", 
    "description": "You open the door to the fire tower and pull the trigger.  The flare takes off spewing sparks and color  A few minutes go by and your heart begins to sink.  How can this be are you truly that lost?   Suddenly you see in the distance beyond the ranger station another flare shooting into the sky like a rising star.  Someone has seen you!  You know it.  You sit down on the floor of the fire tower.  Drop your pack to the floor and use it as a pillow.  The weight of the world is lifting from you and your spirit.  Knowing that someone is coming to rescue you, you slowly fade into sleep.  Congratulations you have survived the Desolate Journey!", 
-   "modifiers": {}
+   "modifiers": {
+    "player": {
+     "rescued": true
+    }, 
+    "room_updates": {
+     "fire tower": {
+      "connected_rooms": {
+       "mountain summit": {
+        "modifiers": {
+         "item_updates": {}
+        }
+       }
+      }
+     }, 
+     "mountain summit": {
+      "connected_rooms": {
+       "fire tower": {
+        "modifiers": {
+         "item_updates": {}
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "flare gun": {
+      "verbs": {
+       "search": {
+        "description": "Looking inside the chamber it is empty."
+       }, 
+       "use": {
+        "description": "You pull the trigger and nothing happens.", 
+        "modifiers": {
+         "player": {},
+         "room_updates":{},
+         "item_updates":{}
+        }
+       }
+      }
+     }
+    }
+   }
   }, 
   "drop": {
    "modifiers": {

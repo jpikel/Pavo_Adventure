@@ -2,7 +2,7 @@
  "id": 14, 
  "title": "mountain summit", 
  "visited": false, 
- "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.  It is a good thing that you have your parka on, otherwise this long climb would surely lead to a cold grave.", 
+ "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.", 
  "short_description": "Standing on the ice cold summit of the mountain.  There is an overlook and a storage shed along the path.  To your north you see the fire tower and down the side to the west is a winding mountain path.", 
  "features": {
   "storage shed": {
@@ -98,7 +98,24 @@
  "room_hazard_safe_description": "", 
  "connected_rooms": {
   "fire tower": {
-   "accessible": true, 
+   "modifiers": {
+    "player":{"illness":"100"},
+    "item_updates": {
+     "flare gun": {
+      "verbs": {
+       "use": {
+        "description": "You open the door to the fire tower and pull the trigger.  The flare takes off spewing sparks and color  A few minutes go by and your heart begins to sink.  How can this be are you truly that lost?   Suddenly you see in the distance beyond the ranger station another flare shooting into the sky like a rising star.  Someone has seen you!  You know it.  You sit down on the floor of the fire tower.  Drop your pack to the floor and use it as a pillow.  The weight of the world is lifting from you and your spirit.  Knowing that someone is coming to rescue you, you slowly fade into sleep.  Congratulations you have survived the Desolate Journey!", 
+        "modifiers": {
+         "player": {
+          "rescued": true
+         }
+        }
+       }
+      }
+     }
+    }
+   }, 
+   "accessible": false, 
    "title": "fire tower", 
    "distance_from_room": 1, 
    "item_required": false, 
@@ -110,9 +127,14 @@
     "fire tower"
    ]
   }, 
-  "mountain ascent": {
-   "accessible": true, 
-   "title": "mountain ascent", 
+  "mountain path": {
+   "modifiers": {
+    "player": {
+     "illness": "100"
+    }
+   }, 
+   "accessible": false, 
+   "title": "mountain path", 
    "distance_from_room": 1, 
    "item_required": false, 
    "item_required_title": "", 
@@ -120,7 +142,7 @@
    "compass_direction": "", 
    "id": 0, 
    "aliases": [
-    "mountain ascent"
+    "mountain path"
    ]
   }
  }

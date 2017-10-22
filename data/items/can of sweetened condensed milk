@@ -2,7 +2,8 @@
  "id": 9, 
  "title": "can of sweetened condensed milk", 
  "aliases": [
-  "can of sweetened condensed milk"
+  "can of sweetened condensed milk", 
+  "milk"
  ], 
  "verbs": {
   "pull": {
@@ -11,8 +12,50 @@
   }, 
   "use": {
    "deactivate_description": "use deactivate for can of sweetened condensed milk", 
-   "description": "You smash open the can, sadly about half of the contents fall onto the ground, but you manage to gulp down the rest.  It is very tasty and goes down with all the goodness you knew it would have.  If only you would have had a can opener then you could have saved all of it for your churning stomach.", 
-   "modifiers": {}
+   "description": "You smash open the can with a nearby rock, sadly about half of the contents fall onto the ground, but you manage to rescue the rest.  The white milky substance makes your mouth water as you look at what is left inside the can.", 
+   "modifiers": {
+    "item_updates": {
+     "can of sweetened condensed milk": {
+      "verbs": {
+       "use": {
+        "description": "You've already opened the can.  The milky substance swishes around inside the can."
+       }, 
+       "eat": {
+        "description": "You gulp down the contents of the can, using you finger to get every last drop out of it.  You feel it sliding smoothly down into you belly.  Hmmm... that tastes really good", 
+        "modifiers": {
+         "player": {
+          "hunger": "-25"
+         }, 
+         "item_updates": {
+          "can of sweetened condensed milk": {
+           "verbs": {
+            "use": {
+             "description": "The now empty can is not of much use anymore."
+            }, 
+            "read": {
+             "description": "The label reads 14oz comprising of concentrated whole milk and sugar.  It once contained 10 servings and 130 calories per serving, now all gone."
+            }, 
+            "search": {
+             "description": "Not much is left to find in this empty can."
+            }, 
+            "look at": {
+             "description": "An empty can of Eagle brand sweetened condensed milk."
+            }, 
+            "eat": {
+             "description": "You've already eaten the sweet goodness once contained in this can.", 
+             "modifiers": {
+              "player": {}
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
   }, 
   "drop": {
    "modifiers": {
@@ -34,9 +77,34 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "camp": {
+      "features": {
+       "hunting blind": {
+        "verbs": {
+         "search": {
+          "description": "The hunting blind is in surprisingly good condition.  You spend a few moments admiring it and look underneath, but do not find anything of value. You climb inside up the ladder.  Thankfully, nothing has taken up residence inside.  This would be an ideal spot to secure some belongings."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "can of sweetened condensed milk": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
-   "description": "You pick up the can, the read blue and label crinkles a bit under your grip.  The milk seems to not be completely frozen, the contents feel thick as mud inside the can as you pack it away into your pack."
+   "description": "You pick up the can, the read blue and label crinkles a bit under your grip."
   }, 
   "read": {
    "modifiers": {}, 

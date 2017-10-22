@@ -14,8 +14,9 @@
    "de_mods": {
     "room_updates": {
      "mountain summit": {
+      "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.", 
       "connected_rooms": {
-       "mountain ascent": {
+       "mountain path": {
         "accessible": false, 
         "modifiers": {
          "player": {
@@ -37,8 +38,9 @@
    "act_mods": {
     "room_updates": {
      "mountain summit": {
+      "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going. It is good that you have your parka on because it is the only between you and freezing to death", 
       "connected_rooms": {
-       "mountain ascent": {
+       "mountain path": {
         "accessible": true, 
         "modifiers": {
          "player": {
@@ -62,8 +64,9 @@
    "modifiers": {
     "room_updates": {
      "mountain summit": {
+      "long_descrpition": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.", 
       "connected_rooms": {
-       "mountain ascent": {
+       "mountain path": {
         "accessible": false, 
         "modifiers": {
          "player": {
@@ -103,6 +106,31 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "river": {
+      "features": {
+       "camping cooler": {
+        "verbs": {
+         "search": {
+          "description": "The lid of cooler opens with a grumpy groan.  The smell of plastic wafts into your face.  Although not very appetizing it is a secure spot to store some of your things."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "heavy winter parka": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You pick up the jacket and stuff it inside your pack."

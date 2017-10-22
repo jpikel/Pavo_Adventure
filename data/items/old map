@@ -34,6 +34,31 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "cave": {
+      "features": {
+       "small shelf": {
+        "verbs": {
+         "search": {
+          "description": "The spot where the roll of parchment once sat is the only spot that is not covered in a fine layer of dust.  You could easily leave some things here and remember where you left them."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "old map": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You roll up the map gently, so as to not cause more damage to it, and tuck it into one of the water bottle holders on the side of your pack. You tighten the drawstring just enough so the map won't fall out."

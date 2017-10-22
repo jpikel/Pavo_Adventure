@@ -18,7 +18,7 @@ class room_info():
         only has getters for the different static variables
     """
     room_titles = ["shore", "crash site", "game trail", "field", "dense brush", "camp", "woods",
-        "cave", "mountain base", "fire tower", "river", "waterfall", "mountain ascent",
+        "cave", "mountain base", "fire tower", "river", "waterfall", "mountain path",
         "mountain summit", "rapids", "ranger station"]
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
     room_dir = os.path.join(data_dir, "rooms")
@@ -34,12 +34,12 @@ class room_info():
             "camp":["dense brush", "woods", "crash site"],
             "woods":["camp", "river", "cave"],
             "cave":["woods", "game trail"],
-            "mountain base":["mountain ascent", "field"],
+            "mountain base":["mountain path", "field"],
             "fire tower":["mountain summit"],
             "river":["rapids", "waterfall", "woods"],
             "waterfall":["river"],
-            "mountain ascent":["mountain summit", "mountain base"],
-            "mountain summit":["mountain ascent", "fire tower"],
+            "mountain path":["mountain summit", "mountain base"],
+            "mountain summit":["mountain path", "fire tower"],
             "rapids":["ranger station", "river"],
             "ranger station":["rapids"]}
 

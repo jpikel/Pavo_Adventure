@@ -1,14 +1,15 @@
 {
-    "boat paddle": "boat paddle", 
-    "can of sweetened condensed milk": "can of sweetened condensed milk", 
-    "candy bar": "candy bar", 
-    "flare gun": "flare gun", 
-    "frozen dead hare": "frozen dead hare", 
-    "heavy winter parka": "heavy winter parka", 
-    "lamp": "lantern", 
-    "lantern": "lantern", 
-    "light": "lantern", 
-    "old map": "old map", 
-    "rescue whistle": "rescue whistle", 
-    "tattered notebook": "spiral bound notepad"
+ "boat paddle": "boat paddle", 
+ "can of sweetened condensed milk": "can of sweetened condensed milk", 
+ "candy bar": "candy bar", 
+ "flare gun": "flare gun", 
+ "frozen dead hare": "frozen dead hare", 
+ "heavy winter parka": "heavy winter parka", 
+ "lamp": "lantern", 
+ "lantern": "lantern", 
+ "light": "lantern", 
+ "milk": "can of sweetened condensed milk", 
+ "old map": "old map", 
+ "rescue whistle": "rescue whistle", 
+ "spiral bound notepad": "spiral bound notepad"
 }

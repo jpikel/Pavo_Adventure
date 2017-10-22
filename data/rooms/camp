@@ -32,7 +32,13 @@
      "description": "On the inside wall is a small faded sticker \"N   tres   sing\"."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {
+      "room_updates": {
+       "camp": {
+        "feature_searched": true
+       }
+      }
+     }, 
      "description": "This hunting blind is in surprising condition. You spend a few minutes admiring it and looking underneath but do not find anything of value.  You climb up the small wooden ladder strapped to the back of the blind and to your relief there is nothing living inside.  Not much is left but it seems the hunter left behind a lantern that still looks in reasonable condition and much to your bellies happiness a can of sweetened condensed milk."
     }, 
     "drop": {
