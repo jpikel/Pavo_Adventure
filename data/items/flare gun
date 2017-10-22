@@ -45,9 +45,9 @@
        "use": {
         "description": "You pull the trigger and nothing happens.", 
         "modifiers": {
-         "player": {},
-         "room_updates":{},
-         "item_updates":{}
+         "player": {}, 
+         "room_updates": {}, 
+         "item_updates": {}
         }
        }
       }

@@ -99,7 +99,9 @@
  "connected_rooms": {
   "fire tower": {
    "modifiers": {
-    "player":{"illness":"100"},
+    "player": {
+     "illness": "100"
+    }, 
     "item_updates": {
      "flare gun": {
       "verbs": {

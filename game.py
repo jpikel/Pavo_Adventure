@@ -20,12 +20,15 @@ import textwrap
 CHARS_PER_LINE = 80
 
 ALL_VERBS = verbs().get_verbs()
+
+#DEBUG SECTION, you can set these values to 1 to get the desired affect
+#later in the game engine
 #if set to 1 prints the value returned from the parser
 DEBUG_PARSE = 0
 #if set to 1 prints the value in the response json from the action_item etc
-DEBUG_RESPONSE = 1
+DEBUG_RESPONSE = 0
 #loads into a specific room set in the newGame()
-LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 1
+LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'fire tower'
 
 class Game:
@@ -370,7 +373,8 @@ class Game:
         """
         text = " Looking around you see "
         if (self.current_room['feature_searched'] == True and
-                self.current_room['items_in_room']):
+                self.current_room['items_in_room'] and
+                len(self.current_room['items_in_room']) > 0):
             items = self.current_room['items_in_room']
             for item in items:
                 text += "a " + item + ", "

@@ -88,9 +88,7 @@
    "title": "plunge pool"
   }
  }, 
- "items_in_room": [
-  ""
- ], 
+ "items_in_room": [], 
  "feature_searched": true, 
  "room_hazards": false, 
  "room_hazard_description": "", 
@@ -110,7 +108,23 @@
    "id": 0, 
    "aliases": [
     "river"
-   ]
+   ], 
+   "modifiers": {
+    "room_updates": {
+     "waterfall": {
+      "items_in_room": [], 
+      "features": {
+       "small gorge": {
+        "verbs": {
+         "search": {
+          "description": "While you were gone the waterfall must have washed into the gorge and whatever was sitting there is now at the bottom of the plunge pool."
+         }
+        }
+       }
+      }
+     }
+    }
+   }
   }
  }
 }
