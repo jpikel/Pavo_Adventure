@@ -185,7 +185,7 @@ class Game:
 				processed_command = parse.parse_command(userInput)
 				# If the game does not understand the user's command, prompt the
 				# user for a new command.
-				while processed_command['other']['processed'] == False:
+				while processed_command['processed'] == False:
 					print "Sorry I did not understand that."
 					print "What would you like to do?"
 					userInput = raw_input("->")
@@ -199,13 +199,12 @@ class Game:
 
 				#this is temporary and may very well be removed
 				#just a possible option to help with assigning title and action
-				top_level = ["item", "room", "feature", "general"]
-				for word in top_level:
-					if word in processed_command:
-						if "name" in processed_command[word]:
-							title = processed_command[word]["name"]
-						if "action" in processed_command[word]:
-							action = processed_command[word]["action"]
+				noun_types = ["item", "room", "feature"]
+				for noun in noun_types:
+					if noun in processed_command["command"]:
+						title = processed_command["command"][noun]
+					if "action" in processed_command["command"]:
+						action = processed_command["command"]["action"]
 
 				if output_type == "item_action":
 					self.process_item_action(title, action)
