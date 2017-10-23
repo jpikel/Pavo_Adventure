@@ -32,7 +32,7 @@
      "description": "Although you have heard of some people that can deduce the future from spilt blood, there is nothing you gather from the blood."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"game trail":{"feature_searched": true, "features":{"blood stained snow":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "On closer inspection you see a dead frozen hare, sadly it is missing a few of its extremities.  Maybe a fox or wolf got a hold of it.  If you could find somewhere to cook it perhaps you could get something to eat from it.  But as it is now, it is frozen solid and you can't do much with it."
     }, 
     "drop": {
@@ -91,7 +91,7 @@
  "items_in_room": [
   "frozen dead hare"
  ], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

@@ -32,7 +32,7 @@
      "description": "Although many camping accessories have logos plastered on them, this one is just too tired to wear any sort of branding anymore."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"river":{"feature_searched": true, "features":{"camping cooler":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "As you open the lid, it moans and creaks.  The smell of plastic if strong, but quickly dissipates in the breeze.  Inside the cooler you see a heavy winter parka, that is in surprisingly good condition and a spiral bound notepad."
     }, 
     "drop": {

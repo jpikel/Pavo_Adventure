@@ -32,7 +32,7 @@
      "description": "You read the label on the front of the safe \"Please keep loaded.\""
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You try to open the door.  But it is locked tight.  You doubt you would be able to force it either."
     }, 
     "drop": {
@@ -91,7 +91,7 @@
  "items_in_room": [
   "flare gun"
  ], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

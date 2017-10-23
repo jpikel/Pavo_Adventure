@@ -32,7 +32,7 @@
      "description": "There a worn out sticker that reads \"Made in USA\""
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"ranger station":{"feature_searched": true, "features":{"footlocker":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "The footlocker's hinges open smoothly with much effort.  A nice place to store some items inside."
     }, 
     "drop": {
@@ -125,7 +125,7 @@
   }
  }, 
  "items_in_room": [], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

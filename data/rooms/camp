@@ -33,11 +33,7 @@
     }, 
     "search": {
      "modifiers": {
-      "room_updates": {
-       "camp": {
-        "feature_searched": true
-       }
-      }
+     "room_updates":{"camp":{"feature_searched": true, "features":{"hunting blind":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}
      }, 
      "description": "This hunting blind is in surprising condition. You spend a few minutes admiring it and looking underneath but do not find anything of value.  You climb up the small wooden ladder strapped to the back of the blind and to your relief there is nothing living inside.  Not much is left but it seems the hunter left behind a lantern that still looks in reasonable condition and much to your bellies happiness a can of sweetened condensed milk."
     }, 
@@ -102,7 +98,7 @@
   "can of sweetened condensed milk", 
   "lantern"
  ], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

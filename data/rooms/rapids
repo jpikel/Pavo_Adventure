@@ -32,7 +32,7 @@
      "description": "You read the nature of the rock shelf and it seems it will be bad for your health if you do not avoid them."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"rapids":{"feature_searched": true, "features":{"rock shelf":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "No use searching it.  You have more important things to do."
     }, 
     "drop": {

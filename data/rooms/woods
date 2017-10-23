@@ -47,7 +47,7 @@
      ]
     }, 
     "search": {
-     "modifiers": {}, 
+     "room_updates":{"woods":{"feature_searched": true, "features":{"tree stump":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}
      "description": "The tree stump looks like it is the remnant of a logging operation.  The top is cut flat and has been hollowed out over the years, while it is slowly rotting away.  You think this would be a great spot to hide a few precious items and they should stay safe.  Besides a few termites feasting on the flesh of the stump you do not find anything else very special here."
     }, 
     "drop": {

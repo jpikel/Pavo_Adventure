@@ -32,7 +32,8 @@
      "description": "There is a small inscription on the inside of one of the rails, it reads \"To my dear husband.  Not all those who wander are lost\""
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"crash site":{"feature_searched": true, "features":{"dog sled":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}
+}, 
      "description": "Getting closer to the dog sled, a glint catches your eye.  How could you have missed it before.  Hanging by a dry rotten string along one of the sides of the dog sled is a small tarnished rescue whistle.  It still appears in reasonable condition, just needs a bit of cleaning."
     }, 
     "drop": {
@@ -91,7 +92,7 @@
  "items_in_room": [
   "rescue whistle"
  ], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

@@ -49,7 +49,7 @@
      ]
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"mountain base":{"feature_searched": true, "features":{"sign":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "The base of the sign would make a good place to store a few item.  At least you know you will find them again."
     }, 
     "drop": {
@@ -106,7 +106,7 @@
   }
  }, 
  "items_in_room": [], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

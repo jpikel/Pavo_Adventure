@@ -32,7 +32,7 @@
      "description": "Wouldn't it be a great place to camp here.  Lie on the log and read a great book next to a campfire with some friends.  Or roast marshmallows.  Maybe next time, if there is a next time."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"field":{"feature_searched": true, "features":{"log":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "Searching inside and around the log you do not find anything useful.  But it is a great place to stash a few items, for future retrieval."
     }, 
     "drop": {
@@ -89,7 +89,7 @@
   }
  }, 
  "items_in_room": [], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

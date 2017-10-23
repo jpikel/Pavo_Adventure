@@ -32,7 +32,7 @@
      "description": "There need to letters and words on something to read it. You think about carving some, but decide it is a waste of time."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"shore":{"feature_searched": true, "features":{"driftwood":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "As you approach the driftwood, a pair of black crows that you hadn't noticed before suddenly take flight, cawing at being disturbed from their perch.  You look around the base of the driftwood and inside the rotten core.  Looks like a good spot to hide some items, since there doesn't seem to be any danger of a spring tide causing by the ice melting."
     }, 
     "drop": {

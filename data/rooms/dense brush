@@ -32,7 +32,7 @@
      "description": "You are not able to find anything to read here."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"dense brush":{"feature_searched": true, "features":{"animal corral":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "Searching around the corral, you find a boat paddle lying on the ground.  You also think that you could easily use this corral for keeping some items safe.  Especially since it has a gate.  But truthfully, you doubt you even need to close it since you seem to be the only one here."
     }, 
     "drop": {
@@ -91,7 +91,7 @@
  "items_in_room": [
   "boat paddle"
  ], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

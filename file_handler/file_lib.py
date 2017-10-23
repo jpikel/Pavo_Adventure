@@ -27,6 +27,7 @@ TEMP_ITEM_DIR = save_info().get_temp_save_dir_items()
 SAVE_DIR = save_info().get_save_dir()
 SAVE_ROOM_DIR = save_info().get_save_dir_rooms()
 SAVE_ITEM_DIR = save_info().get_save_dir_items()
+DEBUG_SAVE_LOAD = 0
 
 def new_game():
     """
@@ -35,14 +36,14 @@ def new_game():
     the data folder to the temp save folder for rooms and items
     """
     #comment out when in production
-    print("Preparing to make new game")
+    if DEBUG_SAVE_LOAD: print("Preparing to make new game")
     #make the temp rooms files if it does not exist then clean it
     src_dir = ROOM_DIR
     dst_dir = TEMP_ROOM_DIR
     if not os.path.isdir(dst_dir):
         os.makedirs(dst_dir)
     #comment out in production
-    print("Cleaning" + dst_dir)
+    if DEBUG_SAVE_LOAD: print("Cleaning" + dst_dir)
     clean_dir(dst_dir)
     #copy the official rooms to the temp save
     copy_files(src_dir, dst_dir)
@@ -53,7 +54,7 @@ def new_game():
     if not os.path.isdir(dst_dir):
         os.makedirs(dst_dir)
     #comment out in production
-    print("Cleaning" + dst_dir)
+    if DEBUG_SAVE_LOAD: print("Cleaning" + dst_dir)
     clean_dir(dst_dir)
     copy_files(src_dir, dst_dir)
 
@@ -70,7 +71,7 @@ def copy_files(src_dir, dst_dir):
     """
     try:
         #comment out in production
-        print("Copying from " +src_dir+ "\nto " + dst_dir)
+        if DEBUG_SAVE_LOAD: print("Copying from " +src_dir+ "\nto " + dst_dir)
         for item in os.listdir(src_dir):
             if item not in IGNORE:
                 src = os.path.join(src_dir, item)

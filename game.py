@@ -34,6 +34,7 @@ DEBUG_RESPONSE = 0
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'fire tower'
 
+
 class Game():
     def __init__(self):
         self.player = None
@@ -158,8 +159,10 @@ class Game():
             if userInput == None:
                 userInput = helpers.get_input(WHAT_DO)
             processed_command = parse.parse_command(userInput)
+            #line below for testing
+            if DEBUG_PARSE:
+                print json.dumps(processed_command, indent=4)
 
-            print json.dumps(processed_command, indent=4)
             # If the game does not understand the user's command, prompt the
             # user for a new command.
             while processed_command['processed'] == False:
@@ -170,10 +173,6 @@ class Game():
             # If the game understands the user's command, process that command
             # according to the command type.
             output_type = processed_command["type"]
-
-            #line below for testing
-            if DEBUG_PARSE:
-                print json.dumps(processed_command, indent=4)
 
             #this is temporary and may very well be removed
             #just a possible option to help with assigning title and action
@@ -214,6 +213,10 @@ class Game():
                 #print self.player.dead
                 #print self.player.get_rescue_status()
                 #would be good to add a restart loop in here
+                #this break should be all that is needed and then we can startGame 
+                #again to allow loadgame or newgame
+                #we submit False to let startGame know this is not a newGame
+                #it will not print the Splash screen again
                 break
         self.startGame(False)
 

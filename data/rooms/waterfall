@@ -32,7 +32,7 @@
      "description": "There's nothing to read here."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"waterfall":{"feature_searched": true, "features":{"small gorge":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "As you enter into the gorge the roar of the waterfall is almost deafening as it plays against the rock walls.  There is a small landing that is actually quite dry and you think would make a good spot to hide some valuables."
     }, 
     "drop": {

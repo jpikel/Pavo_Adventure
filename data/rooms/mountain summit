@@ -32,7 +32,7 @@
      "description": "You cannot find any to read inside or on the outside of the shed."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {"room_updates":{"mountain summit":{"feature_searched": true, "features":{"storage shed":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
      "description": "After some wrenching you manage to pry the door open.  The hinges grind and groan as you force the door open.  A nice place to keep some things for safe keeping, but you do not see much else of interest inside."
     }, 
     "drop": {
@@ -89,7 +89,7 @@
   }
  }, 
  "items_in_room": [], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

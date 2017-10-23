@@ -32,7 +32,9 @@
      "description": "You study the small veins of different trace minerals running through the rocks.  They are like the veins of the earth running through its body."
     }, 
     "search": {
-     "modifiers": {}, 
+     "modifiers": {
+     "room_updates":{"cave":{"feature_searched": true, "features":{"small shelf":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}
+}, 
      "description": "Getting closer to the shelf, you lantern shines on upon an old rolled up bit of faded paper.  It has yellowed over the years and rolled up tightly, but maybe if you read it more intently you could learn more."
     }, 
     "look at": {
@@ -112,7 +114,7 @@
  "items_in_room": [
   "old map"
  ], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 
