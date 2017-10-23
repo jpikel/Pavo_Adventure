@@ -221,7 +221,7 @@ def _generate_output_from_pattern_key(pattern_key, matched_words):
             # recognized by the game.
             # This step is needed to translate aliases to official game words.
             action = words.all_words[action_matched]["master_word"]
-            feature = words.all_words[action_matched]["master_word"]
+            feature = words.all_words[feature_matched]["master_word"]
             output_dict[OUTPUT_FIELDS.COMMAND] = \
                 {"action": action, "feature": feature}
     # Every pattern will have a "type" and "processed" key.
