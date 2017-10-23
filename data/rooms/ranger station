@@ -102,7 +102,7 @@
             }
            }, 
            "use": {
-            "description": "You slowly dial in to the station listed for Fort C F Smith Park.  As you get closer you start make out a voice!  Your heart flutters, have you really found someone that is still alive!  \u201cThis is <player name>  I am at a ranger station near some river rapids. I\u2019ve be lost for days.  Please send help!\u201d   Silence\u2026 nothing comes back\u2026 your heart sinks, you know you heard someone.  Suddenly the speaker on the radio jumps to attention and pushes our a welcome sound \u201cThis is the Fort C F Smith Park Ranger server, we read you <player name>. The bridge is out, how did you make it to the station?  Nevermind, doesn\u2019t matter we are sending help and will be there in a few hours.  Hang tight.  Stay on the radio and let us know if your situation changes.\u201d  Your body relaxes, you sit down in the chair and all the tension releases from your tendons.  Your muscles relax, your pack is suddenly very heavy.  You have barely enough strength to drop it on the floor, everything seems to slow down.  Your eyes close and you fall asleep knowing that finally you will find your way home.  Congratulations you have survived and will be rescued soon from your Desolate Journey!", 
+            "description": "You slowly dial in to the station listed for Fort C F Smith Park.  As you get closer you start make out a voice!  Your heart flutters, have you really found someone that is still alive!  'This is <playername>  I am at a ranger station near some river rapids. I've be lost for days.  Please send help!'   Silence... nothing comes back... your heart sinks, you know you heard someone.  Suddenly the speaker on the radio jumps to attention and pushes our a welcome sound 'This is the Fort C F Smith Park Ranger server, we read you <playername>. The bridge is out, how did you make it to the station?  Nevermind, doesn't matter we are sending help and will be there in a few hours.  Hang tight.  Stay on the radio and let us know if your situation changes. Your body relaxes, you sit down in the chair and all the tension releases from your tendons.  Your muscles relax, your pack is suddenly very heavy.  You have barely enough strength to drop it on the floor, everything seems to slow down.  Your eyes close and you fall asleep knowing that finally you will find your way home.  Congratulations you have survived and will be rescued soon from your Desolate Journey!", 
             "modifiers": {
              "player": {
               "rescued": true
@@ -117,10 +117,9 @@
      }, 
      "description": "The paper on the front reads", 
      "artifact": [
-      "                      NATIONAL PARK SERVICE FREQUENCIES", 
-      "                         AS RELAYED BY TONY WILCZYNSKI", 
-      "FROM ONE PARK RANGER TO ANOTHER! \"OK,JOE THE VISITORS ARE HERE", 
-      "LET THE DEER OUT AND TURN ON THE WATERFALL!\"", 
+      "NATIONAL PARK SERVICE FREQUENCIES AS RELAYED BY TONY WILCZYNSKI", 
+      "FROM ONE PARK RANGER TO ANOTHER! 'OK,JOE THE VISITORS ARE HERE", 
+      "LET THE DEER OUT AND TURN ON THE WATERFALL!'", 
       " ", 
       "Fort C F Smith National Park          171.673                 172.673"
      ]

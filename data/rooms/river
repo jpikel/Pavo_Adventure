@@ -122,7 +122,7 @@
   "spiral bound notepad", 
   "heavy winter parka"
  ], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "room_hazards": false, 
  "room_hazard_description": "", 
  "room_hazard_item": "", 

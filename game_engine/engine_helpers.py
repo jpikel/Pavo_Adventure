@@ -7,6 +7,7 @@ Term - Fall 2017
 Description -
 """
 import textwrap
+import string
 
 #experiment text wrapping
 CHARS_PER_LINE = 80
@@ -71,18 +72,28 @@ def get_input(comment=''):
     comment += '\n->'
     return str.lower(raw_input(comment))
 
-def multi_printer(text):
+def multi_printer(text, player_name=None):
     """
     a generic printer that can handle a list of text and print that to screen
     or a single string
     """
     if isinstance(text, list):
-        for line in text: 
+        for line in text:
+            if player_name is not None: line = replace_player_name(line, player_name)
             lines = textwrap.wrap(line, CHARS_PER_LINE)
             for wrapped_line in lines: print wrapped_line
     elif isinstance(text, basestring):
+        if player_name is not None: text = replace_player_name(text, player_name)
         lines = textwrap.fill(text, CHARS_PER_LINE)
         print lines
-#        for wrapped in lines: print wrapped
     else:
         print 'Error: did not receive list of strings or string'
+
+
+def replace_player_name(text, player_name):
+    """
+    searchs the string for <playername> and inserts the player_name passed in
+    returns the string
+    """
+    sub_string = "<playername>"
+    return string.replace(text, sub_string, player_name)

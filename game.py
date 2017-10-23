@@ -16,10 +16,10 @@ import language_parser.command_parser as parse
 import game_engine.player as player
 #from game_engine.engine_helpers import response_struct
 import game_engine.engine_helpers as helpers
-from random import randint
+import random
 
 ALL_VERBS = verbs().get_verbs()
-WHAT_DO = '\nWhat would you like to do?'
+DO_WHAT = '\nWhat would you like to do?'
 
 #DEBUG SECTION, you can set these values to 1 to get the desired affect
 #later in the game engine
@@ -34,7 +34,7 @@ DEBUG_ROOM = 0
 DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'mountain summit'
+SPECIFIC_ROOM = 'ranger station'
 
 
 class Game():
@@ -59,7 +59,7 @@ class Game():
         quit = ["quit", "q", "close", "exit" , "quit game", "close game", "exit game"]
         cmds = [newgame, loadgame, quit]
         invalid_message = [
-                "\n\nPlease choose from the menu:",
+                "Please choose from the menu:",
                 "New Game",
                 "Load Game",
                 "Quit"]
@@ -129,7 +129,7 @@ class Game():
         this function asks the player to enter a name and then creates a new player
         object that the game holds on to for future use
         """
-        player_name = helpers.get_input('Hello dreary traveler. What is your name? ')
+        player_name = raw_input('Hello dreary traveler. What is your name? ')
         return player.Player(player_name)
 
     def gameCycle(self):
@@ -157,22 +157,39 @@ class Game():
             if DEBUG_PRINT_ROOM_TITLE:
                 helpers.multi_printer("Current Room: " + self.current_room['title'])
 
-            userInput = helpers.get_input(WHAT_DO)
-            userInput = self.check_save_load_quit(userInput)
-            if userInput == None:
-                userInput = helpers.get_input(WHAT_DO)
-            processed_command = parse.parse_command(userInput)
-            #line below for testing
-            if DEBUG_PARSE:
-                print json.dumps(processed_command, indent=4)
-
+#            userInput = helpers.get_input(DO_WHAT)
+#            userInput = self.check_save_load_quit(userInput)
+#            if userInput == None:
+#                userInput = helpers.get_input(DO_WHAT)
+#            processed_command = parse.parse_command(userInput)
+#
             # If the game does not understand the user's command, prompt the
             # user for a new command.
-            while processed_command['processed'] == False:
-                text = "Sorry I did not understand that.\n"
-                text += WHAT_DO
+#            while processed_command['processed'] == False:
+#                text = "Sorry I did not understand that.\n"
+#                text += DO_WHAT
+#                userInput = helpers.get_input(text)
+#                userInput = self.check_save_load_quit(userInput)
+#                if userInput == None:
+#                    userInput = helpers.get_input(DO_WHAT)
+#                processed_command = parse.parse_command(userInput)
+            processed_command = None
+            while True: 
+                if processed_command is not None and processed_command['processed'] == False:
+                    text = "\nSorry I did not understand that." + DO_WHAT
+                else:
+                    text = DO_WHAT
                 userInput = helpers.get_input(text)
+                userInput = self.check_save_load_quit(userInput)
+                if userInput == None:
+                    userInput = helpers.get_input(DO_WHAT)
                 processed_command = parse.parse_command(userInput)
+                #line below for testing
+                if DEBUG_PARSE:
+                    print json.dumps(processed_command, indent=4)
+                if processed_command['processed'] == True:
+                    break
+
             # If the game understands the user's command, process that command
             # according to the command type.
             output_type = processed_command["type"]
@@ -352,11 +369,15 @@ class Game():
 
         #update the player with any particular modifiers from the action
         self.update_player(res)
+        #update the room dict through recursion
         self.update_room(res)
         if DEBUG_ROOM:
             print(json.dumps(self.current_room, indent=4))
+        #update the items dict
         self.update_item(res)
-        helpers.multi_printer(res['description'])
+
+        #print the messages to screen here
+        helpers.multi_printer(res['description'], self.player.getName())
         if 'artifact' in res:
             lines = res['artifact']
             helpers.multi_printer(lines)
@@ -523,10 +544,12 @@ class Game():
             if verb in feature['verbs']:
                 res['description'] = feature['verbs'][verb]['description']
                 res['modifiers'] = feature['verbs'][verb]['modifiers']
+                if 'artifact' in feature['verbs'][verb]:
+                    res['artifact'] = feature['verbs'][verb]['artifact']
             else:
                 res['description'] = self.verb_not_found + " " + verb + " the " + title
         else:
-            res['description'] = title + ' not found in this room.'
+            res['description'] = 'Sorry, ' + title + ' not found in this room.'
         return res
     #------------------------------------------------------------------------
     # This ends the feature section
@@ -710,13 +733,13 @@ class Game():
         """
         action_prefix = ['Sadly you cannot ', 'Nope maybe try to ',
                 'Wait... hold on a sec... nope you cannot just ']
-        noun_prefix = ['The ', 'That ', 'Try doing something to the ']
-        action_post = [' on yourself.', ' on something in the real world.',
+        action_post = [' yourself.', ' on something in the real world.',
                 ' -- every DM ever.']
+        noun_prefix = ['The ', 'That ', 'Try doing something to the ']
         noun_post = [' is a thing in the world you are correct sir.',
                 ' might be nearby but you need to perform something on it.',
                 ' something imaginary.']
-        index = randint(0,2)
+        index = random.randint(0,2)
         text = ''
         if type_of == 'noun':
             text += noun_prefix[index] + word + noun_post[index]
@@ -762,6 +785,7 @@ class Game():
 
 
 def main():
+    random.seed()
     current_game = Game()
     user_choice = current_game.startGame(True)
 

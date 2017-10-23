@@ -1,3 +1,15 @@
+"""
+Filename - player.py
+Team - Pavo
+Group Members - Emily Caveness, Alexander Laquitara, Johannes Pikel
+Class - CS467-400 Capstone
+Term - Fall 2017
+Description - this file contains the class that is the player.
+the player has a name, his health is illness, hunger, cold, whether
+the player is dead or rescued, and the player has an inventory
+"""
+#ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
+
 from item import Item
 
 class Player(object):
@@ -115,7 +127,7 @@ class Player(object):
         """
         returns a string as to why the player died and from what
         """
-        text = 'Sadly you died as a result of extreme '
+        text = 'Sadly, ' + self.getName() + ' died as a result of extreme '
         if self.illness > 50 and self.hunger > 50 and self.cold > 50:
             return text + 'illness, hunger and cold.'
         elif self.illness > 50 and self.hunger > 50:
@@ -136,16 +148,16 @@ class Player(object):
     #------------------------------------------------------------------------
     def print_inventory(self):
         """
-        print the player's current inventory
+         the player's current inventory
         """
         if  len(self.inventory) == 0:
-            print "You don't have anything in your inventory"
+            text = "You don't have anything in your inventory"
         else:
             text = "Rummaging through your belongings you find "
             for item in self.inventory:
                 text += "a " + item['title'] + ", "
             text = text[:-2]
-            return text
+        return text
 
     def get_items_inventory_titles(self):
         item_list = []
@@ -159,15 +171,8 @@ class Player(object):
             return items[0]
         return None
 
-#ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
     def search_inventory_excluding(self, title):
         return [item for item in self.inventory if item['title'] != title]
-#MARKED FOR DELETION
-#    def get_item_from_inventory(self, title):
-#        for item in self.inventory:
-#            if item['title'] == title:
-#                return item
-#        return None
 
     def add_item_to_inventory(self, item_to_add):
         """
@@ -182,12 +187,12 @@ class Player(object):
         """
         self.inventory = self.search_inventory_excluding(title)
 
-    def addRoomsVisited(self):
-        self.roomsVisited += 1
-
-    def getLastSated(self):
-        self.lastSated = self.roomsVisited * 4
-        print "You ate %d hours ago", (self.lastSated)
-        return self.lastSated
-
-
+#    def addRoomsVisited(self):
+#        self.roomsVisited += 1
+#
+#    def getLastSated(self):
+#        self.lastSated = self.roomsVisited * 4
+#         #"You ate %d hours ago", (self.lastSated)
+#        return self.lastSated
+#
+#

@@ -18,10 +18,11 @@
      "can of sweetened condensed milk": {
       "verbs": {
        "use": {
-        "description": "You've already opened the can.  The milky substance swishes around inside the can."
+        "description": "You've already opened the can.  The milky substance swishes around inside the can.",
+        "modifiers":{"item_updates":{}}
        }, 
        "eat": {
-        "description": "You gulp down the contents of the can, using you finger to get every last drop out of it.  You feel it sliding smoothly down into you belly.  Hmmm... that tastes really good", 
+        "description": "You gulp down the contents of the can, using your finger to get every last drop out of it.  You feel it sliding smoothly down into you belly.  Hmmm... that tastes really good", 
         "modifiers": {
          "player": {
           "hunger": "-25"
@@ -44,7 +45,7 @@
             "eat": {
              "description": "You've already eaten the sweet goodness once contained in this can.", 
              "modifiers": {
-              "player": {}
+              "player": {}, "item_updates":{}
              }
             }
            }
