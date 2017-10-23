@@ -16,7 +16,7 @@
     }, 
     "use": {
      "deactivate_description": "use deactivate for feature 1 camp", 
-     "description": "", 
+     "description": "You duck into the blind and wait for some animals to pass by.  Unfortunately they do not.  They must already know you are there.", 
      "modifiers": {}
     }, 
     "look at": {
