@@ -13,3 +13,6 @@
 
 #ignore the save game folder
 /data/save_game/
+
+
+#ignore pyc files in game_engine
