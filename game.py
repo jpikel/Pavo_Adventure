@@ -89,8 +89,8 @@ class Game:
         quit = ["quit", "q", "close", "exit" , "quit game", "close game", "exit game"]
         cmds = [newgame, loadgame, quit]
 
-        while (not choiceLow in cmds[0] and 
-                not choiceLow in cmds[1] and 
+        while (not choiceLow in cmds[0] and
+                not choiceLow in cmds[1] and
                 not choiceLow in cmds[2]):
             print "Please Choose from the menu"
             print"  New Game"
@@ -113,7 +113,7 @@ class Game:
         print self.getTimeOfDay()
         self.player.updatePlayerCondition(self.number_of_turns)
         print self.player.getCondition()
-        #updated this while loop the previous one did not seem to evaluate the 
+        #updated this while loop the previous one did not seem to evaluate the
         #dead correctly
         while True:
             print "What would you like to do?"
@@ -121,7 +121,7 @@ class Game:
             processed_command = parse.parse_command(userInput)
             # If the game does not understand the user's command, prompt the
             # user for a new command.
-            while processed_command['other']['processed'] == False:
+            while processed_command['processed'] == False:
                 print "Sorry I did not understand that."
                 print "What would you like to do?"
                 userInput = raw_input("->")
@@ -133,15 +133,13 @@ class Game:
             #line below for testing
             #print json.dumps(processed_command, indent=4)
 
-            #this is temporary and may very well be removed
             #just a possible option to help with assigning title and action
-            top_level = ["item", "room", "feature", "general"]
-            for word in top_level:
-                if word in processed_command:
-                    if "name" in processed_command[word]:
-                        title = processed_command[word]["name"]
-                    if "action" in processed_command[word]:
-                        action = processed_command[word]["action"]
+            noun_types = ["item", "room", "feature"]
+            for noun in noun_types:
+                if noun in processed_command["command"]:
+                    title = processed_command["command"][noun]
+            if "action" in processed_command["command"]:
+                action = processed_command["command"]["action"]
 
             if output_type == "item_action":
                 self.process_item_action(title, action)
@@ -149,13 +147,6 @@ class Game:
                 self.process_action_only(action)
             elif output_type == "room_action":
                 self.process_room_action(title, action)
-            elif output_type == "exit":
-                exit_direction = processed_command["exit"]["direction"]
-                exit_name = processed_command["exit"]["exit"]
-                self.process_exit(exit_direction, exit_name)
-            elif output_type == "exit_only":
-                exit_name = processed_command["exit"]["exit"]
-                self.process_exit_only(exit_name)
             elif output_type == "item_only":
                 self.process_item_only(title)
             elif output_type == "feature_action":
@@ -193,7 +184,7 @@ class Game:
             #also sent to the funny script writer
             res['description'] = "place holder for funny + verb"
         self.post_process(res)
-        
+
     def process_room_action(self, room, action):
         res = self.room_action(room, action)
         self.post_process(res)
@@ -234,7 +225,7 @@ class Game:
         self.number_of_turns += 1
         #at some point in the future hopefully this will be where
         #we can send parts to the room to be updated if appropriate
-        #and the player state if for instance the player has 
+        #and the player state if for instance the player has
         #eaten something and gets a boost to hunger
 
         #uncomment for troubleshooting
@@ -254,7 +245,7 @@ class Game:
             print self.getTimeOfDay()
             print self.player.getCondition()
 
-        #description should always come with process functions so we 
+        #description should always come with process functions so we
         #automatically print out something to the user
 
     #-------------------------------------------------------------------------
@@ -458,7 +449,7 @@ class Game:
     def item_action_room(self, title, verb):
         """
         acts on an item in the room only the look at verb is allowed at this moment
-        adds the item to the inventory as well if it is 
+        adds the item to the inventory as well if it is
         """
         res = response_struct().get_response_struct()
         res['title'] = title
@@ -520,9 +511,9 @@ class Game:
                     other_room = files.update(updates, other_room)
                     files.store_room(other_room)
 
-        #hopefully file_lib will have a method where we can pass the 
-        #modifiers dict to and it will do the remaining processing returning 
-        #the updated room so we can just do 
+        #hopefully file_lib will have a method where we can pass the
+        #modifiers dict to and it will do the remaining processing returning
+        #the updated room so we can just do
 
     def update_player(self, res):
         """
