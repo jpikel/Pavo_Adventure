@@ -2,10 +2,10 @@ import json
 import os
 
 MASTER_WORDS_FILENAME = "master_words.py"
+FEATURES_FILENAME = "feature_dict"
 ITEMS_FILENAME = "items_dict"
 ROOMS_FILENAME = "rooms_dict"
 VERBS_FILENAME = "verbs_dict"
-FEATURES_FILENAME = "features_dict"
 MASTER_FIELD = "master_word"
 WORD_TYPE_FIELD = "type"
 
@@ -19,21 +19,30 @@ def update_master_words():
     """
     os.remove(MASTER_WORDS_FILENAME)
     data_dir = os.path.abspath('../data')
+    features_full_path = os.path.join(data_dir, FEATURES_FILENAME)
     items_full_path = os.path.join(data_dir, ITEMS_FILENAME)
     rooms_full_path = os.path.join(data_dir, ROOMS_FILENAME)
     verbs_full_path = os.path.join(data_dir, VERBS_FILENAME)
     with open(MASTER_WORDS_FILENAME, "a") as master_file:
-        # Create word-type specific dicts
+        # Create word-type specific dicts, which map every word ('official' words and aliases)
+        # with the appropriate 'official' word.
+        # Also, substitute underscores for spaces in the words to assist with regex matching
+        # in the command processor functions.
+        with open(features_full_path, "r") as features_file:
+            features_dict_str = features_file.read()
+            features_dict = json.loads(features_dict_str.lower())
         with open(items_full_path, "r") as items_file:
             items_dict_str = items_file.read()
             items_dict = json.loads(items_dict_str.lower())
         with open(rooms_full_path, "r") as rooms_file:
             rooms_dict_str = rooms_file.read()
-            rooms_dict = rooms_dict = json.loads(rooms_dict_str.lower())
+            rooms_dict = json.loads(rooms_dict_str.lower())
         with open(verbs_full_path, "r") as verbs_file:
             verbs_dict_str = verbs_file.read()
             verbs_dict = json.loads(verbs_dict_str.lower())
         # Save dicts for each word type to the master words file.
+        features_dict_str = json.dumps(features_dict, indent=3)
+        master_file.write("features = " + features_dict_str + "\n")
         items_dict_str = json.dumps(items_dict, indent=3)
         master_file.write("items = " + items_dict_str + "\n")
         rooms_dict_str = json.dumps(rooms_dict, indent=3)
@@ -44,6 +53,13 @@ def update_master_words():
         # This dict will include the word type and the
         # master word (i.e., the word the game engine
         # knows/uses in command processing) for each word.
+        expanded_features_dict = {}
+        for word, master_word in features_dict.items():
+            word_info = {
+                MASTER_FIELD: master_word,
+                WORD_TYPE_FIELD: "feature"
+            }
+            expanded_features_dict[word] = word_info
         expanded_items_dict = {}
         for word, master_word in items_dict.items():
             word_info = {
@@ -67,6 +83,7 @@ def update_master_words():
             expanded_verbs_dict[word] = word_info
         # Combine all of the expanded dicts into one master dict.
         all_words = {}
+        all_words.update(expanded_features_dict)
         all_words.update(expanded_items_dict)
         all_words.update(expanded_rooms_dict)
         all_words.update(expanded_verbs_dict)
@@ -85,3 +102,4 @@ if __name__ == "__main__":
 # https://docs.python.org/2/library/json.html
 # https://stackoverflow.com/questions/20145902/how-to-extract-dictionary-single-key-value-pair-in-variables
 # https://stackoverflow.com/questions/33715427/whenever-i-try-parsing-json-file-i-get-keyerror-in-python
+

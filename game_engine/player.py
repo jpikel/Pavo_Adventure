@@ -1,7 +1,7 @@
 from item import Item
 
 class Player(object):
-    def __init__(self, name):
+    def __init__(self, name=None):
         self.name = name
         self.illness = 10
         self.hunger = 10
@@ -13,6 +13,16 @@ class Player(object):
 
     def getName(self):
         return self.name
+
+    def set_player_stats(self, player_dict):
+        self.cold = player_dict["cold"]
+        self.hunger = player_dict["hunger"]
+        self.illness = player_dict["illness"]
+        self.name = player_dict["name"]
+        self.rescued = player_dict["rescued"]
+        self.dead = player_dict["dead"]
+        self.inventory= player_dict["inventory"]
+        return self
 
     def getCondition(self):
         text = ""
@@ -30,13 +40,14 @@ class Player(object):
 
     def updatePlayerCondition(self, turns):
         #Degrade the player's condition every three moves.
+        #seems to be evaluating wrong atm
         if turns % 3 == 0:
             self.illness += 1
         if (self.illness > 50 or
             self.hunger > 50 or
             self.cold > 50):
             self.dead = True
-
+        
     def set_illness(self, illness):
         """
         add whatever value is passed in to update the player's illness
@@ -55,11 +66,14 @@ class Player(object):
         """
         print the player's current inventory
         """
-        text = "Rummaging through your belongings you find "
-        for item in self.inventory:
-            text += "a " + item['title'] + ", "
-        text = text[:-2]
-        return text
+        if  len(self.inventory) == 0:
+            print "You don't have anything in your inventory"
+        else:
+            text = "Rummaging through your belongings you find "
+            for item in self.inventory:
+                text += "a " + item['title'] + ", "
+            text = text[:-2]
+            return text
 
     def get_items_inventory_titles(self):
         item_list = []
@@ -95,33 +109,6 @@ class Player(object):
         iterates through inventory to remove the item title passed in
         """
         self.inventory = self.search_inventory_excluding(title)
-
-
-
-    # def getSated(self):
-    #     if self.sated != "hungry" and self.sated != "thirsty":
-    #         self.isSated = 1
-    #         return 0
-    #     if self.sated == "hungry":
-    #         self.isSated = 0
-    #         return 1
-    #     if self.sated == "thirsty":
-    #         self.isSated = 0
-    #         return 2
-
-    #add item to player inventory
-    # def addToInventory(self, i=Item):
-    #     if len(self.inventory) < 10: #arbitrary number for limiting inventory size
-    #         self.inventory.append(i)
-    #     else:
-    #         print "You cannot carry anymore"
-
-    # def removeFromInventory(self, i=Item):
-    #     #str(item)
-    #     if i in self.inventory:
-    #         self.inventory.remove(i)
-    #     else:
-    #         print "Cannot find item"
 
     def addRoomsVisited(self):
         self.roomsVisited += 1

@@ -13,15 +13,12 @@ class REGEX_PATTERNS:
 
 class WORD_TYPES:
     ACTION = "action"
-    EXIT = "exit"
     FEATURE = "feature"
     ITEM = "item"
     ROOM = "room"
 
 class COMMAND_TYPES:
     ACTION_ONLY = "action_only"
-    EXIT = "exit"
-    EXIT_ONLY = "exit_only"
     FEATURE_ACTION = "feature_action"
     FEATURE_ONLY = "feature_only"
     ITEM_ACTION = "item_action"
@@ -32,14 +29,12 @@ class COMMAND_TYPES:
 
 class OUTPUT_FIELDS:
     ACTION = "action"
-    DIRECTION = "direction"
-    EXIT = "exit"
     FEATURE = "feature"
-    GENERAL = "general"
     ITEM = "item"
     NAME = "name"
-    OTHER = "other"
     PROCESSED = "processed"
+    COMMAND = "command"
+    RECOGNIZED_WORDS = "command"
     ROOM = "room"
     TYPE = "type"
 
@@ -84,41 +79,30 @@ def _build_exact_match_output(input_string):
     master_word = words.all_words[input_word]["master_word"]
     # All of these dicts will have processed equal True.
     output_dict = {
-        OUTPUT_FIELDS.OTHER: {
-            OUTPUT_FIELDS.PROCESSED: True
-        }
+        OUTPUT_FIELDS.PROCESSED: True
     }
     # Build the rest of the output dict based on the word type of the command.
     if word_type == WORD_TYPES.ACTION:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ACTION_ONLY
-        action_dict = {
+        command_dict = {
             OUTPUT_FIELDS.ACTION: master_word
         }
-        output_dict[OUTPUT_FIELDS.GENERAL] = action_dict
-    if word_type == WORD_TYPES.EXIT:
-        output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.EXIT_ONLY
-        exit_dict = {
-            OUTPUT_FIELDS.EXIT: master_word
-        }
-        output_dict[OUTPUT_FIELDS.EXIT] = exit_dict
     if word_type == WORD_TYPES.FEATURE:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.FEATURE_ONLY
-        feature_dict = {
-            OUTPUT_FIELDS.NAME: master_word
+        command_dict = {
+            OUTPUT_FIELDS.FEATURE: master_word
         }
-        output_dict[OUTPUT_FIELDS.FEATURE] = feature_dict
     if word_type == WORD_TYPES.ITEM:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ITEM_ONLY
-        item_dict = {
-            OUTPUT_FIELDS.NAME: master_word
+        command_dict = {
+            OUTPUT_FIELDS.ITEM: master_word
         }
-        output_dict[OUTPUT_FIELDS.ITEM] = item_dict
     if word_type == WORD_TYPES.ROOM:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ROOM_ONLY
-        room_dict = {
+        command_dict = {
             OUTPUT_FIELDS.ROOM: master_word
         }
-        output_dict[OUTPUT_FIELDS.ROOM] = room_dict
+    output_dict[OUTPUT_FIELDS.COMMAND] = command_dict
     return output_dict
 
 def _remove_noise(input_string):
@@ -161,6 +145,7 @@ def _generate_full_match_regex_patterns():
     patterns = {}
     # Generate '|'-separated lists of each word type
     action_or = '|'.join(action for action in words.actions)
+    feature_or = '|'.join(feature for feature in words.features)
     item_or = '|'.join(item for item in words.items)
     room_or = '|'.join(room for room in words.rooms)
     # Create list of different patterns that consist entirely of
@@ -169,6 +154,8 @@ def _generate_full_match_regex_patterns():
         '(' + action_or + ') (' + item_or + ')'
     patterns[REGEX_PATTERNS.KNOWN_ACTION_AND_ROOM] = \
         '(' + action_or + ') (' + room_or + ')'
+    patterns[REGEX_PATTERNS.KNOWN_ACTION_AND_FEATURE] = \
+        '(' + action_or + ') (' + feature_or + ')'
     return patterns
 
 def _match_user_input_pattern(input_string, regex_patterns):
@@ -194,29 +181,52 @@ def _generate_output_from_pattern_key(pattern_key, matched_words):
     output_dict = {}
     if pattern_key == REGEX_PATTERNS.NO_MATCH:
         command_type = COMMAND_TYPES.OTHER
-        other_info = {"processed": False}
+        processed = False
     else:
-        other_info = {"processed": True}
+        processed = True
         if pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_ITEM:
             # Given the pattern key, we know that the first
             # word matched is an action and the second word matched is an
             # item.
             command_type = COMMAND_TYPES.ITEM_ACTION
-            action = matched_words[0]
-            item = matched_words[1]
-            item_info = {"name": item, "action": action}
-            output_dict["item"] = item_info
+            action_matched = matched_words[0]
+            item_matched = matched_words[1]
+            # Translate the words that matched into the "master" words that are
+            # recognized by the game.
+            # This step is needed to translate aliases to official game words.
+            action = words.all_words[action_matched]["master_word"]
+            item = words.all_words[item_matched]["master_word"]
+            output_dict[OUTPUT_FIELDS.COMMAND] = \
+                {"action": action, "item": item}
         elif pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_ROOM:
             # Given the pattern key, we know that the first
             # word matched is an action and the second word matched is a room.
             command_type = COMMAND_TYPES.ROOM_ACTION
-            action = matched_words[0]
-            room = matched_words[1]
-            room_info = {"name": room, "action": action}
-            output_dict["room"] = room_info
-    # Every pattern will have a "type" and "other" key.
-    output_dict["type"] = command_type
-    output_dict["other"] = other_info
+            action_matched = matched_words[0]
+            room_matched = matched_words[1]
+            # Translate the words that matched into the "master" words that are
+            # recognized by the game.
+            # This step is needed to translate aliases to official game words.
+            action = words.all_words[action_matched]["master_word"]
+            room = words.all_words[room_matched]["master_word"]
+            output_dict[OUTPUT_FIELDS.COMMAND] = \
+                {"action": action, "room": room}
+        elif pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_FEATURE:
+            # Given the pattern key, we know that the first
+            # word matched is an action and the second word matched is a feature.
+            command_type = COMMAND_TYPES.FEATURE_ACTION
+            action_matched = matched_words[0]
+            feature_matched = matched_words[1]
+            # Translate the words that matched into the "master" words that are
+            # recognized by the game.
+            # This step is needed to translate aliases to official game words.
+            action = words.all_words[action_matched]["master_word"]
+            feature = words.all_words[feature_matched]["master_word"]
+            output_dict[OUTPUT_FIELDS.COMMAND] = \
+                {"action": action, "feature": feature}
+    # Every pattern will have a "type" and "processed" key.
+    output_dict[OUTPUT_FIELDS.TYPE] = command_type
+    output_dict[OUTPUT_FIELDS.PROCESSED] = processed
     return output_dict
 
 def _generate_output_for_partial_or_no_match(input_string):
@@ -236,12 +246,10 @@ def _generate_output_for_partial_or_no_match(input_string):
             recognized_words[master_word] = word_type
     # Construct an output dict.
     output_dict = {}
-    command_type = COMMAND_TYPES.OTHER
-    other_info = {"processed": False}
-    output_dict["type"] = command_type
-    output_dict["other"] = other_info
+    output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.OTHER
+    output_dict[OUTPUT_FIELDS.PROCESSED] = False
     if recognized_words:
-        output_dict["recognized_words"] = recognized_words
+        output_dict[OUTPUT_FIELDS.RECOGNIZED_WORDS] = recognized_words
     return output_dict
 
 # Public function
@@ -268,16 +276,6 @@ def parse_command(command):
     else:
         output_dict = _generate_output_for_partial_or_no_match(command)
     return output_dict
-
-
-
-
-
-
-
-
-
-
 
 
 # Resources used in writing this module:

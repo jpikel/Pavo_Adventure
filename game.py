@@ -8,18 +8,21 @@ Description:
 """
 import sys
 import json
+import pdb  #toggle off in main
 import file_handler.file_lib as files
 import file_handler.help_file as help_file
 from file_handler.name_lists import verb_info as verbs
 import language_parser.command_parser as parse
 import game_engine.player as player
-from game_engine.engine_helpers import response_struct
+#from game_engine.engine_helpers import response_struct
+import game_engine.engine_helpers as helpers
 
 #experiment text wrapping
 import textwrap
 CHARS_PER_LINE = 80
 
 ALL_VERBS = verbs().get_verbs()
+WHAT_DO = 'What would you like to do?'
 
 #DEBUG SECTION, you can set these values to 1 to get the desired affect
 #later in the game engine
@@ -31,111 +34,138 @@ DEBUG_RESPONSE = 0
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'fire tower'
 
-class Game:
-    def __init__(self, player):
-        self.player = player
+class Game():
+    def __init__(self):
+        self.player = None
         self.current_room = None
         # Inventory will be a list of dicts, each element of which is an item.
         self.current_time = 0
         self.number_of_turns = 0
+        self.saved = False
 
     #-------------------------------------------------------------------------
     # Methods for managing game start, end, and basic flow
     #-------------------------------------------------------------------------
-    def newGame(self):
-        print "new Game"
-        files.new_game()
-        #New games start at the shore
-        self.current_room = files.load_room("shore")
-
-        #for testing purposes load a specific room and start from there
-        if LOAD_SPECIFIC_ROOM_ON_NEW_GAME:
-            self.current_room = files.load_room(SPECIFIC_ROOM)
-        self.gameCycle()
-
-    def loadGame(self):
-        print "load game"
-        gO = game_ops()
-        if gO.load_game():
-           #here we need to load in all the saved data to engine
-           g = Game(None, None, None, None, None, "night")
-           self.gameCycle()
-        return
-
-    def exitGame(self):
-        print "Thanks for playing"
-
-    def startGame(self):
-        print"****************************************************************************"
-        print""
-        print" ########  ########  ######   #######  ##          ###    ######## ######## "
-        print" ##     ## ##       ##    ## ##     ## ##         ## ##      ##    ##       "
-        print" ##     ## ##       ##       ##     ## ##        ##   ##     ##    ##       "
-        print" ##     ## ######    ######  ##     ## ##       ##     ##    ##    ######   "
-        print" ##     ## ##             ## ##     ## ##       #########    ##    ##       "
-        print" ##     ## ##       ##    ## ##     ## ##       ##     ##    ##    ##       "
-        print" ########  ########  ######   #######  ######## ##     ##    ##    ######## "
-        print ""
-        print ""
-        print"          ##  #######  ##     ## ########  ##    ## ######## ##    ## "
-        print"          ## ##     ## ##     ## ##     ## ###   ## ##        ##  ##  "
-        print"          ## ##     ## ##     ## ##     ## ####  ## ##         ####   "
-        print"          ## ##     ## ##     ## ########  ## ## ## ######      ##    "
-        print"    ##    ## ##     ## ##     ## ##   ##   ##  #### ##          ##    "
-        print"    ##    ## ##     ## ##     ## ##    ##  ##   ### ##          ##    "
-        print"     ######   #######   #######  ##     ## ##    ## ########    ##    "
-        print""
-        print"*****************************************************************************"
-        print"Welcome To Desolate Journey"
-        print"What would you like to do?"
-        print"->  New Game"
-        print"->  Load Game"
-        print"->  Quit"
-
-        choice = raw_input("-> ")
-        choiceLow=str.lower(choice)
-
+    def startGame(self, is_new_game):
+        """
+        Prints a splash to the screen and allows the user to load a game
+        or start a new game
+        """
         newgame = ["new", "new game", "n", "newgame"]
         loadgame = ["load", "load game", "l", "loadgame"]
         quit = ["quit", "q", "close", "exit" , "quit game", "close game", "exit game"]
         cmds = [newgame, loadgame, quit]
+        invalid_message = [
+                "\nPlease choose from the menu:",
+                "New Game",
+                "Load Game",
+                "Quit"]
+        #preload choiceLow so we get the invalid message automatically when
+        #not a new game
+        choiceLow = ""
 
+        if is_new_game:
+            #print the big splash page here!
+            helpers.multi_printer(helpers.SPLASH_MESSAGE)
+            choiceLow=helpers.get_input()
         while (not choiceLow in cmds[0] and 
-                not choiceLow in cmds[1] and 
-                not choiceLow in cmds[2]):
-            print "Please Choose from the menu"
-            print"  New Game"
-            print"  Load Game"
-            print"  Quit"
-            choice = raw_input("-> ")
-            choiceLow = str.lower(choice)
-
+            not choiceLow in cmds[1] and 
+            not choiceLow in cmds[2]):
+            helpers.multi_printer(invalid_message)
+            choiceLow = helpers.get_input()
         if choiceLow in cmds[0]:
             self.newGame()
+            self.gameCycle()
         elif choiceLow in cmds[1]:
-            self.loadGame()
+            self.load_from_file()
+            self.gameCycle()
         else:
             self.exitGame()
 
+    def newGame(self):
+        """
+        copies the files over from template dir to the temp save dir
+        and starts a new player
+        """
+        files.new_game()
+        self.player = self.gen_player()
+        #New games start at the shore
+        self.current_room = files.load_room("shore")
+        #for testing purposes load a specific room and start from there
+        #self.current_room = files.load_room('river')
+
+    def load_from_file(self):
+        """
+        gets the player and room files from the save game dir.  moves the room and items
+        files to the temp save dir.  Restores the player state
+        """
+        p, r = files.load_game()
+        #if something went wrong returning the player from the 
+        if player is None:
+            helpers.multi_printer('ERROR: Player not found.\n')
+            self.player = self.gen_player()
+        else:
+            #load player info from saved game
+            self.player = self.player.set_player_stats(p)
+        if r is not None:
+            self.current_room = r
+        else:
+            text = 'Something went wrong loading the rooms in loadgame. Please try again'
+            helpers.multi_printer(text)
+        
+    def exitGame(self):
+        """
+            prints a good bye message and exits
+        """
+        helpers.multi_printer("Thanks for playing")
+        exit()
+
+    def gen_player(self):
+        """
+        this function asks the player to enter a name and then creates a new player
+        object that the game holds on to for future use
+        """
+        player_name = helpers.get_input('Hello dreary traveler. What is your name? ')
+        return player.Player(player_name)
+
     def gameCycle(self):
+        """
+        This is the big game cycle
+            get user input
+                check if savegame, loadgame, or quit
+            otherwise send to parser
+            process the parsed command
+            output to screen
+            update player
+            update rooms
+            update items
+            check if dead or rescued
+        """
         #inital room description after new game or loading game
         lines = textwrap.wrap(self.get_room_desc(), CHARS_PER_LINE)
-        for line in lines: print line
-        print self.getTimeOfDay()
+        helpers.multi_printer(lines)
+        helpers.multi_printer(self.getTimeOfDay())
         self.player.updatePlayerCondition(self.number_of_turns)
-        print self.player.getCondition()
+        helpers.multi_printer(self.player.getCondition())
         #updated this while loop the previous one did not seem to evaluate the 
         #dead correctly
         while True:
-            print "What would you like to do?"
-            userInput = raw_input("->")
+            #comment next line out when not debuggin!
+            helpers.multi_printer("Current Room: " + self.current_room['title'])
+
+            userInput = helpers.get_input(WHAT_DO)
+            userInput = self.check_save_load_quit(userInput)
+            if userInput == None:
+                userInput = helpers.get_input(WHAT_DO)
             processed_command = parse.parse_command(userInput)
+
+            print json.dumps(processed_command, indent=4)
             # If the game does not understand the user's command, prompt the
             # user for a new command.
-            while processed_command['other']['processed'] == False:
-                print "Sorry I did not understand that."
-                print "What would you like to do?"
-                userInput = raw_input("->")
+            while processed_command['processed'] == False:
+                text = "Sorry I did not understand that.\n"
+                text += WHAT_DO
+                userInput = helpers.get_input(text)
                 processed_command = parse.parse_command(userInput)
             # If the game understands the user's command, process that command
             # according to the command type.
@@ -149,11 +179,10 @@ class Game:
             #just a possible option to help with assigning title and action
             top_level = ["item", "room", "feature", "general"]
             for word in top_level:
-                if word in processed_command:
-                    if "name" in processed_command[word]:
-                        title = processed_command[word]["name"]
-                    if "action" in processed_command[word]:
-                        action = processed_command[word]["action"]
+                if word in processed_command['command']:
+                    title = processed_command['command'][word]
+            if "action" in processed_command['command']:
+                action = processed_command['command']['action']
 
             if output_type == "item_action":
                 self.process_item_action(title, action)
@@ -180,8 +209,67 @@ class Game:
                 "Error command type not supported yet."
 
             if self.player.get_death_status() or self.player.get_rescue_status():
+                # death status still not evaluating properly- TODO next week
+            #if self.player.get_rescue_status() or  self.player.dead:
+                #print self.player.dead
+                #print self.player.get_rescue_status()
+                #would be good to add a restart loop in here
                 break
+        self.startGame(False)
 
+    #-------------------------------------------------------------------------
+    # This is the check for savegame, loadgame, quit function
+    #-------------------------------------------------------------------------
+    def check_save_load_quit(self, userInput):
+        #save
+        if userInput == "savegame":
+            checkYes = helpers.get_input('Are you sure you wish to save y/n')
+            if checkYes == "y":
+                files.save_game(self.player, self.current_room)
+                self.saved = True
+                userInput = None
+                helpers.multi_printer('Game saved successfully')
+            else:
+                helpers.multi_printer('continuing game...')
+        #load
+        elif userInput == "loadgame":
+            text = "Loading will exit game.  Are you sure you wish to load? y/n"
+            checkYes = helpers.get_input(text)
+            self.saved = False
+            if checkYes == "y":
+                self.load_from_file()
+                userInput = None
+
+                helpers.multi_printer('Game loaded successfully')
+            else:
+                helpers.multi_printer('continuing game...')
+        #quit
+        elif userInput == "quit":
+            if self.saved ==False:
+                text = "Are you sure you want to quit without saving? y/n"
+                checkYes = helpers.get_input(text)
+                if checkYes == "y":
+                    self.exitGame()
+                else:
+                    checkYes = helpers.get_input("Do you wish to save and quit? y/n")
+                    if checkYes == "y":
+                        files.save_game(self.player, self.current_room)
+                        self.exitGame()
+                    else:
+                        helpers.multi_printer('continuing game...')
+            else:
+                checkYes = helpers.get_input("Are you sure you want to quit? y/n")
+                if checkYes == "y":
+                    self.exitGame()
+        else:
+            #if one of the above commands was not found we want to reset saved to False
+            #because we may have changed something in the game
+            self.saved = False
+            return userInput
+
+    #-------------------------------------------------------------------------
+    # This ends the check for savegame, loadgame, quit
+    #-------------------------------------------------------------------------
     #-------------------------------------------------------------------------
     # Top-level methods for handling user commands.
     #-------------------------------------------------------------------------
@@ -193,7 +281,7 @@ class Game:
         self.post_process(res)
 
     def process_action_only(self, action):
-        res = response_struct().get_response_struct()
+        res = helpers.response_struct().get_response_struct()
         if action == "look":
             res['description'] = self.get_room_long_desc()
         elif action == "inventory":
@@ -209,7 +297,8 @@ class Game:
     def process_room_action(self, room, action):
         res = self.room_action(room, action)
         self.post_process(res)
-
+    '''  
+        Probably deleting exit methods
     def process_exit(self, exit, name):
         print "TODO: Write this function"
         print "This is a stub function for handling exit commands!"
@@ -217,7 +306,7 @@ class Game:
     def process_exit_only(self, name):
         print "TODO: Write this function"
         print "This is a stub function for handling exit only commands!"
-
+    '''
     def process_item_only(self, name):
         print "TODO: Write this function"
         print "This is a stub function for handling item_only commands!"
@@ -259,13 +348,13 @@ class Game:
         #print self.current_room['items_in_room']
         self.update_item(res)
         lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
-        for line in lines: print line
+        helpers.multi_printer(lines)
         if 'artifact' in res:
             lines = res['artifact']
-            for line in lines: print line
+            helpers.multi_printer(lines)
         if not self.player.get_death_status():
-            print self.getTimeOfDay()
-            print self.player.getCondition()
+            helpers.multi_printer(self.getTimeOfDay())
+            helpers.multi_printer(self.player.getCondition())
 
         #description should always come with process functions so we 
         #automatically print out something to the user
@@ -308,7 +397,7 @@ class Game:
         title = the new room's title
         distance_from_room = distance traveled to the new room
         """
-        res = response_struct().get_response_struct()
+        res = helpers.response_struct().get_response_struct()
         res['success'] = False
         items = self.player.get_items_inventory_titles()
         for room_key in self.current_room['connected_rooms']:
@@ -420,7 +509,7 @@ class Game:
             looks up to see if the title passed in is a feature in the current room
             if so and the verb is in the list of possible verbs for that feature then
         """
-        res = response_struct().get_response_struct()
+        res = helpers.response_struct().get_response_struct()
         if title in self.current_room['features']:
             feature = self.current_room['features'][title]
             if verb in feature['verbs']:
@@ -447,7 +536,7 @@ class Game:
             "description": string
             }
         """
-        res = response_struct().get_response_struct()
+        res = helpers.response_struct().get_response_struct()
         item = self.player.search_inventory(item_title)
         res['title'] = item_title
         res["description"] = item['verbs'][action]['description']
@@ -476,7 +565,7 @@ class Game:
         acts on an item in the room only the look at verb is allowed at this moment
         adds the item to the inventory as well if it is 
         """
-        res = response_struct().get_response_struct()
+        res = helpers.response_struct().get_response_struct()
         res['title'] = title
         allowed_verbs = ["look at", "take"]
         if self.current_room['feature_searched'] and verb in allowed_verbs:
@@ -579,7 +668,6 @@ class Game:
                 #if the item is not in the player inventory maybe it is in the room
                 #and we can act upon it.  This maybe needs to go away
                 elif key in self.current_room['items_in_room']:
-                    print 'item is in room'
                     item = files.load_item(key)
                     item = files.update(updates, item)
                     files.store_item(item)
@@ -610,18 +698,18 @@ class Game:
     # Temporary code used for testing
     #-------------------------------------------------------------------------
 
-def testParse():
-    test_input = "go cave"
-    print "The test input is: " + test_input
-    print "The parsed command output is:"
-    print parse.parse_command(test_input)
-    print parse.parse_command(test_input)['room']['action']
-    print parse.parse_command(test_input)['room']['name']
-    print parse.parse_command(test_input)['other']['processed']
-    print parse.parse_command(test_input)['room']['action']
-    # parse.parse_command(test_input[0,0])
-    print ""
-
+#def testParse():
+#    test_input = "go cave"
+#    print "The test input is: " + test_input
+#    print "The parsed command output is:"
+#    print parse.parse_command(test_input)
+#    print parse.parse_command(test_input)['room']['action']
+#    print parse.parse_command(test_input)['room']['name']
+#    print parse.parse_command(test_input)['other']['processed']
+#    print parse.parse_command(test_input)['room']['action']
+#    # parse.parse_command(test_input[0,0])
+#    print ""
+#
 
 #testParse()
 #startGame()
@@ -629,14 +717,14 @@ def testParse():
 #newGame()
 #playerDead()
 #testNew()
-#print(sys.path)
+
 
 
 def main():
-    current_player = player.Player("Test Player")
-    current_game = Game(current_player)
-    user_choice = current_game.startGame()
+    current_game = Game()
+    user_choice = current_game.startGame(True)
 
 
 if __name__ == "__main__":
+    #pdb.set_trace() #toggle for debugging
     main()
