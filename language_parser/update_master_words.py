@@ -24,7 +24,10 @@ def update_master_words():
     rooms_full_path = os.path.join(data_dir, ROOMS_FILENAME)
     verbs_full_path = os.path.join(data_dir, VERBS_FILENAME)
     with open(MASTER_WORDS_FILENAME, "a") as master_file:
-        # Create word-type specific dicts
+        # Create word-type specific dicts, which map every word ('official' words and aliases)
+        # with the appropriate 'official' word.
+        # Also, substitute underscores for spaces in the words to assist with regex matching
+        # in the command processor functions.
         with open(features_full_path, "r") as features_file:
             features_dict_str = features_file.read()
             features_dict = json.loads(features_dict_str.lower())
@@ -33,7 +36,7 @@ def update_master_words():
             items_dict = json.loads(items_dict_str.lower())
         with open(rooms_full_path, "r") as rooms_file:
             rooms_dict_str = rooms_file.read()
-            rooms_dict = rooms_dict = json.loads(rooms_dict_str.lower())
+            rooms_dict = json.loads(rooms_dict_str.lower())
         with open(verbs_full_path, "r") as verbs_file:
             verbs_dict_str = verbs_file.read()
             verbs_dict = json.loads(verbs_dict_str.lower())
@@ -99,3 +102,4 @@ if __name__ == "__main__":
 # https://docs.python.org/2/library/json.html
 # https://stackoverflow.com/questions/20145902/how-to-extract-dictionary-single-key-value-pair-in-variables
 # https://stackoverflow.com/questions/33715427/whenever-i-try-parsing-json-file-i-get-keyerror-in-python
+
