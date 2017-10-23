@@ -6,8 +6,32 @@ Class - CS467-400 Capstone
 Term - Fall 2017
 Description -
 """
-
-
+SPLASH_MESSAGE = [
+"****************************************************************************",
+"",
+" ########  ########  ######   #######  ##          ###    ######## ######## ",
+" ##     ## ##       ##    ## ##     ## ##         ## ##      ##    ##       ",
+" ##     ## ##       ##       ##     ## ##        ##   ##     ##    ##       ",
+" ##     ## ######    ######  ##     ## ##       ##     ##    ##    ######   ",
+" ##     ## ##             ## ##     ## ##       #########    ##    ##       ",
+" ##     ## ##       ##    ## ##     ## ##       ##     ##    ##    ##       ",
+" ########  ########  ######   #######  ######## ##     ##    ##    ######## ",
+ "",
+ "",
+"          ##  #######  ##     ## ########  ##    ## ######## ##    ## ",
+"          ## ##     ## ##     ## ##     ## ###   ## ##        ##  ##  ",
+"          ## ##     ## ##     ## ##     ## ####  ## ##         ####   ",
+"          ## ##     ## ##     ## ########  ## ## ## ######      ##    ",
+"    ##    ## ##     ## ##     ## ##   ##   ##  #### ##          ##    ",
+"    ##    ## ##     ## ##     ## ##    ##  ##   ### ##          ##    ",
+"     ######   #######   #######  ##     ## ##    ## ########    ##    ",
+"",
+"*****************************************************************************",
+"Welcome To Desolate Journey",
+"What would you like to do?",
+"->  New Game",
+"->  Load Game",
+"->  Quit"]
 
 
 class response_struct():
@@ -34,3 +58,22 @@ class response_struct():
     def get_response_struct(self):
         return self.response
 
+
+def get_input(comment=''):
+    """
+    gets some input and returns it to the user
+    """
+    comment += '\n->'
+    return str.lower(raw_input(comment))
+
+def multi_printer(text):
+    """
+    a generic printer that can handle a list of text and print that to screen
+    or a single string
+    """
+    if isinstance(text, list):
+        for line in text: print line
+    elif isinstance(text, basestring):
+        print text
+    else:
+        print 'Error: did not receive list of strings or string'

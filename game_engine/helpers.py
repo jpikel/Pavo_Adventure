@@ -12,6 +12,12 @@ def getPlayerName(p=Player):
     print "goodluck ", choice, "\n"
     return p
 
+def get_input(comment=None):
+    """
+    gets some input and returns it to the user
+    """
+    comment += '\n->'
+    return str.lower(comment) 
 
 def parseMoveString(tar, stemp):
     tar.lower()
