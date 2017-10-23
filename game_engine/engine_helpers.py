@@ -81,7 +81,8 @@ def multi_printer(text):
             lines = textwrap.wrap(line, CHARS_PER_LINE)
             for wrapped_line in lines: print wrapped_line
     elif isinstance(text, basestring):
-        lines = textwrap.wrap(text, CHARS_PER_LINE)
-        for wrapped in lines: print wrapped
+        lines = textwrap.fill(text, CHARS_PER_LINE)
+        print lines
+#        for wrapped in lines: print wrapped
     else:
         print 'Error: did not receive list of strings or string'

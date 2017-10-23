@@ -32,8 +32,25 @@
      "description": "Although you have heard of some people that can deduce the future from spilt blood, there is nothing you gather from the blood."
     }, 
     "search": {
-     "modifiers": {"room_updates":{"game trail":{"feature_searched": true, "features":{"blood stained snow":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
-     "description": "On closer inspection you see a dead frozen hare, sadly it is missing a few of its extremities.  Maybe a fox or wolf got a hold of it.  If you could find somewhere to cook it perhaps you could get something to eat from it.  But as it is now, it is frozen solid and you can't do much with it."
+     "modifiers": {
+      "room_updates": {
+       "game trail": {
+        "feature_searched": true, 
+        "features": {
+         "blood stained snow": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
+     "description": "Upon closer inspection you see a medical kit lying here in the snow next to the blood.  Maybe someone was chased here and trying to bandage themselves up."
     }, 
     "drop": {
      "modifiers": {}, 
@@ -89,7 +106,7 @@
   }
  }, 
  "items_in_room": [
-  "frozen dead hare"
+  "medical kit"
  ], 
  "feature_searched": false, 
  "room_hazards": false, 
@@ -106,7 +123,7 @@
    "item_required": true, 
    "item_required_title": "lantern", 
    "pre_item_description": "You stare into the dark cave entrance in front of you.  You can feel warmer, moist air roll across your face.  It starts to make your brows sweat.  If only you had something to light the way.  You turn back for now and go back from where you came.", 
-   "compass_direction": "", 
+   "compass_direction": "south", 
    "id": 0, 
    "aliases": [
     "cave", 
@@ -120,7 +137,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "west", 
    "id": 0, 
    "aliases": [
     "crash site"

@@ -20,14 +20,14 @@
         "accessible": false, 
         "modifiers": {
          "player": {
-          "illness": "100"
+          "cold": "100"
          }
         }
        }, 
        "fire tower": {
         "accessible": false, 
         "player": {
-         "illness": "100"
+         "cold": "100"
         }
        }
       }
@@ -44,14 +44,16 @@
         "accessible": true, 
         "modifiers": {
          "player": {
-          "illness": "0"
+          "cold": "0"
          }
         }
        }, 
        "fire tower": {
         "accessible": true, 
-        "player": {
-         "illness": "0"
+        "modifiers": {
+         "player": {
+          "cold": "0"
+         }
         }
        }
       }
@@ -70,14 +72,14 @@
         "accessible": false, 
         "modifiers": {
          "player": {
-          "illness": "100"
+          "cold": "100"
          }
         }
        }, 
        "fire tower": {
         "accessible": false, 
         "player": {
-         "illness": "100"
+         "cold": "100"
         }
        }
       }

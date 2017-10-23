@@ -33,7 +33,7 @@ features = {
 }
 items = {
    "spiral bound notepad": "spiral bound notepad", 
-   "frozen dead hare": "frozen dead hare", 
+   "medical kit": "medical kit", 
    "light": "lantern", 
    "rescue whistle": "rescue whistle", 
    "milk": "can of sweetened condensed milk", 
@@ -241,9 +241,9 @@ all_words = {
       "type": "room", 
       "master_word": "mountain summit"
    }, 
-   "ranger station": {
+   "woods": {
       "type": "room", 
-      "master_word": "ranger station"
+      "master_word": "woods"
    }, 
    "spiral bound notepad": {
       "type": "item", 
@@ -321,9 +321,9 @@ all_words = {
       "type": "action", 
       "master_word": "pull"
    }, 
-   "frozen dead hare": {
-      "type": "item", 
-      "master_word": "frozen dead hare"
+   "ranger station": {
+      "type": "room", 
+      "master_word": "ranger station"
    }, 
    "drop": {
       "type": "action", 
@@ -333,9 +333,9 @@ all_words = {
       "type": "action", 
       "master_word": "look"
    }, 
-   "woods": {
-      "type": "room", 
-      "master_word": "woods"
+   "medical kit": {
+      "type": "item", 
+      "master_word": "medical kit"
    }, 
    "driftwood": {
       "type": "feature", 

@@ -34,6 +34,31 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "mountain path": {
+      "features": {
+       "sign": {
+        "verbs": {
+         "search": {
+          "description": "The good thing is this sign is different that the first one. Easily identifable."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "candy bar": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You pick up the candy bar and stash it in your pack."
@@ -54,7 +79,7 @@
    "description": "It takes some work to bite through the cold chocolate shell and hardened caramel, but you are able to do it.", 
    "modifiers": {
     "player": {
-     "hunger": "-25"
+     "hunger": "-10"
     }, 
     "item_updates": {
      "candy bar": {

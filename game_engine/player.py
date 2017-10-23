@@ -12,9 +12,16 @@ class Player(object):
         self.inventory = []
 
     def getName(self):
+        """
+        returns the player's name
+        """
         return self.name
 
     def set_player_stats(self, player_dict):
+        """
+        used when a game is loaded to set all the variables of player a player
+        then returns the player
+        """
         self.cold = player_dict["cold"]
         self.hunger = player_dict["hunger"]
         self.illness = player_dict["illness"]
@@ -25,24 +32,52 @@ class Player(object):
         return self
 
     def getCondition(self):
+        """
+        returns a string that relates the players current illness
+        """
         text = ""
         if self.illness <= 10:
-            text =  "You feel well."
+            text =  "You feel well, "
         elif self.illness > 10 and self.illness <=20:
-            text =  "You are a little worn down."
+            text =  "You are a little worn down, "
         elif self.illness > 20 and self.illness<=30:
-            text =  "Things are looking bad."
+            text =  "Things are looking bad, "
         elif self.illness > 30 and self.illness <=40:
-            text =  "Things are looking bad."
+            text =  "Things are looking bad, "
         elif self.illness > 40:
-            text =  "You are on death's door."
+            text =  "You are on death's door,"
+        if self.hunger <= 10:
+            text += "well fed, "
+        elif self.hunger > 10 and self.hunger <= 20:
+            text += "mildly peckish, "
+        elif self.hunger > 20 and self.hunger <= 30:
+            text += "very hungry, "
+        elif self.hunger > 30 and self.hunger <= 40:
+            text += "ravenous, "
+        elif self.hunger > 40:
+            text += "dying of hunger, "
+        if self.cold <= 10:
+            text += "and not cold."
+        elif self.cold > 10 and self.cold <= 20:
+            text += "and chilly."
+        elif self.cold > 20 and self.cold <= 30:
+            text += "and very cold."
+        elif self.cold > 30 and self.cold <= 40:
+            text += "and frigid."
+        elif self.cold > 40:
+            text += "and dying of cold."
         return text
 
     def updatePlayerCondition(self, turns):
+        """
+        This works now as intended
+        degrades the player's illness and hunger for every 2 moves
+        """
         #Degrade the player's condition every three moves.
         #seems to be evaluating wrong atm
-        if turns % 3 == 0:
+        if turns % 2 == 0:
             self.illness += 1
+            self.hunger += 2
         if (self.illness > 50 or
             self.hunger > 50 or
             self.cold > 50):
@@ -54,11 +89,48 @@ class Player(object):
         """
         self.illness += illness
 
+    def set_hunger(self, hunger):
+        """
+        add the value passed in to the hunger attribute of the player
+        """
+        self.hunger += hunger
+    def set_cold(self, cold):
+        """
+        add the value passed in to the cold attribute of the player
+        """
+        self.cold += cold
+    def set_rescue(self, rescue):
+        """
+        set the rescued attribute of the player
+        """
+        self.rescued = rescue
+
     def get_death_status(self):
         return self.dead
+
     def get_rescue_status(self):
         return self.rescued
 
+    def get_reason_for_death(self):
+        """
+        returns a string as to why the player died and from what
+        """
+        text = 'Sadly you died as a result of extreme '
+        if self.illness > 50 and self.hunger > 50 and self.cold > 50:
+            return text + 'illness, hunger and cold.'
+        elif self.illness > 50 and self.hunger > 50:
+            return text + 'illness and hunger.'
+        elif self.illness > 50 and self.cold > 50:
+            return text + 'illness and cold.'
+        elif self.hunger > 50 and self.cold > 50:
+            return text + 'hunger and cold.'
+        elif self.illness > 50:
+            return text + 'illness.'
+        elif self.hunger > 50:
+            return text + 'hunger.'
+        elif self.cold > 50:
+            return text + 'cold.'
+        return ""
     #------------------------------------------------------------------------
     # This section relates to items, and inventory
     #------------------------------------------------------------------------

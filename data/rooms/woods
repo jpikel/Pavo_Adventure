@@ -47,8 +47,24 @@
      ]
     }, 
     "search": {
-        "modifiers":{
-     "room_updates":{"woods":{"feature_searched": true, "features":{"tree stump":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "woods": {
+        "feature_searched": true, 
+        "features": {
+         "tree stump": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "The tree stump looks like it is the remnant of a logging operation.  The top is cut flat and has been hollowed out over the years, while it is slowly rotting away.  You think this would be a great spot to hide a few precious items and they should stay safe.  Besides a few termites feasting on the flesh of the stump you do not find anything else very special here."
     }, 
     "drop": {
@@ -128,7 +144,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "west", 
    "id": 0, 
    "aliases": [
     "camp"
@@ -141,7 +157,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "south", 
    "id": 0, 
    "aliases": [
     "river"
@@ -154,7 +170,7 @@
    "item_required": true, 
    "item_required_title": "lantern", 
    "pre_item_description": "You walk a few feet into the entrance only to be confronted by a solid stone surface.  It appears to look like natural rock.  Maybe there is another way in or around?  You head back into the woods.", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "cave", 

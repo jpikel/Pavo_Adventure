@@ -32,7 +32,7 @@
      "description": "You read the label on the front of the safe \"Please keep loaded.\""
     }, 
     "search": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You try to open the door.  But it is locked tight.  You doubt you would be able to force it either."
     }, 
     "drop": {
@@ -106,7 +106,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "south", 
    "id": 0, 
    "aliases": [
     "mountain summit"

@@ -1,0 +1,114 @@
+{
+ "id": 8, 
+ "title": "medical kit", 
+ "aliases": [
+  "medical kit"
+ ], 
+ "verbs": {
+  "pull": {
+   "modifiers": {}, 
+   "description": "You pull open the zipper and feel things might fall out this way, so you zip it back up."
+  }, 
+  "use": {
+   "deactivate_description": "use deactivate for medical kit", 
+   "description": "You use the disinfectant on your wounds and wrap them in bandages.  You actually feel a bit better.", 
+   "modifiers": {
+    "player":{
+        "illness":"-15"
+        },
+    "item_updates":{
+    "medical kit":{
+    "verbs":{
+        "use":{
+            "description":"Unfortunately there is nothing left to use inside the kit.",
+            "modifiers":{"player":{}, "item_updates":{}}
+        }
+    }
+    }
+    }
+
+   }
+  }, 
+  "drop": {
+   "modifiers": {
+    "player": {
+     "inventory": "drop"
+    }, 
+    "room": {
+     "items_in_room": "add", 
+     "title": "any"
+    } 
+   }, 
+   "description": "You put down the medical kit."
+  }, 
+  "take": {
+   "modifiers": {
+    "player": {
+     "inventory": "add"
+    }, 
+    "room": {
+     "items_in_room": "drop", 
+     "title": "any"
+    },
+    "room_updates": {
+     "game trail": {
+      "features": {
+       "blood stained snow": {
+        "verbs": {
+         "search": {
+          "description": "The blood in the snow points to a violent encounter between two animals most likely or perhaps a human was chased here."  
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "medical kit": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
+    }},
+   "description": "You pick up the medical kit and put it away into your pack."
+  }, 
+  "read": {
+   "modifiers": {}, 
+   "description": "Reading the labels: B.P.C. Bandage gauze compress 4x4, Iodine Applicator apply to small scratches, Aspirin for slight aches or pain take two, Sulfanilamide Tablets prevention of infection in wounds take eight."
+  }, 
+  "search": {
+   "modifiers": {}, 
+   "description": "This kit is the remnants of what was a well stocked medical kit."
+  }, 
+  "look at": {
+   "modifiers": {}, 
+   "description": "The outside is a tarnished red with a large zipper that goes around three sides and big pull for easy access."
+  }, 
+  "eat": {
+   "modifiers": {
+   "player":{"illnes":"-10"},
+   "item_updates":{"medical kit":{"verbs":{"eat":{"description":"There is nothing left to eat in this kit.", "modifiers":{"player":{}, "item_updates":{}}}}
+   }}}, 
+   "description": "You take the two remaining aspirin tablets and there are eight sulfanilamide tablets left, you take those as well.  Maybe you'll feel better soon."
+  }
+ }, 
+ "active": false, 
+ "activatable": false, 
+ "attributes_affected_requirement_met": [
+  {}
+ ], 
+ "attributes_affected_requirement_not_met": [
+  {}
+ ], 
+ "requirement_met": true, 
+ "requirement_met_description": "req met medical kit", 
+ "requirement_not_met_description": "req not met medical kit", 
+ "item_combination": "other item combination for medical kit", 
+ "room_combination": "medical kit can be used in room", 
+ "feature_combination": "medical kit can be used with feature"
+}

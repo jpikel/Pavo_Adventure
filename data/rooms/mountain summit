@@ -32,7 +32,24 @@
      "description": "You cannot find any to read inside or on the outside of the shed."
     }, 
     "search": {
-     "modifiers": {"room_updates":{"mountain summit":{"feature_searched": true, "features":{"storage shed":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "mountain summit": {
+        "feature_searched": true, 
+        "features": {
+         "storage shed": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "After some wrenching you manage to pry the door open.  The hinges grind and groan as you force the door open.  A nice place to keep some things for safe keeping, but you do not see much else of interest inside."
     }, 
     "drop": {
@@ -100,7 +117,7 @@
   "fire tower": {
    "modifiers": {
     "player": {
-     "illness": "100"
+     "cold": "100"
     }, 
     "item_updates": {
      "flare gun": {
@@ -123,7 +140,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "", 
+   "compass_direction": "north", 
    "id": 0, 
    "aliases": [
     "fire tower"
@@ -132,7 +149,7 @@
   "mountain path": {
    "modifiers": {
     "player": {
-     "illness": "100"
+     "cold": "100"
     }
    }, 
    "accessible": false, 
@@ -141,7 +158,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You turn around to head back down but, you begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "", 
+   "compass_direction": "south", 
    "id": 0, 
    "aliases": [
     "mountain path"

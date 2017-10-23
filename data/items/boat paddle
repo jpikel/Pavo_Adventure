@@ -34,6 +34,31 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "dense brush": {
+      "features": {
+       "animal corral": {
+        "verbs": {
+         "search": {
+          "description": "You poke around in the remanents of the straw in the corral, but do not find anything else unique."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "boat paddle": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You pick up the paddle.  This may come in handy if you have to cross a river.  Not on it's own though but perhaps you'll find a raft of some kind.  It is a rather short paddle so you are able to strap it to the outside of your pack."

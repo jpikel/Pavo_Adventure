@@ -16,10 +16,10 @@ import language_parser.command_parser as parse
 import game_engine.player as player
 #from game_engine.engine_helpers import response_struct
 import game_engine.engine_helpers as helpers
-
+from random import randint
 
 ALL_VERBS = verbs().get_verbs()
-WHAT_DO = 'What would you like to do?'
+WHAT_DO = '\nWhat would you like to do?'
 
 #DEBUG SECTION, you can set these values to 1 to get the desired affect
 #later in the game engine
@@ -27,9 +27,14 @@ WHAT_DO = 'What would you like to do?'
 DEBUG_PARSE = 0
 #if set to 1 prints the value in the response json from the action_item etc
 DEBUG_RESPONSE = 0
+#prints the entire room json after it has been updated in post process
+DEBUG_ROOM = 0
+#prints the current room's title at the begining of each cycle
+#comes after the description etc
+DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'fire tower'
+SPECIFIC_ROOM = 'mountain summit'
 
 
 class Game():
@@ -54,7 +59,7 @@ class Game():
         quit = ["quit", "q", "close", "exit" , "quit game", "close game", "exit game"]
         cmds = [newgame, loadgame, quit]
         invalid_message = [
-                "\nPlease choose from the menu:",
+                "\n\nPlease choose from the menu:",
                 "New Game",
                 "Load Game",
                 "Quit"]
@@ -90,7 +95,8 @@ class Game():
         #New games start at the shore
         self.current_room = files.load_room("shore")
         #for testing purposes load a specific room and start from there
-        #self.current_room = files.load_room('river')
+        if LOAD_SPECIFIC_ROOM_ON_NEW_GAME:
+            self.current_room = files.load_room(SPECIFIC_ROOM)
 
     def load_from_file(self):
         """
@@ -148,8 +154,8 @@ class Game():
         #updated this while loop the previous one did not seem to evaluate the 
         #dead correctly
         while True:
-            #comment next line out when not debuggin!
-            helpers.multi_printer("Current Room: " + self.current_room['title'])
+            if DEBUG_PRINT_ROOM_TITLE:
+                helpers.multi_printer("Current Room: " + self.current_room['title'])
 
             userInput = helpers.get_input(WHAT_DO)
             userInput = self.check_save_load_quit(userInput)
@@ -205,15 +211,13 @@ class Game():
                 "Error command type not supported yet."
 
             if self.player.get_death_status() or self.player.get_rescue_status():
-                # death status still not evaluating properly- TODO next week
-            #if self.player.get_rescue_status() or  self.player.dead:
-                #print self.player.dead
-                #print self.player.get_rescue_status()
                 #would be good to add a restart loop in here
                 #this break should be all that is needed and then we can startGame 
                 #again to allow loadgame or newgame
                 #we submit False to let startGame know this is not a newGame
                 #it will not print the Splash screen again
+                #works well.  rescued myself with the flare gun !
+                helpers.multi_printer(self.player.get_reason_for_death())
                 break
         self.startGame(False)
 
@@ -291,7 +295,7 @@ class Game():
             return
         else:
             #also sent to the funny script writer
-            res['description'] = "place holder for funny + verb"
+            res['description'] = self.get_humor(action, 'action')
         self.post_process(res)
         
     def process_room_action(self, room, action):
@@ -308,20 +312,24 @@ class Game():
         print "This is a stub function for handling exit only commands!"
     '''
     def process_item_only(self, name):
-        print "TODO: Write this function"
-        print "This is a stub function for handling item_only commands!"
+        res = helpers.response_struct().get_response_struct()
+        res['description'] = self.get_humor(name, 'noun')
+        self.post_process(res)
+
 
     def process_feature_action(self, feature, action):
         res = self.feature_action(feature, action)
         self.post_process(res)
 
     def process_feature_only(self, feature):
-        print "TODO: Write this function"
-        print "This is a stub function for handling feature only commands!"
+        res = helpers.response_struct().get_response_struct()
+        res['description'] = self.get_humor(feature, 'noun')
+        self.post_process(res)
 
     def process_room_only(self, room):
-        print "TODO: Write this function"
-        print "This is a stub function for handling room only commands!"
+        res = self.room_action(room, 'go')
+        self.post_process(res)
+
 
     #-------------------------------------------------------------------------
     # The post process function, handles printing descriptive text
@@ -338,20 +346,21 @@ class Game():
         #and the player state if for instance the player has 
         #eaten something and gets a boost to hunger
 
-        #uncomment for troubleshooting
+        #set DEBUG_RESPONSE to 1 for debuggin
         if DEBUG_RESPONSE:
             print(json.dumps(res, indent=4))
 
         #update the player with any particular modifiers from the action
         self.update_player(res)
         self.update_room(res)
-        #print self.current_room['items_in_room']
+        if DEBUG_ROOM:
+            print(json.dumps(self.current_room, indent=4))
         self.update_item(res)
         helpers.multi_printer(res['description'])
         if 'artifact' in res:
             lines = res['artifact']
             helpers.multi_printer(lines)
-        if not self.player.get_death_status():
+        if not self.player.get_death_status() and not self.player.get_rescue_status():
             helpers.multi_printer(self.getTimeOfDay())
             helpers.multi_printer(self.player.getCondition())
 
@@ -647,6 +656,12 @@ class Game():
                 self.player.remove_item_from_inventory(res['title'])
             if 'illness' in modifiers:
                 self.player.set_illness(int(modifiers['illness']))
+            if 'hunger' in modifiers:
+                self.player.set_hunger(int(modifiers['hunger']))
+            if 'cold' in modifiers:
+                self.player.set_cold(int(modifiers['cold']))
+            if 'rescued' in modifiers:
+                self.player.set_rescue(modifiers['rescued'])
 
         #after modifiers have been applied update the player's condition
         self.player.updatePlayerCondition(self.number_of_turns)
@@ -655,7 +670,10 @@ class Game():
 
     def update_item(self, res):
         """
-        this function is used to an item's dict.
+        this function is used to update an item's dict.
+        it requires that the field modifiers and item_updates are in the response
+        received.  The item must have the same structure as that of an actual item
+        file.  The dict trees will be updated with the new information recursively
         """
         if 'modifiers' in res and 'item_updates' in res['modifiers']:
             for key in res['modifiers']['item_updates']:
@@ -673,13 +691,37 @@ class Game():
 
     def getTimeOfDay(self):
         if self.number_of_turns % 4 == 0:
-            text = " It is morning. "
+            text = "It is morning. "
         elif self.number_of_turns % 4 == 1:
-            text = " It is afternoon. "
+            text = "It is afternoon. "
         elif self.number_of_turns % 4 == 2:
-            text = " It is evening. "
+            text = "It is evening. "
         elif self.number_of_turns % 4 == 3:
-            text = " It is night. "
+            text = "It is night. "
+        return text
+
+    #-------------------------------------------------------------------------
+    # This begins the humorous section
+    #-------------------------------------------------------------------------
+    def get_humor(self, word, type_of):
+        """
+        depending on whether it is an action or noun puts together a random
+        string to return
+        """
+        action_prefix = ['Sadly you cannot ', 'Nope maybe try to ',
+                'Wait... hold on a sec... nope you cannot just ']
+        noun_prefix = ['The ', 'That ', 'Try doing something to the ']
+        action_post = [' on yourself.', ' on something in the real world.',
+                ' -- every DM ever.']
+        noun_post = [' is a thing in the world you are correct sir.',
+                ' might be nearby but you need to perform something on it.',
+                ' something imaginary.']
+        index = randint(0,2)
+        text = ''
+        if type_of == 'noun':
+            text += noun_prefix[index] + word + noun_post[index]
+        elif type_of == 'action':
+            text += action_prefix[index] + word + action_post[index]
         return text
 
     #suggest update player conditions relocated to the helper file player.py

@@ -32,7 +32,24 @@
      "description": "There a worn out sticker that reads \"Made in USA\""
     }, 
     "search": {
-     "modifiers": {"room_updates":{"ranger station":{"feature_searched": true, "features":{"footlocker":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "ranger station": {
+        "feature_searched": true, 
+        "features": {
+         "footlocker": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "The footlocker's hinges open smoothly with much effort.  A nice place to store some items inside."
     }, 
     "drop": {
@@ -140,7 +157,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "You don't think the canoe will be able to handle the rapids in the opposite direction. So for now you are stuck here at the station.", 
-   "compass_direction": "", 
+   "compass_direction": "west", 
    "id": 0, 
    "aliases": [
     "rapids"

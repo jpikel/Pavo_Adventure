@@ -32,8 +32,24 @@
      "description": "There is a small inscription on the inside of one of the rails, it reads \"To my dear husband.  Not all those who wander are lost\""
     }, 
     "search": {
-     "modifiers": {"room_updates":{"crash site":{"feature_searched": true, "features":{"dog sled":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}
-}, 
+     "modifiers": {
+      "room_updates": {
+       "crash site": {
+        "feature_searched": true, 
+        "features": {
+         "dog sled": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "Getting closer to the dog sled, a glint catches your eye.  How could you have missed it before.  Hanging by a dry rotten string along one of the sides of the dog sled is a small tarnished rescue whistle.  It still appears in reasonable condition, just needs a bit of cleaning."
     }, 
     "drop": {
@@ -107,7 +123,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "west", 
    "id": 0, 
    "aliases": [
     "shore"
@@ -120,7 +136,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "south", 
    "id": 0, 
    "aliases": [
     "camp"
@@ -133,7 +149,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "game trail", 

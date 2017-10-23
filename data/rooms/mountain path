@@ -32,7 +32,24 @@
      "description": "The sign reads: \"C  tion: Ext  me terr    a ead. Dr ss ap   priat ly for the co  iti ns. H pother ia kil s.\""
     }, 
     "search": {
-     "modifiers": {"room_updates":{"mountain path":{"feature_searched": true, "features":{"sign":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "mountain path": {
+        "feature_searched": true, 
+        "features": {
+         "sign": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "The good thing is this sign is different than the first.  You think you'd manage to find items left next to this sign again in the future.  To your fortune you find a candy bar wrapper on the ground next to the sign."
     }, 
     "drop": {
@@ -106,7 +123,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "north", 
    "id": 0, 
    "aliases": [
     "mountain base"
@@ -119,7 +136,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "mountain summit"

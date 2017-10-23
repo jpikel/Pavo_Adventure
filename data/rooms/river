@@ -32,7 +32,24 @@
      "description": "Although many camping accessories have logos plastered on them, this one is just too tired to wear any sort of branding anymore."
     }, 
     "search": {
-     "modifiers": {"room_updates":{"river":{"feature_searched": true, "features":{"camping cooler":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "river": {
+        "feature_searched": true, 
+        "features": {
+         "camping cooler": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "As you open the lid, it moans and creaks.  The smell of plastic if strong, but quickly dissipates in the breeze.  Inside the cooler you see a heavy winter parka, that is in surprisingly good condition and a spiral bound notepad."
     }, 
     "drop": {
@@ -120,7 +137,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "north", 
    "id": 0, 
    "aliases": [
     "woods", 
@@ -134,7 +151,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "waterfall"
@@ -147,7 +164,7 @@
    "item_required": true, 
    "item_required_title": "boat paddle", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "south", 
    "id": 0, 
    "aliases": [
     "rapids"

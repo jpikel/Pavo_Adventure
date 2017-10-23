@@ -75,6 +75,31 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
+    }, 
+    "room_updates": {
+     "fire tower": {
+      "features": {
+       "locked safe": {
+        "verbs": {
+         "search": {
+          "description": "The small locked safe stands, door ajar as though someone has taken something it held dear."
+         }
+        }
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "flare gun": {
+      "verbs": {
+       "take": {
+        "modifiers": {
+         "room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You pick up the flare gun and tuck it away into your pack."

@@ -33,7 +33,22 @@
     }, 
     "search": {
      "modifiers": {
-     "room_updates":{"camp":{"feature_searched": true, "features":{"hunting blind":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}
+      "room_updates": {
+       "camp": {
+        "feature_searched": true, 
+        "features": {
+         "hunting blind": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
      }, 
      "description": "This hunting blind is in surprising condition. You spend a few minutes admiring it and looking underneath but do not find anything of value.  You climb up the small wooden ladder strapped to the back of the blind and to your relief there is nothing living inside.  Not much is left but it seems the hunter left behind a lantern that still looks in reasonable condition and much to your bellies happiness a can of sweetened condensed milk."
     }, 
@@ -113,7 +128,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "woods", 
@@ -127,7 +142,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "north", 
    "id": 0, 
    "aliases": [
     "crash site"
@@ -140,7 +155,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "west", 
    "id": 0, 
    "aliases": [
     "dense brush"

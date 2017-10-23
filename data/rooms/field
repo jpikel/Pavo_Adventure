@@ -32,7 +32,24 @@
      "description": "Wouldn't it be a great place to camp here.  Lie on the log and read a great book next to a campfire with some friends.  Or roast marshmallows.  Maybe next time, if there is a next time."
     }, 
     "search": {
-     "modifiers": {"room_updates":{"field":{"feature_searched": true, "features":{"log":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "field": {
+        "feature_searched": true, 
+        "features": {
+         "log": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "Searching inside and around the log you do not find anything useful.  But it is a great place to stash a few items, for future retrieval."
     }, 
     "drop": {
@@ -104,7 +121,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "Racing towards the rocky base of the moutain, the wolves catch up with you quickly.  All three are behind you.  One is able to get its jaws around you pant leg and the other two leap into the air crashing onto your shoulders.  As you fall face first into the rocks, you try to break your fall.  You forearm bones snap and break out of your skin.  With the extra weight your head hits a rock squarely.  Darkness.  You have died trying to survive the Desolate Journey", 
-   "compass_direction": "", 
+   "compass_direction": "south", 
    "id": 0, 
    "aliases": [
     "mountain base"
@@ -122,7 +139,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "Trying to flee back into the dense brush the wolves separate around the bushes.  One chasing on your heels and there are two wolves along your sides.  They quickly close in, the wolf behind you snaps at your pants and you fall face first into the snow.  The two along your side swoop in with such speed and force that you feel like a car just hit you.  You kick and flail your arms as best you can but they are just to powerful.  Warmth begins to leave you body, you feel cold, weak, you reach down at your side.  Bringing you hand back in front of your face, it is covered in blood.  Your eyes fade into darkness.  You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "dense brush"

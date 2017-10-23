@@ -32,7 +32,24 @@
      "description": "You are not able to find anything to read here."
     }, 
     "search": {
-     "modifiers": {"room_updates":{"dense brush":{"feature_searched": true, "features":{"animal corral":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "dense brush": {
+        "feature_searched": true, 
+        "features": {
+         "animal corral": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "Searching around the corral, you find a boat paddle lying on the ground.  You also think that you could easily use this corral for keeping some items safe.  Especially since it has a gate.  But truthfully, you doubt you even need to close it since you seem to be the only one here."
     }, 
     "drop": {
@@ -106,7 +123,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "west", 
    "id": 0, 
    "aliases": [
     "field"
@@ -199,7 +216,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "camp"

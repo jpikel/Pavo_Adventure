@@ -32,7 +32,24 @@
      "description": "You read the nature of the rock shelf and it seems it will be bad for your health if you do not avoid them."
     }, 
     "search": {
-     "modifiers": {"room_updates":{"rapids":{"feature_searched": true, "features":{"rock shelf":{"verbs":{"search":{"modifiers":{"room_updates":{}}}}}}}}},
+     "modifiers": {
+      "room_updates": {
+       "rapids": {
+        "feature_searched": true, 
+        "features": {
+         "rock shelf": {
+          "verbs": {
+           "search": {
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }, 
      "description": "No use searching it.  You have more important things to do."
     }, 
     "drop": {
@@ -104,7 +121,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "You smash into the rocks and tip over into the water.  Swimming as hard as you can, you cannot manage to keep your head above water.  You gasp for air getting nothing but water.  Your body convulses and you feel nothing. You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "", 
+   "compass_direction": "east", 
    "id": 0, 
    "aliases": [
     "ranger station"
@@ -114,7 +131,8 @@
      "items_in_room": "drop"
     }, 
     "player": {
-     "illness": "100"
+     "illness": "100",
+     "cold":"100"
     }
    }
   }, 
@@ -125,7 +143,7 @@
    "item_required": false, 
    "item_required_title": "", 
    "pre_item_description": "You most definitely will not be able to paddle back up river.", 
-   "compass_direction": "", 
+   "compass_direction": "north", 
    "id": 0, 
    "aliases": [
     "river"

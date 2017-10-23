@@ -68,8 +68,8 @@ class item_info():
         only has getters for these features
     """
     item_titles = ["lantern", "heavy winter parka", "old map", "spiral bound notepad",
-                "flare gun", "boat paddle", "rescue whistle", "frozen dead hare",
-                "can of sweetened condensed milk", "candy bar"]
+                "flare gun", "boat paddle", "rescue whistle",
+                "can of sweetened condensed milk", "candy bar", "medical kit"]
     item_dir = os.path.join(data_dir, "items")
 
     def get_titles(self):

@@ -78,7 +78,11 @@
              "features": {
               "locked safe": {
                "verbs": {
+                "use": {
+                 "description": "You've already unlocked the safe and the door is open."
+                }, 
                 "search": {
+                 "description": "Now with the door open, peering inside you see that the safe holds a small brightly painted orange flare gun.", 
                  "modifiers": {
                   "room_updates": {
                    "fire tower": {
@@ -102,11 +106,11 @@
    }, 
    "description": "Not much is written in the notepad.  Looks like it may have one belonged to a river guide.  It states \"In case of emergency dial ...\".  You are not sure what that code is for, maybe you'll find something that you can use it on.  But it certainly is not a phone number that could be dialed.  Maybe it is something else.", 
    "artifact": [
-    " ____     _      _               ____           ____   ______ ", 
-    "|__    |   |  |    |  |             |   ___|         |__   |  |____    |", 
-    "     |   |   |  |_         __      |   |___   __    _|   |          /   /", 
-    "   /   /_   |__      |  |__|     |          | |__|   _    |        /   /", 
-    " /____|          |_|             |_____|        |___ |     __"
+    " ____     _    _         ____         ____  ______ ", 
+    "|__  |   |  | | |       | ___|       |__ | |____  |", 
+    "     |   |  |_      __  | |___   __   _| |     / /", 
+    "  / /_   |_     |  |__| |     | |__|  _  |    / /", 
+    " /____|       |_|       |_____|      |___|   __"
    ]
   }, 
   "search": {
