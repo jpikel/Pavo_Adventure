@@ -189,24 +189,39 @@ def _generate_output_from_pattern_key(pattern_key, matched_words):
             # word matched is an action and the second word matched is an
             # item.
             command_type = COMMAND_TYPES.ITEM_ACTION
-            action = matched_words[0]
-            item = matched_words[1]
+            action_matched = matched_words[0]
+            item_matched = matched_words[1]
+            # Translate the words that matched into the "master" words that are
+            # recognized by the game.
+            # This step is needed to translate aliases to official game words.
+            action = words.all_words[action_matched]["master_word"]
+            item = words.all_words[item_matched]["master_word"]
             output_dict[OUTPUT_FIELDS.COMMAND] = \
                 {"action": action, "item": item}
         elif pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_ROOM:
             # Given the pattern key, we know that the first
             # word matched is an action and the second word matched is a room.
             command_type = COMMAND_TYPES.ROOM_ACTION
-            action = matched_words[0]
-            room = matched_words[1]
+            action_matched = matched_words[0]
+            room_matched = matched_words[1]
+            # Translate the words that matched into the "master" words that are
+            # recognized by the game.
+            # This step is needed to translate aliases to official game words.
+            action = words.all_words[action_matched]["master_word"]
+            room = words.all_words[room_matched]["master_word"]
             output_dict[OUTPUT_FIELDS.COMMAND] = \
                 {"action": action, "room": room}
         elif pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_FEATURE:
             # Given the pattern key, we know that the first
             # word matched is an action and the second word matched is a feature.
             command_type = COMMAND_TYPES.FEATURE_ACTION
-            action = matched_words[0]
-            feature = matched_words[1]
+            action_matched = matched_words[0]
+            feature_matched = matched_words[1]
+            # Translate the words that matched into the "master" words that are
+            # recognized by the game.
+            # This step is needed to translate aliases to official game words.
+            action = words.all_words[action_matched]["master_word"]
+            feature = words.all_words[action_matched]["master_word"]
             output_dict[OUTPUT_FIELDS.COMMAND] = \
                 {"action": action, "feature": feature}
     # Every pattern will have a "type" and "processed" key.
