@@ -33,6 +33,7 @@ class OUTPUT_FIELDS:
     ITEM = "item"
     NAME = "name"
     PROCESSED = "processed"
+    COMMAND = "command"
     RECOGNIZED_WORDS = "command"
     ROOM = "room"
     TYPE = "type"
@@ -83,25 +84,25 @@ def _build_exact_match_output(input_string):
     # Build the rest of the output dict based on the word type of the command.
     if word_type == WORD_TYPES.ACTION:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ACTION_ONLY
-        recognized_words_dict = {
+        command_dict = {
             OUTPUT_FIELDS.ACTION: master_word
         }
     if word_type == WORD_TYPES.FEATURE:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.FEATURE_ONLY
-        recognized_words_dict = {
+        command_dict = {
             OUTPUT_FIELDS.FEATURE: master_word
         }
     if word_type == WORD_TYPES.ITEM:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ITEM_ONLY
-        recognized_words_dict = {
+        command_dict = {
             OUTPUT_FIELDS.ITEM: master_word
         }
     if word_type == WORD_TYPES.ROOM:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ROOM_ONLY
-        recognized_words_dict = {
+        command_dict = {
             OUTPUT_FIELDS.ROOM: master_word
         }
-    output_dict[OUTPUT_FIELDS.RECOGNIZED_WORDS] = recognized_words_dict
+    output_dict[OUTPUT_FIELDS.COMMAND] = command_dict
     return output_dict
 
 def _remove_noise(input_string):
@@ -190,7 +191,7 @@ def _generate_output_from_pattern_key(pattern_key, matched_words):
             command_type = COMMAND_TYPES.ITEM_ACTION
             action = matched_words[0]
             item = matched_words[1]
-            output_dict[OUTPUT_FIELDS.RECOGNIZED_WORDS] = \
+            output_dict[OUTPUT_FIELDS.COMMAND] = \
                 {"action": action, "item": item}
         elif pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_ROOM:
             # Given the pattern key, we know that the first
@@ -198,7 +199,7 @@ def _generate_output_from_pattern_key(pattern_key, matched_words):
             command_type = COMMAND_TYPES.ROOM_ACTION
             action = matched_words[0]
             room = matched_words[1]
-            output_dict[OUTPUT_FIELDS.RECOGNIZED_WORDS] = \
+            output_dict[OUTPUT_FIELDS.COMMAND] = \
                 {"action": action, "room": room}
         elif pattern_key == REGEX_PATTERNS.KNOWN_ACTION_AND_FEATURE:
             # Given the pattern key, we know that the first
@@ -206,7 +207,7 @@ def _generate_output_from_pattern_key(pattern_key, matched_words):
             command_type = COMMAND_TYPES.FEATURE_ACTION
             action = matched_words[0]
             feature = matched_words[1]
-            output_dict[OUTPUT_FIELDS.RECOGNIZED_WORDS] = \
+            output_dict[OUTPUT_FIELDS.COMMAND] = \
                 {"action": action, "feature": feature}
     # Every pattern will have a "type" and "processed" key.
     output_dict[OUTPUT_FIELDS.TYPE] = command_type
