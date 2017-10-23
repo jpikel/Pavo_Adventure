@@ -17,9 +17,6 @@ import game_engine.player as player
 #from game_engine.engine_helpers import response_struct
 import game_engine.engine_helpers as helpers
 
-#experiment text wrapping
-import textwrap
-CHARS_PER_LINE = 80
 
 ALL_VERBS = verbs().get_verbs()
 WHAT_DO = 'What would you like to do?'
@@ -143,7 +140,7 @@ class Game():
             check if dead or rescued
         """
         #inital room description after new game or loading game
-        lines = textwrap.wrap(self.get_room_desc(), CHARS_PER_LINE)
+        lines = self.get_room_desc()
         helpers.multi_printer(lines)
         helpers.multi_printer(self.getTimeOfDay())
         self.player.updatePlayerCondition(self.number_of_turns)
@@ -350,8 +347,7 @@ class Game():
         self.update_room(res)
         #print self.current_room['items_in_room']
         self.update_item(res)
-        lines = textwrap.wrap(res['description'], CHARS_PER_LINE)
-        helpers.multi_printer(lines)
+        helpers.multi_printer(res['description'])
         if 'artifact' in res:
             lines = res['artifact']
             helpers.multi_printer(lines)

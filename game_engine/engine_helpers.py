@@ -6,6 +6,11 @@ Class - CS467-400 Capstone
 Term - Fall 2017
 Description -
 """
+import textwrap
+
+#experiment text wrapping
+CHARS_PER_LINE = 80
+
 SPLASH_MESSAGE = [
 "****************************************************************************",
 "",
@@ -72,8 +77,11 @@ def multi_printer(text):
     or a single string
     """
     if isinstance(text, list):
-        for line in text: print line
+        for line in text: 
+            lines = textwrap.wrap(line, CHARS_PER_LINE)
+            for wrapped_line in lines: print wrapped_line
     elif isinstance(text, basestring):
-        print text
+        lines = textwrap.wrap(text, CHARS_PER_LINE)
+        for wrapped in lines: print wrapped
     else:
         print 'Error: did not receive list of strings or string'
