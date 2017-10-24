@@ -7,7 +7,8 @@
  "features": {
   "tree stump": {
    "aliases": [
-    "tree stump"
+    "tree stump", 
+    "stump"
    ], 
    "verbs": {
     "pull": {
@@ -31,19 +32,11 @@
      "modifiers": {}, 
      "description": "You see a small carving on the top of the tree stump", 
      "artifact": [
-      "         ___     ___", 
-      "       /      \\   /      \\", 
-      "     /  ___ \\/  __    \\", 
-      "   /       |      /     \\    \\", 
-      " /         |      \\__       \\", 
-      "|    |     |            \\      |", 
-      "|    \\__/        \\__/      |", 
-      "    \\                            /", 
-      "       \\                       /", 
-      "           \\                 /", 
-      "             \\             /", 
-      "               \\         /", 
-      "                  \\   /"
+      " ___  __      _            ____ ___", 
+      "|    /  \\    / \\    |        | |   \\", 
+      "|__ |       /___\\   |        | |__ /", 
+      "|   |      /     \\  |    |   | |",
+      "|___.\\__/./       \\.|___.\\__/ .| ."
      ]
     }, 
     "search": {
@@ -65,7 +58,7 @@
        }
       }
      }, 
-     "description": "The tree stump looks like it is the remnant of a logging operation.  The top is cut flat and has been hollowed out over the years, while it is slowly rotting away.  You think this would be a great spot to hide a few precious items and they should stay safe.  Besides a few termites feasting on the flesh of the stump you do not find anything else very special here."
+     "description": "The tree stump looks like it is the remnant of a logging operation.  The top is cut flat and has been hollowed out over the years, while it is slowly rotting away.  You think this would be a great spot to hide a few precious items and they should stay safe.  Besides a few termites feasting on the flesh of the stump, there is a carving on the top of the stump."
     }, 
     "drop": {
      "modifiers": {}, 
@@ -78,9 +71,9 @@
    }, 
    "title": "tree stump"
   }, 
-  "bent tree": {
+  "bent pine": {
    "aliases": [
-    "bent tree"
+    "bent pine"
    ], 
    "verbs": {
     "pull": {
@@ -104,17 +97,17 @@
      "modifiers": {}, 
      "description": "There is a small inscription on the tree that you can make out", 
      "artifact": [
-      "  \\  |    |  /", 
-      " _\\ | /\\ | /_", 
-      "_   |    |  _", 
-      "\\ -  .   .  - /", 
-      "    \\      /", 
-      "      \\_/"
+      "\\ | . | /", 
+      "_\\|/ \\|/_", 
+      "_ |   | _", 
+      " \\-. .-/", 
+      "   \\ /", 
+      "   \\./"
      ]
     }, 
     "search": {
      "modifiers": {}, 
-     "description": "Not much to be found around the base of this tree."
+     "description": "Not much to be found around the base of this tree. On the side of the tree there is a small carving."
     }, 
     "drop": {
      "modifiers": {}, 
@@ -125,7 +118,7 @@
      "description": "Bark, if boiled long enough might be tasty but you are not that hungry."
     }
    }, 
-   "title": "bent tree"
+   "title": "bent pine"
   }
  }, 
  "items_in_room": [], 
@@ -160,7 +153,8 @@
    "compass_direction": "south", 
    "id": 0, 
    "aliases": [
-    "river"
+    "river", 
+    "stream"
    ]
   }, 
   "cave": {

@@ -2,7 +2,8 @@
  "id": 4, 
  "title": "spiral bound notepad", 
  "aliases": [
-  "spiral bound notepad"
+  "spiral bound notepad", 
+  "notepad"
  ], 
  "verbs": {
   "pull": {

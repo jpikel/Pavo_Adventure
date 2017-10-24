@@ -84,9 +84,17 @@ class Player(object):
         """
         This works now as intended
         degrades the player's illness and hunger for every 2 moves
+        if the player has the parka and is wearing it then we give the player
+        a reduction in his cold attribute
         """
-        #Degrade the player's condition every three moves.
+        #Degrade the player's condition every two moves.
         #seems to be evaluating wrong atm
+
+        #here's the parka boost to the player!
+        parka = self.search_inventory('heavy winter parka')
+        if parka is not None and parka['active'] == True:
+            self.cold -= 2
+
         if turns % 2 == 0:
             self.illness += 1
             self.hunger += 2
@@ -129,15 +137,15 @@ class Player(object):
         """
         text = 'Sadly, ' + self.getName() + ' died as a result of extreme '
         if self.illness > 50 and self.hunger > 50 and self.cold > 50:
-            return text + 'illness, hunger and cold.'
+            return text + 'wounds, hunger and cold.'
         elif self.illness > 50 and self.hunger > 50:
-            return text + 'illness and hunger.'
+            return text + 'wounds and hunger.'
         elif self.illness > 50 and self.cold > 50:
-            return text + 'illness and cold.'
+            return text + 'wounds and cold.'
         elif self.hunger > 50 and self.cold > 50:
             return text + 'hunger and cold.'
         elif self.illness > 50:
-            return text + 'illness.'
+            return text + 'wounds.'
         elif self.hunger > 50:
             return text + 'hunger.'
         elif self.cold > 50:

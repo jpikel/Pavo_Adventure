@@ -1,15 +1,22 @@
 {
+ "bar": "candy bar", 
  "boat paddle": "boat paddle", 
  "can of sweetened condensed milk": "can of sweetened condensed milk", 
  "candy bar": "candy bar", 
+ "firstaid": "medical kit", 
  "flare gun": "flare gun", 
  "heavy winter parka": "heavy winter parka", 
  "lamp": "lantern", 
  "lantern": "lantern", 
  "light": "lantern", 
+ "map": "old map", 
  "medical kit": "medical kit", 
  "milk": "can of sweetened condensed milk", 
+ "notepad": "spiral bound notepad", 
  "old map": "old map", 
+ "paddle": "boat paddle", 
+ "parka": "heavy winter parka", 
  "rescue whistle": "rescue whistle", 
- "spiral bound notepad": "spiral bound notepad"
+ "spiral bound notepad": "spiral bound notepad", 
+ "whistle": "rescue whistle"
 }

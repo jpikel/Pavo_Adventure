@@ -24,6 +24,28 @@
     "room": {
      "items_in_room": "add", 
      "title": "any"
+    }, 
+    "adjacent_room_updates": {
+     "self": "cave", 
+     "game trail": {
+      "connected_rooms": {
+       "cave": {
+        "pre_item_description": "You remember you set down the lantern inside the cave and while you were gone it must have gone out.  Now it is much to dark to retrieve it so you return to the game trail."
+       }
+      }
+     }
+    }, 
+    "item_updates": {
+     "lantern": {
+      "verbs": {
+       "drop": {
+        "modifiers": {
+         "adjacent_room_updates": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
     }
    }, 
    "description": "You put down the lantern. Making sure it does not tip over."

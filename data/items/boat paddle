@@ -2,7 +2,8 @@
  "id": 6, 
  "title": "boat paddle", 
  "aliases": [
-  "boat paddle"
+  "boat paddle", 
+  "paddle"
  ], 
  "verbs": {
   "pull": {

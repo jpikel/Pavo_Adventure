@@ -2,34 +2,34 @@
  "id": 4, 
  "title": "field", 
  "visited": false, 
- "long_description": "You are standing in a open field.  The snow is like a soft blanket laid across the earth here.   The wind picks up and you feel colder than before.  After being in the snugness of the forest this field is a bit to open for your taste.  There is a large log lying on the ground.  Off in the distance several grey wolves are gathering and staring intently in your direction.  The hair on the back of your neck stands up as your eyes lock and they begin moving closer to you.  To the east is the dense brush and to the south you see the base of a mountain rising up.", 
- "short_description": "In this open field, you feel rather vulnerable.  A log is lying on the ground and the wolves are a distant memory, at least for now.  To the east is the dense brush and to the south is the base of a mountain.", 
+ "long_description": "You are standing in a open field.  The snow is like a soft blanket laid across the earth here.   The wind picks up and you feel colder than before.  After being in the snugness of the forest this field is a bit to open for your taste.  There is a hay roll sitting in the field.  Off in the distance several grey wolves are gathering and staring intently in your direction.  The hair on the back of your neck stands up as your eyes lock and they begin moving closer to you.  To the east is the dense brush and to the south you see the base of a mountain rising up.", 
+ "short_description": "In this open field, you feel rather vulnerable.  There is a hay roll and the wolves are a distant memory, at least for now.  To the east is the dense brush and to the south is the base of a mountain.", 
  "features": {
-  "log": {
+  "hay roll": {
    "aliases": [
-    "log"
+    "hay roll"
    ], 
    "verbs": {
     "pull": {
      "modifiers": {}, 
-     "description": "Although logs are round, this one does not want to budge when you pull on it."
+     "description": "You pull some of the old moldy hay out of the roll and drop it on the ground.  It seems to be decomposing well by itself."
     }, 
     "use": {
      "deactivate_description": "use deactivate for feature 1 field", 
-     "description": "The log serves as a nice seat for a bit. You rest your tired legs and stare off on the horizon.", 
-     "modifiers": {}
+     "description": "You lean against the roll for a minutes to take a rest.",
+     "modifiers": {"player":{"illnes":"-1"}}
     }, 
     "look at": {
      "modifiers": {}, 
-     "description": "The log appears hollow and seems to have been here quite a while.  It still wears some of its bark, but in places the bark has fallen off and you see evidence of termites."
+     "description": "A large hay roll left here after the farmer likely cut the field.  Must not have come back for it and now it is slowly rotting away."
     }, 
     "take": {
      "modifiers": {}, 
-     "description": "You have no chance of taking this log with you let alone picking it up."
+     "description": "It is much to big to take the whole roll and the hay is rotting so you decide not to take any of it."
     }, 
     "read": {
      "modifiers": {}, 
-     "description": "Wouldn't it be a great place to camp here.  Lie on the log and read a great book next to a campfire with some friends.  Or roast marshmallows.  Maybe next time, if there is a next time."
+     "description": "Wouldn't it be a great place to camp here.  Amongst the hay rolls and read a great book next to a campfire with some friends.  Or roast marshmallows.  Maybe next time, if there is a next time."
     }, 
     "search": {
      "modifiers": {
@@ -50,18 +50,18 @@
        }
       }
      }, 
-     "description": "Searching inside and around the log you do not find anything useful.  But it is a great place to stash a few items, for future retrieval."
+     "description": "Searching around the hay roll you don't find anything interesting." 
     }, 
     "drop": {
      "modifiers": {}, 
-     "description": "Since the log is too heavy to pick it, you could consider that it is already dropped."
+     "description": "Since the hay roll is too heavy to pick it, you could consider that it is already dropped."
     }, 
     "eat": {
      "modifiers": {}, 
-     "description": "Perhaps in the summer a few of the insects that live in this log would be tasty, but for now they have all disappeared."
+     "description": "Perhaps in the summer a few of the insects that likely live in this hay roll would be tasty, but for now they have all disappeared."
     }
    }, 
-   "title": "log"
+   "title": "hay roll"
   }, 
   "wolves": {
    "aliases": [
@@ -142,7 +142,8 @@
    "compass_direction": "east", 
    "id": 0, 
    "aliases": [
-    "dense brush"
+    "dense brush", 
+    "copse"
    ], 
    "modifiers": {
     "player": {

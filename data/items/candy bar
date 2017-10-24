@@ -2,7 +2,8 @@
  "id": 10, 
  "title": "candy bar", 
  "aliases": [
-  "candy bar"
+  "candy bar", 
+  "bar"
  ], 
  "verbs": {
   "pull": {

@@ -7,7 +7,8 @@
  "features": {
   "driftwood": {
    "aliases": [
-    "driftwood"
+    "driftwood", 
+    "wood"
    ], 
    "verbs": {
     "pull": {
@@ -125,7 +126,8 @@
    "compass_direction": "east", 
    "id": 0, 
    "aliases": [
-    "crash site"
+    "crash site", 
+    "site"
    ]
   }
  }

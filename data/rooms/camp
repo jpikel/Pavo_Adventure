@@ -7,7 +7,8 @@
  "features": {
   "hunting blind": {
    "aliases": [
-    "hunting blind"
+    "hunting blind", 
+    "blind"
    ], 
    "verbs": {
     "pull": {
@@ -65,7 +66,8 @@
   }, 
   "leanto": {
    "aliases": [
-    "leanto"
+    "leanto", 
+    "shelter"
    ], 
    "verbs": {
     "pull": {
@@ -145,7 +147,8 @@
    "compass_direction": "north", 
    "id": 0, 
    "aliases": [
-    "crash site"
+    "crash site", 
+    "site"
    ]
   }, 
   "dense brush": {
@@ -158,7 +161,8 @@
    "compass_direction": "west", 
    "id": 0, 
    "aliases": [
-    "dense brush"
+    "dense brush", 
+    "copse"
    ]
   }
  }

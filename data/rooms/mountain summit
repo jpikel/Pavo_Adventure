@@ -143,7 +143,8 @@
    "compass_direction": "north", 
    "id": 0, 
    "aliases": [
-    "fire tower"
+    "fire tower", 
+    "watchtower"
    ]
   }, 
   "mountain path": {
@@ -161,7 +162,8 @@
    "compass_direction": "south", 
    "id": 0, 
    "aliases": [
-    "mountain path"
+    "mountain path", 
+    "path"
    ]
   }
  }

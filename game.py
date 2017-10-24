@@ -33,8 +33,8 @@ DEBUG_ROOM = 0
 #comes after the description etc
 DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
-LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'ranger station'
+LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 1
+SPECIFIC_ROOM = 'mountain base'
 
 
 class Game():
@@ -367,15 +367,16 @@ class Game():
         if DEBUG_RESPONSE:
             print(json.dumps(res, indent=4))
 
-        #update the player with any particular modifiers from the action
-        self.update_player(res)
-        #update the room dict through recursion
-        self.update_room(res)
+        if 'modifiers' in res:
+            #update the player with any particular modifiers from the action
+            self.update_player(res)
+            #update the room dict through recursion
+            self.update_room(res)
+            #update the items dict
+            self.update_item(res)
+
         if DEBUG_ROOM:
             print(json.dumps(self.current_room, indent=4))
-        #update the items dict
-        self.update_item(res)
-
         #print the messages to screen here
         helpers.multi_printer(res['description'], self.player.getName())
         if 'artifact' in res:
@@ -610,7 +611,7 @@ class Game():
                 text = "You can't find the " + title + " to " + verb +". "
                 res['description'] = text
         elif self.current_room['feature_searched'] and verb not in allowed_verbs:
-            res['description'] = "Trying picking up " + title + " to " + verb + " it."
+            res['description'] = "You need to be holding " + title + " to " + verb + " it."
         else:
             res['description'] = "You don't see any items around. "
         return res
@@ -629,7 +630,7 @@ class Game():
         """
         #this is the add and rop to rooms
         #if dropping is allowed is handled above in the item_action_room
-        if "modifiers" in res and "room" in res['modifiers']:
+        if "room" in res['modifiers']:
             mods = res['modifiers']['room']
             if self.current_room['title'] == mods['title'] or "any" == mods['title']:
                 if "items_in_room" in mods and mods['items_in_room'] == "add":
@@ -645,20 +646,35 @@ class Game():
         #what are consistent.  that comes from the way the 'updates' dict
         #is written in the 'modifiers' dict for a particular verb of a feature
         #or an item
-        if 'modifiers' in res and 'room_updates' in res['modifiers']:
+        if 'room_updates' in res['modifiers']:
             for key in res['modifiers']['room_updates']:
                 updates = res['modifiers']['room_updates'][key]
                 if self.current_room['title'] == key:
                     self.current_room = files.update(updates, self.current_room)
                 #affect any room that is a room other than the current room
                 elif key in files.ROOM_TITLES:
-                    other_room = files.load_room(key)
-                    other_room = files.update(updates, other_room)
-                    files.store_room(other_room)
+                    self.update_external_room(updates, key)
+        #this field is used in the modifiers field to only update adjacent rooms
+        #this will also validate that the room specified is the current room
+        if 'adjacent_room_updates' in res['modifiers']:
+            if self.current_room['title'] == res['modifiers']['adjacent_room_updates']['self']:
+                for key in res['modifiers']['adjacent_room_updates']:
+                    if key in self.current_room['connected_rooms']:
+                        updates = res['modifiers']['adjacent_room_updates'][key]
+                        self.update_external_room(updates, key)
+
 
         #hopefully file_lib will have a method where we can pass the 
         #modifiers dict to and it will do the remaining processing returning 
         #the updated room so we can just do 
+    def update_external_room(self, updates, key):
+        """
+           opens the room file named in the key, updates that room and then 
+           stores that room back to file
+        """
+        other_room = files.load_room(key)
+        other_room = files.update(updates, other_room)
+        files.store_room(other_room)
 
     def update_player(self, res):
         """
@@ -666,7 +682,7 @@ class Game():
         player inventory
         """
 
-        if 'modifiers' in res and 'player' in res['modifiers']:
+        if 'player' in res['modifiers']:
             modifiers = res['modifiers']['player']
             if 'inventory' in modifiers and modifiers['inventory'] == 'add':
                 item = files.load_item(res['title'])
@@ -698,7 +714,7 @@ class Game():
         received.  The item must have the same structure as that of an actual item
         file.  The dict trees will be updated with the new information recursively
         """
-        if 'modifiers' in res and 'item_updates' in res['modifiers']:
+        if 'item_updates' in res['modifiers']:
             for key in res['modifiers']['item_updates']:
                 updates = res['modifiers']['item_updates'][key]
                 #first check if the item is in the player inventory and update that

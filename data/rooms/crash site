@@ -7,7 +7,8 @@
  "features": {
   "dog sled": {
    "aliases": [
-    "dog sled"
+    "dog sled", 
+    "sled"
    ], 
    "verbs": {
     "pull": {
@@ -65,7 +66,8 @@
   }, 
   "campfire pit": {
    "aliases": [
-    "campfire pit"
+    "campfire pit", 
+    "pit"
    ], 
    "verbs": {
     "pull": {
@@ -126,7 +128,8 @@
    "compass_direction": "west", 
    "id": 0, 
    "aliases": [
-    "shore"
+    "shore", 
+    "waterfront"
    ]
   }, 
   "camp": {

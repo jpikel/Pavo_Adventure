@@ -31,21 +31,21 @@
      "modifiers": {}, 
      "description": "The sign reads:", 
      "artifact": [
-      "    _ ", 
-      "  /    \\ ", 
-      "  \\ _                                                   _", 
-      "       \\       _  _           ._|_           / |      _ \\   _  _ .", 
-      "  \\ _ /      |  \\/  |          |   \\   :        _|_ .  _ /   | \\/  | |", 
+      " _ ", 
+      "/ \\ ", 
+      "\\_                          _", 
+      "  \\     _  _     ._|_   /|  _\\  _  _ .", 
+      "\\_/    | \\/ |    | \\  : _|_._/ | \\/ ||", 
       "  _", 
-      "/    \\", 
-      "| _ /                   ", 
-      "|    \\    _        _   _          _  ,_          _|        _|_", 
-      "|      \\ |_\\_    |_| |-_        |_| |  |         |_|  \\_/    \\   \\ /", 
-      "                    _|                                                /", 
-      " _  _                                  __", 
-      "/  \\/  \\                                /    \\", 
-      "|      |  _            _|_  _      |      |   _        |_   _   _", 
-      "|      | |_\\_            \\  |_|      \\__/   |_        |_| |-_ |"
+      "/  \\", 
+      "| _/ ", 
+      "|  \\   _       _  _      _ ,_    _|  _|_", 
+      "|   \\ |_\\_    |_||-_    |_|| |  |_||_|\\\\/", 
+      "               _|                      /", 
+      " _  _                         __", 
+      "/ \\/ \\                       /  \\", 
+      "|    |  _            _|_ _  |    | _    |_  _  _", 
+      "|    | |_\\_           \\ |_|  \\__/ |_    |_||-_|"
      ]
     }, 
     "search": {
@@ -67,7 +67,7 @@
        }
       }
      }, 
-     "description": "The base of the sign would make a good place to store a few item.  At least you know you will find them again."
+     "description": "You look around the sign but you don't see anything of value."
     }, 
     "drop": {
      "modifiers": {}, 
@@ -141,7 +141,8 @@
    "compass_direction": "north", 
    "id": 0, 
    "aliases": [
-    "field"
+    "field", 
+    "flat"
    ]
   }, 
   "mountain path": {
@@ -154,7 +155,8 @@
    "compass_direction": "south", 
    "id": 0, 
    "aliases": [
-    "mountain path"
+    "mountain path", 
+    "path"
    ]
   }
  }

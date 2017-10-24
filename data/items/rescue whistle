@@ -2,7 +2,8 @@
  "id": 7, 
  "title": "rescue whistle", 
  "aliases": [
-  "rescue whistle"
+  "rescue whistle", 
+  "whistle"
  ], 
  "verbs": {
   "pull": {

@@ -154,15 +154,16 @@
    "compass_direction": "east", 
    "id": 0, 
    "aliases": [
-    "waterfall"
+    "waterfall", 
+    "cataract"
    ]
   }, 
   "rapids": {
    "accessible": true, 
    "title": "rapids", 
    "distance_from_room": 1, 
-   "item_required": true, 
-   "item_required_title": "boat paddle", 
+   "item_required": false, 
+   "item_required_title": "", 
    "pre_item_description": "", 
    "compass_direction": "south", 
    "id": 0, 
@@ -174,15 +175,14 @@
      "boat paddle": {
       "verbs": {
        "use": {
-        "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks."
-       }
-      }
-     }
-    }, 
-    "room_updates": {
+        "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks.",
+        "modifiers":{
+            "item_updates":{"boat paddle":{"verbs":{"use":{"description":"Good thing you avoided that rock shelf."}}}},
+            "room_updates": {
      "rapids": {
       "connected_rooms": {
        "ranger station": {
+           "accessible": true,
         "modifiers": {
          "player": {}
         }
@@ -193,4 +193,10 @@
    }
   }
  }
+
+        }
+       }
+      }
+     }
+    }
 }

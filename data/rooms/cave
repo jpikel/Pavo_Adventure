@@ -7,7 +7,8 @@
  "features": {
   "small shelf": {
    "aliases": [
-    "small shelf"
+    "small shelf", 
+    "shelf"
    ], 
    "verbs": {
     "pull": {
@@ -50,7 +51,7 @@
        }
       }
      }, 
-     "description": "Getting closer to the shelf, you lantern shines on upon an old rolled up bit of faded paper.  It has yellowed over the years and rolled up tightly, but maybe if you read it more intently you could learn more."
+     "description": "Getting closer to the shelf, your lantern shines on upon an old rolled up bit of faded paper.  It has yellowed over the years and rolled up tightly, but maybe if you read it more intently you could learn more.  It looks like something is drawn on it, maybe an old map."
     }, 
     "look at": {
      "modifiers": {}, 
@@ -65,11 +66,31 @@
   }, 
   "wood pole": {
    "aliases": [
-    "wood pole"
+    "wood pole", 
+    "pole"
    ], 
    "verbs": {
     "pull": {
      "modifiers": {
+      "item_updates": {
+       "lantern": {
+        "verbs": {
+         "drop": {
+          "modifiers": {
+           "adjacent_room_updates": {
+            "woods": {
+             "connected_rooms": {
+              "cave": {
+               "pre_item_description": "Having left the lantern inside the cave you no longer see its light.  It must have gone out and it is much too dark to proceed.  You turn back to the woods."
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }, 
       "room_updates": {
        "woods": {
         "connected_rooms": {
@@ -77,11 +98,23 @@
           "accessible": true, 
           "item_required": true, 
           "item_required_title": "lantern", 
-          "pre_item_description": "Without a lantern you are not able to see enough to to enter the cave.  You go back into the woods"
+          "pre_item_description": "Without a lantern you are not able to see enough to to enter the cave.  You go back into the woods."
          }
         }
        }, 
        "cave": {
+        "features": {
+         "wood pole": {
+          "verbs": {
+           "pull": {
+            "description": "You pull on the pole, it lifts a bit, nothing else seems to happen.", 
+            "modifiers": {
+             "room_updates": {}
+            }
+           }
+          }
+         }
+        }, 
         "connected_rooms": {
          "woods": {
           "accessible": true, 

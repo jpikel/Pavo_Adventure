@@ -124,7 +124,8 @@
    "compass_direction": "west", 
    "id": 0, 
    "aliases": [
-    "river"
+    "river", 
+    "stream"
    ], 
    "modifiers": {
     "room_updates": {

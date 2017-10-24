@@ -2,7 +2,8 @@
  "id": 8, 
  "title": "medical kit", 
  "aliases": [
-  "medical kit"
+  "medical kit", 
+  "firstaid"
  ], 
  "verbs": {
   "pull": {
@@ -13,20 +14,22 @@
    "deactivate_description": "use deactivate for medical kit", 
    "description": "You use the disinfectant on your wounds and wrap them in bandages.  You actually feel a bit better.", 
    "modifiers": {
-    "player":{
-        "illness":"-15"
-        },
-    "item_updates":{
-    "medical kit":{
-    "verbs":{
-        "use":{
-            "description":"Unfortunately there is nothing left to use inside the kit.",
-            "modifiers":{"player":{}, "item_updates":{}}
+    "player": {
+     "illness": "-15"
+    }, 
+    "item_updates": {
+     "medical kit": {
+      "verbs": {
+       "use": {
+        "description": "Unfortunately there is nothing left to use inside the kit.", 
+        "modifiers": {
+         "player": {}, 
+         "item_updates": {}
         }
+       }
+      }
+     }
     }
-    }
-    }
-
    }
   }, 
   "drop": {
@@ -37,7 +40,7 @@
     "room": {
      "items_in_room": "add", 
      "title": "any"
-    } 
+    }
    }, 
    "description": "You put down the medical kit."
   }, 
@@ -49,14 +52,14 @@
     "room": {
      "items_in_room": "drop", 
      "title": "any"
-    },
+    }, 
     "room_updates": {
      "game trail": {
       "features": {
        "blood stained snow": {
         "verbs": {
          "search": {
-          "description": "The blood in the snow points to a violent encounter between two animals most likely or perhaps a human was chased here."  
+          "description": "The blood in the snow points to a violent encounter between two animals most likely or perhaps a human was chased here."
          }
         }
        }
@@ -74,7 +77,8 @@
        }
       }
      }
-    }},
+    }
+   }, 
    "description": "You pick up the medical kit and put it away into your pack."
   }, 
   "read": {
@@ -91,9 +95,23 @@
   }, 
   "eat": {
    "modifiers": {
-   "player":{"illnes":"-10"},
-   "item_updates":{"medical kit":{"verbs":{"eat":{"description":"There is nothing left to eat in this kit.", "modifiers":{"player":{}, "item_updates":{}}}}
-   }}}, 
+    "player": {
+     "illnes": "-10"
+    }, 
+    "item_updates": {
+     "medical kit": {
+      "verbs": {
+       "eat": {
+        "description": "There is nothing left to eat in this kit.", 
+        "modifiers": {
+         "player": {}, 
+         "item_updates": {}
+        }
+       }
+      }
+     }
+    }
+   }, 
    "description": "You take the two remaining aspirin tablets and there are eight sulfanilamide tablets left, you take those as well.  Maybe you'll feel better soon."
   }
  }, 

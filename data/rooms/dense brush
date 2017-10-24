@@ -7,7 +7,8 @@
  "features": {
   "animal corral": {
    "aliases": [
-    "animal corral"
+    "animal corral", 
+    "corral"
    ], 
    "verbs": {
     "pull": {
@@ -65,7 +66,8 @@
   }, 
   "deer carcass": {
    "aliases": [
-    "deer carcass"
+    "deer carcass", 
+    "deer"
    ], 
    "verbs": {
     "pull": {
@@ -126,7 +128,8 @@
    "compass_direction": "west", 
    "id": 0, 
    "aliases": [
-    "field"
+    "field", 
+    "flat"
    ], 
    "modifiers": {
     "item_updates": {
