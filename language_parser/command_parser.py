@@ -130,11 +130,15 @@ def _remove_noise(input_string):
     string = re.sub(' +', ' ', string)
     return string
 
-def _normalize(input_string):
+def _generate_length_ordered_keys(input_dict):
     """
     TODO: Write docs
     """
-    return 0
+    all_keys = []
+    for key in input_dict:
+        all_keys.append(key)
+    sorted_keys = reversed(sorted(all_keys, key=len))
+    return sorted_keys
 
 def _generate_full_match_regex_patterns():
     """
@@ -143,11 +147,14 @@ def _generate_full_match_regex_patterns():
     Returns: A dict of regex patterns and their labels.
     """
     patterns = {}
-    # Generate '|'-separated lists of each word type
-    action_or = '|'.join(action for action in words.actions)
-    feature_or = '|'.join(feature for feature in words.features)
-    item_or = '|'.join(item for item in words.items)
-    room_or = '|'.join(room for room in words.rooms)
+    # Generate '|'-separated lists of each word type, ordered by word length,
+    # from longest to smallest. Ordering is necessary to ensure that the
+    # longest matching word/phrase is used. (i.e., match on 'look at' instead
+    # of 'look').
+    action_or = '|'.join(_generate_length_ordered_keys(words.actions))
+    feature_or = '|'.join(_generate_length_ordered_keys(words.features))
+    item_or = '|'.join(_generate_length_ordered_keys(words.items))
+    room_or = '|'.join(_generate_length_ordered_keys(words.rooms))
     # Create list of different patterns that consist entirely of
     # known words.
     patterns[REGEX_PATTERNS.KNOWN_ACTION_AND_ITEM] = \
@@ -290,3 +297,6 @@ def parse_command(command):
 # https://stackoverflow.com/questions/1546226/a-simple-way-to-remove-multiple-spaces-in-a-string-in-python
 # https://stackoverflow.com/questions/743806/how-to-split-a-string-into-a-list
 # https://developers.google.com/edu/python/regular-expressions
+# https://www.regular-expressions.info/alternation.html
+# https://stackoverflow.com/questions/43198074/how-to-sort-a-list-of-words-by-length
+# https://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python
