@@ -115,20 +115,16 @@ def _remove_noise(input_string):
     string = input_string
     noise_words = noise.noise_words
     re_noise_words = '|'.join(word for word in noise_words)
-    print "TEMP DEBUG: re_noise_words is " + re_noise_words
     # Remove the noise words if they are the beginning of the input string and
     # followed by a space, between two spaces, or at the end of the input
     # string and preceeded by a space. That is, if a word is within another
     # word (e.g., 'the' is within 'theater'), do not remove it.
     noise_at_start_of_string = '^(' + re_noise_words + ') '
     string = re.sub(noise_at_start_of_string, '', string, count=1)
-    print "TEMP DEBUG: After removal of noise at start of string, string is " + string
     noise_at_end_of_string = ' (' + re_noise_words + ')$'
     string = re.sub(noise_at_end_of_string, '', string, count=1)
-    print "TEMP DEBUG: After removal of noise at end of string, string is " + string
     noise_in_middle_of_string = ' (' + re_noise_words + ') '
     string = re.sub(noise_in_middle_of_string, ' ', string)
-    print "TEMP DEBUG: After removal of noise in middle of string, string is " + string
     # If removing the noise leaves more than one space between words, remove
     # that extra space.
     string = re.sub(' +', ' ', string)
