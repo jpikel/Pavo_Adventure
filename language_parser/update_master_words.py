@@ -40,6 +40,11 @@ def update_master_words():
         with open(verbs_full_path, "r") as verbs_file:
             verbs_dict_str = verbs_file.read()
             verbs_dict = json.loads(verbs_dict_str.lower())
+        # Add cardinal directions to rooms dict.
+        rooms_dict["north"] = "north"
+        rooms_dict["east"] = "east"
+        rooms_dict["south"] = "south"
+        rooms_dict["west"] = "west"
         # Save dicts for each word type to the master words file.
         features_dict_str = json.dumps(features_dict, indent=3)
         master_file.write("features = " + features_dict_str + "\n")

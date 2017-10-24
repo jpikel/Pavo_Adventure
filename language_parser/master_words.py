@@ -71,13 +71,16 @@ rooms = {
    "site": "crash site", 
    "woods": "woods", 
    "cavern": "cave", 
+   "west": "west", 
    "cave": "cave", 
    "crash site": "crash site", 
    "field": "field", 
    "mountain path": "mountain path", 
    "mountain summit": "mountain summit", 
+   "east": "east", 
    "forest": "woods", 
    "flat": "field", 
+   "north": "north", 
    "dense brush": "dense brush", 
    "trail": "game trail", 
    "base": "mountain base", 
@@ -95,6 +98,7 @@ rooms = {
    "mountain base": "mountain base", 
    "watchtower": "fire tower", 
    "river": "river", 
+   "south": "south", 
    "cataract": "waterfall"
 }
 actions = {
@@ -171,6 +175,10 @@ all_words = {
       "type": "feature", 
       "master_word": "deer carcass"
    }, 
+   "west": {
+      "type": "room", 
+      "master_word": "west"
+   }, 
    "heron": {
       "type": "feature", 
       "master_word": "heron"
@@ -199,6 +207,10 @@ all_words = {
       "type": "feature", 
       "master_word": "small gorge"
    }, 
+   "east": {
+      "type": "room", 
+      "master_word": "east"
+   }, 
    "summit": {
       "type": "room", 
       "master_word": "mountain summit"
@@ -206,6 +218,10 @@ all_words = {
    "flat": {
       "type": "room", 
       "master_word": "field"
+   }, 
+   "north": {
+      "type": "room", 
+      "master_word": "north"
    }, 
    "dense brush": {
       "type": "room", 
@@ -542,6 +558,10 @@ all_words = {
    "wolves": {
       "type": "feature", 
       "master_word": "wolves"
+   }, 
+   "south": {
+      "type": "room", 
+      "master_word": "south"
    }, 
    "cataract": {
       "type": "room", 
