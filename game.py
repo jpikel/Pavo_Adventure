@@ -71,8 +71,8 @@ class Game():
             #print the big splash page here!
             helpers.multi_printer(helpers.SPLASH_MESSAGE)
             choiceLow=helpers.get_input()
-        while (not choiceLow in cmds[0] and 
-            not choiceLow in cmds[1] and 
+        while (not choiceLow in cmds[0] and
+            not choiceLow in cmds[1] and
             not choiceLow in cmds[2]):
             helpers.multi_printer(invalid_message)
             choiceLow = helpers.get_input()
@@ -104,7 +104,7 @@ class Game():
         files to the temp save dir.  Restores the player state
         """
         p, r = files.load_game()
-        #if something went wrong returning the player from the 
+        #if something went wrong returning the player from the
         if player is None:
             helpers.multi_printer('ERROR: Player not found.\n')
             self.player = self.gen_player()
@@ -116,7 +116,7 @@ class Game():
         else:
             text = 'Something went wrong loading the rooms in loadgame. Please try again'
             helpers.multi_printer(text)
-        
+
     def exitGame(self):
         """
             prints a good bye message and exits
@@ -151,7 +151,7 @@ class Game():
         helpers.multi_printer(self.getTimeOfDay())
         self.player.updatePlayerCondition(self.number_of_turns)
         helpers.multi_printer(self.player.getCondition())
-        #updated this while loop the previous one did not seem to evaluate the 
+        #updated this while loop the previous one did not seem to evaluate the
         #dead correctly
         while True:
             if DEBUG_PRINT_ROOM_TITLE:
@@ -174,7 +174,7 @@ class Game():
 #                    userInput = helpers.get_input(DO_WHAT)
 #                processed_command = parse.parse_command(userInput)
             processed_command = None
-            while True: 
+            while True:
                 if processed_command is not None and processed_command['processed'] == False:
                     text = "\nSorry I did not understand that." + DO_WHAT
                 else:
@@ -196,7 +196,7 @@ class Game():
 
             #this is temporary and may very well be removed
             #just a possible option to help with assigning title and action
-            top_level = ["item", "room", "feature", "general"]
+            top_level = ["item", "room", "feature"]
             for word in top_level:
                 if word in processed_command['command']:
                     title = processed_command['command'][word]
@@ -209,13 +209,6 @@ class Game():
                 self.process_action_only(action)
             elif output_type == "room_action":
                 self.process_room_action(title, action)
-            elif output_type == "exit":
-                exit_direction = processed_command["exit"]["direction"]
-                exit_name = processed_command["exit"]["exit"]
-                self.process_exit(exit_direction, exit_name)
-            elif output_type == "exit_only":
-                exit_name = processed_command["exit"]["exit"]
-                self.process_exit_only(exit_name)
             elif output_type == "item_only":
                 self.process_item_only(title)
             elif output_type == "feature_action":
@@ -229,7 +222,7 @@ class Game():
 
             if self.player.get_death_status() or self.player.get_rescue_status():
                 #would be good to add a restart loop in here
-                #this break should be all that is needed and then we can startGame 
+                #this break should be all that is needed and then we can startGame
                 #again to allow loadgame or newgame
                 #we submit False to let startGame know this is not a newGame
                 #it will not print the Splash screen again
@@ -314,20 +307,11 @@ class Game():
             #also sent to the funny script writer
             res['description'] = self.get_humor(action, 'action')
         self.post_process(res)
-        
+
     def process_room_action(self, room, action):
         res = self.room_action(room, action)
         self.post_process(res)
-    '''  
-        Probably deleting exit methods
-    def process_exit(self, exit, name):
-        print "TODO: Write this function"
-        print "This is a stub function for handling exit commands!"
 
-    def process_exit_only(self, name):
-        print "TODO: Write this function"
-        print "This is a stub function for handling exit only commands!"
-    '''
     def process_item_only(self, name):
         res = helpers.response_struct().get_response_struct()
         res['description'] = self.get_humor(name, 'noun')
@@ -360,7 +344,7 @@ class Game():
         self.number_of_turns += 1
         #at some point in the future hopefully this will be where
         #we can send parts to the room to be updated if appropriate
-        #and the player state if for instance the player has 
+        #and the player state if for instance the player has
         #eaten something and gets a boost to hunger
 
         #set DEBUG_RESPONSE to 1 for debuggin
@@ -385,7 +369,7 @@ class Game():
             helpers.multi_printer(self.getTimeOfDay())
             helpers.multi_printer(self.player.getCondition())
 
-        #description should always come with process functions so we 
+        #description should always come with process functions so we
         #automatically print out something to the user
 
     #-------------------------------------------------------------------------
@@ -594,7 +578,7 @@ class Game():
     def item_action_room(self, title, verb):
         """
         acts on an item in the room only the look at verb is allowed at this moment
-        adds the item to the inventory as well if it is 
+        adds the item to the inventory as well if it is
         """
         res = helpers.response_struct().get_response_struct()
         res['title'] = title
@@ -656,9 +640,9 @@ class Game():
                     other_room = files.update(updates, other_room)
                     files.store_room(other_room)
 
-        #hopefully file_lib will have a method where we can pass the 
-        #modifiers dict to and it will do the remaining processing returning 
-        #the updated room so we can just do 
+        #hopefully file_lib will have a method where we can pass the
+        #modifiers dict to and it will do the remaining processing returning
+        #the updated room so we can just do
 
     def update_player(self, res):
         """
