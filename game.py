@@ -105,7 +105,7 @@ class Game():
         """
         p, r = files.load_game()
         #if something went wrong returning the player from the
-        if player is None:
+        if p is None:
             helpers.multi_printer('ERROR: Player not found.\n')
             self.player = self.gen_player()
         else:
@@ -393,6 +393,8 @@ class Game():
                 res['description'] = self.get_room_desc()
             elif res['success'] == False and res['description'] is None:
                 res['description'] = "You were not able to move in that direction.  "
+        elif action == 'look':
+            res['description'] = self.get_room_long_desc()
         else:
             res['description'] = "You can't " + action + " the " + title_or_compass+". "
         return res
@@ -532,7 +534,7 @@ class Game():
                 if 'artifact' in feature['verbs'][verb]:
                     res['artifact'] = feature['verbs'][verb]['artifact']
             else:
-                res['description'] = self.verb_not_found + " " + verb + " the " + title
+                res['description'] = 'You are not able to ' + verb + ' the ' + title
         else:
             res['description'] = 'Sorry, ' + title + ' not found in this room.'
         return res
