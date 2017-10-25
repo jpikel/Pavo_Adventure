@@ -24,7 +24,6 @@ MIN_ROWS = 55
 VERB_DICT = verb_info().get_verb_definitions()
 
 def print_border(stdscr):
-
     print_stars(83, stdscr)
     print_stars_two_cols(41, stdscr)
 

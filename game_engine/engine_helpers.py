@@ -8,13 +8,24 @@ Description -
 """
 import textwrap
 import string
+import curses
+import sys
+import os
+USE_CURSES = False
+if sys.platform == 'linux' or sys.platform == 'linux2':
+    import curses
+    USE_CURSES = True
+
+MIN_COLS = 121
+MIN_ROWS = 50
+
 
 #experiment text wrapping
 CHARS_PER_LINE = 80
 
-SPLASH_MESSAGE = [
+SPLASH_MESSAGE = [ 
 "****************************************************************************",
-"",
+" ",
 " ########  ########  ######   #######  ##          ###    ######## ######## ",
 " ##     ## ##       ##    ## ##     ## ##         ## ##      ##    ##       ",
 " ##     ## ##       ##       ##     ## ##        ##   ##     ##    ##       ",
@@ -22,8 +33,8 @@ SPLASH_MESSAGE = [
 " ##     ## ##             ## ##     ## ##       #########    ##    ##       ",
 " ##     ## ##       ##    ## ##     ## ##       ##     ##    ##    ##       ",
 " ########  ########  ######   #######  ######## ##     ##    ##    ######## ",
- "",
- "",
+ " ",
+ " ",
 "          ##  #######  ##     ## ########  ##    ## ######## ##    ## ",
 "          ## ##     ## ##     ## ##     ## ###   ## ##        ##  ##  ",
 "          ## ##     ## ##     ## ##     ## ####  ## ##         ####   ",
@@ -31,7 +42,7 @@ SPLASH_MESSAGE = [
 "    ##    ## ##     ## ##     ## ##   ##   ##  #### ##          ##    ",
 "    ##    ## ##     ## ##     ## ##    ##  ##   ### ##          ##    ",
 "     ######   #######   #######  ##     ## ##    ## ########    ##    ",
-"",
+" ",
 "*****************************************************************************",
 "Welcome To Desolate Journey",
 "What would you like to do?",
@@ -97,3 +108,109 @@ def replace_player_name(text, player_name):
     """
     sub_string = "<playername>"
     return string.replace(text, sub_string, player_name)
+
+    #------------------------------------------------------
+    #This starts the UI curses section
+    #------------------------------------------------------
+class ui():
+    """
+    the UI class holds all the functions to write to the various curses
+    windows. Initializes the curses main window and handles errors.
+    """
+    ROW = 0
+    COL = 1
+    def __init__(self):
+        self.back_win = None
+        self.main_win = None
+        self.input_win = None
+        self.stat_win = None
+        self.time_win = None
+        self.main_row = 0
+
+
+    def init_windows(self, stdscr):
+        if USE_CURSES and self.terminal_size():
+            self.back_win = stdscr
+            self.fill_back()
+            self.input_win = curses.newwin(3, 117, 33, 2)
+            self.stat_win = curses.newwin(9, 30, 23, 89)
+            self.time_win = curses.newwin(20, 30, 2, 89)
+            self.main_win = curses.newwin(30, 86, 2, 2)
+
+    def fill_back(self):
+        for _ in range(0,48):
+            text = '*'*121
+            self.back_win.addstr(text)
+        self.back_win.refresh()
+
+    def write_main(self, text, player_name=None, row=1, col=1):
+        self.main_win.erase()
+        if isinstance(text, list):
+            for line in text:
+                if line == " ": row += 1
+                if player_name is not None: line = replace_player_name(line, player_name)
+                lines = textwrap.wrap(line, CHARS_PER_LINE)
+                for wrapped_line in lines: 
+                    self.main_win.addstr(row, col, wrapped_line)
+                    row += 1
+        elif isinstance(text, basestring):
+            if player_name is not None: text = replace_player_name(text, player_name)
+            lines = textwrap.wrap(text, CHARS_PER_LINE)
+            for line in lines:
+                self.main_win.addstr(row, col, line)
+                row += 1
+        else:
+            self.main_win.addstr('Error: did not receive list of strings or string')
+
+    def write_input(self, text):
+        self.input_win.addstr(ui.ROW, ui.COL, text)
+
+    def write_stat(self, text):
+        self.stat_win.erase()
+        row = 1
+        lines = textwrap.wrap(text, 26)
+        for line in lines:
+            self.stat_win.addstr(row, ui.COL, line)
+            row += 1
+        self.stat_win.refresh()
+
+    def write_time(self, text):
+        self.time_win.erase()
+        row = 1
+        lines = textwrap.wrap(text, 28)
+        for line in lines:
+            self.time_win.addstr(ui.ROW, ui.COL, text)
+            row += 1
+
+    def refresh_all(self):
+        self.stat_win.refresh()
+        self.input_win.refresh()
+        self.time_win.refresh()
+        self.main_win.refresh()
+
+
+    def get_input(self, comment=''):
+        curses.echo()
+        self.input_win.erase()
+        self.input_win.addstr(0, 0, comment)
+        self.input_win.addstr(2, 1, '->')
+        self.input_win.refresh()
+        text = self.input_win.getstr(2, 3, 80)
+        curses.noecho()
+        return text
+
+    def terminal_size(self):
+        """
+        validates that the terminal is a large enough size to play 
+        the game in curses
+        """
+        rows, columns = os.popen('stty size', 'r').read().split()
+        if int(rows) < int(MIN_ROWS) or int(columns) < int(MIN_COLS):
+            return False
+        return True
+
+
+    #------------------------------------------------------
+    #This ends the UI curses section
+    #------------------------------------------------------
+

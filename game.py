@@ -6,6 +6,7 @@ Class: CS467-400
 Assignment: CMD1:Adventure
 Description:
 """
+
 import sys
 import json
 import pdb  #toggle off in main
@@ -18,8 +19,17 @@ import game_engine.player as player
 import game_engine.engine_helpers as helpers
 import random
 
+USE_CURSES = False
+if sys.platform == 'linux' or sys.platform == 'linux2':
+    import curses
+    USE_CURSES = True
+    game_ui = helpers.ui()
+    if game_ui.terminal_size() == False:
+        USE_CURSES = False
+
+
 ALL_VERBS = verbs().get_verbs()
-DO_WHAT = '\nWhat would you like to do?'
+DO_WHAT = 'What would you like to do?'
 
 #DEBUG SECTION, you can set these values to 1 to get the desired affect
 #later in the game engine
@@ -31,7 +41,7 @@ DEBUG_RESPONSE = 0
 DEBUG_ROOM = 0
 #prints the current room's title at the begining of each cycle
 #comes after the description etc
-DEBUG_PRINT_ROOM_TITLE = 1
+DEBUG_PRINT_ROOM_TITLE = 0
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'woods'
@@ -69,13 +79,23 @@ class Game():
 
         if is_new_game:
             #print the big splash page here!
-            helpers.multi_printer(helpers.SPLASH_MESSAGE)
-            choiceLow=helpers.get_input()
+            if USE_CURSES:
+                game_ui.write_main(helpers.SPLASH_MESSAGE, col=5)
+                game_ui.refresh_all()
+                choiceLow = game_ui.get_input()
+            else:
+                helpers.multi_printer(helpers.SPLASH_MESSAGE)
+                choiceLow=helpers.get_input()
         while (not choiceLow in cmds[0] and
             not choiceLow in cmds[1] and
             not choiceLow in cmds[2]):
-            helpers.multi_printer(invalid_message)
-            choiceLow = helpers.get_input()
+            if USE_CURSES:
+                game_ui.write_main(invalid_message, col=5)
+                game_ui.refresh_all()
+                choiceLow = game_ui.get_input()
+            else:
+                helpers.multi_printer(invalid_message)
+                choiceLow=helpers.get_input()
         if choiceLow in cmds[0]:
             self.newGame()
             self.gameCycle()
@@ -108,7 +128,10 @@ class Game():
         #checking for False because p could return as False if the files did not
         #get copied correctly
         if p is None or p is False:
-            helpers.multi_printer('ERROR: Player not found.\n')
+            if USE_CURSES:
+                game_ui.write_main('ERROR: Player not found.')
+            else:
+                helpers.multi_printer('ERROR: Player not found.\n')
             self.player = self.gen_player()
         else:
             #load player info from saved game
@@ -118,13 +141,19 @@ class Game():
             self.current_room = r
         else:
             text = 'Something went wrong loading the rooms in loadgame. Please try again'
-            helpers.multi_printer(text)
+            if USE_CURSES:
+                game_ui.write_main(text)
+            else:
+                helpers.multi_printer(text)
 
     def exitGame(self):
         """
             prints a good bye message and exits
         """
-        helpers.multi_printer("Thanks for playing")
+        if USE_CURSES:
+            game_ui.write_main('Thanks for playing')
+        else:
+            helpers.multi_printer("Thanks for playing")
         exit()
 
     def gen_player(self):
@@ -132,7 +161,10 @@ class Game():
         this function asks the player to enter a name and then creates a new player
         object that the game holds on to for future use
         """
-        player_name = raw_input('Hello dreary traveler. What is your name? ')
+        if USE_CURSES:
+            player_name = game_ui.get_input('Hello dreary traveler. What is your name? ')
+        else:
+            player_name = raw_input('Hello dreary traveler. What is your name? ')
         return player.Player(player_name)
 
     def gameCycle(self):
@@ -150,10 +182,16 @@ class Game():
         """
         #inital room description after new game or loading game
         lines = self.get_room_desc()
-        helpers.multi_printer(lines)
-        helpers.multi_printer(self.getTimeOfDay())
         self.player.updatePlayerCondition(self.number_of_turns, 0)
-        helpers.multi_printer(self.player.getCondition())
+        if USE_CURSES:
+            game_ui.write_main(lines)
+            game_ui.write_time(self.getTimeOfDay())
+            game_ui.write_stat(self.player.getCondition())
+            game_ui.refresh_all()
+        else:
+            helpers.multi_printer(lines)
+            helpers.multi_printer(self.getTimeOfDay())
+            helpers.multi_printer(self.player.getCondition())
         #updated this while loop the previous one did not seem to evaluate the
         #dead correctly
         while True:
@@ -179,13 +217,19 @@ class Game():
             processed_command = None
             while True:
                 if processed_command is not None and processed_command['processed'] == False:
-                    text = "\nSorry I did not understand that." + DO_WHAT
+                    text = "Sorry I did not understand that." + DO_WHAT
                 else:
                     text = DO_WHAT
-                userInput = helpers.get_input(text)
+                if USE_CURSES:
+                    userInput = game_ui.get_input(text)
+                else:
+                    userInput = helpers.get_input(text)
                 userInput = self.check_save_load_quit(userInput)
                 if userInput == None:
-                    userInput = helpers.get_input(DO_WHAT)
+                    if USE_CURSES:
+                        userInput = game_ui.get_input(DO_WHAT)
+                    else:
+                        userInput = helpers.get_input(DO_WHAT)
                 processed_command = parse.parse_command(userInput)
                 #line below for testing
                 if DEBUG_PARSE:
@@ -371,13 +415,24 @@ class Game():
         if DEBUG_ROOM:
             print(json.dumps(self.current_room, indent=4))
         #print the messages to screen here
-        helpers.multi_printer(res['description'], self.player.getName())
-        if 'artifact' in res:
-            lines = res['artifact']
-            helpers.multi_printer(lines)
-        if not self.player.get_death_status() and not self.player.get_rescue_status():
-            helpers.multi_printer(self.getTimeOfDay())
-            helpers.multi_printer(self.player.getCondition())
+        if USE_CURSES:
+            if (not self.player.get_death_status() 
+                    and not self.player.get_rescue_status()):
+                game_ui.write_time(self.getTimeOfDay())
+                game_ui.write_stat(self.player.getCondition())
+            game_ui.write_main(res['description'], self.player.getName())
+            if 'artifact' in res:
+                lines = res['artifact']
+            #    game_ui.write_main(lines, None, 22)
+            game_ui.refresh_all()
+        else:
+            helpers.multi_printer(res['description'], self.player.getName())
+            if 'artifact' in res:
+                lines = res['artifact']
+                helpers.multi_printer(lines)
+            if not self.player.get_death_status() and not self.player.get_rescue_status():
+                helpers.multi_printer(self.getTimeOfDay())
+                helpers.multi_printer(self.player.getCondition())
 
         #description should always come with process functions so we
         #automatically print out something to the user
@@ -794,10 +849,11 @@ class Game():
 
 
 def main():
+    if USE_CURSES:
+        curses.wrapper(game_ui.init_windows)
     random.seed()
     current_game = Game()
-    user_choice = current_game.startGame(True)
-
+    current_game.startGame(True)
 
 if __name__ == "__main__":
     #pdb.set_trace() #toggle for debugging
