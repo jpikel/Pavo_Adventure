@@ -90,12 +90,6 @@
  }, 
  "items_in_room": [], 
  "feature_searched": true, 
- "room_hazards": false, 
- "room_hazard_description": "", 
- "room_hazard_item": "", 
- "room_hazard_occurs_description": "", 
- "room_hazard_attributes_affected": "", 
- "room_hazard_safe_description": "", 
  "connected_rooms": {
   "ranger station": {
    "accessible": false, 
@@ -112,7 +106,7 @@
    ], 
    "modifiers": {
     "room": {
-     "title":"rapids",
+     "title": "rapids", 
      "items_in_room": "drop"
     }, 
     "player": {

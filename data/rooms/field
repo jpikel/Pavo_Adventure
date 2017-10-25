@@ -16,8 +16,12 @@
     }, 
     "use": {
      "deactivate_description": "use deactivate for feature 1 field", 
-     "description": "You lean against the roll for a minutes to take a rest.",
-     "modifiers": {"player":{"illnes":"-1"}}
+     "description": "You lean against the roll for a minutes to take a rest.", 
+     "modifiers": {
+      "player": {
+       "illnes": "-1"
+      }
+     }
     }, 
     "look at": {
      "modifiers": {}, 
@@ -50,7 +54,7 @@
        }
       }
      }, 
-     "description": "Searching around the hay roll you don't find anything interesting." 
+     "description": "Searching around the hay roll you don't find anything interesting."
     }, 
     "drop": {
      "modifiers": {}, 
@@ -107,12 +111,6 @@
  }, 
  "items_in_room": [], 
  "feature_searched": false, 
- "room_hazards": false, 
- "room_hazard_description": "", 
- "room_hazard_item": "", 
- "room_hazard_occurs_description": "", 
- "room_hazard_attributes_affected": "", 
- "room_hazard_safe_description": "", 
  "connected_rooms": {
   "mountain base": {
    "accessible": false, 

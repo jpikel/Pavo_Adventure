@@ -109,12 +109,6 @@
   "candy bar"
  ], 
  "feature_searched": false, 
- "room_hazards": false, 
- "room_hazard_description": "", 
- "room_hazard_item": "", 
- "room_hazard_occurs_description": "", 
- "room_hazard_attributes_affected": "", 
- "room_hazard_safe_description": "", 
  "connected_rooms": {
   "mountain base": {
    "accessible": true, 

@@ -288,6 +288,30 @@ def refactor_features():
             json.dump(room, open_file, indent=4)
             open_file.close()
 
+def remove_hazard_keys():
+    """
+    needs to be called from the root directly from the py script engine.
+    Does not show up in any menu at this time
+    """
+    try:
+        for title in ROOM_TITLES:
+            room_dir = os.path.join(ROOMS_DIR, title)
+            with open(room_dir, 'r') as open_file:
+                room = json.load(open_file, object_pairs_hook=OrderedDict)
+                open_file.close()
+            del room['room_hazards']
+            del room['room_hazard_description']
+            del room['room_hazard_item']
+            del room['room_hazard_occurs_description']
+            del room['room_hazard_attributes_affected']
+            del room['room_hazard_safe_description']
+            with open(room_dir, 'w') as open_file:
+                json.dump(room, open_file, indent=1)
+                open_file.close()
+    except Exception, e:
+        pass
+               
+
 def _sort_json():
     """
     opens each of the template files in the rooms and items dirs

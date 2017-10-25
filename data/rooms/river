@@ -123,12 +123,6 @@
   "heavy winter parka"
  ], 
  "feature_searched": false, 
- "room_hazards": false, 
- "room_hazard_description": "", 
- "room_hazard_item": "", 
- "room_hazard_occurs_description": "", 
- "room_hazard_attributes_affected": "", 
- "room_hazard_safe_description": "", 
  "connected_rooms": {
   "woods": {
    "accessible": true, 
@@ -175,16 +169,29 @@
      "boat paddle": {
       "verbs": {
        "use": {
-        "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks.",
-        "modifiers":{
-            "item_updates":{"boat paddle":{"verbs":{"use":{"description":"Good thing you avoided that rock shelf."}}}},
-            "room_updates": {
-     "rapids": {
-      "connected_rooms": {
-       "ranger station": {
-           "accessible": true,
+        "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks.", 
         "modifiers": {
-         "player": {}
+         "item_updates": {
+          "boat paddle": {
+           "verbs": {
+            "use": {
+             "description": "Good thing you avoided that rock shelf."
+            }
+           }
+          }
+         }, 
+         "room_updates": {
+          "rapids": {
+           "connected_rooms": {
+            "ranger station": {
+             "accessible": true, 
+             "modifiers": {
+              "player": {}
+             }
+            }
+           }
+          }
+         }
         }
        }
       }
@@ -193,10 +200,4 @@
    }
   }
  }
-
-        }
-       }
-      }
-     }
-    }
 }
