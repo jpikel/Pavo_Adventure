@@ -58,7 +58,7 @@
      "description": "The gorge has been created by the dropping water."
     }, 
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {"player":{"hunger":"-1"}}, 
      "description": "Standing inside the gorge, you cup some water and take a drink.  It is very cold, but refreshing.  Drinking something lifts your spirits."
     }
    }, 
@@ -99,7 +99,7 @@
      "description": "The water is about as low as it will get in this area."
     }, 
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {"player":{"hunger":"-1"}}, 
      "description": "You kneel down on one knee and cup some water into your mouth. The cold refresh water goes down smoothly.  You feel a bit better taking a drink."
     }
    }, 
