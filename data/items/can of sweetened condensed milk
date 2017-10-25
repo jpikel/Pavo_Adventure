@@ -3,7 +3,8 @@
  "title": "can of sweetened condensed milk", 
  "aliases": [
   "can of sweetened condensed milk", 
-  "milk"
+  "milk", 
+  "can"
  ], 
  "verbs": {
   "pull": {
