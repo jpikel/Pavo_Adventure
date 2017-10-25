@@ -33,8 +33,8 @@ DEBUG_ROOM = 0
 #comes after the description etc
 DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
-LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'mountain base'
+LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 1
+SPECIFIC_ROOM = 'woods'
 
 
 class Game():
@@ -315,7 +315,7 @@ class Game():
             return
         else:
             #also sent to the funny script writer
-            res['description'] = self.get_humor(action, 'action')
+            res = self.get_humor(action, 'action')
         self.post_process(res)
 
     def process_room_action(self, room, action):
@@ -739,7 +739,7 @@ class Game():
         """
         action_prefix = ['Sadly you cannot ', 'Nope maybe try to ',
                 'Wait... hold on a sec... nope you cannot just ']
-        action_post = [' yourself.', ' on something in the real world.',
+        action_post = [' yourself.', ' something in the real world.',
                 ' -- every DM ever.']
         noun_prefix = ['The ', 'That ', 'Try doing something to the ']
         noun_post = [' is a thing in the world you are correct sir.',

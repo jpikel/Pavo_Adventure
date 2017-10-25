@@ -56,7 +56,7 @@
     "drop": {
      "modifiers": {
       "player": {
-       "illness": "5"
+       "illness": "2"
       }
      }, 
      "description": "You pick up the footlocker.  It slips and smashes your big toe.  Ouch that hurts!"
