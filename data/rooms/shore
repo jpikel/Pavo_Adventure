@@ -2,6 +2,7 @@
  "id": 1, 
  "title": "shore", 
  "visited": false, 
+ "room_temp":"3",
  "long_description": "The icy beach rocks and pebbles crunch under your steps, it takes all your effort not to slip and fall.  The water along the bank is frozen, the ice has been scalloped by the wind.  There must have been some warm windy days some time ago, but not today. Along the bank there is some dark driftwood, that appears as though it has been there a very long time. As you exhale your breath crystallizes in front of you and the vapor swirls around you, pushed by the breeze coming off the water.  Facing west, off in the distance, in the middle of the water you see a snow capped island.  Behind you are some lightly scattered pines, in a clearing you think you can see some of crash site.", 
  "short_description": "You stand along the frozen lake bank.  Facing west, out in the middle of the water is a snow capped island.  Along the water is some driftwood that seems to have not moved in ages.  Behind you begins a lightly wooded forest and you can see a crash site in a clearing.", 
  "features": {

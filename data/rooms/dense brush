@@ -2,6 +2,7 @@
  "id": 5, 
  "title": "dense brush", 
  "visited": false, 
+ "room_temp":"1",
  "long_description": "Not even the snow is able to cover all the brush growing here. It is patchy and some places you have to give a wide berth to not fall through the snow into the brush.  To the west you can see the brush give way to an open field and in the opposite direction is the camp.   When the weather is nicer there must be farmers that bring their animals up here and use the animal corral.  The gate is wide open to the corral and inside you see a deer carcass.", 
  "short_description": "Standing in the snowy dense brush, to your east is an open field and in the opposite direction lies the camp.  There is an animal corral here likely used by farmers during better weather.  Inside the corral is a deer carcass.", 
  "features": {

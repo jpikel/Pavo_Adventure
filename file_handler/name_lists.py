@@ -138,7 +138,8 @@ class dict_keys():
     official dict keys are stored here as lists with getters
     """
     room_keys = ["id", "title", "visited", "long_description", "short_description",
-            "features", "connected_rooms", "items_in_room", "feature_searched"]
+            "features", "connected_rooms", "items_in_room", "feature_searched",
+            "room_temp"]
          #   "room_hazards", "room_hazard_description", "room_hazard_item",
           #  "room_hazard_occurs_description", "room_hazard_attributes_affected",
           #  "room_hazard_safe_description"]

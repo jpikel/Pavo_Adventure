@@ -80,7 +80,7 @@ class Player(object):
             text += "and dying of cold."
         return text
 
-    def updatePlayerCondition(self, turns):
+    def updatePlayerCondition(self, turns, room_temp):
         """
         This works now as intended
         degrades the player's illness and hunger for every 2 moves
@@ -94,7 +94,7 @@ class Player(object):
         parka = self.search_inventory('heavy winter parka')
         if parka is not None and parka['active'] == True:
             self.cold -= 2
-
+        self.cold += room_temp
         if turns % 2 == 0:
             self.illness += 1
             self.hunger += 2
@@ -103,18 +103,18 @@ class Player(object):
             self.cold > 50):
             self.dead = True
         
-    def set_illness(self, illness):
+    def add_to_illness(self, illness):
         """
         add whatever value is passed in to update the player's illness
         """
         self.illness += illness
 
-    def set_hunger(self, hunger):
+    def add_to_hunger(self, hunger):
         """
         add the value passed in to the hunger attribute of the player
         """
         self.hunger += hunger
-    def set_cold(self, cold):
+    def add_to_cold(self, cold):
         """
         add the value passed in to the cold attribute of the player
         """

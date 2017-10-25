@@ -2,6 +2,7 @@
  "id": 4, 
  "title": "field", 
  "visited": false, 
+ "room_temp":"2",
  "long_description": "You are standing in a open field.  The snow is like a soft blanket laid across the earth here.   The wind picks up and you feel colder than before.  After being in the snugness of the forest this field is a bit to open for your taste.  There is a hay roll sitting in the field.  Off in the distance several grey wolves are gathering and staring intently in your direction.  The hair on the back of your neck stands up as your eyes lock and they begin moving closer to you.  To the east is the dense brush and to the south you see the base of a mountain rising up.", 
  "short_description": "In this open field, you feel rather vulnerable.  There is a hay roll and the wolves are a distant memory, at least for now.  To the east is the dense brush and to the south is the base of a mountain.", 
  "features": {

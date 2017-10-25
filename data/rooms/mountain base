@@ -2,6 +2,7 @@
  "id": 9, 
  "title": "mountain base", 
  "visited": false, 
+ "room_temp":"0",
  "long_description": "You stand in a field of granite boulders, some larger than a small home. To the south, a huge granite peak rises thousands of feet above you. It looks cold and foreboding, but you think you can see a path up it, perhaps with some scrambling. To the north is a field from which you can hear a faint noise that sounds like it might be howling. It might just be the wind, but it might be something more ominous. Adding to your feeling of unease, you see several clumps of blood-soaked fur strewn about. You also see an old, worn sign. Although it looks as if it has not been maintained for decades, it lifts your spirits slightly to have an indication that you are not the first human being to have been in this spot.", 
  "short_description": "You are at a mountain base. To the south is the mountain, rising ominously above. A field is to the north. You see a worn sign stuck into the ground, and several clumps of fur strewn about.", 
  "features": {

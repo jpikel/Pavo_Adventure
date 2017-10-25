@@ -105,13 +105,16 @@ class Game():
         """
         p, r = files.load_game()
         #if something went wrong returning the player from the
-        if p is None:
+        #checking for False because p could return as False if the files did not
+        #get copied correctly
+        if p is None or p is False:
             helpers.multi_printer('ERROR: Player not found.\n')
             self.player = self.gen_player()
         else:
             #load player info from saved game
             self.player = self.player.set_player_stats(p)
-        if r is not None:
+        #r could be set to False if the files were not transferred correctly
+        if r is not None and r is not False:
             self.current_room = r
         else:
             text = 'Something went wrong loading the rooms in loadgame. Please try again'
@@ -149,7 +152,7 @@ class Game():
         lines = self.get_room_desc()
         helpers.multi_printer(lines)
         helpers.multi_printer(self.getTimeOfDay())
-        self.player.updatePlayerCondition(self.number_of_turns)
+        self.player.updatePlayerCondition(self.number_of_turns, 0)
         helpers.multi_printer(self.player.getCondition())
         #updated this while loop the previous one did not seem to evaluate the
         #dead correctly
@@ -253,8 +256,15 @@ class Game():
             if checkYes == "y":
                 self.load_from_file()
                 userInput = None
-
                 helpers.multi_printer('Game loaded successfully')
+                #adding this here so after we successfully load a game we get something
+                #back and not just the what do you want to do... maybe better some
+                #where else
+                try:
+                    res['description'] = self.get_room_long_desc()
+                    self.post_process(res)
+                except:
+                    pass
             else:
                 helpers.multi_printer('continuing game...')
         #quit
@@ -313,19 +323,14 @@ class Game():
         self.post_process(res)
 
     def process_item_only(self, name):
-        res = helpers.response_struct().get_response_struct()
-        res['description'] = self.get_humor(name, 'noun')
-        self.post_process(res)
-
+        self.post_process(self.get_humor(name, 'noun'))
 
     def process_feature_action(self, feature, action):
         res = self.feature_action(feature, action)
         self.post_process(res)
 
     def process_feature_only(self, feature):
-        res = helpers.response_struct().get_response_struct()
-        res['description'] = self.get_humor(feature, 'noun')
-        self.post_process(res)
+        self.post_process(self.get_humor(feature, 'noun'))
 
     def process_room_only(self, room):
         res = self.room_action(room, 'go')
@@ -358,6 +363,10 @@ class Game():
             self.update_room(res)
             #update the items dict
             self.update_item(res)
+
+        #after modifiers have been applied update the player's condition
+        room_temp = int(self.current_room['room_temp'])
+        self.player.updatePlayerCondition(self.number_of_turns,room_temp)
 
         if DEBUG_ROOM:
             print(json.dumps(self.current_room, indent=4))
@@ -441,6 +450,8 @@ class Game():
                     res['description'] = room['pre_item_description']
                 else:
                     res['description'] = room['pre_item_description']
+                #we can return the response as soon as we have found a match
+                return res
         return res
     #------------------------------------------------------------------------
     # This ends the movement related functions
@@ -549,10 +560,7 @@ class Game():
         """
         called by the verb handler.  Looks up the item file and opens it
         returns the description listed for the particular verb at this moment.
-        FUTURE: include additional parts of the structure to return to the game engine
-            {
-            "description": string
-            }
+        and modifiers if any
         """
         res = helpers.response_struct().get_response_struct()
         item = self.player.search_inventory(item_title)
@@ -669,7 +677,6 @@ class Game():
         This function is used to update player state variables, including
         player inventory
         """
-
         if 'player' in res['modifiers']:
             modifiers = res['modifiers']['player']
             if 'inventory' in modifiers and modifiers['inventory'] == 'add':
@@ -682,18 +689,13 @@ class Game():
                     files.store_item(item)
                 self.player.remove_item_from_inventory(res['title'])
             if 'illness' in modifiers:
-                self.player.set_illness(int(modifiers['illness']))
+                self.player.add_to_illness(int(modifiers['illness']))
             if 'hunger' in modifiers:
-                self.player.set_hunger(int(modifiers['hunger']))
+                self.player.add_to_hunger(int(modifiers['hunger']))
             if 'cold' in modifiers:
-                self.player.set_cold(int(modifiers['cold']))
+                self.player.add_to_cold(int(modifiers['cold']))
             if 'rescued' in modifiers:
                 self.player.set_rescue(modifiers['rescued'])
-
-        #after modifiers have been applied update the player's condition
-        self.player.updatePlayerCondition(self.number_of_turns)
-        #maybe incorporate the player condition updates here so we can
-        #include things like hunger, illness etc in the modifiers
 
     def update_item(self, res):
         """
@@ -745,11 +747,14 @@ class Game():
                 ' something imaginary.']
         index = random.randint(0,2)
         text = ''
+
+        res = helpers.response_struct().get_response_struct()
         if type_of == 'noun':
             text += noun_prefix[index] + word + noun_post[index]
         elif type_of == 'action':
             text += action_prefix[index] + word + action_post[index]
-        return text
+        res['description'] = text
+        return res
 
     #suggest update player conditions relocated to the helper file player.py
 #    def updatePlayerCondition(self):

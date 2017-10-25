@@ -2,6 +2,7 @@
  "id": 16, 
  "title": "ranger station", 
  "visited": false, 
+ "room_temp":"-3",
  "long_description": "The station is perched between two arms of the rapids,  likely for river guides.  A short path leads to a bridge that crossed over the dangerous rapids but it is ruined and not passable.  The door creaks as you open it, entering the ranger station, you suddenly feel safe and start to relax.  The inside is cozy with a small scattering of furniture, the rafters have a few cobwebs that have long since been abandoned by their creators .  There is a footlocker that looks rather interesting.  On the office desk is a shortwave radio.  Its lights are glowing gently and the speaker crackles slightly.  Out the door and to the west are the rapids.  Although the river continues further to the east you can see more severe rapids in that direction and surely you would not be able to navigate them in your canoe.", 
  "short_description": "Entering the ranger station, you feel welcome and comfortable.  Back out the door to the west are the rapids.  The river carries on but the rapids get much worse and you would not want to chance it.  On the office desk is a shortwave radio and a footlocker sits on the floor.", 
  "features": {

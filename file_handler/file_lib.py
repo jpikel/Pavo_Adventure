@@ -4,7 +4,9 @@ Team - Pavo
 Group Members - Emily Caveness, Alexander Laquitara, Johannes Pikel
 Class - CS467-400 Capstone
 Term - Fall 2017
-Description -
+Description - This file handles a lot of reads and writes out to file.  Also handles
+the save game and load game when it comes to moving the files into their appropriate
+locations for use by the game engine.
 """
 #from __future__ import print_function
 import shutil #for file handling
@@ -75,8 +77,9 @@ def copy_files(src_dir, dst_dir):
         for item in os.listdir(src_dir):
             if item not in IGNORE:
                 src = os.path.join(src_dir, item)
-                dst = os.path.join(dst_dir, item)
-                shutil.copy2(src,dst)
+                if os.path.isfile(src):
+                    dst = os.path.join(dst_dir, item)
+                    shutil.copy2(src,dst)
     except Exception, e:
         print("Something went horribly wrong creating the temp save file")
         print(e)
@@ -156,6 +159,7 @@ def load_game():
 
     #after copying the files make sure all the room files are in the temp dir
     #as expected
+    #if either of these fails for any reason they will return False
     if not val_room_files_in_temp() or not val_item_files_in_temp():
         return val_room_files_in_temp(), val_item_files_in_temp()
 
