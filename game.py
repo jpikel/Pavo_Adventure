@@ -33,7 +33,7 @@ DEBUG_ROOM = 0
 #comes after the description etc
 DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
-LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 1
+LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'woods'
 
 
