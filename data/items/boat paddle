@@ -82,17 +82,5 @@
   }
  }, 
  "active": true, 
- "activatable": false, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met boat paddle", 
- "requirement_not_met_description": "req not met boat paddle", 
- "item_combination": "other item combination for boat paddle", 
- "room_combination": "boat paddle can be used in room", 
- "feature_combination": "boat paddle can be used with feature"
+ "activatable": false
 }

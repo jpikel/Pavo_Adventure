@@ -122,17 +122,5 @@
   }
  }, 
  "active": false, 
- "activatable": false, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met flare gun", 
- "requirement_not_met_description": "req not met flare gun", 
- "item_combination": "other item combination for flare gun", 
- "room_combination": "flare gun can be used in room", 
- "feature_combination": "flare gun can be used with feature"
+ "activatable": false
 }

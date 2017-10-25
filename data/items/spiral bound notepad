@@ -128,17 +128,5 @@
   }
  }, 
  "active": false, 
- "activatable": false, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met tattered notebook", 
- "requirement_not_met_description": "req not met tattered notebook", 
- "item_combination": "other item combination for tattered notebook", 
- "room_combination": "tattered notebook can be used in room", 
- "feature_combination": "tattered notebook can be used with feature"
+ "activatable": false
 }

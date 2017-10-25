@@ -105,17 +105,5 @@
   }
  }, 
  "active": false, 
- "activatable": true, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met lantern", 
- "requirement_not_met_description": "req not met lantern", 
- "item_combination": "other item combination for lantern", 
- "room_combination": "lantern can be used in room", 
- "feature_combination": "lantern can be used with feature"
+ "activatable": true
 }

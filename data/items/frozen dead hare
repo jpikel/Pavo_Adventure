@@ -81,17 +81,5 @@
   }
  }, 
  "active": false, 
- "activatable": false, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met frozen dead hare", 
- "requirement_not_met_description": "req not met frozen dead hare", 
- "item_combination": "other item combination for frozen dead hare", 
- "room_combination": "frozen dead hare can be used in room", 
- "feature_combination": "frozen dead hare can be used with feature"
+ "activatable": false
 }

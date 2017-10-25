@@ -311,7 +311,33 @@ def remove_hazard_keys():
     except Exception, e:
         pass
                
-
+def remove_unused_item_keys():
+    """
+    removes the following keys from all items
+    requirement_met..., item_combination, room_combination, feature_combination
+    Does not show up in any menu at this time
+    """
+    try:
+        for title in ITEM_TITLES:
+            _dir = os.path.join(ITEMS_DIR, title)
+            with open(_dir, 'r') as open_file:
+                obj = json.load(open_file, object_pairs_hook=OrderedDict)
+                open_file.close()
+            del obj['attributes_affected_requirement_met']
+            del obj['attributes_affected_requirement_not_met']
+            del obj['requirement_met']
+            del obj['requirement_not_met_description']
+            del obj['requirement_met_description']
+            del obj['requirement_not_met_description']
+            del obj['item_combination']
+            del obj['room_combination']
+            del obj['feature_combination']
+            with open(_dir, 'w') as open_file:
+                json.dump(obj, open_file, indent=1)
+                open_file.close()
+    except Exception, e:
+        print e
+ 
 def _sort_json():
     """
     opens each of the template files in the rooms and items dirs

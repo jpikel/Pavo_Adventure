@@ -110,17 +110,5 @@
   }
  }, 
  "active": false, 
- "activatable": false, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met can opener", 
- "requirement_not_met_description": "req not met can opener", 
- "item_combination": "other item combination for can opener", 
- "room_combination": "can opener can be used in room", 
- "feature_combination": "can opener can be used with feature"
+ "activatable": false 
 }

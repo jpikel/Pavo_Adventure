@@ -150,13 +150,13 @@ class dict_keys():
     connected_room_keys = ["accessible", "distance_from_room", "title",
             "pre_item_description", "item_required_title", "compass_direction",
             "id", "item_required", "aliases"]
-    item_keys = ["id", "title", "aliases", "verbs", "active", "activatable",
-            "attributes_affected_requirement_met",
-            "attributes_affected_requirement_not_met",
-            "requirement_met", "requirement_met_description",
-            "requirement_not_met_description",
-            "item_combination", "room_combination",
-            "feature_combination"]
+    item_keys = ["id", "title", "aliases", "verbs", "active", "activatable"]
+#            "attributes_affected_requirement_met",
+#            "attributes_affected_requirement_not_met",
+#            "requirement_met", "requirement_met_description",
+#            "requirement_not_met_description",
+#            "item_combination", "room_combination",
+#            "feature_combination"]
     optional_keys = ["artifact", "modifiers", "act_mods", "de_mods"]
 
 

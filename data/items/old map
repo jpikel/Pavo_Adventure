@@ -106,17 +106,5 @@
   }
  }, 
  "active": false, 
- "activatable": false, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met dusty old map", 
- "requirement_not_met_description": "req not met dusty old map", 
- "item_combination": "other item combination for dusty old map", 
- "room_combination": "dusty old map can be used in room", 
- "feature_combination": "dusty old map can be used with feature"
+ "activatable": false
 }

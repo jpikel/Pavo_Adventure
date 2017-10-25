@@ -156,17 +156,5 @@
   }
  }, 
  "active": false, 
- "activatable": true, 
- "attributes_affected_requirement_met": [
-  {}
- ], 
- "attributes_affected_requirement_not_met": [
-  {}
- ], 
- "requirement_met": true, 
- "requirement_met_description": "req met heavy winter parka", 
- "requirement_not_met_description": "req not met heavy winter parka", 
- "item_combination": "other item combination for heavy winter parka", 
- "room_combination": "heavy winter parka can be used in room", 
- "feature_combination": "heavy winter parka can be used with feature"
+ "activatable": true
 }
