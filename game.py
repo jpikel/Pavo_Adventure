@@ -103,18 +103,19 @@ class Game():
         gets the player and room files from the save game dir.  moves the room and items
         files to the temp save dir.  Restores the player state
         """
-        p, r = files.load_game()
+        p, r, success, msg = files.load_game()
         #if something went wrong returning the player from the
         #checking for False because p could return as False if the files did not
         #get copied correctly
-        if p is None or p is False:
-            helpers.multi_printer('ERROR: Player not found.\n')
+        if success == False:
+            helpers.multi_printer(msg)
+        if p is None:
             self.player = self.gen_player()
         else:
             #load player info from saved game
             self.player = self.player.set_player_stats(p)
         #r could be set to False if the files were not transferred correctly
-        if r is not None and r is not False:
+        if r is not None:
             self.current_room = r
         else:
             text = 'Something went wrong loading the rooms in loadgame. Please try again'

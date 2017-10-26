@@ -130,11 +130,13 @@ def load_game():
     only if the save game dir exists
     returns the player as a dict and the current room as a dict
     """
+    success = True
+    msg = []
     #check if /data/save_game exits
     #otherwise run a new game and return the shore, but no player
     if not os.path.isdir(SAVE_DIR):
         new_game()
-        return None, load_room('shore')
+        return None, load_room('shore'), False, 'No save game found starting new game'
     #if the temp room dir does not exist make it
     if not os.path.isdir(TEMP_ROOM_DIR):
         os.makedirs(TEMP_ROOM_DIR)
@@ -149,11 +151,15 @@ def load_game():
     #copy the templates instead
     if not os.path.isdir(SAVE_ROOM_DIR):
         copy_files(ROOM_DIR, TEMP_ROOM_DIR)
+        success = False
+        msg.append('Rooms not found using new rooms.')
     else:
         copy_files(SAVE_ROOM_DIR, TEMP_ROOM_DIR)
     #if the item dir in save game does not exist copy the templates instead
     if not os.path.isdir(SAVE_ITEM_DIR):
         copy_files(ITEM_DIR, TEMP_ITEM_DIR)
+        success = False
+        msg.append('Items not found using new items.')
     else:
         copy_files(SAVE_ITEM_DIR, TEMP_ITEM_DIR)
 
@@ -161,7 +167,8 @@ def load_game():
     #as expected
     #if either of these fails for any reason they will return False
     if not val_room_files_in_temp() or not val_item_files_in_temp():
-        return val_room_files_in_temp(), val_item_files_in_temp()
+        msg.append('Warning not all files copied.')
+        success = False
 
     player_file = os.path.join(SAVE_DIR, 'player')
     player = None
@@ -174,9 +181,11 @@ def load_game():
         current_room = load_room(player['current_room'])
         del player['current_room']
     else:
+        success = False
+        msg.append('Player file not found start new player.')
         current_room = load_room('shore')
 
-    return player, current_room
+    return player, current_room, success, msg
 
 
 def val_room_files_in_temp():
