@@ -1,3 +1,4 @@
+#!/usr/bin/python2.7
 """
 Filename: game.py
 Team: Pavo
@@ -11,7 +12,7 @@ import sys
 import json
 import pdb  #toggle off in main
 import file_handler.file_lib as files
-import file_handler.help_file as help_file
+#import file_handler.help_file as help_file
 from file_handler.name_lists import verb_info as verbs
 import language_parser.command_parser as parse
 import game_engine.player as player
@@ -44,7 +45,10 @@ DEBUG_ROOM = 0
 DEBUG_PRINT_ROOM_TITLE = 0
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'woods'
+SPECIFIC_ROOM = 'mountain base'
+
+if DEBUG_PRINT_ROOM_TITLE or DEBUG_PARSE or DEBUG_ROOM:
+    USE_CURSES = False
 
 
 class Game():
@@ -123,21 +127,20 @@ class Game():
         gets the player and room files from the save game dir.  moves the room and items
         files to the temp save dir.  Restores the player state
         """
-        p, r = files.load_game()
+        p, r, success, msg = files.load_game()
         #if something went wrong returning the player from the
         #checking for False because p could return as False if the files did not
         #get copied correctly
-        if p is None or p is False:
-            if USE_CURSES:
-                game_ui.write_main('ERROR: Player not found.')
-            else:
-                helpers.multi_printer('ERROR: Player not found.\n')
+        if success == False:
+            if USE_CURSES: game_ui.write_input(msg)
+            else: helpers.multi_printer(msg)
+        if p is None:
             self.player = self.gen_player()
         else:
             #load player info from saved game
             self.player = self.player.set_player_stats(p)
         #r could be set to False if the files were not transferred correctly
-        if r is not None and r is not False:
+        if r is not None:
             self.current_room = r
         else:
             text = 'Something went wrong loading the rooms in loadgame. Please try again'
@@ -181,6 +184,7 @@ class Game():
             update items
             check if dead or rescued
         """
+        global USE_CURSES
         #inital room description after new game or loading game
         lines = self.get_room_desc()
         self.player.updatePlayerCondition(self.number_of_turns, 0)
@@ -198,7 +202,10 @@ class Game():
         while True:
             if DEBUG_PRINT_ROOM_TITLE:
                 helpers.multi_printer("Current Room: " + self.current_room['title'])
-
+            if USE_CURSES and game_ui.terminal_size() == False:
+                USE_CURSES = False
+                game_ui.end_windows()
+                helpers.multi_printer('Terminal window too small. Exiting curses')
 #            userInput = helpers.get_input(DO_WHAT)
 #            userInput = self.check_save_load_quit(userInput)
 #            if userInput == None:
@@ -218,7 +225,7 @@ class Game():
             processed_command = None
             while True:
                 if processed_command is not None and processed_command['processed'] == False:
-                    text = "Sorry I did not understand that." + DO_WHAT
+                    text = "Sorry I did not understand that.\n" + DO_WHAT
                 else:
                     text = DO_WHAT
                 if USE_CURSES:
@@ -285,14 +292,18 @@ class Game():
     def check_save_load_quit(self, userInput):
         #save
         if userInput == "savegame":
-            checkYes = helpers.get_input('Are you sure you wish to save y/n')
+            text = 'Are you sure you wisth to save y/n'
+            if USE_CURSES: checkYes=game_ui.get_input(text)
+            else: checkYes = helpers.get_input(text)
             if checkYes == "y":
                 files.save_game(self.player, self.current_room)
                 self.saved = True
                 userInput = None
-                helpers.multi_printer('Game saved successfully')
+                if USE_CURSES: game_ui.write_main_bottom('Game saved successfully')
+                else: helpers.multi_printer('Game saved successfully')
             else:
-                helpers.multi_printer('continuing game...')
+                if USE_CURSES: game_ui.write_main_bottom('continuing game...')
+                else: helpers.multi_printer('continuing game...')
         #load
         elif userInput == "loadgame":
             text = "Loading will exit game.  Are you sure you wish to load? y/n"
@@ -302,7 +313,7 @@ class Game():
             if checkYes == "y":
                 self.load_from_file()
                 userInput = None
-                if USE_CURSES: game_ui.write_input('Game loaded successfully')
+                if USE_CURSES: game_ui.write_main_bottom('Game loaded successfully')
                 else: helpers.multi_printer('Game loaded successfully')
                 #adding this here so after we successfully load a game we get something
                 #back and not just the what do you want to do... maybe better some
@@ -313,7 +324,7 @@ class Game():
                 except:
                     pass
             else:
-                if USE_CURSES: game_ui.write_input('continueing game...')
+                if USE_CURSES: game_ui.write_main_bottom('continueing game...')
                 else: helpers.multi_printer('continuing game...')
         #quit
         elif userInput == "quit":
@@ -331,7 +342,7 @@ class Game():
                         files.save_game(self.player, self.current_room)
                         self.exitGame()
                     else:
-                        if USE_CURSES: game_ui.write_input('continuing game...')
+                        if USE_CURSES: game_ui.write_main_bottom('continuing game...')
                         else: helpers.multi_printer('continuing game...')
             else:
                 text = 'Are you sure you want to quit? y/n'
@@ -365,7 +376,8 @@ class Game():
         elif action == "inventory":
             res['description'] = self.player.print_inventory()
         elif action == "help":
-            help_file.main()
+            if USE_CURSES: game_ui.print_help()
+            else: helpers.print_basic()
             return
         else:
             #also sent to the funny script writer
@@ -464,6 +476,8 @@ class Game():
                 files.store_room(self.current_room)
                 self.current_room = files.load_room(res['title'])
                 res['description'] = self.get_room_desc()
+            elif title_or_compass == self.current_room['title']:
+                res['description'] = 'You are already in that room.'
             elif res['success'] == False and res['description'] is None:
                 res['description'] = "You were not able to move in that direction.  "
         elif action == 'look':
