@@ -90,6 +90,7 @@ def multi_printer(text, player_name=None):
     """
     if isinstance(text, list):
         for line in text:
+            if line == ' ': print ''
             if player_name is not None: line = replace_player_name(line, player_name)
             lines = textwrap.wrap(line, CHARS_PER_LINE)
             for wrapped_line in lines: print wrapped_line
@@ -149,10 +150,12 @@ class ui():
             for line in text:
                 if line == " ": row += 1
                 if player_name is not None: line = replace_player_name(line, player_name)
-                lines = textwrap.wrap(line, CHARS_PER_LINE)
-                for wrapped_line in lines: 
-                    self.main_win.addstr(row, col, wrapped_line)
-                    row += 1
+#                lines = textwrap.wrap(line, CHARS_PER_LINE)
+#                for wrapped_line in lines: 
+#                    self.main_win.addstr(row, col, wrapped_line)
+#                    row += 1
+                self.main_win.addstr(row, col, line)
+                row +=1
         elif isinstance(text, basestring):
             if player_name is not None: text = replace_player_name(text, player_name)
             lines = textwrap.wrap(text, CHARS_PER_LINE)
@@ -161,9 +164,20 @@ class ui():
                 row += 1
         else:
             self.main_win.addstr('Error: did not receive list of strings or string')
+        self.main_row = row
 
-    def write_input(self, text):
-        self.input_win.addstr(ui.ROW, ui.COL, text)
+    def write_main_artifact(self, text):
+        row  = self.main_row + 1
+#        if row < 15: row = 20
+        if isinstance(text, list):
+            for line in text:
+                if line == " ": row += 1
+#                lines = textwrap.wrap(line, CHARS_PER_LINE)
+                self.main_win.addstr(row, ui.COL, line)
+                row +=1
+
+    def write_input(self, text, row=0, col= 30):
+        self.input_win.addstr(row, col, text)
 
     def write_stat(self, text):
         self.stat_win.erase()
@@ -187,6 +201,9 @@ class ui():
         self.input_win.refresh()
         self.time_win.refresh()
         self.main_win.refresh()
+
+    def end_windows(self):
+        curses.endwin()
 
 
     def get_input(self, comment=''):

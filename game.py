@@ -90,9 +90,9 @@ class Game():
             not choiceLow in cmds[1] and
             not choiceLow in cmds[2]):
             if USE_CURSES:
-                game_ui.write_main(invalid_message, col=5)
+                #game_ui.write_main(invalid_message, col=5)
                 game_ui.refresh_all()
-                choiceLow = game_ui.get_input()
+                choiceLow = game_ui.get_input('Please choose from the menu.')
             else:
                 helpers.multi_printer(invalid_message)
                 choiceLow=helpers.get_input()
@@ -151,7 +151,8 @@ class Game():
             prints a good bye message and exits
         """
         if USE_CURSES:
-            game_ui.write_main('Thanks for playing')
+            game_ui.end_windows()
+            helpers.multi_printer('Thanks for playing')
         else:
             helpers.multi_printer("Thanks for playing")
         exit()
@@ -295,12 +296,14 @@ class Game():
         #load
         elif userInput == "loadgame":
             text = "Loading will exit game.  Are you sure you wish to load? y/n"
-            checkYes = helpers.get_input(text)
+            if USE_CURSES: checkYes = game_ui.get_input(text)
+            else: checkYes = helpers.get_input(text)
             self.saved = False
             if checkYes == "y":
                 self.load_from_file()
                 userInput = None
-                helpers.multi_printer('Game loaded successfully')
+                if USE_CURSES: game_ui.write_input('Game loaded successfully')
+                else: helpers.multi_printer('Game loaded successfully')
                 #adding this here so after we successfully load a game we get something
                 #back and not just the what do you want to do... maybe better some
                 #where else
@@ -310,23 +313,30 @@ class Game():
                 except:
                     pass
             else:
-                helpers.multi_printer('continuing game...')
+                if USE_CURSES: game_ui.write_input('continueing game...')
+                else: helpers.multi_printer('continuing game...')
         #quit
         elif userInput == "quit":
             if self.saved ==False:
                 text = "Are you sure you want to quit without saving? y/n"
-                checkYes = helpers.get_input(text)
+                if USE_CURSES: checkYes = game_ui.get_input(text)
+                else: checkYes = helpers.get_input(text)
                 if checkYes == "y":
                     self.exitGame()
                 else:
-                    checkYes = helpers.get_input("Do you wish to save and quit? y/n")
+                    text = 'Do you wish to save and quit? y/n'
+                    if USE_CURSES: checkYes = game_ui.get_input(text)
+                    else: checkYes = helpers.get_input(text)
                     if checkYes == "y":
                         files.save_game(self.player, self.current_room)
                         self.exitGame()
                     else:
-                        helpers.multi_printer('continuing game...')
+                        if USE_CURSES: game_ui.write_input('continuing game...')
+                        else: helpers.multi_printer('continuing game...')
             else:
-                checkYes = helpers.get_input("Are you sure you want to quit? y/n")
+                text = 'Are you sure you want to quit? y/n'
+                if USE_CURSES: checkYes = game_ui.get_input(text)
+                else: checkYes = helpers.get_input(text)
                 if checkYes == "y":
                     self.exitGame()
         else:
@@ -421,13 +431,12 @@ class Game():
                 game_ui.write_time(self.getTimeOfDay())
                 game_ui.write_stat(self.player.getCondition())
             game_ui.write_main(res['description'], self.player.getName())
-            if 'artifact' in res:
-                lines = res['artifact']
-            #    game_ui.write_main(lines, None, 22)
+            if 'artifact' in res and res['artifact']:
+                game_ui.write_main_artifact(res['artifact'])
             game_ui.refresh_all()
         else:
             helpers.multi_printer(res['description'], self.player.getName())
-            if 'artifact' in res:
+            if 'artifact' in res and res['artifact']:
                 lines = res['artifact']
                 helpers.multi_printer(lines)
             if not self.player.get_death_status() and not self.player.get_rescue_status():
@@ -851,6 +860,11 @@ class Game():
 def main():
     if USE_CURSES:
         curses.wrapper(game_ui.init_windows)
+    else:
+        text = [' ', 'Not using curses.', 
+                'Requires linux and '+str(helpers.MIN_COLS)+' columns' +
+                ' by ' + str(helpers.MIN_ROWS) + ' rows.']
+        helpers.multi_printer(text)
     random.seed()
     current_game = Game()
     current_game.startGame(True)
