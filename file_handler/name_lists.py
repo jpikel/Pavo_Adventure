@@ -79,6 +79,7 @@ class item_info():
 
     item_singles = ['lantern', 'heavy', 'winter', 'parka', 'map', 'spiral', 'bound',
             'notepad', 'flare', 'gun', 'boat', 'paddle', 'rescue', 'whistle',
+            'can','of',
             'sweetened', 'condensed', 'milk', 'candy', 'bar', 'medical', 'kit']
 
     def get_titles(self):

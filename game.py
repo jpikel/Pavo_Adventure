@@ -96,7 +96,7 @@ class Game():
             if USE_CURSES:
                 #game_ui.write_main(invalid_message, col=5)
                 game_ui.refresh_all()
-                choiceLow = game_ui.get_input('Please choose from the menu.')
+                choiceLow = game_ui.get_input('Please choose new game, load game, quit.')
             else:
                 helpers.multi_printer(invalid_message)
                 choiceLow=helpers.get_input()
@@ -282,7 +282,10 @@ class Game():
                 #we submit False to let startGame know this is not a newGame
                 #it will not print the Splash screen again
                 #works well.  rescued myself with the flare gun !
-                helpers.multi_printer(self.player.get_reason_for_death())
+                if self.player.get_death_status():
+                   msg = self.player.get_reason_for_death()
+                   if USE_CURSES: game_ui.write_main_bottom(msg)
+                   else: helpers.multi_printer(msg)
                 break
         self.startGame(False)
 
@@ -374,7 +377,11 @@ class Game():
         if action == "look":
             res['description'] = self.get_room_long_desc()
         elif action == "inventory":
-            res['description'] = self.player.print_inventory()
+            if USE_CURSES: 
+                game_ui.write_main_mid(self.player.print_inventory())
+                return
+            else: 
+                res['description'] = self.player.print_inventory()
         elif action == "help":
             if USE_CURSES: game_ui.print_help()
             else: helpers.print_basic()
@@ -412,7 +419,8 @@ class Game():
         divides handling printing, updating character, inventory
         updating room's dynamically
         """
-        self.number_of_turns += 1
+        if res['success']:
+            self.number_of_turns += 1
         #at some point in the future hopefully this will be where
         #we can send parts to the room to be updated if appropriate
         #and the player state if for instance the player has
@@ -797,14 +805,54 @@ class Game():
                     files.store_item(item)
 
     def getTimeOfDay(self):
-        if self.number_of_turns % 4 == 0:
-            text = "It is morning. "
-        elif self.number_of_turns % 4 == 1:
-            text = "It is afternoon. "
-        elif self.number_of_turns % 4 == 2:
-            text = "It is evening. "
-        elif self.number_of_turns % 4 == 3:
-            text = "It is night. "
+        if USE_CURSES:
+            if self.number_of_turns % 4 == 0:
+                text = [" "," "," "," ",
+                        "     \\ | /",
+                        "      .-.               .-.",
+                        "  -==(   )==-          ( (",
+                        "----------------------------",
+                        " ",
+                        " ", 
+                        "It is morning. "]
+            elif self.number_of_turns % 4 == 1:
+                text = [" "," ",
+                        "           \\ | /",
+                        "            .-.",
+                        "        -==(   )==-",
+                        "            '-'",
+                        "           / | \\",
+                        "----------------------------",
+                        " "," ",
+                        "It is afternoon. "]
+            elif self.number_of_turns % 4 == 2:
+                text = [" "," "," "," ",
+                        "                   \\ | /",
+                        "  .-.               .-.",
+                        " ( (            -==(   )==-",
+                        "----------------------------",
+                        " ",
+                        " ",
+                        "It is evening. "]
+            elif self.number_of_turns % 4 == 3:
+                text = [" ", " "," ",
+                        "   *      .-.    *",
+                        "     *   ( (         *",
+                        " *        '-' ",
+                        "               *        *",
+                        "----------------------------",
+                        " ", " ",
+                        "It is night. "]
+        else:
+            if self.number_of_turns % 4 == 0:
+                text = "It is morning. "
+            elif self.number_of_turns % 4 == 1:
+                text = "It is afternoon. "
+            elif self.number_of_turns % 4 == 2:
+                text = "It is evening. "
+            elif self.number_of_turns % 4 == 3:
+                text = "It is night. "
+
         return text
 
     #-------------------------------------------------------------------------

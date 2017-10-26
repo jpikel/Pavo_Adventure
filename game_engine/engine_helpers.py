@@ -30,6 +30,7 @@ VERB_DICT = info.verb_info().get_verb_definitions()
 ROOM_SINGLES = info.room_info().get_singles()
 ROOM_TITLES = info.room_info().get_titles()
 ITEM_SINGLES = info.item_info().get_singles()
+ITEM_TITLES = info.item_info().get_titles()
 
 #experiment text wrapping
 CHARS_PER_LINE = 80
@@ -186,20 +187,27 @@ class ui():
             lines = textwrap.wrap(text, CHARS_PER_LINE)
             for line in lines:
                 col = 1
-                room = ''
+                prev_words = ''
                 for word in line.split():
-                    if remove_punc(room[1:]) in ROOM_TITLES:
-                        self.main_win.addstr(row, col, room[1:])
-                        col += len(room) + 1
-                        room = ''
+                    prev_words += word
+                    if remove_punc(prev_words) in ROOM_TITLES:
+                        self.main_win.addstr(row, col, prev_words, curses.color_pair(2))
+                        col += len(prev_words) + 1
+                        prev_words = ''
+                    elif remove_punc(prev_words) in ITEM_TITLES:
+                        self.main_win.addstr(row, col, prev_words, curses.color_pair(3))
+                        col += len(prev_words) + 1
+                        prev_words = ''
                     elif remove_punc(word) in ROOM_SINGLES:
-                        room += ' ' +word
-                        res = remove_punc(room[1:]) in ROOM_TITLES
-                        self.write_main_bottom(str(res))
+                        prev_words += ' '
+                        continue
+                    elif remove_punc(word) in ITEM_SINGLES:
+                        prev_words += ' '
+                        continue
                     else:
-                        self.main_win.addstr(row, col, word)
-                        col += len(word)+ 1
-                    x = self.main_win.getch()
+                        self.main_win.addstr(row, col, prev_words)
+                        col += len(prev_words)+ 1
+                        prev_words = ''
                 row += 1
         else:
             self.main_win.addstr('Error: did not receive list of strings or string')
@@ -207,13 +215,19 @@ class ui():
 
     def write_main_artifact(self, text):
         row  = self.main_row + 1
-#        if row < 15: row = 20
         if isinstance(text, list):
             for line in text:
                 if line == " ": row += 1
-#                lines = textwrap.wrap(line, CHARS_PER_LINE)
                 self.main_win.addstr(row, ui.COL, line)
                 row +=1
+
+    def write_main_mid(self, text):
+        row = self.main_row + 1
+        lines = textwrap.wrap(text, CHARS_PER_LINE)
+        for line in lines:
+            self.main_win.addstr(row, ui.COL, line)
+            row += 1
+        self.main_win.refresh()
 
     def write_main_bottom(self, text):
         self.main_win.addstr(29, 1, text, curses.color_pair(4))
@@ -234,9 +248,8 @@ class ui():
     def write_time(self, text):
         self.time_win.erase()
         row = 1
-        lines = textwrap.wrap(text, 28)
-        for line in lines:
-            self.time_win.addstr(ui.ROW, ui.COL, text)
+        for line in text:
+            self.time_win.addstr(row, ui.COL, line)
             row += 1
 
     def refresh_all(self):
@@ -266,7 +279,7 @@ class ui():
         """
 #        rows, columns = os.popen('stty size', 'r').read().split()
         rows, columns = subprocess.check_output(['stty','size']).decode().split()
-        if int(rows) >= int(MIN_ROWS) or int(columns) >= int(MIN_COLS):
+        if int(rows) >= int(MIN_ROWS) and int(columns) >= int(MIN_COLS):
             return True 
         return False
 
