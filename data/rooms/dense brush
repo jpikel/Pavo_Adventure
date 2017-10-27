@@ -3,7 +3,7 @@
  "title": "dense brush", 
  "visited": false, 
  "room_temp":"1",
- "long_description": "Not even the snow is able to cover all the brush growing here. It is patchy and some places you have to give a wide berth to not fall through the snow into the brush.  To the west you can see the brush give way to an open field and in the opposite direction is the camp.   When the weather is nicer there must be farmers that bring their animals up here and use the animal corral.  The gate is wide open to the corral and inside you see a deer carcass.", 
+ "long_description": "Not even the snow is able to cover all the brush growing here. It is patchy and some places you have to give a wide berth to not fall through the snow into the brush.  Fewer trees in this area to act as a brake, the  wind is picking up a bit here and you can feel it biting through your clothes.  To the west you can see the brush give way to an open field and in the opposite direction is the camp.   When the weather is nicer there must be farmers that bring their animals up here and use the animal corral.  The gate is wide open to the corral and inside you see a deer carcass.", 
  "short_description": "Standing in the snowy dense brush, to your east is an open field and in the opposite direction lies the camp.  There is an animal corral here likely used by farmers during better weather.  Inside the corral is a deer carcass.", 
  "features": {
   "animal corral": {
@@ -220,5 +220,24 @@
     "camp"
    ]
   }
- }
+ },
+ "room_artifact":[
+ " __                  ___",
+ "(   )              (    )      ^^      ___",
+ "__) __)          (__ (___)           _( __ )",   
+ "*                      *           (_ ) ____)",    
+ "    *                                    *",
+ "                    *",
+ "                      *",
+ "",
+ "",
+ "                      #####",
+ "                    #o# # #,#      ## ##",
+ "                   ###\\|/#_#      ##/##_o#",
+ "               ~~~   # {}{   o    #\\|o/  \\#",
+ "   o o    ~~~~~~~~~ ~ }{{~~~~~     {}}   ~~~~~~",
+ "~~~|/~~~~~~~~~~~~~~~~~,'  `~~~~~~~,' `~~~~~~~~~~~~"
+     
+     
+     ]
 }

@@ -42,12 +42,12 @@ DEBUG_RESPONSE = 0
 DEBUG_ROOM = 0
 #prints the current room's title at the begining of each cycle
 #comes after the description etc
-DEBUG_PRINT_ROOM_TITLE = 0
+DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
-LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'mountain base'
+LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 1
+SPECIFIC_ROOM = 'ranger station'
 
-if DEBUG_PRINT_ROOM_TITLE or DEBUG_PARSE or DEBUG_ROOM:
+if DEBUG_PARSE or DEBUG_ROOM:
     USE_CURSES = False
 
 
@@ -190,6 +190,7 @@ class Game():
         self.player.updatePlayerCondition(self.number_of_turns, 0)
         if USE_CURSES:
             game_ui.write_main(lines)
+            game_ui.write_main_artifact(self.get_room_artifact())
             game_ui.write_time(self.getTimeOfDay())
             game_ui.write_stat(self.player.getCondition())
             game_ui.refresh_all()
@@ -200,7 +201,9 @@ class Game():
         #updated this while loop the previous one did not seem to evaluate the
         #dead correctly
         while True:
-            if DEBUG_PRINT_ROOM_TITLE:
+            if DEBUG_PRINT_ROOM_TITLE and USE_CURSES:
+                game_ui.write_main_bottom("Room: " + self.current_room['title'])
+            elif DEBUG_PRINT_ROOM_TITLE:
                 helpers.multi_printer("Current Room: " + self.current_room['title'])
             if USE_CURSES and game_ui.terminal_size() == False:
                 USE_CURSES = False
@@ -375,6 +378,7 @@ class Game():
     def process_action_only(self, action):
         res = helpers.response_struct().get_response_struct()
         if action == "look":
+            res['action'] = 'look'
             res['description'] = self.get_room_long_desc()
         elif action == "inventory":
             if USE_CURSES: 
@@ -453,6 +457,8 @@ class Game():
             game_ui.write_main(res['description'], self.player.getName())
             if 'artifact' in res and res['artifact']:
                 game_ui.write_main_artifact(res['artifact'])
+            if res['action'] == 'go' or res['action'] == 'look':
+                game_ui.write_main_artifact(self.get_room_artifact())
             game_ui.refresh_all()
         else:
             helpers.multi_printer(res['description'], self.player.getName())
@@ -478,6 +484,7 @@ class Game():
         """
         res = self.check_connections(title_or_compass)
         if action == "go":
+            res['action'] = 'go'
             if res["success"] == True:
                 #before we leave the room we set the field visited to true
                 self.current_room['visited'] = True
@@ -489,6 +496,7 @@ class Game():
             elif res['success'] == False and res['description'] is None:
                 res['description'] = "You were not able to move in that direction.  "
         elif action == 'look':
+            res['action'] = 'look'
             res['description'] = self.get_room_long_desc()
         else:
             res['description'] = "You can't " + action + " the " + title_or_compass+". "
@@ -567,6 +575,15 @@ class Game():
         returns a string of the short description and items in room
         """
         return self.current_room['short_description'] + self.get_items_in_room()
+
+    def get_room_artifact(self):
+        """
+        if the room has ascii art then return it here
+        """
+        if 'room_artifact' in self.current_room:
+            return self.current_room['room_artifact']
+        else:
+            return []
 
     def get_items_in_room(self):
         """
@@ -653,7 +670,7 @@ class Game():
         res['title'] = item_title
         res["description"] = item['verbs'][action]['description']
         res['modifiers'] = item['verbs'][action]['modifiers']
-        res["success"] = True
+        #res["success"] = True
         if 'artifact' in item['verbs'][action]:
             res['artifact'] = item['verbs'][action]['artifact']
         if action == "use" and item['activatable'] == True:
@@ -686,7 +703,7 @@ class Game():
                 #print item
                 res['description'] = item['verbs'][verb]['description']
                 res['modifiers'] = item['verbs'][verb]['modifiers']
-                res["success"] = True
+                #res["success"] = True
             else:
                 text = "You can't find the " + title + " to " + verb +". "
                 res['description'] = text
@@ -806,6 +823,7 @@ class Game():
 
     def getTimeOfDay(self):
         if USE_CURSES:
+            text = []
             if self.number_of_turns % 4 == 0:
                 text = [" "," "," "," ",
                         "     \\ | /",

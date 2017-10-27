@@ -186,28 +186,7 @@ class ui():
             if player_name is not None: text = replace_player_name(text, player_name)
             lines = textwrap.wrap(text, CHARS_PER_LINE)
             for line in lines:
-                col = 1
-                prev_words = ''
-                for word in line.split():
-                    prev_words += word
-                    if remove_punc(prev_words) in ROOM_TITLES:
-                        self.main_win.addstr(row, col, prev_words, curses.color_pair(2))
-                        col += len(prev_words) + 1
-                        prev_words = ''
-                    elif remove_punc(prev_words) in ITEM_TITLES:
-                        self.main_win.addstr(row, col, prev_words, curses.color_pair(3))
-                        col += len(prev_words) + 1
-                        prev_words = ''
-                    elif remove_punc(word) in ROOM_SINGLES:
-                        prev_words += ' '
-                        continue
-                    elif remove_punc(word) in ITEM_SINGLES:
-                        prev_words += ' '
-                        continue
-                    else:
-                        self.main_win.addstr(row, col, prev_words)
-                        col += len(prev_words)+ 1
-                        prev_words = ''
+                self.main_win.addstr(row, col, line, curses.A_BOLD)
                 row += 1
         else:
             self.main_win.addstr('Error: did not receive list of strings or string')

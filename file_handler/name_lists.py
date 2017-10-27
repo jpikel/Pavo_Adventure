@@ -22,7 +22,7 @@ class room_info():
         "mountain summit", "rapids", "ranger station"]
     room_singles = ['shore', 'crash', 'site', 'game', 'trail', 'field', 'dense', 'brush',
             'camp', 'mountain', 'summit', 'rapids', 'ranger', 'station', 'river',
-            'waterfall', 'cave']
+            'waterfall', 'cave', 'fire', 'tower', 'path', 'base']
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
     room_dir = os.path.join(data_dir, "rooms")
     room_dir_dict = os.path.join(data_dir, "rooms_dict")
@@ -151,7 +151,7 @@ class dict_keys():
     """
     room_keys = ["id", "title", "visited", "long_description", "short_description",
             "features", "connected_rooms", "items_in_room", "feature_searched",
-            "room_temp"]
+            "room_temp", "room_artifact"]
          #   "room_hazards", "room_hazard_description", "room_hazard_item",
           #  "room_hazard_occurs_description", "room_hazard_attributes_affected",
           #  "room_hazard_safe_description"]
