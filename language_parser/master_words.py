@@ -26,6 +26,7 @@ features = {
    "hunting blind": "hunting blind", 
    "shelter": "leanto", 
    "shelf": "small shelf", 
+   "safe": "locked safe", 
    "leanto": "leanto", 
    "locked safe": "locked safe", 
    "plunge pool": "plunge pool", 
@@ -145,6 +146,10 @@ all_words = {
       "type": "action", 
       "master_word": "go"
    }, 
+   "pick up": {
+      "type": "action", 
+      "master_word": "take"
+   }, 
    "pole": {
       "type": "feature", 
       "master_word": "wood pole"
@@ -237,9 +242,9 @@ all_words = {
       "type": "feature", 
       "master_word": "small shelf"
    }, 
-   "rescue whistle": {
-      "type": "item", 
-      "master_word": "rescue whistle"
+   "safe": {
+      "type": "feature", 
+      "master_word": "locked safe"
    }, 
    "trail": {
       "type": "room", 
@@ -325,13 +330,13 @@ all_words = {
       "type": "item", 
       "master_word": "can of sweetened condensed milk"
    }, 
-   "island": {
+   "look out": {
       "type": "feature", 
-      "master_word": "snow capped island"
+      "master_word": "look out"
    }, 
-   "mountain base": {
-      "type": "room", 
-      "master_word": "mountain base"
+   "rescue whistle": {
+      "type": "item", 
+      "master_word": "rescue whistle"
    }, 
    "watchtower": {
       "type": "room", 
@@ -344,10 +349,6 @@ all_words = {
    "lantern": {
       "type": "item", 
       "master_word": "lantern"
-   }, 
-   "look out": {
-      "type": "feature", 
-      "master_word": "look out"
    }, 
    "stump": {
       "type": "feature", 
@@ -413,13 +414,13 @@ all_words = {
       "type": "feature", 
       "master_word": "wood pole"
    }, 
+   "island": {
+      "type": "feature", 
+      "master_word": "snow capped island"
+   }, 
    "cave": {
       "type": "room", 
       "master_word": "cave"
-   }, 
-   "pick up": {
-      "type": "action", 
-      "master_word": "take"
    }, 
    "paddle": {
       "type": "item", 
@@ -504,6 +505,10 @@ all_words = {
    "blood": {
       "type": "feature", 
       "master_word": "blood stained snow"
+   }, 
+   "mountain base": {
+      "type": "room", 
+      "master_word": "mountain base"
    }, 
    "waterfront": {
       "type": "room", 

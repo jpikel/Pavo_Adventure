@@ -2,13 +2,14 @@
  "id": 10, 
  "title": "fire tower", 
  "visited": false, 
- "room_temp":"-3",
+ "room_temp": "-3", 
  "long_description": "You climb up the ladder on the side of the tower and enter into the small cabin perched on top of the truss like structure.  From inside the tower there is an amazing look out, it is no wonder that it was built here you can see all around the mountain in every direction.  How far you have come to get here.  It has been quite a journey.  The tower has not been used in quite a while it seems.  At least not since the last fire season, as there is not much inside, except a few cobwebs from industrious spiders trying to find something to eat.  There are a few counters that are bare,  under one of the counters sits a safe.  In the middle of the tower there is also a central pedestal that is empty but seems to be home to something.  You recall your guide telling you about Osborne Fire Finders that are used by rangers to determine the degrees and estimated distance from the tower that a fire is located.", 
  "short_description": "Climbing up the ladder and entering the tower, inside you have an excellent look out.  Under one of the empty counters is a safe.  The only way out is towards the south and the mountain's summit.", 
  "features": {
   "locked safe": {
    "aliases": [
-    "locked safe"
+    "locked safe", 
+    "safe"
    ], 
    "verbs": {
     "pull": {
