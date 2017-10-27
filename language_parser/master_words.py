@@ -17,7 +17,7 @@ features = {
    "wood pole": "wood pole", 
    "deer carcass": "deer carcass", 
    "canoe": "canoe", 
-   "wood": "driftwood", 
+   "shortwave radio": "shortwave radio", 
    "bent pine": "bent pine", 
    "blood stained snow": "blood stained snow", 
    "snow capped island": "snow capped island", 
@@ -33,7 +33,6 @@ features = {
    "blood": "blood stained snow", 
    "campfire pit": "campfire pit", 
    "camping cooler": "camping cooler", 
-   "shortwave radio": "shortwave radio", 
    "small gorge": "small gorge", 
    "driftwood": "driftwood", 
    "cooler": "camping cooler", 
@@ -194,9 +193,9 @@ all_words = {
       "type": "room", 
       "master_word": "ranger station"
    }, 
-   "wood": {
-      "type": "feature", 
-      "master_word": "driftwood"
+   "mountain path": {
+      "type": "room", 
+      "master_word": "mountain path"
    }, 
    "mountain summit": {
       "type": "room", 
@@ -214,9 +213,9 @@ all_words = {
       "type": "room", 
       "master_word": "east"
    }, 
-   "summit": {
-      "type": "room", 
-      "master_word": "mountain summit"
+   "inventory": {
+      "type": "action", 
+      "master_word": "inventory"
    }, 
    "flat": {
       "type": "room", 
@@ -298,10 +297,6 @@ all_words = {
       "type": "feature", 
       "master_word": "camping cooler"
    }, 
-   "inventory": {
-      "type": "action", 
-      "master_word": "inventory"
-   }, 
    "drop": {
       "type": "action", 
       "master_word": "drop"
@@ -314,9 +309,9 @@ all_words = {
       "type": "item", 
       "master_word": "old map"
    }, 
-   "storage shed": {
+   "shortwave radio": {
       "type": "feature", 
-      "master_word": "storage shed"
+      "master_word": "shortwave radio"
    }, 
    "fire tower": {
       "type": "room", 
@@ -366,6 +361,10 @@ all_words = {
       "type": "feature", 
       "master_word": "canoe"
    }, 
+   "storage shed": {
+      "type": "feature", 
+      "master_word": "storage shed"
+   }, 
    "deer": {
       "type": "feature", 
       "master_word": "deer carcass"
@@ -385,10 +384,6 @@ all_words = {
    "stone marker": {
       "type": "feature", 
       "master_word": "stone marker"
-   }, 
-   "mountain path": {
-      "type": "room", 
-      "master_word": "mountain path"
    }, 
    "cavern": {
       "type": "room", 
@@ -438,9 +433,9 @@ all_words = {
       "type": "item", 
       "master_word": "lantern"
    }, 
-   "shortwave radio": {
-      "type": "feature", 
-      "master_word": "shortwave radio"
+   "summit": {
+      "type": "room", 
+      "master_word": "mountain summit"
    }, 
    "bent pine": {
       "type": "feature", 
