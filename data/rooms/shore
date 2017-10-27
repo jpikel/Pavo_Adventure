@@ -8,8 +8,7 @@
  "features": {
   "driftwood": {
    "aliases": [
-    "driftwood", 
-    "wood"
+    "driftwood"
    ], 
    "verbs": {
     "pull": {

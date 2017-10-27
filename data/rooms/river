@@ -184,6 +184,21 @@
          }, 
          "room_updates": {
           "rapids": {
+           "long_description":"Getting past the rock shelf the rapids slow a bit here.  You are floating along and towards the east the river splits around a small bit of land with a ranger station sitting along the bank.  To the north beyond the rapids is the top of the river where you just came from.  The rock shelf stares at you ominously, having successfully navigated it, you feel much more confident than before that you will be able to make to out of the rapids alive.  The heron still perched on the log in the river is still curious as to what you are doing, watching you with curious little eyes.",
+           "short_description":"You are beyond the fast rapids and the rock shelf that could have dumped you out of the canoe.  A heron sits on a log in the water.  To the north is the top of the river and to the east is a ranger station along the bank of the river.",
+           "features":{
+           "rock shelf":{
+           "verbs":{
+           "pull":{"description":"You managed to successfully pull the canoe out of harms way and are beyond the fast rapids, good job!"},
+           "use":{"description":"You're not sure how you would use that."},
+           "look at":{"description":"From this angle those rocks would certainly have dumped you out of the canoe and into the freezing water."},
+           "take":{"description":"You took on the challenge head on and survived."},
+           "read":{"description":"You read the situation well and avoided certain catastrophe!"},
+           "drop":{"description":"The rapids would most certainly have dumped you out of the canoe in the drop beyond the rock shelf."},
+           "eat":{"description":"You are not able to eat that."}
+           }
+           }
+           },
            "connected_rooms": {
             "ranger station": {
              "accessible": true, 

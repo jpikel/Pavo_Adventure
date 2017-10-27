@@ -37,7 +37,7 @@ CHARS_PER_LINE = 80
 
 SPLASH_MESSAGE = [ 
 "****************************************************************************",
-" ",
+"",
 " ########  ########  ######   #######  ##          ###    ######## ######## ",
 " ##     ## ##       ##    ## ##     ## ##         ## ##      ##    ##       ",
 " ##     ## ##       ##       ##     ## ##        ##   ##     ##    ##       ",
@@ -46,7 +46,6 @@ SPLASH_MESSAGE = [
 " ##     ## ##       ##    ## ##     ## ##       ##     ##    ##    ##       ",
 " ########  ########  ######   #######  ######## ##     ##    ##    ######## ",
  " ",
- " ",
 "          ##  #######  ##     ## ########  ##    ## ######## ##    ## ",
 "          ## ##     ## ##     ## ##     ## ###   ## ##        ##  ##  ",
 "          ## ##     ## ##     ## ##     ## ####  ## ##         ####   ",
@@ -54,7 +53,7 @@ SPLASH_MESSAGE = [
 "    ##    ## ##     ## ##     ## ##   ##   ##  #### ##          ##    ",
 "    ##    ## ##     ## ##     ## ##    ##  ##   ### ##          ##    ",
 "     ######   #######   #######  ##     ## ##    ## ########    ##    ",
-" ",
+"",
 "*****************************************************************************",
 "Welcome To Desolate Journey",
 "What would you like to do?",
@@ -170,7 +169,7 @@ class ui():
         row =0
         for _ in range(0,38):
             text = '*'*121
-            self.back_win.addstr(row, 0, text)
+            self.back_win.addstr(row, 0, text, curses.A_BOLD)
             row += 1
         self.back_win.refresh()
 
@@ -197,18 +196,20 @@ class ui():
         if isinstance(text, list):
             for line in text:
                 if line == " ": row += 1
-                self.main_win.addstr(row, ui.COL, line)
+                self.main_win.addstr(row, ui.COL, line, curses.A_BOLD)
                 row +=1
 
     def write_main_mid(self, text):
         row = self.main_row + 1
         lines = textwrap.wrap(text, CHARS_PER_LINE)
         for line in lines:
-            self.main_win.addstr(row, ui.COL, line)
+            self.main_win.addstr(row, ui.COL, line, curses.A_BOLD)
             row += 1
         self.main_win.refresh()
 
     def write_main_bottom(self, text):
+        blank_line = ' '*40
+        self.main_win.addstr(29, 1, blank_line)
         self.main_win.addstr(29, 1, text, curses.color_pair(4))
         self.main_win.refresh()
 
@@ -220,7 +221,7 @@ class ui():
         row = 1
         lines = textwrap.wrap(text, 26)
         for line in lines:
-            self.stat_win.addstr(row, ui.COL, line)
+            self.stat_win.addstr(row, ui.COL, line, curses.color_pair(2))
             row += 1
         self.stat_win.refresh()
 
@@ -228,7 +229,7 @@ class ui():
         self.time_win.erase()
         row = 1
         for line in text:
-            self.time_win.addstr(row, ui.COL, line)
+            self.time_win.addstr(row, ui.COL, line, curses.color_pair(4))
             row += 1
 
     def refresh_all(self):
@@ -244,10 +245,10 @@ class ui():
     def get_input(self, comment=''):
         curses.echo()
         self.input_win.erase()
-        self.input_win.addstr(0, 0, comment)
-        self.input_win.addstr(2, 1, '->')
+        self.input_win.addstr(0, 1, comment, curses.color_pair(5))
+        self.input_win.addstr(2, 1, '->', curses.color_pair(2))
         self.input_win.refresh()
-        text = self.input_win.getstr(2, 3, 80)
+        text = self.input_win.getstr(2, 4, 80)
         curses.noecho()
         return text
 
@@ -267,6 +268,7 @@ class ui():
         curses.init_pair(2, curses.COLOR_GREEN, curses.COLOR_BLACK)
         curses.init_pair(3, curses.COLOR_BLUE, curses.COLOR_BLACK)
         curses.init_pair(4, curses.COLOR_YELLOW, curses.COLOR_BLACK)
+        curses.init_pair(5, curses.COLOR_CYAN, curses.COLOR_BLACK)
     
     def print_help(self):
         """

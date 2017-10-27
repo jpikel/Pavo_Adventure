@@ -132,7 +132,7 @@ class Game():
         #checking for False because p could return as False if the files did not
         #get copied correctly
         if success == False:
-            if USE_CURSES: game_ui.write_input(msg)
+            if USE_CURSES: game_ui.write_main_bottom(msg)
             else: helpers.multi_printer(msg)
         if p is None:
             self.player = self.gen_player()
@@ -205,6 +205,8 @@ class Game():
                 game_ui.write_main_bottom("Room: " + self.current_room['title'])
             elif DEBUG_PRINT_ROOM_TITLE:
                 helpers.multi_printer("Current Room: " + self.current_room['title'])
+            #check throughout the game cycle if the terminal size is too small
+            #and if so end curses if it was running to begin with
             if USE_CURSES and game_ui.terminal_size() == False:
                 USE_CURSES = False
                 game_ui.end_windows()
@@ -228,7 +230,7 @@ class Game():
             processed_command = None
             while True:
                 if processed_command is not None and processed_command['processed'] == False:
-                    text = "Sorry I did not understand that.\n" + DO_WHAT
+                    text = "Sorry I did not understand that.\n " + DO_WHAT
                 else:
                     text = DO_WHAT
                 if USE_CURSES:
@@ -236,11 +238,9 @@ class Game():
                 else:
                     userInput = helpers.get_input(text)
                 userInput = self.check_save_load_quit(userInput)
+                #if we have no userInput skip to asking and check_save_load_quit again
                 if userInput == None:
-                    if USE_CURSES:
-                        userInput = game_ui.get_input(DO_WHAT)
-                    else:
-                        userInput = helpers.get_input(DO_WHAT)
+                    continue   
                 processed_command = parse.parse_command(userInput)
                 #line below for testing
                 if DEBUG_PARSE:
@@ -287,7 +287,7 @@ class Game():
                 #works well.  rescued myself with the flare gun !
                 if self.player.get_death_status():
                    msg = self.player.get_reason_for_death()
-                   if USE_CURSES: game_ui.write_main_bottom(msg)
+                   if USE_CURSES: game_ui.write_main_mid(msg)
                    else: helpers.multi_printer(msg)
                 break
         self.startGame(False)
@@ -324,11 +324,11 @@ class Game():
                 #adding this here so after we successfully load a game we get something
                 #back and not just the what do you want to do... maybe better some
                 #where else
-                try:
-                    res['description'] = self.get_room_long_desc()
-                    self.post_process(res)
-                except:
-                    pass
+                res = helpers.response_struct().get_response_struct()
+                res['description'] = self.get_room_long_desc()
+                res['room_artifact'] = self.get_room_artifact()
+                res['action'] = 'look'
+                self.post_process(res)
             else:
                 if USE_CURSES: game_ui.write_main_bottom('continueing game...')
                 else: helpers.multi_printer('continuing game...')

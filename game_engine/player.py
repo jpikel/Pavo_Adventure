@@ -137,19 +137,26 @@ class Player(object):
         """
         text = 'Sadly, ' + self.getName() + ' died as a result of extreme '
         if self.illness > 50 and self.hunger > 50 and self.cold > 50:
-            return text + 'wounds, hunger and cold.'
+            text += 'wounds, hunger and cold.'
         elif self.illness > 50 and self.hunger > 50:
-            return text + 'wounds and hunger.'
+            text += 'wounds and hunger.'
         elif self.illness > 50 and self.cold > 50:
-            return text + 'wounds and cold.'
+            text += 'wounds and cold.'
         elif self.hunger > 50 and self.cold > 50:
-            return text + 'hunger and cold.'
+            text += 'hunger and cold.'
         elif self.illness > 50:
-            return text + 'wounds.'
+            text += 'wounds.'
         elif self.hunger > 50:
-            return text + 'hunger.'
+            text += 'hunger.'
         elif self.cold > 50:
-            return text + 'cold.'
+            text += 'cold.'
+        text += ' As hard as you tried you did not manage to brave the elements.'
+        text += (' Next time perhaps take better care of yourself.  Cold, hunger,'
+             ' and illness can along come quickly in the Desolate Journey.'
+             ' The challenges are tough but they can be overcome and you will'
+             ' one day find your way to rescue.  But, not on this day.')
+        if self.dead:
+            return text
         return ""
     #------------------------------------------------------------------------
     # This section relates to items, and inventory
