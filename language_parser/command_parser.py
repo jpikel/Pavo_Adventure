@@ -2,7 +2,6 @@ import json
 import re
 
 import noise_words as noise
-import prepositions as prep
 import master_words as words
 
 class REGEX_PATTERNS:
