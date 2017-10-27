@@ -224,7 +224,6 @@ class Game():
 				self.process_room_only(title)
 			else:
 				"Error command type not supported yet."
-			print self.saved
 			if self.player.get_death_status() or self.player.get_rescue_status():
 				#would be good to add a restart loop in here
 				#this break should be all that is needed and then we can startGame
