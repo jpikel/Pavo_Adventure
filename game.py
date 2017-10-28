@@ -46,9 +46,9 @@ DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'ranger station'
-#this stops all the player attributes from being updated each round such as illness, wounds and cold
-#allows recue but not death
-GOD_MODE = 1
+#this stops all the player attributes from being updated each round 
+#such as illness, wounds and cold, allows rescue but not death
+GOD_MODE = 0
 
 if DEBUG_PARSE or DEBUG_ROOM:
     USE_CURSES = False
