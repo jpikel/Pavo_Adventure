@@ -16,3 +16,4 @@
 
 
 #ignore pyc files in game_engine
+/game_engine/*.pyc

@@ -12,7 +12,6 @@ Description -
 
 import textwrap
 import string
-import curses
 import sys
 import os
 import subprocess
