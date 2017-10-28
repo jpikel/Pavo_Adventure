@@ -152,6 +152,7 @@ class ui():
         self.stat_win = None
         self.time_win = None
         self.main_row = 0
+        self.stat_row = 0
 
 
     def init_windows(self, stdscr):
@@ -159,8 +160,8 @@ class ui():
             self.back_win = stdscr
             self.fill_back()
             self.input_win = curses.newwin(3, 117, 33, 2)
-            self.stat_win = curses.newwin(9, 30, 23, 89)
-            self.time_win = curses.newwin(20, 30, 2, 89)
+            self.stat_win = curses.newwin(18, 30, 14, 89)
+            self.time_win = curses.newwin(11, 30, 2, 89)
             self.main_win = curses.newwin(30, 86, 2, 2)
             self.init_colors()
 
@@ -221,6 +222,15 @@ class ui():
         lines = textwrap.wrap(text, 26)
         for line in lines:
             self.stat_win.addstr(row, ui.COL, line, curses.color_pair(2))
+            row += 1
+        self.stat_win.refresh()
+        self.stat_row = row
+
+    def write_stat_append(self, text):
+        row = self.stat_row
+        lines = textwrap.wrap(text, 26)
+        for line in lines:
+            self.stat_win.addstr(row, ui.COL, line, curses.color_pair(3))
             row += 1
         self.stat_win.refresh()
 

@@ -382,7 +382,7 @@ class Game():
             res['description'] = self.get_room_long_desc()
         elif action == "inventory":
             if USE_CURSES: 
-                game_ui.write_main_mid(self.player.print_inventory())
+                game_ui.write_stat(self.player.print_inventory())
                 return
             else: 
                 res['description'] = self.player.print_inventory()
@@ -825,41 +825,39 @@ class Game():
         if USE_CURSES:
             text = []
             if self.number_of_turns % 4 == 0:
-                text = [" "," "," "," ",
+                text = [" "," "," ",
                         "     \\ | /",
                         "      .-.               .-.",
                         "  -==(   )==-          ( (",
                         "----------------------------",
-                        " ",
                         " ", 
                         "It is morning. "]
             elif self.number_of_turns % 4 == 1:
-                text = [" "," ",
+                text = [" ",
                         "           \\ | /",
                         "            .-.",
                         "        -==(   )==-",
                         "            '-'",
                         "           / | \\",
                         "----------------------------",
-                        " "," ",
+                        " ",
                         "It is afternoon. "]
             elif self.number_of_turns % 4 == 2:
-                text = [" "," "," "," ",
+                text = [" "," "," ",
                         "                   \\ | /",
                         "  .-.               .-.",
                         " ( (            -==(   )==-",
                         "----------------------------",
                         " ",
-                        " ",
                         "It is evening. "]
             elif self.number_of_turns % 4 == 3:
-                text = [" ", " "," ",
+                text = [" ", " ",
                         "   *      .-.    *",
                         "     *   ( (         *",
                         " *        '-' ",
                         "               *        *",
                         "----------------------------",
-                        " ", " ",
+                        " ", 
                         "It is night. "]
         else:
             if self.number_of_turns % 4 == 0:
