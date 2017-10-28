@@ -46,6 +46,9 @@ DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'ranger station'
+#this stops all the player attributes from being updated each round such as illness, wounds and cold
+#allows recue but not death
+GOD_MODE = 1
 
 if DEBUG_PARSE or DEBUG_ROOM:
     USE_CURSES = False
@@ -425,6 +428,8 @@ class Game():
         """
         if res['success']:
             self.number_of_turns += 1
+            if USE_CURSES and self.number_of_turns < 16:
+                game_ui.write_art()
         #at some point in the future hopefully this will be where
         #we can send parts to the room to be updated if appropriate
         #and the player state if for instance the player has
@@ -444,7 +449,8 @@ class Game():
 
         #after modifiers have been applied update the player's condition
         room_temp = int(self.current_room['room_temp'])
-        self.player.updatePlayerCondition(self.number_of_turns,room_temp)
+        if not GOD_MODE:
+            self.player.updatePlayerCondition(self.number_of_turns,room_temp)
 
         if DEBUG_ROOM:
             print(json.dumps(self.current_room, indent=4))
@@ -457,7 +463,7 @@ class Game():
             game_ui.write_main(res['description'], self.player.getName())
             if 'artifact' in res and res['artifact']:
                 game_ui.write_main_artifact(res['artifact'])
-            if res['action'] == 'go' or res['action'] == 'look':
+            elif res['action'] == 'go' or res['action'] == 'look':
                 game_ui.write_main_artifact(self.get_room_artifact())
             game_ui.refresh_all()
         else:
@@ -791,12 +797,13 @@ class Game():
                 if item:
                     files.store_item(item)
                 self.player.remove_item_from_inventory(res['title'])
-            if 'illness' in modifiers:
-                self.player.add_to_illness(int(modifiers['illness']))
-            if 'hunger' in modifiers:
-                self.player.add_to_hunger(int(modifiers['hunger']))
-            if 'cold' in modifiers:
-                self.player.add_to_cold(int(modifiers['cold']))
+            if not GOD_MODE:
+                if 'illness' in modifiers:
+                    self.player.add_to_illness(int(modifiers['illness']))
+                if 'hunger' in modifiers:
+                    self.player.add_to_hunger(int(modifiers['hunger']))
+                if 'cold' in modifiers:
+                    self.player.add_to_cold(int(modifiers['cold']))
             if 'rescued' in modifiers:
                 self.player.set_rescue(modifiers['rescued'])
 

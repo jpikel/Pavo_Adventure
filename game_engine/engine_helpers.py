@@ -25,6 +25,15 @@ if sys.platform == 'linux' or sys.platform == 'linux2':
 
 MIN_COLS = 121
 MIN_ROWS = 50
+MAIN_WIN_ROWS = 30
+MAIN_WIN_COLS = 86
+TIME_WIN_ROWS = 11
+TIME_WIN_COLS = 30
+STAT_WIN_ROWS = 18
+STAT_WIN_COLS = 30
+INPUT_WIN_ROWS = 3 
+INPUT_WIN_COLS = 117
+
 VERB_DICT = info.verb_info().get_verb_definitions()
 ROOM_SINGLES = info.room_info().get_singles()
 ROOM_TITLES = info.room_info().get_titles()
@@ -60,6 +69,22 @@ SPLASH_MESSAGE = [
 "->  Load Game",
 "->  Quit"]
 
+
+CHAR_D = [ "######", "##****##", "##****##", "##****##", "######"]
+CHAR_E = [ "########", "##", "######", "##", "########"]
+CHAR_S = [ "**######", "##", "**####", "******##", "######"]
+CHAR_O = [ "**####", "##****##", "##****##", "##****##", "**####"]
+CHAR_L = [ "##", "##", "##", "##", "########"]
+CHAR_A = [ "**####", "##****##", "########", "##****##", "##****##"]
+CHAR_T = [ "##########", "****##", "****##", "****##", "****##"]
+CHAR_J = [ "******##", "******##", "******##", "##****##", "**####"]
+CHAR_U = [ "##****##", "##****##", "##****##", "##****##", "**####"]
+CHAR_R = [ "######", "##****##", "######", "##****##", "##****##"]
+CHAR_N = [ "##******##", "####****##", "##**##**##", "##****####", "##******##"]
+CHAR_Y = [ "##******##", "**##**##", "****##", "****##", "****##"]
+ART_COLS = [5, 15, 25, 35, 45, 55, 65, 77, 25, 35, 45, 55, 65, 77, 87]
+ART = [CHAR_D, CHAR_E, CHAR_S, CHAR_O, CHAR_L, CHAR_A, CHAR_T, CHAR_E,
+        CHAR_J, CHAR_O, CHAR_U, CHAR_R, CHAR_N, CHAR_E, CHAR_Y]
 
 class response_struct():
     """
@@ -153,25 +178,40 @@ class ui():
         self.time_win = None
         self.main_row = 0
         self.stat_row = 0
-
+        self.index_loc = 0
 
     def init_windows(self, stdscr):
         if USE_CURSES and self.terminal_size():
             self.back_win = stdscr
             self.fill_back()
-            self.input_win = curses.newwin(3, 117, 33, 2)
-            self.stat_win = curses.newwin(18, 30, 14, 89)
-            self.time_win = curses.newwin(11, 30, 2, 89)
-            self.main_win = curses.newwin(30, 86, 2, 2)
+            self.main_win = curses.newwin(MAIN_WIN_ROWS, MAIN_WIN_COLS, 2, 2)
+            self.input_win = curses.newwin(INPUT_WIN_ROWS, INPUT_WIN_COLS, 33, 2)
+            self.stat_win = curses.newwin(STAT_WIN_ROWS, STAT_WIN_COLS, 14, 89)
+            self.time_win = curses.newwin(TIME_WIN_ROWS, TIME_WIN_COLS, 2, 89)
             self.init_colors()
 
     def fill_back(self):
         row =0
-        for _ in range(0,38):
+        for _ in range(1,MIN_ROWS):
             text = '*'*121
             self.back_win.addstr(row, 0, text, curses.A_BOLD)
             row += 1
         self.back_win.refresh()
+
+    def write_art(self):
+        if self.index_loc < len(ART):
+            row = 37
+            col = ART_COLS[self.index_loc]
+            letter = ART[self.index_loc]
+            if self.index_loc >= 8:
+                row = 43
+            for line in letter:
+                self.back_win.addstr(row, col, line, curses.A_BOLD)
+                row += 1
+            self.back_win.refresh()
+            self.index_loc += 1
+        
+
 
     def write_main(self, text, player_name=None, row=1, col=1):
         self.main_win.erase()
@@ -181,23 +221,26 @@ class ui():
                 if player_name is not None: line = replace_player_name(line, player_name)
                 self.main_win.addstr(row, col, line, curses.A_BOLD)
                 row +=1
+                if row >= MAIN_WIN_ROWS: break
         elif isinstance(text, basestring):
             if player_name is not None: text = replace_player_name(text, player_name)
             lines = textwrap.wrap(text, CHARS_PER_LINE)
             for line in lines:
                 self.main_win.addstr(row, col, line, curses.A_BOLD)
                 row += 1
+                if row >= MAIN_WIN_ROWS: break
         else:
             self.main_win.addstr('Error: did not receive list of strings or string')
         self.main_row = row
 
     def write_main_artifact(self, text):
-        row  = self.main_row + 1
+        row = self.main_row + 1
         if isinstance(text, list):
             for line in text:
                 if line == " ": row += 1
                 self.main_win.addstr(row, ui.COL, line, curses.A_BOLD)
                 row +=1
+                if row >= MAIN_WIN_ROWS: break
 
     def write_main_mid(self, text):
         row = self.main_row + 1
@@ -205,12 +248,16 @@ class ui():
         for line in lines:
             self.main_win.addstr(row, ui.COL, line, curses.A_BOLD)
             row += 1
+            if row >= MAIN_WIN_ROWS: 
+                self.main_win.refresh()
+                break
         self.main_win.refresh()
 
     def write_main_bottom(self, text):
+        if len(text) > MAIN_WIN_COLS: text = text[:MAIN_WIN_COLS-1]
         blank_line = ' '*40
-        self.main_win.addstr(29, 1, blank_line)
-        self.main_win.addstr(29, 1, text, curses.color_pair(4))
+        self.main_win.addstr(MAIN_WIN_ROWS-1, ui.COL, blank_line)
+        self.main_win.addstr(MAIN_WIN_ROWS-1, ui.COL, text, curses.color_pair(4))
         self.main_win.refresh()
 
     def write_input(self, text, row=0, col= 30):
@@ -223,6 +270,9 @@ class ui():
         for line in lines:
             self.stat_win.addstr(row, ui.COL, line, curses.color_pair(2))
             row += 1
+            if row >= STAT_WIN_ROWS: 
+                self.stat_win.refresh()
+                break
         self.stat_win.refresh()
         self.stat_row = row
 
@@ -232,6 +282,9 @@ class ui():
         for line in lines:
             self.stat_win.addstr(row, ui.COL, line, curses.color_pair(3))
             row += 1
+            if row >= STAT_WIN_ROWS: 
+                self.stat_win.refresh()
+                break
         self.stat_win.refresh()
 
     def write_time(self, text):
@@ -240,6 +293,8 @@ class ui():
         for line in text:
             self.time_win.addstr(row, ui.COL, line, curses.color_pair(4))
             row += 1
+            if row >= TIME_WIN_ROWS:
+                break
 
     def refresh_all(self):
         self.stat_win.refresh()
@@ -249,7 +304,6 @@ class ui():
 
     def end_windows(self):
         curses.endwin()
-
 
     def get_input(self, comment=''):
         curses.echo()
