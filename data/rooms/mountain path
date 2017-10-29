@@ -3,7 +3,7 @@
  "title": "mountain path", 
  "visited": false, 
  "room_temp":"2",
- "long_description": "The wind is swirling around you as you are now part-way up the mountain, standing on the side of a steep-angled field of rock. All around you it is gray. The rock and the sky are such a consistent color that they almost blend together. To the north is the mountain base. You are high enough now that the house-sized boulders at the base of the mountain now look like pebbles. The path you are on wraps up and to the east, towards what you think will be the summit. You can't quite see what's ahead, but you know that it is up. You see a worn sign and something that appears to be a pile of rocks but you think it may be a stone marker.", 
+ "long_description": "The wind is swirling around you as you are now part-way up the mountain, standing on the side of a steep-angled field of rock. All around you it is gray. The rock and the sky are such a consistent color that they almost blend together. To the north is the mountain base. You are high enough now that the house-sized boulders at the base of the mountain now look like pebbles. The path you are on wraps up and to the east, towards what you think will be the mountain summit. You can't quite see what's ahead, but you know that it is up. You see a worn sign and something that appears to be a pile of rocks but you think it may be a stone marker.", 
  "short_description": "You are part-way up the mountain. To the north is the mountain base, and to the east is what you think is the summit. There is a worn sign a few meters away from where you are standing and a stone marker.", 
  "features": {
   "sign": {
@@ -139,5 +139,25 @@
     "summit"
    ]
   }
- }
+ },
+ "room_artifact":[
+ "  _ ________ ______________",    
+ " | ^   .    ^         .    ~|",
+ " }                          |",
+ " |     _              _    {",
+ " |__._|.|__.._____.__|.|___.|",
+ "      |.|            |.|",
+ "      |.}            | |",
+ "      | |            | |",
+ "      | |            } |",
+ "  o   | |            | | ",
+ "\\/    | |        o * | | o",
+ ",|;`..} |`.,`.,.`;\\|/| |/_,;`."
+ 
+
+
+
+     
+     
+     ]
 }

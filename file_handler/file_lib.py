@@ -84,7 +84,7 @@ def copy_files(src_dir, dst_dir):
         print("Something went horribly wrong creating the temp save file")
         print(e)
 
-def save_game(player, current_room):
+def save_game(player, current_room, turns):
     """
     saves the game to the Save Game dir
     expects to receive the player class object and the current room object
@@ -94,6 +94,7 @@ def save_game(player, current_room):
     try:
         player_dict = player.__dict__
         player_dict['current_room'] = current_room['title']
+        player_dict['turns'] =  turns
         #store the current room out to the temp save dir so we can copy it all 
         #at once
         store_room(current_room)

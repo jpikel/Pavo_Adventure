@@ -3,7 +3,7 @@
  "title": "camp", 
  "visited": false, 
  "room_temp":"-2",
- "long_description": "At the edge of the forest someone made a nice hunting blind here, with a leanto behind it.  The hunting blind stands stoutly against the elements.  The leanto has some snow it is holding up still from a recent fall.  The air somehow feels crisper here, maybe because the trees are not as dense or perhaps the air is waiting in anticipation of having to absorb the sharp rap from the hunter's rifle.  In the distance to your west you hear some wolves howling.  To the north you can see a crash site.  To your east the trees grow much denser in the woods and out to the west the trees give way to some dense brushland ladened with snow pack.  Not much recent human activity can be found here, reminding you just how alone you are and that you will soon need to find rescue or die an icy death or worse in this desolate place.  A breeze blows in from the open brushland and tickles the hair on the back of your neck.  It is definitely much colder out in the open than in the woods.", 
+ "long_description": "At the edge of the forest someone made a nice hunting blind here, with a leanto behind it.  The hunting blind stands stoutly against the elements.  The leanto has some snow it is holding up still from a recent fall.  The air somehow feels crisper here, maybe because the trees are not as dense or perhaps the air is waiting in anticipation of having to absorb the sharp rap from the hunter's rifle.  In the distance to your west you hear some wolves howling.  To the north you can see a crash site.  To your east the trees grow much denser in the woods and out to the west the trees give way to some dense brush ladened with snow pack.  Not much recent human activity can be found here, reminding you just how alone you are and that you will soon need to find rescue or die an icy death or worse in this desolate place.  A breeze blows in from the open brushland and tickles the hair on the back of your neck.  It is definitely much colder out in the open than in the woods.", 
  "short_description": "Standing in a camp, there still remains a sturdy hunting blind and a leanto.  Wolves howl in the distance, you think it is coming from the direction where the trees open to some dense brush.  To your east the trees grower thicker into woods and to your north you can see a crash site.  In the opposite direction from the woods is a dense brush.", 
  "features": {
   "hunting blind": {
@@ -160,5 +160,18 @@
     "copse"
    ]
   }
- }
+ },
+ "room_artifact":[
+ " /,,,,,,,,,,,,,\\",
+ "/,,,,,,,,,,,,,,,\\",
+ " |   _______   |                    ",
+ " |  |       |  |                   ,`, ",
+ " |  |_______|  |....              / __`,",
+ " |_____________|_|_|             /____ _`,",
+ " ||  //||\\\\  ||   |o                ||__ _`,",
+ " || // || \\\\ ||   |o                ||_   __`,",
+ " ||//  ||  \\\\||   |o                ||  __  __`' .,",
+ " ||/   ||   \\||   |o                ||,.~,. ~ ; `|| "
+     
+     ]
 }

@@ -20,11 +20,10 @@ import os
 from name_lists import verb_info
 
 MIN_COLS = 90
-MIN_ROWS = 55
+MIN_ROWS = 50
 VERB_DICT = verb_info().get_verb_definitions()
 
 def print_border(stdscr):
-
     print_stars(83, stdscr)
     print_stars_two_cols(41, stdscr)
 
@@ -118,13 +117,12 @@ def terminal_size():
         return False
     return True
 
-def main(stdscr=None):
+def main(stdscr, USEING_CURSES):
     """
         a simple print to screen of the help file
     """
+    USE_CURSES = USEING_CURSES
     if USE_CURSES and terminal_size():
-        locale.setlocale(locale.LC_ALL, '')
-        code = locale.getpreferredencoding()
         if stdscr == None:
             curses.wrapper(main_helper)
         else:

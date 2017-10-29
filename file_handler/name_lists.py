@@ -20,6 +20,9 @@ class room_info():
     room_titles = ["shore", "crash site", "game trail", "field", "dense brush", "camp", "woods",
         "cave", "mountain base", "fire tower", "river", "waterfall", "mountain path",
         "mountain summit", "rapids", "ranger station"]
+    room_singles = ['shore', 'crash', 'site', 'game', 'trail', 'field', 'dense', 'brush',
+            'camp', 'mountain', 'summit', 'rapids', 'ranger', 'station', 'river',
+            'waterfall', 'cave', 'fire', 'tower', 'path', 'base']
     room_connections = [1,3,2,2,2,3,3,2,2,1,3,1,2,2,2,1]
     room_dir = os.path.join(data_dir, "rooms")
     room_dir_dict = os.path.join(data_dir, "rooms_dict")
@@ -45,6 +48,8 @@ class room_info():
 
     def get_titles(self):
        return self.room_titles
+    def get_singles(self):
+       return self.room_singles
     def get_connection_amount(self):
         return self.room_connections
     def get_dir(self):
@@ -72,8 +77,15 @@ class item_info():
                 "can of sweetened condensed milk", "candy bar", "medical kit"]
     item_dir = os.path.join(data_dir, "items")
 
+    item_singles = ['lantern', 'heavy', 'winter', 'parka', 'map', 'spiral', 'bound',
+            'notepad', 'flare', 'gun', 'boat', 'paddle', 'rescue', 'whistle',
+            'can','of',
+            'sweetened', 'condensed', 'milk', 'candy', 'bar', 'medical', 'kit']
+
     def get_titles(self):
         return self.item_titles
+    def get_singles(self):
+        return self.item_singles
     def get_dir(self):
         return self.item_dir
     def get_dir_dict(self):
@@ -139,7 +151,7 @@ class dict_keys():
     """
     room_keys = ["id", "title", "visited", "long_description", "short_description",
             "features", "connected_rooms", "items_in_room", "feature_searched",
-            "room_temp"]
+            "room_temp", "room_artifact"]
          #   "room_hazards", "room_hazard_description", "room_hazard_item",
           #  "room_hazard_occurs_description", "room_hazard_attributes_affected",
           #  "room_hazard_safe_description"]
