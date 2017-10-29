@@ -45,7 +45,7 @@ DEBUG_ROOM = 0
 DEBUG_PRINT_ROOM_TITLE = 1
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'ranger station'
+SPECIFIC_ROOM = 'rapids'
 #this stops all the player attributes from being updated each round 
 #such as illness, wounds and cold, allows rescue but not death
 GOD_MODE = 0
@@ -56,7 +56,7 @@ if DEBUG_PARSE or DEBUG_ROOM:
 
 class Game():
     def __init__(self):
-        self.player = None
+        self.player = player.Player()
         self.current_room = None
         # Inventory will be a list of dicts, each element of which is an item.
         self.current_time = 0
@@ -75,34 +75,20 @@ class Game():
         loadgame = ["load", "load game", "l", "loadgame"]
         quit = ["quit", "q", "close", "exit" , "quit game", "close game", "exit game"]
         cmds = [newgame, loadgame, quit]
-        invalid_message = [
-                "Please choose from the menu:",
-                "New Game",
-                "Load Game",
-                "Quit"]
+        invalid_message = "Please choose new game, load game or quit: "
         #preload choiceLow so we get the invalid message automatically when
         #not a new game
         choiceLow = ""
 
         if is_new_game:
             #print the big splash page here!
-            if USE_CURSES:
-                game_ui.write_main(helpers.SPLASH_MESSAGE, col=5)
-                game_ui.refresh_all()
-                choiceLow = game_ui.get_input()
-            else:
-                helpers.multi_printer(helpers.SPLASH_MESSAGE)
-                choiceLow=helpers.get_input()
+            self.write_main_handler(helpers.SPLASH_MESSAGE, col=5)
+            self.ui_refresh()
+            choiceLow = self.input_handler()
         while (not choiceLow in cmds[0] and
             not choiceLow in cmds[1] and
             not choiceLow in cmds[2]):
-            if USE_CURSES:
-                #game_ui.write_main(invalid_message, col=5)
-                game_ui.refresh_all()
-                choiceLow = game_ui.get_input('Please choose new game, load game, quit.')
-            else:
-                helpers.multi_printer(invalid_message)
-                choiceLow=helpers.get_input()
+            choiceLow = self.input_handler(invalid_message)
         if choiceLow in cmds[0]:
             self.newGame()
             self.gameCycle()
@@ -135,36 +121,27 @@ class Game():
         #checking for False because p could return as False if the files did not
         #get copied correctly
         if success == False:
-            if USE_CURSES: game_ui.write_main_bottom(msg)
-            else: helpers.multi_printer(msg)
+            self.write_main_bottom_handler(msg)
         if p is None:
             self.player = self.gen_player()
         else:
             #load player info from saved game
             self.player = self.player.set_player_stats(p)
             self.number_of_turns = p['turns']
-            game_ui.reset_art()
-            for _ in range(0, self.number_of_turns):
-                game_ui.write_art()
+            self.reset_art()
         #r could be set to False if the files were not transferred correctly
         if r is not None:
             self.current_room = r
         else:
             text = 'Something went wrong loading the rooms in loadgame. Please try again'
-            if USE_CURSES:
-                game_ui.write_main(text)
-            else:
-                helpers.multi_printer(text)
+            self.write_main_handler(text)
 
     def exitGame(self):
         """
             prints a good bye message and exits
         """
-        if USE_CURSES:
-            game_ui.end_windows()
-            helpers.multi_printer('Thanks for playing')
-        else:
-            helpers.multi_printer("Thanks for playing")
+        if USE_CURSES: game_ui.end_windows()
+        helpers.multi_printer("Thanks for playing")
         exit()
 
     def gen_player(self):
@@ -172,10 +149,7 @@ class Game():
         this function asks the player to enter a name and then creates a new player
         object that the game holds on to for future use
         """
-        if USE_CURSES:
-            player_name = game_ui.get_input('Hello dreary traveler. What is your name? ')
-        else:
-            player_name = raw_input('Hello dreary traveler. What is your name? ')
+        player_name = self.input_handler('Hello dreary traveler. What is your name? ')
         return player.Player(player_name)
 
     def gameCycle(self):
@@ -191,59 +165,29 @@ class Game():
             update items
             check if dead or rescued
         """
-        global USE_CURSES
         #inital room description after new game or loading game
         lines = self.get_room_desc()
         self.player.updatePlayerCondition(self.number_of_turns, 0)
-        if USE_CURSES:
-            game_ui.write_main(lines)
-            game_ui.write_main_artifact(self.get_room_artifact())
-            game_ui.write_time(self.getTimeOfDay())
-            game_ui.write_stat(self.player.getCondition())
-            game_ui.refresh_all()
-        else:
-            helpers.multi_printer(lines)
-            helpers.multi_printer(self.getTimeOfDay())
-            helpers.multi_printer(self.player.getCondition())
+        self.write_main_handler(lines)
+        self.write_main_artifact_handler(self.get_room_artifact())
+        self.write_time_handler(self.getTimeOfDay())
+        self.write_stat_handler(self.player.getCondition())
+        self.ui_refresh()
         #updated this while loop the previous one did not seem to evaluate the
         #dead correctly
         while True:
-            if DEBUG_PRINT_ROOM_TITLE and USE_CURSES:
-                game_ui.write_main_bottom("Room: " + self.current_room['title'])
-            elif DEBUG_PRINT_ROOM_TITLE:
-                helpers.multi_printer("Current Room: " + self.current_room['title'])
-            #check throughout the game cycle if the terminal size is too small
-            #and if so end curses if it was running to begin with
-            if USE_CURSES and game_ui.terminal_size() == False:
-                USE_CURSES = False
-                game_ui.end_windows()
-                helpers.multi_printer('Terminal window too small. Exiting curses')
-#            userInput = helpers.get_input(DO_WHAT)
-#            userInput = self.check_save_load_quit(userInput)
-#            if userInput == None:
-#                userInput = helpers.get_input(DO_WHAT)
-#            processed_command = parse.parse_command(userInput)
-#
-			# If the game does not understand the user's command, prompt the
-			# user for a new command.
-#            while processed_command['processed'] == False:
-#                text = "Sorry I did not understand that.\n"
-#                text += DO_WHAT
-#                userInput = helpers.get_input(text)
-#                userInput = self.check_save_load_quit(userInput)
-#                if userInput == None:
-#                    userInput = helpers.get_input(DO_WHAT)
-#                processed_command = parse.parse_command(userInput)
+            if DEBUG_PRINT_ROOM_TITLE:
+                self.write_main_bottom_handler('Room: ' + self.current_room['title'])
+
             processed_command = None
             while True:
-                if processed_command is not None and processed_command['processed'] == False:
+                self.validate_curses()
+                if (processed_command is not None and 
+                        processed_command['processed'] == False):
                     text = "Sorry I did not understand that.\n " + DO_WHAT
                 else:
                     text = DO_WHAT
-                if USE_CURSES:
-                    userInput = game_ui.get_input(text)
-                else:
-                    userInput = helpers.get_input(text)
+                userInput = self.input_handler(text)
                 userInput = self.check_save_load_quit(userInput)
                 #if we have no userInput skip to asking and check_save_load_quit again
                 if userInput == None:
@@ -283,7 +227,7 @@ class Game():
             elif output_type == "room_only":
                 self.process_room_only(title)
             else:
-                "Error command type not supported yet."
+                self.write_main_bottom_handler('Error command type not supported yet.')
 
             if self.player.get_death_status() or self.player.get_rescue_status():
                 #would be good to add a restart loop in here
@@ -292,10 +236,6 @@ class Game():
                 #we submit False to let startGame know this is not a newGame
                 #it will not print the Splash screen again
                 #works well.  rescued myself with the flare gun !
-                if self.player.get_death_status():
-                   msg = self.player.get_reason_for_death()
-                   if USE_CURSES: game_ui.write_main_mid(msg)
-                   else: helpers.multi_printer(msg)
                 break
         self.startGame(False)
 
@@ -306,28 +246,23 @@ class Game():
         #save
         if userInput == "savegame":
             text = 'Are you sure you wisth to save y/n'
-            if USE_CURSES: checkYes=game_ui.get_input(text)
-            else: checkYes = helpers.get_input(text)
+            checkYes = self.input_handler(text)
             if checkYes == "y":
                 files.save_game(self.player, self.current_room, self.number_of_turns)
                 self.saved = True
                 userInput = None
-                if USE_CURSES: game_ui.write_main_bottom('Game saved successfully')
-                else: helpers.multi_printer('Game saved successfully')
+                self.write_main_bottom_handler('Game saved successfully')
             else:
-                if USE_CURSES: game_ui.write_main_bottom('continuing game...')
-                else: helpers.multi_printer('continuing game...')
+                self.write_main_bottom_handler('continuing game...')
         #load
         elif userInput == "loadgame":
             text = "Loading will exit game.  Are you sure you wish to load? y/n"
-            if USE_CURSES: checkYes = game_ui.get_input(text)
-            else: checkYes = helpers.get_input(text)
+            checkYes = self.input_handler(text)
             self.saved = False
             if checkYes == "y":
                 self.load_from_file()
                 userInput = None
-                if USE_CURSES: game_ui.write_main_bottom('Game loaded successfully')
-                else: helpers.multi_printer('Game loaded successfully')
+                self.write_main_bottom_handler('Game loaded successfully')
                 #adding this here so after we successfully load a game we get something
                 #back and not just the what do you want to do... maybe better some
                 #where else
@@ -337,30 +272,25 @@ class Game():
                 res['action'] = 'look'
                 self.post_process(res)
             else:
-                if USE_CURSES: game_ui.write_main_bottom('continueing game...')
-                else: helpers.multi_printer('continuing game...')
+                self.write_main_bottom_handler('continuing game...')
         #quit
         elif userInput == "quit":
             if self.saved ==False:
                 text = "Are you sure you want to quit without saving? y/n"
-                if USE_CURSES: checkYes = game_ui.get_input(text)
-                else: checkYes = helpers.get_input(text)
+                checkYes = self.input_handler(text)
                 if checkYes == "y":
                     self.exitGame()
                 else:
                     text = 'Do you wish to save and quit? y/n'
-                    if USE_CURSES: checkYes = game_ui.get_input(text)
-                    else: checkYes = helpers.get_input(text)
+                    checkYes = self.input_handler(text)
                     if checkYes == "y":
-                        files.save_game(self.player, self.current_room)
+                        files.save_game(self.player, self.current_room, self.number_of_turns)
                         self.exitGame()
                     else:
-                        if USE_CURSES: game_ui.write_main_bottom('continuing game...')
-                        else: helpers.multi_printer('continuing game...')
+                        self.write_main_bottom_handler('continuing game...')
             else:
                 text = 'Are you sure you want to quit? y/n'
-                if USE_CURSES: checkYes = game_ui.get_input(text)
-                else: checkYes = helpers.get_input(text)
+                checkYes = self.input_handler(text)
                 if checkYes == "y":
                     self.exitGame()
         else:
@@ -388,11 +318,8 @@ class Game():
             res['action'] = 'look'
             res['description'] = self.get_room_long_desc()
         elif action == "inventory":
-            if USE_CURSES: 
-                game_ui.write_stat(self.player.print_inventory())
-                return
-            else: 
-                res['description'] = self.player.print_inventory()
+            self.write_stat_handler(self.player.print_inventory())
+            return
         elif action == "help":
             if USE_CURSES: game_ui.print_help()
             else: helpers.print_basic()
@@ -430,10 +357,11 @@ class Game():
         divides handling printing, updating character, inventory
         updating room's dynamically
         """
+        self.validate_curses()
+
         if res['success']:
             self.number_of_turns += 1
-            if USE_CURSES and self.number_of_turns < 16:
-                game_ui.write_art()
+            if USE_CURSES and self.number_of_turns < 16: game_ui.write_art()
         #at some point in the future hopefully this will be where
         #we can send parts to the room to be updated if appropriate
         #and the player state if for instance the player has
@@ -459,25 +387,19 @@ class Game():
         if DEBUG_ROOM:
             print(json.dumps(self.current_room, indent=4))
         #print the messages to screen here
-        if USE_CURSES:
-            if (not self.player.get_death_status() 
-                    and not self.player.get_rescue_status()):
-                game_ui.write_time(self.getTimeOfDay())
-                game_ui.write_stat(self.player.getCondition())
-            game_ui.write_main(res['description'], self.player.getName())
+        self.write_main_handler(res['description'], self.player.getName())
+        if not self.player.get_death_status() and not self.player.get_rescue_status():
+            self.write_time_handler(self.getTimeOfDay())
+            self.write_stat_handler(self.player.getCondition())
             if 'artifact' in res and res['artifact']:
-                game_ui.write_main_artifact(res['artifact'])
+                self.write_main_artifact_handler(res['artifact'])
             elif res['action'] == 'go' or res['action'] == 'look':
-                game_ui.write_main_artifact(self.get_room_artifact())
-            game_ui.refresh_all()
-        else:
-            helpers.multi_printer(res['description'], self.player.getName())
-            if 'artifact' in res and res['artifact']:
-                lines = res['artifact']
-                helpers.multi_printer(lines)
-            if not self.player.get_death_status() and not self.player.get_rescue_status():
-                helpers.multi_printer(self.getTimeOfDay())
-                helpers.multi_printer(self.player.getCondition())
+                self.write_main_artifact_handler(self.get_room_artifact())
+        elif self.player.get_death_status():
+           msg = self.player.get_reason_for_death()
+           if USE_CURSES: game_ui.write_main_mid(msg)
+           else: helpers.multi_printer(msg)
+        self.ui_refresh()
 
         #description should always come with process functions so we
         #automatically print out something to the user
@@ -566,8 +488,7 @@ class Game():
 
     def get_room_desc(self):
         """
-            returns either the long or short description
-            if the room has been previously visited
+            returns either the long or short description if the room has been visited
         """
         if self.get_visited() == False:
             return self.get_room_long_desc()
@@ -727,7 +648,6 @@ class Game():
     # This ends the items and inventory section
     #------------------------------------------------------------------------
 
-
     #-------------------------------------------------------------------------
     # Methods that are used in otherwise managing game flow.
     # and updating the room, player and items
@@ -771,10 +691,10 @@ class Game():
                         updates = res['modifiers']['adjacent_room_updates'][key]
                         self.update_external_room(updates, key)
 
-
         #hopefully file_lib will have a method where we can pass the 
         #modifiers dict to and it will do the remaining processing returning 
         #the updated room so we can just do 
+
     def update_external_room(self, updates, key):
         """
            opens the room file named in the key, updates that room and then 
@@ -783,7 +703,6 @@ class Game():
         other_room = files.load_room(key)
         other_room = files.update(updates, other_room)
         files.store_room(other_room)
-
 
     def update_player(self, res):
         """
@@ -836,40 +755,13 @@ class Game():
         if USE_CURSES:
             text = []
             if self.number_of_turns % 4 == 0:
-                text = [" "," "," ",
-                        "     \\ | /",
-                        "      .-.               .-.",
-                        "  -==(   )==-          ( (",
-                        "----------------------------",
-                        " ", 
-                        "It is morning. "]
+                text = helpers.MORNING
             elif self.number_of_turns % 4 == 1:
-                text = [" ",
-                        "           \\ | /",
-                        "            .-.",
-                        "        -==(   )==-",
-                        "            '-'",
-                        "           / | \\",
-                        "----------------------------",
-                        " ",
-                        "It is afternoon. "]
+                text = helpers.AFTERNOON
             elif self.number_of_turns % 4 == 2:
-                text = [" "," "," ",
-                        "                   \\ | /",
-                        "  .-.               .-.",
-                        " ( (            -==(   )==-",
-                        "----------------------------",
-                        " ",
-                        "It is evening. "]
+                text = helpers.EVENING
             elif self.number_of_turns % 4 == 3:
-                text = [" ", " ",
-                        "   *      .-.    *",
-                        "     *   ( (         *",
-                        " *        '-' ",
-                        "               *        *",
-                        "----------------------------",
-                        " ", 
-                        "It is night. "]
+                text = helpers.NIGHT
         else:
             if self.number_of_turns % 4 == 0:
                 text = "It is morning. "
@@ -879,7 +771,6 @@ class Game():
                 text = "It is evening. "
             elif self.number_of_turns % 4 == 3:
                 text = "It is night. "
-
         return text
 
     #-------------------------------------------------------------------------
@@ -908,6 +799,84 @@ class Game():
             text += action_prefix[index] + word + action_post[index]
         res['description'] = text
         return res
+    
+    #------------------------------------------------------
+    #This section for abstracting the write function so it checks for curses
+    #these are the output and input handlers
+    #------------------------------------------------------
+    def reset_art(self):
+        """
+        if curses is being used reset's the art work
+        """
+        if USE_CURSES:
+            game_ui.reset_art()
+            for _ in range(0, self.number_of_turns):
+                game_ui.write_art()
+
+    def ui_refresh(self):
+        """
+        if curses refreshes all windows
+        """
+        if USE_CURSES: game_ui.refresh_all()
+    def write_main_bottom_handler(self, msg):
+        """
+        checks if curses is available and writes to the last line of the main window
+        otherwise sends to the multi_printer
+        """
+        if USE_CURSES: game_ui.write_main_bottom(msg)
+        else: helpers.multi_printer(msg)
+
+    def write_main_handler(self, msg, player_name=None, row=1, col=1):
+        """
+        checks if curses is available and sends the text to the main ouput screen
+        otherwise send the msg to the multi_printer
+        """
+        if USE_CURSES: game_ui.write_main(msg, player_name, row, col)
+        else: helpers.multi_printer(msg)
+
+    def input_handler(self, msg=''):
+        """
+        prints the message to screen and returns the input received
+        """
+        if USE_CURSES: return game_ui.get_input(msg)
+        else: return raw_input('\n'+msg+'\n->')
+
+    def write_time_handler(self, text):
+        """
+        delegates writing to the time window or to the multi_printer
+        """
+        if USE_CURSES: game_ui.write_time(text)
+        else: helpers.multi_printer(text)
+
+    def write_stat_handler(self, text):
+        """
+        delegates writing to the stat window or to the multi_printer
+        """
+        if USE_CURSES: game_ui.write_stat(text)
+        else: helpers.multi_printer(text)
+
+    def write_main_artifact_handler(self, content):
+        """
+        if curses sends to the artifact writer otherwise sends it to the multi_printer
+        """
+        if USE_CURSES: game_ui.write_main_artifact(content)
+        else: helpers.multi_printer(content)
+
+    def validate_curses(self):
+        """
+        check throughout the game cycle if the terminal size is too small
+        and if so end curses if it was running to begin with
+        """
+        global USE_CURSES
+        if USE_CURSES and game_ui.terminal_size() == False:
+            USE_CURSES = False
+            game_ui.end_windows()
+            helpers.multi_printer('TERMINAL WINDOW TOO SMALL. EXITING CURSES')
+
+    #------------------------------------------------------
+    #This ends the curses handlers section
+    #------------------------------------------------------
+
 
     #suggest update player conditions relocated to the helper file player.py
 #    def updatePlayerCondition(self):

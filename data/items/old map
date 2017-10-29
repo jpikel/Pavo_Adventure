@@ -37,12 +37,12 @@
      "title": "any"
     }, 
     "room_updates": {
-     "cave": {
+     "river": {
       "features": {
-       "small shelf": {
+       "camping cooler": {
         "verbs": {
          "search": {
-          "description": "The spot where the roll of parchment once sat is the only spot that is not covered in a fine layer of dust.  You could easily leave some things here and remember where you left them."
+          "description": "The lid of cooler opens with a grumpy groan.  The smell of plastic wafts into your face.  You suspect it would still keep your food cool."
          }
         }
        }

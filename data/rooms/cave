@@ -52,8 +52,7 @@
        }
       }
      }, 
-     "description": "Getting closer to the shelf, your lantern shines on upon an old rolled up bit of faded paper.  It has yellowed over the years and rolled up tightly, but maybe if you read it more intently you could learn more.  It looks like something is drawn on it, maybe an old map."
-    }, 
+     "description": "Getting closer to the shelf, your lantern shines on upon a spiral bound notepad.  It has yellowed in the damp camp and is covered in a thin layer of dust. "  }, 
     "look at": {
      "modifiers": {}, 
      "description": "From where you are standing is a small shelf carved into the rock face of the cave.  It is not very deep but it certainly would be a nice place to holds a few of your precious things.  It must have taken someone a long time to carve it out of the rock.  The inside is very smooth and a lot of care must have been taken in making it."

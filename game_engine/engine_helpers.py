@@ -23,6 +23,7 @@ if sys.platform == 'linux' or sys.platform == 'linux2':
     import curses
     USE_CURSES = True
 
+#DEFINE GLOBAL FOR THE VARIOUS CURSES WINDOWS
 MIN_COLS = 121
 MIN_ROWS = 50
 MAIN_WIN_ROWS = 30
@@ -33,16 +34,12 @@ STAT_WIN_ROWS = 18
 STAT_WIN_COLS = 30
 INPUT_WIN_ROWS = 3 
 INPUT_WIN_COLS = 117
-
+#USED IN THE PRINT HELP MENU
 VERB_DICT = info.verb_info().get_verb_definitions()
-ROOM_SINGLES = info.room_info().get_singles()
-ROOM_TITLES = info.room_info().get_titles()
-ITEM_SINGLES = info.item_info().get_singles()
-ITEM_TITLES = info.item_info().get_titles()
 
 #experiment text wrapping
 CHARS_PER_LINE = 80
-
+#The main splash screen
 SPLASH_MESSAGE = [ 
 "****************************************************************************",
 "",
@@ -69,7 +66,7 @@ SPLASH_MESSAGE = [
 "->  Load Game",
 "->  Quit"]
 
-
+#Theses are part of curses to write out DESOLATE JOURNEY as the game progesses
 CHAR_D = [ "######", "##****##", "##****##", "##****##", "######"]
 CHAR_E = [ "########", "##", "######", "##", "########"]
 CHAR_S = [ "**######", "##", "**####", "******##", "######"]
@@ -85,6 +82,41 @@ CHAR_Y = [ "##******##", "**##**##", "****##", "****##", "****##"]
 ART_COLS = [5, 15, 25, 35, 45, 55, 65, 77, 25, 35, 45, 55, 65, 77, 87]
 ART = [CHAR_D, CHAR_E, CHAR_S, CHAR_O, CHAR_L, CHAR_A, CHAR_T, CHAR_E,
         CHAR_J, CHAR_O, CHAR_U, CHAR_R, CHAR_N, CHAR_E, CHAR_Y]
+#only used in curses to present an image with the time of day
+MORNING =[" "," "," ",
+        "     \\ | /",
+        "      .-.               .-.",
+        "  -==(   )==-          ( (",
+        "----------------------------",
+        "",
+        "It is morning. "]
+
+AFTERNOON = [" ",
+        "           \\ | /",
+        "            .-.",
+        "        -==(   )==-",
+        "            '-'",
+        "           / | \\",
+        "----------------------------",
+        " ",
+        "It is afternoon. "]
+
+EVENING = [" "," "," ",
+        "                   \\ | /",
+        "  .-.               .-.",
+        " ( (            -==(   )==-",
+        "----------------------------",
+        " ",
+        "It is evening. "]
+NIGHT = [" ", " ",
+        "   *      .-.    *",
+        "     *   ( (         *",
+        " *        '-' ",
+        "               *        *",
+        "----------------------------",
+        " ", 
+        "It is night. "]
+
 
 class response_struct():
     """
@@ -181,6 +213,9 @@ class ui():
         self.index_loc = 0
 
     def init_windows(self, stdscr):
+        """
+        initializes the game windows as new windows and initializes some color pairs
+        """
         if USE_CURSES and self.terminal_size():
             self.back_win = stdscr
             self.fill_back()
@@ -191,6 +226,9 @@ class ui():
             self.init_colors()
 
     def fill_back(self):
+        """
+        fills the terminal window with * for 121 columns and 50 rows
+        """
         row =0
         for _ in range(1,MIN_ROWS):
             text = '*'*121
@@ -199,10 +237,16 @@ class ui():
         self.back_win.refresh()
 
     def reset_art(self):
+        """
+        removes the art work written to the main window
+        """
         self.fill_back()
         self.index_loc = 0
 
     def write_art(self):
+        """
+        writes out DESOLATE JOURNEY in the bottom of the back window
+        """
         if self.index_loc < len(ART):
             row = 37
             col = ART_COLS[self.index_loc]
@@ -216,6 +260,11 @@ class ui():
             self.index_loc += 1
 
     def write_main(self, text, player_name=None, row=1, col=1):
+        """
+        erases the main game window, then either writes the list or the string
+        to the main window wrapping the text to fit
+        the last row written to is stored in self
+        """
         self.main_win.erase()
         if isinstance(text, list):
             for line in text:
@@ -236,6 +285,10 @@ class ui():
         self.main_row = row
 
     def write_main_artifact(self, text):
+        """
+        one row below the most recent row written to writes out a 
+        list of strings to the main window
+        """
         row = self.main_row + 1
         if isinstance(text, list):
             for line in text:
@@ -245,31 +298,48 @@ class ui():
                 if row >= MAIN_WIN_ROWS: break
 
     def write_main_mid(self, text):
+        """
+        handles writting a string to middle of the main window starting 1 row below
+        the main body of text
+        """
         row = self.main_row + 1
         lines = textwrap.wrap(text, CHARS_PER_LINE)
         for line in lines:
             self.main_win.addstr(row, ui.COL, line, curses.A_BOLD)
             row += 1
-            if row >= MAIN_WIN_ROWS: 
-                self.main_win.refresh()
-                break
+            if row >= MAIN_WIN_ROWS: break
+        if row < MAIN_WIN_ROWS:
+            blank_line = " "*int(MAIN_WIN_COLS-1)
+            for _ in range(row, MAIN_WIN_ROWS-1):
+                self.main_win.addstr(row, ui.COL,blank_line)
         self.main_win.refresh()
 
     def write_main_bottom(self, text):
+        """
+        writes a signle line of text less that the length of the main window
+        to the last row of the main window
+        """
         if len(text) > MAIN_WIN_COLS: text = text[:MAIN_WIN_COLS-1]
         blank_line = ' '*40
         self.main_win.addstr(MAIN_WIN_ROWS-1, ui.COL, blank_line)
         self.main_win.addstr(MAIN_WIN_ROWS-1, ui.COL, text, curses.color_pair(4))
         self.main_win.refresh()
 
-    def write_input(self, text, row=0, col= 30):
-        self.input_win.addstr(row, col, text)
+#    def write_input(self, text, row=0, col= 30):
+#        self.input_win.addstr(row, col, text)
 
     def write_stat(self, text):
+        """
+        writes to the stat window that typically contains the character's illness,
+        hunger and cold.  Inventory also gets written to this window
+        stores the last row written to in this window
+        stops if we get to the last row
+        """
         self.stat_win.erase()
         row = 1
         lines = textwrap.wrap(text, 26)
         for line in lines:
+            line = line[:STAT_WIN_COLS-1]
             self.stat_win.addstr(row, ui.COL, line, curses.color_pair(2))
             row += 1
             if row >= STAT_WIN_ROWS: 
@@ -279,6 +349,10 @@ class ui():
         self.stat_row = row
 
     def write_stat_append(self, text):
+        """
+        appends to what is currently in the stat window.  This function is not currently
+        called anywhere
+        """
         row = self.stat_row
         lines = textwrap.wrap(text, 26)
         for line in lines:
@@ -290,6 +364,10 @@ class ui():
         self.stat_win.refresh()
 
     def write_time(self, text):
+        """
+        writes a list or string to the time window
+        stops when we get to the bottom of the window
+        """
         self.time_win.erase()
         row = 1
         for line in text:
@@ -299,15 +377,28 @@ class ui():
                 break
 
     def refresh_all(self):
+        """
+        refreshes all screens except the back window
+        """
         self.stat_win.refresh()
         self.input_win.refresh()
         self.time_win.refresh()
         self.main_win.refresh()
 
     def end_windows(self):
+        """
+        ends all screens
+        """
         curses.endwin()
 
     def get_input(self, comment=''):
+        """
+        turns on echo, erases what ever is in the input window
+        writes the passed argument to the window if anything
+        otherwise prints the carot and then waits for a string
+        accepts strings up to 80 characters long
+        turns of echo and returns the string gotten
+        """
         curses.echo()
         self.input_win.erase()
         self.input_win.addstr(0, 1, comment, curses.color_pair(5))
@@ -329,6 +420,9 @@ class ui():
         return False
 
     def init_colors(self):
+        """
+        initializes some colors pairs for curses to be used when printing text
+        """
         curses.init_pair(1, curses.COLOR_RED, curses.COLOR_BLACK)
         curses.init_pair(2, curses.COLOR_GREEN, curses.COLOR_BLACK)
         curses.init_pair(3, curses.COLOR_BLUE, curses.COLOR_BLACK)
@@ -338,6 +432,7 @@ class ui():
     def print_help(self):
         """
             prints the actual help menu
+            in curses in the main window
         """
         self.main_win.erase()
         x, y = self.print_text(4,2,"Verb       ", curses.A_BOLD)
@@ -352,6 +447,8 @@ class ui():
 
     def print_text(self, x, y, text, attribute=None):
         """
+            a helper function to the print_help function to make the curses help
+            menu seem like it is being typed one letter at a time
             prints the text into the window given and refreshes
         """
         for ch in text:
@@ -363,8 +460,6 @@ class ui():
             time.sleep(random.uniform(0.03, 0.005))
             self.main_win.refresh()
         return x, y
-
-
     #------------------------------------------------------
     #This ends the UI curses section
     #------------------------------------------------------

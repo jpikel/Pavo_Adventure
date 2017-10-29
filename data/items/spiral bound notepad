@@ -37,12 +37,12 @@
      "title": "any"
     }, 
     "room_updates": {
-     "river": {
+     "cave": {
       "features": {
-       "camping cooler": {
+       "small shelf": {
         "verbs": {
          "search": {
-          "description": "The lid of cooler opens with a grumpy groan.  The smell of plastic wafts into your face.  Although not very appetizing it is a secure spot to store some of your things."
+          "description": "The shelf has a thing layer of dust on it except for a small spot where something used to sit."
          }
         }
        }
@@ -105,7 +105,7 @@
      }
     }
    }, 
-   "description": "Not much is written in the notepad.  Looks like it may have one belonged to a river guide.  It states \"In case of emergency dial ...\".  You are not sure what that code is for, maybe you'll find something that you can use it on.  But it certainly is not a phone number that could be dialed.  Maybe it is something else.", 
+   "description": "Not much is written in the notepad.  Looks like it may have once belonged to a guide.  There are some notes about bird sightings and other wildlife.  It states \"In case of emergency dial ...\".  You are not sure what that code is for, maybe you'll find something that you can use it on.  But it certainly is not a phone number that could be dialed.  Maybe it is something else.", 
    "artifact": [
     " ____     _    _         ____         ____  ______ ", 
     "|__  |   |  | | |       | ___|       |__ | |____  |", 
