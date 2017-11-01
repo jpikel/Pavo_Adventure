@@ -136,11 +136,61 @@ class response_struct():
                     "artifact": [],
                     "description":None,
                     "success":False,
-                    "distance_from_room":0
+                    "distance_from_room":0,
+                    "modifiers": {},
+                    "room_artifact":{}
                 }
-
-    def get_response_struct(self):
+    @property
+    def response(self):
         return self.response
+    @property
+    def title(self):
+        return self.response['title']
+    @title.setter
+    def title(self, title):
+        self.response['title'] = title
+    @property
+    def action(self):
+        return self.response['action']
+    @action.setter
+    def action(self, action):
+        self.response['action'] = action
+    @property
+    def success(self):
+        return self.response['success']
+    @success.setter
+    def success(self, value):
+        self.response['success'] = value
+    @property
+    def artifact(self):
+        return self.response['artifact']
+    @artifact.setter
+    def artifact(self, artifact):
+        self.response['artifact'] = artifact
+    @property
+    def description(self):
+        return self.response['description']
+    @description.setter
+    def description(self, description):
+        self.response['description'] = description
+    @property
+    def distance_from_room(self):
+        return self.response['distance_from_room']
+    @distance_from_room.setter
+    def distance_from_room(self, dist):
+        self.response['distance_from_room'] = dist
+    @property
+    def modifiers(self):
+        return self.response['modifiers']
+    @modifiers.setter
+    def modifiers(self, value):
+        self.response['modifiers'] = value
+    @property
+    def room_artifact(self):
+        return self.response['room_artifact']
+    @room_artifact.setter
+    def room_artifact(self, value):
+        self.response['room_artifact'] = value
 
 
 def get_input(comment=''):

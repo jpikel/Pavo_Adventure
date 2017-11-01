@@ -11,6 +11,7 @@ the player is dead or rescued, and the player has an inventory
 #ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
 
 from item import Item
+import engine_helpers as helpers
 
 class Player(object):
     def __init__(self, name=None):
@@ -23,6 +24,7 @@ class Player(object):
         #the player should hold the inventory
         self.inventory = []
 
+    @property
     def getName(self):
         """
         returns the player's name
@@ -135,7 +137,7 @@ class Player(object):
         """
         returns a string as to why the player died and from what
         """
-        text = 'Sadly, ' + self.getName() + ' died as a result of extreme '
+        text = 'Sadly, ' + self.name + ' died as a result of extreme '
         if self.illness > 50 and self.hunger > 50 and self.cold > 50:
             text += 'wounds, hunger and cold.'
         elif self.illness > 50 and self.hunger > 50:
@@ -161,6 +163,10 @@ class Player(object):
     #------------------------------------------------------------------------
     # This section relates to items, and inventory
     #------------------------------------------------------------------------
+    @property
+    def get_inventory(self):
+        return self.inventory
+
     def print_inventory(self):
         """
          the player's current inventory
@@ -201,13 +207,34 @@ class Player(object):
         iterates through inventory to remove the item title passed in
         """
         self.inventory = self.search_inventory_excluding(title)
-
-#    def addRoomsVisited(self):
-#        self.roomsVisited += 1
-#
-#    def getLastSated(self):
-#        self.lastSated = self.roomsVisited * 4
-#         #"You ate %d hours ago", (self.lastSated)
-#        return self.lastSated
-#
-#
+    #------------------------------------------------------------------------
+    # This section relates to item actions
+    #------------------------------------------------------------------------
+    def item_action_inventory(self, item_title, action, room_searched):
+        """
+        called by the verb handler.  Looks up the item file and opens it
+        returns the description listed for the particular verb at this moment.
+        and modifiers if any
+        """
+        res = helpers.response_struct()
+        item = self.search_inventory(item_title)
+        res.title = item_title
+        res.description = item['verbs'][action]['description']
+        res.modifiers = item['verbs'][action]['modifiers']
+        #res["success"] = True
+        if 'artifact' in item['verbs'][action]:
+            res['artifact'] = item['verbs'][action]['artifact']
+        if action == "use" and item['activatable'] == True:
+            if item['active'] == True:
+                item['active'] = False
+                if 'de_mods' in item['verbs']['use']:
+                    res.modifiers = item['verbs']['use']['de_mods']
+                res.description = item['verbs']['use']['deactivate_description']
+            else:
+                item['active'] = True
+                if 'act_mods' in item['verbs']['use']:
+                    res.modifiers = item['verbs']['use']['act_mods']
+        elif action == "drop" and room_searched == False:
+            res.description = "There is no where secure to drop the item."
+            res.modifiers = {}
+        return res
