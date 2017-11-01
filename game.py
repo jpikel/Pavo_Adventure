@@ -174,8 +174,7 @@ class Game():
             if DEBUG_PARSE:
                 print json.dumps(processed_command, indent=4)
             if processed_command['processed'] == True:
-                break
-        return userInput
+                return processed_command
 
 
     def gameCycle(self):
@@ -204,7 +203,7 @@ class Game():
             if DEBUG_PRINT_ROOM_TITLE:
                 self.write_main_bottom_handler('Room: '+self.room.title)
 
-            processed_command = input_cycle()
+            processed_command = self.input_cycle()
             # If the game understands the user's command, process that command
             # according to the command type.
             output_type = processed_command["type"]
