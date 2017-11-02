@@ -139,7 +139,7 @@ class Room(object):
         res = helpers.response_struct()
         res.title = title
         allowed_verbs = ["look at", "take"]
-        if self._current_room['feature_searched'] and verb in allowed_verbs:
+        if self.feature_searched and verb in allowed_verbs:
             if title in self._current_room['items_in_room']:
                 item = files.load_item(title)
                 #print item

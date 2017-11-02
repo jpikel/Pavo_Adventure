@@ -217,24 +217,27 @@ class Player(object):
         and modifiers if any
         """
         res = helpers.response_struct()
-        item = self.search_inventory(item_title)
-        res.title = item_title
-        res.description = item['verbs'][action]['description']
-        res.modifiers = item['verbs'][action]['modifiers']
-        #res["success"] = True
-        if 'artifact' in item['verbs'][action]:
-            res['artifact'] = item['verbs'][action]['artifact']
-        if action == "use" and item['activatable'] == True:
-            if item['active'] == True:
-                item['active'] = False
-                if 'de_mods' in item['verbs']['use']:
-                    res.modifiers = item['verbs']['use']['de_mods']
-                res.description = item['verbs']['use']['deactivate_description']
-            else:
-                item['active'] = True
-                if 'act_mods' in item['verbs']['use']:
-                    res.modifiers = item['verbs']['use']['act_mods']
-        elif action == "drop" and room_searched == False:
-            res.description = "There is no where secure to drop the item."
-            res.modifiers = {}
+        try:
+            item = self.search_inventory(item_title)
+            res.title = item_title
+            res.description = item['verbs'][action]['description']
+            res.modifiers = item['verbs'][action]['modifiers']
+            #res["success"] = True
+            if 'artifact' in item['verbs'][action]:
+                res['artifact'] = item['verbs'][action]['artifact']
+            if action == "use" and item['activatable'] == True:
+                if item['active'] == True:
+                    item['active'] = False
+                    if 'de_mods' in item['verbs']['use']:
+                        res.modifiers = item['verbs']['use']['de_mods']
+                    res.description = item['verbs']['use']['deactivate_description']
+                else:
+                    item['active'] = True
+                    if 'act_mods' in item['verbs']['use']:
+                        res.modifiers = item['verbs']['use']['act_mods']
+            elif action == "drop" and room_searched == False:
+                res.description = "There is no where secure to drop the item."
+                res.modifiers = {}
+        except KeyError:
+            res.description = 'You are not able to ' + action + ' ' + item_title+'.'
         return res

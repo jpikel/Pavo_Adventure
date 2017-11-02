@@ -53,7 +53,7 @@ SPECIFIC_ROOM = 'rapids'
 #such as illness, wounds and cold, allows rescue but not death
 GOD_MODE = 1
 #toggle on/off to randomize player input
-RANDOM_TESTER = 1
+RANDOM_TESTER = 0
 
 if DEBUG_PARSE or DEBUG_ROOM:
 	USE_CURSES = False
