@@ -132,12 +132,12 @@ def load_game():
     returns the player as a dict and the current room as a dict
     """
     success = True
-    msg = []
+    msg = ''
     #check if /data/save_game exits
     #otherwise run a new game and return the shore, but no player
     if not os.path.isdir(SAVE_DIR):
         new_game()
-        return None, load_room('shore'), False, 'No save game found starting new game'
+        return None, False, 'No save game found starting new game'
     #if the temp room dir does not exist make it
     if not os.path.isdir(TEMP_ROOM_DIR):
         os.makedirs(TEMP_ROOM_DIR)
@@ -153,14 +153,14 @@ def load_game():
     if not os.path.isdir(SAVE_ROOM_DIR):
         copy_files(ROOM_DIR, TEMP_ROOM_DIR)
         success = False
-        msg.append('Rooms not found using new rooms.')
+        msg = 'Rooms missing.'
     else:
         copy_files(SAVE_ROOM_DIR, TEMP_ROOM_DIR)
     #if the item dir in save game does not exist copy the templates instead
     if not os.path.isdir(SAVE_ITEM_DIR):
         copy_files(ITEM_DIR, TEMP_ITEM_DIR)
         success = False
-        msg.append('Items not found using new items.')
+        msg += 'Items missing.'
     else:
         copy_files(SAVE_ITEM_DIR, TEMP_ITEM_DIR)
 
@@ -168,25 +168,24 @@ def load_game():
     #as expected
     #if either of these fails for any reason they will return False
     if not val_room_files_in_temp() or not val_item_files_in_temp():
-        msg.append('Warning not all files copied.')
+        msg += 'All files not copied.'
         success = False
 
     player_file = os.path.join(SAVE_DIR, 'player')
     player = None
-    if os.path.exists(player_file):
-        with open(player_file, 'r') as open_file:
-            player = json.load(open_file)
-            open_file.close()
+    try:
+        if os.path.exists(player_file):
+            with open(player_file, 'r') as open_file:
+                player = json.load(open_file)
+                open_file.close()
+    except (ValueError, IOError, TypeError):
+        player = None
 
-    if player:
-        current_room = load_room(player['current_room'])
-        del player['current_room']
-    else:
+    if player is None:
         success = False
-        msg.append('Player file not found start new player.')
-        current_room = load_room('shore')
+        msg += 'Player corrupt.'
 
-    return player, current_room, success, msg
+    return player, success, msg
 
 
 def val_room_files_in_temp():
@@ -257,8 +256,17 @@ def load_room(room_title):
             room = json.load(room_file, object_pairs_hook=OrderedDict)
             room_file.close()
         return room
-    except Exception, e:
-        return e
+    except (IOError, TypeError, ValueError):
+        return None
+
+def copy_room(title):
+    """
+    copies a room with the title given from the template dir data/rooms/
+    to the temp save dir
+    """
+    if os.path.isdir(ROOM_DIR):
+        dir_ = os.path.join(ROOM_DIR, title)
+        shutil.copy2(dir_, TEMP_ROOM_DIR)
 
 def store_room(current_room):
     """
@@ -298,8 +306,8 @@ def load_item(title):
             item = json.load(item_file, object_pairs_hook=OrderedDict)
             item_file.close()
         return item
-    except Exception, e:
-        return e
+    except (IOError, ValueError, TypeError):
+        return None
 
 def store_item(current_item):
     """

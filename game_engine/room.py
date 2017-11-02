@@ -131,33 +131,7 @@ class Room(object):
     #------------------------------------------------------------------------
     # This ends the feature section
     #------------------------------------------------------------------------
-    def item_action_room(self, title, verb):
-        """
-        acts on an item in the room only the look at verb is allowed at this moment
-        adds the item to the inventory as well if it is
-        """
-        res = helpers.response_struct()
-        res.title = title
-        allowed_verbs = ["look at", "take"]
-        if self.feature_searched and verb in allowed_verbs:
-            if title in self._current_room['items_in_room']:
-                item = files.load_item(title)
-                #print item
-                res.description = item['verbs'][verb]['description']
-                res.modifiers = item['verbs'][verb]['modifiers']
-                #res["success"] = True
-            else:
-                text = "You can't find the " + title + " to " + verb +". "
-                res.description = text
-        elif self._current_room['feature_searched'] and verb not in allowed_verbs:
-            res.description = "You need to be holding " + title + " to " + verb + " it."
-        else:
-            res.description = "You don't see any items around. "
-        return res
 
-    #------------------------------------------------------------------------
-    # This ends the items and inventory section
-    #------------------------------------------------------------------------
     #-------------------------------------------------------------------------
     # This section dedicated to functions relating to moving from one
     # room to another

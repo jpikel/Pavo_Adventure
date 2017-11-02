@@ -359,7 +359,7 @@ class ui():
             row += 1
             if row >= MAIN_WIN_ROWS: break
         if row < MAIN_WIN_ROWS:
-            blank_line = " "*int(MAIN_WIN_COLS-1)
+            blank_line = " "*int(MAIN_WIN_COLS-2)
             for _ in range(row, MAIN_WIN_ROWS-1):
                 self.main_win.addstr(row, ui.COL,blank_line)
         self.main_win.refresh()
@@ -369,7 +369,7 @@ class ui():
         writes a signle line of text less that the length of the main window
         to the last row of the main window
         """
-        if len(text) > MAIN_WIN_COLS: text = text[:MAIN_WIN_COLS-1]
+        if len(text) > MAIN_WIN_COLS-2: text = text[:MAIN_WIN_COLS-2]
         blank_line = ' '*40
         self.main_win.addstr(MAIN_WIN_ROWS-1, ui.COL, blank_line)
         self.main_win.addstr(MAIN_WIN_ROWS-1, ui.COL, text, curses.color_pair(4))
