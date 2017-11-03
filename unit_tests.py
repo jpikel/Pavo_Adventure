@@ -68,6 +68,7 @@ class TestMasterParser(unittest.TestCase):
             self.assertNotEqual(value, None)
 
     # def test_master_words_verbs(self):
+    # TODO: Write this test
 
     def test_parse_action_only(self):
         input_1 = "move"
@@ -80,7 +81,7 @@ class TestMasterParser(unittest.TestCase):
         self.assertEqual(output_1, expected_output_1)
 
         input_2 = "eat"
-        output_2 = parser.parse_command(eat)
+        output_2 = parser.parse_command(input_2)
         expected_output_2 = {
             "type": "action_only",
             "command": {"action": "eat"},
@@ -89,18 +90,25 @@ class TestMasterParser(unittest.TestCase):
         self.assertEqual(output_2, expected_output_2)
 
     # def test_parse_feature_action(self):
+    # TODO: Write this test
 
     # def test_parse_feature_only(self):
+    # TODO: Write this test
 
     # def test_parse_item_action(self):
+    # TODO: Write this test
 
     # def test_parse_item_only(self):
+    # TODO: Write this test
 
     # def test_room_action(self):
+    # TODO: Write this test
 
     # def test_room_only(self):
+    # TODO: Write this test
 
     # def test_parse_unknown(self):
+    # TODO: Write this test
 
 
 if __name__ == '__main__':
