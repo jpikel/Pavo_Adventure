@@ -12,13 +12,18 @@ import sys
 import json
 import pdb  #toggle off in main
 import file_handler.file_lib as files
-#import file_handler.help_file as help_file
-from file_handler.name_lists import verb_info as verbs
 import language_parser.command_parser as parse
 import game_engine.player as player
-#from game_engine.engine_helpers import response_struct
+import game_engine.room as room
 import game_engine.engine_helpers as helpers
 import random
+
+#FOR DELETEION
+#from file_handler.name_lists import verb_info as verbs
+#from game_engine.engine_helpers import response_struct
+#import file_handler.help_file as help_file
+#ALL_VERBS = verbs().get_verbs()
+#END FOR DELETION
 
 USE_CURSES = False
 if sys.platform == 'linux' or sys.platform == 'linux2':
@@ -28,8 +33,6 @@ if sys.platform == 'linux' or sys.platform == 'linux2':
     if game_ui.terminal_size() == False:
         USE_CURSES = False
 
-
-ALL_VERBS = verbs().get_verbs()
 DO_WHAT = 'What would you like to do?'
 
 #DEBUG SECTION, you can set these values to 1 to get the desired affect
@@ -42,13 +45,15 @@ DEBUG_RESPONSE = 0
 DEBUG_ROOM = 0
 #prints the current room's title at the begining of each cycle
 #comes after the description etc
-DEBUG_PRINT_ROOM_TITLE = 1
+DEBUG_PRINT_ROOM_TITLE = 0
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'rapids'
+SPECIFIC_ROOM = 'river'
 #this stops all the player attributes from being updated each round 
 #such as illness, wounds and cold, allows rescue but not death
 GOD_MODE = 0
+#toggle on/off to randomize player input
+RANDOM_TESTER = 0
 
 if DEBUG_PARSE or DEBUG_ROOM:
     USE_CURSES = False
@@ -57,7 +62,7 @@ if DEBUG_PARSE or DEBUG_ROOM:
 class Game():
     def __init__(self):
         self.player = player.Player()
-        self.current_room = None
+        self.room = room.Room()
         # Inventory will be a list of dicts, each element of which is an item.
         self.current_time = 0
         self.number_of_turns = 0
@@ -106,22 +111,34 @@ class Game():
         files.new_game()
         self.player = self.gen_player()
         #New games start at the shore
-        self.current_room = files.load_room("shore")
+        self.room.current_room = files.load_room("shore")
+        self.validate_object(self.room.current_room, 'shore')
         #for testing purposes load a specific room and start from there
         if LOAD_SPECIFIC_ROOM_ON_NEW_GAME:
-            self.current_room = files.load_room(SPECIFIC_ROOM)
+            self.room.current_room = files.load_room(SPECIFIC_ROOM)
+            self.validate_object(self.room.current_room, SPECIFIC_ROOM)
 
     def load_from_file(self):
         """
         gets the player and room files from the save game dir.  moves the room and items
         files to the temp save dir.  Restores the player state
         """
-        p, r, success, msg = files.load_game()
+        p, success, msg = files.load_game()
+        if success == True and p is not None and 'current_room' in p:
+            r = files.load_room(p['current_room'])
+            self.validate_object(r, p['current_room'])
+        elif success == False:
+            r = files.load_room('shore')
+            self.validate_object(r, 'shore')
+            self.write_main_bottom_handler(msg)
+        else:
+            text = 'Something went wrong loading the rooms in loadgame.'
+            self.write_main_handler(text)
+            self.exitGame()
         #if something went wrong returning the player from the
         #checking for False because p could return as False if the files did not
         #get copied correctly
-        if success == False:
-            self.write_main_bottom_handler(msg)
+        self.room.current_room = r
         if p is None:
             self.player = self.gen_player()
         else:
@@ -129,12 +146,6 @@ class Game():
             self.player = self.player.set_player_stats(p)
             self.number_of_turns = p['turns']
             self.reset_art()
-        #r could be set to False if the files were not transferred correctly
-        if r is not None:
-            self.current_room = r
-        else:
-            text = 'Something went wrong loading the rooms in loadgame. Please try again'
-            self.write_main_handler(text)
 
     def exitGame(self):
         """
@@ -152,6 +163,31 @@ class Game():
         player_name = self.input_handler('Hello dreary traveler. What is your name? ')
         return player.Player(player_name)
 
+    def input_cycle(self):
+        processed_command = None
+        while True:
+            self.validate_curses()
+            if (processed_command is not None and 
+                    processed_command['processed'] == False):
+                text = "Sorry I did not understand that.\n " + DO_WHAT
+            else:
+                text = DO_WHAT
+            if RANDOM_TESTER:
+                userInput = random_input_tester()
+            else:
+                userInput = self.input_handler(text)
+                userInput = self.check_save_load_quit(userInput)
+            #if we have no userInput skip to asking and check_save_load_quit again
+            if userInput == None:
+                continue   
+            processed_command = parse.parse_command(userInput)
+            #line below for testing
+            if DEBUG_PARSE:
+                print json.dumps(processed_command, indent=4)
+            if processed_command['processed'] == True:
+                return processed_command
+
+
     def gameCycle(self):
         """
         This is the big game cycle
@@ -166,10 +202,9 @@ class Game():
             check if dead or rescued
         """
         #inital room description after new game or loading game
-        lines = self.get_room_desc()
         self.player.updatePlayerCondition(self.number_of_turns, 0)
-        self.write_main_handler(lines)
-        self.write_main_artifact_handler(self.get_room_artifact())
+        self.write_main_handler(self.room.get_room_desc)
+        self.write_main_artifact_handler(self.room.get_room_artifact)
         self.write_time_handler(self.getTimeOfDay())
         self.write_stat_handler(self.player.getCondition())
         self.ui_refresh()
@@ -177,32 +212,12 @@ class Game():
         #dead correctly
         while True:
             if DEBUG_PRINT_ROOM_TITLE:
-                self.write_main_bottom_handler('Room: ' + self.current_room['title'])
+                self.write_main_bottom_handler('Room: '+self.room.title)
 
-            processed_command = None
-            while True:
-                self.validate_curses()
-                if (processed_command is not None and 
-                        processed_command['processed'] == False):
-                    text = "Sorry I did not understand that.\n " + DO_WHAT
-                else:
-                    text = DO_WHAT
-                userInput = self.input_handler(text)
-                userInput = self.check_save_load_quit(userInput)
-                #if we have no userInput skip to asking and check_save_load_quit again
-                if userInput == None:
-                    continue   
-                processed_command = parse.parse_command(userInput)
-                #line below for testing
-                if DEBUG_PARSE:
-                    print json.dumps(processed_command, indent=4)
-                if processed_command['processed'] == True:
-                    break
-
+            processed_command = self.input_cycle()
             # If the game understands the user's command, process that command
             # according to the command type.
             output_type = processed_command["type"]
-
             #this is temporary and may very well be removed
             #just a possible option to help with assigning title and action
             top_level = ["item", "room", "feature"]
@@ -212,22 +227,41 @@ class Game():
             if "action" in processed_command['command']:
                 action = processed_command['command']['action']
 
+            res = None
             if output_type == "item_action":
-                self.process_item_action(title, action)
+                if title in self.player.get_items_inventory_titles():
+                    res = (self.player.item_action_inventory(
+                        title,action,self.room.feature_searched))
+                else:
+                    res = self.item_action_room(title, action)
             elif output_type == "action_only":
-                self.process_action_only(action)
+                if action == "look":
+                    res = helpers.response_struct()
+                    res.action = 'look'
+                    res.description = self.room.long_desc
+                elif action == "inventory":
+                    self.write_stat_handler(self.player.print_inventory())
+                elif action == "help":
+                    if USE_CURSES: game_ui.print_help()
+                    else: helpers.print_basic()
+                else:
+                    #also sent to the funny script writer
+                    res = self.get_humor(action, 'action')
             elif output_type == "room_action":
-                self.process_room_action(title, action)
+                res = self.room_action(title, action)
             elif output_type == "item_only":
-                self.process_item_only(title)
+                res = self.get_humor(title, 'noun')
             elif output_type == "feature_action":
-                self.process_feature_action(title, action)
+                res = self.room.feature_action(title, action)
             elif output_type == "feature_only":
-                self.process_feature_only(title)
+                res = self.get_humor(title, 'noun')
             elif output_type == "room_only":
-                self.process_room_only(title)
+                res = self.room_action(title, 'go')
             else:
                 self.write_main_bottom_handler('Error command type not supported yet.')
+                continue
+
+            if res: self.post_process(res)
 
             if self.player.get_death_status() or self.player.get_rescue_status():
                 #would be good to add a restart loop in here
@@ -243,12 +277,16 @@ class Game():
     # This is the check for savegame, loadgame, quit function
     #-------------------------------------------------------------------------
     def check_save_load_quit(self, userInput):
+        """
+        this functions handles the commands savegame, loadgame and quit when entered
+        into the game during play
+        """
         #save
         if userInput == "savegame":
             text = 'Are you sure you wisth to save y/n'
             checkYes = self.input_handler(text)
             if checkYes == "y":
-                files.save_game(self.player, self.current_room, self.number_of_turns)
+                files.save_game(self.player, self.room.current_room,self.number_of_turns)
                 self.saved = True
                 userInput = None
                 self.write_main_bottom_handler('Game saved successfully')
@@ -266,10 +304,10 @@ class Game():
                 #adding this here so after we successfully load a game we get something
                 #back and not just the what do you want to do... maybe better some
                 #where else
-                res = helpers.response_struct().get_response_struct()
-                res['description'] = self.get_room_long_desc()
-                res['room_artifact'] = self.get_room_artifact()
-                res['action'] = 'look'
+                res = helpers.response_struct()
+                res.description = self.room.long_desc
+                res.room_artifact = self.room.get_room_artifact
+                res.action = 'look'
                 self.post_process(res)
             else:
                 self.write_main_bottom_handler('continuing game...')
@@ -284,7 +322,7 @@ class Game():
                     text = 'Do you wish to save and quit? y/n'
                     checkYes = self.input_handler(text)
                     if checkYes == "y":
-                        files.save_game(self.player, self.current_room, self.number_of_turns)
+                        files.save_game(self.player, self.room.current_room, self.number_of_turns)
                         self.exitGame()
                     else:
                         self.write_main_bottom_handler('continuing game...')
@@ -297,57 +335,11 @@ class Game():
             #if one of the above commands was not found we want to reset saved to False
             #because we may have changed something in the game
             self.saved = False
-            return userInput
+        return userInput
 
     #-------------------------------------------------------------------------
     # This ends the check for savegame, loadgame, quit
     #-------------------------------------------------------------------------
-    #-------------------------------------------------------------------------
-    # Top-level methods for handling user commands.
-    #-------------------------------------------------------------------------
-    def process_item_action(self, title, action):
-        if title in self.player.get_items_inventory_titles():
-            res = self.item_action_inventory(title, action)
-        else:
-            res = self.item_action_room(title, action)
-        self.post_process(res)
-
-    def process_action_only(self, action):
-        res = helpers.response_struct().get_response_struct()
-        if action == "look":
-            res['action'] = 'look'
-            res['description'] = self.get_room_long_desc()
-        elif action == "inventory":
-            self.write_stat_handler(self.player.print_inventory())
-            return
-        elif action == "help":
-            if USE_CURSES: game_ui.print_help()
-            else: helpers.print_basic()
-            return
-        else:
-            #also sent to the funny script writer
-            res = self.get_humor(action, 'action')
-        self.post_process(res)
-
-    def process_room_action(self, room, action):
-        res = self.room_action(room, action)
-        self.post_process(res)
-
-    def process_item_only(self, name):
-        self.post_process(self.get_humor(name, 'noun'))
-
-    def process_feature_action(self, feature, action):
-        res = self.feature_action(feature, action)
-        self.post_process(res)
-
-    def process_feature_only(self, feature):
-        self.post_process(self.get_humor(feature, 'noun'))
-
-    def process_room_only(self, room):
-        res = self.room_action(room, 'go')
-        self.post_process(res)
-
-
     #-------------------------------------------------------------------------
     # The post process function, handles printing descriptive text
     # and assigning the various update functions as necessary
@@ -359,7 +351,7 @@ class Game():
         """
         self.validate_curses()
 
-        if res['success']:
+        if res.success:
             self.number_of_turns += 1
             if USE_CURSES and self.number_of_turns < 16: game_ui.write_art()
         #at some point in the future hopefully this will be where
@@ -369,9 +361,9 @@ class Game():
 
         #set DEBUG_RESPONSE to 1 for debuggin
         if DEBUG_RESPONSE:
-            print(json.dumps(res, indent=4))
+            print(json.dumps(res.__dict__, indent=4))
 
-        if 'modifiers' in res:
+        if 'modifiers' in res.response:
             #update the player with any particular modifiers from the action
             self.update_player(res)
             #update the room dict through recursion
@@ -380,21 +372,21 @@ class Game():
             self.update_item(res)
 
         #after modifiers have been applied update the player's condition
-        room_temp = int(self.current_room['room_temp'])
+        room_temp = int(self.room.temp)
         if not GOD_MODE:
             self.player.updatePlayerCondition(self.number_of_turns,room_temp)
 
         if DEBUG_ROOM:
-            print(json.dumps(self.current_room, indent=4))
+            print(json.dumps(self.room.current_room, indent=4))
         #print the messages to screen here
-        self.write_main_handler(res['description'], self.player.getName())
+        self.write_main_handler(res.description, self.player.getName)
         if not self.player.get_death_status() and not self.player.get_rescue_status():
             self.write_time_handler(self.getTimeOfDay())
             self.write_stat_handler(self.player.getCondition())
-            if 'artifact' in res and res['artifact']:
-                self.write_main_artifact_handler(res['artifact'])
-            elif res['action'] == 'go' or res['action'] == 'look':
-                self.write_main_artifact_handler(self.get_room_artifact())
+            if res.artifact:
+                self.write_main_artifact_handler(res.artifact)
+            elif res.action == 'go' or res.action == 'look':
+                self.write_main_artifact_handler(self.room.get_room_artifact)
         elif self.player.get_death_status():
            msg = self.player.get_reason_for_death()
            if USE_CURSES: game_ui.write_main_mid(msg)
@@ -403,221 +395,38 @@ class Game():
 
         #description should always come with process functions so we
         #automatically print out something to the user
+    #------------------------------------------------------------------------
+    # These two functions are in game.py because they deal with loading
+    # rooms and items and so we need to validate that a room and item
+    # have been successfully loaded.
+    #------------------------------------------------------------------------
 
-    #-------------------------------------------------------------------------
-    # This section dedicated to functions relating to moving from one
-    # room to another
-    #-------------------------------------------------------------------------
     def room_action(self, title_or_compass, action):
         """
             tries to move to the passed in room title or compass direction
             also expects a list of items currently held in the inventory
             defaults to None
         """
-        res = self.check_connections(title_or_compass)
+        res = self.room.check_connections(title_or_compass, self.player.inventory)
+        res.action = action
         if action == "go":
-            res['action'] = 'go'
-            if res["success"] == True:
+            res.action = 'go'
+            if res.success == True:
                 #before we leave the room we set the field visited to true
-                self.current_room['visited'] = True
-                files.store_room(self.current_room)
-                self.current_room = files.load_room(res['title'])
-                res['description'] = self.get_room_desc()
-            elif title_or_compass == self.current_room['title']:
-                res['description'] = 'You are already in that room.'
-            elif res['success'] == False and res['description'] is None:
-                res['description'] = "You were not able to move in that direction.  "
+                self.room.visited = True
+                files.store_room(self.room.current_room)
+                self.room.current_room = files.load_room(res.title)
+                self.validate_object(self.room.current_room, res.title)
+                res.description = self.room.get_room_desc
+            elif title_or_compass == self.room.title:
+                res.description = 'You are already in that room.'
+            elif res.success == False and res.description is None:
+                res.description = "You were not able to move in that direction.  "
         elif action == 'look':
-            res['action'] = 'look'
-            res['description'] = self.get_room_long_desc()
+            res.action = 'look'
+            res.description = self.room.long_desc
         else:
-            res['description'] = "You can't " + action + " the " + title_or_compass+". "
-        return res
-
-    def check_connections(self, title_or_direction):
-        """
-        when given an official room title or compass direction, iterates
-        through the current room's connected_rooms object to see if the compass
-        or room title exist
-        checks if an item is required to pass into this room
-        Also checks if the rooms is accessible meaning passable
-        if an item is required checks to see if that item is active as in worn or on
-        writes the appropriate response into
-        description
-        move = boolean whether or not the move was successful
-        title = the new room's title
-        distance_from_room = distance traveled to the new room
-        """
-        res = helpers.response_struct().get_response_struct()
-        res['success'] = False
-        items = self.player.get_items_inventory_titles()
-        for room_key in self.current_room['connected_rooms']:
-            #this line added as a result of the connected_rooms refactoring
-            #all other functionality remains the same
-            room = self.current_room['connected_rooms'][room_key]
-            if (title_or_direction == room['title']
-                or title_or_direction == room['compass_direction']
-                or title_or_direction in room['aliases']):
-                res['title'] = room['title']
-                if 'modifiers' in room:
-                    res['modifiers'] = room['modifiers']
-                if (room['item_required'] == True and
-                    room['item_required_title'] in items and
-                    room['accessible'] == True):
-                        item = self.player.search_inventory(room['item_required_title'])
-                        if item['active'] == True:
-                            res['success'] = True
-                            res['distance_from_room'] = room['distance_from_room']
-                        else:
-                            res['description'] = room['pre_item_description']
-                elif room['item_required'] == False and room['accessible'] == True:
-                    res['success'] = True
-                    res['distance_from_room'] = room['distance_from_room']
-                    res['description'] = room['pre_item_description']
-                else:
-                    res['description'] = room['pre_item_description']
-                #we can return the response as soon as we have found a match
-                return res
-        return res
-    #------------------------------------------------------------------------
-    # This ends the movement related functions
-    #------------------------------------------------------------------------
-    #------------------------------------------------------------------------
-    # This begins room getters section
-    #------------------------------------------------------------------------
-
-    def get_room_desc(self):
-        """
-            returns either the long or short description if the room has been visited
-        """
-        if self.get_visited() == False:
-            return self.get_room_long_desc()
-        else:
-            return self.get_room_short_desc()
-
-    def get_room_long_desc(self):
-        """
-        returns a string of the long description and items in room
-        """
-        return self.current_room['long_description'] + self.get_items_in_room()
-
-    def get_room_short_desc(self):
-        """
-        returns a string of the short description and items in room
-        """
-        return self.current_room['short_description'] + self.get_items_in_room()
-
-    def get_room_artifact(self):
-        """
-        if the room has ascii art then return it here
-        """
-        if 'room_artifact' in self.current_room:
-            return self.current_room['room_artifact']
-        else:
-            return []
-
-    def get_items_in_room(self):
-        """
-        if the room has been searched appropriately and there are items in the room
-        then returns the items in the room as a string for descriptive purposes
-        """
-        text = " Looking around you see "
-        if (self.current_room['feature_searched'] == True and
-                self.current_room['items_in_room'] and
-                len(self.current_room['items_in_room']) > 0):
-            items = self.current_room['items_in_room']
-            for item in items:
-                text += "a " + item + ", "
-            text = text[:-2]
-        else:
-            text = ""
-        return text
-
-    def get_visited(self):
-        """
-        returns the boolean in visited
-        """
-        return self.current_room['visited']
-    #------------------------------------------------------------------------
-    # This ends room getters section
-    #------------------------------------------------------------------------
-    #------------------------------------------------------------------------
-    # This begins room modifiers section
-    #------------------------------------------------------------------------
-    def remove_item_from_room(self, title):
-        """
-        removes an items from the inventory of a room
-        do not attempt to remove something not already there
-        """
-        if title in self.current_room['items_in_room']:
-            self.current_room['items_in_room'].remove(title)
-
-    def add_item_to_room(self, title):
-        """
-        adds an item to the room, does not allowed for duplicates
-        """
-        if title not in self.current_room['items_in_room']:
-            self.current_room['items_in_room'].append(title)
-    #------------------------------------------------------------------------
-    # This ends the room  section
-    #------------------------------------------------------------------------
-    #------------------------------------------------------------------------
-    # This begins the feature related section
-    #------------------------------------------------------------------------
-
-    def feature_action(self, title, verb):
-        """
-            looks up to see if the title passed in is a feature in the current room
-            if so and the verb is in the list of possible verbs for that feature then
-        """
-        res = helpers.response_struct().get_response_struct()
-        if title in self.current_room['features']:
-            feature = self.current_room['features'][title]
-            if verb in feature['verbs']:
-                res['description'] = feature['verbs'][verb]['description']
-                res['modifiers'] = feature['verbs'][verb]['modifiers']
-                if 'artifact' in feature['verbs'][verb]:
-                    res['artifact'] = feature['verbs'][verb]['artifact']
-            else:
-                res['description'] = 'You are not able to ' + verb + ' the ' + title
-        else:
-            res['description'] = 'Sorry, ' + title + ' not found in this room.'
-        return res
-    #------------------------------------------------------------------------
-    # This ends the feature section
-    #------------------------------------------------------------------------
-    #------------------------------------------------------------------------
-    # This section relates to item actions
-    #------------------------------------------------------------------------
-
-    def item_action_inventory(self, item_title, action):
-        """
-        called by the verb handler.  Looks up the item file and opens it
-        returns the description listed for the particular verb at this moment.
-        and modifiers if any
-        """
-        res = helpers.response_struct().get_response_struct()
-        item = self.player.search_inventory(item_title)
-        res['title'] = item_title
-        res["description"] = item['verbs'][action]['description']
-        res['modifiers'] = item['verbs'][action]['modifiers']
-        #res["success"] = True
-        if 'artifact' in item['verbs'][action]:
-            res['artifact'] = item['verbs'][action]['artifact']
-        if action == "use" and item['activatable'] == True:
-            if item['active'] == True:
-                item['active'] = False
-                if 'de_mods' in item['verbs']['use']:
-                    res['modifiers'] = item['verbs']['use']['de_mods']
-                res['description'] = item['verbs']['use']['deactivate_description']
-            else:
-                item['active'] = True
-                if 'act_mods' in item['verbs']['use']:
-                    res['modifiers'] = item['verbs']['use']['act_mods']
-
-        elif action == "drop" and self.current_room['feature_searched'] == False:
-            res['description'] = "There is no where secure to drop the item"
-            res['modifiers'] = {}
+            res.description = "You can't " + action + " the " + title_or_compass+". "
         return res
 
     def item_action_room(self, title, verb):
@@ -625,29 +434,23 @@ class Game():
         acts on an item in the room only the look at verb is allowed at this moment
         adds the item to the inventory as well if it is
         """
-        res = helpers.response_struct().get_response_struct()
-        res['title'] = title
+        res = helpers.response_struct()
+        res.title = title
         allowed_verbs = ["look at", "take"]
-        if self.current_room['feature_searched'] and verb in allowed_verbs:
-            if title in self.current_room['items_in_room']:
+        if self.room.feature_searched and verb in allowed_verbs:
+            if title in self.room.current_room['items_in_room']:
                 item = files.load_item(title)
-                #print item
-                res['description'] = item['verbs'][verb]['description']
-                res['modifiers'] = item['verbs'][verb]['modifiers']
-                #res["success"] = True
+                self.validate_object(item, title)
+                res.description = item['verbs'][verb]['description']
+                res.modifiers = item['verbs'][verb]['modifiers']
             else:
                 text = "You can't find the " + title + " to " + verb +". "
-                res['description'] = text
-        elif self.current_room['feature_searched'] and verb not in allowed_verbs:
-            res['description'] = "You need to be holding " + title + " to " + verb + " it."
+                res.description = text
+        elif self.room.feature_searched and verb not in allowed_verbs:
+            res.description = "You need to be holding " + title + " to " + verb + " it."
         else:
-            res['description'] = "You don't see any items around. "
+            res.description = "You don't see any items around. "
         return res
-
-    #------------------------------------------------------------------------
-    # This ends the items and inventory section
-    #------------------------------------------------------------------------
-
     #-------------------------------------------------------------------------
     # Methods that are used in otherwise managing game flow.
     # and updating the room, player and items
@@ -658,13 +461,13 @@ class Game():
         """
         #this is the add and rop to rooms
         #if dropping is allowed is handled above in the item_action_room
-        if "room" in res['modifiers']:
-            mods = res['modifiers']['room']
-            if self.current_room['title'] == mods['title'] or "any" == mods['title']:
+        if "room" in res.modifiers:
+            mods = res.modifiers['room']
+            if self.room.title == mods['title'] or "any" == mods['title']:
                 if "items_in_room" in mods and mods['items_in_room'] == "add":
-                    self.add_item_to_room(res['title'])
+                    self.room.add_item_to_room(res.title)
                 elif "items_in_room" in mods and mods['items_in_room'] == "drop":
-                    self.remove_item_from_room(res['title'])
+                    self.room.remove_item_from_room(res.title)
 
         #This is the test of the the dynamic room updates
         #Since all titles are unique that is our identifier!! very important
@@ -674,21 +477,21 @@ class Game():
         #what are consistent.  that comes from the way the 'updates' dict
         #is written in the 'modifiers' dict for a particular verb of a feature
         #or an item
-        if 'room_updates' in res['modifiers']:
-            for key in res['modifiers']['room_updates']:
-                updates = res['modifiers']['room_updates'][key]
-                if self.current_room['title'] == key:
-                    self.current_room = files.update(updates, self.current_room)
+        if 'room_updates' in res.modifiers:
+            for key in res.modifiers['room_updates']:
+                updates = res.modifiers['room_updates'][key]
+                if self.room.title == key:
+                    self.room.current_room = files.update(updates,self.room.current_room)
                 #affect any room that is a room other than the current room
                 elif key in files.ROOM_TITLES:
                     self.update_external_room(updates, key)
         #this field is used in the modifiers field to only update adjacent rooms
         #this will also validate that the room specified is the current room
-        if 'adjacent_room_updates' in res['modifiers']:
-            if self.current_room['title'] == res['modifiers']['adjacent_room_updates']['self']:
-                for key in res['modifiers']['adjacent_room_updates']:
-                    if key in self.current_room['connected_rooms']:
-                        updates = res['modifiers']['adjacent_room_updates'][key]
+        if 'adjacent_room_updates' in res.modifiers:
+            if self.room.title == res.modifiers['adjacent_room_updates']['self']:
+                for key in res.modifiers['adjacent_room_updates']:
+                    if key in self.room.current_room['connected_rooms']:
+                        updates = res.modifiers['adjacent_room_updates'][key]
                         self.update_external_room(updates, key)
 
         #hopefully file_lib will have a method where we can pass the 
@@ -701,6 +504,7 @@ class Game():
            stores that room back to file
         """
         other_room = files.load_room(key)
+        self.validate_object(other_room, key)
         other_room = files.update(updates, other_room)
         files.store_room(other_room)
 
@@ -709,17 +513,18 @@ class Game():
         This function is used to update player state variables, including
         player inventory
         """
-        if 'player' in res['modifiers']:
-            modifiers = res['modifiers']['player']
+        if 'player' in res.modifiers:
+            modifiers = res.modifiers['player']
             if 'inventory' in modifiers and modifiers['inventory'] == 'add':
-                item = files.load_item(res['title'])
+                item = files.load_item(res.title)
+                self.validate_object(item, res.title)
                 self.player.add_item_to_inventory(item)
             elif 'inventory' in modifiers and modifiers['inventory'] == 'drop':
                 #when the player drops the item it gets written to file
-                item = self.player.search_inventory(res['title'])
+                item = self.player.search_inventory(res.title)
                 if item:
                     files.store_item(item)
-                self.player.remove_item_from_inventory(res['title'])
+                self.player.remove_item_from_inventory(res.title)
             if not GOD_MODE:
                 if 'illness' in modifiers:
                     self.player.add_to_illness(int(modifiers['illness']))
@@ -737,17 +542,18 @@ class Game():
         received.  The item must have the same structure as that of an actual item
         file.  The dict trees will be updated with the new information recursively
         """
-        if 'item_updates' in res['modifiers']:
-            for key in res['modifiers']['item_updates']:
-                updates = res['modifiers']['item_updates'][key]
+        if 'item_updates' in res.modifiers:
+            for key in res.modifiers['item_updates']:
+                updates = res.modifiers['item_updates'][key]
                 #first check if the item is in the player inventory and update that
                 item = self.player.search_inventory(key)
                 if item is not None:
                     item = files.update(updates, item)
                 #if the item is not in the player inventory maybe it is in the room
                 #and we can act upon it.  This maybe needs to go away
-                elif key in self.current_room['items_in_room']:
+                elif key in self.room.current_room['items_in_room']:
                     item = files.load_item(key)
+                    self.validate_object(item, key)
                     item = files.update(updates, item)
                     files.store_item(item)
 
@@ -792,16 +598,16 @@ class Game():
         index = random.randint(0,2)
         text = ''
 
-        res = helpers.response_struct().get_response_struct()
+        res = helpers.response_struct()
         if type_of == 'noun':
             text += noun_prefix[index] + word + noun_post[index]
         elif type_of == 'action':
             text += action_prefix[index] + word + action_post[index]
-        res['description'] = text
+        res.description = text
         return res
     
     #------------------------------------------------------
-    #This section for abstracting the write function so it checks for curses
+    #This section for the write function so it checks for curses
     #these are the output and input handlers
     #------------------------------------------------------
     def reset_art(self):
@@ -876,6 +682,19 @@ class Game():
     #------------------------------------------------------
     #This ends the curses handlers section
     #------------------------------------------------------
+    #------------------------------------------------------
+    #This is a validator function to validate that we got back
+    #a json object instead of none when loading a room or item
+    #------------------------------------------------------
+
+    def validate_object(self, obj, title):
+        if not isinstance(obj, dict):
+            if USE_CURSES: game_ui.end_windows()
+            text = 'The file: ' + title + ', in the temp_save_game directory.'
+            text += ' May be malformed and we cannot continue.'
+            text += ' Exiting the game.'
+            helpers.multi_printer(text)
+            exit(1)
 
 
     #suggest update player conditions relocated to the helper file player.py
@@ -889,10 +708,38 @@ class Game():
 #            self.player.dead = True
 
 
-	#-------------------------------------------------------------------------
-	# Temporary code used for testing
-	#-------------------------------------------------------------------------
-
+    #-------------------------------------------------------------------------
+    # Temporary code used for testing
+    #-------------------------------------------------------------------------
+#Generates random input in gameCycle in hopes of causing a crash
+def random_input_tester():
+    #here are the possbile verbs that a user could input 
+    verbs =["look", "look at", "search", "go", "take ", "drop","use", "pull", "eat", "read" ]#"inventory", "help"]
+    #here are the possbile nouns that a user could input 
+    nouns =[ "rescue whistle", "field", "medical kit", "cave", "candy bar", "flare gun", "heavy winter parka", "lantern", "old map",  "can of sweetened condensed milk", "notepad"]
+    locations=["north", "south", "east", "west","shore", "crash site", "camp", "woods", "waterfall", "river", "game trail", "dense brush", "field", "mountain base", "mountain path", "mountain summit", "fire tower", "rapids", "ranger station", "cave"]
+    features = ["driftwood", "snow capped island", "dog sled","campfire pit", "blood stained snow", "bent pine", "small shelf", "wood pole", "tree stump", "bent pine" "small shelf", "tree stump", "bent pine", "hunting blind", "leanto", "animal corral", "deer carcass", "hay roll", "wolves", "sign", "clumps of bloody fur", "stone marker", "storage shed", "overlook", "locked safe", "look out", "cooler"]
+    rand_verb = random.choice(verbs)
+    '''
+    if rand_verb == "look" or "look at" or "go"
+        rand_loc = random.choice(locations)
+        return (rand_verb + rand_loc)
+    elif rand_verb== ""
+    '''
+    a=random.randrange(3)
+    if a == 0:
+        rand_noun = random.choice(nouns)
+        input= rand_verb + " "+ rand_noun
+    elif a == 1:
+        rand_feat= random.choice(features)
+        input= rand_verb + " " + rand_feat
+    else:
+        rand_loc = random.choice(locations)
+        input= rand_verb + " " + rand_loc
+    print input
+    return input
+    
+    
 #def testParse():
 #    test_input = "go cave"
 #    print "The test input is: " + test_input
@@ -906,13 +753,7 @@ class Game():
 #    print ""
 #
 
-#testParse()
-#startGame()
-#loadGame()
-#newGame()
-#playerDead()
-#testNew()
-
+#random_input_tester()
 
 
 def main():
@@ -928,5 +769,5 @@ def main():
     current_game.startGame(True)
 
 if __name__ == "__main__":
-	#pdb.set_trace() #toggle for debugging
-	main()
+    #pdb.set_trace() #toggle for debugging
+    main()

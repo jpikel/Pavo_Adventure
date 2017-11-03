@@ -13,6 +13,15 @@
   "use": {
    "deactivate_description": "You take off the jacket and put it into your pack.", 
    "de_mods": {
+    "item_updates": {
+     "heavy winter parka": {
+      "verbs": {
+       "look at": {
+        "description": "A down filled winter parka, that would keep you warm and cozy even on the coldest of nights.  A great find for sure.  You wonder why someone left it behind."
+       }
+      }
+     }
+    }, 
     "room_updates": {
      "mountain summit": {
       "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.", 
@@ -37,6 +46,15 @@
    }, 
    "description": "You put on the jacket and instantly feel warmer, safer.  All around snug.", 
    "act_mods": {
+    "item_updates": {
+     "heavy winter parka": {
+      "verbs": {
+       "look at": {
+        "description": "A down filled winter parka, that is keeping you nice and warm.  A bit snug under the arms but it fits well enough."
+       }
+      }
+     }
+    }, 
     "room_updates": {
      "mountain summit": {
       "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going. It is good that you have your parka on because it is the only between you and freezing to death", 
@@ -67,7 +85,7 @@
    "modifiers": {
     "room_updates": {
      "mountain summit": {
-      "long_descrpition": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.", 
+      "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.", 
       "connected_rooms": {
        "mountain path": {
         "accessible": false, 
@@ -95,7 +113,12 @@
     }, 
     "item_updates": {
      "heavy winter parka": {
-      "active": false
+      "active": false, 
+      "verbs": {
+       "look at": {
+        "description": "A down filled winter parka, that would keep you warm and cozy even on the coldest of nights.  A great find for sure.  You wonder why someone left it behind."
+       }
+      }
      }
     }
    }, 

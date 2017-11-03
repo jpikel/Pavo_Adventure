@@ -2,7 +2,7 @@
  "id": 12, 
  "title": "waterfall", 
  "visited": false, 
- "room_temp":"3",
+ "room_temp": "3", 
  "long_description": "As you approach the waterfall you feel the moisture in the air as the mist dances around you.  A few crows circle around in the sky, looking for shiny objects. The water cascading down the side of the cliff is picturesque and if you weren't lost this would be an awesome photo opportunity.  Some moss is clinging for dear life to the rocks along the side of the waterfall, doing its best to not be swept away.  The plunge pool is not very deep and it would a great place to swim when the weather is nice.  Over the years the fall has undercut a small gorge into the side of the rock that you think you could go explore.  You won't be climbing the cliffside any time soon, so the only way to leave is back to the river to the west.", 
  "short_description": "Standing near the waterfall, the spray dances around you.  To your west is the river.  The waterfall has undercut a small gorge that you think you could explore.  The plunge pool is not too deep and might be good for swimming in warm weather.", 
  "features": {
@@ -58,7 +58,11 @@
      "description": "The gorge has been created by the dropping water."
     }, 
     "eat": {
-     "modifiers": {"player":{"hunger":"-1"}}, 
+     "modifiers": {
+      "player": {
+       "hunger": "-1"
+      }
+     }, 
      "description": "Standing inside the gorge, you cup some water and take a drink.  It is very cold, but refreshing.  Drinking something lifts your spirits."
     }
    }, 
@@ -99,7 +103,11 @@
      "description": "The water is about as low as it will get in this area."
     }, 
     "eat": {
-     "modifiers": {"player":{"hunger":"-1"}}, 
+     "modifiers": {
+      "player": {
+       "hunger": "-1"
+      }
+     }, 
      "description": "You kneel down on one knee and cup some water into your mouth. The cold refresh water goes down smoothly.  You feel a bit better taking a drink."
     }
    }, 
@@ -139,24 +147,22 @@
     }
    }
   }
- },
- "room_artifact":[
- "                .     \\/,,\\//,,",
- "             *       ~~ -- ---",
- "              .     o!~-- -- --",
- "           .       )* ~,,\\/,,\\/,",
- "                  o '!\\  /\\",
- "                   |  !\\/  \\/\\",
- "         *   .    * o|       /",
- "                    ! o     /",
- "                   ( ' |   /",
- "\\/,,\\//,,\\//,,o0o!*)o '*   \\",
- "--- --   ---  o0*0o0! o !   \\",
- " --  --- --   0o00o*0! !    /",
- "-- -- -- ---   o0o00o0o' ! /",
- " -- -- -   - -   00o0*0o!'/",
- "\\,,,//,,\\,,/,,/,,\\/,,\\//,"
-     
-     
-     ]
+ }, 
+ "room_artifact": [
+  "                .     \\/,,\\//,,", 
+  "             *       ~~ -- ---", 
+  "              .     o!~-- -- --", 
+  "           .       )* ~,,\\/,,\\/,", 
+  "                  o '!\\  /\\", 
+  "                   |  !\\/  \\/\\", 
+  "         *   .    * o|       /", 
+  "                    ! o     /", 
+  "                   ( ' |   /", 
+  "\\/,,\\//,,\\//,,o0o!*)o '*   \\", 
+  "--- --   ---  o0*0o0! o !   \\", 
+  " --  --- --   0o00o*0! !    /", 
+  "-- -- -- ---   o0o00o0o' ! /", 
+  " -- -- -   - -   00o0*0o!'/", 
+  "\\,,,//,,\\,,/,,/,,\\/,,\\//,"
+ ]
 }

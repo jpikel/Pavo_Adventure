@@ -131,8 +131,6 @@ def _match_keys_room(file_json):
     for feature in file_json['features']:
         result = _check_features(feature, file_json)
         response = _merge_two_dicts(response, result)
-#    result = _check_features("2", file_json)
- #   response = _merge_two_dicts(response, result)
     result = _check_connected_rooms(file_json)
     response = _merge_two_dicts(response, result)
 
