@@ -14,7 +14,29 @@
   "use": {
    "deactivate_description": "You switch the fuel setting to the off position and the light slowly goes out.", 
    "description": "You turn the fuel setting to ignite and then quickly press down several times on the starter button to create the tiniest of sparks from the piezo igniter.  As the fuel lights you turn down the setting to low.  The mantles start to glow and warm radiant amber.  A light makes you feel that much safer doesn't it.", 
-   "modifiers": {}
+   "modifiers": {}, 
+   "act_mods": {
+    "item_updates": {
+     "lantern": {
+      "verbs": {
+       "look at": {
+        "description": "The lantern is humming slightly with the flow of fuel to the mantles.  The light is warm and comforting."
+       }
+      }
+     }
+    }
+   }, 
+   "de_mods": {
+    "item_updates": {
+     "lantern": {
+      "verbs": {
+       "look at": {
+        "description": "The metal body is a bit rusty, but there are not any holes in the oil tank and the glass is still in surprisingly good shape.  Both mantles are still inside and the piezo starter looks to be in decent shape you think this thing might still work."
+       }
+      }
+     }
+    }
+   }
   }, 
   "drop": {
    "modifiers": {
@@ -31,18 +53,6 @@
       "connected_rooms": {
        "cave": {
         "pre_item_description": "You remember you set down the lantern inside the cave and while you were gone it must have gone out.  Now it is much to dark to retrieve it so you return to the game trail."
-       }
-      }
-     }
-    }, 
-    "item_updates": {
-     "lantern": {
-      "verbs": {
-       "drop": {
-        "modifiers": {
-         "adjacent_room_updates": {}, 
-         "item_updates": {}
-        }
        }
       }
      }

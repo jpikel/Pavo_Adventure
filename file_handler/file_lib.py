@@ -373,8 +373,9 @@ def update(updates, original):
     """
     source_order = get_order(original)
     merged = merge(updates, original)
-    sorted_d = OrderedDict(sorted(merged.items(), key=lambda i:source_order.index(i[0])))
-    return sorted_d
+    #sort_d = OrderedDict(sorted(merged.items(), key=lambda i:source_order.index(i[0])))
+    #return sort_d
+    return merged
 
 def gather_dicts(source, key):
     """

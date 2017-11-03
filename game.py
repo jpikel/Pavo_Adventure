@@ -48,10 +48,10 @@ DEBUG_ROOM = 0
 DEBUG_PRINT_ROOM_TITLE = 0
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
-SPECIFIC_ROOM = 'rapids'
+SPECIFIC_ROOM = 'river'
 #this stops all the player attributes from being updated each round 
 #such as illness, wounds and cold, allows rescue but not death
-GOD_MODE = 1
+GOD_MODE = 0
 #toggle on/off to randomize player input
 RANDOM_TESTER = 0
 
