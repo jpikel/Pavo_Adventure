@@ -70,10 +70,6 @@ class TestMasterParser(unittest.TestCase):
     # def test_master_words_verbs(self):
 
     def test_parse_action_only(self):
-        # Because we do not know the order of the dict that will be generated,
-        # we cannot simply match an output string. We have to check that the
-        # output dict contains each of the exptected key-value pairs and nothing
-        # more.
         input_1 = "move"
         output_1 = parser.parse_command(input_1)
         expected_output_1 = {
@@ -82,6 +78,15 @@ class TestMasterParser(unittest.TestCase):
             "processed": True
         }
         self.assertEqual(output_1, expected_output_1)
+
+        input_2 = "eat"
+        output_2 = parser.parse_command(eat)
+        expected_output_2 = {
+            "type": "action_only",
+            "command": {"action": "eat"},
+            "processed": True
+        }
+        self.assertEqual(output_2, expected_output_2)
 
     # def test_parse_feature_action(self):
 
