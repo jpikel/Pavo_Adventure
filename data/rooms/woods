@@ -2,7 +2,7 @@
  "id": 7, 
  "title": "woods", 
  "visited": false, 
- "room_temp":"1",
+ "room_temp": "1", 
  "long_description": "The tall pines feel like they are trying to surround you here, encroaching on your very existence in this place.  The lower branches are free of snow while the upper reaches of the pines are heavily ladened with snow.  Every so often you hear some snow hitting the ground with a gentle thump.  There is a tree stump that appears to have been harvested many years ago, but seems interesting enough.  The smell is intense, filling your nose and lungs with a citrusy, piney odor that reminds you of home cleaning products. Or perhaps it is the home cleaning products that should remind you of this place.  To your south you can hear water moving, must be a river.  It also reminds you of more pleasant affairs of tubing in the summertime.  The wind stirs the tops of the trees, making them sway gentling, creaking and cracking their outer bark as they attempt to resist against the wind.  Up a slight incline to the east is the a small crevice that you think is an entrance into a cave.  Through the trees to the west you can see the side of the leanto in a camp.  One of the pines seems abnormally bent at its base and grew up very crooked indeed, certainly nature could not have made the bent tree grow like that.", 
  "short_description": "The pines stand stoically around you swaying the wind gently, like an overcrowded metro.  There is an old large tree stump that peaks your interest and one of the pines is so bent that it looks like the top of a cane only upside down.  To your south you can hear water moving in the river, up a slight incline is an a small crevice that forms an entrance to a cave and to the west you still see the leanto holding itself up in the camp.", 
  "features": {
@@ -104,16 +104,15 @@
       "     |    |", 
       ".^. (o)(o) |  .^.", 
       "| |  |     |  | |", 
-      "'_'  |___  |  '_'",
-      "   \\_|\\_/  |_/ ",
-      "     |    |",
-      "     |   |",
-      "     |__|",
-      "    //  \\\\",
-      "    |    |",
-      "   '`'  '`'",
+      "'_'  |___  |  '_'", 
+      "   \\_|\\_/  |_/ ", 
+      "     |    |", 
+      "     |   |", 
+      "     |__|", 
+      "    //  \\\\", 
+      "    |    |", 
+      "   '`'  '`'", 
       "   ^-^  ^-^"
-
      ]
     }, 
     "search": {
@@ -176,20 +175,17 @@
     "cavern"
    ]
   }
- },
- "room_artifact":[
- "      |    _|\\\\        |       _|        |    __ |" ,
- "      |     | \\@)      |       -|        |   --  |",
- "      |=    |          |        |       /_       |",
- "      |     |          |   (@)  |     (@/|       |",
- "      |  -  |          |-_      |        |       |",
- "      |_    |          |        |        |_     -|",
- "      |-    |          |      _ |        |      =|",
- "      |    =|          |     -  |        |       |",
- "      |     |          |=       |        |       |",
- "'```'/  ,  ` \\`'`.`'`./`.  '`   \\'`.'`,'/   ,`    \\,'`'.,`'`',"    
-     
-     
-     
-     ]
+ }, 
+ "room_artifact": [
+  "      |    _|\\\\        |       _|        |    __ |", 
+  "      |     | \\@)      |       -|        |   --  |", 
+  "      |=    |          |        |       /_       |", 
+  "      |     |          |   (@)  |     (@/|       |", 
+  "      |  -  |          |-_      |        |       |", 
+  "      |_    |          |        |        |_     -|", 
+  "      |-    |          |      _ |        |      =|", 
+  "      |    =|          |     -  |        |       |", 
+  "      |     |          |=       |        |       |", 
+  "'```'/  ,  ` \\`'`.`'`./`.  '`   \\'`.'`,'/   ,`    \\,'`'.,`'`',"
+ ]
 }
