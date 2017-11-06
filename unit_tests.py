@@ -28,55 +28,223 @@ class TestProcessCommands(unittest.TestCase):
         self.game.room.current_room = files.load_room("shore")
         self.game.validate_object(self.game.room.current_room, "shore")
 
-    def test_get_humor_item_feature(self):
+    def test_process_action_only_runs(self):
         """
-        Tests that the get_humor() method works for any item or feature
-        that the game recognizes.
+        Tests that the process_parsed_command method does not crash if the input
+        command is any of the actions that the game recognizes.
+        NOTE: This test does not check for the proper functioning of the
+        process_parsed_command method beyond its ability to take the input
+        without crashing.
+        """
+        # Get all the actions that the game should recognize.
+        data_dir = os.path.abspath('data')
+        verbs_full_path = os.path.join(data_dir, VERBS_FILENAME)
+        with open(verbs_full_path, "r") as verbs_file:
+            verbs_dict_str = verbs_file.read()
+            verbs_dict = json.loads(verbs_dict_str)
+        # Parse each action command, put the parsed results into the format
+        # the game engine should expect, and run process_parsed_command.
+        for action in verbs_dict:
+            print "TESTING COMMAND: " + action
+            processed_command = parser.parse_command(action)
+            output_type = processed_command["type"]
+            top_level = ["item", "room", "feature"]
+            title = None
+            action = None
+            for word in top_level:
+                if word in processed_command['command']:
+                    title = processed_command['command'][word]
+            if "action" in processed_command['command']:
+                action = processed_command['command']['action']
+            res = self.game.process_parsed_command(output_type, title, action)
+            if res:
+                self.game.post_process(res)
+
+    def test_process_feature_only_runs(self):
+        """
+        Tests that the process_parsed_command method does not crash if the input
+        command is any of the features that the game recognizes.
+        NOTE: This test does not check for the proper functioning of the
+        process_parsed_command method beyond its ability to take the input
+        without crashing.
         """
         # Get all the features that the game should recognize.
         data_dir = os.path.abspath('data')
         features_full_path = os.path.join(data_dir, FEATURES_FILENAME)
-        items_full_path = os.path.join(data_dir, ITEMS_FILENAME)
-        # Get all the features and items that the game should recognize.
         with open(features_full_path, "r") as features_file:
             features_dict_str = features_file.read()
             features_dict = json.loads(features_dict_str)
-        with open(items_full_path, "r") as items_file:
-            items_dict_str = items_file.read()
-            items_dict = json.loads(items_dict_str)
-        # Put all recognized actions, features, and items into one dict
-        all_items_features = {}
-        all_items_features.update(features_dict)
-        all_items_features.update(items_dict)
-        # Parse each command, put the parsed results into the format
-        # the game engine should expect, and run get_humor(title, 'noun').
-        for command in all_items_features:
-            print "TESTING COMMAND: " + command
-            processed_command = parser.parse_command(command)
+        # Parse each feature command, put the parsed results into the format
+        # the game engine should expect, and run process_parsed_command().
+        for feature in features_dict:
+            print "TESTING COMMAND: " + feature
+            processed_command = parser.parse_command(feature)
             output_type = processed_command["type"]
+            title = None
+            action = None
             top_level = ["item", "room", "feature"]
             for word in top_level:
                 if word in processed_command['command']:
                     title = processed_command['command'][word]
             if "action" in processed_command['command']:
                 action = processed_command['command']['action']
-            if output_type == "feature_only" or output_type == "item_only":
-                res = self.game.get_humor(title, 'noun')
+            res = self.game.process_parsed_command(output_type, title, action)
+            if res:
+                self.game.post_process(res)
+
+    def test_process_item_only_runs(self):
+        """
+        Tests that the process_parsed_command method does not crash if the input
+        command is any of the items that the game recognizes.
+        NOTE: This test does not check for the proper functioning of the
+        process_parsed_command method beyond its ability to take the input
+        without crashing.
+        """
+        # Get all the items that the game should recognize.
+        data_dir = os.path.abspath('data')
+        items_full_path = os.path.join(data_dir, ITEMS_FILENAME)
+        with open(items_full_path, "r") as items_file:
+            items_dict_str = items_file.read()
+            items_dict = json.loads(items_dict_str)
+        # Parse each item command, put the parsed results into the format
+        # the game engine should expect, and run process_item_only().
+        for item in items_dict:
+            print "TESTING COMMAND: " + item
+            processed_command = parser.parse_command(item)
+            output_type = processed_command["type"]
+            title = None
+            action = None
+            top_level = ["item", "room", "feature"]
+            for word in top_level:
+                if word in processed_command['command']:
+                    title = processed_command['command'][word]
+            if "action" in processed_command['command']:
+                action = processed_command['command']['action']
+            res = self.game.process_parsed_command(output_type, title, action)
+            if res:
+                self.game.post_process(res)
+
+    def test_process_room_only_runs(self):
+        """
+        Tests that the pprocess_parsed_command method does not crash if the input
+        command is any of the rooms that the game recognizes (or a cardinal
+        direction).
+        NOTE: This test does not check for the proper functioning of the
+        process_parsed_command method beyond its ability to take the input
+        without crashing.
+        """
+        # Get all the rooms that the game should recognize.
+        data_dir = os.path.abspath('data')
+        rooms_full_path = os.path.join(data_dir, ROOMS_FILENAME)
+        with open(rooms_full_path, "r") as rooms_file:
+            rooms_dict_str = rooms_file.read()
+            rooms_dict = json.loads(rooms_dict_str)
+        # Add the cardinal directions to the rooms dict
+        rooms_dict["north"] = "north"
+        rooms_dict["east"] = "east"
+        rooms_dict["south"] = "south"
+        rooms_dict["west"] = "west"
+        for room in rooms_dict:
+            print "TESTING COMMAND: " + room
+            processed_command = parser.parse_command(room)
+            output_type = processed_command["type"]
+            title = None
+            action = None
+            top_level = ["item", "room", "feature"]
+            for word in top_level:
+                if word in processed_command['command']:
+                    title = processed_command['command'][word]
+            if "action" in processed_command['command']:
+                action = processed_command['command']['action']
+            res = self.game.process_parsed_command(output_type, title, action)
+            if res:
+                self.game.post_process(res)
+
+    def test_process_feature_action_runs(self):
+        """
+        Tests that the process_parsed_command method does not crash if the input
+        command is any combination of an action and a feature that the game
+        recognizes, separated by a space.
+        NOTE: This test does not check for the proper functioning of the
+        process_parsed_command method beyond its ability to take the input
+        without crashing.
+        """
+         # Get all the actions that the game should recognize.
+        data_dir = os.path.abspath('data')
+        verbs_full_path = os.path.join(data_dir, VERBS_FILENAME)
+        with open(verbs_full_path, "r") as verbs_file:
+            verbs_dict_str = verbs_file.read()
+            verbs_dict = json.loads(verbs_dict_str)
+        # Get all the features that the game should recognize.
+        data_dir = os.path.abspath('data')
+        features_full_path = os.path.join(data_dir, FEATURES_FILENAME)
+        with open(features_full_path, "r") as features_file:
+            features_dict_str = features_file.read()
+            features_dict = json.loads(features_dict_str)
+        for action in verbs_dict:
+            for feature in features_dict:
+                combined_command = action + ' ' + feature
+                print "TESTING COMMAND: " + combined_command
+                processed_command = parser.parse_command(combined_command)
+                output_type = processed_command["type"]
+                title = None
+                action = None
+                top_level = ["item", "room", "feature"]
+                for word in top_level:
+                    if word in processed_command['command']:
+                        title = processed_command['command'][word]
+                if "action" in processed_command['command']:
+                    action = processed_command['command']['action']
+                res = self.game.process_parsed_command(output_type, title, action)
                 if res:
                     self.game.post_process(res)
-            else:
-                # If the output type is not recognized as 'feature_only' or
-                # 'item_only', run invalid code that will cause the function
-                # call to fail.
-                crash_here
 
-    def test_process_room_action(self):
+    def test_process_item_action_runs(self):
         """
-        Tests that the room_action method does not crash if the input
+        Tests that the process_parsed_command method does not crash if the input
+        command is any combination of an action and an item that the game
+        recognizes, separated by a space.
+        NOTE: This test does not check for the proper functioning of the
+        process_parsed_command method beyond its ability to take the input
+        without crashing.
+        """
+         # Get all the actions that the game should recognize.
+        data_dir = os.path.abspath('data')
+        verbs_full_path = os.path.join(data_dir, VERBS_FILENAME)
+        with open(verbs_full_path, "r") as verbs_file:
+            verbs_dict_str = verbs_file.read()
+            verbs_dict = json.loads(verbs_dict_str)
+        # Get all the features that the game should recognize.
+        data_dir = os.path.abspath('data')
+        items_full_path = os.path.join(data_dir, ITEMS_FILENAME)
+        with open(items_full_path, "r") as items_file:
+            items_dict_str = items_file.read()
+            items_dict = json.loads(items_dict_str)
+        for action in verbs_dict:
+            for item in items_dict:
+                combined_command = action + ' ' + item
+                print "TESTING COMMAND: " + combined_command
+                processed_command = parser.parse_command(combined_command)
+                output_type = processed_command["type"]
+                title = None
+                action = None
+                top_level = ["item", "room", "feature"]
+                for word in top_level:
+                    if word in processed_command['command']:
+                        title = processed_command['command'][word]
+                if "action" in processed_command['command']:
+                    action = processed_command['command']['action']
+                res = self.game.process_parsed_command(output_type, title, action)
+                if res:
+                    self.game.post_process(res)
+
+    def test_process_room_action_runs(self):
+        """
+        Tests that the process_parsed_command method does not crash if the input
         command is any combination of an action and a room that the game
         recognizes (or a cardinal direction), separated by a space.
         NOTE: This test does not check for the proper functioning of the
-        room_action method beyond its ability to take the input
+        process_parsed_command method beyond its ability to take the input
         without crashing.
         """
          # Get all the actions that the game should recognize.
@@ -102,21 +270,17 @@ class TestProcessCommands(unittest.TestCase):
                 print "TESTING COMMAND: " + combined_command
                 processed_command = parser.parse_command(combined_command)
                 output_type = processed_command["type"]
+                title = None
+                action = None
                 top_level = ["item", "room", "feature"]
                 for word in top_level:
                     if word in processed_command['command']:
                         title = processed_command['command'][word]
                 if "action" in processed_command['command']:
                     action = processed_command['command']['action']
-                if output_type == "room_action":
-                    res = self.game.room_action(title, action)
-                    if res:
-                        self.game.post_process(res)
-                else:
-                    # If the output type is not recognized as 'item_only', run
-                    # invalid code that will cause the function call to fail.
-                    crash_here
-
+                res = self.game.process_parsed_command(output_type, title, action)
+                if res:
+                    self.game.post_process(res)
 
 class TestParser(unittest.TestCase):
 

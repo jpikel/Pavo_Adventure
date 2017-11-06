@@ -49,7 +49,7 @@ DEBUG_PRINT_ROOM_TITLE = 0
 #loads into a specific room set in the newGame()
 LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'river'
-#this stops all the player attributes from being updated each round 
+#this stops all the player attributes from being updated each round
 #such as illness, wounds and cold, allows rescue but not death
 GOD_MODE = 0
 #toggle on/off to randomize player input
@@ -167,7 +167,7 @@ class Game():
         processed_command = None
         while True:
             self.validate_curses()
-            if (processed_command is not None and 
+            if (processed_command is not None and
                     processed_command['processed'] == False):
                 text = "Sorry I did not understand that.\n " + DO_WHAT
             else:
@@ -179,7 +179,7 @@ class Game():
                 userInput = self.check_save_load_quit(userInput)
             #if we have no userInput skip to asking and check_save_load_quit again
             if userInput == None:
-                continue   
+                continue
             processed_command = parse.parse_command(userInput)
             #line below for testing
             if DEBUG_PARSE:
@@ -187,6 +187,41 @@ class Game():
             if processed_command['processed'] == True:
                 return processed_command
 
+    def process_parsed_command(self, output_type, title, action):
+        res = None
+        if output_type == "item_action":
+                if title in self.player.get_items_inventory_titles():
+                    res = (self.player.item_action_inventory(
+                        title,action,self.room.feature_searched))
+                else:
+                    res = self.item_action_room(title, action)
+        elif output_type == "action_only":
+            if action == "look":
+                res = helpers.response_struct()
+                res.action = 'look'
+                res.description = self.room.long_desc
+            elif action == "inventory":
+                self.write_stat_handler(self.player.print_inventory())
+            elif action == "help":
+                if USE_CURSES: game_ui.print_help()
+                else: helpers.print_basic()
+            else:
+                #also sent to the funny script writer
+                res = self.get_humor(action, 'action')
+        elif output_type == "room_action":
+            res = self.room_action(title, action)
+        elif output_type == "item_only":
+            res = self.get_humor(title, 'noun')
+        elif output_type == "feature_action":
+            res = self.room.feature_action(title, action)
+        elif output_type == "feature_only":
+            res = self.get_humor(title, 'noun')
+        elif output_type == "room_only":
+            res = self.room_action(title, 'go')
+        else:
+            self.write_main_bottom_handler('Error command type not supported yet.')
+
+        return res
 
     def gameCycle(self):
         """
@@ -220,6 +255,8 @@ class Game():
             output_type = processed_command["type"]
             #this is temporary and may very well be removed
             #just a possible option to help with assigning title and action
+            title = None
+            action = None
             top_level = ["item", "room", "feature"]
             for word in top_level:
                 if word in processed_command['command']:
@@ -227,39 +264,7 @@ class Game():
             if "action" in processed_command['command']:
                 action = processed_command['command']['action']
 
-            res = None
-            if output_type == "item_action":
-                if title in self.player.get_items_inventory_titles():
-                    res = (self.player.item_action_inventory(
-                        title,action,self.room.feature_searched))
-                else:
-                    res = self.item_action_room(title, action)
-            elif output_type == "action_only":
-                if action == "look":
-                    res = helpers.response_struct()
-                    res.action = 'look'
-                    res.description = self.room.long_desc
-                elif action == "inventory":
-                    self.write_stat_handler(self.player.print_inventory())
-                elif action == "help":
-                    if USE_CURSES: game_ui.print_help()
-                    else: helpers.print_basic()
-                else:
-                    #also sent to the funny script writer
-                    res = self.get_humor(action, 'action')
-            elif output_type == "room_action":
-                res = self.room_action(title, action)
-            elif output_type == "item_only":
-                res = self.get_humor(title, 'noun')
-            elif output_type == "feature_action":
-                res = self.room.feature_action(title, action)
-            elif output_type == "feature_only":
-                res = self.get_humor(title, 'noun')
-            elif output_type == "room_only":
-                res = self.room_action(title, 'go')
-            else:
-                self.write_main_bottom_handler('Error command type not supported yet.')
-                continue
+            res = self.process_parsed_command(output_type, title, action)
 
             if res: self.post_process(res)
 
@@ -494,13 +499,13 @@ class Game():
                         updates = res.modifiers['adjacent_room_updates'][key]
                         self.update_external_room(updates, key)
 
-        #hopefully file_lib will have a method where we can pass the 
-        #modifiers dict to and it will do the remaining processing returning 
-        #the updated room so we can just do 
+        #hopefully file_lib will have a method where we can pass the
+        #modifiers dict to and it will do the remaining processing returning
+        #the updated room so we can just do
 
     def update_external_room(self, updates, key):
         """
-           opens the room file named in the key, updates that room and then 
+           opens the room file named in the key, updates that room and then
            stores that room back to file
         """
         other_room = files.load_room(key)
@@ -605,7 +610,7 @@ class Game():
             text += action_prefix[index] + word + action_post[index]
         res.description = text
         return res
-    
+
     #------------------------------------------------------
     #This section for the write function so it checks for curses
     #these are the output and input handlers
@@ -713,9 +718,9 @@ class Game():
     #-------------------------------------------------------------------------
 #Generates random input in gameCycle in hopes of causing a crash
 def random_input_tester():
-    #here are the possbile verbs that a user could input 
+    #here are the possbile verbs that a user could input
     verbs =["look", "look at", "search", "go", "take ", "drop","use", "pull", "eat", "read" ]#"inventory", "help"]
-    #here are the possbile nouns that a user could input 
+    #here are the possbile nouns that a user could input
     nouns =[ "rescue whistle", "field", "medical kit", "cave", "candy bar", "flare gun", "heavy winter parka", "lantern", "old map",  "can of sweetened condensed milk", "notepad"]
     locations=["north", "south", "east", "west","shore", "crash site", "camp", "woods", "waterfall", "river", "game trail", "dense brush", "field", "mountain base", "mountain path", "mountain summit", "fire tower", "rapids", "ranger station", "cave"]
     features = ["driftwood", "snow capped island", "dog sled","campfire pit", "blood stained snow", "bent pine", "small shelf", "wood pole", "tree stump", "bent pine" "small shelf", "tree stump", "bent pine", "hunting blind", "leanto", "animal corral", "deer carcass", "hay roll", "wolves", "sign", "clumps of bloody fur", "stone marker", "storage shed", "overlook", "locked safe", "look out", "cooler"]
@@ -738,8 +743,8 @@ def random_input_tester():
         input= rand_verb + " " + rand_loc
     print input
     return input
-    
-    
+
+
 #def testParse():
 #    test_input = "go cave"
 #    print "The test input is: " + test_input
@@ -760,7 +765,7 @@ def main():
     if USE_CURSES:
         curses.wrapper(game_ui.init_windows)
     else:
-        text = [' ', 'Not using curses. ' + 
+        text = [' ', 'Not using curses. ' +
                 'Requires linux and '+str(helpers.MIN_COLS)+' columns' +
                 ' by ' + str(helpers.MIN_ROWS) + ' rows.',' ']
         helpers.multi_printer(text)
