@@ -224,7 +224,7 @@ class Player(object):
             res.modifiers = item['verbs'][action]['modifiers']
             #res["success"] = True
             if 'artifact' in item['verbs'][action]:
-                res['artifact'] = item['verbs'][action]['artifact']
+                res.artifact = item['verbs'][action]['artifact']
             if action == "use" and item['activatable'] == True:
                 if item['active'] == True:
                     item['active'] = False
