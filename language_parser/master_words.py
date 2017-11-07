@@ -104,22 +104,31 @@ rooms = {
    "cataract": "waterfall"
 }
 actions = {
+   "help": "help", 
    "move": "go", 
+   "nibble": "eat", 
+   "utilize": "use", 
+   "go": "go", 
+   "use": "use", 
+   "pick up": "take", 
+   "eat": "eat", 
+   "inventory": "inventory", 
+   "take": "take", 
+   "peek": "look", 
+   "read": "read", 
+   "look at": "look at", 
+   "go to": "go", 
+   "put down": "drop", 
+   "tug": "pull", 
    "pull": "pull", 
    "search": "search", 
-   "look at": "look at", 
-   "help": "help", 
-   "read": "read", 
+   "look": "look", 
+   "study": "read", 
    "drop": "drop", 
-   "pick up": "take", 
-   "go to": "go", 
+   "ingest": "eat", 
    "investigate": "search", 
-   "inventory": "inventory", 
-   "use": "use", 
-   "go": "go", 
-   "take": "take", 
-   "eat": "eat", 
-   "look": "look"
+   "discard": "drop", 
+   "grab": "take"
 }
 all_words = {
    "blind": {
@@ -277,6 +286,10 @@ all_words = {
    "candy bar": {
       "type": "item", 
       "master_word": "candy bar"
+   }, 
+   "put down": {
+      "type": "action", 
+      "master_word": "drop"
    }, 
    "copse": {
       "type": "room", 
@@ -462,6 +475,10 @@ all_words = {
       "type": "item", 
       "master_word": "heavy winter parka"
    }, 
+   "nibble": {
+      "type": "action", 
+      "master_word": "eat"
+   }, 
    "map": {
       "type": "item", 
       "master_word": "old map"
@@ -478,6 +495,10 @@ all_words = {
       "type": "feature", 
       "master_word": "leanto"
    }, 
+   "utilize": {
+      "type": "action", 
+      "master_word": "use"
+   }, 
    "hay roll": {
       "type": "feature", 
       "master_word": "hay roll"
@@ -493,6 +514,10 @@ all_words = {
    "locked safe": {
       "type": "feature", 
       "master_word": "locked safe"
+   }, 
+   "grab": {
+      "type": "action", 
+      "master_word": "take"
    }, 
    "plunge pool": {
       "type": "feature", 
@@ -518,6 +543,10 @@ all_words = {
       "type": "room", 
       "master_word": "mountain path"
    }, 
+   "peek": {
+      "type": "action", 
+      "master_word": "look"
+   }, 
    "camping cooler": {
       "type": "feature", 
       "master_word": "camping cooler"
@@ -526,9 +555,17 @@ all_words = {
       "type": "item", 
       "master_word": "boat paddle"
    }, 
+   "tug": {
+      "type": "action", 
+      "master_word": "pull"
+   }, 
    "firstaid": {
       "type": "item", 
       "master_word": "medical kit"
+   }, 
+   "ingest": {
+      "type": "action", 
+      "master_word": "eat"
    }, 
    "search": {
       "type": "action", 
@@ -545,6 +582,10 @@ all_words = {
    "light": {
       "type": "item", 
       "master_word": "lantern"
+   }, 
+   "study": {
+      "type": "action", 
+      "master_word": "read"
    }, 
    "camp": {
       "type": "room", 
@@ -569,6 +610,10 @@ all_words = {
    "tree stump": {
       "type": "feature", 
       "master_word": "tree stump"
+   }, 
+   "discard": {
+      "type": "action", 
+      "master_word": "drop"
    }, 
    "wolves": {
       "type": "feature", 

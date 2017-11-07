@@ -464,10 +464,13 @@ class ui():
         the game in curses
         """
 #        rows, columns = os.popen('stty size', 'r').read().split()
-        rows, columns = subprocess.check_output(['stty','size']).decode().split()
-        if int(rows) >= int(MIN_ROWS) and int(columns) >= int(MIN_COLS):
-            return True 
-        return False
+        try:
+            rows, columns = subprocess.check_output(['stty','size']).decode().split()
+            if int(rows) >= int(MIN_ROWS) and int(columns) >= int(MIN_COLS):
+                return True 
+            return False
+        except Exception:
+            return False
 
     def init_colors(self):
         """

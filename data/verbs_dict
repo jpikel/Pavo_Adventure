@@ -1,18 +1,27 @@
 {
+ "discard": "drop", 
  "drop": "drop", 
  "eat": "eat", 
  "go": "go", 
  "go to": "go", 
+ "grab": "take", 
  "help": "help", 
+ "ingest": "eat", 
  "inventory": "inventory", 
  "investigate": "search", 
  "look": "look", 
  "look at": "look at", 
  "move": "go", 
+ "nibble": "eat", 
+ "peek": "look", 
  "pick up": "take", 
  "pull": "pull", 
+ "put down": "drop", 
  "read": "read", 
  "search": "search", 
+ "study": "read", 
  "take": "take", 
- "use": "use"
+ "tug": "pull", 
+ "use": "use", 
+ "utilize": "use"
 }

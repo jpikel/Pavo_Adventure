@@ -54,6 +54,8 @@ SPECIFIC_ROOM = 'river'
 GOD_MODE = 0
 #toggle on/off to randomize player input
 RANDOM_TESTER = 0
+#mirror input for testing purposes only
+MIRROR_INPUT = 0
 
 if DEBUG_PARSE or DEBUG_ROOM:
     USE_CURSES = False
@@ -649,8 +651,10 @@ class Game():
         """
         prints the message to screen and returns the input received
         """
-        if USE_CURSES: return game_ui.get_input(msg)
-        else: return raw_input('\n'+msg+'\n->')
+        if USE_CURSES: text = game_ui.get_input(msg)
+        else: text = raw_input('\n'+msg+'\n->')
+        if MIRROR_INPUT: helpers.multi_printer(text)
+        return text
 
     def write_time_handler(self, text):
         """

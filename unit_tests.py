@@ -5,6 +5,7 @@ import os
 import unittest
 import sys
 
+import file_handler.name_lists as name_lists
 import file_handler.file_lib as files
 import game_engine.engine_helpers as helpers
 import game_engine.player as player
@@ -503,8 +504,160 @@ class TestParser(unittest.TestCase):
         }
         self.assertEqual(output_2, expected_output_2)
 
+class TestPlayerClass(unittest.TestCase):
+    
+    def setUp(self):
+        files.new_game()
+        self.player = player.Player("Bob")
+        print ""
+
+    def tearDown(self):
+        self.player = None
+
+    def testName(self):
+        print "TEST getName property:",
+        print self.assertEqual(self.player.getName, "Bob")
+
+    def testSetStats(self):
+        old_states = {
+                "cold":self.player.cold,
+                "hunger":self.player.hunger,
+                "illness":self.player.illness,
+                "name":self.player.getName,
+                "rescued":self.player.rescued,
+                "dead":self.player.dead,
+                "inventory":self.player.get_inventory
+                }
+
+        new_states = {
+                "cold":99,
+                "hunger":99,
+                "illness":99,
+                "name":"notBob",
+                "rescued":True,
+                "dead":True,
+                "inventory":["1"]
+                }
+        print "TEST current state not new state",
+        print self.assertNotEqual(old_states, new_states)
+        update_player = self.player.set_player_stats(new_states)
+        update_states = {
+                "cold":update_player.cold,
+                "hunger":update_player.hunger,
+                "illness":update_player.illness,
+                "name":update_player.getName,
+                "rescued":update_player.rescued,
+                "dead":update_player.dead,
+                "inventory":update_player.inventory
+                }
+        print "TEST old state not update state",
+        print self.assertNotEqual(old_states, update_states)
+        print "TEST new_state is equal to update state",
+        print self.assertEqual(new_states, update_states)
+
+    def testitemactioninventory(self):
+        VERBOSE = 0
+        print ""
+        print "TEST items in inventory against verbs"
+        NOT_ABLE = 'You are not able to '
+        NOT_SECURE = 'There is no where secure to drop the item.'
+        verbs = name_lists.verb_info().get_verbs()
+        KEY_ERROR_VERBS = ['look', 'go', 'help', 'inventory']
+        items = getItems()
+        self.player.inventory = items
+        #test each item with all verbs
+        
+        for item in items:
+            for verb in verbs:
+                print verb + ' ' + item['title']
+                res = self.player.item_action_inventory(item['title'], verb, True)
+                if VERBOSE:
+                    print res.description
+                if verb not in KEY_ERROR_VERBS:
+                    self.assertEqual(res.description, item['verbs'][verb]['description'])
+                    if verb != 'use':
+                        self.assertEqual(res.modifiers, item['verbs'][verb]['modifiers'])
+                else:
+                    self.assertEqual(res.description,NOT_ABLE+verb+' '+item['title']+'.')
+        #try to drop each item in a non searched room
+        for item in items:
+            res = self.player.item_action_inventory(item['title'], 'drop', False)
+            self.assertEqual(res.description,NOT_SECURE)
+            self.assertEqual(res.modifiers, {})
+
+    def testuseitems(self):
+        #reset the items
+        #use each item to see if we can activate it and get the correct response
+        #and that it has been switched to active in the player inventory
+        items = getItems()
+        self.player.inventory = getItems()
+        for item in items:
+            print 'use ' + item['title']
+            res = self.player.item_action_inventory(item['title'], 'use', False)
+            if item['activatable']:
+                player_item = self.player.search_inventory(item['title'])
+                self.assertEqual(player_item['active'], True)
+                self.assertEqual(res.description, item['verbs']['use']['description'])
+                if 'act_mods' in item['verbs']['use']:
+                    self.assertEqual(res.modifiers, item['verbs']['use']['act_mods'])
+            else:
+                self.assertEqual(res.description, item['verbs']['use']['description'])
+                self.assertEqual(res.modifiers, item['verbs']['use']['modifiers'])
+
+        for item in items:
+            print 'use ' + item['title']
+            res = self.player.item_action_inventory(item['title'], 'use', False)
+            if item['activatable']:
+                player_item = self.player.search_inventory(item['title'])
+                self.assertEqual(player_item['active'], False)
+                self.assertEqual(res.description, item['verbs']['use']['deactivate_description'])
+                if 'de_mods' in item['verbs']['use']:
+                    self.assertEqual(res.modifiers, item['verbs']['use']['de_mods'])
+            else:
+                self.assertEqual(res.description, item['verbs']['use']['description'])
+                self.assertEqual(res.modifiers, item['verbs']['use']['modifiers'])
+
+    def testinventory(self):
+        print 'testing inventory functions'
+        self.player.inventory = getItems()
+        item_titles = name_lists.item_info().get_titles()
+        titles = self.player.get_items_inventory_titles()
+        self.assertEqual(item_titles, titles)
+
+        for title in item_titles:
+            print 'searching for ' + title + ' in inventory'
+            item = self.player.search_inventory(title)
+            self.assertEqual(title, item['title'])
+        
+        for title in item_titles:
+            print 'removing ' + title + ' from inventory'
+            self.player.remove_item_from_inventory(title)
+            item = self.player.search_inventory(title)
+            self.assertEqual(item, None)
+
+#requires the temp_save_game/items to exist and be populated
+def getItems():
+    item_titles = name_lists.item_info().get_titles()
+    items = []
+    for title in item_titles:
+        items.append(files.load_item(title))
+    return items
+#ref:
+#https://www.safaribooksonline.com/library/view/python-cookbook-3rd/9781449357337/ch14s04.html
+#ref:
+#https://stackoverflow.com/questions/38776104/python-redirect-stdout-and-stderr-to-same-file
+def main(out=sys.stderr, verbosity=2):
+    #redirect both stderr and stdout into our ouput file!
+    sys.stdout = sys.stderr = out
+    loader = unittest.TestLoader()
+    suite = loader.loadTestsFromModule(sys.modules[__name__])
+    unittest.TextTestRunner(out,verbosity=verbosity).run(suite)
+
+
 if __name__ == '__main__':
-    unittest.main()
+    with open('results.out', 'w') as f:
+        main(f)
+    #unittest.main()
 
 
 
