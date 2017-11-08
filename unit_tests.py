@@ -4,6 +4,8 @@ import json
 import os
 import unittest
 import sys
+import filecmp
+import random
 
 import file_handler.name_lists as name_lists
 import file_handler.file_lib as files
@@ -505,7 +507,6 @@ class TestParser(unittest.TestCase):
         self.assertEqual(output_2, expected_output_2)
 
 class TestPlayerClass(unittest.TestCase):
-    
     def setUp(self):
         files.new_game()
         self.player = player.Player("Bob")
@@ -514,11 +515,11 @@ class TestPlayerClass(unittest.TestCase):
     def tearDown(self):
         self.player = None
 
-    def testName(self):
+    def test_Name(self):
         print "TEST getName property:",
         print self.assertEqual(self.player.getName, "Bob")
 
-    def testSetStats(self):
+    def test_Set_Stats(self):
         old_states = {
                 "cold":self.player.cold,
                 "hunger":self.player.hunger,
@@ -555,7 +556,7 @@ class TestPlayerClass(unittest.TestCase):
         print "TEST new_state is equal to update state",
         print self.assertEqual(new_states, update_states)
 
-    def testitemactioninventory(self):
+    def test_item_action_inventory(self):
         VERBOSE = 0
         print ""
         print "TEST items in inventory against verbs"
@@ -585,7 +586,7 @@ class TestPlayerClass(unittest.TestCase):
             self.assertEqual(res.description,NOT_SECURE)
             self.assertEqual(res.modifiers, {})
 
-    def testuseitems(self):
+    def test_use_items(self):
         #reset the items
         #use each item to see if we can activate it and get the correct response
         #and that it has been switched to active in the player inventory
@@ -617,7 +618,7 @@ class TestPlayerClass(unittest.TestCase):
                 self.assertEqual(res.description, item['verbs']['use']['description'])
                 self.assertEqual(res.modifiers, item['verbs']['use']['modifiers'])
 
-    def testinventory(self):
+    def test_inventory(self):
         print 'testing inventory functions'
         self.player.inventory = getItems()
         item_titles = name_lists.item_info().get_titles()
@@ -634,6 +635,122 @@ class TestPlayerClass(unittest.TestCase):
             self.player.remove_item_from_inventory(title)
             item = self.player.search_inventory(title)
             self.assertEqual(item, None)
+
+
+
+class TestFileLib(unittest.TestCase):
+    def setUp(self):
+        self.player = player.Player("Bob")
+        files.clean_dir(name_lists.save_info().get_temp_save_dir_rooms())
+        files.clean_dir(name_lists.save_info().get_temp_save_dir_items())
+
+    def test_new_game(self):
+        IGNORE = files.IGNORE
+        rooms_dir = os.path.abspath('data/rooms')
+        items_dir = os.path.abspath('data/items')
+        room_files = os.listdir(rooms_dir)
+        item_files = os.listdir(items_dir)
+        result = files.new_game()
+        new_rooms_dir = name_lists.save_info().get_temp_save_dir_rooms()
+        new_items_dir = name_lists.save_info().get_temp_save_dir_items()
+        new_room_files = os.listdir(new_rooms_dir)
+        new_item_files = os.listdir(new_items_dir)
+        print ""
+        print "TEST that files were transferred"
+        self.assertEqual(result, True)
+        for file_ in new_room_files:
+            print "File: " + file_ + " in temp save is in template"
+            self.assertIn(file_, room_files)
+        for file_ in room_files:
+            if file_ not in IGNORE:
+                print "File: " + file_ + " in temp save is in temp save"
+                self.assertIn(file_, new_room_files)
+        for file_ in new_item_files:
+            print "File: " + file_ + " in temp save is in template"
+            self.assertIn(file_, item_files)
+        for file_ in item_files:
+            if file_ not in IGNORE:
+                print "File: " + file_ + " in temp save is in temp save"
+                self.assertIn(file_, new_item_files)
+
+        print "TEST compare the room files in both dirs to check that they match"
+        match, mismatch, errors = filecmp.cmpfiles(rooms_dir, new_rooms_dir, room_files)
+        for name in match:
+            self.assertIn(name, room_files)
+            self.assertIn(name, new_room_files)
+        for name in mismatch:
+            self.assertIn(name, IGNORE)
+
+        self.assertEqual(len(mismatch), 0)
+        print "TEST compare the item files in both dirs to check that they match"
+        match, mismatch, errors = filecmp.cmpfiles(items_dir, new_items_dir, item_files)
+        for name in match:
+            self.assertIn(name, item_files)
+            self.assertIn(name, new_item_files)
+        for name in mismatch:
+            self.assertIn(name, IGNORE)
+
+        self.assertEqual(len(mismatch), 0)
+
+    def test_save_game(self):
+        print ""
+        print "TEST the save game of file_lib"
+        files.new_game()
+        rooms = name_lists.room_info().get_titles()
+        items = name_lists.item_info().get_titles()
+        title = random.choice(rooms)
+        current_room = files.load_room(title)
+        new_rooms_dir = name_lists.save_info().get_temp_save_dir_rooms()
+        new_items_dir = name_lists.save_info().get_temp_save_dir_items()
+        save_rooms_dir = name_lists.save_info().get_save_dir_rooms()
+        save_items_dir = name_lists.save_info().get_save_dir_items()
+        print "Open each room and edit the visited attribute"
+        for title in rooms:
+            room = files.load_room(title)
+            room['visited'] = True
+            files.store_room(room)
+
+        print "Open each item and edit the active attribute"
+        for title in items:
+            item = files.load_item(title)
+            if item['active']:
+                item['active'] = False
+            else:
+                item['active'] = True
+            files.store_item(item)                
+
+        files.save_game(self.player, current_room, 0)
+        print "TEST compare the room files in both dirs to check that they match"
+        match, mismatch, errors = filecmp.cmpfiles(save_rooms_dir, new_rooms_dir, rooms)
+        for file_ in match:
+            self.assertIn(file_, rooms)
+        self.assertEqual(len(mismatch), 0)
+        self.assertEqual(len(errors), 0)
+        print "TEST compare the item files in both dirs to check that they match"
+        match, mismatch, errors = filecmp.cmpfiles(save_items_dir, new_items_dir,items)
+        for file_ in match:
+            self.assertIn(file_, items)
+        self.assertEqual(len(mismatch), 0)
+        self.assertEqual(len(errors), 0)
+
+        print "TEST that player file exists and that it is a JSON dict"
+        save_dir = name_lists.save_info().get_save_dir()
+        player_file = os.path.join(save_dir, 'player')
+        self.assertEqual(os.path.isfile(player_file), True)
+        try:
+            with open(player_file, 'r') as player_file:
+                player = json.load(player_file)
+        except Exception, e:
+            player = None
+
+        self.assertIsInstance(player, dict)
+
+
+
+        
+
+
+
 
 #requires the temp_save_game/items to exist and be populated
 def getItems():
