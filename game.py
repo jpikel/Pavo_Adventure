@@ -665,11 +665,11 @@ class Game():
 		prints the message to screen and returns the input received
 		"""
 		if USE_CURSES: 
-			text = game_ui.get_input(msg)
+			text = game_ui.get_input(msg).lower()
 		else: 
 			text = raw_input('\n'+msg+'\n->').lower()
 		if MIRROR_INPUT: 
-			helpers.multi_printer(text).lower()
+			helpers.multi_printer(text)
 		return text
 
 	def write_time_handler(self, text):
