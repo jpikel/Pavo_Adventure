@@ -164,67 +164,8 @@ class Game():
         """
         player_name = self.input_handler('Hello dreary traveler. What is your name? ')
         return player.Player(player_name)
-
-    def input_cycle(self):
-        processed_command = None
-        while True:
-            self.validate_curses()
-            if (processed_command is not None and
-                    processed_command['processed'] == False):
-                text = "Sorry I did not understand that.\n " + DO_WHAT
-            else:
-                text = DO_WHAT
-            if RANDOM_TESTER:
-                userInput = random_input_tester()
-            else:
-                userInput = self.input_handler(text)
-                userInput = self.check_save_load_quit(userInput)
-            #if we have no userInput skip to asking and check_save_load_quit again
-            if userInput == None:
-                continue
-            processed_command = parse.parse_command(userInput)
-            #line below for testing
-            if DEBUG_PARSE:
-                print json.dumps(processed_command, indent=4)
-            if processed_command['processed'] == True:
-                return processed_command
-
-    def process_parsed_command(self, output_type, title, action):
-        res = None
-        if output_type == "item_action":
-                if title in self.player.get_items_inventory_titles():
-                    res = (self.player.item_action_inventory(
-                        title,action,self.room.feature_searched))
-                else:
-                    res = self.item_action_room(title, action)
-        elif output_type == "action_only":
-            if action == "look":
-                res = helpers.response_struct()
-                res.action = 'look'
-                res.description = self.room.long_desc
-            elif action == "inventory":
-                self.write_stat_handler(self.player.print_inventory())
-            elif action == "help":
-                if USE_CURSES: game_ui.print_help()
-                else: helpers.print_basic()
-            else:
-                #also sent to the funny script writer
-                res = self.get_humor(action, 'action')
-        elif output_type == "room_action":
-            res = self.room_action(title, action)
-        elif output_type == "item_only":
-            res = self.get_humor(title, 'noun')
-        elif output_type == "feature_action":
-            res = self.room.feature_action(title, action)
-        elif output_type == "feature_only":
-            res = self.get_humor(title, 'noun')
-        elif output_type == "room_only":
-            res = self.room_action(title, 'go')
-        else:
-            self.write_main_bottom_handler('Error command type not supported yet.')
-
-        return res
-
+    
+    
     def gameCycle(self):
         """
         This is the big game cycle
@@ -279,6 +220,75 @@ class Game():
                 #works well.  rescued myself with the flare gun !
                 break
         self.startGame(False)
+
+    def input_cycle(self):
+        """The input cycle continues to request input until we have a valid
+        processed command
+        """
+
+        processed_command = None
+        while True:
+            self.validate_curses()
+            if (processed_command is not None and
+                    processed_command['processed'] == False):
+                text = "Sorry I did not understand that.\n " + DO_WHAT
+            else:
+                text = DO_WHAT
+            if RANDOM_TESTER:
+                userInput = random_input_tester()
+            else:
+                userInput = self.input_handler(text)
+                userInput = self.check_save_load_quit(userInput)
+            #if we have no userInput skip to asking and check_save_load_quit again
+            if userInput == None:
+                continue
+            processed_command = parse.parse_command(userInput)
+            #line below for testing
+            if DEBUG_PARSE:
+                print json.dumps(processed_command, indent=4)
+            if processed_command['processed'] == True:
+                return processed_command
+
+    def process_parsed_command(self, output_type, title, action):
+        """
+        This is the decider than once the parser gives us a result our 
+        branching functions are here
+        """
+        res = None
+        if output_type == "item_action":
+                if title in self.player.get_items_inventory_titles():
+                    res = (self.player.item_action_inventory(
+                        title,action,self.room.feature_searched))
+                else:
+                    res = self.item_action_room(title, action)
+        elif output_type == "action_only":
+            if action == "look":
+                res = helpers.response_struct()
+                res.action = 'look'
+                res.description = self.room.long_desc
+            elif action == "inventory":
+                self.write_stat_handler(self.player.print_inventory())
+            elif action == "help":
+                if USE_CURSES: game_ui.print_help()
+                else: helpers.print_basic()
+            else:
+                #also sent to the funny script writer
+                res = self.get_humor(action, 'action')
+        elif output_type == "room_action":
+            res = self.room_action(title, action)
+        elif output_type == "item_only":
+            res = self.get_humor(title, 'noun')
+        elif output_type == "feature_action":
+            res = self.room.feature_action(title, action)
+        elif output_type == "feature_only":
+            res = self.get_humor(title, 'noun')
+        elif output_type == "room_only":
+            res = self.room_action(title, 'go')
+        else:
+            self.write_main_bottom_handler('Error command type not supported yet.')
+
+        return res
+
 
     #-------------------------------------------------------------------------
     # This is the check for savegame, loadgame, quit function
@@ -472,7 +482,10 @@ class Game():
             mods = res.modifiers['room']
             if self.room.title == mods['title'] or "any" == mods['title']:
                 if "items_in_room" in mods and mods['items_in_room'] == "add":
-                    self.room.add_item_to_room(res.title)
+                    if self.room.title == 'rapids':
+                        res.description += " You watch it float away and it is gone..."
+                    else:
+                        self.room.add_item_to_room(res.title)
                 elif "items_in_room" in mods and mods['items_in_room'] == "drop":
                     self.room.remove_item_from_room(res.title)
 

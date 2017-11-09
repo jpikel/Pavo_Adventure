@@ -6,6 +6,7 @@ import unittest
 import sys
 import filecmp
 import random
+import shutil
 
 import file_handler.name_lists as name_lists
 import file_handler.file_lib as files
@@ -744,6 +745,127 @@ class TestFileLib(unittest.TestCase):
             player = None
 
         self.assertIsInstance(player, dict)
+
+    def test_load_save_game(self):
+        print ""
+        print "TEST load_game functionality, first start a new game."
+        print "Make some changes, save the game, start another new game."
+        print "Then load game and check that the changes we made are as expected."
+        files.new_game()
+        rooms = name_lists.room_info().get_titles()
+        items = name_lists.item_info().get_titles()
+        new_rooms_dir = name_lists.save_info().get_temp_save_dir_rooms()
+        new_items_dir = name_lists.save_info().get_temp_save_dir_items()
+        save_rooms_dir = name_lists.save_info().get_save_dir_rooms()
+        save_items_dir = name_lists.save_info().get_save_dir_items()
+        print "Open each room and edit the visited attribute"
+        for title in rooms:
+            room = files.load_room(title)
+            room['visited'] = "" 
+            files.store_room(room)
+
+        print "Open each item and edit the active attribute"
+        for title in items:
+            item = files.load_item(title)
+            if item['active']:
+                item['active'] = False
+            else:
+                item['active'] = True
+            files.store_item(item)                
+
+        title = random.choice(rooms)
+        current_room = files.load_room(title)
+        files.save_game(self.player, current_room, 0)
+        files.new_game()
+        print "TEST compare the files in temp and save and confirm no match"
+        match, mismatch, errors = filecmp.cmpfiles(save_rooms_dir, new_rooms_dir, rooms)
+        for file_ in match:
+            self.assertNotIn(file_, rooms)
+        self.assertEqual(len(match), 0)
+        self.assertEqual(len(errors), 0)
+
+        match, mismatch, errors = filecmp.cmpfiles(save_items_dir, new_items_dir,items)
+        for file_ in match:
+            self.assertNotIn(file_, items)
+        self.assertEqual(len(match), 0)
+        self.assertEqual(len(errors), 0)
+
+        print "TEST that player file exists and that it is a JSON dict"
+        save_dir = name_lists.save_info().get_save_dir()
+        player_file = os.path.join(save_dir, 'player')
+        self.assertEqual(os.path.isfile(player_file), True)
+        try:
+            with open(player_file, 'r') as player_file:
+                player = json.load(player_file)
+        except Exception, e:
+            player = None
+
+        self.assertIsInstance(player, dict)
+
+        print "TEST load game"
+        p, s, m = files.load_game()
+        print "TEST compare the files in temp and save and confirm match"
+        match, mismatch, errors = filecmp.cmpfiles(save_rooms_dir, new_rooms_dir, rooms)
+        for file_ in match:
+            self.assertIn(file_, rooms)
+        self.assertEqual(len(mismatch), 0)
+        self.assertEqual(len(errors), 0)
+
+        match, mismatch, errors = filecmp.cmpfiles(save_items_dir, new_items_dir,items)
+        for file_ in match:
+            self.assertIn(file_, items)
+        self.assertEqual(len(mismatch), 0)
+        self.assertEqual(len(errors), 0)
+
+        self.assertIsInstance(p, dict)
+        self.assertEqual(s, True)
+        self.assertEqual(m, '')
+
+        print "Remove a room file and an item file and confirm we are able to recover"
+        path = os.path.join(save_rooms_dir, 'shore')
+        os.remove(path)
+        path = os.path.join(save_items_dir, 'rescue whistle')
+        os.remove(path)
+        p, s, m = files.load_game()
+        print "TEST compare the files in temp and save and confirm match"
+        match, mismatch, errors = filecmp.cmpfiles(save_rooms_dir, new_rooms_dir, rooms)
+        for file_ in match:
+            self.assertIn(file_, rooms)
+        self.assertEqual(len(mismatch), 0)
+        #we should get one error for the missing file!
+        self.assertEqual(len(errors), 1)
+
+        match, mismatch, errors = filecmp.cmpfiles(save_items_dir, new_items_dir,items)
+        for file_ in match:
+            self.assertIn(file_, items)
+        self.assertEqual(len(mismatch), 0)
+        #we should get one error for the missing file!
+        self.assertEqual(len(errors), 1)
+
+        self.assertIsInstance(p, dict)
+        self.assertEqual(s, True)
+        self.assertEqual(m, '')
+
+        print "Remove the rooms and items dir from save_game dir and confirm recovery"
+        shutil.rmtree(save_rooms_dir)
+        shutil.rmtree(save_items_dir)
+        p,s,m = files.load_game()
+        self.assertIsInstance(p, dict)
+        self.assertEqual(s, False)
+        self.assertEqual(m, 'Rooms missing.Items missing.')
+        orig_rooms_dir = os.path.abspath('data/rooms')
+        orig_items_dir = os.path.abspath('data/items')
+        match, mismatch, errors = filecmp.cmpfiles(orig_rooms_dir, new_rooms_dir, rooms)
+        for file_ in match:
+            self.assertIn(file_, rooms)
+        self.assertEqual(len(mismatch), 0)
+        self.assertEqual(len(errors), 0)
+
+        match, mismatch, errors = filecmp.cmpfiles(orig_items_dir, new_items_dir,items)
+        for file_ in match:
+            self.assertIn(file_, items)
+        self.assertEqual(len(mismatch), 0)
+        self.assertEqual(len(errors), 0)
 
 
 

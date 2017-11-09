@@ -68,6 +68,7 @@ class Room(object):
             for item in items:
                 text += "a " + item + ", "
             text = text[:-2]
+            text += ". "
         else:
             text = ""
         return text
@@ -186,4 +187,3 @@ class Room(object):
     #------------------------------------------------------------------------
     # This ends the movement related functions
     #------------------------------------------------------------------------
-
