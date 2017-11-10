@@ -1,46 +1,46 @@
 {
- "id": 4, 
- "title": "field", 
- "visited": false, 
- "room_temp": "2", 
- "long_description": "You are standing in a open field.  The snow is like a soft blanket laid across the earth here.   The wind picks up and you feel colder than before.  After being in the snugness of the forest this field is a bit to open for your taste.  There is a hay roll sitting in the field.  Off in the distance several grey wolves are gathering and staring intently in your direction.  The hair on the back of your neck stands up as your eyes lock and they begin moving closer to you.  To the east is the dense brush and to the south you see the mountain base and the mountain rising up.", 
- "short_description": "In this open field, you feel rather vulnerable.  There is a hay roll and the wolves are a distant memory, at least for now.  To the east is the dense brush and to the south is the base of a mountain.", 
+ "id": 4,
+ "title": "field",
+ "visited": false,
+ "room_temp": "2",
+ "long_description": "You are standing in a open field. The snow is like a soft blanket laid across the earth. The wind picks up, and you feel colder than before. After being in the forest, you feel vulnerable in such an open space. As you look around, you see a hay roll sitting in the field. Much to your horror, you also see several grey wolves gathering and staring intently in your direction. The hair on the back of your neck stands up as the wolves begin moving closer. To the east is dense brush, and to the south is the base of a mountain.",
+ "short_description": "You are in an open field and feel rather vulnerable. You see a hay roll in the field. The wolves you saw here before are gone, at least for now. To the east is dense brush, and to the south is the base of a mountain.",
  "features": {
   "hay roll": {
    "aliases": [
     "hay roll"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You pull some of the old moldy hay out of the roll and drop it on the ground.  It seems to be decomposing well by itself."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 field", 
-     "description": "You lean against the roll for a minutes to take a rest.", 
+     "deactivate_description": "use deactivate for feature 1 field",
+     "description": "You lean against the roll for a minutes to take a rest.",
      "modifiers": {
       "player": {
        "illnes": "-1"
       }
      }
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "A large hay roll left here after the farmer likely cut the field.  Must not have come back for it and now it is slowly rotting away."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "It is much to big to take the whole roll and the hay is rotting so you decide not to take any of it."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Wouldn't it be a great place to camp here.  Amongst the hay rolls and read a great book next to a campfire with some friends.  Or roast marshmallows.  Maybe next time, if there is a next time."
-    }, 
+    },
     "search": {
      "modifiers": {
       "room_updates": {
        "field": {
-        "feature_searched": true, 
+        "feature_searched": true,
         "features": {
          "log": {
           "verbs": {
@@ -54,118 +54,118 @@
         }
        }
       }
-     }, 
+     },
      "description": "Searching around the hay roll you don't find anything interesting."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Since the hay roll is too heavy to pick it, you could consider that it is already dropped."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Perhaps in the summer a few of the insects that likely live in this hay roll would be tasty, but for now they have all disappeared."
     }
-   }, 
+   },
    "title": "hay roll"
-  }, 
+  },
   "wolves": {
    "aliases": [
     "wolves"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You do nothing and thinking about it, pulling on a wolf's tail is likely to get your hand bitten."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 field", 
-     "description": "If only you were an animal tamer, perhaps you could work some magic on these hungry wolves.", 
+     "deactivate_description": "use deactivate for feature 2 field",
+     "description": "If only you were an animal tamer, perhaps you could work some magic on these hungry wolves.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The wolves stare at you without remorse.  Their coats are thick and the hair on their backs is standing up.  You've never know wolves to be aggressive but these certainly look like they might be.  Perhaps you could scare them off somehow."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Although wolves are common in landscapes, you don't think they make very good pets.  Best leave them and this area soon."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Yep, reading the wolves, you are now convinced that they want to eat you."
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You cannot be serious.  You want to keep as much distance between you and the wolves as possible."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The wolves have already gotten the drop on you."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Funny, it looks like they would rather eat you."
     }
-   }, 
+   },
    "title": "wolves"
   }
- }, 
- "items_in_room": [], 
- "feature_searched": false, 
+ },
+ "items_in_room": [],
+ "feature_searched": false,
  "connected_rooms": {
   "mountain base": {
-   "accessible": false, 
-   "title": "mountain base", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "Racing towards the rocky base of the moutain, the wolves catch up with you quickly.  All three are behind you.  One is able to get its jaws around you pant leg and the other two leap into the air crashing onto your shoulders.  As you fall face first into the rocks, you try to break your fall.  You forearm bones snap and break out of your skin.  With the extra weight your head hits a rock squarely.  Darkness.  You have died trying to survive the Desolate Journey", 
-   "compass_direction": "south", 
-   "id": 0, 
+   "accessible": false,
+   "title": "mountain base",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "Racing towards the rocky base of the moutain, the wolves catch up with you quickly.  All three are behind you.  One is able to get its jaws around you pant leg and the other two leap into the air crashing onto your shoulders.  As you fall face first into the rocks, you try to break your fall.  You forearm bones snap and break out of your skin.  With the extra weight your head hits a rock squarely.  Darkness.  You have died trying to survive the Desolate Journey",
+   "compass_direction": "south",
+   "id": 0,
    "aliases": [
     "mountain base"
-   ], 
+   ],
    "modifiers": {
     "player": {
      "illness": "100"
     }
    }
-  }, 
+  },
   "dense brush": {
-   "accessible": false, 
-   "title": "dense brush", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "Trying to flee back into the dense brush the wolves separate around the bushes.  One chasing on your heels and there are two wolves along your sides.  They quickly close in, the wolf behind you snaps at your pants and you fall face first into the snow.  The two along your side swoop in with such speed and force that you feel like a car just hit you.  You kick and flail your arms as best you can but they are just to powerful.  Warmth begins to leave you body, you feel cold, weak, you reach down at your side.  Bringing you hand back in front of your face, it is covered in blood.  Your eyes fade into darkness.  You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "east", 
-   "id": 0, 
+   "accessible": false,
+   "title": "dense brush",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "Trying to flee back into the dense brush the wolves separate around the bushes.  One chasing on your heels and there are two wolves along your sides.  They quickly close in, the wolf behind you snaps at your pants and you fall face first into the snow.  The two along your side swoop in with such speed and force that you feel like a car just hit you.  You kick and flail your arms as best you can but they are just to powerful.  Warmth begins to leave you body, you feel cold, weak, you reach down at your side.  Bringing you hand back in front of your face, it is covered in blood.  Your eyes fade into darkness.  You have died trying to survive the Desolate Journey.",
+   "compass_direction": "east",
+   "id": 0,
    "aliases": [
-    "dense brush", 
+    "dense brush",
     "copse"
-   ], 
+   ],
    "modifiers": {
     "player": {
      "illness": "100"
     }
    }
   }
- }, 
+ },
  "room_artifact": [
-  "      __         ^^       ___", 
-  "     (   )              (    )      ^^      ___", 
-  "   (___) __)          (__ (___)           _( __ )", 
-  "      *        ^^            *           (_ ) ____)", 
-  "    *                          *            *", 
-  "            *                                  *", 
-  "                        *", 
-  "", 
-  "", 
-  "", 
-  "                                       o", 
-  "                             0          )", 
-  "         0                  (  0     0\\/ 0", 
-  "          ) ~~~              \\/   ~~~~\\|/", 
+  "      __         ^^       ___",
+  "     (   )              (    )      ^^      ___",
+  "   (___) __)          (__ (___)           _( __ )",
+  "      *        ^^            *           (_ ) ____)",
+  "    *                          *            *",
+  "            *                                  *",
+  "                        *",
+  "",
+  "",
+  "",
+  "                                       o",
+  "                             0          )",
+  "         0                  (  0     0\\/ 0",
+  "          ) ~~~              \\/   ~~~~\\|/",
   "~~~~~~~~w/w~~~~~~~~~~~~~~~~~~\\|/~~~~~~~~~~~~~~~~~"
  ]
 }

@@ -1,43 +1,43 @@
 {
- "id": 5, 
- "title": "dense brush", 
- "visited": false, 
- "room_temp": "1", 
- "long_description": "Not even the snow is able to cover all the brush growing here. It is patchy and some places you have to give a wide berth to not fall through the snow into the brush.  Fewer trees in this area to act as a brake, the  wind is picking up a bit here and you can feel it biting through your clothes.  To the west you can see the brush give way to an open field and in the opposite direction is the camp.   When the weather is nicer there must be farmers that bring their animals up here and use the animal corral.  The gate is wide open to the corral and inside you see a deer carcass.", 
- "short_description": "Standing in the snowy dense brush, to your east is an open field and in the opposite direction lies the camp.  There is an animal corral here likely used by farmers during better weather.  Inside the corral is a deer carcass.", 
+ "id": 5,
+ "title": "dense brush",
+ "visited": false,
+ "room_temp": "1",
+ "long_description": "You are in dense brush. Not even the snow is able to cover all the brush growing here. The wind is picking up, and there are few trees in this area to act as a break. You can feel the wind biting through your clothes. You look around and see an animal corral. Farmers must use the corral when the weather is better. The gate to the corral is wide open, and there is a deer carcass inside. To the west, the dense brush gives way to an open field, and to the east is the camp.",
+ "short_description": "You are standing in dense brush. To the east is an open field, and to the west lies the camp. You see an animal corral, which is likely used by farmers during better weather. A deer carcass is inside the corral.",
  "features": {
   "animal corral": {
    "aliases": [
-    "animal corral", 
+    "animal corral",
     "corral"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You pull on the gate and it slowly moves.  As it traverses the ground it creates a nice wide arc in the snowy ground."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 dense brush", 
-     "description": "It may be the fact that you have been alone for a long time.  But you romp around inside the corral, stamping your feet and acting quite similar to a wild animal.", 
+     "deactivate_description": "use deactivate for feature 1 dense brush",
+     "description": "It may be the fact that you have been alone for a long time.  But you romp around inside the corral, stamping your feet and acting quite similar to a wild animal.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The corral looks tired and worn out.  The rails appear just barely able to hold themselves together.  It certain has seen a lot of use and a lot of weather."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You suppose you could take it down piece by piece, but that would certainly cause a lot of headache for the farmer come spring."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You are not able to find anything to read here."
-    }, 
+    },
     "search": {
      "modifiers": {
       "room_updates": {
        "dense brush": {
-        "feature_searched": true, 
+        "feature_searched": true,
         "features": {
          "animal corral": {
           "verbs": {
@@ -51,101 +51,101 @@
         }
        }
       }
-     }, 
+     },
      "description": "Searching around the corral, you find a boat paddle lying on the ground.  You also think that you could easily use this corral for keeping some items safe.  Especially since it has a gate.  But truthfully, you doubt you even need to close it since you seem to be the only one here."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "There is nothing to drop here."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "A corral can not be eaten.  However, you do fantasize for a moment about the Golden Corral restaurant."
     }
-   }, 
+   },
    "title": "animal corral"
-  }, 
+  },
   "deer carcass": {
    "aliases": [
-    "deer carcass", 
+    "deer carcass",
     "deer"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Childishly you pull on the deer's antlers and the head bobs around as you do so."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 dense brush", 
-     "description": "You are not about to crawl inside this deer carcass to stay warm.  No matter how many survival experts seem to think it is a good idea.", 
+     "deactivate_description": "use deactivate for feature 2 dense brush",
+     "description": "You are not about to crawl inside this deer carcass to stay warm.  No matter how many survival experts seem to think it is a good idea.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The deer was certainly chased into this pen and then taken down.  You doubt a bear could have done so much damage, perhaps a pack of wolves.  Most all of the deer has been eaten and what is left has gone completely rotten."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The poor deer has already had so much taken from it. Isn't it better to just leave it in peace."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "There is simply nothing here to read."
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Although searching inside the chest cavity is common in movies, you think better of it and leave the deer alone."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The deer is not droppable."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Nope.  Not even going to chance eating rotten food."
     }
-   }, 
+   },
    "title": "deer carcass"
   }
- }, 
+ },
  "items_in_room": [
   "boat paddle"
- ], 
- "feature_searched": false, 
+ ],
+ "feature_searched": false,
  "connected_rooms": {
   "field": {
-   "accessible": true, 
-   "title": "field", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "west", 
-   "id": 0, 
+   "accessible": true,
+   "title": "field",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "west",
+   "id": 0,
    "aliases": [
-    "field", 
+    "field",
     "flat"
-   ], 
+   ],
    "modifiers": {
     "item_updates": {
      "rescue whistle": {
       "verbs": {
        "use": {
-        "description": "As the wolves get closer you blow on the whistle as hard as you can.  The screaming whistle is enough to make the wolves run away! They scamper off, tails tucked, whimpering from the extreme noise of the whistle", 
+        "description": "As the wolves get closer you blow on the whistle as hard as you can.  The screaming whistle is enough to make the wolves run away! They scamper off, tails tucked, whimpering from the extreme noise of the whistle",
         "modifiers": {
          "item_updates": {
           "rescue whistle": {
            "verbs": {
             "use": {
-             "description": "You blow hard into the whistle and the silence all around you is broken with an ear piercing loudness!  You stop after a few moments.", 
+             "description": "You blow hard into the whistle and the silence all around you is broken with an ear piercing loudness!  You stop after a few moments.",
              "modifiers": {
-              "item_updates": {}, 
+              "item_updates": {},
               "room_updates": {}
              }
             }
            }
           }
-         }, 
+         },
          "room_updates": {
           "dense brush": {
            "connected_rooms": {
@@ -153,48 +153,48 @@
              "modifiers": {}
             }
            }
-          }, 
+          },
           "field": {
-           "long_description": "You are standing in a open field.  The snow is like a soft blanket laid across the earth here.   The wind picks up and you feel colder than before.  After being in the snugness of the forest this field is a bit to open for your taste.  There is a large log lying on the ground.  Thankfully you managed to scare off those wolves and they are no longer a danger.  To the east is the dense brush and  to the south you see the base of a mountain rising up.", 
+           "long_description": "You are standing in a open field.  The snow is like a soft blanket laid across the earth here.   The wind picks up and you feel colder than before.  After being in the snugness of the forest this field is a bit to open for your taste.  There is a large log lying on the ground.  Thankfully you managed to scare off those wolves and they are no longer a danger.  To the east is the dense brush and  to the south you see the base of a mountain rising up.",
            "features": {
             "2": {
              "verbs": {
               "pull": {
                "description": "The wolves are gone now and no longer a worry or something you can pull on."
-              }, 
+              },
               "use": {
                "description": "Good thing you used that whistle on the wolves.  You are safe now"
-              }, 
+              },
               "look at": {
                "description": "The wolves are long gone.  Glad that is a distant memory."
-              }, 
+              },
               "take": {
                "description": "The wolves are so far away you cannot take them."
-              }, 
+              },
               "read": {
                "description": "You read the situation well, used the whistle and survived that situation."
-              }, 
+              },
               "search": {
                "description": "You pat yourself down and luckily you are still in one piece."
-              }, 
+              },
               "drop": {
                "description": "Even though the wolves surpised you, you managed to out think them."
-              }, 
+              },
               "eat": {
                "description": "It feels good to not have been eaten."
               }
              }
             }
-           }, 
+           },
            "connected_rooms": {
             "mountain base": {
-             "accessible": true, 
-             "pre_item_description": "", 
+             "accessible": true,
+             "pre_item_description": "",
              "modifiers": {}
-            }, 
+            },
             "dense brush": {
-             "accessible": true, 
-             "pre_item_description": "", 
+             "accessible": true,
+             "pre_item_description": "",
              "modifiers": {}
             }
            }
@@ -206,36 +206,36 @@
      }
     }
    }
-  }, 
+  },
   "camp": {
-   "accessible": true, 
-   "title": "camp", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "east", 
-   "id": 0, 
+   "accessible": true,
+   "title": "camp",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "east",
+   "id": 0,
    "aliases": [
     "camp"
    ]
   }
- }, 
+ },
  "room_artifact": [
-  " __                  ___", 
-  "(   )              (    )      ^^      ___", 
-  "__) __)          (__ (___)           _( __ )", 
-  "*                      *           (_ ) ____)", 
-  "    *                                    *", 
-  "                    *", 
-  "                      *", 
-  "", 
-  "", 
-  "                      #####", 
-  "                    #o# # #,#      ## ##", 
-  "                   ###\\|/#_#      ##/##_o#", 
-  "               ~~~   # {}{   o    #\\|o/  \\#", 
-  "   o o    ~~~~~~~~~ ~ }{{~~~~~     {}}   ~~~~~~", 
+  " __                  ___",
+  "(   )              (    )      ^^      ___",
+  "__) __)          (__ (___)           _( __ )",
+  "*                      *           (_ ) ____)",
+  "    *                                    *",
+  "                    *",
+  "                      *",
+  "",
+  "",
+  "                      #####",
+  "                    #o# # #,#      ## ##",
+  "                   ###\\|/#_#      ##/##_o#",
+  "               ~~~   # {}{   o    #\\|o/  \\#",
+  "   o o    ~~~~~~~~~ ~ }{{~~~~~     {}}   ~~~~~~",
   "~~~|/~~~~~~~~~~~~~~~~~,'  `~~~~~~~,' `~~~~~~~~~~~~"
  ]
 }
