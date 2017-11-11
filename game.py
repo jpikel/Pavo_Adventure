@@ -56,6 +56,8 @@ GOD_MODE = 0
 RANDOM_TESTER = 0
 #mirror input for testing purposes only
 MIRROR_INPUT = 0
+#player is automatically rescued after 1 turn for testing purposes
+PLAYER_RESCUED =0
 
 if DEBUG_PARSE or DEBUG_ROOM:
 	USE_CURSES = False
@@ -392,7 +394,8 @@ class Game():
 		room_temp = int(self.room.temp)
 		if not GOD_MODE:
 			self.player.updatePlayerCondition(self.number_of_turns,room_temp)
-
+		if PLAYER_RESCUED:
+			self.player.set_rescue(True)
 		if DEBUG_ROOM:
 			print(json.dumps(self.room.current_room, indent=4))
 		#print the messages to screen here
@@ -408,6 +411,18 @@ class Game():
 		   msg = self.player.get_reason_for_death()
 		   if USE_CURSES: game_ui.write_main_mid(msg)
 		   else: helpers.multi_printer(msg)
+		elif self.player.get_rescue_status():
+			if USE_CURSES:
+				game_ui.write_main_mid("press enter to roll the credits") 
+				userInput=""
+				game_ui.get_input(userInput)
+				if userInput == "y" or "Y":
+					msg= "Congratulations, you survived the Desolate Journey"
+					game_ui.write_stat_append(msg)
+					self.write_time_handler(helpers.FIREWORKS)
+					if USE_CURSES: 
+						game_ui.roll_credits()
+						self.write_time_handler(helpers.FIREWORKS)	
 		self.ui_refresh()
 
 		#description should always come with process functions so we
@@ -580,14 +595,17 @@ class Game():
 	def getTimeOfDay(self):
 		if USE_CURSES:
 			text = []
-			if self.number_of_turns % 4 == 0:
-				text = helpers.MORNING
-			elif self.number_of_turns % 4 == 1:
-				text = helpers.AFTERNOON
-			elif self.number_of_turns % 4 == 2:
-				text = helpers.EVENING
-			elif self.number_of_turns % 4 == 3:
-				text = helpers.NIGHT
+			if self.player.get_rescue_status():
+				text= helpers.FIREWORKS
+			else:
+				if self.number_of_turns % 4 == 0:
+					text = helpers.MORNING
+				elif self.number_of_turns % 4 == 1:
+					text = helpers.AFTERNOON
+				elif self.number_of_turns % 4 == 2:
+					text = helpers.EVENING
+				elif self.number_of_turns % 4 == 3:
+					text = helpers.NIGHT
 		else:
 			if self.number_of_turns % 4 == 0:
 				text = "It is morning. "
