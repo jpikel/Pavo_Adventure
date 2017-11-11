@@ -26,7 +26,9 @@ NUM_CARDINAL_DIRECTIONS = 4
 class TestProcessCommands(unittest.TestCase):
 
     def setUp(self):
-        self.game = game.Game()
+        self.game_file = game
+        self.game_file.USE_CURSES = False
+        self.game = self.game_file.Game()
         files.new_game()
         self.game.player = player.Player("Test Player")
         self.game.room.current_room = files.load_room("shore")

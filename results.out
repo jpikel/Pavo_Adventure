@@ -284,15 +284,15 @@ drop         ::  Drop an item
 inventory    ::  Opens your character's inventory
 take         ::  Pick up an item
 TESTING COMMAND: move
-Wait... hold on a sec... nope you cannot just go -- every DM ever.
+Sadly you cannot go yourself.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: nibble
-Nope maybe try to eat something in the real world.
+Sadly you cannot eat yourself.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: utilize
-Wait... hold on a sec... nope you cannot just use -- every DM ever.
+Sadly you cannot use yourself.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: go
@@ -300,7 +300,7 @@ Sadly you cannot go yourself.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: use
-Wait... hold on a sec... nope you cannot just use -- every DM ever.
+Nope maybe try to use something in the real world.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: pick up
@@ -314,19 +314,18 @@ You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: inventory
 You don't have anything in your inventory
 TESTING COMMAND: take
-Nope maybe try to take something in the real world.
+Sadly you cannot take yourself.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: peek
-The icy beach rocks and pebbles crunch under your steps, it takes all your
-effort not to slip and fall.  The water along the bank is frozen, the ice has
-been scalloped by the wind.  There must have been some warm windy days some time
-ago, but not today. Along the bank there is some dark driftwood, that appears as
-though it has been there a very long time. As you exhale your breath
-crystallizes in front of you and the vapor swirls around you, pushed by the
-breeze coming off the water.  Facing west, off in the distance, in the middle of
-the water you see a snow capped island.  Behind you are some lightly scattered
-pines, in a clearing you think you can see what looks like a crash site.
+You stand on the shore of a large lake. The water along the bank is frozen
+solid. The ice has been scalloped by the wind. As you exhale, your breath
+crystallizes and swirls around you, pushed by the breeze coming off the water.
+Icy rocks and pebbles crunch under your steps; it takes all your effort not to
+slip and fall. Looking around, you see some dark driftwood, which appears as
+though it has been there a very long time. You also see a snow-capped island out
+in the middle of the water. To the east, behind some scattered pines, you see
+what looks like some sort of crash site in a clearing.
 It is morning.
 You are a little worn down, very hungry, and frigid.
      __
@@ -337,11 +336,11 @@ You are a little worn down, very hungry, and frigid.
   =- _=-=- -_=-=_,-" .;',` :'  /|`'
 =- =- -=.--
 TESTING COMMAND: read
-Nope maybe try to read something in the real world.
+Sadly you cannot read yourself.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: look at
-Nope maybe try to look at something in the real world.
+Sadly you cannot look at yourself.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: go to
@@ -349,18 +348,18 @@ Sadly you cannot go yourself.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: put down
-Wait... hold on a sec... nope you cannot just drop -- every DM ever.
+Nope maybe try to drop something in the real world.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: tug
-Nope maybe try to pull something in the real world.
+Sadly you cannot pull yourself.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: pull
-Nope maybe try to pull something in the real world.
+Sadly you cannot pull yourself.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -374,29 +373,28 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: look
-The icy beach rocks and pebbles crunch under your steps, it takes all your
-effort not to slip and fall.  The water along the bank is frozen, the ice has
-been scalloped by the wind.  There must have been some warm windy days some time
-ago, but not today. Along the bank there is some dark driftwood, that appears as
-though it has been there a very long time. As you exhale your breath
-crystallizes in front of you and the vapor swirls around you, pushed by the
-breeze coming off the water.  Facing west, off in the distance, in the middle of
-the water you see a snow capped island.  Behind you are some lightly scattered
-pines, in a clearing you think you can see what looks like a crash site.
+You stand on the shore of a large lake. The water along the bank is frozen
+solid. The ice has been scalloped by the wind. As you exhale, your breath
+crystallizes and swirls around you, pushed by the breeze coming off the water.
+Icy rocks and pebbles crunch under your steps; it takes all your effort not to
+slip and fall. Looking around, you see some dark driftwood, which appears as
+though it has been there a very long time. You also see a snow-capped island out
+in the middle of the water. To the east, behind some scattered pines, you see
+what looks like some sort of crash site in a clearing.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: study
-Nope maybe try to read something in the real world.
+Wait... hold on a sec... nope you cannot just read -- every DM ever.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: drop
-Sadly you cannot drop yourself.
+Nope maybe try to drop something in the real world.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -424,7 +422,7 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: grab
-Nope maybe try to take something in the real world.
+Wait... hold on a sec... nope you cannot just take -- every DM ever.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8156,36 +8154,35 @@ the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 ok
 test_process_feature_only_runs (__main__.TestProcessCommands) ... TESTING COMMAND: blind
-The hunting blind is a thing in the world you are correct sir.
+Try doing something to the hunting blind something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: footlocker
-The footlocker is a thing in the world you are correct sir.
+That footlocker might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: look out
-The look out is a thing in the world you are correct sir.
+Try doing something to the look out something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: stump
-Try doing something to the tree stump something imaginary.
+The tree stump is a thing in the world you are correct sir.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: clumps of bloody fur
-That clumps of bloody fur might be nearby but you need to perform something on
-it.
+Try doing something to the clumps of bloody fur something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: deer
-Try doing something to the deer carcass something imaginary.
+The deer carcass is a thing in the world you are correct sir.
 It is morning.
 You are a little worn down, very hungry, and very cold.
 TESTING COMMAND: sled
-That dog sled might be nearby but you need to perform something on it.
+The dog sled is a thing in the world you are correct sir.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: sign
-The sign is a thing in the world you are correct sir.
+Try doing something to the sign something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: pole
@@ -8197,15 +8194,15 @@ That stone marker might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: storage shed
-The storage shed is a thing in the world you are correct sir.
+That storage shed might be nearby but you need to perform something on it.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: pit
-Try doing something to the campfire pit something imaginary.
+That campfire pit might be nearby but you need to perform something on it.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: rock shelf
-That rock shelf might be nearby but you need to perform something on it.
+Try doing something to the rock shelf something imaginary.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: dog sled
@@ -8216,21 +8213,21 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: heron
-Try doing something to the heron something imaginary.
+The heron is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: wood pole
-The wood pole is a thing in the world you are correct sir.
+That wood pole might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: deer carcass
-That deer carcass might be nearby but you need to perform something on it.
+The deer carcass is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -8244,7 +8241,7 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: shortwave radio
-The shortwave radio is a thing in the world you are correct sir.
+Try doing something to the shortwave radio something imaginary.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -8258,14 +8255,14 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: blood stained snow
-The blood stained snow is a thing in the world you are correct sir.
+That blood stained snow might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: snow capped island
-Try doing something to the snow capped island something imaginary.
+That snow capped island might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8286,28 +8283,28 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: hunting blind
-The hunting blind is a thing in the world you are correct sir.
+That hunting blind might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: shelter
-The leanto is a thing in the world you are correct sir.
+That leanto might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: shelf
-The small shelf is a thing in the world you are correct sir.
+That small shelf might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: safe
-The locked safe is a thing in the world you are correct sir.
+That locked safe might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8328,14 +8325,14 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: plunge pool
-The plunge pool is a thing in the world you are correct sir.
+Try doing something to the plunge pool something imaginary.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: animal corral
-That animal corral might be nearby but you need to perform something on it.
+The animal corral is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8349,14 +8346,14 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: campfire pit
-Try doing something to the campfire pit something imaginary.
+That campfire pit might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: camping cooler
-The camping cooler is a thing in the world you are correct sir.
+That camping cooler might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8370,28 +8367,28 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: driftwood
-Try doing something to the driftwood something imaginary.
+That driftwood might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: cooler
-That camping cooler might be nearby but you need to perform something on it.
+Try doing something to the camping cooler something imaginary.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: island
-The snow capped island is a thing in the world you are correct sir.
+That snow capped island might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: tree
-The bent pine is a thing in the world you are correct sir.
+Try doing something to the bent pine something imaginary.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8412,14 +8409,14 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: hay roll
-That hay roll might be nearby but you need to perform something on it.
+Try doing something to the hay roll something imaginary.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: wolves
-The wolves is a thing in the world you are correct sir.
+Try doing something to the wolves something imaginary.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -12064,23 +12061,23 @@ the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 ok
 test_process_item_only_runs (__main__.TestProcessCommands) ... TESTING COMMAND: firstaid
-The medical kit is a thing in the world you are correct sir.
+Try doing something to the medical kit something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: map
-Try doing something to the old map something imaginary.
+That old map might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: paddle
-Try doing something to the boat paddle something imaginary.
+The boat paddle is a thing in the world you are correct sir.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: bar
-That candy bar might be nearby but you need to perform something on it.
+Try doing something to the candy bar something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: notepad
-The spiral bound notepad is a thing in the world you are correct sir.
+Try doing something to the spiral bound notepad something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: medical kit
@@ -12092,24 +12089,23 @@ That lantern might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: rescue whistle
-That rescue whistle might be nearby but you need to perform something on it.
+Try doing something to the rescue whistle something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: milk
-Try doing something to the can of sweetened condensed milk something imaginary.
+The can of sweetened condensed milk is a thing in the world you are correct sir.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: old map
-That old map might be nearby but you need to perform something on it.
+Try doing something to the old map something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: can of sweetened condensed milk
-That can of sweetened condensed milk might be nearby but you need to perform
-something on it.
+Try doing something to the can of sweetened condensed milk something imaginary.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: boat paddle
-Try doing something to the boat paddle something imaginary.
+The boat paddle is a thing in the world you are correct sir.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: whistle
@@ -12117,42 +12113,43 @@ Try doing something to the rescue whistle something imaginary.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: lamp
-Try doing something to the lantern something imaginary.
+The lantern is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: can
-The can of sweetened condensed milk is a thing in the world you are correct sir.
+That can of sweetened condensed milk might be nearby but you need to perform
+something on it.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: heavy winter parka
-That heavy winter parka might be nearby but you need to perform something on it.
-Sadly, Test Player died as a result of extreme cold. As hard as you tried you
-did not manage to brave the elements. Next time perhaps take better care of
-yourself.  Cold, hunger, and illness can along come quickly in the Desolate
-Journey. The challenges are tough but they can be overcome and you will one day
-find your way to rescue.  But, not on this day.
-TESTING COMMAND: flare gun
-That flare gun might be nearby but you need to perform something on it.
-Sadly, Test Player died as a result of extreme cold. As hard as you tried you
-did not manage to brave the elements. Next time perhaps take better care of
-yourself.  Cold, hunger, and illness can along come quickly in the Desolate
-Journey. The challenges are tough but they can be overcome and you will one day
-find your way to rescue.  But, not on this day.
-TESTING COMMAND: parka
 The heavy winter parka is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
+TESTING COMMAND: flare gun
+Try doing something to the flare gun something imaginary.
+Sadly, Test Player died as a result of extreme cold. As hard as you tried you
+did not manage to brave the elements. Next time perhaps take better care of
+yourself.  Cold, hunger, and illness can along come quickly in the Desolate
+Journey. The challenges are tough but they can be overcome and you will one day
+find your way to rescue.  But, not on this day.
+TESTING COMMAND: parka
+That heavy winter parka might be nearby but you need to perform something on it.
+Sadly, Test Player died as a result of extreme cold. As hard as you tried you
+did not manage to brave the elements. Next time perhaps take better care of
+yourself.  Cold, hunger, and illness can along come quickly in the Desolate
+Journey. The challenges are tough but they can be overcome and you will one day
+find your way to rescue.  But, not on this day.
 TESTING COMMAND: candy bar
-That candy bar might be nearby but you need to perform something on it.
+The candy bar is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -12166,7 +12163,7 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: lantern
-That lantern might be nearby but you need to perform something on it.
+Try doing something to the lantern something imaginary.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -12387,18 +12384,16 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: go site
-As you walk through the beginnings to a larger wooded area you arrive at a small
-clearing.  The pines tower above you, holding up the snow as best as they can.
-As you enter the clearing the breeze stops, it is very quiet here.  Every step
-you take through the snow crunches and sounds like it is loud enough to wake
-every living creature.  In the distance you hear some wolves howling.  You can
-see the shore off to the west.  In the clearing are the remnants of an old dog
-sledding accident.  Whomever had the accident may have spent a few nights here
-before being rescued as there is also a stone circle for a campfire.  Opposite
-the direction of the shore you notice a bit of snow that has been packed down,
-maybe by animals,   you don't see any human footprints.  Thinking about it you
-suspect it may be a game trail.  To your south a footpath goes off through the
-woods, to what may be a camp you think you can make out a small leanto.
+You walk towards a crash site in the middle of a small clearing. Pine trees
+tower above you, holding up the snow as best as they can. As you enter the
+clearing, the breeze stops. You hear the faint sound of wolves howling in the
+distance, and your pulse quickens. As you look around, you see the remnants of
+an old dog sled, which appears to have been badly damaged in some sort of
+accident. You also see a campfire pit. Perhaps the musher who crashed spent some
+time here tending to injuries or waiting for rescue. To the west, you see the
+shore. To the east, you notice that the snow has been packed down. You don't see
+any human footprints, so you assume it is a game trail. To the south, you see a
+camp with what appears to be a small leanto.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -12419,10 +12414,9 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: go west
-You stand along the frozen lake bank.  Facing west, out in the middle of the
-water is a snow capped island.  Along the water is some driftwood that seems to
-have not moved in ages.  Behind you begins a lightly wooded forest and you can
-see a crash site in a clearing.
+You stand along a lakeshore. You see a snow-capped island out in the middle of
+the lake and some driftwood that seems to have not moved in ages. To the east,
+you see a crash site in a clearing.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -12436,10 +12430,9 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: go crash site
-Entering the clearing amongst the tall pines you see an old dog sled left for
-years after an accident.  In the middle of the clearing is a campfire pit.  To
-your west is the icy shore, to the east a game trail meanders through the woods
-and to the south is a camp.
+You walk towards a crash site in a clearing. You see a badly damaged dog sled
+and a campfire pit. An icy shore is to the west, a game trail meanders through
+the woods to the east, and a camp is to the south.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -12467,16 +12460,15 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: go east
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -13130,10 +13122,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go site
-Entering the clearing amongst the tall pines you see an old dog sled left for
-years after an accident.  In the middle of the clearing is a campfire pit.  To
-your west is the icy shore, to the east a game trail meanders through the woods
-and to the south is a camp.
+You walk towards a crash site in a clearing. You see a badly damaged dog sled
+and a campfire pit. An icy shore is to the west, a game trail meanders through
+the woods to the east, and a camp is to the south.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -13154,10 +13145,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go west
-You stand along the frozen lake bank.  Facing west, out in the middle of the
-water is a snow capped island.  Along the water is some driftwood that seems to
-have not moved in ages.  Behind you begins a lightly wooded forest and you can
-see a crash site in a clearing.
+You stand along a lakeshore. You see a snow-capped island out in the middle of
+the lake and some driftwood that seems to have not moved in ages. To the east,
+you see a crash site in a clearing.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -13171,10 +13161,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go crash site
-Entering the clearing amongst the tall pines you see an old dog sled left for
-years after an accident.  In the middle of the clearing is a campfire pit.  To
-your west is the icy shore, to the east a game trail meanders through the woods
-and to the south is a camp.
+You walk towards a crash site in a clearing. You see a badly damaged dog sled
+and a campfire pit. An icy shore is to the west, a game trail meanders through
+the woods to the east, and a camp is to the south.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -13202,11 +13191,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go east
-Evidence of animal activity is around you, with packed snow and a few spots of
-grass poking through from deer digging.  You see a small blood spot in the snow
-and one of the pine trees is curiously bent.  To the south is up a slight
-incline is an ominous entrance to a cave and to the west through the woods is
-the crash site.
+You are on a game trail with packed snow and signs of deer. You see blood-
+stained snow and a bent pine. To the south is the entrance to a cave, and to the
+west is a crash site.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -14560,544 +14547,510 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: peek stream
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look ranger station
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look site
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look woods
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look cavern
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look west
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look cave
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look crash site
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look field
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look mountain path
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look mountain summit
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look east
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look forest
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look flat
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look north
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look dense brush
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look trail
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look base
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look rapids
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look waterfront
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look path
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look outpost
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look copse
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look camp
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look game trail
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look waterfall
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look fire tower
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look shore
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look summit
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look mountain base
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look watchtower
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look river
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look south
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look cataract
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -15594,10 +15547,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go site
-Entering the clearing amongst the tall pines you see an old dog sled left for
-years after an accident.  In the middle of the clearing is a campfire pit.  To
-your west is the icy shore, to the east a game trail meanders through the woods
-and to the south is a camp.
+You walk towards a crash site in a clearing. You see a badly damaged dog sled
+and a campfire pit. An icy shore is to the west, a game trail meanders through
+the woods to the east, and a camp is to the south.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -15618,10 +15570,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go west
-You stand along the frozen lake bank.  Facing west, out in the middle of the
-water is a snow capped island.  Along the water is some driftwood that seems to
-have not moved in ages.  Behind you begins a lightly wooded forest and you can
-see a crash site in a clearing.
+You stand along a lakeshore. You see a snow-capped island out in the middle of
+the lake and some driftwood that seems to have not moved in ages. To the east,
+you see a crash site in a clearing.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -15635,10 +15586,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go crash site
-Entering the clearing amongst the tall pines you see an old dog sled left for
-years after an accident.  In the middle of the clearing is a campfire pit.  To
-your west is the icy shore, to the east a game trail meanders through the woods
-and to the south is a camp.
+You walk towards a crash site in a clearing. You see a badly damaged dog sled
+and a campfire pit. An icy shore is to the west, a game trail meanders through
+the woods to the east, and a camp is to the south.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -15666,11 +15616,9 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: go east
-Evidence of animal activity is around you, with packed snow and a few spots of
-grass poking through from deer digging.  You see a small blood spot in the snow
-and one of the pine trees is curiously bent.  To the south is up a slight
-incline is an ominous entrance to a cave and to the west through the woods is
-the crash site.
+You are on a game trail with packed snow and signs of deer. You see blood-
+stained snow and a bent pine. To the south is the entrance to a cave, and to the
+west is a crash site.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -16786,544 +16734,510 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look stream
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look ranger station
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look site
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look woods
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look cavern
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look west
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look cave
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look crash site
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look field
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look mountain path
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look mountain summit
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look east
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look forest
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look flat
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look north
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look dense brush
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look trail
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look base
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look rapids
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look waterfront
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look path
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look outpost
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look copse
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look camp
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look game trail
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look waterfall
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look fire tower
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look shore
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look summit
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look mountain base
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look watchtower
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look river
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look south
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: look cataract
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -18781,18 +18695,16 @@ You are a little worn down, mildly peckish, and chilly.
   =- _=-=- -_=-=_,-" .;',` :'  /|`'
 =- =- -=.--
 TESTING COMMAND: site
-As you walk through the beginnings to a larger wooded area you arrive at a small
-clearing.  The pines tower above you, holding up the snow as best as they can.
-As you enter the clearing the breeze stops, it is very quiet here.  Every step
-you take through the snow crunches and sounds like it is loud enough to wake
-every living creature.  In the distance you hear some wolves howling.  You can
-see the shore off to the west.  In the clearing are the remnants of an old dog
-sledding accident.  Whomever had the accident may have spent a few nights here
-before being rescued as there is also a stone circle for a campfire.  Opposite
-the direction of the shore you notice a bit of snow that has been packed down,
-maybe by animals,   you don't see any human footprints.  Thinking about it you
-suspect it may be a game trail.  To your south a footpath goes off through the
-woods, to what may be a camp you think you can make out a small leanto.
+You walk towards a crash site in the middle of a small clearing. Pine trees
+tower above you, holding up the snow as best as they can. As you enter the
+clearing, the breeze stops. You hear the faint sound of wolves howling in the
+distance, and your pulse quickens. As you look around, you see the remnants of
+an old dog sled, which appears to have been badly damaged in some sort of
+accident. You also see a campfire pit. Perhaps the musher who crashed spent some
+time here tending to injuries or waiting for rescue. To the west, you see the
+shore. To the east, you notice that the snow has been packed down. You don't see
+any human footprints, so you assume it is a game trail. To the south, you see a
+camp with what appears to be a small leanto.
 It is afternoon.
 You are a little worn down, mildly peckish, and chilly.
       _ _  _ _
@@ -18825,10 +18737,9 @@ You are a little worn down, mildly peckish, and very cold.
    ( `._- _-- ___,')   |   |  ||
     `'(_ )_)(_)_)'     `,|__|_,'
 TESTING COMMAND: west
-You stand along the frozen lake bank.  Facing west, out in the middle of the
-water is a snow capped island.  Along the water is some driftwood that seems to
-have not moved in ages.  Behind you begins a lightly wooded forest and you can
-see a crash site in a clearing.
+You stand along a lakeshore. You see a snow-capped island out in the middle of
+the lake and some driftwood that seems to have not moved in ages. To the east,
+you see a crash site in a clearing.
 It is evening.
 You are a little worn down, mildly peckish, and very cold.
      __
@@ -18850,10 +18761,9 @@ You are a little worn down, mildly peckish, and very cold.
   =- _=-=- -_=-=_,-" .;',` :'  /|`'
 =- =- -=.--
 TESTING COMMAND: crash site
-Entering the clearing amongst the tall pines you see an old dog sled left for
-years after an accident.  In the middle of the clearing is a campfire pit.  To
-your west is the icy shore, to the east a game trail meanders through the woods
-and to the south is a camp.
+You walk towards a crash site in a clearing. You see a badly damaged dog sled
+and a campfire pit. An icy shore is to the west, a game trail meanders through
+the woods to the east, and a camp is to the south.
 It is night.
 You are a little worn down, mildly peckish, and very cold.
       _ _  _ _
@@ -18897,16 +18807,15 @@ You are a little worn down, mildly peckish, and frigid.
    ( `._- _-- ___,')   |   |  ||
     `'(_ )_)(_)_)'     `,|__|_,'
 TESTING COMMAND: east
-Snow is packed down in multiple directions from the wandering animals in the
-area.  They must have heard you coming because you cannot see anything living
-around.  There are a few spots in the ground where you think deer may have
-searched for grass. The pines get a bit denser and the woods get a bit darker
-here.  Animals must feel safe here, but it may also bring predators.  Just
-ahead, you notice some blood stains in the snow.  Towards the south you the
-trails starts to climb up, the trees thin just a bit and you can see a large
-rock face with the entrance to dark cave staring back at you ominously.  One of
-the pines here is curiously bent almost as if creating a marker.  Through the
-woods to the west is the crash site.
+You are on a game trail. You make out several hoofprints in the snow, which look
+like deer. The pines that surround the trail are dense, making it darker than
+you'd like it to be. You notice some blood-stained snow. You assume this is from
+a deer, and your stomach sinks as you think about what could have killed it.
+Wolves. Mountain lions. Bears. You'd be no match for any of them. Looking away
+from the blood-stained snow, you notice a bent pine. The bend looks intentional.
+Perhaps the tree is supposed to be some sort of marker. Towards the south, the
+trees thin a bit, and you can see a large rock face with the entrance to a dark
+cave. You see a crash site through some woods to the west.
 It is morning.
 You are a little worn down, mildly peckish, and frigid.
         /\
@@ -19212,6 +19121,6 @@ one day find your way to rescue.  But, not on this day.
 ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 8.682s
+Ran 27 tests in 7.251s
 
 OK
