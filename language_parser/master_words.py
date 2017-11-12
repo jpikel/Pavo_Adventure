@@ -79,6 +79,7 @@ rooms = {
    "site": "crash site", 
    "woods": "woods", 
    "cavern": "cave", 
+   "open field": "field", 
    "west": "west", 
    "cave": "cave", 
    "crash site": "crash site", 
@@ -444,6 +445,10 @@ all_words = {
    "wood pole": {
       "type": "feature", 
       "master_word": "wood pole"
+   }, 
+   "open field": {
+      "type": "room", 
+      "master_word": "field"
    }, 
    "fire tower": {
       "type": "room", 
