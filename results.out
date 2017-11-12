@@ -284,7 +284,7 @@ drop         ::  Drop an item
 inventory    ::  Opens your character's inventory
 take         ::  Pick up an item
 TESTING COMMAND: move
-Sadly you cannot go yourself.
+Nope maybe try to go something in the real world.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: nibble
@@ -292,7 +292,7 @@ Sadly you cannot eat yourself.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: utilize
-Sadly you cannot use yourself.
+Wait... hold on a sec... nope you cannot just use -- every DM ever.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: go
@@ -304,17 +304,17 @@ Nope maybe try to use something in the real world.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: pick up
-Nope maybe try to take something in the real world.
+Sadly you cannot take yourself.
 It is morning.
 You are a little worn down, very hungry, and very cold.
 TESTING COMMAND: eat
-Sadly you cannot eat yourself.
+Nope maybe try to eat something in the real world.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: inventory
 You don't have anything in your inventory
 TESTING COMMAND: take
-Sadly you cannot take yourself.
+Wait... hold on a sec... nope you cannot just take -- every DM ever.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: peek
@@ -336,11 +336,11 @@ You are a little worn down, very hungry, and frigid.
   =- _=-=- -_=-=_,-" .;',` :'  /|`'
 =- =- -=.--
 TESTING COMMAND: read
-Sadly you cannot read yourself.
+Wait... hold on a sec... nope you cannot just read -- every DM ever.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: look at
-Sadly you cannot look at yourself.
+Nope maybe try to look at something in the real world.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: go to
@@ -348,25 +348,25 @@ Sadly you cannot go yourself.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: put down
-Nope maybe try to drop something in the real world.
+Sadly you cannot drop yourself.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: tug
-Sadly you cannot pull yourself.
+Wait... hold on a sec... nope you cannot just pull -- every DM ever.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: pull
-Sadly you cannot pull yourself.
+Nope maybe try to pull something in the real world.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: search
-Wait... hold on a sec... nope you cannot just search -- every DM ever.
+Nope maybe try to search something in the real world.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -387,14 +387,14 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: study
-Wait... hold on a sec... nope you cannot just read -- every DM ever.
+Nope maybe try to read something in the real world.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: drop
-Nope maybe try to drop something in the real world.
+Sadly you cannot drop yourself.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -415,7 +415,7 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: discard
-Nope maybe try to drop something in the real world.
+Wait... hold on a sec... nope you cannot just drop -- every DM ever.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8158,27 +8158,28 @@ Try doing something to the hunting blind something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: footlocker
-That footlocker might be nearby but you need to perform something on it.
+The footlocker is a thing in the world you are correct sir.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: look out
-Try doing something to the look out something imaginary.
+The look out is a thing in the world you are correct sir.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: stump
-The tree stump is a thing in the world you are correct sir.
+That tree stump might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: clumps of bloody fur
-Try doing something to the clumps of bloody fur something imaginary.
+That clumps of bloody fur might be nearby but you need to perform something on
+it.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: deer
-The deer carcass is a thing in the world you are correct sir.
+Try doing something to the deer carcass something imaginary.
 It is morning.
 You are a little worn down, very hungry, and very cold.
 TESTING COMMAND: sled
-The dog sled is a thing in the world you are correct sir.
+Try doing something to the dog sled something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: sign
@@ -8190,7 +8191,7 @@ Try doing something to the wood pole something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: stone marker
-That stone marker might be nearby but you need to perform something on it.
+Try doing something to the stone marker something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: storage shed
@@ -8202,32 +8203,32 @@ That campfire pit might be nearby but you need to perform something on it.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: rock shelf
-Try doing something to the rock shelf something imaginary.
+The rock shelf is a thing in the world you are correct sir.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: dog sled
-That dog sled might be nearby but you need to perform something on it.
+Try doing something to the dog sled something imaginary.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: heron
-The heron is a thing in the world you are correct sir.
+Try doing something to the heron something imaginary.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: wood pole
-That wood pole might be nearby but you need to perform something on it.
+Try doing something to the wood pole something imaginary.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: deer carcass
-The deer carcass is a thing in the world you are correct sir.
+Try doing something to the deer carcass something imaginary.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -8241,7 +8242,7 @@ yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: shortwave radio
-Try doing something to the shortwave radio something imaginary.
+The shortwave radio is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
@@ -8262,7 +8263,7 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: snow capped island
-That snow capped island might be nearby but you need to perform something on it.
+Try doing something to the snow capped island something imaginary.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8311,7 +8312,7 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: leanto
-The leanto is a thing in the world you are correct sir.
+Try doing something to the leanto something imaginary.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8332,7 +8333,7 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: animal corral
-The animal corral is a thing in the world you are correct sir.
+Try doing something to the animal corral something imaginary.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8346,35 +8347,35 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: campfire pit
-That campfire pit might be nearby but you need to perform something on it.
+The campfire pit is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: camping cooler
-That camping cooler might be nearby but you need to perform something on it.
+The camping cooler is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: small gorge
-That small gorge might be nearby but you need to perform something on it.
+The small gorge is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: driftwood
-That driftwood might be nearby but you need to perform something on it.
+The driftwood is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: cooler
-Try doing something to the camping cooler something imaginary.
+That camping cooler might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -8388,14 +8389,14 @@ care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: tree
-Try doing something to the bent pine something imaginary.
+The bent pine is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
 Desolate Journey. The challenges are tough but they can be overcome and you will
 one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: corral
-That animal corral might be nearby but you need to perform something on it.
+The animal corral is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -8409,7 +8410,7 @@ better care of yourself.  Cold, hunger, and illness can along come quickly in
 the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 TESTING COMMAND: hay roll
-Try doing something to the hay roll something imaginary.
+The hay roll is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme wounds, hunger and cold. As hard
 as you tried you did not manage to brave the elements. Next time perhaps take
 better care of yourself.  Cold, hunger, and illness can along come quickly in
@@ -12061,15 +12062,15 @@ the Desolate Journey. The challenges are tough but they can be overcome and you
 will one day find your way to rescue.  But, not on this day.
 ok
 test_process_item_only_runs (__main__.TestProcessCommands) ... TESTING COMMAND: firstaid
-Try doing something to the medical kit something imaginary.
+That medical kit might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: map
-That old map might be nearby but you need to perform something on it.
+Try doing something to the old map something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: paddle
-The boat paddle is a thing in the world you are correct sir.
+That boat paddle might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, mildly peckish, and chilly.
 TESTING COMMAND: bar
@@ -12077,7 +12078,8 @@ Try doing something to the candy bar something imaginary.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: notepad
-Try doing something to the spiral bound notepad something imaginary.
+That spiral bound notepad might be nearby but you need to perform something on
+it.
 It is morning.
 You are a little worn down, mildly peckish, and very cold.
 TESTING COMMAND: medical kit
@@ -12085,23 +12087,23 @@ Try doing something to the medical kit something imaginary.
 It is morning.
 You are a little worn down, very hungry, and very cold.
 TESTING COMMAND: light
-That lantern might be nearby but you need to perform something on it.
+Try doing something to the lantern something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: rescue whistle
-Try doing something to the rescue whistle something imaginary.
+That rescue whistle might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: milk
-The can of sweetened condensed milk is a thing in the world you are correct sir.
+Try doing something to the can of sweetened condensed milk something imaginary.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: old map
-Try doing something to the old map something imaginary.
+That old map might be nearby but you need to perform something on it.
 It is morning.
 You are a little worn down, very hungry, and frigid.
 TESTING COMMAND: can of sweetened condensed milk
-Try doing something to the can of sweetened condensed milk something imaginary.
+The can of sweetened condensed milk is a thing in the world you are correct sir.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: boat paddle
@@ -12109,61 +12111,61 @@ The boat paddle is a thing in the world you are correct sir.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: whistle
-Try doing something to the rescue whistle something imaginary.
+The rescue whistle is a thing in the world you are correct sir.
 It is morning.
 Things are looking bad, ravenous, and dying of cold.
 TESTING COMMAND: lamp
-The lantern is a thing in the world you are correct sir.
+That lantern might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: can
-That can of sweetened condensed milk might be nearby but you need to perform
-something on it.
+The can of sweetened condensed milk is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: heavy winter parka
-The heavy winter parka is a thing in the world you are correct sir.
-Sadly, Test Player died as a result of extreme cold. As hard as you tried you
-did not manage to brave the elements. Next time perhaps take better care of
-yourself.  Cold, hunger, and illness can along come quickly in the Desolate
-Journey. The challenges are tough but they can be overcome and you will one day
-find your way to rescue.  But, not on this day.
-TESTING COMMAND: flare gun
-Try doing something to the flare gun something imaginary.
-Sadly, Test Player died as a result of extreme cold. As hard as you tried you
-did not manage to brave the elements. Next time perhaps take better care of
-yourself.  Cold, hunger, and illness can along come quickly in the Desolate
-Journey. The challenges are tough but they can be overcome and you will one day
-find your way to rescue.  But, not on this day.
-TESTING COMMAND: parka
 That heavy winter parka might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
+TESTING COMMAND: flare gun
+That flare gun might be nearby but you need to perform something on it.
+Sadly, Test Player died as a result of extreme cold. As hard as you tried you
+did not manage to brave the elements. Next time perhaps take better care of
+yourself.  Cold, hunger, and illness can along come quickly in the Desolate
+Journey. The challenges are tough but they can be overcome and you will one day
+find your way to rescue.  But, not on this day.
+TESTING COMMAND: parka
+The heavy winter parka is a thing in the world you are correct sir.
+Sadly, Test Player died as a result of extreme cold. As hard as you tried you
+did not manage to brave the elements. Next time perhaps take better care of
+yourself.  Cold, hunger, and illness can along come quickly in the Desolate
+Journey. The challenges are tough but they can be overcome and you will one day
+find your way to rescue.  But, not on this day.
 TESTING COMMAND: candy bar
-The candy bar is a thing in the world you are correct sir.
+That candy bar might be nearby but you need to perform something on it.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: spiral bound notepad
-Try doing something to the spiral bound notepad something imaginary.
+That spiral bound notepad might be nearby but you need to perform something on
+it.
 Sadly, Test Player died as a result of extreme cold. As hard as you tried you
 did not manage to brave the elements. Next time perhaps take better care of
 yourself.  Cold, hunger, and illness can along come quickly in the Desolate
 Journey. The challenges are tough but they can be overcome and you will one day
 find your way to rescue.  But, not on this day.
 TESTING COMMAND: lantern
-Try doing something to the lantern something imaginary.
+The lantern is a thing in the world you are correct sir.
 Sadly, Test Player died as a result of extreme hunger and cold. As hard as you
 tried you did not manage to brave the elements. Next time perhaps take better
 care of yourself.  Cold, hunger, and illness can along come quickly in the
@@ -19121,6 +19123,6 @@ one day find your way to rescue.  But, not on this day.
 ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 7.251s
+Ran 27 tests in 7.299s
 
 OK
