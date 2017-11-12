@@ -397,14 +397,23 @@ class TestParser(unittest.TestCase):
         }
         self.assertEqual(output_2, expected_output_2)
 
-        input_2 = "search campfire"
-        output_2 = parser.parse_command(input_2)
-        expected_output_2 = {
+        input_3 = "search campfire"
+        output_3 = parser.parse_command(input_3)
+        expected_output_3 = {
             "type": "feature_action",
             "command": {"action": "search", "feature": "campfire pit"},
             "processed": True
         }
-        self.assertEqual(output_2, expected_output_2)
+        self.assertEqual(output_3, expected_output_3)
+
+        input_4 = "look at snow-capped island"
+        output_4 = parser.parse_command(input_4)
+        expected_output_4 = {
+            "type": "feature_action",
+            "command": {"action": "look at", "feature": "snow capped island"},
+            "processed": True
+        }
+        self.assertEqual(output_4, expected_output_4)
 
     def test_parse_feature_only(self):
         input_1 = "deer"

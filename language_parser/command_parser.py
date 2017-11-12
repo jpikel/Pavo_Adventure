@@ -47,7 +47,9 @@ def _preprocess(input_string):
     Returns: A processed string.
     """
     preprocessed_string = input_string.lower()
-    # Remove any character that is not a number or letter.
+    # Convert any hyphens to spaces
+    preprocessed_string = re.sub('-', ' ', preprocessed_string)
+    # Remove any character that is not a number, letter, or space.
     preprocessed_string = re.sub('[^A-Za-z0-9 ]', '', preprocessed_string)
     return preprocessed_string
 
