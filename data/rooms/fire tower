@@ -1,119 +1,119 @@
 {
- "id": 10, 
- "title": "fire tower", 
- "visited": false, 
- "room_temp": "-3", 
- "long_description": "You climb up the ladder on the side of the tower and enter into the small cabin perched on top of the truss like structure.  From inside the tower there is an amazing look out, it is no wonder that it was built here you can see all around the mountain in every direction.  How far you have come to get here.  It has been quite a journey.  The tower has not been used in quite a while it seems.  At least not since the last fire season, as there is not much inside, except a few cobwebs from industrious spiders trying to find something to eat.  There are a few counters that are bare,  under one of the counters sits a safe.  In the middle of the tower there is also a central pedestal that is empty but seems to be home to something.  You recall your guide telling you about Osborne Fire Finders that are used by rangers to determine the degrees and estimated distance from the tower that a fire is located.", 
- "short_description": "Climbing up the ladder and entering the tower, inside you have an excellent look out.  Under one of the empty counters is a safe.  The only way out is towards the south and the mountain's summit.", 
+ "id": 10,
+ "title": "fire tower",
+ "visited": false,
+ "room_temp": "-3",
+ "long_description": "You climb up a ladder and enter the fire tower. From inside the tower, there is an amazing look out in every direction. It is no wonder the tower was built here. You think about how far you have come to get here. It has been quite a journey. It seems as if the tower has not been used for a long time. There are a few counters that are bare, but you see a safe under one of them. In the middle of the tower there is also a central pedestal that is empty but seems to be home to something. You recall your guide telling you about Osborne Fire Finders, which rangers use to determine the direction and estimated distance from the tower of a fire. Your only way out is to the south, towards the mountain summit.",
+ "short_description": "You climb up the ladder and enter the fire tower. Inside, you see that there is an excellent look out.  Under one of the empty counters is a safe.  The only way out is towards the mountain summit to the south.",
  "features": {
   "locked safe": {
    "aliases": [
-    "locked safe", 
+    "locked safe",
     "safe"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "As much as you pull on the safe it is not budging.  Maybe it is bolted to the floor."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 fire tower", 
-     "description": "You spin the dial to three different numbers.  Hear some clicking and attempt to turn the handle, but it does nothing.", 
+     "deactivate_description": "use deactivate for feature 1 fire tower",
+     "description": "You spin the dial to three different numbers.  Hear some clicking and attempt to turn the handle, but it does nothing.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Standing stoically you look at the small but sturdy metal safe.  Hopefully you know the combination.  The outside is a has a texture granite colored finish that looks in top condition.  This safe must not be very old."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Safes generally are not things you carry around on your person.  Unless you are a bank robber and have a getaway truck."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You read the label on the front of the safe \"Please keep loaded.\""
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You try to open the door.  But it is locked tight.  You doubt you would be able to force it either."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The safe cannot be picked up. So it cannot be dropped."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The hard shell and textured paint would not be very tasty."
     }
-   }, 
+   },
    "title": "locked safe"
-  }, 
+  },
   "look out": {
    "aliases": [
     "look out"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
-     "description": "Not really sure how one would pull an look out."
-    }, 
+     "modifiers": {},
+     "description": "Not really sure how one would pull a look out."
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 fire tower", 
-     "description": "You could try searching the look out for a better view.", 
+     "deactivate_description": "use deactivate for feature 2 fire tower",
+     "description": "You could try searching the look out for a better view.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "From all the windows around the tower you have a great vantage point over all the surrounding areas."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "If only you had a camera to take some pictures of this amazing place."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Looking at the windows of the fire station you do not see anything to read."
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "From up here you can see the shore and the woods to the east.  You can just barely make out the top of the hunting blind through a few trees.  Thankfully you don't see any wolves in the open field any more.  The waterfall feeding into the river is amazing from up here.  The views are breathtaking and you would take more time to enjoy it if you weren't lost!"
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "If you fell from this height it would surely be to your doom."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Not much to eat here."
     }
-   }, 
+   },
    "title": "look out"
   }
- }, 
+ },
  "items_in_room": [
   "flare gun"
- ], 
- "feature_searched": false, 
+ ],
+ "feature_searched": false,
  "connected_rooms": {
   "mountain summit": {
-   "accessible": true, 
-   "title": "mountain summit", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "south", 
-   "id": 0, 
+   "accessible": true,
+   "title": "mountain summit",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "south",
+   "id": 0,
    "aliases": [
-    "mountain summit", 
+    "mountain summit",
     "summit"
-   ], 
+   ],
    "modifiers": {
     "item_updates": {
      "flare gun": {
       "verbs": {
        "use": {
-        "description": "You point the flare gun towards the sky, pull the trigger.  The flare pops out the front with a loud bang.  Climbs ten meters into the air, fizzles and falls back down to the ground.  Maybe you can find another shell somewhere or another way out of this place.", 
+        "description": "You point the flare gun towards the sky, pull the trigger.  The flare pops out the front with a loud bang.  Climbs ten meters into the air, fizzles and falls back down to the ground.  Maybe you can find another shell somewhere or another way out of this place.",
         "modifiers": {
          "player": {}
         }
@@ -123,21 +123,21 @@
     }
    }
   }
- }, 
+ },
  "room_artifact": [
-  "    --_        ___--        _-_", 
-  " --_      |            -_", 
-  "          |                  _--", 
-  "     |____|_____|", 
-  "    /            \\", 
-  "   /| __  __  __ |\\", 
-  "    |[__][__][__]|", 
-  " _  |            |  _", 
-  "|___|____|___|___|___|", 
-  " ||-_    //\\\\      ||", 
-  " ||  -_ //  \\\\    /||", 
-  " || _- //    \\\\  //||", 
-  " ||-_ //======\\\\// ||", 
+  "    --_        ___--        _-_",
+  " --_      |            -_",
+  "          |                  _--",
+  "     |____|_____|",
+  "    /            \\",
+  "   /| __  __  __ |\\",
+  "    |[__][__][__]|",
+  " _  |            |  _",
+  "|___|____|___|___|___|",
+  " ||-_    //\\\\      ||",
+  " ||  -_ //  \\\\    /||",
+  " || _- //    \\\\  //||",
+  " ||-_ //======\\\\// ||",
   " ||  //        \\\\  ||"
  ]
 }

@@ -1,42 +1,42 @@
 {
- "id": 14, 
- "title": "mountain summit", 
- "visited": false, 
- "room_temp": "5", 
- "long_description": "You make your way to the top of the path and the view is absolutely stunning.  There is an overlook that would give you a breathtaking view.  It is bitterly cold up here, the blustery wind making your clothes flutter loudly.  To your north you make out a fire tower and back to the west is the winding mountain path.  Along the path to the fire tower is a small storage shed.  The fresh air smells good and lifts your spirits.  You feel confident that you will soon find something that can help you get out of this area.  You are well above the tree line, the mountain is dusted with snow and ice.  It is a treacherous climb but taking your time you think you can safely keep going.", 
- "short_description": "Standing on the ice cold summit of the mountain.  There is an overlook and a storage shed along the path.  To your north you see the fire tower and down the side to the west is a winding mountain path.", 
+ "id": 14,
+ "title": "mountain summit",
+ "visited": false,
+ "room_temp": "5",
+ "long_description": "You are standing on the mountain summit. You are well above the tree line. The summit is dusted with snow and ice. It is bitterly cold up here, and the blustering wind makes your clothes flutter loudly. You feel chilled to your core. Despite the cold, the fresh air smells good and lifts your spirits. You feel confident that you will soon find something that can help you end your desolate journey. You look around and see that there is an overlook that seems like it would have a breathtaking view. You also see a small storage shed. To your north you make out a fire tower and back to the west is the winding mountain path.",
+ "short_description": "You are standing on the ice cold summit of the mountain. There is an overlook and a storage shed along the path. To the north, you see the fire tower, and to the west is a winding mountain path.",
  "features": {
   "storage shed": {
    "aliases": [
     "storage shed"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Although it has been beaten by the elements, the roof and door are still solidly attached to each other."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 mountain summit", 
-     "description": "Much too small to comfortable sleep in.  Not to mention that it is bitterly cold inside the shed, you doubt you would survive for long if you took a nap.", 
+     "deactivate_description": "use deactivate for feature 1 mountain summit",
+     "description": "Much too small to comfortable sleep in.  Not to mention that it is bitterly cold inside the shed, you doubt you would survive for long if you took a nap.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "A small metal structure.  It has a door, a roof and four short walls.  Nothing all too interesting.   Once painted a hunter green, some of the paint has been stripped off and the bare galvanized metal shines through."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You are not able to take the shed with you."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You cannot find any to read inside or on the outside of the shed."
-    }, 
+    },
     "search": {
      "modifiers": {
       "room_updates": {
        "mountain summit": {
-        "feature_searched": true, 
+        "feature_searched": true,
         "features": {
          "storage shed": {
           "verbs": {
@@ -50,75 +50,75 @@
         }
        }
       }
-     }, 
+     },
      "description": "After some wrenching you manage to pry the door open.  The hinges grind and groan as you force the door open.  A nice place to keep some things for safe keeping, but you do not see much else of interest inside."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The shed is about as low as it will go."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Metal is not something you would want to eat."
     }
-   }, 
+   },
    "title": "storage shed"
-  }, 
+  },
   "overlook": {
    "aliases": [
     "overlook"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Not really sure how one would pull an overlook."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 mountain summit", 
-     "description": "Staring down the side of the steep mountain, you see a river that leads into some rapids.  The rapids looks exceptionally dangerous and you are sure it would take some quick maneuvering to get through them safely.  Beyond the rapids the river slows just a bit and there is a small building on the bank of the river.  It sits on a small island where the river forks around it.", 
+     "deactivate_description": "use deactivate for feature 2 mountain summit",
+     "description": "Staring down the side of the steep mountain, you see a river that leads into some rapids.  The rapids looks exceptionally dangerous and you are sure it would take some quick maneuvering to get through them safely.  Beyond the rapids the river slows just a bit and there is a small building on the bank of the river.  It sits on a small island where the river forks around it.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The overlook is a small area where you can get a very good view of what is below.  Might be worth taking a closer look."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "If only you had a camera to take some pictures of this amazing place."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You try to read the clouds in the sky, but they do not have much to say."
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Staring down the side of the steep mountain, you see a river that leads into some rapids.  The rapids looks exceptionally dangerous and you are sure it would take some quick maneuvering to get through them safely.  Beyond the rapids the river slows just a bit and there is a small building on the bank of the river.  It sits on a small island where the river forks around it."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You don't want to get too close to edge or else you may fall down the side of the moutain."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Not much to eat here."
     }
-   }, 
+   },
    "title": "overlook"
   }
- }, 
- "items_in_room": [], 
- "feature_searched": false, 
+ },
+ "items_in_room": [],
+ "feature_searched": false,
  "connected_rooms": {
   "fire tower": {
    "modifiers": {
     "player": {
      "cold": "100"
-    }, 
+    },
     "item_updates": {
      "flare gun": {
       "verbs": {
        "use": {
-        "description": "You open the door to the fire tower and pull the trigger.  The flare takes off spewing sparks and color  A few minutes go by and your heart begins to sink.  How can this be are you truly that lost?   Suddenly you see in the distance beyond the ranger station another flare shooting into the sky like a rising star.  Someone has seen you!  You know it.  You sit down on the floor of the fire tower.  Drop your pack to the floor and use it as a pillow.  The weight of the world is lifting from you and your spirit.  Knowing that someone is coming to rescue you, you slowly fade into sleep.  Congratulations you have survived the Desolate Journey!", 
+        "description": "You open the door to the fire tower and pull the trigger.  The flare takes off spewing sparks and color  A few minutes go by and your heart begins to sink.  How can this be are you truly that lost?   Suddenly you see in the distance beyond the ranger station another flare shooting into the sky like a rising star.  Someone has seen you!  You know it.  You sit down on the floor of the fire tower.  Drop your pack to the floor and use it as a pillow.  The weight of the world is lifting from you and your spirit.  Knowing that someone is coming to rescue you, you slowly fade into sleep.  Congratulations you have survived the Desolate Journey!",
         "modifiers": {
          "player": {
           "rescued": true
@@ -128,48 +128,48 @@
       }
      }
     }
-   }, 
-   "accessible": false, 
-   "title": "fire tower", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "north", 
-   "id": 0, 
+   },
+   "accessible": false,
+   "title": "fire tower",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.",
+   "compass_direction": "north",
+   "id": 0,
    "aliases": [
-    "fire tower", 
+    "fire tower",
     "watchtower"
    ]
-  }, 
+  },
   "mountain path": {
    "modifiers": {
     "player": {
      "cold": "100"
     }
-   }, 
-   "accessible": false, 
-   "title": "mountain path", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You turn around to head back down but, you begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "south", 
-   "id": 0, 
+   },
+   "accessible": false,
+   "title": "mountain path",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "The long climb has taken its toll on you.  You have been shivering for the last few hours.  You turn around to head back down but, you begin to stumble around and you are not sure which way to turn anymore.  Your body seems to stop shivering but you are not sure why.  You seem to lose control of your legs, you try to steady yourself, but you are not able to remain standing.  Half laying on the ground, you look at your hands and they no longer respond to your thoughts.  Everything seems to be slowing down around you.  You lay back for a rest.  Maybe when you wake up you'll feel better.  You have died trying to survive the Desolate Journey.",
+   "compass_direction": "south",
+   "id": 0,
    "aliases": [
-    "mountain path", 
+    "mountain path",
     "path"
    ]
   }
- }, 
+ },
  "room_artifact": [
-  "\\_..   --__  -_         _/''\\     __ ^^ ---", 
-  "    \\          /'.,    /     \\      ____", 
-  "     \\__,.    /    \\  /       \\  _         --", 
-  "          \\_./   ..,\\/      ,  \\        -_   _-", 
-  "              __/     \\    /'`\\ \\_._             ^^", 
-  "           _/    |     \\ _/    \\     `", 
-  "        ,./             \\__     \\    \\", 
+  "\\_..   --__  -_         _/''\\     __ ^^ ---",
+  "    \\          /'.,    /     \\      ____",
+  "     \\__,.    /    \\  /       \\  _         --",
+  "          \\_./   ..,\\/      ,  \\        -_   _-",
+  "              __/     \\    /'`\\ \\_._             ^^",
+  "           _/    |     \\ _/    \\     `",
+  "        ,./             \\__     \\    \\",
   ",.., __/      ,.   ,. .,  .,\\    \\.,  \\, "
  ]
 }

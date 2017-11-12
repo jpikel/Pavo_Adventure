@@ -1,50 +1,50 @@
 {
- "id": 7, 
- "title": "woods", 
- "visited": false, 
- "room_temp": "1", 
- "long_description": "The tall pines feel like they are trying to surround you here, encroaching on your very existence in this place.  The lower branches are free of snow while the upper reaches of the pines are heavily ladened with snow.  Every so often you hear some snow hitting the ground with a gentle thump.  There is a tree stump that appears to have been harvested many years ago, but seems interesting enough.  The smell is intense, filling your nose and lungs with a citrusy, piney odor that reminds you of home cleaning products. Or perhaps it is the home cleaning products that should remind you of this place.  To your south you can hear water moving, must be a river.  It also reminds you of more pleasant affairs of tubing in the summertime.  The wind stirs the tops of the trees, making them sway gentling, creaking and cracking their outer bark as they attempt to resist against the wind.  Up a slight incline to the east is the a small crevice that you think is an entrance into a cave.  Through the trees to the west you can see the side of the leanto in a camp.  One of the pines seems abnormally bent at its base and grew up very crooked indeed, certainly nature could not have made the bent tree grow like that.", 
- "short_description": "The pines stand stoically around you swaying the wind gently, like an overcrowded metro.  There is an old large tree stump that peaks your interest and one of the pines is so bent that it looks like the top of a cane only upside down.  To your south you can hear water moving in the river, up a slight incline is an a small crevice that forms an entrance to a cave and to the west you still see the leanto holding itself up in the camp.", 
+ "id": 7,
+ "title": "woods",
+ "visited": false,
+ "room_temp": "1",
+ "long_description": "You are in a woods. The tall pines feel like they are trying to surround you here. The wind stirs their tops, causing the trees to sway and making their outer bark creak and crack. The upper branches of the pines are heavily ladened with snow, and every so often, you hear a clump hit the ground with a gentle thump. You look around and see a tree stump. It has a citrusy, piney odor that reminds you of home cleaning products. (Or perhaps home cleaning products should remind you of the woods...) You also see a bent pine tree. It is bent at its base and has grown crookedly. It looks unnatural. To the south you can hear water moving. It must be a river. Its sound reminds you of the much more pleasant affair of tubing in the summertime. Up a slight incline to the east is a small crevice that you think is an entrance to a cave. You see a camp through the trees to the west.",
+ "short_description": "You are in a woods. The pines stand packed together around you. They sway gently in the wind like passengers on an overcrowded metro.  here is an old, large tree stump that piques your interest and a bent pine that it looks like the top of a cane only upside down. To the south you can hear a river. To the east, up a slight incline, is an entrance to a cave. And, to the west, you see the camp.",
  "features": {
   "tree stump": {
    "aliases": [
-    "tree stump", 
+    "tree stump",
     "stump"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You give the stump a huge bear huge and pull on it with all your might.  Better not pull something in your back."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 woods", 
-     "description": "You sit on the stump for a spell.  You start to get cold and bored.  It may be best to keep moving.", 
+     "deactivate_description": "use deactivate for feature 1 woods",
+     "description": "You sit on the stump for a spell.  You start to get cold and bored.  It may be best to keep moving.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "From where you are the tree stump seems firmly planted in its rooted state.  The top shows a bit of a hollow, likely rotting over the years.  It still wears a small mantle of bark and must have been a handsome tree before it was savagely cut down.  Logging in the region is big business.  It is curious though why there is only one stump and not more.  Perhaps because it was the biggest of them all."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The stump is solidly stuck in the ground and not moving."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
-     "description": "You see a small carving on the top of the tree stump", 
+     "modifiers": {},
+     "description": "You see a small carving on the top of the tree stump",
      "artifact": [
-      " ___  __      _            ____ ___", 
-      "|    /  \\    / \\    |        | |   \\", 
-      "|__ |       /___\\   |        | |__ /", 
-      "|   |      /     \\  |    |   | |", 
+      " ___  __      _            ____ ___",
+      "|    /  \\    / \\    |        | |   \\",
+      "|__ |       /___\\   |        | |__ /",
+      "|   |      /     \\  |    |   | |",
       "|___.\\__/./       \\.|___.\\__/ .| ."
      ]
-    }, 
+    },
     "search": {
      "modifiers": {
       "room_updates": {
        "woods": {
-        "feature_searched": true, 
+        "feature_searched": true,
         "features": {
          "tree stump": {
           "verbs": {
@@ -58,134 +58,136 @@
         }
        }
       }
-     }, 
+     },
      "description": "The tree stump looks like it is the remnant of a logging operation.  The top is cut flat and has been hollowed out over the years, while it is slowly rotting away.  You think this would be a great spot to hide a few precious items and they should stay safe.  Besides a few termites feasting on the flesh of the stump, there is a carving on the top of the stump."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "This is not a Strong Man competition, so don't even try it."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Wood just really is not part of your diet."
     }
-   }, 
+   },
    "title": "tree stump"
-  }, 
+  },
   "bent pine": {
    "aliases": [
-    "bent pine"
-   ], 
+    "bent pine",
+    "bent pine tree",
+    "bent tree"
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You pull on the trees limbs and they resist you."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 woods", 
-     "description": "You feel the tree is pointing you in a direction that is safe travel.", 
+     "deactivate_description": "use deactivate for feature 2 woods",
+     "description": "You feel the tree is pointing you in a direction that is safe travel.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "This appears to be a trail marker of some kind.  Although the trail is long gone and no evidence remains of any sort of human movement through this area.  You vaguely recall your guide telling you about how the people living in this area a long time ago, would take young saplings and purposefully convince them to grow in a bent shape for a few years of their life in order to create trail markers to know how to locate safe passages.  It seems to be pointing towards the small entrance to the cave."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Paul Bunyan you are not and so you will be leaving this tree where it is rooted."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
-     "description": "There is a small inscription on the tree that you can make out", 
+     "modifiers": {},
+     "description": "There is a small inscription on the tree that you can make out",
      "artifact": [
-      "        ,", 
-      "       ||", 
-      "      |  | ", 
-      "     |    |", 
-      ".^. (o)(o) |  .^.", 
-      "| |  |     |  | |", 
-      "'_'  |___  |  '_'", 
-      "   \\_|\\_/  |_/ ", 
-      "     |    |", 
-      "     |   |", 
-      "     |__|", 
-      "    //  \\\\", 
-      "    |    |", 
-      "   '`'  '`'", 
+      "        ,",
+      "       ||",
+      "      |  | ",
+      "     |    |",
+      ".^. (o)(o) |  .^.",
+      "| |  |     |  | |",
+      "'_'  |___  |  '_'",
+      "   \\_|\\_/  |_/ ",
+      "     |    |",
+      "     |   |",
+      "     |__|",
+      "    //  \\\\",
+      "    |    |",
+      "   '`'  '`'",
       "   ^-^  ^-^"
      ]
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Not much to be found around the base of this tree. On the side of the tree there is a small carving."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You shake the pine, but needles do not drop from its branches."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Bark, if boiled long enough might be tasty but you are not that hungry."
     }
-   }, 
+   },
    "title": "bent pine"
   }
- }, 
- "items_in_room": [], 
- "feature_searched": true, 
+ },
+ "items_in_room": [],
+ "feature_searched": true,
  "connected_rooms": {
   "camp": {
-   "accessible": true, 
-   "title": "camp", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "west", 
-   "id": 0, 
+   "accessible": true,
+   "title": "camp",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "west",
+   "id": 0,
    "aliases": [
     "camp"
    ]
-  }, 
+  },
   "river": {
-   "accessible": true, 
-   "title": "river", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "south", 
-   "id": 0, 
+   "accessible": true,
+   "title": "river",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "south",
+   "id": 0,
    "aliases": [
-    "river", 
+    "river",
     "stream"
    ]
-  }, 
+  },
   "cave": {
-   "accessible": false, 
-   "title": "cave", 
-   "distance_from_room": 1, 
-   "item_required": true, 
-   "item_required_title": "lantern", 
-   "pre_item_description": "You walk a few feet into the entrance only to be confronted by a solid stone surface.  It appears to look like natural rock.  Maybe there is another way in or around?  You head back into the woods.", 
-   "compass_direction": "east", 
-   "id": 0, 
+   "accessible": false,
+   "title": "cave",
+   "distance_from_room": 1,
+   "item_required": true,
+   "item_required_title": "lantern",
+   "pre_item_description": "You walk a few feet into the entrance only to be confronted by a solid stone surface.  It appears to look like natural rock.  Maybe there is another way in or around?  You head back into the woods.",
+   "compass_direction": "east",
+   "id": 0,
    "aliases": [
-    "cave", 
+    "cave",
     "cavern"
    ]
   }
- }, 
+ },
  "room_artifact": [
-  "      |    _|\\\\        |       _|        |    __ |", 
-  "      |     | \\@)      |       -|        |   --  |", 
-  "      |=    |          |        |       /_       |", 
-  "      |     |          |   (@)  |     (@/|       |", 
-  "      |  -  |          |-_      |        |       |", 
-  "      |_    |          |        |        |_     -|", 
-  "      |-    |          |      _ |        |      =|", 
-  "      |    =|          |     -  |        |       |", 
-  "      |     |          |=       |        |       |", 
+  "      |    _|\\\\        |       _|        |    __ |",
+  "      |     | \\@)      |       -|        |   --  |",
+  "      |=    |          |        |       /_       |",
+  "      |     |          |   (@)  |     (@/|       |",
+  "      |  -  |          |-_      |        |       |",
+  "      |_    |          |        |        |_     -|",
+  "      |-    |          |      _ |        |      =|",
+  "      |    =|          |     -  |        |       |",
+  "      |     |          |=       |        |       |",
   "'```'/  ,  ` \\`'`.`'`./`.  '`   \\'`.'`,'/   ,`    \\,'`'.,`'`',"
  ]
 }
