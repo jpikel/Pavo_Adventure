@@ -17,7 +17,7 @@ features = {
    "wood pole": "wood pole", 
    "deer carcass": "deer carcass", 
    "canoe": "canoe", 
-   "shortwave radio": "shortwave radio", 
+   "campfire": "campfire pit", 
    "bent pine": "bent pine", 
    "blood stained snow": "blood stained snow", 
    "snow capped island": "snow capped island", 
@@ -32,14 +32,19 @@ features = {
    "plunge pool": "plunge pool", 
    "animal corral": "animal corral", 
    "blood": "blood stained snow", 
+   "bent pine tree": "bent pine", 
    "campfire pit": "campfire pit", 
    "camping cooler": "camping cooler", 
+   "shortwave radio": "shortwave radio", 
    "small gorge": "small gorge", 
+   "fur": "clumps of bloody fur", 
    "driftwood": "driftwood", 
-   "cooler": "camping cooler", 
+   "bloody fur": "clumps of bloody fur", 
    "island": "snow capped island", 
    "tree": "bent pine", 
    "corral": "animal corral", 
+   "cooler": "camping cooler", 
+   "bent tree": "bent pine", 
    "tree stump": "tree stump", 
    "hay roll": "hay roll", 
    "wolves": "wolves"
@@ -151,9 +156,9 @@ all_words = {
       "type": "feature", 
       "master_word": "clumps of bloody fur"
    }, 
-   "move": {
-      "type": "action", 
-      "master_word": "go"
+   "heavy winter parka": {
+      "type": "item", 
+      "master_word": "heavy winter parka"
    }, 
    "pick up": {
       "type": "action", 
@@ -227,13 +232,17 @@ all_words = {
       "type": "room", 
       "master_word": "east"
    }, 
-   "inventory": {
-      "type": "action", 
-      "master_word": "inventory"
+   "summit": {
+      "type": "room", 
+      "master_word": "mountain summit"
    }, 
    "flat": {
       "type": "room", 
       "master_word": "field"
+   }, 
+   "move": {
+      "type": "action", 
+      "master_word": "go"
    }, 
    "north": {
       "type": "room", 
@@ -275,13 +284,17 @@ all_words = {
       "type": "item", 
       "master_word": "can of sweetened condensed milk"
    }, 
-   "heavy winter parka": {
-      "type": "item", 
-      "master_word": "heavy winter parka"
+   "bent pine tree": {
+      "type": "feature", 
+      "master_word": "bent pine"
    }, 
    "campfire pit": {
       "type": "feature", 
       "master_word": "campfire pit"
+   }, 
+   "fur": {
+      "type": "feature", 
+      "master_word": "clumps of bloody fur"
    }, 
    "candy bar": {
       "type": "item", 
@@ -311,9 +324,13 @@ all_words = {
       "type": "action", 
       "master_word": "look"
    }, 
-   "cooler": {
+   "bloody fur": {
       "type": "feature", 
-      "master_word": "camping cooler"
+      "master_word": "clumps of bloody fur"
+   }, 
+   "inventory": {
+      "type": "action", 
+      "master_word": "inventory"
    }, 
    "drop": {
       "type": "action", 
@@ -327,17 +344,17 @@ all_words = {
       "type": "item", 
       "master_word": "old map"
    }, 
-   "shortwave radio": {
+   "storage shed": {
       "type": "feature", 
-      "master_word": "shortwave radio"
+      "master_word": "storage shed"
    }, 
-   "fire tower": {
-      "type": "room", 
-      "master_word": "fire tower"
+   "cooler": {
+      "type": "feature", 
+      "master_word": "camping cooler"
    }, 
-   "investigate": {
-      "type": "action", 
-      "master_word": "search"
+   "bent tree": {
+      "type": "feature", 
+      "master_word": "bent pine"
    }, 
    "can": {
       "type": "item", 
@@ -374,10 +391,6 @@ all_words = {
    "canoe": {
       "type": "feature", 
       "master_word": "canoe"
-   }, 
-   "storage shed": {
-      "type": "feature", 
-      "master_word": "storage shed"
    }, 
    "deer": {
       "type": "feature", 
@@ -427,6 +440,10 @@ all_words = {
       "type": "feature", 
       "master_word": "wood pole"
    }, 
+   "fire tower": {
+      "type": "room", 
+      "master_word": "fire tower"
+   }, 
    "island": {
       "type": "feature", 
       "master_word": "snow capped island"
@@ -447,9 +464,9 @@ all_words = {
       "type": "item", 
       "master_word": "lantern"
    }, 
-   "summit": {
-      "type": "room", 
-      "master_word": "mountain summit"
+   "campfire": {
+      "type": "feature", 
+      "master_word": "campfire pit"
    }, 
    "bent pine": {
       "type": "feature", 
@@ -551,6 +568,10 @@ all_words = {
       "type": "feature", 
       "master_word": "camping cooler"
    }, 
+   "shortwave radio": {
+      "type": "feature", 
+      "master_word": "shortwave radio"
+   }, 
    "boat paddle": {
       "type": "item", 
       "master_word": "boat paddle"
@@ -610,6 +631,10 @@ all_words = {
    "tree stump": {
       "type": "feature", 
       "master_word": "tree stump"
+   }, 
+   "investigate": {
+      "type": "action", 
+      "master_word": "search"
    }, 
    "discard": {
       "type": "action", 
