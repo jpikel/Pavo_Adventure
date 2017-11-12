@@ -9,6 +9,7 @@ features = {
    "sign": "sign", 
    "pole": "wood pole", 
    "stone marker": "stone marker", 
+   "radio": "shortwave radio", 
    "storage shed": "storage shed", 
    "pit": "campfire pit", 
    "rock shelf": "rock shelf", 
@@ -172,6 +173,10 @@ all_words = {
       "type": "room", 
       "master_word": "woods"
    }, 
+   "radio": {
+      "type": "feature", 
+      "master_word": "shortwave radio"
+   }, 
    "eat": {
       "type": "action", 
       "master_word": "eat"
@@ -292,9 +297,15 @@ all_words = {
       "type": "feature", 
       "master_word": "campfire pit"
    }, 
+<<<<<<< HEAD
    "fur": {
       "type": "feature", 
       "master_word": "clumps of bloody fur"
+=======
+   "bent pine tree": {
+      "type": "feature", 
+      "master_word": "bent pine"
+>>>>>>> 6c113c0d49ca311476b80b226a22fc4d53ad0e01
    }, 
    "candy bar": {
       "type": "item", 
@@ -328,9 +339,15 @@ all_words = {
       "type": "feature", 
       "master_word": "clumps of bloody fur"
    }, 
+<<<<<<< HEAD
    "inventory": {
       "type": "action", 
       "master_word": "inventory"
+=======
+   "fur": {
+      "type": "feature", 
+      "master_word": "clumps of bloody fur"
+>>>>>>> 6c113c0d49ca311476b80b226a22fc4d53ad0e01
    }, 
    "drop": {
       "type": "action", 
