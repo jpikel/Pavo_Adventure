@@ -22,12 +22,16 @@
  "shelter": "leanto", 
  "tree stump": "tree stump", 
  "stump": "tree stump", 
+ "bent pine tree": "bent pine", 
+ "bent tree": "bent pine", 
  "small shelf": "small shelf", 
  "shelf": "small shelf", 
  "wood pole": "wood pole", 
  "pole": "wood pole", 
  "sign": "sign", 
  "clumps of bloody fur": "clumps of bloody fur", 
+ "fur": "clumps of bloody fur", 
+ "bloody fur": "clumps of bloody fur", 
  "locked safe": "locked safe", 
  "safe": "locked safe", 
  "look out": "look out", 
@@ -42,5 +46,6 @@
  "rock shelf": "rock shelf", 
  "heron": "heron", 
  "footlocker": "footlocker", 
- "shortwave radio": "shortwave radio"
+ "shortwave radio": "shortwave radio", 
+ "radio": "shortwave radio"
 }

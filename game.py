@@ -417,11 +417,7 @@ class Game():
             msg= "Congratulations, you survived the Desolate Journey" 
             self.write_stat_handler(msg) 
             self.write_time_handler(helpers.FIREWORKS)
-            if USE_CURSES: 
-                game_ui.roll_credits()
-                self.write_time_handler(helpers.FIREWORKS)  
-            else:
-                game_ui.roll_credits_basic()
+            self.roll_credits_handler()
         self.ui_refresh()
 
         #description should always come with process functions so we
@@ -716,6 +712,11 @@ class Game():
         """
         if USE_CURSES: game_ui.write_main_artifact(content)
         else: helpers.multi_printer(content)
+
+    def roll_credits_handler(self):
+        if USE_CURSES: game_ui.roll_credits()
+        else: helpers.roll_credits_basic()
+
 
     def validate_curses(self):
         """

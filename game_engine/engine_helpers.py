@@ -247,6 +247,11 @@ def multi_printer(text, player_name=None):
         print 'Error: did not receive list of strings or string'
 
 
+def roll_credits_basic():
+    multi_printer(CREDITS)
+    multi_printer(PAVO)
+
+
 def replace_player_name(text, player_name):
     """
     searchs the string for <playername> and inserts the player_name passed in
@@ -540,9 +545,6 @@ class ui():
             self.print_text(x,y,key, curses.A_BOLD)
         self.write_main_artifact(PAVO)
 
-    def roll_credits_basic(self):
-        multi_printer(CREDITS)
-        multi_printer(PAVO)
 
 
     def print_text(self, x, y, text, attribute=None):

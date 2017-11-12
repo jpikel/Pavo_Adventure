@@ -70,7 +70,8 @@
   }, 
   "shortwave radio": {
    "aliases": [
-    "shortwave radio"
+    "shortwave radio", 
+    "radio"
    ], 
    "verbs": {
     "pull": {
