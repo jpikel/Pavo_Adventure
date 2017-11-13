@@ -51,25 +51,25 @@ class Player(object):
         """
         text = ""
         if self.illness <= 10:
-            text =  "You feel well, "
+            text =  "You feel well "
         elif self.illness > 10 and self.illness <=20:
-            text =  "You are a little worn down, "
+            text =  "You are a little worn down, and you are "
         elif self.illness > 20 and self.illness<=30:
-            text =  "Things are looking bad, "
+            text =  "Things are looking bad, and you are "
         elif self.illness > 30 and self.illness <=40:
-            text =  "Things are looking bad, "
+            text =  "Things are looking bad, and you are "
         elif self.illness > 40:
             text =  "You are on death's door,"
         if self.hunger <= 10:
-            text += "well fed, "
+            text += "well fed "
         elif self.hunger > 10 and self.hunger <= 20:
-            text += "mildly peckish, "
+            text += "mildly peckish "
         elif self.hunger > 20 and self.hunger <= 30:
-            text += "very hungry, "
+            text += "very hungry "
         elif self.hunger > 30 and self.hunger <= 40:
-            text += "ravenous, "
+            text += "ravenous "
         elif self.hunger > 40:
-            text += "dying of hunger, "
+            text += "dying of hunger "
         if self.cold <= 10:
             text += "and not cold."
         elif self.cold > 10 and self.cold <= 20:
