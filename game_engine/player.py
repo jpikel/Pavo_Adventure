@@ -59,7 +59,7 @@ class Player(object):
         elif self.illness > 30 and self.illness <=40:
             text =  "Things are looking bad, and you are "
         elif self.illness > 40:
-            text =  "You are on death's door,"
+            text =  "You are on death's door, and you are"
         if self.hunger <= 10:
             text += "well fed "
         elif self.hunger > 10 and self.hunger <= 20:
