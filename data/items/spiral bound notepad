@@ -72,7 +72,7 @@
        "locked safe": {
         "verbs": {
          "use": {
-          "description": "You spin the dial slowly to the right to the number 24, then back to the left one complete turn and stop on 6.  Finally you turn to the right to number 37.  There is a definitive click.  You turn the handle and the door of the safe opens.", 
+          "description": "You spin the dial slowly to the right to number 24, then back to the left one complete turn and stop on 6.  Finally you turn right to number 37.  There is a definitive click.  You turn the handle and the door of the safe opens.", 
           "modifiers": {
            "room_updates": {
             "fire tower": {

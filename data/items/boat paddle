@@ -12,7 +12,7 @@
   }, 
   "use": {
    "deactivate_description": "use deactivate for boat paddle", 
-   "description": "You swing the paddle around, pretending to be negotiating some rapids.", 
+   "description": "You swing the paddle around wildly through the air.", 
    "modifiers": {}
   }, 
   "drop": {
@@ -25,7 +25,7 @@
      "title": "any"
     }
    }, 
-   "description": "You lay down the paddle."
+   "description": "You put down the paddle."
   }, 
   "take": {
    "modifiers": {
@@ -70,11 +70,11 @@
   }, 
   "search": {
    "modifiers": {}, 
-   "description": "You take a moment to admire the long slender turned handle of the paddle, the grip is comfortable in your hand.  The throat of the paddle expands into the blade.  The tip is a bit worn from use."
+   "description": "You take a moment to admire the long slender turned handle, the grip is comfortable in your hand.  The throat of the paddle expands into the blade.  The tip is a bit worn from use."
   }, 
   "look at": {
    "modifiers": {}, 
-   "description": "The paddle has some deep dark brown stains in it.  It is in reasonable shape and could possibly be used to navigate still.  There appear to be teeth marks down on the wide part of the paddle.  You wonder how hungry someone or something must have been."
+   "description": "The paddle has some dark reddish brown stains on the front.  It is in reasonable shape and could possibly be used.  There appear to be teeth marks down on the wide part of the paddle.  You wonder how hungry someone or something must have been."
   }, 
   "eat": {
    "modifiers": {}, 

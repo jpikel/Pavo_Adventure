@@ -174,10 +174,20 @@ class Player(object):
         if  len(self.inventory) == 0:
             text = "You don't have anything in your inventory"
         else:
+            item_list = self.inventory
             text = "Rummaging through your belongings you find "
-            for item in self.inventory:
-                text += "a " + item['title'] + ", "
-            text = text[:-2]
+            for item in item_list:
+                #if we have more than 1 item in our list
+                #and this item is the last item
+                #use and item
+                if (item_list.index(item) > 0 and 
+                        item_list.index(item) == len(item_list)-1):
+                    text += 'and a ' + item['title'] + '.'
+                else:
+                    text += 'a ' + item['title'] + ', '
+            if text[-2] == ',':
+                text = text[:-2] + '.'
+
         return text
 
     def get_items_inventory_titles(self):

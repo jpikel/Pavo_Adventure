@@ -9,7 +9,7 @@
  "verbs": {
   "pull": {
    "modifiers": {}, 
-   "description": "You pick at the wrapper a bit.  But don't want to ruin the beautiful reminder of civilization that this little bit of brand marketing that is so finely wrapped around the can comes from.  Where you need to return to."
+   "description": "You pick at the wrapper a bit.  But don't want to ruin the beautiful reminder of civilization that this little bit of brand marketing comes from.  One day you hope to return to that world."
   }, 
   "use": {
    "deactivate_description": "use deactivate for can of sweetened condensed milk", 
@@ -46,7 +46,7 @@
              "description": "An empty can of Eagle brand sweetened condensed milk."
             }, 
             "eat": {
-             "description": "You've already eaten the sweet goodness once contained in this can.", 
+             "description": "You've already eaten the sweet goodness that this can once contained.", 
              "modifiers": {
               "player": {}, 
               "item_updates": {}
@@ -109,7 +109,7 @@
      }
     }
    }, 
-   "description": "You pick up the can, the read blue and label crinkles a bit under your grip."
+   "description": "You pick up the can, the label crinkles a bit under your grip."
   }, 
   "read": {
    "modifiers": {}, 
@@ -121,7 +121,7 @@
   }, 
   "look at": {
    "modifiers": {}, 
-   "description": "A wonderful eagle brand can of sweetened condensed milk.  Almost 1000 calories in the can, makes you salivate, faint from the sugar and your stomach jump for joy in happiness."
+   "description": "A wonderful Eagle brand can of sweetened condensed milk.  Almost 1000 calories in the can, makes you salivate, faint from the sugar and your stomach jump for joy in happiness."
   }, 
   "eat": {
    "modifiers": {}, 
