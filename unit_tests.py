@@ -397,6 +397,24 @@ class TestParser(unittest.TestCase):
         }
         self.assertEqual(output_2, expected_output_2)
 
+        input_3 = "search campfire"
+        output_3 = parser.parse_command(input_3)
+        expected_output_3 = {
+            "type": "feature_action",
+            "command": {"action": "search", "feature": "campfire pit"},
+            "processed": True
+        }
+        self.assertEqual(output_3, expected_output_3)
+
+        input_4 = "look at snow-capped island"
+        output_4 = parser.parse_command(input_4)
+        expected_output_4 = {
+            "type": "feature_action",
+            "command": {"action": "look at", "feature": "snow capped island"},
+            "processed": True
+        }
+        self.assertEqual(output_4, expected_output_4)
+
     def test_parse_feature_only(self):
         input_1 = "deer"
         output_1 = parser.parse_command(input_1)
@@ -570,7 +588,7 @@ class TestPlayerClass(unittest.TestCase):
         items = getItems()
         self.player.inventory = items
         #test each item with all verbs
-        
+
         for item in items:
             for verb in verbs:
                 print verb + ' ' + item['title']
@@ -632,7 +650,7 @@ class TestPlayerClass(unittest.TestCase):
             print 'searching for ' + title + ' in inventory'
             item = self.player.search_inventory(title)
             self.assertEqual(title, item['title'])
-        
+
         for title in item_titles:
             print 'removing ' + title + ' from inventory'
             self.player.remove_item_from_inventory(title)
@@ -720,7 +738,7 @@ class TestFileLib(unittest.TestCase):
                 item['active'] = False
             else:
                 item['active'] = True
-            files.store_item(item)                
+            files.store_item(item)
 
         files.save_game(self.player, current_room, 0)
         print "TEST compare the room files in both dirs to check that they match"
@@ -763,7 +781,7 @@ class TestFileLib(unittest.TestCase):
         print "Open each room and edit the visited attribute"
         for title in rooms:
             room = files.load_room(title)
-            room['visited'] = "" 
+            room['visited'] = ""
             files.store_room(room)
 
         print "Open each item and edit the active attribute"
@@ -773,7 +791,7 @@ class TestFileLib(unittest.TestCase):
                 item['active'] = False
             else:
                 item['active'] = True
-            files.store_item(item)                
+            files.store_item(item)
 
         title = random.choice(rooms)
         current_room = files.load_room(title)
@@ -871,7 +889,7 @@ class TestFileLib(unittest.TestCase):
 
 
 
-        
+
 
 
 

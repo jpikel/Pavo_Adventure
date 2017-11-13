@@ -47,7 +47,9 @@ def _preprocess(input_string):
     Returns: A processed string.
     """
     preprocessed_string = input_string.lower()
-    # Remove any character that is not a number or letter.
+    # Convert any hyphens to spaces
+    preprocessed_string = re.sub('-', ' ', preprocessed_string)
+    # Remove any character that is not a number, letter, or space.
     preprocessed_string = re.sub('[^A-Za-z0-9 ]', '', preprocessed_string)
     return preprocessed_string
 
@@ -157,11 +159,11 @@ def _generate_full_match_regex_patterns():
     # Create list of different patterns that consist entirely of
     # known words.
     patterns[REGEX_PATTERNS.KNOWN_ACTION_AND_ITEM] = \
-        '(' + action_or + ') (' + item_or + ')'
+        '\\b(' + action_or + ')\\b \\b(' + item_or + ')\\b'
     patterns[REGEX_PATTERNS.KNOWN_ACTION_AND_ROOM] = \
-        '(' + action_or + ') (' + room_or + ')'
+        '\\b(' + action_or + ')\\b \\b(' + room_or + ')\\b'
     patterns[REGEX_PATTERNS.KNOWN_ACTION_AND_FEATURE] = \
-        '(' + action_or + ') (' + feature_or + ')'
+        '\\b(' + action_or + ')\\b \\b(' + feature_or + ')\\b'
     return patterns
 
 def _match_user_input_pattern(input_string, regex_patterns):
@@ -299,3 +301,4 @@ def parse_command(command):
 # https://www.regular-expressions.info/alternation.html
 # https://stackoverflow.com/questions/43198074/how-to-sort-a-list-of-words-by-length
 # https://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python
+# https://stackoverflow.com/questions/4173787/string-exact-match

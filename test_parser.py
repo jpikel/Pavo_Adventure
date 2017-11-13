@@ -80,7 +80,7 @@ print "Calling parse command on it..."
 print parse.parse_command(test_input)
 print ""
 
-test_input = "overlook"
+test_input = "search campfire"
 print "The test input is: " + test_input
 print "Calling parse command on it..."
 print parse.parse_command(test_input)

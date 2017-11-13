@@ -1,43 +1,43 @@
 {
- "id": 2,
- "title": "crash site",
- "visited": false,
- "room_temp": "2",
- "long_description": "You walk towards a crash site in the middle of a small clearing. Pine trees tower above you, holding up the snow as best as they can. As you enter the clearing, the breeze stops. You hear the faint sound of wolves howling in the distance, and your pulse quickens. As you look around, you see the remnants of an old dog sled, which appears to have been badly damaged in some sort of accident. You also see a campfire pit. Perhaps the musher who crashed spent some time here tending to injuries or waiting for rescue. To the west, you see the shore. To the east, you notice that the snow has been packed down. You don't see any human footprints, so you assume it is a game trail. To the south, you see a camp with what appears to be a small leanto.",
- "short_description": "You walk towards a crash site in a clearing. You see a badly damaged dog sled and a campfire pit. An icy shore is to the west, a game trail meanders through the woods to the east, and a camp is to the south.",
+ "id": 2, 
+ "title": "crash site", 
+ "visited": false, 
+ "room_temp": "2", 
+ "long_description": "You walk towards a crash site in the middle of a small clearing. Pine trees tower above you, holding up the snow as best as they can. As you enter the clearing, the breeze stops. You hear the faint sound of wolves howling in the distance, and your pulse quickens. As you look around, you see the remnants of an old dog sled, which appears to have been badly damaged in some sort of accident. You also see a campfire pit. Perhaps the musher who crashed spent some time here tending to injuries or waiting for rescue. To the west, you see the shore. To the east, you notice that the snow has been packed down. You don't see any human footprints, so you assume it is a game trail. To the south, you see a camp with what appears to be a small leanto.", 
+ "short_description": "You walk towards a crash site in a clearing. You see a badly damaged dog sled and a campfire pit. An icy shore is to the west, a game trail meanders through the woods to the east, and a camp is to the south.", 
  "features": {
   "dog sled": {
    "aliases": [
-    "dog sled",
+    "dog sled", 
     "sled"
-   ],
+   ], 
    "verbs": {
     "pull": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You attempt to drag the sled, it moves a few millimeters.  You will likely not get anywhere soon this way."
-    },
+    }, 
     "use": {
-     "deactivate_description": "use deactivate for feature 1 crash site",
-     "description": "Without dogs, this sled is not going anywhere.  Not to mention that the rails are snapped in a few places and it is missing the harness.",
+     "deactivate_description": "use deactivate for feature 1 crash site", 
+     "description": "Without dogs, this sled is not going anywhere.  Not to mention that the rails are snapped in a few places and it is missing the harness.", 
      "modifiers": {}
-    },
+    }, 
     "look at": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "The dog sled looks to have been of a good build.  It is unclear what caused the accident or why it was abandoned here.  Only the wood remains, the reins and strapping has all rotted away.  Nothing salvageable at least nothing that you could easily carry around with you.  If only you had gone with your guide, you would not be looking at this old broken down sled."
-    },
+    }, 
     "take": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Sadly this is not an option. The sled is just too big and heavy for you to carry around."
-    },
+    }, 
     "read": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "There is a small inscription on the inside of one of the rails, it reads \"To my dear husband.  Not all those who wander are lost\""
-    },
+    }, 
     "search": {
      "modifiers": {
       "room_updates": {
        "crash site": {
-        "feature_searched": true,
+        "feature_searched": true, 
         "features": {
          "dog sled": {
           "verbs": {
@@ -51,117 +51,118 @@
         }
        }
       }
-     },
+     }, 
      "description": "Getting closer to the dog sled, a glint catches your eye.  How could you have missed it before.  Hanging by a dry rotten string along one of the sides of the dog sled is a small tarnished rescue whistle.  It still appears in reasonable condition, just needs a bit of cleaning."
-    },
+    }, 
     "drop": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "The dog sled does not drop."
-    },
+    }, 
     "eat": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Whatever supplies may once have adorned the inside of the sled are long gone, eaten and forgotten."
     }
-   },
+   }, 
    "title": "dog sled"
-  },
+  }, 
   "campfire pit": {
    "aliases": [
-    "campfire pit",
-    "pit"
-   ],
+    "campfire pit", 
+    "pit", 
+    "campfire"
+   ], 
    "verbs": {
     "pull": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "No use disturbing a perfectly good fire pit, even if you have no use for it.  Perhaps someone else will."
-    },
+    }, 
     "use": {
-     "deactivate_description": "use deactivate for feature 2 crash site",
-     "description": "Without dry timber or any fire starting material you will have no chance to get any going here.",
+     "deactivate_description": "use deactivate for feature 2 crash site", 
+     "description": "Without dry timber or any fire starting material you will have no chance to get any going here.", 
      "modifiers": {}
-    },
+    }, 
     "look at": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "The campfire and warmth have long since left this firepit.  But what you wouldn't give to be standing in front of it.  You can almost feel the heat from the fire warming your exposed skin.  It's only a reminder of just how cold it is here.  The rocks have small snow hats and sit half buried in snow.  Just some snow covered ash is left in the campfire."
-    },
+    }, 
     "take": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "The rocks would weigh you down way too much, to be useful in the future."
-    },
+    }, 
     "read": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Using the ash you smear your initials onto one of the rocks and read it back to yourself.  Maybe if nothing else someone will find this and know you were once here."
-    },
+    }, 
     "search": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Poking through the snow covered ash, you don't find anything except more snow covered ash."
-    },
+    }, 
     "drop": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You pick up and drop one of the stones.  It makes a satisfying thud as it hits the ground."
-    },
+    }, 
     "eat": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Although once used for roasting weenies and marshmallow, now it only reminds you of how hungry you are."
     }
-   },
+   }, 
    "title": "campfire pit"
   }
- },
+ }, 
  "items_in_room": [
   "rescue whistle"
- ],
- "feature_searched": false,
+ ], 
+ "feature_searched": false, 
  "connected_rooms": {
   "shore": {
-   "accessible": true,
-   "title": "shore",
-   "distance_from_room": 1,
-   "item_required": false,
-   "item_required_title": "",
-   "pre_item_description": "",
-   "compass_direction": "west",
-   "id": 0,
+   "accessible": true, 
+   "title": "shore", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "west", 
+   "id": 0, 
    "aliases": [
-    "shore",
+    "shore", 
     "waterfront"
    ]
-  },
+  }, 
   "camp": {
-   "accessible": true,
-   "title": "camp",
-   "distance_from_room": 1,
-   "item_required": false,
-   "item_required_title": "",
-   "pre_item_description": "",
-   "compass_direction": "south",
-   "id": 0,
+   "accessible": true, 
+   "title": "camp", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "south", 
+   "id": 0, 
    "aliases": [
     "camp"
    ]
-  },
+  }, 
   "game trail": {
-   "accessible": true,
-   "title": "game trail",
-   "distance_from_room": 1,
-   "item_required": false,
-   "item_required_title": "",
-   "pre_item_description": "",
-   "compass_direction": "east",
-   "id": 0,
+   "accessible": true, 
+   "title": "game trail", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "east", 
+   "id": 0, 
    "aliases": [
-    "game trail",
+    "game trail", 
     "trail"
    ]
   }
- },
+ }, 
  "room_artifact": [
-  "      _ _  _ _ ",
-  "     (_)_)(_(_ );',",
-  "    (`) . .    (_ )       ___",
-  "   ,.;  - . -  - (_)   ,'     `.",
-  "  (_; -  -  --__ ;.\\   |`.___.'|",
-  "   ( `._- _-- ___,')   |   |  ||",
+  "      _ _  _ _ ", 
+  "     (_)_)(_(_ );',", 
+  "    (`) . .    (_ )       ___", 
+  "   ,.;  - . -  - (_)   ,'     `.", 
+  "  (_; -  -  --__ ;.\\   |`.___.'|", 
+  "   ( `._- _-- ___,')   |   |  ||", 
   "    `'(_ )_)(_)_)'     `,|__|_,'"
  ]
 }
