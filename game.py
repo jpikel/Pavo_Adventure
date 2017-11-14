@@ -239,7 +239,6 @@ class Game():
 			if RANDOM_TESTER:
 				userInput = random_input_tester()
 			else:
-				text=DO_WHAT
 				userInput = self.input_handler(text)
 				userInput = self.check_save_load_quit(userInput)
 			#if we have no userInput skip to asking and check_save_load_quit again
@@ -333,6 +332,7 @@ class Game():
 				self.write_main_bottom_handler('continuing game...')
 		#quit
 		elif userInput == "quit":
+			userInput = None
 			if self.saved ==False:
 				text = "Are you sure you want to quit without saving? y/n"
 				checkYes = self.input_handler(text)
