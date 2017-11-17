@@ -51,7 +51,7 @@ LOAD_SPECIFIC_ROOM_ON_NEW_GAME = 0
 SPECIFIC_ROOM = 'river'
 #this stops all the player attributes from being updated each round
 #such as illness, wounds and cold, allows rescue but not death
-GOD_MODE = 1
+GOD_MODE = 0
 #toggle on/off to randomize player input
 RANDOM_TESTER = 0
 #mirror input for testing purposes only
