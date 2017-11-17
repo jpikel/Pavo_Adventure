@@ -166,7 +166,8 @@ class response_struct():
                     "success":False,
                     "distance_from_room":0,
                     "modifiers": {},
-                    "room_artifact":{}
+                    "room_artifact":{},
+                    "warning":None
                 }
     @property
     def response(self):
@@ -202,6 +203,12 @@ class response_struct():
     def description(self, description):
         self.response['description'] = description
     @property
+    def warning(self):
+        return self.response['warning']
+    @description.setter
+    def warning(self, text):
+        self.response['warning'] = text
+    @property
     def distance_from_room(self):
         return self.response['distance_from_room']
     @distance_from_room.setter
@@ -219,6 +226,7 @@ class response_struct():
     @room_artifact.setter
     def room_artifact(self, value):
         self.response['room_artifact'] = value
+
 
 
 def get_input(comment=''):
