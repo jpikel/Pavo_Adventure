@@ -8,7 +8,8 @@
  "features": {
   "small gorge": {
    "aliases": [
-    "small gorge"
+    "small gorge", 
+    "gorge"
    ], 
    "verbs": {
     "pull": {
@@ -115,7 +116,7 @@
   }
  }, 
  "items_in_room": [], 
- "feature_searched": true, 
+ "feature_searched": false, 
  "connected_rooms": {
   "river": {
    "accessible": true, 

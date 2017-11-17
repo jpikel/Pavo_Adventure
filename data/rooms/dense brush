@@ -157,7 +157,7 @@
           "field": {
            "long_description": "You are standing in a open field. The snow is like a soft blanket laid across the earth. The wind picks up, and you feel colder than before. After being in the forest, you feel vulnerable in such an open space. As you look around, you see a hay roll sitting in the field. Thankfully you managed to scare off those wolves and they are no longer a danger.  To the east is the dense brush and  to the south you see the base of a mountain rising up.",
            "features": {
-            "2": {
+            "wolves": {
              "verbs": {
               "pull": {
                "description": "The wolves are gone now and no longer a worry or something you can pull on."

@@ -95,13 +95,13 @@
         "description": "Nothing is left of the candy bar except the wrapper."
        }, 
        "take": {
-        "description": "You pick up the wrapper and stuff it in your pocket"
+        "description": "You pick up the wrapper and stuff it in your pocket."
        }, 
        "use": {
-        "description": "This wrapper has less use than when it was filled with a delicious candy bar"
+        "description": "This wrapper has less use than when it was filled with a delicious candy bar."
        }, 
        "read": {
-        "description": "You read the wrapper. It informs you that the bar once contained 250 precious calories.  That you promptly consumed"
+        "description": "You read the wrapper. It informs you that the bar once contained 250 precious calories.  That you promptly consumed."
        },
        "pull": {
            "description": "You pull open the wrapper only to be disappointed that nothing is inside."

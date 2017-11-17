@@ -229,6 +229,9 @@ class Player(object):
         res = helpers.response_struct()
         try:
             item = self.search_inventory(item_title)
+            if item and action == 'take':
+                res.description = 'You are already holding the ' + item_title + '.'
+                return res
             res.title = item_title
             res.description = item['verbs'][action]['description']
             res.modifiers = item['verbs'][action]['modifiers']

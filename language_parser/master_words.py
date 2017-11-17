@@ -35,6 +35,7 @@ features = {
    "blood": "blood stained snow", 
    "bent pine tree": "bent pine", 
    "campfire pit": "campfire pit", 
+   "gorge": "small gorge", 
    "camping cooler": "camping cooler", 
    "shortwave radio": "shortwave radio", 
    "small gorge": "small gorge", 
@@ -181,6 +182,10 @@ all_words = {
    "eat": {
       "type": "action", 
       "master_word": "eat"
+   }, 
+   "path": {
+      "type": "room", 
+      "master_word": "mountain path"
    }, 
    "go": {
       "type": "action", 
@@ -566,9 +571,9 @@ all_words = {
       "type": "room", 
       "master_word": "shore"
    }, 
-   "path": {
-      "type": "room", 
-      "master_word": "mountain path"
+   "gorge": {
+      "type": "feature", 
+      "master_word": "small gorge"
    }, 
    "peek": {
       "type": "action", 
