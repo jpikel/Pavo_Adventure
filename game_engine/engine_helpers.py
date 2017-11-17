@@ -406,6 +406,7 @@ class ui():
             blank_line = " "*int(MAIN_WIN_COLS-2)
             for _ in range(row, MAIN_WIN_ROWS-1):
                 self.main_win.addstr(row, ui.COL,blank_line)
+        self.main_row = row
         self.main_win.refresh()
 
     def write_main_bottom(self, text):
