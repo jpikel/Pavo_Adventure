@@ -456,7 +456,7 @@ class Game():
 			res.action = 'look'
 			res.description = self.room.long_desc
 			if (title_or_compass != self.room.title):
-				res.warning = 'You are not in '+title_or_compass+'. But you can look around ' + self.room.title + '.'
+				res.warning = 'You are not in '+title_or_compass+'. But you can look around the ' + self.room.title + '.'
 		else:
 			res.description = "You can't " + action + " the " + title_or_compass+". "
 		return res
