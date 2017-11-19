@@ -1,59 +1,59 @@
 {
- "id": 9,
- "title": "mountain base",
- "visited": false,
- "room_temp": "0",
- "long_description": "You stand at a mountain base. You think you can hear a faint noise that sounds like it might be howling. It might just be the wind, but it might be something more ominous. Looking around, you see several clumps of bloody fur strewn about, which adds to your feeling of unease. You also see an old sign. Although it looks like it has not been maintained for years, it lifts your spirits slightly to see something manmade. To the south, you see a mountain path. The path looks cold and foreboding, but you think you can get up it, perhaps with some scrambling. To the north is a field.",
- "short_description": "You are at a mountain base. To the south is a mountain path, rising thousands of feet up. A field is to the north. You see a worn sign stuck into the ground and several clumps of bloody fur strewn about.",
+ "id": 9, 
+ "title": "mountain base", 
+ "visited": false, 
+ "room_temp": "0", 
+ "long_description": "You stand at a mountain base. You think you can hear a faint noise that sounds like it might be howling. It might just be the wind, but it might be something more ominous. Looking around, you see several clumps of bloody fur strewn about, which adds to your feeling of unease. You also see an old sign. Although it looks like it has not been maintained for years, it lifts your spirits slightly to see something manmade. To the south, you see a mountain path. The path looks cold and foreboding, but you think you can get up it, perhaps with some scrambling. To the north is a field.", 
+ "short_description": "You are at a mountain base. To the south is a mountain path, rising thousands of feet up. A field is to the north. You see a worn sign stuck into the ground and several clumps of bloody fur strewn about.", 
  "features": {
   "sign": {
    "aliases": [
     "sign"
-   ],
+   ], 
    "verbs": {
     "pull": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You pull for a few moments on the sign but it does not budge."
-    },
+    }, 
     "use": {
-     "deactivate_description": "use deactivate for feature 1 mountain base",
-     "description": "You don't know how to use the sign except to read it.",
+     "deactivate_description": "use deactivate for feature 1 mountain base", 
+     "description": "You don't know how to use the sign except to read it.", 
      "modifiers": {}
-    },
+    }, 
     "look at": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "The sign appears to be very old and quite weathered. Indeed, at first glance you don't even notice that it has any text on it. However, it looks like there are some letters that you can make out."
-    },
+    }, 
     "take": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Although the sign is very worn, it is solidly planted in the frozen earth and can't be moved. It seems better to just read it."
-    },
+    }, 
     "read": {
-     "modifiers": {},
-     "description": "The sign reads:",
+     "modifiers": {}, 
+     "description": "The sign reads:", 
      "artifact": [
-      " _ ",
-      "/ \\ ",
-      "\\_                          _",
-      "  \\     _  _     ._|_   /|  _\\  _  _ .",
-      "\\_/    | \\/ |    | \\  : _|_._/ | \\/ ||",
-      "  _",
-      "/  \\",
-      "| _/ ",
-      "|  \\   _       _  _      _ ,_    _|  _|_",
-      "|   \\ |_\\_    |_||-_    |_|| |  |_||_|\\\\/",
-      "               _|                      /",
-      " _  _                         __",
-      "/ \\/ \\                       /  \\",
-      "|    |  _            _|_ _  |    | _    |_  _  _",
+      " _ ", 
+      "/ \\ ", 
+      "\\_                          _", 
+      "  \\     _  _     ._|_   /|  _\\  _  _ .", 
+      "\\_/    | \\/ |    | \\  : _|_._/ | \\/ ||", 
+      "  _", 
+      "/  \\", 
+      "| _/ ", 
+      "|  \\   _       _  _      _ ,_    _|  _|_", 
+      "|   \\ |_\\_    |_||-_    |_|| |  |_||_|\\\\/", 
+      "               _|                      /", 
+      " _  _                         __", 
+      "/ \\/ \\                       /  \\", 
+      "|    |  _            _|_ _  |    | _    |_  _  _", 
       "|    | |_\\_           \\ |_|  \\__/ |_    |_||-_|"
      ]
-    },
+    }, 
     "search": {
      "modifiers": {
       "room_updates": {
        "mountain base": {
-        "feature_searched": true,
+        "feature_searched": true, 
         "features": {
          "sign": {
           "verbs": {
@@ -67,110 +67,111 @@
         }
        }
       }
-     },
+     }, 
      "description": "You look around the sign but you don't see anything of value."
-    },
+    }, 
     "drop": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "The sign is firmly planted in its currently dropped in the earth position."
-    },
+    }, 
     "eat": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "That's a bad idea. The last thing you need right now is a broken tooth."
     }
-   },
+   }, 
    "title": "sign"
-  },
+  }, 
   "clumps of bloody fur": {
    "aliases": [
-    "clumps of bloody fur",
-    "fur",
+    "clumps of bloody fur", 
+    "fur", 
     "bloody fur"
-   ],
+   ], 
    "verbs": {
     "pull": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Although it may be get the adrenaline pumping to pull on someone's hair it is not so exciting when it is laying on the ground."
-    },
+    }, 
     "use": {
-     "deactivate_description": "use deactivate for feature 2 mountain base",
-     "description": "You think about what to do with the fur, but can't come up with anything. If you had matches, perhaps it could be kindling and start a warm fire. But, you don't.",
+     "deactivate_description": "use deactivate for feature 2 mountain base", 
+     "description": "You think about what to do with the fur, but can't come up with anything. If you had matches, perhaps it could be kindling and start a warm fire. But, you don't.", 
      "modifiers": {}
-    },
+    }, 
     "look at": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You see several clumps of fur, strewn about and matted with an alarming amount of now-dried blood. The amount of fur and blood indicates that whatever once had this fur as its coat met a horrifying end. Your palms begin to sweat as you consider the likelihood that whatever happened here could happen again."
-    },
+    }, 
     "take": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You attempt to pick up the bloody clumps of fur, but they disintegrate in your hands, and you don't have anything good to store them in."
-    },
+    }, 
     "read": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You gather no new evidence from the crime scene."
-    },
+    }, 
     "search": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "Try as you might you can't convince yourself to root around in the mess of fur and blood."
-    },
+    }, 
     "drop": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You'd rather not pick up the bloody fur just to drop it again."
-    },
+    }, 
     "eat": {
-     "modifiers": {},
+     "modifiers": {}, 
      "description": "You would certainly get sick if you tried to do that, and there is minimal nutritional value to be gained."
     }
-   },
+   }, 
    "title": "clumps of bloody fur"
   }
- },
- "items_in_room": [],
- "feature_searched": false,
+ }, 
+ "items_in_room": [], 
+ "feature_searched": false, 
  "connected_rooms": {
   "field": {
-   "accessible": true,
-   "title": "field",
-   "distance_from_room": 1,
-   "item_required": false,
-   "item_required_title": "",
-   "pre_item_description": "",
-   "compass_direction": "north",
-   "id": 0,
+   "accessible": true, 
+   "title": "field", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "north", 
+   "id": 0, 
    "aliases": [
-    "field",
-    "flat"
+    "field", 
+    "flat", 
+    "open field"
    ]
-  },
+  }, 
   "mountain path": {
-   "accessible": true,
-   "title": "mountain path",
-   "distance_from_room": 1,
-   "item_required": false,
-   "item_required_title": "",
-   "pre_item_description": "",
-   "compass_direction": "south",
-   "id": 0,
+   "accessible": true, 
+   "title": "mountain path", 
+   "distance_from_room": 1, 
+   "item_required": false, 
+   "item_required_title": "", 
+   "pre_item_description": "", 
+   "compass_direction": "south", 
+   "id": 0, 
    "aliases": [
-    "mountain path",
+    "mountain path", 
     "path"
    ]
   }
- },
+ }, 
  "room_artifact": [
-  "",
-  "                                _",
-  "   ____________________________/ \\",
-  "  /                           |   |",
-  " /   NATIONAL PARK SERVICE    | | |",
-  "|                             |   | ",
-  "|                             |  ||",
-  "\\                             |   | ",
-  " \\____________________________||__|",
-  "  ___\\___\\____________________|___|",
-  " | .                            . |",
-  " |________________________________|",
-  "    \\  \\                     |   |o o",
+  "", 
+  "                                _", 
+  "   ____________________________/ \\", 
+  "  /                           |   |", 
+  " /   NATIONAL PARK SERVICE    | | |", 
+  "|                             |   | ", 
+  "|                             |  ||", 
+  "\\                             |   | ", 
+  " \\____________________________||__|", 
+  "  ___\\___\\____________________|___|", 
+  " | .                            . |", 
+  " |________________________________|", 
+  "    \\  \\                     |   |o o", 
   ",.`.,\\  \\ ,'.``,, `; .`;,  . |   ||/,"
  ]
 }

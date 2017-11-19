@@ -1,42 +1,42 @@
 {
- "id": 16, 
- "title": "ranger station", 
- "visited": false, 
- "room_temp": "-3", 
- "long_description": "The station is perched between two arms of the rapids,  likely for river guides.  A short path leads to a bridge that crossed over the dangerous rapids but it is ruined and not passable.  The door creaks as you open it, entering the ranger station, you suddenly feel safe and start to relax.  The inside is cozy with a small scattering of furniture, the rafters have a few cobwebs that have long since been abandoned by their creators .  There is a footlocker that looks rather interesting.  On the office desk is a shortwave radio.  Its lights are glowing gently and the speaker crackles slightly.  Out the door and to the west are the rapids.  Although the river continues further to the east you can see more severe rapids in that direction and surely you would not be able to navigate them in your canoe.", 
- "short_description": "Entering the ranger station, you feel welcome and comfortable.  Back out the door to the west are the rapids.  The river carries on but the rapids get much worse and you would not want to chance it.  On the office desk is a shortwave radio and a footlocker sits on the floor.", 
+ "id": 16,
+ "title": "ranger station",
+ "visited": false,
+ "room_temp": "-3",
+ "long_description": "You open a creaking door and enter the ranger station. The ranger station is perched between two arms of the rapids. There is a short path outside that leads to a bridge, which crosses over the rapids. The bridge is ruined and not passable. Inside the ranger station, you feel safe and start to relax. The inside of the ranger station is cozy. There is a small scattering of furniture, and the rafters have a few cobwebs that have long since been abandoned by their creators. You see a footlocker that looks interesting. You also see a shortwave radio sitting on a desk. The lights of the shortwave radio are glowing gently, and the speaker crackles slightly. To the west are the rapids. Although the river continues further to the east, you see more severe rapids in that direction and surely you would not be able to navigate them in your canoe.",
+ "short_description": "Entering the ranger station, you feel welcome and comfortable. There is a shortwave radio sitting on a desk and a footlocker sitting on the floor. Back out the door to the west are the rapids.",
  "features": {
   "footlocker": {
    "aliases": [
     "footlocker"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You pull on the side handles a bit testing their soundness."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 ranger station", 
-     "description": "You are not sure what to use the footlocker for except to store items.", 
+     "deactivate_description": "use deactivate for feature 1 ranger station",
+     "description": "You are not sure what to use the footlocker for except to store items.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "A sturdy locker with metal straps and caps.  The side are laminated particle board.  Painted a nice matte grey, that is a bit faded.  There is no noticeable lock that you can see."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "It is much too big to carry around.  Perhaps if you had a vehicle you could take it with you, but not right now."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "There a worn out sticker that reads \"Made in USA\""
-    }, 
+    },
     "search": {
      "modifiers": {
       "room_updates": {
        "ranger station": {
-        "feature_searched": true, 
+        "feature_searched": true,
         "features": {
          "footlocker": {
           "verbs": {
@@ -50,47 +50,47 @@
         }
        }
       }
-     }, 
+     },
      "description": "The footlocker's hinges open smoothly with much effort.  A nice place to store some items inside."
-    }, 
+    },
     "drop": {
      "modifiers": {
       "player": {
        "illness": "2"
       }
-     }, 
+     },
      "description": "You pick up the footlocker.  It slips and smashes your big toe.  Ouch that hurts!"
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "If you put something inside of the footlocker you could eat what you put down."
     }
-   }, 
+   },
    "title": "footlocker"
-  }, 
+  },
   "shortwave radio": {
    "aliases": [
-    "shortwave radio", 
+    "shortwave radio",
     "radio"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You think about it and decide not to pull the power plug out of the wall."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 ranger station", 
-     "description": "You turn the dial to change the frequency but are not able to find one that you can pick up any reception on.", 
+     "deactivate_description": "use deactivate for feature 2 ranger station",
+     "description": "You turn the dial to change the frequency but are not able to find one that you can pick up any reception on.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The radio crackles and spits quietly as it picks up random atmospheric noise on the station it is tuned to.  Perhaps you could figure out how to use it."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Although you've always fancied a shortwave radio, best to leave this one here."
-    }, 
+    },
     "read": {
      "modifiers": {
       "room_updates": {
@@ -102,9 +102,9 @@
             "modifiers": {
              "room_updates": {}
             }
-           }, 
+           },
            "use": {
-            "description": "You slowly dial in to the station listed for Fort C F Smith Park.  As you get closer you start make out a voice!  Your heart flutters, have you really found someone that is still alive!  'This is <playername>  I am at a ranger station near some river rapids. I've be lost for days.  Please send help!'   Silence... nothing comes back... your heart sinks, you know you heard someone.  Suddenly the speaker on the radio jumps to attention and pushes our a welcome sound 'This is the Fort C F Smith Park Ranger server, we read you <playername>. The bridge is out, how did you make it to the station?  Nevermind, doesn't matter we are sending help and will be there in a few hours.  Hang tight.  Stay on the radio and let us know if your situation changes. Your body relaxes, you sit down in the chair and all the tension releases from your tendons.  Your muscles relax, your pack is suddenly very heavy.  You have barely enough strength to drop it on the floor, everything seems to slow down.  Your eyes close and you fall asleep knowing that finally you will find your way home.  Congratulations you have survived and will be rescued soon from your Desolate Journey!", 
+            "description": "You slowly dial in to the station listed for Fort C F Smith Park.  As you get closer you start make out a voice!  Your heart flutters, have you really found someone that is still alive!  'This is <playername>  I am at a ranger station near some river rapids. I've be lost for days.  Please send help!'   Silence... nothing comes back... your heart sinks, you know you heard someone.  Suddenly the speaker on the radio jumps to attention and pushes our a welcome sound 'This is the Fort C F Smith Park Ranger server, we read you <playername>. The bridge is out, how did you make it to the station?  Nevermind, doesn't matter we are sending help and will be there in a few hours.  Hang tight.  Stay on the radio and let us know if your situation changes. Your body relaxes, you sit down in the chair and all the tension releases from your tendons.  Your muscles relax, your pack is suddenly very heavy.  You have barely enough strength to drop it on the floor, everything seems to slow down.  Your eyes close and you fall asleep knowing that finally you will find your way home.  Congratulations you have survived and will be rescued soon from your Desolate Journey!",
             "modifiers": {
              "player": {
               "rescued": true
@@ -116,60 +116,60 @@
         }
        }
       }
-     }, 
-     "description": "The paper on the front reads", 
+     },
+     "description": "The paper on the front reads",
      "artifact": [
-      "NATIONAL PARK SERVICE FREQUENCIES AS RELAYED BY TONY WILCZYNSKI", 
-      "FROM ONE PARK RANGER TO ANOTHER! 'OK,JOE THE VISITORS ARE HERE", 
-      "LET THE DEER OUT AND TURN ON THE WATERFALL!'", 
-      " ", 
+      "NATIONAL PARK SERVICE FREQUENCIES AS RELAYED BY TONY WILCZYNSKI",
+      "FROM ONE PARK RANGER TO ANOTHER! 'OK,JOE THE VISITORS ARE HERE",
+      "LET THE DEER OUT AND TURN ON THE WATERFALL!'",
+      " ",
       "Fort C F Smith National Park          171.673                 172.673"
      ]
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You look closely at the front panel and see a paper stuck to the front of the radio.  The dials flicker as they pick up random noise."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You doubt dropping the radio on the floor would help make it work any better."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Ordering Domino's pizza over shortwave is unfortunately not available.  Please check back later."
     }
-   }, 
+   },
    "title": "shortwave radio"
   }
- }, 
- "items_in_room": [], 
- "feature_searched": false, 
+ },
+ "items_in_room": [],
+ "feature_searched": false,
  "connected_rooms": {
   "rapids": {
-   "accessible": false, 
-   "title": "rapids", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "You don't think the canoe will be able to handle the rapids in the opposite direction. So for now you are stuck here at the station.", 
-   "compass_direction": "west", 
-   "id": 0, 
+   "accessible": false,
+   "title": "rapids",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "You don't think the canoe will be able to handle the rapids in the opposite direction. So for now you are stuck here at the station.",
+   "compass_direction": "west",
+   "id": 0,
    "aliases": [
     "rapids"
    ]
   }
- }, 
+ },
  "room_artifact": [
-  "                                           __--__", 
-  " ----------------------------------    __--   (##)", 
-  "|JOHNSON    -------------          |  -       (##)", 
-  "|  RANGER  |   _\\`_`/_   |         | |     __--`", 
-  "|   ...    | .o..( )..o. |   ...   | |___--", 
-  "|   .O.     -------------    .O.   |   \\   \\", 
-  "| ... ... ...   . _ .  ... ... ... |    \\   \\", 
-  "| .Q. .Q. .Q.   .(_).  .Q. .Q. .Q. |     \\   \\", 
-  "|                                  |      \\   --_____", 
-  "|__________________________________|   __-`    |_____|_", 
+  "                                           __--__",
+  " ----------------------------------    __--   (##)",
+  "|JOHNSON    -------------          |  -       (##)",
+  "|  RANGER  |   _\\`_`/_   |         | |     __--`",
+  "|   ...    | .o..( )..o. |   ...   | |___--",
+  "|   .O.     -------------    .O.   |   \\   \\",
+  "| ... ... ...   . _ .  ... ... ... |    \\   \\",
+  "| .Q. .Q. .Q.   .(_).  .Q. .Q. .Q. |     \\   \\",
+  "|                                  |      \\   --_____",
+  "|__________________________________|   __-`    |_____|_",
   "                                      |________________|"
  ]
 }

@@ -1,43 +1,43 @@
 {
- "id": 11, 
- "title": "river", 
- "visited": false, 
- "room_temp": "3", 
- "long_description": "Standing on the bank of the river, the water lapping against the rocky shore and moving past you. It sounds like a roar of fast moving water is coming from the south, must be some rapids.  To the north, behind you are the dense woods, that abruptly where the rocky banks of the river start.  As though it is a garden that has been lovingly tended to.  The river makes a bend here and towards the east you can see a plume of mist rises from the base of a waterfall. Along the bank sits a canoe.  Its flat bottom may not be the greatest at navigating fast moving water, but it is better than swimming.  Next to the canoe is a large camping cooler. Its color has all but faded, but it once must have been a brilliant blue.", 
- "short_description": "Standing on the bank of the river, the woods are to your north, there is waterfall to your east.  To the south you can hear the rush of the rapids. Close to the water sits a canoe and next to it is a old camping cooler.", 
+ "id": 11,
+ "title": "river",
+ "visited": false,
+ "room_temp": "3",
+ "long_description": "You are standing on the bank of a river. The water laps against the rocky shore as it moves past you. A canoe sits along the bank of the river. The canoe may not be the greatest at navigating through fast-moving water, but it is better than swimming. Next to the canoe is a large camping cooler. Its color has faded, but it once must have been a brilliant blue. It sounds like the roar of fast-moving water is coming from the south; there must be rapids. To the north, are the dense woods, which abruptly end where the rocky banks of the river start. It looks like a garden that has been lovingly tended to. The river makes a bend here, and to the east, you can see a plume of mist rising from the base of a waterfall.",
+ "short_description": "Standing on the bank of the river, you can see a canoe and an old camping cooler. The woods are to the north, and there is a waterfall to your east.",
  "features": {
   "camping cooler": {
    "aliases": [
-    "camping cooler", 
+    "camping cooler",
     "cooler"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "If the cooler had any handles to pull on, they fell off or were broken off long again.  It does not seem like you would gain much if you pulled on the cooler anyway."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 river", 
-     "description": "Crawling inside is definitely not an option.  So instead you sit of the cooler for a while to rest your feet.", 
+     "deactivate_description": "use deactivate for feature 1 river",
+     "description": "Crawling inside is definitely not an option.  So instead you sit of the cooler for a while to rest your feet.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The cooler has certainly seen better days, but you don't notice any significant damage.  It has faded over the years and the blue sides have all but faded.  The lid still looks in good condition.  Might be something nice inside."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You pick up the cooler and decide that you are not going on a picnic any time soon, so you set it back down."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Although many camping accessories have logos plastered on them, this one is just too tired to wear any sort of branding anymore."
-    }, 
+    },
     "search": {
      "modifiers": {
       "room_updates": {
        "river": {
-        "feature_searched": true, 
+        "feature_searched": true,
         "features": {
          "camping cooler": {
           "verbs": {
@@ -51,127 +51,127 @@
         }
        }
       }
-     }, 
+     },
      "description": "As you open the lid, it moans and creaks.  The smell of plastic if strong, but quickly dissipates in the breeze.  Inside the cooler you see a heavy winter parka and a tightly rolled up bit of paper that appears to be an old map."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You pick up one side and drop it back on to the rocks."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You really should be eating whatever is inside the cooler, not the cooler itself."
     }
-   }, 
+   },
    "title": "camping cooler"
-  }, 
+  },
   "canoe": {
    "aliases": [
     "canoe"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You drag the canoe a bit, but decide that until you are actually ready to leave it may be better to leave it where it is."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 river", 
-     "description": "You sit in the canoe ready for action.", 
+     "deactivate_description": "use deactivate for feature 2 river",
+     "description": "You sit in the canoe ready for action.",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "A sturdy vessel, from the looks of it.  Maybe a closer inspection will reveal more.  It is a slightly faded red color.  Aren't all canoes red?"
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Unfortunately carrying a canoe this size is a two person job and last you checked you were here all along."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
-     "description": "There is a small symbol on the side of the canoe.  You can make out something that reads 'N  thSt r'", 
+     "modifiers": {},
+     "description": "There is a small symbol on the side of the canoe.  You can make out something that reads 'N  thSt r'",
      "artifact": [
-      "     ^  |\\ |", 
-      "     |  | \\|", 
-      "    /_\\", 
-      "< == _ == >", 
-      "    \\ /", 
-      "     |", 
+      "     ^  |\\ |",
+      "     |  | \\|",
+      "    /_\\",
+      "< == _ == >",
+      "    \\ /",
+      "     |",
       "     ."
      ]
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You check the hull and don't notice any holes or large cracks.  You suspect that it would float well enough for you to traverse the rapids.  A paddle would be advisable."
-    }, 
+    },
     "drop": {
      "modifiers": {
       "player": {
        "illness": "2"
       }
-     }, 
+     },
      "description": "You pick up one end and drop it back down.  It hits your foot firmly.  Ouch that smarts!"
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Canoes are not meant for eating."
     }
-   }, 
+   },
    "title": "canoe"
   }
- }, 
+ },
  "items_in_room": [
-  "old map", 
+  "old map",
   "heavy winter parka"
- ], 
- "feature_searched": false, 
+ ],
+ "feature_searched": false,
  "connected_rooms": {
   "woods": {
-   "accessible": true, 
-   "title": "woods", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "north", 
-   "id": 0, 
+   "accessible": true,
+   "title": "woods",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "north",
+   "id": 0,
    "aliases": [
-    "woods", 
+    "woods",
     "forest"
    ]
-  }, 
+  },
   "waterfall": {
-   "accessible": true, 
-   "title": "waterfall", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "east", 
-   "id": 0, 
+   "accessible": true,
+   "title": "waterfall",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "east",
+   "id": 0,
    "aliases": [
-    "waterfall", 
+    "waterfall",
     "cataract"
    ]
-  }, 
+  },
   "rapids": {
-   "accessible": true, 
-   "title": "rapids", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "", 
-   "compass_direction": "south", 
-   "id": 0, 
+   "accessible": true,
+   "title": "rapids",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "",
+   "compass_direction": "south",
+   "id": 0,
    "aliases": [
     "rapids"
-   ], 
+   ],
    "modifiers": {
     "item_updates": {
      "boat paddle": {
       "verbs": {
        "use": {
-        "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks.", 
+        "description": "You paddle as hard as you can your canoe just barely avoids the rocks, you are now in the clear of the rocks.",
         "modifiers": {
          "item_updates": {
           "boat paddle": {
@@ -181,41 +181,41 @@
             }
            }
           }
-         }, 
+         },
          "room_updates": {
           "rapids": {
-           "long_description": "Getting past the rock shelf the rapids slow a bit here.  You are floating along and towards the east the river splits around a small bit of land with a ranger station sitting along the bank.  To the north beyond the rapids is the top of the river where you just came from.  The rock shelf stares at you ominously, having successfully navigated it, you feel much more confident than before that you will be able to make to out of the rapids alive.  The heron still perched on the log in the river is still curious as to what you are doing, watching you with curious little eyes.", 
-           "short_description": "You are beyond the fast rapids and the rock shelf that could have dumped you out of the canoe.  A heron sits on a log in the water.  To the north is the top of the river and to the east is a ranger station along the bank of the river.", 
+           "long_description": "Getting past the rock shelf the rapids slow a bit here.  You are floating along and towards the east the river splits around a small bit of land with a ranger station sitting along the bank.  To the north beyond the rapids is the top of the river where you just came from.  The rock shelf stares at you ominously, having successfully navigated it, you feel much more confident than before that you will be able to make to out of the rapids alive.  The heron still perched on the log in the river is still curious as to what you are doing, watching you with curious little eyes.",
+           "short_description": "You are beyond the fast rapids and the rock shelf that could have dumped you out of the canoe.  A heron sits on a log in the water.  To the north is the top of the river and to the east is a ranger station along the bank of the river.",
            "features": {
             "rock shelf": {
              "verbs": {
               "pull": {
                "description": "You managed to successfully pull the canoe out of harms way and are beyond the fast rapids, good job!"
-              }, 
+              },
               "use": {
                "description": "You're not sure how you would use that."
-              }, 
+              },
               "look at": {
                "description": "From this angle those rocks would certainly have dumped you out of the canoe and into the freezing water."
-              }, 
+              },
               "take": {
                "description": "You took on the challenge head on and survived."
-              }, 
+              },
               "read": {
                "description": "You read the situation well and avoided certain catastrophe!"
-              }, 
+              },
               "drop": {
                "description": "The rapids would most certainly have dumped you out of the canoe in the drop beyond the rock shelf."
-              }, 
+              },
               "eat": {
                "description": "You are not able to eat that."
               }
              }
             }
-           }, 
+           },
            "connected_rooms": {
             "ranger station": {
-             "accessible": true, 
+             "accessible": true,
              "modifiers": {
               "player": {}
              }
@@ -230,17 +230,17 @@
     }
    }
   }
- }, 
+ },
  "room_artifact": [
-  "       __,---``                       ", 
-  "    ,-`    - -_-__-=                     o  ", 
-  "==-`         ___ -- -__  -_--          \\ | o", 
-  "      --=                    -----    ,-\\|/.", 
-  "             ----                  ,-` `. . ", 
-  "     -----       --==      __,,---` , .`. ' ,.", 
-  "          ---      __..--``  . `, ' ; ,` . ' ,", 
-  "  ---    ____,,--``   `, , `' ; ` ' . `,  ; '  `,. ", 
-  "     ~'``-   '  , ' `  ' , `    '  `  `  ,,  , , ", 
+  "       __,---``                       ",
+  "    ,-`    - -_-__-=                     o  ",
+  "==-`         ___ -- -__  -_--          \\ | o",
+  "      --=                    -----    ,-\\|/.",
+  "             ----                  ,-` `. . ",
+  "     -----       --==      __,,---` , .`. ' ,.",
+  "          ---      __..--``  . `, ' ; ,` . ' ,",
+  "  ---    ____,,--``   `, , `' ; ` ' . `,  ; '  `,. ",
+  "     ~'``-   '  , ' `  ' , `    '  `  `  ,,  , , ",
   ",~~`'',   ' '  ,  , '  ' ,,  ` '  ,  ` ' , ,    ,, '"
  ]
 }

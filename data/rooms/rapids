@@ -1,150 +1,150 @@
 {
- "id": 15, 
- "title": "rapids", 
- "visited": false, 
- "room_temp": "4", 
- "long_description": "The river is roaring, you barely manage to keep control of your canoe here!  To the north is the gently flowing river that you left behind and you really doubt you'll ever be able to get back up the river.  The rapids take a turn to the east and where you see a spot you can make landfall.  Along the river bank ahead is a Ranger Station, if you make it that far.  You see a large heron perched on a log stuck in the water.  Just in ahead of is a large rock shelf that you feel you definitely need to paddle around.  You are fairly confident it you dropped something here it would be lost forever. Beyond the rocks the river slows turning east and forks around a bit land on which stands a ranger station.", 
- "short_description": "The river is roaring, to the north you see the flowing river but you doubt you'll be able to make your way back through the rapids.  To the east you see the Ranger Station. There's a heron sitting on a log and just ahead of you is a rock shelf that you think you best avoid.  You do your best to not drop anything because it would be gone forever.", 
+ "id": 15,
+ "title": "rapids",
+ "visited": false,
+ "room_temp": "4",
+ "long_description": "You enter into serious rapids. The river is roaring; you can barely manage to keep control of your canoe here! You see a large heron, which is perched on a log that is jammed between several rocks. You also see a large rock shelf just ahead, which you definitely need to paddle around. You are fairly confident that if you dropped something on the rock shelf, it would be lost forever. To the north is the gently flowing river that you left behind. Given the ferocity of the rapids, it is impossible to go back there. To the east, the rapids calm down considerably in front of what appears to be a ranger station. Seeing the ranger station is exciting. Perhaps you can get help there, if you make it that far...",
+ "short_description": "You are in rapids; the river is roaring around you. There is a heron sitting on a log, and just ahead of you is a rock shelf that you think you best avoid. You do your best not to drop anything because it would be gone forever if you did. To the north is the much calmer river you left behind, but you know you won't be able to get back there given the rapids. To the east you see the ranger station.",
  "features": {
   "rock shelf": {
    "aliases": [
     "rock shelf"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You need something to use the canoe cross the river!  You are still heading directly to the rocks.  Maybe try using the boat paddle!"
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 1 rapids", 
-     "description": "You're not sure if you can use it, but maybe you can pull away from it!", 
+     "deactivate_description": "use deactivate for feature 1 rapids",
+     "description": "You're not sure if you can use it, but maybe you can pull away from it!",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The rock shelf looks absolutely deadly.  If you don't navigate away from it in some matter you are sure you will be tossed from your canoe and wind up under water."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You are not able to take it either.  But maybe you can avoid it!"
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You read the nature of the rock shelf and it seems it will be bad for your health if you do not avoid them."
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "No use searching it.  You have more important things to do."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The rapids are about to drop you out of the canoe!"
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Better not have any funny ideas."
     }
-   }, 
+   },
    "title": "rock shelf"
-  }, 
+  },
   "heron": {
    "aliases": [
     "heron"
-   ], 
+   ],
    "verbs": {
     "pull": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Please do not harm the wildlife."
-    }, 
+    },
     "use": {
-     "deactivate_description": "use deactivate for feature 2 rapids", 
-     "description": "How would you like to use it?", 
+     "deactivate_description": "use deactivate for feature 2 rapids",
+     "description": "How would you like to use it?",
      "modifiers": {}
-    }, 
+    },
     "look at": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The heron stares back at you.  Mildly interested in what you are doing.  Although it seems it knows that it has the upper hand should you get to close.  The bird stands proudly with his tall legs towering over the water.  Surely waiting for something inviting to eat."
-    }, 
+    },
     "take": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Hmm, not really possible.  The heron would likely fly away before you got anywhere near it."
-    }, 
+    },
     "read": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "The Great Blue Heron is a paperback book written in 1999 that you once read.  Very interesting."
-    }, 
+    },
     "search": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "Although the heron is studying you.  You are not able to get close enough to for a better look."
-    }, 
+    },
     "drop": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You doubt you would be able to do that."
-    }, 
+    },
     "eat": {
-     "modifiers": {}, 
+     "modifiers": {},
      "description": "You animal you.  Such a beautiful creature and all you can think of is eating it?"
     }
-   }, 
+   },
    "title": "heron"
   }
- }, 
- "items_in_room": [], 
- "feature_searched": true, 
+ },
+ "items_in_room": [],
+ "feature_searched": true,
  "connected_rooms": {
   "ranger station": {
-   "accessible": false, 
-   "title": "ranger station", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "You smash into the rocks and tip over into the water.  Swimming as hard as you can, you cannot manage to keep your head above water.  You gasp for air getting nothing but water.  Your body convulses and you feel nothing. You have died trying to survive the Desolate Journey.", 
-   "compass_direction": "east", 
-   "id": 0, 
+   "accessible": false,
+   "title": "ranger station",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "You smash into the rocks and tip over into the water.  Swimming as hard as you can, you cannot manage to keep your head above water.  You gasp for air getting nothing but water.  Your body convulses and you feel nothing. You have died trying to survive the Desolate Journey.",
+   "compass_direction": "east",
+   "id": 0,
    "aliases": [
-    "ranger station", 
+    "ranger station",
     "outpost"
-   ], 
+   ],
    "modifiers": {
     "room": {
-     "title": "rapids", 
+     "title": "rapids",
      "items_in_room": "drop"
-    }, 
+    },
     "player": {
-     "illness": "100", 
+     "illness": "100",
      "cold": "100"
     }
    }
-  }, 
+  },
   "river": {
-   "accessible": false, 
-   "title": "river", 
-   "distance_from_room": 1, 
-   "item_required": false, 
-   "item_required_title": "", 
-   "pre_item_description": "You most definitely will not be able to paddle back up river.", 
-   "compass_direction": "north", 
-   "id": 0, 
+   "accessible": false,
+   "title": "river",
+   "distance_from_room": 1,
+   "item_required": false,
+   "item_required_title": "",
+   "pre_item_description": "You most definitely will not be able to paddle back up river.",
+   "compass_direction": "north",
+   "id": 0,
    "aliases": [
-    "river", 
+    "river",
     "stream"
    ]
   }
- }, 
+ },
  "room_artifact": [
-  "              _-`-`-__ ", 
-  "          _--;,-` `'  ----....._______", 
-  "   ,`   _-_-;'     (o)  ..____....---__=-", 
-  ".` `-__-``  ;' ;    .  ___.,------``` ", 
-  "'`-_-`       ;'   ; `, '''`", 
-  "              ;',   ``.,", 
-  "                `', ,  `',", 
-  "                   ` ;  ;`", 
-  "                  ;`,    ;`.", 
-  "                  ;`,     ;`", 
-  "      ,;'```';., ;`,       ;`", 
-  "    ;'`         `';       ;`", 
-  "    ;''                   ;`", 
+  "              _-`-`-__ ",
+  "          _--;,-` `'  ----....._______",
+  "   ,`   _-_-;'     (o)  ..____....---__=-",
+  ".` `-__-``  ;' ;    .  ___.,------``` ",
+  "'`-_-`       ;'   ; `, '''`",
+  "              ;',   ``.,",
+  "                `', ,  `',",
+  "                   ` ;  ;`",
+  "                  ;`,    ;`.",
+  "                  ;`,     ;`",
+  "      ,;'```';., ;`,       ;`",
+  "    ;'`         `';       ;`",
+  "    ;''                   ;`",
   "   ;'`"
  ]
 }
