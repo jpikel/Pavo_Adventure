@@ -87,17 +87,17 @@ def _build_exact_match_output(input_string):
         command_dict = {
             OUTPUT_FIELDS.ACTION: master_word
         }
-    if word_type == WORD_TYPES.FEATURE:
+    elif word_type == WORD_TYPES.FEATURE:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.FEATURE_ONLY
         command_dict = {
             OUTPUT_FIELDS.FEATURE: master_word
         }
-    if word_type == WORD_TYPES.ITEM:
+    elif word_type == WORD_TYPES.ITEM:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ITEM_ONLY
         command_dict = {
             OUTPUT_FIELDS.ITEM: master_word
         }
-    if word_type == WORD_TYPES.ROOM:
+    elif word_type == WORD_TYPES.ROOM:
         output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.ROOM_ONLY
         command_dict = {
             OUTPUT_FIELDS.ROOM: master_word
