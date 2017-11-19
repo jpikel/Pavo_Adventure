@@ -71,10 +71,9 @@ def _build_exact_match_output(input_string):
     Where the input_string consists of a single word recognized by the program,
     creates and returns an output dict for that word.
 
-    Returns: A dict containing information about the input. The format of the
-             output dict varies depending on the type of the word input.
+    Returns: A dict containing information about the input. See the help for
+    parse_command for information about the format of the dict.
     """
-    #TODO: Add error handling for situation in which word is not actually in dict?
     input_word = input_string
     word_type = words.all_words[input_word]["type"]
     master_word = words.all_words[input_word]["master_word"]
@@ -103,6 +102,14 @@ def _build_exact_match_output(input_string):
         command_dict = {
             OUTPUT_FIELDS.ROOM: master_word
         }
+    else:
+        # Construct an output dict with the processd value equal to False,
+        # which tells the game engine that the parser could not interpret
+        # the command.
+        output_dict = {}
+        output_dict[OUTPUT_FIELDS.TYPE] = COMMAND_TYPES.OTHER
+        output_dict[OUTPUT_FIELDS.PROCESSED] = False
+        return output_dict
     output_dict[OUTPUT_FIELDS.COMMAND] = command_dict
     return output_dict
 
@@ -133,7 +140,10 @@ def _remove_noise(input_string):
 
 def _generate_length_ordered_keys(input_dict):
     """
-    TODO: Write docs
+    Sorts the keys in the input_dict in reversed order of length (i.e., longest
+    key first).
+
+    Returns: List of the keys in the input_dict sorted in reverse order of length.
     """
     all_keys = []
     for key in input_dict:
@@ -143,7 +153,8 @@ def _generate_length_ordered_keys(input_dict):
 
 def _generate_full_match_regex_patterns():
     """
-    TODO: Write docs
+    Generates a dict in which the keys are names of recognized input patterns
+    and the values are regular expressions that describe those patterns.
 
     Returns: A dict of regex patterns and their labels.
     """
@@ -184,7 +195,14 @@ def _match_user_input_pattern(input_string, regex_patterns):
 
 def _generate_output_from_pattern_key(pattern_key, matched_words):
     """
-    TODO: Write docs
+    Takes the output from _match_user_input_pattern, which consists of a tuple
+    containing (a) the name of the regex pattern that matched on the input
+    command, and (b) a list of the recognized words that matched, and uses
+    that information to generate an output dict with information about the
+    user-input command.
+
+    Returns: A dict containing information about the input. See the help for
+    parse_command for information about the format of the dict.
     """
     output_dict = {}
     if pattern_key == REGEX_PATTERNS.NO_MATCH:
@@ -239,7 +257,16 @@ def _generate_output_from_pattern_key(pattern_key, matched_words):
 
 def _generate_output_for_partial_or_no_match(input_string):
     """
-    TODO: Write docs
+    Takes an input string that does not match on any of the known input patterns
+    and generates an output dict that includes 'other' as the 'command_type',
+    a 'processed' value of False, and a list of words in the input string that
+    are recognized by the game (if any).
+
+    This method should be called only after the program has attempted to match
+    on the known input patterns but has not matched on any of them.
+
+    Returns: A dict containing information about the input. See the help for
+    parse_command for information about the format of the dict.
     """
     # Break input string into individual words.
     input_words = input_string.split()
@@ -264,7 +291,21 @@ def _generate_output_for_partial_or_no_match(input_string):
 # ----------------------------------------------------------------------------
 def parse_command(command):
     """
-    TODO: Write docs
+    Produces an output dict with information about the input command that is
+    in a format that the game engine can use.
+
+    Returns: A dict containing information about the input, which has the following
+        key-value pairs:
+        {
+            "type": <one of the COMMAND_TYPES>,
+            "command": {
+                <dict with the applicable WORD_TYPES as keys and recognized words
+                of that type as the values>
+            },
+            "processed": <boolean value indicating whether the parser was
+            able to 'understand' the command>
+        }
+
     """
     command = _preprocess(command)
     # Exit early if the input string consists of a single, recognized word.
