@@ -676,7 +676,7 @@ class Game():
         otherwise send the msg to the multi_printer
         """
         if USE_CURSES: game_ui.write_main(msg, player_name, row, col)
-        else: helpers.multi_printer(msg)
+        else: helpers.multi_printer(msg, player_name)
 
     def write_main_mid_handler(self, msg):
         """
@@ -704,7 +704,7 @@ class Game():
         if USE_CURSES:
             text = game_ui.get_input(msg)
         else:
-            text = raw_input('\n'+msg+'\n').lower()
+            text = raw_input('\n'+msg+'\n')
         if MIRROR_INPUT:
             helpers.multi_printer(text)
         return text
