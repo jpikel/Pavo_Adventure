@@ -3,7 +3,8 @@
  "title": "candy bar", 
  "aliases": [
   "candy bar", 
-  "bar"
+  "bar", 
+  "candy"
  ], 
  "verbs": {
   "pull": {
@@ -102,9 +103,9 @@
        }, 
        "read": {
         "description": "You read the wrapper. It informs you that the bar once contained 250 precious calories.  That you promptly consumed."
-       },
+       }, 
        "pull": {
-           "description": "You pull open the wrapper only to be disappointed that nothing is inside."
+        "description": "You pull open the wrapper only to be disappointed that nothing is inside."
        }
       }
      }

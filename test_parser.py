@@ -85,3 +85,15 @@ print "The test input is: " + test_input
 print "Calling parse command on it..."
 print parse.parse_command(test_input)
 print ""
+
+test_input = "take candy"
+print "The test input is: " + test_input
+print "Calling parse command on it..."
+print parse.parse_command(test_input)
+print ""
+
+test_input = "eat candy"
+print "The test input is: " + test_input
+print "Calling parse command on it..."
+print parse.parse_command(test_input)
+print ""

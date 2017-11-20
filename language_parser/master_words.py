@@ -52,26 +52,27 @@ features = {
    "wolves": "wolves"
 }
 items = {
-   "firstaid": "medical kit", 
-   "map": "old map", 
+   "can of sweetened condensed milk": "can of sweetened condensed milk", 
+   "old map": "old map", 
+   "flare gun": "flare gun", 
+   "milk": "can of sweetened condensed milk", 
+   "spiral bound notepad": "spiral bound notepad", 
    "paddle": "boat paddle", 
-   "bar": "candy bar", 
+   "candy bar": "candy bar", 
+   "lamp": "lantern", 
+   "rescue whistle": "rescue whistle", 
+   "parka": "heavy winter parka", 
+   "map": "old map", 
    "notepad": "spiral bound notepad", 
+   "whistle": "rescue whistle", 
+   "heavy winter parka": "heavy winter parka", 
+   "boat paddle": "boat paddle", 
+   "firstaid": "medical kit", 
+   "bar": "candy bar", 
    "medical kit": "medical kit", 
    "light": "lantern", 
-   "rescue whistle": "rescue whistle", 
-   "milk": "can of sweetened condensed milk", 
-   "old map": "old map", 
-   "can of sweetened condensed milk": "can of sweetened condensed milk", 
-   "boat paddle": "boat paddle", 
-   "whistle": "rescue whistle", 
-   "lamp": "lantern", 
+   "candy": "candy bar", 
    "can": "can of sweetened condensed milk", 
-   "heavy winter parka": "heavy winter parka", 
-   "flare gun": "flare gun", 
-   "parka": "heavy winter parka", 
-   "candy bar": "candy bar", 
-   "spiral bound notepad": "spiral bound notepad", 
    "lantern": "lantern"
 }
 rooms = {
@@ -355,6 +356,10 @@ all_words = {
       "type": "item", 
       "master_word": "old map"
    }, 
+   "candy": {
+      "type": "item", 
+      "master_word": "candy bar"
+   }, 
    "storage shed": {
       "type": "feature", 
       "master_word": "storage shed"
@@ -371,9 +376,9 @@ all_words = {
       "type": "item", 
       "master_word": "can of sweetened condensed milk"
    }, 
-   "look out": {
-      "type": "feature", 
-      "master_word": "look out"
+   "light": {
+      "type": "item", 
+      "master_word": "lantern"
    }, 
    "rescue whistle": {
       "type": "item", 
@@ -615,9 +620,9 @@ all_words = {
       "type": "feature", 
       "master_word": "driftwood"
    }, 
-   "light": {
-      "type": "item", 
-      "master_word": "lantern"
+   "look out": {
+      "type": "feature", 
+      "master_word": "look out"
    }, 
    "study": {
       "type": "action", 
