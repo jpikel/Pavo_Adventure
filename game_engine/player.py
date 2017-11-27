@@ -154,7 +154,7 @@ class Player(object):
             text += 'cold.'
         text += ' As hard as you tried you did not manage to brave the elements.'
         text += (' Next time perhaps take better care of yourself.  Cold, hunger,'
-             ' and illness can along come quickly in the Desolate Journey.'
+             ' and illness can all come quickly in the Desolate Journey.'
              ' The challenges are tough but they can be overcome and you will'
              ' one day find your way to rescue.  But, not on this day.')
         if self.dead:
