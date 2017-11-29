@@ -9,8 +9,6 @@ the player has a name, his health is illness, hunger, cold, whether
 the player is dead or rescued, and the player has an inventory
 """
 #ref:https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
-
-from item import Item
 import engine_helpers as helpers
 
 class Player(object):

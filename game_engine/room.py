@@ -1,3 +1,14 @@
+"""
+Filename: room.py
+Date: 2017.11.29
+Class: CS467-400
+Assignment: Final Project CMD1:Adventure
+Team Pavo
+Members: Emily Caveness, Alexander Laquitara, Johannes Pikel
+Description: This relates to room's and their attributes as well as 
+functions that are room related interactions.
+"""
+
 import engine_helpers as helpers
 import file_handler.file_lib as files
 

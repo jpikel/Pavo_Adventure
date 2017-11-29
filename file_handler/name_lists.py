@@ -4,7 +4,7 @@ Team - Pavo
 Group Members - Emily Caveness, Alexander Laquitara, Johannes Pikel
 Class - CS467-400 Capstone
 Term - Fall 2017
-Description -
+Description - Official lists of of official names for rooms, items, keys in the dicts
 """
 
 import os

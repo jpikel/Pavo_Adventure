@@ -5,7 +5,7 @@ Team: Pavo
 Members: Emily Caveness, Alexander Laquitara, Johannes Pikel
 Class: CS467-400
 Assignment: CMD1:Adventure
-Description:
+Description: This is the main game file that runs the Pavo Adventure
 """
 
 import sys
@@ -18,13 +18,7 @@ import game_engine.room as room
 import game_engine.engine_helpers as helpers
 import random
 
-#FOR DELETEION
-#from file_handler.name_lists import verb_info as verbs
-#from game_engine.engine_helpers import response_struct
-#import file_handler.help_file as help_file
-#ALL_VERBS = verbs().get_verbs()
-#END FOR DELETION
-
+#Validate if we may use the CURSES here otherwise we never launch it
 USE_CURSES = False
 if sys.platform == 'linux' or sys.platform == 'linux2':
     import curses
@@ -62,12 +56,10 @@ PLAYER_RESCUED =0
 if DEBUG_PARSE or DEBUG_ROOM:
     USE_CURSES = False
 
-
 class Game():
     def __init__(self):
         self.player = player.Player()
         self.room = room.Room()
-        # Inventory will be a list of dicts, each element of which is an item.
         self.current_time = 0
         self.number_of_turns = 0
         self.saved = False
@@ -214,12 +206,7 @@ class Game():
             if res: self.post_process(res)
 
             if self.player.get_death_status() or self.player.get_rescue_status():
-                #would be good to add a restart loop in here
-                #this break should be all that is needed and then we can startGame
-                #again to allow loadgame or newgame
-                #we submit False to let startGame know this is not a newGame
-                #it will not print the Splash screen again
-                #works well.  rescued myself with the flare gun !
+                #if we are rescued or dead, stop the game loop
                 break
         self.startGame(False)
 
@@ -374,11 +361,6 @@ class Game():
         if res.success:
             self.number_of_turns += 1
             if USE_CURSES and self.number_of_turns < 16: game_ui.write_art()
-        #at some point in the future hopefully this will be where
-        #we can send parts to the room to be updated if appropriate
-        #and the player state if for instance the player has
-        #eaten something and gets a boost to hunger
-
         #set DEBUG_RESPONSE to 1 for debuggin
         if DEBUG_RESPONSE:
             print(json.dumps(res.__dict__, indent=4))
@@ -422,9 +404,6 @@ class Game():
             self.write_time_handler(helpers.FIREWORKS)
             self.roll_credits_handler()
         self.ui_refresh()
-
-        #description should always come with process functions so we
-        #automatically print out something to the user
     #------------------------------------------------------------------------
     # These two functions are in game.py because they deal with loading
     # rooms and items and so we need to validate that a room and item
@@ -504,14 +483,6 @@ class Game():
                 elif "items_in_room" in mods and mods['items_in_room'] == "drop":
                     self.room.remove_item_from_room(res.title)
 
-        #This is the test of the the dynamic room updates
-        #Since all titles are unique that is our identifier!! very important
-        #it can only currently update the room the player is in, so no
-        #outside rooms, but we could easily change that
-        #we just need to make sure that our rules about what can change
-        #what are consistent.  that comes from the way the 'updates' dict
-        #is written in the 'modifiers' dict for a particular verb of a feature
-        #or an item
         if 'room_updates' in res.modifiers:
             for key in res.modifiers['room_updates']:
                 updates = res.modifiers['room_updates'][key]
@@ -528,10 +499,6 @@ class Game():
                     if key in self.room.current_room['connected_rooms']:
                         updates = res.modifiers['adjacent_room_updates'][key]
                         self.update_external_room(updates, key)
-
-        #hopefully file_lib will have a method where we can pass the
-        #modifiers dict to and it will do the remaining processing returning
-        #the updated room so we can just do
 
     def update_external_room(self, updates, key):
         """
@@ -593,6 +560,9 @@ class Game():
                     files.store_item(item)
 
     def getTimeOfDay(self):
+        """
+        depending on the number of moves the player has done changes the current day
+        """
         if USE_CURSES:
             text = []
             if self.player.get_rescue_status():
@@ -734,7 +704,6 @@ class Game():
         if USE_CURSES: game_ui.roll_credits()
         else: helpers.roll_credits_basic()
 
-
     def validate_curses(self):
         """
         check throughout the game cycle if the terminal size is too small
@@ -763,67 +732,45 @@ class Game():
             helpers.multi_printer(text)
             exit(1)
 
-
-    #suggest update player conditions relocated to the helper file player.py
-#    def updatePlayerCondition(self):
-#        # Degrade the player's condition every three moves.
-#        if self.number_of_turns % 3 == 0:
-#            self.player.illness += 1
-#        if (self.player.illness > 50 or
-#            self.player.hunger > 50 or
-#            self.player.cold > 50):
-#            self.player.dead = True
-
-
     #-------------------------------------------------------------------------
     # Temporary code used for testing
     #-------------------------------------------------------------------------
-#Generates random input in gameCycle in hopes of causing a crash
 def random_input_tester():
+    """
+        #Generates random input in gameCycle in hopes of causing a crash
+    """
     #here are the possbile verbs that a user could input
-    verbs =["look", "look at", "search", "go", "take ", "drop","use", "pull", "eat", "read" ]#"inventory", "help"]
+    verbs =["look", "look at", "search", "go", "take ", 
+            "drop","use", "pull", "eat", "read" ]
     #here are the possbile nouns that a user could input
-    nouns =[ "rescue whistle", "field", "medical kit", "cave", "candy bar", "flare gun", "heavy winter parka", "lantern", "old map",  "can of sweetened condensed milk", "notepad"]
-    locations=["north", "south", "east", "west"]#"shore", "crash site", "camp", "woods", "waterfall", "river", "game trail", "dense brush", "field", "mountain base", "mountain path", "mountain summit", "fire tower", "rapids", "ranger station", "cave"]
-    features = ["driftwood", "snow capped island", "dog sled","campfire pit", "blood stained snow", "bent pine", "small shelf", "wood pole", "tree stump", "bent pine" "small shelf", "tree stump", "bent pine", "hunting blind", "leanto", "animal corral", "deer carcass", "hay roll", "wolves", "sign", "clumps of bloody fur", "stone marker", "storage shed", "overlook", "locked safe", "look out", "cooler"]
+    nouns =[ "rescue whistle", "field", "medical kit", "cave", 
+            "candy bar", "flare gun", "heavy winter parka", "lantern", 
+            "old map",  "can of sweetened condensed milk", "notepad"]
+    locations=["north", "south", "east", "west"]
+
+    features = ["driftwood", "snow capped island", "dog sled","campfire pit", 
+            "blood stained snow", "bent pine", "small shelf", "wood pole", "tree stump", 
+            "bent pine" "small shelf", "tree stump", "bent pine", "hunting blind", 
+            "leanto", "animal corral", "deer carcass", "hay roll", "wolves", "sign", 
+            "clumps of bloody fur", "stone marker", "storage shed", "overlook", 
+            "locked safe", "look out", "cooler"]
     rand_verb = random.choice(verbs)
-    '''
-    if rand_verb == "look" or "look at" or "go"
-        rand_loc = random.choice(locations)
-        return (rand_verb + rand_loc)
-    elif rand_verb== ""
-    '''
     a=random.randrange(3)
     if a == 0:
         rand_noun = random.choice(nouns)
-        input= rand_verb + " "+ rand_noun
+        input_word= rand_verb + " "+ rand_noun
     elif a == 1:
         rand_feat= random.choice(features)
-        input= rand_verb + " " + rand_feat
+        input_word= rand_verb + " " + rand_feat
     else:
         rand_loc = random.choice(locations)
-        input= rand_verb + " " + rand_loc
-    print input
-    return input
-
-
-#def testParse():
-#    test_input = "go cave"
-#    print "The test input is: " + test_input
-#    print "The parsed command output is:"
-#    print parse.parse_command(test_input)
-#    print parse.parse_command(test_input)['room']['action']
-#    print parse.parse_command(test_input)['room']['name']
-#    print parse.parse_command(test_input)['other']['processed']
-#    print parse.parse_command(test_input)['room']['action']
-#    # parse.parse_command(test_input[0,0])
-#    print ""
-#
-
-#random_input_tester()
+        input_word= rand_verb + " " + rand_loc
+    #print input_word
+    return input_word
 
 
 def main():
+    #if using CURSES launch the windows
     if USE_CURSES:
         curses.wrapper(game_ui.init_windows)
     else:
@@ -831,6 +778,7 @@ def main():
                 'Requires linux and '+str(helpers.MIN_COLS)+' columns' +
                 ' by ' + str(helpers.MIN_ROWS) + ' rows.',' ']
         helpers.multi_printer(text)
+    #random used in the funny message responses
     random.seed()
     current_game = Game()
     current_game.startGame(True)

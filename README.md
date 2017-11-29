@@ -1,6 +1,5 @@
-# Pavo_Adventure
-CS467 Capstone Project
-
-Added a few folders as a possible structure.
-
-Update to commit a new master that includes all the merging
+Pavo_Adventure
+CS467-400 Capstone Project
+Team Pavo
+Emily Caveness, Alexnader Laquitara, Johannes Pikel
+CMD 1: ADVENTURE
