@@ -1,3 +1,13 @@
+"""
+Filename: update_master_words.py
+Team: Pavo
+Members: Emily Caveness, Alexander Laquitara, Johannes Pikel
+Class: CS467-400
+Assignment: CMD1:Adventure
+Description: Updates the master words file with dicts used by the parser
+"""
+
+
 import json
 import os
 

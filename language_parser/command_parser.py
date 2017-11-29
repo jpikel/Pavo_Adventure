@@ -1,3 +1,18 @@
+"""
+Filename: command_parser.py
+Team: Pavo
+Members: Emily Caveness, Alexander Laquitara, Johannes Pikel
+Class: CS467-400
+Assignment: CMD1:Adventure
+Description: The command parser takes a string as input and returns a JSON object
+that provides information on the type of input such as room-action, item-action, item-only
+feature-action, action-only
+The official title of the thing found and the verb found
+Also returns a bool in the structure to let the caller know if the string was able to be processed
+"""
+
+
+
 import json
 import re
 
